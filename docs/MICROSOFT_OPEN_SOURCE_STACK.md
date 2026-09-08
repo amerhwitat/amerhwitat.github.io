@@ -6,14 +6,28 @@ The native Chimera II track integrates Microsoft open-source projects as **capab
 
 - Windows Subsystem for Linux (WSL/WSL2)
 - WSLg
-- PowerShell
-- OpenSSH for Windows
+- **PowerShell 7+ for Linux, Windows and macOS**
+- OpenSSH / Win32-OpenSSH
 - Windows Terminal / console infrastructure
 - ConPTY
 - WinGet
 - WinGet Community Repository metadata
 - Microsoft PowerToys
-- Windows-compatible uutils/coreutils
+- Microsoft Coreutils for Windows (uutils/coreutils + findutils + grep)
+- WindowsDeveloperConfig
+
+## PowerShell on Linux
+
+PowerShell 7+ is the preferred Microsoft shell integration for Chimera. The upstream PowerShell project describes itself as cross-platform for Windows, Linux and macOS, provides a shell plus scripting language and cmdlet framework, and is MIT-licensed. Chimera therefore exposes `pwsh` independently of the legacy Windows PowerShell 5.1 compatibility boundary.
+
+Recommended provider resolution:
+
+1. Native `pwsh` on Linux when installed.
+2. `pwsh` supplied by the host package/runtime manager.
+3. PowerShell inside WSL when policy selects WSL isolation.
+4. Native Windows PowerShell only as a legacy Windows compatibility provider.
+
+Chimera should never assume that a Windows-only PowerShell executable exists on Linux.
 
 ## Integration model
 
@@ -21,9 +35,13 @@ The native Chimera II track integrates Microsoft open-source projects as **capab
 
 This allows Chimera to discover and invoke facilities when the host provides them while retaining Linux/Unix alternatives.
 
+## Coreutils for Windows
+
+Microsoft's `coreutils` repository describes a native Windows multi-call package based on uutils/coreutils, findutils and grep. Chimera exposes this as `coreutils-windows` and can select it when Windows-native command compatibility is preferred.
+
 ## WinGet
 
-WinGet is represented as a package-manager capability. Its installer ecosystem includes EXE, ZIP, INNO, Nullsoft, MSI, WiX, APPX, MSIX, BURN, portable and font packages in current documentation. Chimera should consume package metadata through an adapter instead of embedding the client.
+WinGet is represented as a package-manager capability. Chimera should consume package metadata through an adapter instead of embedding the client.
 
 ## WSL
 
