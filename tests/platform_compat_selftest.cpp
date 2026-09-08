@@ -33,9 +33,9 @@ int main(){
   assert(has_id(PlatformCompatibilityCatalog::commands_and_utilities(), "gcc"));
   assert(has_id(PlatformCompatibilityCatalog::commands_and_utilities(), "gdb"));
   assert(has_id(PlatformCompatibilityCatalog::optional_services(), "sshd"));
+  assert(has_id(PlatformCompatibilityCatalog::optional_services(), "samba"));
   assert(has_id(PlatformCompatibilityCatalog::optional_services(), "dns"));
   assert(has_id(PlatformCompatibilityCatalog::optional_services(), "httpd"));
-  assert(has_id(PlatformCompatibilityCatalog::optional_services(), "smbd"));
   assert(has_id(PlatformCompatibilityCatalog::optional_services(), "nfs-server"));
 
   Cpu c;
