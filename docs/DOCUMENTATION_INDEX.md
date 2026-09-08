@@ -7,8 +7,8 @@
 
 ## Operating-system compatibility
 - `LINUX_KERNEL_COMPATIBILITY.md` — Linux kernel/userspace ABI boundary
-- `MICROSOFT_OPEN_SOURCE_STACK.md` — Microsoft open-source interoperability providers
-- `COMMAND_UTILITY_COMPATIBILITY.md` — shells, commands and utilities
+- `MICROSOFT_OPEN_SOURCE_STACK.md` — Microsoft open-source interoperability providers, including PowerShell 7+ on Linux
+- `COMMAND_UTILITY_COMPATIBILITY.md` — shells, commands, text processors, runtimes and optional services
 - `CROSS_PLATFORM_COMPATIBILITY.md` — Windows/Linux/Unix/macOS catalog
 
 ## Runtime and applications
@@ -25,4 +25,4 @@
 
 ## Verification
 
-Native CI builds the C/C++ track on Ubuntu and Windows and runs the native self-tests. NASM remains optional so the portable C/C++ implementation can be verified without an assembler dependency.
+Native CI builds the C/C++ track on Ubuntu and Windows and runs the native self-tests. NASM remains optional so the portable C/C++ implementation can be verified without an assembler dependency. Compatibility entries describe providers and interfaces; third-party binaries and licenses remain external.
