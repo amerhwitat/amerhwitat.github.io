@@ -14,8 +14,9 @@ This repository is the additive native integration track derived from the Java 2
 - Spitfire boot progress and desktop-loading coordination.
 - Runtime, filesystem, network, GNU and open-source application catalogs.
 - Linux kernel ABI capability catalog.
-- Microsoft/Windows open-source compatibility catalog including WSL/WSL2, WSLg, PowerShell, OpenSSH, Windows Terminal/ConPTY, WinGet, PowerToys and cross-platform coreutils.
-- Cross-platform command and utility catalog spanning Linux, Unix, Windows and WSL.
+- Microsoft/Windows open-source compatibility catalog including WSL/WSL2, WSLg, **PowerShell 7+ on Linux**, OpenSSH, Windows Terminal/ConPTY, WinGet, PowerToys and Microsoft Coreutils for Windows.
+- Expanded cross-platform command catalog: Bash, Zsh, Fish, PowerShell, coreutils/uutils, findutils, util-linux, grep, sed, awk/gawk, procps/psmisc, iproute2/iputils, curl/wget/rsync, tar/cpio, gzip/bzip2/xz/zstd, jq/yq and development toolchains.
+- Optional service catalog: SSH, Samba, NFS, DNS, HTTP servers, mail, time sync, logging, cron/systemd/D-Bus, desktop services, virtualization, containers, databases and MQTT.
 - Trusted-node, concurrency and federation boundaries.
 - C ABI for embedding from other runtimes.
 - CMake + Linux/Windows CI verification.
@@ -51,6 +52,7 @@ NASM is optional. If unavailable, the portable C/C++ implementation still builds
 - `docs/GNU_CROSS_PLATFORM_SERVICES.md`
 - `docs/OPEN_SOURCE_APPLICATIONS_RESEARCH.md`
 - `docs/LICENSING.md`
+- `docs/DOCUMENTATION_INDEX.md`
 
 ## Source-of-truth rule
 
