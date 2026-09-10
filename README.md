@@ -1,59 +1,24 @@
-# Chimera II OS — Native ASM/C/C++ Track
+# Amer Hwitat — Public Research Web
 
-This repository is the additive native integration track derived from the Java 25 implementation in `amerhwitat/keygen`.
+This repository hosts the public web surface for Amer Hwitat's open research projects, including the Chimera II OS ecosystem.
 
-**Protected repositories:** `amerhwitat/ChimeraIIOS` and `amerhwitat/test` are intentionally untouched by this project.
+## Chimera II OS public research index
 
-## Architecture
+- **Public index:** `chimera/index.html`
+- **Canonical OS source:** https://github.com/amerhwitat/ChimeraIIOS
+- **Mobile/embedded integration:** https://github.com/amerhwitat/general
+- **CPU research:** https://github.com/amerhwitat/CPU4096
+- **CPU simulator:** https://github.com/amerhwitat/CPU4096Simulator
+- **NLP:** https://github.com/amerhwitat/nlp
+- **PDF research:** https://github.com/amerhwitat/PDFreaderPY
+- **Other public repositories:** https://github.com/amerhwitat
 
-- 8192-bit register model: 128 × 64-bit lanes, 1024 architectural registers.
-- 16-byte canonical instruction representation.
-- Expanded native semantic ISA: arithmetic, logic, shifts, rotates, multiply/high-multiply, divide/remainder, comparisons and privilege-gated system boundaries.
-- x86-64 NASM helpers with optional assembly build.
-- Koronos 128D vector/learning primitives.
-- Spitfire boot progress and desktop-loading coordination.
-- Runtime, filesystem, network, GNU and open-source application catalogs.
-- Linux kernel ABI capability catalog.
-- Microsoft/Windows open-source compatibility catalog including WSL/WSL2, WSLg, **PowerShell 7+ on Linux**, OpenSSH, Windows Terminal/ConPTY, WinGet, PowerToys and Microsoft Coreutils for Windows.
-- Expanded cross-platform command catalog: Bash, Zsh, Fish, PowerShell, coreutils/uutils, findutils, util-linux, grep, sed, awk/gawk, procps/psmisc, iproute2/iputils, curl/wget/rsync, tar/cpio, gzip/bzip2/xz/zstd, jq/yq and development toolchains.
-- Optional service catalog: SSH, Samba, NFS, DNS, HTTP servers, mail, time sync, logging, cron/systemd/D-Bus, desktop services, virtualization, containers, databases and MQTT.
-- Trusted-node, concurrency and federation boundaries.
-- C ABI for embedding from other runtimes.
-- CMake + Linux/Windows CI verification.
+The Chimera II publication index links the author bibliography, Library research archive, CI/CD plan, Aurora desktop and Mobile Edition materials.
 
-## W2K-ASM compatibility
+## Native ASM/C/C++ track
 
-The supplied historical `W2K-ASM.txt` corpus is used as a compatibility-analysis source. Its behavioral requirements are translated into clean-room interfaces and conformance targets; proprietary Microsoft source is not copied into this repository. See `docs/W2K_ASM_COMPATIBILITY_AUDIT.md`.
-
-## Java-to-native coverage
-
-`docs/JAVA_TO_NATIVE_COMPLETE_MAPPING.md` maps the Java implementation features discussed during development to their native counterparts. Java-specific Jakarta REST, H2, DJL and virtual-thread internals are represented as host-neutral native subsystem contracts rather than line-for-line runtime copies.
-
-## Build
-
-```bash
-cmake -S . -B build
-cmake --build build
-ctest --test-dir build --output-on-failure
-```
-
-NASM is optional. If unavailable, the portable C/C++ implementation still builds.
-
-## Documentation
-
-- `docs/JAVA_TO_NATIVE_MIGRATION.md`
-- `docs/JAVA_TO_NATIVE_COMPLETE_MAPPING.md`
-- `docs/LINUX_KERNEL_COMPATIBILITY.md`
-- `docs/MICROSOFT_OPEN_SOURCE_STACK.md`
-- `docs/COMMAND_UTILITY_COMPATIBILITY.md`
-- `docs/W2K_ASM_COMPATIBILITY_AUDIT.md`
-- `docs/BOOT_AND_DESKTOP_LOADING_PROGRESS.md`
-- `docs/CROSS_PLATFORM_COMPATIBILITY.md`
-- `docs/GNU_CROSS_PLATFORM_SERVICES.md`
-- `docs/OPEN_SOURCE_APPLICATIONS_RESEARCH.md`
-- `docs/LICENSING.md`
-- `docs/DOCUMENTATION_INDEX.md`
+The native integration work includes an 8192-bit register model, canonical instruction representation, Koronos/128D research primitives, Spit Fire boot coordination, runtime/filesystem/network catalogs and cross-platform command compatibility.
 
 ## Source-of-truth rule
 
-The Java track remains the semantic migration reference. Native code preserves the intended ABI/ISA contracts while using host adapters for operating-system facilities. The native CPU must not be described as a complete implementation of all 284 ISA opcodes until generated opcode tables and full conformance tests cover them.
+The canonical Chimera II OS implementation is maintained in `amerhwitat/ChimeraIIOS`. This website repository provides discovery and documentation surfaces rather than replacing the canonical source tree.
