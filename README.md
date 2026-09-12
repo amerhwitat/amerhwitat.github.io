@@ -2,6 +2,17 @@
 
 This repository hosts the public web surface for Amer Hwitat's open research projects, including the Chimera II OS ecosystem.
 
+## Complete source-code citation index
+
+| Area | Source |
+|---|---|
+| Public web pages | [repository source tree](.) |
+| Chimera public index | [chimera/](chimera/) |
+| Apple web companion | [apple/](apple/) |
+| Complete tracked repository | [source tree](.) |
+
+The links above are the README-level citations for all maintained web/application code. The repository tree remains the detailed source-of-record boundary.
+
 ## Centralized Apple implementations
 
 The portfolio Apple source tree is centralized at [`general/Apple-Implementations`](https://github.com/amerhwitat/general/tree/master/Apple-Implementations). It contains Objective-C/Xcode and Flutter iOS/macOS companions for the portfolio applications. This web repository remains the public discovery/documentation surface.
@@ -14,17 +25,16 @@ The `apple/` directory contains a native SwiftUI/Xcode companion shell for iOS/i
 
 - **Public index:** `chimera/index.html`
 - **Complete portfolio summary:** `https://github.com/amerhwitat/ChimeraIIOS/blob/main/docs/CHIMERA_ECOSYSTEM_PORTFOLIO.md`
-- **Canonical OS source:** https://github.com/amerhwitat/ChimeraIIOS
-- **Mobile/embedded integration:** https://github.com/amerhwitat/general
-- **CPU research:** https://github.com/amerhwitat/CPU4096
-- **CPU simulator:** https://github.com/amerhwitat/CPU4096Simulator
-- **Python integration:** https://github.com/amerhwitat/test
-- **Java track:** https://github.com/amerhwitat/keygen
-- **NLP:** https://github.com/amerhwitat/nlp
-- **PDF research:** https://github.com/amerhwitat/PDFreaderPY
-- **Crypto research:** https://github.com/amerhwitat/eth-key-check and https://github.com/amerhwitat/bruteforce
-- **Graphics experiments:** https://github.com/amerhwitat/BizX and https://github.com/amerhwitat/BizXtreme
-- **Other repositories:** https://github.com/amerhwitat
+- **Canonical OS source:** `https://github.com/amerhwitat/ChimeraIIOS`
+- **Mobile/embedded integration:** `https://github.com/amerhwitat/general`
+- **CPU research:** `https://github.com/amerhwitat/CPU4096`
+- **CPU simulator:** `https://github.com/amerhwitat/CPU4096Simulator`
+- **Python integration:** `https://github.com/amerhwitat/test`
+- **Java track:** `https://github.com/amerhwitat/keygen`
+- **NLP:** `https://github.com/amerhwitat/nlp`
+- **PDF research:** `https://github.com/amerhwitat/PDFreaderPY`
+- **Crypto research:** `https://github.com/amerhwitat/eth-key-check` and `https://github.com/amerhwitat/bruteforce`
+- **Graphics/application tracks:** `https://github.com/amerhwitat/BizX` and `https://github.com/amerhwitat/BizXtreme`
 
 ## Portfolio-wide 128D + authenticated P2P
 
