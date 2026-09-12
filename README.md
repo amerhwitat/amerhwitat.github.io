@@ -2,6 +2,10 @@
 
 This repository hosts the public web surface for Amer Hwitat's open research projects, including the Chimera II OS ecosystem.
 
+## Centralized Apple implementations
+
+The portfolio Apple source tree is centralized at [`general/Apple-Implementations`](https://github.com/amerhwitat/general/tree/master/Apple-Implementations). It contains Objective-C/Xcode and Flutter iOS/macOS companions for the portfolio applications. This web repository remains the public discovery/documentation surface.
+
 ## Apple companion application
 
 The `apple/` directory contains a native SwiftUI/Xcode companion shell for iOS/iPadOS and macOS. `apple/project.yml` is generated with XcodeGen and validated on a macOS GitHub Actions runner. The companion consumes public portfolio metadata and does not replace the canonical web source.
@@ -22,17 +26,11 @@ The `apple/` directory contains a native SwiftUI/Xcode companion shell for iOS/i
 - **Graphics experiments:** https://github.com/amerhwitat/BizX and https://github.com/amerhwitat/BizXtreme
 - **Other repositories:** https://github.com/amerhwitat
 
-The Chimera II publication index links the author bibliography, Library research archive, CI/CD plan, Aurora desktop and Mobile Edition materials. External blogs and image hosts are treated as secondary publication targets and are recorded only after authenticated publication succeeds.
-
-## Native ASM/C/C++ track
-
-The native integration work includes an 8192-bit register model, canonical instruction representation, Koronos/128D research primitives, Spit Fire boot coordination, runtime/filesystem/network catalogs and cross-platform command compatibility.
-
 ## Portfolio-wide 128D + authenticated P2P
 
 The website documents the common semantic model and peer protocol used across the portfolio. The 128D layer represents geometry, time, observer/perspective, light/material response, events, objects, properties and interaction rules, with extensible perception/cognition/vector dimensions. P2P is opt-in, authenticated and capability-aware, using deterministic envelopes, payload hashes and replay-resistant sequencing.
 
-The protocol does not authorize unsolicited scanning, credential/private-key exchange, arbitrary executable transfer or remote command execution. Browser integrations may use WebSocket/WebRTC while preserving the same logical contract.
+The protocol does not authorize unsolicited scanning, credential/private-key exchange, arbitrary executable transfer or remote command execution.
 
 ## Source-of-truth rule
 
