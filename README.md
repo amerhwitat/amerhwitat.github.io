@@ -2,6 +2,24 @@
 
 This repository hosts the public web surface for Amer Hwitat's open research projects, including the Chimera II OS ecosystem.
 
+## Build and run
+
+For static content, preview with a local HTTP server from the repository root. If a Node.js application directory exists, run its declared package-manager scripts after `npm ci`/the lockfile-equivalent install.
+
+Repository-wide orchestration:
+
+```bat
+build-tools\build.bat --only node
+```
+
+or:
+
+```powershell
+.\build-tools\build.ps1 -Only node
+```
+
+CI uses GitHub Actions to build and publish the web surface. Generated bundles remain CI/deployment artifacts rather than source files.
+
 ## Chimera II OS public research index
 
 - **Public index:** `chimera/index.html`
@@ -16,9 +34,6 @@ This repository hosts the public web surface for Amer Hwitat's open research pro
 - **PDF research:** https://github.com/amerhwitat/PDFreaderPY
 - **Crypto research:** https://github.com/amerhwitat/eth-key-check and https://github.com/amerhwitat/bruteforce
 - **Graphics experiments:** https://github.com/amerhwitat/BizX and https://github.com/amerhwitat/BizXtreme
-- **Other public repositories:** https://github.com/amerhwitat
-
-The Chimera II publication index links the author bibliography, Library research archive, CI/CD plan, Aurora desktop and Mobile Edition materials. External blogs and image hosts are treated as secondary publication targets and are recorded only after authenticated publication succeeds.
 
 ## Native ASM/C/C++ track
 
