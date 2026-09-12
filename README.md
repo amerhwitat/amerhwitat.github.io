@@ -2,6 +2,10 @@
 
 This repository hosts the public web surface for Amer Hwitat's open research projects, including the Chimera II OS ecosystem.
 
+## Apple companion application
+
+The `apple/` directory contains a native SwiftUI/Xcode companion shell for iOS/iPadOS and macOS. `apple/project.yml` is generated with XcodeGen and validated on a macOS GitHub Actions runner. The companion consumes public portfolio metadata and does not replace the canonical web source.
+
 ## Chimera II OS public research index
 
 - **Public index:** `chimera/index.html`
