@@ -1,0 +1,16 @@
+name: Container
+
+on:
+  push:
+    paths: ['Dockerfile', '.dockerignore', 'docker-compose.yml', '.github/workflows/container.yml']
+  pull_request:
+    paths: ['Dockerfile', '.dockerignore', 'docker-compose.yml', '.github/workflows/container.yml']
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: docker compose config
+      - run: docker build --tag amerhwitat-github-io:ci .
