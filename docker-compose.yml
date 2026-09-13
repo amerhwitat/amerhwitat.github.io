@@ -1,0 +1,8 @@
+services:
+  web:
+    build: .
+    image: amerhwitat/amerhwitat-github-io:local
+    container_name: amerhwitat-github-io
+    ports:
+      - "8080:80"
+    restart: unless-stopped
