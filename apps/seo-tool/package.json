@@ -1,0 +1,1 @@
+{"name":"seo-tool-web","private":true,"version":"0.1.0","scripts":{"dev":"python -m SEO_Tool.gui","start":"python -m SEO_Tool.gui"},"description":"SEO-Tool browser GUI integration"}

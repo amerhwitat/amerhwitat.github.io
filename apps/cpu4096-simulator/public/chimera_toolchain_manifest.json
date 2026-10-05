@@ -1,0 +1,1 @@
+{"schema":"chimera-toolchain/v1","debugger":"cdb","assembler":"chimera-as","disassembler":"chimera-objdump","python27":"compatibility-source-layer","target":"CPU4096Simulator"}

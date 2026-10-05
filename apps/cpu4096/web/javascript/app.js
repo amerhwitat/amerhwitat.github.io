@@ -1,0 +1,1 @@
+const input=document.querySelector('#hex'),out=document.querySelector('#out');function render(){try{const n=BigInt(input.value||0);out.textContent=`decimal: ${n}\nhex: 0x${n.toString(16)}`}catch{out.textContent='Invalid integer'}}input.oninput=render;render();

@@ -1,0 +1,1 @@
+document.querySelector('#file').addEventListener('change',e=>{const f=e.target.files?.[0];document.querySelector('#status').textContent=f?`${f.name} — ${f.size.toLocaleString()} bytes selected locally.`:'Select a PDF for local browser handling.'});

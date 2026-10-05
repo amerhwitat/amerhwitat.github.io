@@ -1,0 +1,1 @@
+<?php declare(strict_types=1); header('Content-Type: application/json'); echo json_encode(['cpu'=>'CPU4096','web'=>true,'register_bits'=>4096]);

@@ -1,25 +1,227 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Amer Hwitat — Research & Software Portfolio</title>
-<meta name="description" content="Public index of Amer Hwitat's software, systems, CPU, NLP, game and research repositories.">
-<style>body{font-family:system-ui,sans-serif;max-width:1100px;margin:auto;padding:32px;line-height:1.6}a{color:#06c}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}.card{border:1px solid #ccc;border-radius:12px;padding:18px}.tag{font-size:.85em;opacity:.7}</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Combined Web UI and applications built from amerhwitat's GitHub repositories.">
+<meta name="theme-color" content="#07111f">
+<title>Amer Hwitat — Research &amp; Software Portfolio</title>
+<style>
+:root{
+  --bg:#071120; --bg2:#0b1a30; --panel:rgba(18,38,66,.55); --panel2:rgba(12,28,52,.72);
+  --stroke:rgba(120,180,255,.18); --stroke2:rgba(120,180,255,.35);
+  --fg:#e8f1ff; --muted:#9db4d4; --accent:#5fd0ff; --accent2:#7d8cff; --ok:#4be3a4;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+  color:var(--fg); min-height:100vh;
+  background:
+    radial-gradient(1100px 600px at 12% -8%, rgba(95,208,255,.16), transparent 60%),
+    radial-gradient(900px 520px at 92% 4%, rgba(125,140,255,.16), transparent 60%),
+    linear-gradient(160deg,var(--bg),var(--bg2));
+  background-attachment:fixed;
+}
+a{color:var(--accent);text-decoration:none}
+.wrap{max-width:1240px;margin:0 auto;padding:32px 22px 80px}
+header.top{display:flex;flex-wrap:wrap;gap:18px;align-items:center;justify-content:space-between;margin-bottom:26px}
+.brand{display:flex;align-items:center;gap:14px}
+.logo{width:48px;height:48px;border-radius:14px;display:grid;place-items:center;font-weight:800;font-size:22px;
+  background:linear-gradient(135deg,var(--accent),var(--accent2));color:#04101f;box-shadow:0 10px 30px rgba(95,208,255,.35)}
+.brand h1{font-size:22px;margin:0;letter-spacing:.02em}
+.brand p{margin:2px 0 0;color:var(--muted);font-size:13px}
+.searchbox{position:relative;flex:1;min-width:240px;max-width:420px}
+.searchbox input{width:100%;padding:12px 16px;border-radius:999px;border:1px solid var(--stroke2);
+  background:var(--panel2);color:var(--fg);font-size:14px;outline:none;backdrop-filter:blur(12px)}
+.searchbox input:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(95,208,255,.15)}
+.stats{display:flex;gap:10px;flex-wrap:wrap;color:var(--muted);font-size:12.5px;margin-bottom:26px}
+.pill{border:1px solid var(--stroke);background:var(--panel);padding:6px 12px;border-radius:999px}
+.pill b{color:var(--fg)}
+h2.group{font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);
+  margin:34px 0 14px;display:flex;align-items:center;gap:12px}
+h2.group::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,var(--stroke),transparent)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
+.card{position:relative;border:1px solid var(--stroke);border-radius:18px;padding:18px 18px 16px;
+  background:linear-gradient(180deg,var(--panel),var(--panel2));backdrop-filter:blur(14px);
+  transition:transform .16s ease,border-color .16s ease,box-shadow .16s ease;display:flex;flex-direction:column;gap:8px}
+.card:hover{transform:translateY(-3px);border-color:var(--stroke2);box-shadow:0 18px 40px rgba(3,12,26,.55)}
+.card .tagline{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+.card h3{margin:0;font-size:17px}
+.card p{margin:0;color:var(--muted);font-size:13.5px;line-height:1.5;flex:1}
+.card .repo{font-size:11.5px;color:#7f97b8}
+.card .go{margin-top:6px;align-self:flex-start;padding:8px 14px;border-radius:10px;font-size:13px;font-weight:600;
+  background:linear-gradient(135deg,rgba(95,208,255,.9),rgba(125,140,255,.9));color:#04101f}
+.card .sub{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px}
+.card .sub a{font-size:11.5px;padding:4px 9px;border-radius:999px;border:1px solid var(--stroke);color:var(--muted)}
+.card .sub a:hover{color:var(--fg);border-color:var(--stroke2)}
+footer{margin-top:56px;color:var(--muted);font-size:12.5px;border-top:1px solid var(--stroke);padding-top:20px;line-height:1.7}
+.empty{display:none;color:var(--muted);padding:40px 0;text-align:center}
+</style>
 </head>
 <body>
-<h1>Amer Hwitat — Research & Software Portfolio</h1>
-<p>Public discovery portal for the maintained GitHub repositories and research projects.</p>
-<div class="grid">
-<div class="card"><h2>Chimera II OS</h2><p>Operating-system, CPU, multidimensional computing and systems research.</p><a href="https://github.com/amerhwitat/ChimeraIIOS">ChimeraIIOS</a></div>
-<div class="card"><h2>BizX</h2><p>Business/game platform and multilingual implementations.</p><a href="https://github.com/amerhwitat/BizX">BizX</a></div>
-<div class="card"><h2>BizXtreme</h2><p>Extended game, graphics, networking and crypto application platform.</p><a href="https://github.com/amerhwitat/BizXtreme">BizXtreme</a></div>
-<div class="card"><h2>General</h2><p>Portfolio-wide applications, tools and integrations.</p><a href="https://github.com/amerhwitat/general">general</a></div>
-<div class="card"><h2>CPU Research</h2><p>4096-bit CPU and simulator research.</p><a href="https://github.com/amerhwitat/CPU4096">CPU4096</a> · <a href="https://github.com/amerhwitat/CPU4096Simulator">Simulator</a></div>
-<div class="card"><h2>NLP & Documents</h2><p>Natural-language and PDF research projects.</p><a href="https://github.com/amerhwitat/nlp">NLP</a> · <a href="https://github.com/amerhwitat/PDFreaderPY">PDFreaderPY</a></div>
-<div class="card"><h2>Crypto Research</h2><p>Ethereum/key-generation research repositories.</p><a href="https://github.com/amerhwitat/eth-key-check">eth-key-check</a> · <a href="https://github.com/amerhwitat/keygen">keygen</a> · <a href="https://github.com/amerhwitat/bruteforce">bruteforce</a></div>
-<div class="card"><h2>Other Public Repositories</h2><p>Additional public development and test projects.</p><a href="https://github.com/amerhwitat/test">test</a></div>
+<div class="wrap">
+  <header class="top">
+    <div class="brand">
+      <div class="logo">AH</div>
+      <div>
+        <h1>Amer Hwitat — Research &amp; Software Portfolio</h1>
+        <p>Public discovery portal for the maintained repositories, research projects and every browser-based UI — built from <a href="https://github.com/amerhwitat" target="_blank" rel="noopener">github.com/amerhwitat</a>.</p>
+      </div>
+    </div>
+    <div class="searchbox">
+      <input id="q" type="search" placeholder="Search apps… (terminal, scanner, 3D, SEO, PDF)" aria-label="Search apps">
+    </div>
+  </header>
+
+  <div class="stats">
+    <span class="pill"><b id="appcount">0</b> apps</span>
+    <span class="pill"><b>10</b> repositories</span>
+    <span class="pill">static build · no backend</span>
+  </div>
+
+  <div id="root"></div>
+  <p class="empty" id="empty">No apps match your search.</p>
+
+
+  <h2 class="group">Repositories</h2>
+  <div class="grid" id="repos"></div>
+  <footer>
+    Combined from the repositories: ChimeraIIOS, CPU4096Simulator, CPU4096, BizX, BizXtreme, nlp, general, test, PDFreaderPY, amerhwitat.github.io.
+    Application front-ends run fully in the browser; features that require a Python/Node backend are shown as UI demos.<br>
+    <strong>Publishing model:</strong> this portal is the public-web discovery layer; source remains on GitHub. Deep-web availability means resources reachable by direct URLs but not necessarily indexed by search engines — not a separate hosting network. Dark-web/onion publication requires a controlled Tor server and cannot be created by GitHub Pages alone.<br>
+    Source: <a href="https://github.com/amerhwitat" target="_blank" rel="noopener">github.com/amerhwitat</a>
+  </footer>
 </div>
-<h2>Publishing model</h2>
-<p>This portal is the public-web discovery layer. Source remains on GitHub. Deep-web availability means resources reachable by direct URLs but not necessarily indexed by search engines; it is not a separate hosting network. Dark-web/onion publication requires a controlled Tor server and cannot be created by GitHub Pages alone.</p>
-<p><span class="tag">Source of record: GitHub repositories · Public site: amerhwitat.github.io</span></p>
-</body></html>
+
+<script>
+const APPS = [
+  {group:"Chimera II OS", title:"Chimera II OS — Home", tag:"Aurora Wayland Glass", repo:"ChimeraIIOS",
+   desc:"Architecture explorer for the Chimera II machine, kernel, I/O, graphics and 128D research layers.",
+   path:"apps/chimera-ii-os/web/index.html"},
+  {group:"Chimera II OS", title:"Aurora 3D Desktop", tag:"Desktop", repo:"ChimeraIIOS",
+   desc:"WebGL/Three.js Aurora desktop with glass shell, app launcher and 3D surfaces.",
+   path:"apps/chimera-ii-os/web/aurora_3d_desktop.html"},
+  {group:"Chimera II OS", title:"Chimera Code IDE", tag:"Developer", repo:"ChimeraIIOS",
+   desc:"Browser code IDE surface for the Chimera toolchain.", path:"apps/chimera-ii-os/web/chimera_code_ide.html"},
+  {group:"Chimera II OS", title:"Aurora Terminal", tag:"Terminal", repo:"ChimeraIIOS",
+   desc:"Aurora CLI terminal for the simulated runtime.", path:"apps/chimera-ii-os/web/aurora_terminal.html"},
+  {group:"Chimera II OS", title:"System Control Center", tag:"Control", repo:"ChimeraIIOS",
+   desc:"Central control surface for system, services and settings.", path:"apps/chimera-ii-os/web/system_control_center.html"},
+  {group:"Chimera II OS", title:"Desktop Profiles", tag:"Desktop", repo:"ChimeraIIOS",
+   desc:"Switch between Aurora desktop profiles and layouts.", path:"apps/chimera-ii-os/web/desktop_switcher.html"},
+  {group:"Chimera II OS", title:"Retro Emulators", tag:"Emulation", repo:"ChimeraIIOS",
+   desc:"Retro emulator launcher for the Chimera desktop.", path:"apps/chimera-ii-os/web/retro_emulators.html"},
+  {group:"Chimera II OS", title:"Installer Manager", tag:"Packages", repo:"ChimeraIIOS",
+   desc:"Package and installer manager UI.", path:"apps/chimera-ii-os/web/installer_manager.html"},
+  {group:"Chimera II OS", title:"Network Monitor", tag:"Telemetry", repo:"ChimeraIIOS",
+   desc:"Observability dashboard for network/runtime telemetry.", path:"apps/chimera-ii-os/web/network_monitor.html"},
+  {group:"Chimera II OS", title:"Crash Center", tag:"Diagnostics", repo:"ChimeraIIOS",
+   desc:"Crash and diagnostics reporting surface.", path:"apps/chimera-ii-os/web/crash_center.html"},
+  {group:"Chimera II OS", title:"Health", tag:"Diagnostics", repo:"ChimeraIIOS",
+   desc:"System health dashboard.", path:"apps/chimera-ii-os/web/health.html"},
+  {group:"Chimera II OS", title:"Research OS", tag:"Research", repo:"ChimeraIIOS",
+   desc:"Research OS publication and library archive view.", path:"apps/chimera-ii-os/web/research-os.html"},
+  {group:"Chimera II OS", title:"Linux Command Console", tag:"Terminal", repo:"ChimeraIIOS webui",
+   desc:"Sandboxed Linux/POSIX command console UI.", path:"apps/chimera-ii-os/webui/linux-command-console.html"},
+
+  {group:"CPU4096", title:"CPU4096 Simulator — Aurora Web Desktop", tag:"Simulator", repo:"CPU4096Simulator",
+   desc:"4096-bit / 8192-bit CPU simulator with ISA catalog, runtime, keygen and command console.",
+   path:"apps/cpu4096-simulator/public/index.html",
+   sub:[["Code IDE","apps/cpu4096-simulator/public/chimera_code_ide.html"],["Control Center","apps/cpu4096-simulator/public/system_control_center.html"],["Installer","apps/cpu4096-simulator/public/installer_manager.html"],["Retro Emulators","apps/cpu4096-simulator/public/retro_emulators.html"],["Desktop Profiles","apps/cpu4096-simulator/public/desktop_switcher.html"]]},
+  {group:"CPU4096", title:"CPU4096 Visualizer", tag:"Simulator", repo:"CPU4096",
+   desc:"Browser visualizer for the 4096-bit CPU register model.", path:"apps/cpu4096/web/javascript/index.html"},
+
+  {group:"BizX & BizXtreme", title:"BizX Asset Browser", tag:"Game assets", repo:"BizX",
+   desc:"Search and import openly licensed images, audio, HDRI and textures.", path:"apps/bizx-asset-browser/index.html"},
+  {group:"BizX & BizXtreme", title:"BizXtreme 3D", tag:"Game", repo:"BizXtreme",
+   desc:"Three.js 3D game/asset viewer for the BizXtreme project.", path:"apps/bizxtreme-3d/index.html"},
+
+  {group:"Research (nlp)", title:"Thamudic Scanner", tag:"Research", repo:"nlp",
+   desc:"React UI for the Thamudic / Ancient North Arabian research scanner.", path:"apps/thamudic-scanner/index.html"},
+  {group:"Research (nlp)", title:"Thamudic Epi Platform", tag:"Research", repo:"nlp",
+   desc:"React/TS platform UI for Thamudic epigraphic research.", path:"apps/thamudic-epi/index.html"},
+  {group:"Research (nlp)", title:"Amiga Emulator", tag:"Emulation", repo:"nlp",
+   desc:"Browser adapter/UI for the Amiga emulator integration.", path:"apps/nlp-amiga/index.html"},
+
+  {group:"Studio & Tools", title:"Chimera 3D/4D Studio", tag:"Graphics", repo:"general",
+   desc:"PlayCanvas-based 3D/4D modelling and VFX studio UI.", path:"apps/chimera-3d4d/index.html"},
+  {group:"Studio & Tools", title:"SEO Tool", tag:"Web tool", repo:"general",
+   desc:"Technical SEO scanner + authorized deep-web research UI.", path:"apps/seo-tool/index.html"},
+  {group:"Studio & Tools", title:"Aurora Mobile", tag:"Mobile", repo:"general",
+   desc:"Aurora Wayland Glass mobile shell UI.", path:"apps/aurora-mobile/index.html",
+   sub:[["App Store","apps/aurora-mobile/store/index.html"]]},
+  {group:"Studio & Tools", title:"Agent Research Forge", tag:"AI", repo:"general",
+   desc:"UI for researching public sources and generating reviewed project artifacts.", path:"apps/agent-research-forge/index.html"},
+
+  {group:"More", title:"Chimera Test Suite", tag:"Aurora", repo:"test",
+   desc:"Aurora 3D desktop + shell test application.", path:"apps/chimera-test-suite/index.html",
+   sub:[["3D Desktop","apps/chimera-test-suite/aurora_3d_desktop.html"]]},
+  {group:"More", title:"PDF Reader", tag:"Utility", repo:"PDFreaderPY",
+   desc:"Local in-browser PDF handling UI.", path:"apps/pdf-reader/index.html"},
+
+  {group:"Published Pages", title:"Chimera Pages", tag:"Site", repo:"amerhwitat.github.io",
+   desc:"Existing published Chimera landing page.", path:"apps/chimera-pages/index.html"},
+  {group:"Published Pages", title:"Thamudic Pages", tag:"Site", repo:"amerhwitat.github.io",
+   desc:"Existing published Thamudic landing page.", path:"apps/thamudic-pages/index.html"}
+];
+
+const root=document.getElementById('root');
+const q=document.getElementById('q');
+const empty=document.getElementById('empty');
+document.getElementById('appcount').textContent=APPS.length;
+const REPOS = [
+ {title:"ChimeraIIOS", tag:"Operating system", desc:"Operating-system, CPU, multidimensional computing and systems research.", url:"https://github.com/amerhwitat/ChimeraIIOS"},
+ {title:"CPU4096", tag:"CPU research", desc:"4096-bit CPU research and register model.", url:"https://github.com/amerhwitat/CPU4096"},
+ {title:"CPU4096Simulator", tag:"Simulator", desc:"4096/8192-bit CPU simulator, ISA catalog and runtime.", url:"https://github.com/amerhwitat/CPU4096Simulator"},
+ {title:"BizX", tag:"Platform", desc:"Business/game platform and multilingual implementations.", url:"https://github.com/amerhwitat/BizX"},
+ {title:"BizXtreme", tag:"Platform", desc:"Extended game, graphics, networking and crypto application platform.", url:"https://github.com/amerhwitat/BizXtreme"},
+ {title:"general", tag:"Portfolio", desc:"Portfolio-wide applications, tools and integrations.", url:"https://github.com/amerhwitat/general"},
+ {title:"nlp", tag:"Research", desc:"Natural-language processing and Thamudic epigraphic research.", url:"https://github.com/amerhwitat/nlp"},
+ {title:"PDFreaderPY", tag:"Utility", desc:"PDF research and local document tooling.", url:"https://github.com/amerhwitat/PDFreaderPY"},
+ {title:"test", tag:"Test suite", desc:"Development and test projects.", url:"https://github.com/amerhwitat/test"},
+ {title:"amerhwitat.github.io", tag:"Site source", desc:"Source of this portal and the published pages.", url:"https://github.com/amerhwitat/amerhwitat.github.io"}
+];
+(function(){
+  const el=document.getElementById('repos'); if(!el) return;
+  el.innerHTML=REPOS.map(r=>`<article class="card">
+    <span class="tagline">${esc(r.tag)}</span>
+    <h3>${esc(r.title)}</h3>
+    <p>${esc(r.desc)}</p>
+    <a class="go" href="${r.url}" target="_blank" rel="noopener">View on GitHub →</a>
+  </article>`).join('');
+})();
+
+
+function esc(s){return s.replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
+
+function render(){
+  const term=q.value.trim().toLowerCase();
+  const groups=[...new Set(APPS.map(a=>a.group))];
+  let html='', shown=0;
+  for(const g of groups){
+    const items=APPS.filter(a=>a.group===g && (!term || (a.title+a.desc+a.tag+a.repo).toLowerCase().includes(term)));
+    if(!items.length) continue;
+    html+=`<h2 class="group">${esc(g)}</h2><div class="grid">`;
+    for(const a of items){
+      shown++;
+      const sub=(a.sub||[]).map(([t,p])=>`<a href="${p}">${esc(t)}</a>`).join('');
+      html+=`<article class="card">
+        <span class="tagline">${esc(a.tag)}</span>
+        <h3>${esc(a.title)}</h3>
+        <p>${esc(a.desc)}</p>
+        <span class="repo">${esc(a.repo)}</span>
+        ${sub?`<div class="sub">${sub}</div>`:''}
+        <a class="go" href="${a.path}">Open app →</a>
+      </article>`;
+    }
+    html+='</div>';
+  }
+  root.innerHTML=html;
+  empty.style.display=shown?'none':'block';
+}
+q.addEventListener('input',render);
+render();
+</script>
+</body>
+</html>

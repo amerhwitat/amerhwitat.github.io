@@ -1,0 +1,22 @@
+{
+  "schema":"chimera-retro-emulators/v1",
+  "policy":"catalog-and-adapter-only",
+  "emulators":[
+    {"id":"mame","title":"MAME","backend":"native","systems":["Arcade","Atari 2600","Apple II","C64","MSX","NES","SNES","ZX Spectrum"],"url":"https://www.mamedev.org/"},
+    {"id":"retroarch","title":"RetroArch / Libretro","backend":"browser-wasm","systems":["NES","SNES","Game Boy","GBA","Genesis","Atari","C64","Amiga","MSX","ZX Spectrum","DOS"],"url":"https://www.retroarch.com/"},
+    {"id":"vice","title":"VICE","backend":"native","systems":["C64","C128","VIC-20","Plus/4","PET"],"url":"https://vice-emu.sourceforge.io/"},
+    {"id":"fs-uae","title":"FS-UAE / UAE","backend":"native","systems":["Amiga"],"url":"https://fs-uae.net/"},
+    {"id":"hatari","title":"Hatari","backend":"native","systems":["Atari ST"],"url":"https://hatari.tuxfamily.org/"},
+    {"id":"fuse","title":"Fuse","backend":"native","systems":["ZX Spectrum"],"url":"https://fuse-emulator.sourceforge.net/"},
+    {"id":"openmsx","title":"openMSX","backend":"native","systems":["MSX"],"url":"https://openmsx.org/"},
+    {"id":"dosbox","title":"DOSBox Staging","backend":"native","systems":["DOS","IBM PC compatible"],"url":"https://www.dosbox-staging.org/"},
+    {"id":"applewin","title":"AppleWin","backend":"native","systems":["Apple II"],"url":"https://github.com/AppleWin/AppleWin"},
+    {"id":"scummvm","title":"ScummVM","backend":"native","systems":["DOS","Amiga","Macintosh","Atari ST"],"url":"https://www.scummvm.org/"},
+    {"id":"basiliskii","title":"Basilisk II","backend":"native","systems":["Classic Macintosh 68k"],"url":"https://basilisk.cebix.net/"},
+    {"id":"sheepshaver","title":"SheepShaver","backend":"native","systems":["Classic Macintosh PowerPC"],"url":"https://sheepshaver.cebix.net/"},
+    {"id":"mupen64plus","title":"Mupen64Plus","backend":"native","systems":["Nintendo 64"],"url":"https://mupen64plus.org/"},
+    {"id":"dolphin","title":"Dolphin","backend":"native","systems":["GameCube","Wii"],"url":"https://dolphin-emu.org/"},
+    {"id":"ppsspp","title":"PPSSPP","backend":"native","systems":["PlayStation Portable"],"url":"https://www.ppsspp.org/"},
+    {"id":"pcsx2","title":"PCSX2","backend":"native","systems":["PlayStation 2"],"url":"https://pcsx2.net/"}
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "schema_version": "2026-09.1",
+  "abi": "canonical-chimera-16-byte",
+  "extensions": [
+    {"name":"BITMANIP","instructions":["CLZ","CTZ","POPCNT","BEXT","BDEP"]},
+    {"name":"ATOMICS","instructions":["CAS","SWAP","FETCH_ADD"]},
+    {"name":"MEMORY_ORDER","instructions":["FENCE","LFENCE","SFENCE","BARRIER"]},
+    {"name":"VECTOR","instructions":["VADD","VMUL","VREDUCE","VPERM"]},
+    {"name":"MATRIX_TENSOR","instructions":["MADD","TCONTRACT"]},
+    {"name":"CRYPTO","instructions":["AESENC","AESDEC","SHA256","SHA3","CRC32"]},
+    {"name":"STRING_MEMORY","instructions":["MOVS","CMPS","MEMCPY","MEMSET"]},
+    {"name":"CACHE_MEMORY","instructions":["PREFETCH","CACHE_FLUSH","CACHE_INVALIDATE"]},
+    {"name":"SYSTEM_CONTROL","instructions":["SYSCALL","TRAP","TLBI","CSR"]},
+    {"name":"VIRTUALIZATION","instructions":["VMRUN","VMEXIT"]},
+    {"name":"DECIMAL","instructions":["DADD","DSUB","DMUL","DDIV"]},
+    {"name":"PREDICATE","instructions":["PSET","PTEST","PMERGE"]},
+    {"name":"NETWORK","instructions":["NETSEND","NETRECV","NETPOLL"]}
+  ],
+  "source_families":["x86-64","Arm A64/SVE/SME","RISC-V","POWER","z/Architecture","SPARC","PA-RISC","Itanium","MIPS"]
+}
