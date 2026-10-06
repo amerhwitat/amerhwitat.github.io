@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded',async()=>{
   const $=id=>document.getElementById(id); const log=m=>window.ChimeraAmiga.log(m);
-  const ok=await window.ChimeraAmiga.load();
+  const ok=await window.ChimeraAmiga.load(); if(!ok){ $('engineStatus').textContent=' Local browser core unavailable · live vAmigaWeb fallback ready'; $('start').onclick=()=>{ location.href='https://vamigaweb.github.io/'; }; }
   $('engineStatus').textContent=ok?' Engine: local bundle detected':' Engine: integration layer / bundle missing';
   $('cpu').textContent='CPU: 68000';
   $('chipset').textContent='Chipset: OCS';
