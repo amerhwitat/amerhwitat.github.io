@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en" dir="ltr"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Aurora Ancient Language Auto OCR — Thamudic, Ancient North Arabian and related ancient-language research with NLP translation targets.">
+<title>Aurora Ancient Language Auto OCR</title>
+<link rel="stylesheet" href="aurora-shared.css">
+<style>
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}.glass{padding:18px}.field{display:grid;gap:6px}.field input,.field select,.field textarea{width:100%;padding:10px;border-radius:10px;border:1px solid #ffffff20;background:#071421;color:inherit}.btn{display:inline-block;padding:10px 13px;border-radius:11px;border:1px solid #ffffff22;background:#102238;color:inherit;text-decoration:none;cursor:pointer}.primary{background:linear-gradient(135deg,#62e8ff,#8f8cff);color:#03101b;font-weight:800}.result{white-space:pre-wrap;min-height:150px;max-height:480px;overflow:auto;background:#050c14;border:1px solid #ffffff14;border-radius:12px;padding:13px}.small{font-size:12px;opacity:.75}.tags{display:flex;flex-wrap:wrap;gap:6px}.tag{padding:5px 8px;border-radius:999px;background:#10243a;border:1px solid #ffffff14;font-size:12px}.rtl{direction:rtl;text-align:right}
+</style></head>
+<body><main class="aurora-page">
+<nav><a href="../../../index.html">← Aurora</a><a href="ocr-studio.html">OCR Studio</a><a href="thamudicscan.html">ThamudicScan</a><a href="research-lab.html">Research Lab</a></nav>
+<section class="glass hero"><span class="eyebrow">ANCIENT NLP · AUTOMATIC OCR</span>
+<h1>Ancient Language Auto OCR</h1>
+<p>Choose an image and the browser starts scanning automatically. The pipeline uses the NLP repository's ancient-language registry, Unicode/script detection, Tesseract.js where an appropriate trained model exists, and an optional Chimera/NLP API for deeper ancient-script OCR and translation.</p>
+<div class="grid">
+<div class="field"><label>Source language</label><select id="source"></select></div>
+<div class="field"><label>Target language — NLP live target catalog</label><select id="target"></select></div>
+<div class="field"><label>Image</label><input id="file" type="file" accept="image/*"></div>
+<div class="field"><label>NLP API (optional)</label><input id="api" placeholder="https://your-nlp-host.example"></div>
+</div>
+<div class="controls"><button id="scan" class="btn primary">Scan automatically</button><button id="translate" class="btn">Translate detected text</button><button id="export" class="btn">Export JSON</button></div>
+<p id="status" class="small">Loading the live NLP language catalog…</p></section>
+<div class="grid">
+<section class="glass"><h2>OCR / detected text</h2><div id="ocr" class="result"></div><h3>Detected scripts/languages</h3><div id="detected" class="tags"></div></section>
+<section class="glass"><h2>Translation</h2><div id="translation" class="result"></div><p class="small">A capability entry is not proof that a translation model/corpus is installed. The UI preserves provider-required/unavailable states.</p></section>
+</div>
+<section class="glass"><h2>Pipeline evidence</h2><div id="evidence" class="result"></div></section>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
+<script src="portal-backend.js"></script>
+<script src="site-learning.js"></script>
+<script type="module" src="ancient-ocr.js"></script>
+</body></html>
