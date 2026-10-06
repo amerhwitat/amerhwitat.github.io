@@ -39,7 +39,7 @@ jobs:
           mkdir -p apps/chimera-ii-os/web/mame-core
           git clone --depth 1 https://github.com/lrusso/MAME.git /tmp/chimera-mame
           cp /tmp/chimera-mame/MAME.min.js apps/chimera-ii-os/web/mame-core/MAME.min.js
-          cp /tmp/chimera-mame/LICENSE apps/chimera-ii-os/web/mame-core/LICENSE
+          printf '%s\n' 'Browser MAME source: https://github.com/lrusso/MAME' 'See upstream repository README and source licensing before redistribution.' > apps/chimera-ii-os/web/mame-core/UPSTREAM-NOTICE.txt
           test -s apps/chimera-ii-os/web/mame-core/MAME.min.js
           echo "Browser MAME core packaged: $(wc -c < apps/chimera-ii-os/web/mame-core/MAME.min.js) bytes"
       - name: Sync NLP ancient-language target catalog
