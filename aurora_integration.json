@@ -19,5 +19,10 @@
   "thamudicscan": "https://amerhwitat.github.io/apps/chimera-ii-os/web/thamudicscan.html",
   "thamudicscan_live": "https://thamudicscan.bubbleapps.io/",
   "thamudicscan_source": "https://github.com/amerhwitat/nlp/tree/main/ThamudicScan",
-  "thamudicscan_api": "https://github.com/amerhwitat/nlp/blob/main/ThamudicScan/docs/WEB_API.md"
+  "thamudicscan_api": "https://github.com/amerhwitat/nlp/blob/main/ThamudicScan/docs/WEB_API.md",
+  "wallet_center": "https://amerhwitat.github.io/apps/chimera-ii-os/web/wallet-center.html",
+  "wallet_feature_registry": "https://amerhwitat.github.io/apps/chimera-ii-os/web/wallet-feature-registry.json",
+  "bizx_wallet": "https://github.com/amerhwitat/BizXtreme/tree/main/crypto",
+  "bizx_wallet_webgl": "https://github.com/amerhwitat/BizXtreme/blob/main/docs/WALLET_MOBILE_WEBGL.md",
+  "bruteforce_wallet_research": "https://github.com/amerhwitat/bruteforce/blob/main/docs/WALLET_OPERATIONS.md"
 }
