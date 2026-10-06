@@ -60,7 +60,7 @@ footer{margin-top:56px;color:var(--muted);font-size:12.5px;border-top:1px solid 
 .snippet{font-size:12.5px;color:var(--muted);line-height:1.55}
 mark{background:rgba(95,208,255,.25);color:var(--fg);border-radius:4px;padding:0 3px}
 .card.err .tagline{color:#ff9a9a}
-</style>
+.hero3d{position:relative;overflow:hidden;min-height:430px;margin:8px 0 30px;border:1px solid var(--stroke2);border-radius:28px;background:linear-gradient(135deg,rgba(95,208,255,.12),rgba(125,140,255,.08)),rgba(7,17,32,.68);box-shadow:0 28px 90px rgba(0,0,0,.35);isolation:isolate}#aurora3d{position:absolute;inset:0;width:100%;height:100%;z-index:-1}.hero3d .copy{position:relative;z-index:2;max-width:720px;padding:54px 46px}.hero3d h2{font-size:clamp(34px,5vw,68px);line-height:.98;margin:0 0 18px;letter-spacing:-.04em}.hero3d p{max-width:650px;color:var(--muted);font-size:16px;line-height:1.7}.hero-actions{display:flex;flex-wrap:wrap;gap:9px;margin-top:22px}.hero-actions a{padding:11px 15px;border-radius:12px;border:1px solid var(--stroke2);background:rgba(10,24,44,.72);color:var(--fg);font-weight:700}.hero-actions a.primary{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#04101f;border:0}.app-hud{position:absolute;right:24px;bottom:22px;display:grid;grid-template-columns:repeat(2,minmax(120px,1fr));gap:8px;z-index:2;max-width:330px}.app-hud span{padding:9px 11px;border:1px solid var(--stroke);border-radius:12px;background:rgba(7,17,32,.65);backdrop-filter:blur(12px);font-size:11px;color:var(--muted)}.app-hud b{display:block;color:var(--fg);font-size:15px}</style>
 </head>
 <body>
 <div class="wrap">
@@ -77,6 +77,7 @@ mark{background:rgba(95,208,255,.25);color:var(--fg);border-radius:4px;padding:0
     </div>
   </header>
 
+  <section class="hero3d" aria-label="Aurora interactive application gallery"><canvas id="aurora3d"></canvas><div class="copy"><div class="tagline">AURORA · CHIMERA · RESEARCH · STUDIO</div><h2>One portal.<br>Every application.</h2><p>Explore Chimera II OS, Aurora, Thamudic research, CPU simulators, BizXtreme, retro computing, developer tools and the command ecosystem through one interactive glass interface.</p><div class="hero-actions"><a class="primary" href="apps/chimera-ii-os/web/aurora_3d_desktop.html">Launch Aurora 3D</a><a href="apps/chimera-ii-os/web/thamudicscan.html">Open ThamudicScan</a><a href="apps/chimera-ii-os/web/command-console.html">Command Center</a></div></div><div class="app-hud"><span><b id="heroApps">0</b> applications</span><span><b>3</b> platforms</span><span><b>SS64</b> command index</span><span><b>𐪀</b> epigraphic lab</span></div></section>
   <div class="stats">
     <span class="pill"><b id="appcount">0</b> apps</span>
     <span class="pill"><b>10</b> repositories</span>
@@ -191,7 +192,7 @@ const APPS = [
 const root=document.getElementById('root');
 const q=document.getElementById('q');
 const empty=document.getElementById('empty');
-document.getElementById('appcount').textContent=APPS.length;
+document.getElementById('appcount').textContent=APPS.length; document.getElementById('heroApps').textContent=APPS.length;
 const REPOS = [
  {title:"ChimeraIIOS", tag:"Operating system", desc:"Operating-system, CPU, multidimensional computing and systems research.", url:"https://github.com/amerhwitat/ChimeraIIOS", app:"apps/chimera-ii-os/web/index.html"},
  {title:"ChimeraIIOS Rocket UI", tag:"External live UI", desc:"Rocket-built Chimera II OS interface. Linked as an external live surface and source reference.", url:"https://chimeraiios-ruw578.app.builtwithrocket.new", live:"https://chimeraiios-ruw578.app.builtwithrocket.new"},
@@ -291,5 +292,5 @@ function renderPages(term){
 q.addEventListener('input',render);
 render();
 </script>
-</body>
+<script type="module">import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js';const c=document.getElementById('aurora3d');if(c){const s=new THREE.Scene(),cam=new THREE.PerspectiveCamera(45,1,.1,100),r=new THREE.WebGLRenderer({canvas:c,alpha:true,antialias:true});r.setPixelRatio(Math.min(devicePixelRatio,2));const g=new THREE.Group();s.add(g);g.add(new THREE.Mesh(new THREE.IcosahedronGeometry(1.8,2),new THREE.MeshStandardMaterial({color:0x5fd0ff,metalness:.7,roughness:.22,wireframe:true,transparent:true,opacity:.7})));const ring=new THREE.Mesh(new THREE.TorusGeometry(2.35,.012,8,160),new THREE.MeshBasicMaterial({color:0x7d8cff,transparent:true,opacity:.55}));ring.rotation.x=.9;g.add(ring);s.add(new THREE.AmbientLight(0x9ecfff,1.4));const l=new THREE.PointLight(0x5fd0ff,20,20);l.position.set(3,3,5);s.add(l);function z(){const b=c.getBoundingClientRect();r.setSize(b.width,b.height,false);cam.aspect=b.width/b.height;cam.updateProjectionMatrix()}addEventListener('resize',z);z();cam.position.z=6.5;function f(t){g.rotation.y=t*.00018;ring.rotation.z=t*.00012;r.render(s,cam);requestAnimationFrame(f)}requestAnimationFrame(f)}</script></body>
 </html>
