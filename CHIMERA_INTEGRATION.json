@@ -26,7 +26,10 @@
     "Aurora Wallet & Ecosystem Center",
     "BizX wallet/crypto adapters",
     "BizXtreme game economy and wallet UI",
-    "Bruteforce safe crypto research UI"
+    "Bruteforce safe crypto research UI",
+    "Aurora Ancient Language Auto OCR",
+    "NLP ancient-language registry",
+    "ThamudicEpiPlatform target-language catalog"
   ],
   "purpose": "Expose Chimera II OS project documentation and web entry points.",
   "live_surfaces": {
@@ -41,6 +44,8 @@
     "thamudicscan_portal": "https://amerhwitat.github.io/apps/chimera-ii-os/web/thamudicscan.html",
     "thamudicscan_source": "https://github.com/amerhwitat/nlp/tree/main/ThamudicScan",
     "wallet_center": "https://amerhwitat.github.io/apps/chimera-ii-os/web/wallet-center.html",
-    "wallet_feature_registry": "https://amerhwitat.github.io/apps/chimera-ii-os/web/wallet-feature-registry.json"
+    "wallet_feature_registry": "https://amerhwitat.github.io/apps/chimera-ii-os/web/wallet-feature-registry.json",
+    "ancient_ocr": "https://amerhwitat.github.io/apps/chimera-ii-os/web/ancient-ocr.html",
+    "ancient_language_registry": "https://amerhwitat.github.io/apps/chimera-ii-os/web/ancient-language-registry.json"
   }
 }
