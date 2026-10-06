@@ -22,7 +22,11 @@
     "ThamudicScan OCR/NLP research integration",
     "Ancient North Arabian translation/provenance",
     "Aurora Smart Model",
-    "Complete 489-entry ISA Explorer"
+    "Complete 489-entry ISA Explorer",
+    "Aurora Wallet & Ecosystem Center",
+    "BizX wallet/crypto adapters",
+    "BizXtreme game economy and wallet UI",
+    "Bruteforce safe crypto research UI"
   ],
   "purpose": "Expose Chimera II OS project documentation and web entry points.",
   "live_surfaces": {
@@ -35,6 +39,8 @@
     "bizxtreme": "https://github.com/amerhwitat/BizXtreme",
     "thamudicscan": "https://thamudicscan.bubbleapps.io/",
     "thamudicscan_portal": "https://amerhwitat.github.io/apps/chimera-ii-os/web/thamudicscan.html",
-    "thamudicscan_source": "https://github.com/amerhwitat/nlp/tree/main/ThamudicScan"
+    "thamudicscan_source": "https://github.com/amerhwitat/nlp/tree/main/ThamudicScan",
+    "wallet_center": "https://amerhwitat.github.io/apps/chimera-ii-os/web/wallet-center.html",
+    "wallet_feature_registry": "https://amerhwitat.github.io/apps/chimera-ii-os/web/wallet-feature-registry.json"
   }
 }
