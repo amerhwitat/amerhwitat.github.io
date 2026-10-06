@@ -171,7 +171,7 @@ const q=document.getElementById('q');
 const empty=document.getElementById('empty');
 document.getElementById('appcount').textContent=APPS.length;
 const REPOS = [
- {title:"ChimeraIIOS", tag:"Operating system", desc:"Operating-system, CPU, multidimensional computing and systems research.", url:"https://github.com/amerhwitat/ChimeraIIOS"},
+ {title:"ChimeraIIOS", tag:"Operating system", desc:"Operating-system, CPU, multidimensional computing and systems research.", url:"https://github.com/amerhwitat/ChimeraIIOS", live:"https://chimera-iios.vercel.app"},
  {title:"CPU4096", tag:"CPU research", desc:"4096-bit CPU research and register model.", url:"https://github.com/amerhwitat/CPU4096"},
  {title:"CPU4096Simulator", tag:"Simulator", desc:"4096/8192-bit CPU simulator, ISA catalog and runtime.", url:"https://github.com/amerhwitat/CPU4096Simulator"},
  {title:"BizX", tag:"Platform", desc:"Business/game platform and multilingual implementations.", url:"https://github.com/amerhwitat/BizX"},
@@ -180,6 +180,9 @@ const REPOS = [
  {title:"nlp", tag:"Research", desc:"Natural-language processing and Thamudic epigraphic research.", url:"https://github.com/amerhwitat/nlp"},
  {title:"PDFreaderPY", tag:"Utility", desc:"PDF research and local document tooling.", url:"https://github.com/amerhwitat/PDFreaderPY"},
  {title:"test", tag:"Test suite", desc:"Development and test projects.", url:"https://github.com/amerhwitat/test"},
+ {title:"keygen", tag:"Crypto research", desc:"Key-generation research scripts.", url:"https://github.com/amerhwitat/keygen"},
+ {title:"eth-key-check", tag:"Crypto research", desc:"Ethereum key-check research scripts.", url:"https://github.com/amerhwitat/eth-key-check"},
+ {title:"bruteforce", tag:"Crypto research", desc:"Sequential ETH brute-force research script (Python).", url:"https://github.com/amerhwitat/bruteforce"},
  {title:"amerhwitat.github.io", tag:"Site source", desc:"Source of this portal and the published pages.", url:"https://github.com/amerhwitat/amerhwitat.github.io"}
 ];
 (function(){
@@ -188,6 +191,7 @@ const REPOS = [
     <span class="tagline">${esc(r.tag)}</span>
     <h3>${esc(r.title)}</h3>
     <p>${esc(r.desc)}</p>
+    ${r.live?`<div class="sub"><a href="${r.live}" target="_blank" rel="noopener">Live demo</a></div>`:''}
     <a class="go" href="${r.url}" target="_blank" rel="noopener">View on GitHub →</a>
   </article>`).join('');
 })();
