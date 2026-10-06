@@ -6,5 +6,10 @@
   "ocr_studio": "https://amerhwitat.github.io/apps/chimera-ii-os/web/ocr-studio.html",
   "artifact_library": "https://amerhwitat.github.io/apps/chimera-ii-os/web/artifact-library.html",
   "rocket_ui": "https://chimeraiios-ruw578.app.builtwithrocket.new",
-  "artwork_manifest": "https://github.com/amerhwitat/ChimeraIIOS/blob/main/desktop/aurora/assets/library-artwork-manifest.json"
+  "artwork_manifest": "https://github.com/amerhwitat/ChimeraIIOS/blob/main/desktop/aurora/assets/library-artwork-manifest.json",
+  "research_lab": "https://amerhwitat.github.io/apps/chimera-ii-os/web/research-lab.html",
+  "research_integrations": "https://amerhwitat.github.io/apps/chimera-ii-os/web/research-integrations.json",
+  "nlp_repo": "https://github.com/amerhwitat/nlp",
+  "bruteforce_repo": "https://github.com/amerhwitat/bruteforce",
+  "chimera_simulator": "https://chimeraiios-kukp34.public.builtwithrocket.new/chimera-ii-os-simulator"
 }
