@@ -22,6 +22,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Build SS64 command catalog
+        run: python3 scripts/build_ss64_command_catalog.py
       - name: Rebuild full-text search index
         run: python3 scripts/build_search_index.py
       - uses: actions/configure-pages@v5
