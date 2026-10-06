@@ -10,6 +10,10 @@ const PY_PORT = Number(process.env.CHIMERA_PY_PORT || 8765);
 const ROOT = __dirname;
 const ALLOWED_ORIGINS = new Set((process.env.CHIMERA_ALLOWED_ORIGINS || 'https://amerhwitat.github.io,http://localhost:3000').split(',').map(x=>x.trim()).filter(Boolean));
 let pythonChild = null;
+const LEARNING_FILE = path.resolve(ROOT, '../../data/user-learning.json');
+function readLearning(){try{return JSON.parse(fs.readFileSync(LEARNING_FILE,'utf8'))}catch{return {schema:'chimera-user-learning/v1',events:[]}}}
+function learning(req,res){if(req.method==='POST' && req.url==='/api/learning/event'){let body='';req.on('data',d=>{if(body.length<10000)body+=d});req.on('end',()=>{try{const event=JSON.parse(body);const doc=readLearning();doc.events.push({schema:'chimera-user-learning/v1',timestamp:new Date().toISOString(),page:String(event.page||'').slice(0,300),element:String(event.element||'').slice(0,160),action:String(event.action||'').slice(0,160)});doc.events=doc.events.slice(-10000);fs.mkdirSync(path.dirname(LEARNING_FILE),{recursive:true});fs.writeFileSync(LEARNING_FILE,JSON.stringify(doc,null,2)+'\n');res.writeHead(200,{'content-type':'application/json'});res.end(JSON.stringify({ok:true,count:doc.events.length}))}catch(e){res.writeHead(400,{'content-type':'application/json'});res.end(JSON.stringify({ok:false,error:e.message}))}});return true}if(req.method==='GET'&&req.url==='/api/learning/export'){const doc=readLearning();res.writeHead(200,{'content-type':'application/json','cache-control':'no-store'});res.end(JSON.stringify(doc));return true}return false}
+
 
 function startPython() {
   if (process.env.CHIMERA_EXTERNAL_PYTHON === '1') return;
@@ -53,7 +57,7 @@ function staticFile(req, res) {
 }
 
 startPython();
-const server = http.createServer((req, res) => { cors(req,res); if(req.method==='OPTIONS'){res.writeHead(204);return res.end();} if(req.url === '/health'){res.writeHead(200, {'content-type':'application/json; charset=utf-8','cache-control':'no-store'});return res.end(JSON.stringify({ok:true,service:'chimera-web-gateway',mode:'capability-gated',python:`http://${PY_HOST}:${PY_PORT}`}));} return req.url.startsWith('/api/') ? proxy(req,res) : staticFile(req,res); });
+const server = http.createServer((req, res) => { cors(req,res); if(req.method==='OPTIONS'){res.writeHead(204);return res.end();} if(learning(req,res)) return; if(req.url === '/health'){res.writeHead(200, {'content-type':'application/json; charset=utf-8','cache-control':'no-store'});return res.end(JSON.stringify({ok:true,service:'chimera-web-gateway',mode:'capability-gated',python:`http://${PY_HOST}:${PY_PORT}`}));} return req.url.startsWith('/api/') ? proxy(req,res) : staticFile(req,res); });
 server.listen(PORT, HOST, () => console.log(`[AURORA-WEB] http://${HOST}:${PORT} -> Python ${PY_HOST}:${PY_PORT}`));
 
 function shutdown() {
