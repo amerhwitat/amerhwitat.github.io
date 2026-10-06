@@ -57,6 +57,9 @@ h2.group::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,va
 .card .sub a:hover{color:var(--fg);border-color:var(--stroke2)}
 footer{margin-top:56px;color:var(--muted);font-size:12.5px;border-top:1px solid var(--stroke);padding-top:20px;line-height:1.7}
 .empty{display:none;color:var(--muted);padding:40px 0;text-align:center}
+.snippet{font-size:12.5px;color:var(--muted);line-height:1.55}
+mark{background:rgba(95,208,255,.25);color:var(--fg);border-radius:4px;padding:0 3px}
+.card.err .tagline{color:#ff9a9a}
 </style>
 </head>
 <body>
@@ -82,6 +85,11 @@ footer{margin-top:56px;color:var(--muted);font-size:12.5px;border-top:1px solid 
 
   <div id="root"></div>
   <p class="empty" id="empty">No apps match your search.</p>
+
+  <section id="pagesSection" style="display:none">
+    <h2 class="group">Matching pages <span class="pill" id="pagehits"></span></h2>
+    <div class="grid" id="pagesgrid"></div>
+  </section>
 
 
   <section id="reposSection">
@@ -229,6 +237,42 @@ function render(){
   root.innerHTML=html;
   empty.style.display=shown?'none':'block';
   renderRepos(term);
+  renderPages(term);
+}
+let INDEX=[];
+fetch('search-index.json').then(r=>r.ok?r.json():null).then(d=>{ if(d&&d.pages) INDEX=d.pages; }).catch(()=>{});
+const pagesSection=document.getElementById('pagesSection');
+const pagesGrid=document.getElementById('pagesgrid');
+const pageHits=document.getElementById('pagehits');
+function hl(t,term){
+  const e=esc(term).replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
+  try{ return t.replace(new RegExp(e,'ig'),m=>`<mark>${m}</mark>`); }catch(_){ return t; }
+}
+function renderPages(term){
+  if(!term || term.length<2 || !INDEX.length){ pagesSection.style.display='none'; return; }
+  const hits=[];
+  for(const e of INDEX){
+    const inT=e.t.toLowerCase().includes(term), inD=(e.d||'').toLowerCase().includes(term), inX=(e.x||'').toLowerCase().includes(term);
+    if(!inT && !inD && !inX) continue;
+    hits.push({e,score:(inT?100:0)+(inD?20:0)+(inX?5:0)});
+  }
+  if(!hits.length){ pagesSection.style.display='none'; return; }
+  hits.sort((a,b)=>b.score-a.score);
+  const top=hits.slice(0,24);
+  pagesSection.style.display='';
+  pageHits.innerHTML='<b>'+top.length+'</b> of '+hits.length+' page'+(hits.length>1?'s':'');
+  pagesGrid.innerHTML=top.map(({e})=>{
+    const src=e.d||e.x||'';
+    const i=src.toLowerCase().indexOf(term);
+    const snip=i<0? src.slice(0,180) : (i>60?'\u2026':'')+src.slice(Math.max(0,i-60),i+150);
+    return `<article class="card">
+      <span class="tagline">${esc(e.g)}</span>
+      <h3>${esc(e.t)}</h3>
+      <p class="snippet">${hl(esc(snip),term)}&hellip;</p>
+      <span class="repo">${esc(e.p)}</span>
+      <a class="go" href="${e.p}">Open page \u2192</a>
+    </article>`;
+  }).join('');
 }
 q.addEventListener('input',render);
 render();
