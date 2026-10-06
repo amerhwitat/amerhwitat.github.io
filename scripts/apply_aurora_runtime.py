@@ -8,9 +8,9 @@ for p in ROOT.rglob("*.html"):
     try:s=p.read_text(encoding="utf-8")
     except UnicodeDecodeError: continue
     changed=False
-    if style not in s and "</head>" in s:
+    if "aurora-shared.css" not in s and "</head>" in s:
         s=s.replace("</head>",style+"</head>",1);changed=True
-    if needle not in s and "</body>" in s:
+    if "site-learning.js" not in s and "</body>" in s:
         s=s.replace("</body>",needle+"</body>",1);changed=True
     if changed:p.write_text(s,encoding="utf-8")
 print("Aurora runtime injection complete.")
