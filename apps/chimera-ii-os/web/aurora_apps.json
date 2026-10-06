@@ -1,5 +1,5 @@
 {
-  "schema": "chimera-aurora-apps/v11",
+  "schema": "chimera-aurora-apps/v12",
   "desktop": "Aurora Wayland Glass",
   "launcher": "embedded-surface",
   "security_mode": "safe-lab",
@@ -208,6 +208,14 @@
           "url": "wallet-center.html",
           "mode": "embedded",
           "features": "BizX/BizXtreme wallet, crypto research, NetworkUnified, P2P, AI and safe wallet compatibility"
+        },
+        {
+          "id": "ancient-ocr",
+          "title": "Aurora Ancient Language Auto OCR",
+          "icon": "𐤀",
+          "url": "ancient-ocr.html",
+          "mode": "embedded",
+          "features": "automatic OCR, ancient-language detection, Thamudic/NLP targets, optional /scan_file and /translate_ancient"
         }
       ]
     },
