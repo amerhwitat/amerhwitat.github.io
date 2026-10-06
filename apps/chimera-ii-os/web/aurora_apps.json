@@ -143,6 +143,20 @@
           "icon": "R",
           "url": "https://chimeraiios-ruw578.app.builtwithrocket.new",
           "mode": "external-web"
+        },
+        {
+          "id": "network-engine",
+          "title": "Aurora Network Engine",
+          "icon": "NET",
+          "url": "network-engine.html",
+          "mode": "embedded"
+        },
+        {
+          "id": "bizxtreme",
+          "title": "BizXtreme Unified Game",
+          "icon": "BX",
+          "url": "https://github.com/amerhwitat/BizXtreme",
+          "mode": "external-repo"
         }
       ]
     },
