@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded',async()=>{
   const $=id=>document.getElementById(id); const log=m=>window.ChimeraAmiga.log(m);
   const ok=await window.ChimeraAmiga.load();
-  $('engineStatus').textContent=ok?' Engine: local SAE bundle detected':' Engine: live vAmigaWeb fallback ready · local SAE bundle is optional';
-  if(!ok) $('runState').textContent='Local core not packaged on GitHub Pages; Start will launch the maintained vAmigaWeb web emulator.';
+  $('engineStatus').textContent=ok?' Engine: local SAE bundle detected':' Engine: packaged SAE browser core or maintained vAmigaWeb fallback ready';
+  if(!ok) $('runState').textContent='Local SAE browser core is unavailable in this session; Start will use the maintained vAmigaWeb fallback.';
   $('cpu').textContent='CPU: 68000';
   $('chipset').textContent='Chipset: OCS';
   $('model').addEventListener('change',e=>{const m=e.target.value;$('cpu').textContent=m.includes('030')?'CPU: 68030':'CPU: 68000';$('chipset').textContent=(m==='A1200'||m==='A4000/030')?'Chipset: AGA':'Chipset: OCS/ECS';log('Model selected: '+m);});
