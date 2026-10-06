@@ -1,1 +1,21 @@
-{"$schema":"CHM-APP-INTEGRATION-1","application":"amerhwitat.github.io","target":"Chimera II OS","integration_points":["Aurora Web","Chimera documentation","repository/project index"],"purpose":"Expose Chimera II OS project documentation and web entry points."}
+{
+  "$schema": "CHM-APP-INTEGRATION-1",
+  "application": "amerhwitat.github.io",
+  "target": "Chimera II OS",
+  "integration_points": [
+    "Aurora Web",
+    "Chimera documentation",
+    "repository/project index",
+    "Aurora OCR Studio",
+    "Aurora Artifact Library",
+    "Rocket Chimera UI",
+    "ChimeraIIOS artwork manifest",
+    "Init.mp4 splash"
+  ],
+  "purpose": "Expose Chimera II OS project documentation and web entry points.",
+  "live_surfaces": {
+    "portal": "https://amerhwitat.github.io",
+    "rocket": "https://chimeraiios-ruw578.app.builtwithrocket.new",
+    "chimera_source": "https://github.com/amerhwitat/ChimeraIIOS"
+  }
+}
