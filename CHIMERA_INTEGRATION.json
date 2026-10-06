@@ -20,7 +20,9 @@
     "BizX/BizXtreme repository integration",
     "Aurora ThamudicScan",
     "ThamudicScan OCR/NLP research integration",
-    "Ancient North Arabian translation/provenance"
+    "Ancient North Arabian translation/provenance",
+    "Aurora Smart Model",
+    "Complete 489-entry ISA Explorer"
   ],
   "purpose": "Expose Chimera II OS project documentation and web entry points.",
   "live_surfaces": {
