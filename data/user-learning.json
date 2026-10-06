@@ -1,0 +1,1 @@
+{"schema":"chimera-user-learning/v1","events":[],"policy":{"static_pages":"events remain in browser localStorage and may be exported","backend":"authorized backend may append events to this JSON file","excluded":["passwords","private keys","form contents","file contents"]}}
