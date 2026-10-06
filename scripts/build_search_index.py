@@ -27,7 +27,7 @@ def text_of(h):
     return re.sub(r'\s+',' ',h).strip()
 entries=[]
 for dp,dn,fn in os.walk('.'):
-    dn[:]=[d for d in dn if d not in ('.git',)]
+    dn[:]=[d for d in dn if d not in ('.git', '.vercel', 'node_modules', 'dist', 'build')]
     for f in fn:
         if not f.endswith('.html'): continue
         p=os.path.relpath(os.path.join(dp,f),'.')
