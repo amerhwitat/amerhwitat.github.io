@@ -33,6 +33,15 @@ jobs:
           cp apps/nlp-amiga/vendor/sae/gpl.htm apps/nlp-amiga/vendor/sae/LICENSE-GPL.html
           test -f apps/nlp-amiga/vendor/sae/sae/amiga.js
           echo "SAE browser core packaged: $(find apps/nlp-amiga/vendor/sae/sae -type f | wc -l) source files"
+      - name: Package browser MAME core
+        run: |
+          rm -rf apps/chimera-ii-os/web/mame-core
+          mkdir -p apps/chimera-ii-os/web/mame-core
+          git clone --depth 1 https://github.com/lrusso/MAME.git /tmp/chimera-mame
+          cp /tmp/chimera-mame/MAME.min.js apps/chimera-ii-os/web/mame-core/MAME.min.js
+          cp /tmp/chimera-mame/LICENSE apps/chimera-ii-os/web/mame-core/LICENSE
+          test -s apps/chimera-ii-os/web/mame-core/MAME.min.js
+          echo "Browser MAME core packaged: $(wc -c < apps/chimera-ii-os/web/mame-core/MAME.min.js) bytes"
       - name: Sync NLP ancient-language target catalog
         run: python3 scripts/sync_ancient_language_registry.py
       - name: Apply Aurora runtime to all pages
