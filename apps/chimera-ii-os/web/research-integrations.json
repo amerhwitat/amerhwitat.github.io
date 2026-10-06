@@ -30,7 +30,10 @@
         "public test vectors",
         "address/checksum validation",
         "synthetic benchmarks",
-        "offline AI research"
+        "offline AI research",
+        "wallet operations UI",
+        "restore-and-verify workflows",
+        "public wallet state classification"
       ],
       "boundary": "No credential theft, private-key recovery, seed guessing, wallet attacks, or unauthorized access."
     },
@@ -50,7 +53,13 @@
         "rendering",
         "mobile targets",
         "game economy",
-        "monetization"
+        "monetization",
+        "multi-chain wallet adapters",
+        "transaction intents",
+        "watch-only portfolio",
+        "wallet policy/approval UI",
+        "WebGL/mobile wallet contract",
+        "game-economy payments"
       ],
       "network_contract": "bizxtreme.network.api.v1",
       "safety_boundary": "Allowlist-only active network targets; no Internet-wide enumeration, credential attacks, evasion, spoofing, or exploitation."
@@ -138,6 +147,12 @@
       "id": "thamudicscan",
       "url": "thamudicscan.html",
       "mode": "browser"
+    },
+    {
+      "id": "wallet-center",
+      "url": "wallet-center.html",
+      "mode": "browser",
+      "capabilities": "BizX/BizXtreme wallet + safe crypto research + compatibility catalog"
     }
   ]
 }
