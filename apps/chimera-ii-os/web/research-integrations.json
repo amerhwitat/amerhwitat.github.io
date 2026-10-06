@@ -11,7 +11,8 @@
         "North Arabian NLP",
         "translation/transliteration",
         "document processing",
-        "Amiga web emulator"
+        "Amiga web emulator",
+        "Amiga Emulator Center / FS-UAE adapter"
       ],
       "entrypoints": [
         "python/NLPScanner_AllInOne.py",
@@ -75,6 +76,14 @@
         "voice",
         "audit/provenance",
         "CSV/JSON/PDF exports"
+      ],
+      "external_surfaces": [
+        {
+          "id": "thamudic-softr",
+          "url": "https://thamudic-scanner.softr.app/",
+          "mode": "external-web",
+          "inspection": "surface preserved; not fetchable from build environment"
+        }
       ]
     }
   ],
