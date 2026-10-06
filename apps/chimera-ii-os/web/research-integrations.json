@@ -159,6 +159,32 @@
       "url": "ancient-ocr.html",
       "mode": "local-browser",
       "capabilities": "automatic OCR, ancient-language detection, live NLP target catalog, optional /scan_file and /translate_ancient backend"
+    },
+    {
+      "id": "mame-center",
+      "path": "mame-center.html",
+      "features": [
+        "MAME/WebAssembly adapter",
+        "local ROM selection",
+        "dynamic game database",
+        "keyboard/gamepad controls",
+        "save-state adapter",
+        "fullscreen"
+      ]
+    },
+    {
+      "id": "game-center",
+      "path": "game-center.html",
+      "features": [
+        "BizXtreme game catalog",
+        "T-Rex",
+        "card games",
+        "storylines",
+        "events",
+        "progression",
+        "local save/export",
+        "touch controls"
+      ]
     }
   ]
 }
