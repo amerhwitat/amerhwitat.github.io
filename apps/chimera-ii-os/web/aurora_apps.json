@@ -164,6 +164,21 @@
           "icon": "𐪀",
           "url": "thamudicscan.html",
           "mode": "embedded"
+        },
+        {
+          "id": "command-center",
+          "title": "Aurora Command Center",
+          "icon": "⌘",
+          "url": "command-console.html",
+          "mode": "embedded",
+          "database": "ss64-command-catalog.json"
+        },
+        {
+          "id": "amiga-center",
+          "title": "Aurora Amiga Emulator Center",
+          "icon": "A500",
+          "url": "../../../nlp-amiga/index.html",
+          "mode": "embedded"
         }
       ]
     },
