@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Aurora Network Engine integration surface for Chimera II OS, BizXtreme NetworkUnified and the external Rocket Network Engine.">
+<title>Aurora Network Engine — Chimera II OS</title>
+<style>
+:root{--bg:#071120;--panel:rgba(18,38,66,.62);--stroke:rgba(120,180,255,.22);--fg:#e8f1ff;--muted:#9db4d4;--a:#5fd0ff;--a2:#7d8cff}
+*{box-sizing:border-box}body{margin:0;color:var(--fg);font:14px system-ui;background:radial-gradient(900px 500px at 15% 0%,#12335a,transparent 65%),linear-gradient(160deg,#071120,#0b1a30);min-height:100vh}
+main{max-width:1180px;margin:auto;padding:28px 20px 70px}.top{display:flex;gap:16px;justify-content:space-between;align-items:center;flex-wrap:wrap}.brand h1{margin:0;font-size:28px}.brand p{margin:6px 0;color:var(--muted)}
+nav{display:flex;gap:8px;flex-wrap:wrap}a{color:var(--a);text-decoration:none}.btn{display:inline-block;padding:10px 14px;border:1px solid var(--stroke);border-radius:12px;background:var(--panel);color:var(--fg)}.primary{background:linear-gradient(135deg,var(--a),var(--a2));color:#04101f;border:0;font-weight:700}
+.status{margin:24px 0;padding:14px 16px;border:1px solid var(--stroke);border-radius:16px;background:var(--panel)}.status b{color:var(--a)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(245px,1fr));gap:14px}.card{padding:18px;border:1px solid var(--stroke);border-radius:18px;background:var(--panel);backdrop-filter:blur(12px)}.card h2{font-size:17px;margin:0 0 8px}.card p{color:var(--muted);line-height:1.55;margin:0 0 12px}.tag{font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--a);display:block;margin-bottom:8px}
+ul{padding-left:20px;color:var(--muted);line-height:1.7}.links{display:flex;gap:8px;flex-wrap:wrap}.links a{padding:7px 10px;border-radius:9px;border:1px solid var(--stroke)}
+footer{margin-top:35px;padding-top:18px;border-top:1px solid var(--stroke);color:var(--muted);line-height:1.6;font-size:12px}
+</style></head>
+<body><main>
+<header class="top"><div class="brand"><h1>✦ Aurora Network Engine</h1><p>Chimera II OS network integration hub · BizXtreme NetworkUnified · Rocket live surface</p></div>
+<nav><a class="btn" href="index.html">Aurora Home</a><a class="btn" href="research-lab.html">Research Lab</a><a class="btn primary" href="https://chimerax-2pn031.public.builtwithrocket.new/network-engine" target="_blank" rel="noopener">Open Network Engine ↗</a></nav></header>
+<section class="status"><b>Integration status:</b> external Rocket Network Engine is linked as the authoritative live UI. This page adds the verified repository-side integration catalog and navigation; Rocket internals were not fetchable from the build environment, so no inaccessible feature is represented as a confirmed Rocket implementation.</section>
+<section class="grid">
+<article class="card"><span class="tag">Transport & session</span><h2>Network sessions</h2><p>Expose a common surface for online/offline modes, session state, presence and multiplayer adapters.</p><ul><li>WebSocket / WebRTC adapter boundary</li><li>P2P / libp2p integration point</li><li>Consent-based presence</li><li>Offline-safe runtime mode</li></ul></article>
+<article class="card"><span class="tag">API</span><h2>NetworkUnified</h2><p>BizXtreme consolidates networking/API behavior behind the versioned <code>bizxtreme.network.api.v1</code> contract.</p><ul><li>Python, Node.js, TypeScript</li><li>Go, Rust, Java, C#, C++</li><li>Dart, Kotlin, Swift, PHP, Ruby</li><li>Cross-language adapter model</li></ul></article>
+<article class="card"><span class="tag">Chimera</span><h2>OS integration</h2><p>Connect the network layer to Aurora without coupling privileged OS operations to an external UI.</p><ul><li>Chimera Network Center</li><li>Koronos IPC integration point</li><li>Universal Execution API boundary</li><li>Shared settings/preferences</li></ul></article>
+<article class="card"><span class="tag">Diagnostics</span><h2>Network test lab</h2><p>Repository specifications include deterministic network-fault emulation for engineering validation.</p><ul><li>Latency emulation</li><li>Jitter emulation</li><li>Packet-loss emulation</li><li>Packet reordering tests</li></ul></article>
+<article class="card"><span class="tag">Safety</span><h2>Allowlist boundary</h2><p>BizXtreme documents an allowlist-only active network model and explicitly excludes hostile network automation.</p><ul><li>No Internet-wide enumeration</li><li>No credential attacks</li><li>No evasion or spoofing</li><li>No exploitation workflow</li></ul></article>
+<article class="card"><span class="tag">Games</span><h2>Multiplayer adapters</h2><p>BizXtreme separates game rules from production transport so multiplayer implementations can be swapped without changing game logic.</p><ul><li>Multiplayer session selection</li><li>Presence and peer directory</li><li>Deterministic game-state boundaries</li><li>Mobile and desktop targets</li></ul></article>
+</section>
+<section class="card" style="margin-top:16px"><span class="tag">Canonical links</span><h2>Network Engine ecosystem</h2><div class="links">
+<a href="https://chimerax-2pn031.public.builtwithrocket.new/network-engine" target="_blank" rel="noopener">Rocket Network Engine</a>
+<a href="https://github.com/amerhwitat/BizXtreme" target="_blank" rel="noopener">BizXtreme</a>
+<a href="https://github.com/amerhwitat/BizXtreme/tree/main/NetworkUnified" target="_blank" rel="noopener">NetworkUnified</a>
+<a href="https://github.com/amerhwitat/BizXtreme/tree/main/network" target="_blank" rel="noopener">P2P / presence</a>
+<a href="https://github.com/amerhwitat/BizXtreme/blob/main/CHIMERA_INTEGRATION.json" target="_blank" rel="noopener">Chimera integration</a>
+<a href="https://github.com/amerhwitat/BizXtreme/blob/main/docs/superpowers/specs/2026-09-13-vanguard-multigen-game-platform-design.md" target="_blank" rel="noopener">Network design spec</a>
+</div></section>
+<footer>Source-derived repository capabilities are linked to BizXtreme. “BizX” is represented by its BizX namespace/components inside BizXtreme because GitHub search did not identify a separate <code>amerhwitat/BizX</code> repository. The Rocket surface remains external until its source/API is made accessible.</footer>
+</main></body></html>
