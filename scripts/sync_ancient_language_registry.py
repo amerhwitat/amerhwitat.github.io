@@ -12,12 +12,12 @@ existing={x["id"]:x for x in current.get("sources",[])}
 for item in data.get("source_languages",[]):
     existing.setdefault(item["id"],{"id":item["id"],"name":item["name"],"ranges":[]})
 current["sources"]=list(existing.values())
-targets=[]
+target_codes=[]
 for code in data.get("target_languages",{}).get("defaults",[])+data.get("target_languages",{}).get("examples",[]):
-    if code not in [x["code"] for x in targets]: targets.append({"code":code,"name":code})
+    if code not in target_codes: target_codes.append(code)
 # Preserve the descriptive names already committed.
 name_by={x["code"]:x["name"] for x in current.get("targets",[])}
-current["targets"]=[{"code":c,"name":name_by.get(c,c)} for c in targets]
+current["targets"]=[{"code":code,"name":name_by.get(code,code)} for code in target_codes]
 current["source"]="amerhwitat/nlp"
 current["synced_from"]=url
 out.write_text(json.dumps(current,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
