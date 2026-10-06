@@ -10,12 +10,17 @@
     "Aurora Artifact Library",
     "Rocket Chimera UI",
     "ChimeraIIOS artwork manifest",
-    "Init.mp4 splash"
+    "Init.mp4 splash",
+    "Aurora Research Lab",
+    "NLP research integration",
+    "Safe crypto research integration",
+    "Chimera II OS Rocket Simulator"
   ],
   "purpose": "Expose Chimera II OS project documentation and web entry points.",
   "live_surfaces": {
     "portal": "https://amerhwitat.github.io",
     "rocket": "https://chimeraiios-ruw578.app.builtwithrocket.new",
-    "chimera_source": "https://github.com/amerhwitat/ChimeraIIOS"
+    "chimera_source": "https://github.com/amerhwitat/ChimeraIIOS",
+    "chimera_simulator": "https://chimeraiios-kukp34.public.builtwithrocket.new/chimera-ii-os-simulator"
   }
 }
