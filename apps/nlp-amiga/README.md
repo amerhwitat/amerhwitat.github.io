@@ -40,7 +40,7 @@ user-consent file access.
 ## Vendoring the emulator core
 
 The repository intentionally does not silently copy Kickstart ROMs or
-copyrighted commercial Amiga software. The emulator core is open source, while
+copyrighted commercial Amiga software. The GitHub Pages deployment now packages the open-source SAE browser core from its upstream repository at build time, so the public Aurora page no longer depends on an absent local core. Kickstart ROMs and game disks remain user-supplied. The emulator core is open source, while
 ROMs and disk images can have separate licensing requirements.
 
 Run:
