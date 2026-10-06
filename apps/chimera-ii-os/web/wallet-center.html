@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Aurora Wallet & Ecosystem Center</title>
+<link rel="stylesheet" href="aurora-shared.css">
+<style>
+.wrap{max-width:1320px;margin:auto;padding:28px}.hero,.card{border:1px solid var(--stroke);background:linear-gradient(180deg,var(--panel),var(--panel2));backdrop-filter:blur(16px);border-radius:20px}.hero{padding:28px;margin-bottom:18px}.hero h1{margin:.1em 0;font-size:clamp(30px,5vw,56px)}.hero p{max-width:900px;color:var(--muted);line-height:1.7}.actions{display:flex;flex-wrap:wrap;gap:8px}.btn{display:inline-block;padding:10px 14px;border-radius:11px;border:1px solid var(--stroke2);background:rgba(8,20,38,.72);color:var(--fg);cursor:pointer}.btn.primary{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#04101f;border:0}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}.card{padding:18px}.card h2,.card h3{margin-top:0}.muted{color:var(--muted);line-height:1.55}.pill{display:inline-block;padding:5px 9px;border-radius:999px;border:1px solid var(--stroke);margin:3px;font-size:12px;color:var(--muted)}.status{padding:12px;border-radius:12px;background:rgba(75,227,164,.08);border:1px solid rgba(75,227,164,.25);margin-top:12px}.danger{background:rgba(255,90,90,.08);border-color:rgba(255,90,90,.3)}table{width:100%;border-collapse:collapse}th,td{text-align:left;padding:9px;border-bottom:1px solid var(--stroke);font-size:13px}input,select{width:100%;padding:11px;border-radius:10px;border:1px solid var(--stroke2);background:rgba(5,15,28,.7);color:var(--fg)}.form{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px}.feature{min-height:145px}.feature b{color:var(--accent)}a{color:var(--accent)}
+</style></head><body><main class="wrap">
+<section class="hero"><div class="pill">AURORA · CHIMERA · BIZX · BIZXTREME · CRYPTO RESEARCH</div>
+<h1>Wallet & Ecosystem Center</h1>
+<p>A unified browser surface for non-custodial wallet connections, watch-only portfolio research, transaction intents, game-economy payments, NetworkUnified/P2P, AI assistance, asset discovery and safe cryptographic research. Signing secrets stay outside this UI.</p>
+<div class="actions"><a class="btn primary" href="../../../index.html">Aurora Home</a><a class="btn" href="research-lab.html">Research Lab</a><a class="btn" href="network-engine.html">Network Engine</a><a class="btn" href="smart-model.html">Smart Model</a><a class="btn" href="https://github.com/amerhwitat/BizXtreme" target="_blank" rel="noopener">BizXtreme Source</a><a class="btn" href="https://github.com/amerhwitat/bruteforce" target="_blank" rel="noopener">Crypto Research Source</a></div>
+<div id="status" class="status">Wallet mode: <b>watch-only / simulation</b> · No private key, seed phrase or credential is accepted.</div></section>
+
+<section class="grid">
+<div class="card feature"><h3>🔐 Non-custodial wallet adapter</h3><p class="muted">Connect a user-controlled provider; display accounts, chains, balances and transaction status without importing secrets.</p><span class="pill">EVM</span><span class="pill">Bitcoin</span><span class="pill">Solana</span><span class="pill">TON</span></div>
+<div class="card feature"><h3>📊 Portfolio & watch-only</h3><p class="muted">Track public addresses, assets, transaction IDs and ownership states. Unknown addresses remain observation-only.</p></div>
+<div class="card feature"><h3>🧾 Transaction intent</h3><p class="muted">Prepare recipient, asset, amount, network, fee and order reference; signing is explicitly handed to the selected wallet.</p></div>
+<div class="card feature"><h3>🧩 Wallet compatibility</h3><p class="muted">UI contracts cover HD accounts, QR/payment URIs, hardware signers, multisig, passkeys, encrypted local backup and WalletConnect-style dApp pairing.</p></div>
+<div class="card feature"><h3>🤖 AI wallet assistant</h3><p class="muted">The Aurora model can explain balances, transaction previews, policies and research results. It never receives signing secrets.</p></div>
+<div class="card feature"><h3>🛡 Policy & approval queue</h3><p class="muted">Model instant/notify/delay/approval controls, spend limits, token/address allowlists and human approval for sensitive actions.</p></div>
+<div class="card feature"><h3>🎮 BizX / BizXtreme economy</h3><p class="muted">Expose game assets, purchases, entitlements, monetization, business simulation and wallet-connected WebGL/mobile flows through provider-neutral intents.</p></div>
+<div class="card feature"><h3>🌐 NetworkUnified + P2P</h3><p class="muted">Health/configuration, interface inventory, allowlisted TCP checks, presence and multiplayer session adapters.</p></div>
+<div class="card feature"><h3>🧠 Crypto research</h3><p class="muted">Hashing, checksums, public vectors, deterministic key-to-address demonstrations using already-held material and synthetic benchmarks.</p></div>
+<div class="card feature"><h3>🔎 Restore & verify</h3><p class="muted">Owner-authorized recovery-material verification can derive public addresses and compare against an owner-supplied inventory; it is not wallet cracking.</p></div>
+<div class="card feature"><h3>🎨 Asset Browser</h3><p class="muted">Open-license asset discovery, provenance, SHA-256 verification and import planning for BizXtreme game projects.</p></div>
+<div class="card feature"><h3>📱 Cross-platform</h3><p class="muted">Shared wallet contract for WebGL, desktop and mobile adapters, with secure native storage remaining outside the browser shell.</p></div>
+</section>
+
+<section class="card" style="margin-top:18px"><h2>Wallet operation simulator</h2><div class="form">
+<label>Network<select id="network"><option>Ethereum / EVM</option><option>Bitcoin / UTXO</option><option>Solana / SPL</option><option>TON</option><option>Chimera Test Network</option></select></label>
+<label>Public address<input id="address" placeholder="public address only"></label>
+<label>Asset<input id="asset" placeholder="ETH / BTC / token"></label>
+<label>Amount<input id="amount" type="number" min="0" step="any" placeholder="0"></label>
+<label>Recipient<input id="recipient" placeholder="recipient / contract"></label>
+</div><div class="actions" style="margin-top:12px"><button class="btn" id="observe">Observe address</button><button class="btn primary" id="intent">Prepare transaction intent</button><button class="btn" id="backup">Simulate encrypted backup</button><button class="btn" id="export">Export public research JSON</button></div><pre id="output" class="card" style="margin-top:12px;white-space:pre-wrap">Ready.</pre></section>
+
+<section class="card" style="margin-top:18px"><h2>Research / compatibility catalog</h2><table><thead><tr><th>Surface</th><th>Features</th><th>Mode</th></tr></thead><tbody id="catalog"></tbody></table></section>
+</main><script src="wallet-center.js"></script></body></html>
