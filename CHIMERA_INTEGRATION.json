@@ -17,7 +17,10 @@
     "Chimera II OS Rocket Simulator",
     "Aurora Network Engine",
     "BizXtreme NetworkUnified",
-    "BizX/BizXtreme repository integration"
+    "BizX/BizXtreme repository integration",
+    "Aurora ThamudicScan",
+    "ThamudicScan OCR/NLP research integration",
+    "Ancient North Arabian translation/provenance"
   ],
   "purpose": "Expose Chimera II OS project documentation and web entry points.",
   "live_surfaces": {
@@ -27,6 +30,9 @@
     "chimera_simulator": "https://chimeraiios-kukp34.public.builtwithrocket.new/chimera-ii-os-simulator",
     "network_engine": "https://chimerax-2pn031.public.builtwithrocket.new/network-engine",
     "network_engine_portal": "https://amerhwitat.github.io/apps/chimera-ii-os/web/network-engine.html",
-    "bizxtreme": "https://github.com/amerhwitat/BizXtreme"
+    "bizxtreme": "https://github.com/amerhwitat/BizXtreme",
+    "thamudicscan": "https://thamudicscan.bubbleapps.io/",
+    "thamudicscan_portal": "https://amerhwitat.github.io/apps/chimera-ii-os/web/thamudicscan.html",
+    "thamudicscan_source": "https://github.com/amerhwitat/nlp/tree/main/ThamudicScan"
   }
 }
