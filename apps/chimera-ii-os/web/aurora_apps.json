@@ -186,6 +186,20 @@
           "icon": "↯",
           "url": "backend-status.html",
           "mode": "embedded"
+        },
+        {
+          "id": "smart-model",
+          "title": "Aurora Smart Model",
+          "icon": "AI",
+          "url": "smart-model.html",
+          "mode": "embedded"
+        },
+        {
+          "id": "isa-explorer",
+          "title": "Chimera ISA Explorer",
+          "icon": "ISA",
+          "url": "isa-explorer.html",
+          "mode": "embedded"
         }
       ]
     },
