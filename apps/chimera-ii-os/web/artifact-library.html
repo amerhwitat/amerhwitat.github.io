@@ -20,5 +20,27 @@ const g=document.getElementById('grid'),q=document.getElementById('q'),kind=docu
 let all=[...local];
 function render(){const t=q.value.toLowerCase(),k=kind.value;const a=all.filter(x=>(!k||x.kind===k)&&(!t||(x.name+x.file+x.role+x.kind).toLowerCase().includes(t)));g.innerHTML=a.map(x=>'<article class="card"><span class="tag">'+x.kind+'</span><h2>'+esc(x.name)+'</h2><p>'+esc(x.role)+'</p><p>'+esc(x.file||'')+'</p><a href="'+x.source+'" target="_blank" rel="noopener">Open source →</a></article>').join('')||'<div class="notice">No artifacts match.</div>'}
 function esc(s){return String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))}
-q.oninput=render;kind.onchange=render;document.getElementById('web').onclick=()=>{all=[...local,...internet];status.textContent='Internet discovery sources added. Use the source links to inspect and select artwork according to each source license.';render()};render();
+q.oninput=render;kind.onchange=render;document.getElementById('web').onclick=async()=>{
+  all=[...local,...internet]; status.textContent='Loading Openverse artwork discovery…'; render();
+  try{
+    const term=encodeURIComponent(q.value.trim()||'aurora');
+    const r=await fetch('https://api.openverse.org/v1/images/?q='+term+'&page_size=12');
+    if(!r.ok) throw Error('Openverse HTTP '+r.status);
+    const d=await r.json();
+    const remote=(d.results||[]).map(x=>({
+      name:x.title||'Openverse artwork',kind:'Internet source',
+      file:(x.creator||'Unknown creator')+' · '+(x.license||'license metadata unavailable'),
+      role:'Remote preview — verify the source license before redistribution',
+      source:x.foreign_landing_url||x.url||'https://openverse.org/',
+      image:x.thumbnail||x.url||''
+    }));
+    all=[...local,...internet,...remote]; status.textContent='Openverse artwork loaded. Remote previews remain linked to their original source and are not copied into this repository.'; render();
+  }catch(e){status.textContent='Internet artwork lookup unavailable: '+e.message+' — the local library remains fully usable.';render();}
+};
+const oldRender=render;
+render=function(){
+ const t=q.value.toLowerCase(),k=kind.value;const a=all.filter(x=>(!k||x.kind===k)&&(!t||(x.name+x.file+x.role+x.kind).toLowerCase().includes(t)));
+ g.innerHTML=a.map(x=>'<article class="card">'+(x.image?'<img class="preview" src="'+esc(x.image)+'" alt="" loading="lazy" referrerpolicy="no-referrer">':'')+'<span class="tag">'+x.kind+'</span><h2>'+esc(x.name)+'</h2><p>'+esc(x.role)+'</p><p>'+esc(x.file||'')+'</p><a href="'+x.source+'" target="_blank" rel="noopener">Open source →</a></article>').join('')||'<div class="notice">No artifacts match.</div>';
+}
+q.oninput=render;kind.onchange=render;render();
 </script></body></html>
