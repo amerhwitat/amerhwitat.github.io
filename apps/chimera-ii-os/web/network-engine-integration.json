@@ -1,0 +1,43 @@
+{
+  "schema": "chimera-network-engine-integration/v1",
+  "surface": {
+    "id": "network-engine",
+    "url": "https://chimerax-2pn031.public.builtwithrocket.new/network-engine",
+    "mode": "external-web",
+    "inspection": "Rocket page was not fetchable from the build environment; URL is preserved as the authoritative live surface."
+  },
+  "portal_ui": "https://amerhwitat.github.io/apps/chimera-ii-os/web/network-engine.html",
+  "primary_repository": {
+    "name": "amerhwitat/BizXtreme",
+    "url": "https://github.com/amerhwitat/BizXtreme"
+  },
+  "bizx_namespace": {
+    "status": "integrated-through-BizXtreme",
+    "note": "No separate public amerhwitat/BizX repository was found by GitHub repository search.",
+    "paths": [
+      "Assets/Scripts/BizX/Network",
+      "Assets/Scripts/BizX/Game",
+      "Assets/Scripts/BizX/Crypto"
+    ]
+  },
+  "features": [
+    "NetworkUnified versioned API: bizxtreme.network.api.v1",
+    "Python/Node.js/TypeScript/Go/Rust/Java/C#/C++ adapters",
+    "Dart/Kotlin/Swift/PHP/Ruby adapters",
+    "P2P and presence layer",
+    "WebSocket/WebRTC/libp2p transport adapter boundary",
+    "multiplayer session model",
+    "offline-safe runtime",
+    "latency/jitter/loss/reordering network emulation",
+    "Chimera Network Center integration point",
+    "Koronos IPC integration point",
+    "Universal Execution API boundary",
+    "allowlist-only active network targets"
+  ],
+  "links": [
+    "https://github.com/amerhwitat/BizXtreme/tree/main/NetworkUnified",
+    "https://github.com/amerhwitat/BizXtreme/tree/main/network",
+    "https://github.com/amerhwitat/BizXtreme/blob/main/CHIMERA_INTEGRATION.json",
+    "https://chimerax-2pn031.public.builtwithrocket.new/network-engine"
+  ]
+}
