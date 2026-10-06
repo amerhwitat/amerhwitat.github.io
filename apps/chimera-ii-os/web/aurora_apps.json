@@ -157,6 +157,13 @@
           "icon": "BX",
           "url": "https://github.com/amerhwitat/BizXtreme",
           "mode": "external-repo"
+        },
+        {
+          "id": "thamudicscan",
+          "title": "Aurora ThamudicScan",
+          "icon": "𐪀",
+          "url": "thamudicscan.html",
+          "mode": "embedded"
         }
       ]
     },
