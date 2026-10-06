@@ -84,8 +84,10 @@ footer{margin-top:56px;color:var(--muted);font-size:12.5px;border-top:1px solid 
   <p class="empty" id="empty">No apps match your search.</p>
 
 
+  <section id="reposSection">
   <h2 class="group">Repositories</h2>
   <div class="grid" id="repos"></div>
+  </section>
   <footer>
     Combined from the repositories: ChimeraIIOS, CPU4096Simulator, CPU4096, BizX, BizXtreme, nlp, general, test, PDFreaderPY, amerhwitat.github.io.
     Application front-ends run fully in the browser; features that require a Python/Node backend are shown as UI demos.<br>
@@ -171,30 +173,33 @@ const q=document.getElementById('q');
 const empty=document.getElementById('empty');
 document.getElementById('appcount').textContent=APPS.length;
 const REPOS = [
- {title:"ChimeraIIOS", tag:"Operating system", desc:"Operating-system, CPU, multidimensional computing and systems research.", url:"https://github.com/amerhwitat/ChimeraIIOS", live:"https://chimera-iios.vercel.app"},
- {title:"CPU4096", tag:"CPU research", desc:"4096-bit CPU research and register model.", url:"https://github.com/amerhwitat/CPU4096"},
- {title:"CPU4096Simulator", tag:"Simulator", desc:"4096/8192-bit CPU simulator, ISA catalog and runtime.", url:"https://github.com/amerhwitat/CPU4096Simulator"},
- {title:"BizX", tag:"Platform", desc:"Business/game platform and multilingual implementations.", url:"https://github.com/amerhwitat/BizX"},
- {title:"BizXtreme", tag:"Platform", desc:"Extended game, graphics, networking and crypto application platform.", url:"https://github.com/amerhwitat/BizXtreme"},
- {title:"general", tag:"Portfolio", desc:"Portfolio-wide applications, tools and integrations.", url:"https://github.com/amerhwitat/general"},
- {title:"nlp", tag:"Research", desc:"Natural-language processing and Thamudic epigraphic research.", url:"https://github.com/amerhwitat/nlp"},
- {title:"PDFreaderPY", tag:"Utility", desc:"PDF research and local document tooling.", url:"https://github.com/amerhwitat/PDFreaderPY"},
- {title:"test", tag:"Test suite", desc:"Development and test projects.", url:"https://github.com/amerhwitat/test"},
+ {title:"ChimeraIIOS", tag:"Operating system", desc:"Operating-system, CPU, multidimensional computing and systems research.", url:"https://github.com/amerhwitat/ChimeraIIOS", app:"apps/chimera-ii-os/web/index.html", live:"https://chimera-iios.vercel.app"},
+ {title:"CPU4096", tag:"CPU research", desc:"4096-bit CPU research and register model.", url:"https://github.com/amerhwitat/CPU4096", app:"apps/cpu4096/web/javascript/index.html"},
+ {title:"CPU4096Simulator", tag:"Simulator", desc:"4096/8192-bit CPU simulator, ISA catalog and runtime.", url:"https://github.com/amerhwitat/CPU4096Simulator", app:"apps/cpu4096-simulator/public/index.html"},
+ {title:"BizX", tag:"Platform", desc:"Business/game platform and multilingual implementations.", url:"https://github.com/amerhwitat/BizX", app:"apps/bizx-asset-browser/index.html"},
+ {title:"BizXtreme", tag:"Platform", desc:"Extended game, graphics, networking and crypto application platform.", url:"https://github.com/amerhwitat/BizXtreme", app:"apps/bizxtreme-3d/index.html"},
+ {title:"general", tag:"Portfolio", desc:"Portfolio-wide applications, tools and integrations.", url:"https://github.com/amerhwitat/general", app:"apps/chimera-3d4d/index.html"},
+ {title:"nlp", tag:"Research", desc:"Natural-language processing and Thamudic epigraphic research.", url:"https://github.com/amerhwitat/nlp", app:"apps/thamudic-scanner/index.html"},
+ {title:"PDFreaderPY", tag:"Utility", desc:"PDF research and local document tooling.", url:"https://github.com/amerhwitat/PDFreaderPY", app:"apps/pdf-reader/index.html"},
+ {title:"test", tag:"Test suite", desc:"Development and test projects.", url:"https://github.com/amerhwitat/test", app:"apps/chimera-test-suite/index.html"},
  {title:"keygen", tag:"Crypto research", desc:"Key-generation research scripts.", url:"https://github.com/amerhwitat/keygen"},
  {title:"eth-key-check", tag:"Crypto research", desc:"Ethereum key-check research scripts.", url:"https://github.com/amerhwitat/eth-key-check"},
  {title:"bruteforce", tag:"Crypto research", desc:"Sequential ETH brute-force research script (Python).", url:"https://github.com/amerhwitat/bruteforce"},
  {title:"amerhwitat.github.io", tag:"Site source", desc:"Source of this portal and the published pages.", url:"https://github.com/amerhwitat/amerhwitat.github.io"}
 ];
-(function(){
-  const el=document.getElementById('repos'); if(!el) return;
-  el.innerHTML=REPOS.map(r=>`<article class="card">
+const reposEl=document.getElementById('repos');
+const reposSection=document.getElementById('reposSection');
+function renderRepos(term){
+  const items=REPOS.filter(r=>!term || (r.title+r.desc+r.tag).toLowerCase().includes(term));
+  reposSection.style.display=items.length?'':'none';
+  reposEl.innerHTML=items.map(r=>`<article class="card">
     <span class="tagline">${esc(r.tag)}</span>
     <h3>${esc(r.title)}</h3>
     <p>${esc(r.desc)}</p>
-    ${r.live?`<div class="sub"><a href="${r.live}" target="_blank" rel="noopener">Live demo</a></div>`:''}
+    ${(r.app||r.live)?`<div class="sub">${r.app?`<a href="${r.app}">In-site app</a>`:''}${r.live?`<a href="${r.live}" target="_blank" rel="noopener">Live demo</a>`:''}</div>`:''}
     <a class="go" href="${r.url}" target="_blank" rel="noopener">View on GitHub →</a>
   </article>`).join('');
-})();
+}
 
 
 function esc(s){return s.replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
@@ -223,6 +228,7 @@ function render(){
   }
   root.innerHTML=html;
   empty.style.display=shown?'none':'block';
+  renderRepos(term);
 }
 q.addEventListener('input',render);
 render();
