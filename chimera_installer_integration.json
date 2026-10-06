@@ -1,1 +1,11 @@
-{"schema":"chimera-installer-integration/v1","canonical_repo":"amerhwitat/ChimeraIIOS","catalog":"web/installer_catalog.json","ui":"web/installer_manager.html","mode":"catalog-adapter","native_backend":false}
+{
+  "schema": "chimera-installer-integration/v1",
+  "canonical_repo": "amerhwitat/ChimeraIIOS",
+  "catalog": "web/installer_catalog.json",
+  "ui": "web/installer_manager.html",
+  "mode": "catalog-adapter",
+  "native_backend": false,
+  "web_ocr": "https://amerhwitat.github.io/apps/chimera-ii-os/web/ocr-studio.html",
+  "artifact_library": "https://amerhwitat.github.io/apps/chimera-ii-os/web/artifact-library.html",
+  "rocket_ui": "https://chimeraiios-ruw578.app.builtwithrocket.new"
+}
