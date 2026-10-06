@@ -1,0 +1,29 @@
+{
+  "schema": "chimera-thamudicscan-integration/v1",
+  "source_repo": "https://github.com/amerhwitat/nlp",
+  "bubble_surface": "https://thamudicscan.bubbleapps.io/",
+  "rocket_surface": "https://thamudicscan-s3wz30.public.builtwithrocket.new/",
+  "portal_surface": "https://amerhwitat.github.io/apps/chimera-ii-os/web/thamudicscan.html",
+  "capabilities": [
+    "keyword-aware scanning",
+    "UTF-8 inscription/document upload",
+    "SSE progress",
+    "SQLite sessions",
+    "Old North Arabian Unicode validation U+10A80–U+10A9F",
+    "canonical extraction/transliteration",
+    "recognition confidence",
+    "CSV/JSON/PDF export",
+    "image/PDF OCR media pipeline",
+    "script detection/tokenization",
+    "translation matrix",
+    "universal translation contract",
+    "script reports",
+    "voice/TTS/STT capability layer",
+    "append-only translation audit log with SHA-256 integrity",
+    "Arabic/Hebrew-compatible presentation",
+    "Chimera Aurora/Koronos/Nucleus-Hive/Universal Execution API integration"
+  ],
+  "api_doc": "https://github.com/amerhwitat/nlp/blob/main/ThamudicScan/docs/WEB_API.md",
+  "architecture_doc": "https://github.com/amerhwitat/nlp/blob/main/ThamudicScan/docs/ARCHITECTURE.md",
+  "evidence_policy": "Unsupported readings/translations remain unavailable rather than fabricated."
+}
