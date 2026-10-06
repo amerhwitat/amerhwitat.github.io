@@ -1,5 +1,5 @@
 {
-  "schema": "chimera-aurora-apps/v10",
+  "schema": "chimera-aurora-apps/v11",
   "desktop": "Aurora Wayland Glass",
   "launcher": "embedded-surface",
   "security_mode": "safe-lab",
@@ -200,6 +200,14 @@
           "icon": "ISA",
           "url": "isa-explorer.html",
           "mode": "embedded"
+        },
+        {
+          "id": "wallet-center",
+          "title": "Aurora Wallet & Ecosystem Center",
+          "icon": "W",
+          "url": "wallet-center.html",
+          "mode": "embedded",
+          "features": "BizX/BizXtreme wallet, crypto research, NetworkUnified, P2P, AI and safe wallet compatibility"
         }
       ]
     },
