@@ -179,6 +179,13 @@
           "icon": "A500",
           "url": "../../../nlp-amiga/index.html",
           "mode": "embedded"
+        },
+        {
+          "id": "backend-status",
+          "title": "Aurora Backend Gateway",
+          "icon": "↯",
+          "url": "backend-status.html",
+          "mode": "embedded"
         }
       ]
     },
