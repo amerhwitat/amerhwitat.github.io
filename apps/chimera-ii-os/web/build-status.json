@@ -1,0 +1,33 @@
+{
+  "schema": "chimera-portal-build-status/v1",
+  "generated_utc": "2026-10-06T05:16:36Z",
+  "source_repo": "https://github.com/amerhwitat/ChimeraIIOS",
+  "source_commit": "faecb9c26e5da3205bbe70d570206dbd405ceac3",
+  "compile": {
+    "workflow": "Chimera II OS - Full Compile and Validation",
+    "run_id": 37417629170,
+    "result": "success",
+    "url": "https://github.com/amerhwitat/ChimeraIIOS/actions/runs/37417629170",
+    "artifact": {
+      "name": "chimera-koronos-artifacts",
+      "id": 11391142377,
+      "sha256": "8bbeb4808660b2c0401e87a172bc99cccd3d87ffe7baa8d8ef7a34588a875262",
+      "expires_utc": "2026-10-20T05:16:35Z"
+    },
+    "checks": [
+      "shell syntax validation",
+      "JSON manifest validation",
+      "CMake configure",
+      "complete CMake graph compilation",
+      "Koronos ELF64 compilation",
+      "N-bit ELF artifacts: 8 through 8192 bits",
+      "Koronos required-symbol validation",
+      "ISO builder syntax/help validation"
+    ]
+  },
+  "portal": {
+    "pages_repo": "amerhwitat/amerhwitat.github.io",
+    "deployment_model": "GitHub Pages",
+    "build_surface": "static source portal"
+  }
+}
