@@ -21,7 +21,7 @@
     const payload = { action, compiler: compiler.value, standard: standard.value, build_system: build.value,
       source: editor.value, target: document.querySelector('.target-card.active')?.dataset.target || 'chimera-emulator' };
     output.textContent = `Preparing ${action}...\n${JSON.stringify(payload, null, 2)}\n\nNative execution requires the authorized Chimera toolchain adapter.`;
-    fetch('/api/chimera/toolchain', {method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)})
+    window.ChimeraPortal.request('/api/chimera/toolchain', {method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)})
       .then(r => r.ok ? r.text() : Promise.reject(new Error(`HTTP ${r.status}`)))
       .then(t => { output.textContent = t || 'Toolchain adapter returned no output.'; })
       .catch(() => {});
