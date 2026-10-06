@@ -153,6 +153,12 @@
       "url": "wallet-center.html",
       "mode": "browser",
       "capabilities": "BizX/BizXtreme wallet + safe crypto research + compatibility catalog"
+    },
+    {
+      "id": "ancient-ocr",
+      "url": "ancient-ocr.html",
+      "mode": "local-browser",
+      "capabilities": "automatic OCR, ancient-language detection, live NLP target catalog, optional /scan_file and /translate_ancient backend"
     }
   ]
 }
