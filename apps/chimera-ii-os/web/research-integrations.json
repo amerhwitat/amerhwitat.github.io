@@ -32,12 +32,39 @@
         "offline AI research"
       ],
       "boundary": "No credential theft, private-key recovery, seed guessing, wallet attacks, or unauthorized access."
+    },
+    {
+      "id": "bizxtreme",
+      "repo": "amerhwitat/BizXtreme",
+      "capabilities": [
+        "NetworkUnified",
+        "P2P/presence",
+        "multiplayer adapters",
+        "business simulation",
+        "WebGL/Three.js",
+        "Unity/C#",
+        "crypto-wallet interfaces",
+        "asset browser",
+        "AI",
+        "rendering",
+        "mobile targets",
+        "game economy",
+        "monetization"
+      ],
+      "network_contract": "bizxtreme.network.api.v1",
+      "safety_boundary": "Allowlist-only active network targets; no Internet-wide enumeration, credential attacks, evasion, spoofing, or exploitation."
     }
   ],
   "external_surfaces": [
     {
       "id": "chimera-simulator",
       "url": "https://chimeraiios-kukp34.public.builtwithrocket.new/chimera-ii-os-simulator",
+      "mode": "external-web",
+      "inspection": "not available from build environment"
+    },
+    {
+      "id": "network-engine",
+      "url": "https://chimerax-2pn031.public.builtwithrocket.new/network-engine",
       "mode": "external-web",
       "inspection": "not available from build environment"
     }
@@ -56,6 +83,11 @@
     {
       "id": "research-lab",
       "url": "research-lab.html",
+      "mode": "browser"
+    },
+    {
+      "id": "network-engine",
+      "url": "network-engine.html",
       "mode": "browser"
     }
   ]
