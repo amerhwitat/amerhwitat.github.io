@@ -1,5 +1,5 @@
 {
-  "schema": "chimera-aurora-apps/v12",
+  "schema": "chimera-aurora-apps/v13",
   "desktop": "Aurora Wayland Glass",
   "launcher": "embedded-surface",
   "security_mode": "safe-lab",
@@ -216,6 +216,22 @@
           "url": "ancient-ocr.html",
           "mode": "embedded",
           "features": "automatic OCR, ancient-language detection, Thamudic/NLP targets, optional /scan_file and /translate_ancient"
+        },
+        {
+          "id": "mame-center",
+          "title": "Aurora MAME Arcade Center",
+          "icon": "MAME",
+          "url": "mame-center.html",
+          "mode": "embedded",
+          "database": "mame-game-db.json"
+        },
+        {
+          "id": "game-center",
+          "title": "Aurora Complete Game Center",
+          "icon": "🎮",
+          "url": "game-center.html",
+          "mode": "embedded",
+          "database": "bizx-game-database.json"
         }
       ]
     },
