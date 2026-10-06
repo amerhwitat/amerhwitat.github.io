@@ -1,0 +1,24 @@
+{
+  "schema":"aurora-wallet-ecosystem/v1",
+  "sources":{
+    "BizXtreme":"https://github.com/amerhwitat/BizXtreme",
+    "bruteforce":"https://github.com/amerhwitat/bruteforce"
+  },
+  "features":[
+    "wallet connect/disconnect","public accounts","network detection","balance display","transaction status",
+    "send/receive intents","QR/payment URI support","HD account compatibility","hardware signer compatibility",
+    "multisig compatibility","passkey compatibility","encrypted backup workflow","dApp pairing",
+    "Bitcoin/UTXO","EVM/token standards","Solana/SPL","TON","watch-only portfolio",
+    "ownership state classification","transaction preview","fee display","approval queue","spend limits",
+    "token/address allowlists","AI explanation","BizX business simulation","game economy","monetization",
+    "WebGL/Three.js","Unity/C#","mobile adapters","NetworkUnified","P2P/presence","multiplayer",
+    "open-license asset browser","provenance","SHA-256 verification","hashing","checksums",
+    "public test vectors","synthetic benchmarks","restore-and-verify","offline AI research"
+  ],
+  "safety":{
+    "default":"watch-only",
+    "signing":"external user-controlled wallet/provider",
+    "never_collect":["private keys","seed phrases","passwords","credentials"],
+    "excluded":["address-to-private-key recovery","seed guessing","credential attacks","unauthorized wallet access","internet-wide scanning"]
+  }
+}
