@@ -24,6 +24,15 @@ jobs:
       - uses: actions/checkout@v4
       - name: Build SS64 command catalog
         run: python3 scripts/build_ss64_command_catalog.py
+      - name: Package open-source SAE Amiga browser core
+        run: |
+          rm -rf apps/nlp-amiga/vendor
+          mkdir -p apps/nlp-amiga/vendor
+          git clone --depth 1 https://github.com/naTmeg/ScriptedAmigaEmulator.git apps/nlp-amiga/vendor/sae
+          rm -rf apps/nlp-amiga/vendor/sae/.git
+          cp apps/nlp-amiga/vendor/sae/gpl.htm apps/nlp-amiga/vendor/sae/LICENSE-GPL.html
+          test -f apps/nlp-amiga/vendor/sae/sae/amiga.js
+          echo "SAE browser core packaged: $(find apps/nlp-amiga/vendor/sae/sae -type f | wc -l) source files"
       - name: Sync NLP ancient-language target catalog
         run: python3 scripts/sync_ancient_language_registry.py
       - name: Apply Aurora runtime to all pages
