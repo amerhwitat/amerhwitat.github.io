@@ -1,1 +1,10 @@
-{"schema":"chimera-aurora-integration/v1","desktop_profiles":"https://github.com/amerhwitat/ChimeraIIOS/blob/main/web/desktop_profiles.json","retro_emulators":"https://github.com/amerhwitat/ChimeraIIOS/blob/main/web/retro_emulators.json","role":"Web portal integration with Aurora desktop"}
+{
+  "schema": "chimera-aurora-integration/v1",
+  "desktop_profiles": "https://github.com/amerhwitat/ChimeraIIOS/blob/main/web/desktop_profiles.json",
+  "retro_emulators": "https://github.com/amerhwitat/ChimeraIIOS/blob/main/web/retro_emulators.json",
+  "role": "Web portal integration with Aurora desktop",
+  "ocr_studio": "https://amerhwitat.github.io/apps/chimera-ii-os/web/ocr-studio.html",
+  "artifact_library": "https://amerhwitat.github.io/apps/chimera-ii-os/web/artifact-library.html",
+  "rocket_ui": "https://chimeraiios-ruw578.app.builtwithrocket.new",
+  "artwork_manifest": "https://github.com/amerhwitat/ChimeraIIOS/blob/main/desktop/aurora/assets/library-artwork-manifest.json"
+}
