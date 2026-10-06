@@ -15,5 +15,9 @@
   "network_engine": "https://amerhwitat.github.io/apps/chimera-ii-os/web/network-engine.html",
   "network_engine_live": "https://chimerax-2pn031.public.builtwithrocket.new/network-engine",
   "bizxtreme_repo": "https://github.com/amerhwitat/BizXtreme",
-  "bizxtreme_network": "https://github.com/amerhwitat/BizXtreme/tree/main/NetworkUnified"
+  "bizxtreme_network": "https://github.com/amerhwitat/BizXtreme/tree/main/NetworkUnified",
+  "thamudicscan": "https://amerhwitat.github.io/apps/chimera-ii-os/web/thamudicscan.html",
+  "thamudicscan_live": "https://thamudicscan.bubbleapps.io/",
+  "thamudicscan_source": "https://github.com/amerhwitat/nlp/tree/main/ThamudicScan",
+  "thamudicscan_api": "https://github.com/amerhwitat/nlp/blob/main/ThamudicScan/docs/WEB_API.md"
 }
