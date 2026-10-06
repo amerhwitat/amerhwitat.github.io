@@ -18,7 +18,7 @@ def check(base,raw):
     checked+=1
     if "/" not in rel and "." not in rel: return
     if target.is_file() or (target.is_dir() and (target/"index.html").is_file()) or (target/"index.html").is_file(): return
-        errors.append(f"{base.relative_to(ROOT)} -> {raw} -> missing {rel}")
+    errors.append(f"{base.relative_to(ROOT)} -> {raw} -> missing {rel}")
 for p in files:
     if p.name=="search-index.json": continue
     try:s=p.read_text(encoding="utf-8",errors="ignore")
