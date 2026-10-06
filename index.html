@@ -106,6 +106,10 @@ mark{background:rgba(95,208,255,.25);color:var(--fg);border-radius:4px;padding:0
 
 <script>
 const APPS = [
+  {group:"Chimera II OS", title:"OCR Studio", tag:"OCR · Translation", repo:"ChimeraIIOS",
+   desc:"Automatic image OCR, translation and script-aware transliteration in the browser.", path:"apps/chimera-ii-os/web/ocr-studio.html"},
+  {group:"Chimera II OS", title:"Aurora Artifact Library", tag:"Library", repo:"ChimeraIIOS",
+   desc:"Unified browser catalog for repository artwork, documentation, Init.mp4 and lawful internet media sources.", path:"apps/chimera-ii-os/web/artifact-library.html"},
   {group:"Chimera II OS", title:"Chimera II OS — Home", tag:"Aurora Wayland Glass", repo:"ChimeraIIOS",
    desc:"Architecture explorer for the Chimera II machine, kernel, I/O, graphics and 128D research layers.",
    path:"apps/chimera-ii-os/web/index.html"},
@@ -182,6 +186,7 @@ const empty=document.getElementById('empty');
 document.getElementById('appcount').textContent=APPS.length;
 const REPOS = [
  {title:"ChimeraIIOS", tag:"Operating system", desc:"Operating-system, CPU, multidimensional computing and systems research.", url:"https://github.com/amerhwitat/ChimeraIIOS", app:"apps/chimera-ii-os/web/index.html"},
+ {title:"ChimeraIIOS Rocket UI", tag:"External live UI", desc:"Rocket-built Chimera II OS interface. Linked as an external live surface and source reference.", url:"https://chimeraiios-ruw578.app.builtwithrocket.new", live:"https://chimeraiios-ruw578.app.builtwithrocket.new"},
  {title:"CPU4096", tag:"CPU research", desc:"4096-bit CPU research and register model.", url:"https://github.com/amerhwitat/CPU4096", app:"apps/cpu4096/web/javascript/index.html"},
  {title:"CPU4096Simulator", tag:"Simulator", desc:"4096/8192-bit CPU simulator, ISA catalog and runtime.", url:"https://github.com/amerhwitat/CPU4096Simulator", app:"apps/cpu4096-simulator/public/index.html"},
  {title:"BizX", tag:"Platform", desc:"Business/game platform and multilingual implementations.", url:"https://github.com/amerhwitat/BizX", app:"apps/bizx-asset-browser/index.html"},
