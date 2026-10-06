@@ -38,7 +38,7 @@ int main(){
   assert(has_id(PlatformCompatibilityCatalog::optional_services(), "httpd"));
   assert(has_id(PlatformCompatibilityCatalog::optional_services(), "nfs-server"));
 
-  Cpu c;
+  static Cpu c;
   for (size_t lane = 0; lane < CHIMERA_LANES; ++lane) {
     c.r[1].lane[lane] = 6;
     c.r[2].lane[lane] = 7;
