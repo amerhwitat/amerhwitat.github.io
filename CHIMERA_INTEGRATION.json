@@ -29,7 +29,9 @@
     "Bruteforce safe crypto research UI",
     "Aurora Ancient Language Auto OCR",
     "NLP ancient-language registry",
-    "ThamudicEpiPlatform target-language catalog"
+    "ThamudicEpiPlatform target-language catalog",
+    "Aurora MAME Arcade Center",
+    "Aurora Complete Game Center"
   ],
   "purpose": "Expose Chimera II OS project documentation and web entry points.",
   "live_surfaces": {
@@ -46,6 +48,8 @@
     "wallet_center": "https://amerhwitat.github.io/apps/chimera-ii-os/web/wallet-center.html",
     "wallet_feature_registry": "https://amerhwitat.github.io/apps/chimera-ii-os/web/wallet-feature-registry.json",
     "ancient_ocr": "https://amerhwitat.github.io/apps/chimera-ii-os/web/ancient-ocr.html",
-    "ancient_language_registry": "https://amerhwitat.github.io/apps/chimera-ii-os/web/ancient-language-registry.json"
+    "ancient_language_registry": "https://amerhwitat.github.io/apps/chimera-ii-os/web/ancient-language-registry.json",
+    "mame_center": "apps/chimera-ii-os/web/mame-center.html",
+    "game_center": "apps/chimera-ii-os/web/game-center.html"
   }
 }
