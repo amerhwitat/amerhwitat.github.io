@@ -53,6 +53,29 @@
       ],
       "network_contract": "bizxtreme.network.api.v1",
       "safety_boundary": "Allowlist-only active network targets; no Internet-wide enumeration, credential attacks, evasion, spoofing, or exploitation."
+    },
+    {
+      "id": "thamudicscan",
+      "repo": "amerhwitat/nlp",
+      "paths": [
+        "ThamudicScan/web_ui",
+        "ThamudicScan/server",
+        "ThamudicScan/docs/WEB_API.md"
+      ],
+      "capabilities": [
+        "keyword scanning",
+        "UTF-8 upload",
+        "SSE progress",
+        "SQLite sessions",
+        "Old North Arabian Unicode validation",
+        "OCR/media pipeline",
+        "transliteration",
+        "translation",
+        "script reports",
+        "voice",
+        "audit/provenance",
+        "CSV/JSON/PDF exports"
+      ]
     }
   ],
   "external_surfaces": [
@@ -67,6 +90,18 @@
       "url": "https://chimerax-2pn031.public.builtwithrocket.new/network-engine",
       "mode": "external-web",
       "inspection": "not available from build environment"
+    },
+    {
+      "id": "thamudicscan-bubble",
+      "url": "https://thamudicscan.bubbleapps.io/",
+      "mode": "external-web",
+      "inspection": "not fetchable from build environment"
+    },
+    {
+      "id": "thamudicscan-rocket",
+      "url": "https://thamudicscan-s3wz30.public.builtwithrocket.new/",
+      "mode": "external-web",
+      "inspection": "repository README identifies this first-party deployment"
     }
   ],
   "browser_surfaces": [
@@ -88,6 +123,11 @@
     {
       "id": "network-engine",
       "url": "network-engine.html",
+      "mode": "browser"
+    },
+    {
+      "id": "thamudicscan",
+      "url": "thamudicscan.html",
       "mode": "browser"
     }
   ]
