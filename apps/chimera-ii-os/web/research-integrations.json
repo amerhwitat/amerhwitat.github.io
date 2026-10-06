@@ -1,0 +1,62 @@
+{
+  "schema": "chimera-research-integrations/v1",
+  "generated_for": "Aurora Research Lab",
+  "sources": [
+    {
+      "id": "nlp",
+      "repo": "amerhwitat/nlp",
+      "contract": "CHIMERA_INTEGRATION.json",
+      "capabilities": [
+        "Thamudic OCR",
+        "North Arabian NLP",
+        "translation/transliteration",
+        "document processing",
+        "Amiga web emulator"
+      ],
+      "entrypoints": [
+        "python/NLPScanner_AllInOne.py",
+        "python/ThamudicScanner_AllInOne.py",
+        "ThamudicScan/server",
+        "ThamudicScan/web_ui"
+      ]
+    },
+    {
+      "id": "bruteforce",
+      "repo": "amerhwitat/bruteforce",
+      "contract": "CHIMERA_INTEGRATION.json",
+      "capabilities": [
+        "hashing",
+        "public test vectors",
+        "address/checksum validation",
+        "synthetic benchmarks",
+        "offline AI research"
+      ],
+      "boundary": "No credential theft, private-key recovery, seed guessing, wallet attacks, or unauthorized access."
+    }
+  ],
+  "external_surfaces": [
+    {
+      "id": "chimera-simulator",
+      "url": "https://chimeraiios-kukp34.public.builtwithrocket.new/chimera-ii-os-simulator",
+      "mode": "external-web",
+      "inspection": "not available from build environment"
+    }
+  ],
+  "browser_surfaces": [
+    {
+      "id": "ocr-studio",
+      "url": "ocr-studio.html",
+      "mode": "local-browser"
+    },
+    {
+      "id": "artifact-library",
+      "url": "artifact-library.html",
+      "mode": "browser"
+    },
+    {
+      "id": "research-lab",
+      "url": "research-lab.html",
+      "mode": "browser"
+    }
+  ]
+}
