@@ -1,11 +1,12 @@
 document.addEventListener('DOMContentLoaded',async()=>{
   const $=id=>document.getElementById(id); const log=m=>window.ChimeraAmiga.log(m);
-  const ok=await window.ChimeraAmiga.load(); if(!ok){ $('engineStatus').textContent=' Local browser core unavailable · live vAmigaWeb fallback ready'; $('start').onclick=()=>{ location.href='https://vamigaweb.github.io/'; }; }
-  $('engineStatus').textContent=ok?' Engine: local bundle detected':' Engine: integration layer / bundle missing';
+  const ok=await window.ChimeraAmiga.load();
+  $('engineStatus').textContent=ok?' Engine: local SAE bundle detected':' Engine: live vAmigaWeb fallback ready · local SAE bundle is optional';
+  if(!ok) $('runState').textContent='Local core not packaged on GitHub Pages; Start will launch the maintained vAmigaWeb web emulator.';
   $('cpu').textContent='CPU: 68000';
   $('chipset').textContent='Chipset: OCS';
   $('model').addEventListener('change',e=>{const m=e.target.value;$('cpu').textContent=m.includes('030')?'CPU: 68030':'CPU: 68000';$('chipset').textContent=(m==='A1200'||m==='A4000/030')?'Chipset: AGA':'Chipset: OCS/ECS';log('Model selected: '+m);});
-  $('start').onclick=async()=>{const started=await window.ChimeraAmiga.start($('amigaCanvas'));$('runState').textContent=started?'Running':'Integration Ready';};
+  $('start').onclick=async()=>{const started=await window.ChimeraAmiga.start();$('runState').textContent=started?'Running':'Integration Ready';};
   $('pause').onclick=()=>{window.ChimeraAmiga.pause();$('runState').textContent='Paused';};
   $('reset').onclick=()=>{window.ChimeraAmiga.reset();$('runState').textContent='Stopped';};
   $('fullscreen').onclick=()=>window.ChimeraAmiga.fullscreen();
