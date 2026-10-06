@@ -24,5 +24,9 @@
   "wallet_feature_registry": "https://amerhwitat.github.io/apps/chimera-ii-os/web/wallet-feature-registry.json",
   "bizx_wallet": "https://github.com/amerhwitat/BizXtreme/tree/main/crypto",
   "bizx_wallet_webgl": "https://github.com/amerhwitat/BizXtreme/blob/main/docs/WALLET_MOBILE_WEBGL.md",
-  "bruteforce_wallet_research": "https://github.com/amerhwitat/bruteforce/blob/main/docs/WALLET_OPERATIONS.md"
+  "bruteforce_wallet_research": "https://github.com/amerhwitat/bruteforce/blob/main/docs/WALLET_OPERATIONS.md",
+  "web_surfaces": {
+    "mame_center": "apps/chimera-ii-os/web/mame-center.html",
+    "game_center": "apps/chimera-ii-os/web/game-center.html"
+  }
 }
