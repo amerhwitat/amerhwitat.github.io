@@ -8,6 +8,7 @@ const PORT = Number(process.env.CHIMERA_WEB_PORT || 3000);
 const PY_HOST = process.env.CHIMERA_PY_HOST || '127.0.0.1';
 const PY_PORT = Number(process.env.CHIMERA_PY_PORT || 8765);
 const ROOT = __dirname;
+const ALLOWED_ORIGINS = new Set((process.env.CHIMERA_ALLOWED_ORIGINS || 'https://amerhwitat.github.io,http://localhost:3000').split(',').map(x=>x.trim()).filter(Boolean));
 let pythonChild = null;
 
 function startPython() {
@@ -21,7 +22,9 @@ function startPython() {
   });
 }
 
-function proxy(req, res) {
+function cors(req,res){const origin=req.headers.origin;if(origin&&ALLOWED_ORIGINS.has(origin))res.setHeader('access-control-allow-origin',origin);res.setHeader('vary','Origin');res.setHeader('access-control-allow-methods','GET,POST,OPTIONS');res.setHeader('access-control-allow-headers','content-type,accept');}
+
+function proxy(req, res) { cors(req,res); if(req.method==='OPTIONS'){res.writeHead(204);return res.end();}
   const options = { host: PY_HOST, port: PY_PORT, path: req.url, method: req.method, headers: req.headers };
   const upstream = http.request(options, response => {
     res.writeHead(response.statusCode || 502, response.headers);
@@ -50,7 +53,7 @@ function staticFile(req, res) {
 }
 
 startPython();
-const server = http.createServer((req, res) => req.url.startsWith('/api/') || req.url === '/health' ? proxy(req,res) : staticFile(req,res));
+const server = http.createServer((req, res) => { cors(req,res); if(req.method==='OPTIONS'){res.writeHead(204);return res.end();} if(req.url === '/health'){res.writeHead(200, {'content-type':'application/json; charset=utf-8','cache-control':'no-store'});return res.end(JSON.stringify({ok:true,service:'chimera-web-gateway',mode:'capability-gated',python:`http://${PY_HOST}:${PY_PORT}`}));} return req.url.startsWith('/api/') ? proxy(req,res) : staticFile(req,res); });
 server.listen(PORT, HOST, () => console.log(`[AURORA-WEB] http://${HOST}:${PORT} -> Python ${PY_HOST}:${PY_PORT}`));
 
 function shutdown() {
