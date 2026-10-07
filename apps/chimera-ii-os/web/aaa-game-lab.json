@@ -1,0 +1,74 @@
+{
+  "schema": "aurora-aaa-game-lab/v1",
+  "policy": "Original designs only; no commercial game assets, code, trademarks, storyboards, or ROMs are redistributed.",
+  "projects": [
+    {
+      "name": "Skyfall Protocol",
+      "genre": "cinematic sci-fi infiltration",
+      "storyboard": [
+        "orbital debris cold open",
+        "storm refinery infiltration",
+        "rescue-or-sabotage branch",
+        "reactor-collapse extraction"
+      ],
+      "browser_runtime": true,
+      "engine_targets": [
+        "Unreal Engine",
+        "O3DE"
+      ],
+      "build_stages": [
+        "prototype",
+        "vertical-slice",
+        "shipping"
+      ],
+      "notes": "Unreal Sequencer supports multi-track cinematics, shots, takes and event tracks; O3DE provides Track View cinematics and client/dedicated-server runtimes."
+    },
+    {
+      "name": "Desert of Echoes",
+      "genre": "open-world archaeological adventure",
+      "storyboard": [
+        "buried signal prologue",
+        "salt-basin traversal",
+        "observatory decoding",
+        "aurora-storm finale"
+      ],
+      "browser_runtime": true,
+      "engine_targets": [
+        "Unreal Engine",
+        "O3DE"
+      ],
+      "build_stages": [
+        "prototype",
+        "vertical-slice",
+        "shipping"
+      ]
+    },
+    {
+      "name": "Neon Frontier",
+      "genre": "futuristic city pursuit",
+      "storyboard": [
+        "lower-city chase",
+        "stolen-core investigation",
+        "faction decision",
+        "blackout-grid finale"
+      ],
+      "browser_runtime": true,
+      "engine_targets": [
+        "Unreal Engine",
+        "O3DE"
+      ],
+      "build_stages": [
+        "prototype",
+        "vertical-slice",
+        "shipping"
+      ]
+    }
+  ],
+  "references": [
+    "https://dev.epicgames.com/documentation/en-us/unreal-engine/gameplay-framework-in-unreal-engine",
+    "https://dev.epicgames.com/documentation/en-us/unreal-engine/packaging-your-project",
+    "https://dev.epicgames.com/documentation/en-us/unreal-engine/cinematics-and-movie-making-in-unreal-engine",
+    "https://docs.o3de.org/docs/user-guide/visualization/cinematics/",
+    "https://docs.o3de.org/docs/welcome-guide/key-concepts/"
+  ]
+}
