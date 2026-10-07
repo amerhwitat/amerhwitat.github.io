@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#07111f">
+<title>Chimera II — Hercules Integration</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="aurora_shell.css">
+<style>
+:root{--glass:rgba(8,19,33,.76);--line:rgba(145,205,255,.25);--cyan:#67e8f9;--violet:#a78bfa}
+body{overflow-x:hidden;background:#02060c}
+.hercules-stage{position:relative;min-height:100vh;background:radial-gradient(circle at 50% 0,#173d62 0,#07111f 38%,#02060c 100%);overflow:hidden}
+.art{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.art:before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 50% 18%,rgba(103,232,249,.18),transparent 30%),radial-gradient(ellipse at 20% 40%,rgba(167,139,250,.16),transparent 26%),linear-gradient(180deg,transparent 45%,rgba(1,5,10,.85) 100%)}
+.mountain{position:absolute;bottom:0;width:0;height:0;border-left:18vw solid transparent;border-right:18vw solid transparent;border-bottom:28vh solid #102a42;filter:drop-shadow(0 -15px 25px #67e8f922)}
+.m1{left:-8vw}.m2{left:18vw;border-bottom-color:#163b58}.m3{right:5vw;border-bottom-color:#0d243a}.m4{right:-18vw;border-bottom-color:#17334b}
+.lake{position:absolute;left:0;right:0;bottom:0;height:24vh;background:linear-gradient(180deg,#0a2940,#04111e 70%);opacity:.95}
+.aurora{position:absolute;left:8%;right:8%;top:5%;height:34vh;border-radius:50%;border-top:5px solid rgba(103,232,249,.25);box-shadow:0 -8px 45px rgba(103,232,249,.16),0 -2px 30px rgba(167,139,250,.2);transform:rotate(-4deg)}
+.aurora:after{content:"";position:absolute;inset:12% 8%;border-top:3px solid rgba(167,139,250,.28);border-radius:50%;transform:rotate(7deg)}
+.shell{position:relative;z-index:2;padding:24px;min-height:100vh}
+.panel{background:var(--glass);border:1px solid var(--line);backdrop-filter:blur(18px);border-radius:20px;box-shadow:0 18px 60px #0009}
+.hero{padding:22px;display:flex;justify-content:space-between;gap:18px;align-items:flex-start}
+.hero h1{color:#eef8ff;letter-spacing:.06em;font-size:clamp(1.8rem,4vw,3.5rem);margin:.2em 0}
+.hero h1 span{color:var(--cyan)}
+.muted{color:#9fb4ca}
+.actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:15px}
+.btn{display:inline-flex;align-items:center;justify-content:center;border:1px solid #47749a;border-radius:11px;padding:10px 13px;color:#eef8ff;background:#0b1c2e;text-decoration:none;cursor:pointer}
+.btn.primary{background:linear-gradient(135deg,#14517b,#49377d)}
+.layout{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(280px,.7fr);gap:16px;margin-top:16px}
+.frame{padding:12px;min-height:620px}
+.frame iframe{width:100%;height:620px;border:1px solid var(--line);border-radius:14px;background:#02060c}
+.side{padding:18px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:10px;margin-top:12px}
+.card{padding:13px;border:1px solid #2a4d6b;border-radius:13px;background:rgba(8,24,40,.78)}
+.card h3{margin:0 0 5px;color:var(--cyan);font-size:1rem}.card p{margin:0 0 9px;font-size:.86rem;color:#9fb4ca}
+.status{display:inline-block;border:1px solid #3e6687;border-radius:999px;padding:3px 8px;font-size:.72rem;color:#bcefff}
+.feature-bar{margin-top:16px;padding:18px}
+.search{width:100%;max-width:500px;background:#06111d;color:#fff;border:1px solid #355875;border-radius:10px;padding:10px}
+@media(max-width:900px){.layout{grid-template-columns:1fr}.frame iframe{height:70vh}.hero{flex-direction:column}}
+</style>
+</head>
+<body>
+<div class="hercules-stage">
+<div class="art"><div class="aurora"></div><div class="lake"></div><div class="mountain m1"></div><div class="mountain m2"></div><div class="mountain m3"></div><div class="mountain m4"></div></div>
+<main class="shell">
+<section class="panel hero">
+<div><p class="eyebrow">CHIMERA II · HERCULES RUNTIME BRIDGE</p><h1>AURORA <span>× HERCULES</span></h1><p class="muted">Integrated launcher for the external Chimera II application runtime plus the complete Aurora web application surface. The visual layer follows the Aurora Wayland Glass artwork language.</p>
+<div class="actions"><a class="btn primary" href="https://chimera-iios-120143.onhercules.app/" target="_blank" rel="noopener">Open Hercules Runtime</a><a class="btn" href="aurora_3d_desktop.html">Return to Aurora Desktop</a><a class="btn" href="aurora-interaction-hub.html">Open Interaction Hub</a></div></div>
+<div><span class="status">REMOTE RUNTIME</span><p class="muted">If embedding is blocked by the runtime host, use “Open Hercules Runtime”.</p></div>
+</section>
+<section class="layout">
+<div class="panel frame"><iframe id="herculesFrame" title="Chimera II Hercules Runtime" src="https://chimera-iios-120143.onhercules.app/" loading="eager" allow="fullscreen; clipboard-read; clipboard-write"></iframe></div>
+<aside class="panel side"><h2>Aurora App Matrix</h2><p class="muted">Every currently exposed Aurora application surface is launchable here.</p><input id="search" class="search" placeholder="Filter apps and features…"><div id="apps" class="grid"></div></aside>
+</section>
+<section class="panel feature-bar"><h2>Integrated Feature Domains</h2><div id="domains" class="grid"></div></section>
+</main></div>
+<script src="hercules-integration.js"></script>
+</body></html>
