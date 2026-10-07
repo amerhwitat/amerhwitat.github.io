@@ -87,6 +87,20 @@ jobs:
           grep -q 'keygen' apps/chimera-ii-os/web/repository-app-studio.js
           grep -q 'general' apps/chimera-ii-os/web/repository-app-studio.js
           grep -q 'Guest' apps/chimera-ii-os/web/repository-app-studio.html
+      - name: Validate Chimera language runtime lab
+        run: |
+          test -s apps/chimera-ii-os/web/chimera-language-runtime.html
+          test -s apps/chimera-ii-os/web/chimera-language-runtime.js
+          test -s apps/chimera-ii-os/web/chimera-language-runtime-catalog.json
+          node --check apps/chimera-ii-os/web/chimera-language-runtime.js
+          python3 - <<'PY'
+          import json
+          p='apps/chimera-ii-os/web/chimera-language-runtime-catalog.json'
+          d=json.load(open(p,encoding='utf-8'))
+          assert d['totalTrackedFiles'] >= 700
+          for k in ('asm','c','cpp','python','kotlin','java'): assert d['counts'].get(k,0)>0
+          print('Language runtime catalog:',d['totalTrackedFiles'],'tracked files')
+          PY
       - name: Validate Hercules integration surface
         run: |
           test -s apps/chimera-ii-os/web/hercules-integration.html
