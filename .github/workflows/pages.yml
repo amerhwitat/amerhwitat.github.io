@@ -87,6 +87,12 @@ jobs:
           grep -q 'keygen' apps/chimera-ii-os/web/repository-app-studio.js
           grep -q 'general' apps/chimera-ii-os/web/repository-app-studio.js
           grep -q 'Guest' apps/chimera-ii-os/web/repository-app-studio.html
+      - name: Validate Aurora Emulator surface
+        run: |
+          test -s apps/chimera-ii-os/web/aurora-emulator.html
+          grep -q 'Aurora Emulator' apps/chimera-ii-os/web/aurora-emulator.html
+          grep -q 'aurora-emulator.html' apps/chimera-ii-os/web/aurora_3d_desktop.js
+          grep -q 'aurora-emulator.html' index.html
       - name: Validate SS64 Arabic command runtime
         run: |
           test -s scripts/build_ss64_command_catalog.py
