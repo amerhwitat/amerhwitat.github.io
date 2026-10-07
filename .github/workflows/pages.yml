@@ -52,6 +52,8 @@ jobs:
         run: python3 scripts/check_wallet_python_catalog.py
       - name: Validate Wallet Center JavaScript
         run: node --check apps/chimera-ii-os/web/wallet-center.js
+      - name: Validate Game Center JavaScript
+        run: node --check apps/chimera-ii-os/web/game-center.js
       - name: Validate Aurora Interaction Hub JavaScript
         run: node --check apps/chimera-ii-os/web/aurora-interaction-hub.js
       - name: Validate AAA Game Lab manifest
