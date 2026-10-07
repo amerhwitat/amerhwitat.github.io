@@ -194,6 +194,11 @@
       "repo-studio",
       "Repository App Studio",
       "Guest-access launcher for browser-safe repository applications and Java/JVM/native adapters."
+    ],
+    [
+      "language-runtime",
+      "Chimera Language Runtime Lab",
+      "ASM/C/C++/Python/Kotlin/Java runtime adapters plus legacy Applet/ActiveX compatibility descriptors."
     ]
   ],
   "integrations": [
@@ -208,6 +213,12 @@
       "https://github.com/amerhwitat/amerhwitat.github.io",
       "repository-app-studio.html",
       "Guest application launcher and browser runtime adapters for six requested repositories."
+    ],
+    [
+      "Chimera Language Runtime Lab",
+      "https://github.com/amerhwitat/ChimeraIIOS",
+      "chimera-language-runtime.html",
+      "Complete tracked language-source inventory and modern browser/JVM/WASM adapter matrix."
     ]
   ]
 }
