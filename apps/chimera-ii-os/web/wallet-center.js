@@ -34,7 +34,7 @@ function renderPython(){
  if(!PY)return;const q=$("pySearch").value.toLowerCase(),repo=$("pyRepo").value,kind=$("pyKind").value;
  const rows=PY.files.filter(x=>(!repo||x.repo===repo)&&(!kind||x.kind===kind)&&(!q||(x.repo+" "+x.path+" "+x.kind).toLowerCase().includes(q)));
  $("pyStatus").textContent=rows.length+" matching Python files · "+PY.summary.total_python_files+" indexed total.";
- $("pyCatalog").innerHTML=rows.map(x=>'<tr><td><b>'+esc(x.repo)+'</b></td><td><code>'+esc(x.path)+'</code></td><td><span class="pill">'+esc(x.kind)+'</span></td><td class="code-count">'+Number(x.size).toLocaleString()+" B</td><td class="code-action"><a class="btn" href=""+esc(x.url)+"" target="_blank" rel="noopener">Source</a><button class="btn" data-pycopy=""+esc(x.url)+"">Copy URL</button></td></tr>").join("")||'<tr><td colspan="5">No matching Python files.</td></tr>';
+ $("pyCatalog").innerHTML=rows.map(x=>`<tr><td><b>${esc(x.repo)}</b></td><td><code>${esc(x.path)}</code></td><td><span class="pill">${esc(x.kind)}</span></td><td class="code-count">${Number(x.size).toLocaleString()} B</td><td class="code-action"><a class="btn" href="${esc(x.url)}" target="_blank" rel="noopener">Source</a><button class="btn" data-pycopy="${esc(x.url)}">Copy URL</button></td></tr>`).join("")||'<tr><td colspan="5">No matching Python files.</td></tr>';
  $("pyCatalog").querySelectorAll("[data-pycopy]").forEach(b=>b.onclick=async()=>{try{await navigator.clipboard.writeText(b.dataset.pycopy);b.textContent="Copied";setTimeout(()=>b.textContent="Copy URL",1200)}catch{prompt("Copy source URL:",b.dataset.pycopy)}});
 }
 ["pySearch","pyRepo","pyKind"].forEach(id=>$(id).oninput=$(id).onchange=renderPython);
