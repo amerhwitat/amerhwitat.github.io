@@ -76,6 +76,13 @@ jobs:
         run: |
           test -f apps/chimera-ii-os/web/aurora-interaction-hub.html
           test -f apps/chimera-ii-os/web/aurora-interaction-hub.js
+      - name: Validate Hercules integration surface
+        run: |
+          test -s apps/chimera-ii-os/web/hercules-integration.html
+          test -s apps/chimera-ii-os/web/hercules-integration.js
+          node --check apps/chimera-ii-os/web/hercules-integration.js
+          grep -q 'chimera-iios-120143.onhercules.app' apps/chimera-ii-os/web/hercules-integration.html
+          grep -q 'Hercules Runtime' apps/chimera-ii-os/web/aurora-interaction-hub.js
       - name: Rebuild full-text search index
         run: python3 scripts/build_search_index.py
       - uses: actions/configure-pages@v5
