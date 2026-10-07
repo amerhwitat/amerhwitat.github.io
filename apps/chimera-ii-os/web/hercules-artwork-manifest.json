@@ -1,0 +1,17 @@
+{
+  "schema": "aurora-hercules-artwork/v1",
+  "source": "https://chimera-iios-120143.onhercules.app/",
+  "strategy": {
+    "remote": "Live Hercules iframe preserves the runtime's own artwork and terminal implementation when the host permits framing.",
+    "local": "Aurora glass/aurora/mountain/lake artwork is retained as the local fallback surface.",
+    "copy_policy": "No third-party artwork bytes are duplicated when the Hercules host cannot be retrieved; only the runtime URL is embedded."
+  },
+  "integrations": [
+    "hercules-integration.html",
+    "aurora_3d_desktop.html",
+    "aurora-interaction-hub.js",
+    "aurora_terminal.html",
+    "command-console.html",
+    "apps/aurora-mobile/index.html"
+  ]
+}
