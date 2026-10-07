@@ -65,11 +65,14 @@
     else if (name === 'settings') showWindow('Settings', '<h2>Desktop Settings</h2><p>Glass effects · accessibility · renderer · profile selection</p>');
     else if (name === 'help') showWindow('Unified Help', '<h2>man / help</h2><p>Use <b>man PAGE</b>, <b>man SECTION PAGE</b>, or <b>man NAMESPACE:PAGE</b>. Linux, POSIX, BSD, Bash, Zsh, Windows and PowerShell sources are exposed through the unified help layer.</p>');
     else if (name === 'desktop') showDesktopProfiles();
-    else if (name === 'hercules') showWindow('Hercules Runtime', '<h2>Chimera II Hercules Runtime</h2><p>External runtime integrated with Aurora.</p><p><a class="profile-card" href="hercules-integration.html">Open integrated Hercules surface</a></p><p><a class="profile-card" target="_blank" rel="noopener" href="https://chimera-iios-120143.onhercules.app/">Open runtime directly</a></p>');
-    else if (name === 'hercules') showWindow('Hercules Runtime', '<h2>Chimera II Hercules Runtime</h2><p>External runtime integrated with Aurora.</p><p><a class="profile-card" href="hercules-integration.html">Open integrated Hercules surface</a></p><p><a class="profile-card" target="_blank" rel="noopener" href="https://chimera-iios-120143.onhercules.app/">Open runtime directly</a></p>');
-    else if (name === 'repo-studio') showWindow('Repository App Studio', '<h2>Aurora Repository App Studio</h2><p>Guest session: no password. Browser-safe repository applications and Java/JVM/native adapters.</p><p><a class="profile-card" href="repository-app-studio.html">Open Repository App Studio</a></p>');
-    else if (name === 'language-runtime') showWindow('Chimera Language Runtime Lab', '<h2>ASM · C · C++ · Python · Kotlin · Java</h2><p>Modern JS/WASM/JVM adapters with legacy Java Applet and ActiveX compatibility descriptors.</p><p><a class="profile-card" href="chimera-language-runtime.html">Open Language Runtime Lab</a></p>');
-    else if (name === 'ss64') showWindow('SS64 Command Center', '<h2>SS64 · العربية</h2><p>Linux, CMD, PowerShell and macOS command catalog with Arabic aliases and browser-safe emulation.</p><p><a class="profile-card" href="command-console.html">Open SS64 Command Center</a></p>');    else if (name === 'search') $('desktopSearch').focus();
+    else if (name === 'hub') openRoute('Aurora Interaction Hub','aurora-interaction-hub.html');
+    else if (name === 'emulators') openRoute('Retro Emulators','retro_emulators.html');
+    else if (name === 'games') openRoute('Game Center','game-center.html');
+    else if (name === 'network') openRoute('Network Engine','network-engine.html');
+    else if (name === 'research') openRoute('Research Lab','research-lab.html');
+    else if (name === 'hercules') showWindow('Hercules Runtime', '<h2>Chimera II Hercules Runtime</h2><p>External runtime integrated with Aurora.</p><p><a class="profile-card" href="hercules-integration.html">Open integrated Hercules surface</a></p><p><a class="profile-card" target="_blank" rel="noopener" href="https://chimera-iios-120143.onhercules.app/">Open runtime directly</a></p>');    else if (name === 'repo-studio') openRoute('Repository App Studio','repository-app-studio.html');
+    else if (name === 'language-runtime') openRoute('Chimera Language Runtime Lab','chimera-language-runtime.html');
+    else if (name === 'ss64') openRoute('SS64 Command Center','command-console.html');    else if (name === 'search') $('desktopSearch').focus();
     else if (name === 'home') { $('launcher').classList.add('hidden'); $('window').classList.add('hidden'); }
   }
   function showDesktopProfiles() {
@@ -78,6 +81,8 @@
     document.querySelectorAll('[data-profile]').forEach(b => b.onclick = () => { applyProfile(b.dataset.profile); showDesktopProfiles(); });
   }
   document.querySelectorAll('[data-app]').forEach(b => b.addEventListener('click', () => app(b.dataset.app)));
+  Object.entries(routeMap).forEach(([id,path]) => { if (!document.querySelector('[data-app="'+id+'"]')) return; });
+
   $('launcherButton').onclick = () => app('launcher'); $('dockLauncher').onclick = () => app('launcher');
   document.querySelectorAll('[data-window]').forEach(b => b.onclick = () => { if (b.dataset.window === 'close') $('window').classList.add('hidden'); if (b.dataset.window === 'min') $('window').classList.add('hidden'); if (b.dataset.window === 'max') $('window').style.inset = '8% 6% 12% 8%'; });
   $('desktopSearch').addEventListener('keydown', e => { if (e.key === 'Enter' && e.target.value.trim()) showWindow('Desktop Search', `<h2>Search</h2><p>Searching unified desktop catalog for <b>${e.target.value.replace(/[<>&]/g,'')}</b>.</p>`); });
@@ -90,3 +95,31 @@
   function animate(t) { requestAnimationFrame(animate); aurora.rotation.y = t * .00005; stars.rotation.y = t * .000003; renderer.render(scene, camera); }
   animate(0);
 })();
+
+  // Smooth interaction + keyboard/mouse sound effects. Web Audio starts only after user interaction.
+  const soundKey='chimera.aurora.sounds'; let soundOn=localStorage.getItem(soundKey)!=='off';
+  let audioCtx=null;
+  function ensureAudio(){if(!soundOn)return null;if(!audioCtx) audioCtx=new (window.AudioContext||window.webkitAudioContext)();if(audioCtx.state==='suspended')audioCtx.resume();return audioCtx;}
+  function tone(freq,dur,type='sine',gain=.025){const a=ensureAudio();if(!a)return;const o=a.createOscillator(),g=a.createGain();o.type=type;o.frequency.value=freq;g.gain.setValueAtTime(gain,a.currentTime);g.gain.exponentialRampToValueAtTime(.0001,a.currentTime+dur);o.connect(g).connect(a.destination);o.start();o.stop(a.currentTime+dur);}
+  function updateSoundUI(){const b=$('soundToggle'),s=$('audioStatus');if(b){b.textContent=soundOn?'🔊':'🔇';b.setAttribute('aria-pressed',String(soundOn));}if(s){s.textContent='Aurora sounds: '+(soundOn?'on':'off');s.classList.toggle('active',true);setTimeout(()=>s.classList.remove('active'),900);}}
+  $('soundToggle')?.addEventListener('click',e=>{soundOn=!soundOn;localStorage.setItem(soundKey,soundOn?'on':'off');if(soundOn)tone(740,.08,'sine',.035);updateSoundUI();});
+  addEventListener('keydown',e=>{if(e.repeat)return;if(['INPUT','TEXTAREA','SELECT'].includes(document.activeElement?.tagName))return;if(e.key==='Escape'){$('launcher').classList.add('hidden');$('window').classList.add('hidden');}else if(e.key===' '){tone(520,.035,'square',.012)}else if(e.key.length===1){tone(260+(e.key.charCodeAt(0)%9)*24,.025,'triangle',.009)}});
+  addEventListener('pointerdown',e=>{if(e.button===0)tone(180,.035,'sine',.008);});
+  addEventListener('click',e=>{if(e.target.closest('button,a'))tone(620,.045,'triangle',.012);});
+  let drag=null;
+  const titlebar=document.querySelector('.window-titlebar');
+  titlebar?.addEventListener('pointerdown',e=>{if(e.target.closest('button'))return;const w=$('window');drag={x:e.clientX,y:e.clientY,l:w.offsetLeft,t:w.offsetTop};w.classList.add('dragging');titlebar.setPointerCapture(e.pointerId);});
+  titlebar?.addEventListener('pointermove',e=>{if(!drag)return;const w=$('window');w.style.left=Math.max(8,drag.l+e.clientX-drag.x)+'px';w.style.top=Math.max(8,drag.t+e.clientY-drag.y)+'px';});
+  titlebar?.addEventListener('pointerup',()=>{drag=null;$('window').classList.remove('dragging');});
+  const originalMax=document.querySelector('[data-window="max"]');
+  originalMax?.addEventListener('dblclick',()=>{const w=$('window');w.classList.toggle('maximized');});
+  document.addEventListener('visibilitychange',()=>{if(document.hidden&&audioCtx)audioCtx.suspend();else if(audioCtx&&soundOn)audioCtx.resume();});
+  // Build a compact all-app matrix from the interaction hub, keeping the desktop as the single launcher.
+  fetch('aurora-interaction-hub.js',{cache:'no-store'}).then(r=>r.text()).then(src=>{
+    const m=src.match(/const tools=(\[.*?\]);/s); if(!m)return;
+    let tools; try{tools=Function('return '+m[1])();}catch{return;}
+    const box=$('appMatrix'); if(!box)return;
+    box.innerHTML=tools.map(x=>'<button type="button" data-route="'+esc(x[2])+'"><span>◈</span><small>'+esc(x[0])+'</small></button>').join('');
+    box.querySelectorAll('[data-route]').forEach(b=>b.addEventListener('click',()=>openRoute(b.textContent.trim(),b.dataset.route)));
+  }).catch(()=>{});
+  updateSoundUI();
