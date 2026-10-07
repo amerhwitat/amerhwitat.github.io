@@ -76,6 +76,17 @@ jobs:
         run: |
           test -f apps/chimera-ii-os/web/aurora-interaction-hub.html
           test -f apps/chimera-ii-os/web/aurora-interaction-hub.js
+      - name: Validate repository application studio
+        run: |
+          test -s apps/chimera-ii-os/web/repository-app-studio.html
+          test -s apps/chimera-ii-os/web/repository-app-studio.js
+          node --check apps/chimera-ii-os/web/repository-app-studio.js
+          grep -q 'bruteforce' apps/chimera-ii-os/web/repository-app-studio.js
+          grep -q 'VanG' apps/chimera-ii-os/web/repository-app-studio.js
+          grep -q 'eth-key-check' apps/chimera-ii-os/web/repository-app-studio.js
+          grep -q 'keygen' apps/chimera-ii-os/web/repository-app-studio.js
+          grep -q 'general' apps/chimera-ii-os/web/repository-app-studio.js
+          grep -q 'Guest' apps/chimera-ii-os/web/repository-app-studio.html
       - name: Validate Hercules integration surface
         run: |
           test -s apps/chimera-ii-os/web/hercules-integration.html
