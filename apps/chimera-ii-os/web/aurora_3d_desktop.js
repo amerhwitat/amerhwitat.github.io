@@ -120,6 +120,60 @@
   });
 
   $('launcherButton')?.addEventListener('click', () => app('launcher'));
+  async function loadAuroraApplicationRegistry() {
+    const matrix = $('appMatrix');
+    if (!matrix) return;
+    const localFallback = [{"id":"local-ancient-ocr-html","title":"Ancient Language Auto OCR","icon":"APP","url":"ancient-ocr.html","mode":"embedded","category":"Local Web Apps","order":0},{"id":"local-artifact-library-html","title":"Aurora Artifact Library","icon":"APP","url":"artifact-library.html","mode":"embedded","category":"Local Web Apps","order":1},{"id":"local-aurora-ecosystem-center-html","title":"Aurora Ecosystem Center","icon":"APP","url":"aurora-ecosystem-center.html","mode":"embedded","category":"Local Web Apps","order":2},{"id":"local-aurora-emulator-html","title":"Aurora Emulator","icon":"APP","url":"aurora-emulator.html","mode":"embedded","category":"Local Web Apps","order":3},{"id":"local-aurora-interaction-hub-html","title":"Aurora Interaction Hub","icon":"APP","url":"aurora-interaction-hub.html","mode":"embedded","category":"Local Web Apps","order":4},{"id":"local-aurora-3d-desktop-html","title":"Aurora 3D Desktop","icon":"APP","url":"aurora_3d_desktop.html","mode":"embedded","category":"Local Web Apps","order":5},{"id":"local-aurora-terminal-html","title":"Aurora Terminal","icon":"APP","url":"aurora_terminal.html","mode":"embedded","category":"Local Web Apps","order":6},{"id":"local-backend-status-html","title":"Aurora Backend Gateway","icon":"APP","url":"backend-status.html","mode":"embedded","category":"Local Web Apps","order":7},{"id":"local-chimera-language-runtime-html","title":"Chimera Language Runtime Lab","icon":"APP","url":"chimera-language-runtime.html","mode":"embedded","category":"Local Web Apps","order":8},{"id":"local-chimera-code-ide-html","title":"Chimera Code IDE","icon":"APP","url":"chimera_code_ide.html","mode":"embedded","category":"Local Web Apps","order":9},{"id":"local-command-console-html","title":"Aurora Command Center","icon":"APP","url":"command-console.html","mode":"embedded","category":"Local Web Apps","order":10},{"id":"local-crash-center-html","title":"Crash Center & Recovery","icon":"APP","url":"crash_center.html","mode":"embedded","category":"Local Web Apps","order":11},{"id":"local-desktop-switcher-html","title":"Desktop Switcher","icon":"APP","url":"desktop_switcher.html","mode":"embedded","category":"Local Web Apps","order":12},{"id":"local-game-center-html","title":"Aurora Complete Game Center","icon":"APP","url":"game-center.html","mode":"embedded","category":"Local Web Apps","order":13},{"id":"local-health-html","title":"System Health & KPIs","icon":"APP","url":"health.html","mode":"embedded","category":"Local Web Apps","order":14},{"id":"local-hercules-integration-html","title":"Hercules Runtime","icon":"APP","url":"hercules-integration.html","mode":"embedded","category":"Local Web Apps","order":15},{"id":"local-index-html","title":"Chimera II Web Home","icon":"APP","url":"index.html","mode":"embedded","category":"Local Web Apps","order":16},{"id":"local-installer-manager-html","title":"Chimera Installer Manager","icon":"APP","url":"installer_manager.html","mode":"embedded","category":"Local Web Apps","order":17},{"id":"local-isa-explorer-html","title":"Chimera ISA Explorer","icon":"APP","url":"isa-explorer.html","mode":"embedded","category":"Local Web Apps","order":18},{"id":"local-iso-flash-center-html","title":"ISO & Flash Center","icon":"APP","url":"iso-flash-center.html","mode":"embedded","category":"Local Web Apps","order":19},{"id":"local-mame-center-html","title":"Aurora MAME Arcade Center","icon":"APP","url":"mame-center.html","mode":"embedded","category":"Local Web Apps","order":20},{"id":"local-network-engine-html","title":"Aurora Network Engine","icon":"APP","url":"network-engine.html","mode":"embedded","category":"Local Web Apps","order":21},{"id":"local-network-monitor-html","title":"TCP/IP Network Monitor","icon":"APP","url":"network_monitor.html","mode":"embedded","category":"Local Web Apps","order":22},{"id":"local-ocr-studio-html","title":"Aurora OCR Studio","icon":"APP","url":"ocr-studio.html","mode":"embedded","category":"Local Web Apps","order":23},{"id":"local-repository-app-studio-html","title":"Repository App Studio","icon":"APP","url":"repository-app-studio.html","mode":"embedded","category":"Local Web Apps","order":24},{"id":"local-research-lab-html","title":"Aurora Research Lab","icon":"APP","url":"research-lab.html","mode":"embedded","category":"Local Web Apps","order":25},{"id":"local-research-os-html","title":"Chimera Research OS","icon":"APP","url":"research-os.html","mode":"embedded","category":"Local Web Apps","order":26},{"id":"local-retro-emulators-html","title":"Retro Computer Emulators","icon":"APP","url":"retro_emulators.html","mode":"embedded","category":"Local Web Apps","order":27},{"id":"local-smart-model-html","title":"Aurora Smart Model","icon":"APP","url":"smart-model.html","mode":"embedded","category":"Local Web Apps","order":28},{"id":"local-system-control-center-html","title":"System Control Center","icon":"APP","url":"system_control_center.html","mode":"embedded","category":"Local Web Apps","order":29},{"id":"local-thamudicscan-html","title":"Aurora ThamudicScan","icon":"APP","url":"thamudicscan.html","mode":"embedded","category":"Local Web Apps","order":30},{"id":"local-wallet-center-html","title":"Aurora Wallet & Ecosystem Center","icon":"APP","url":"wallet-center.html","mode":"embedded","category":"Local Web Apps","order":31}];
+    const escText = value => esc(value);
+    const iconFor = appItem => appItem.icon || 'APP';
+    const render = apps => {
+      const seen = new Set();
+      const usable = apps.filter(item => {
+        if (!item || !item.title || !item.url || seen.has(item.url)) return false;
+        seen.add(item.url);
+        return true;
+      });
+      matrix.innerHTML = usable.map(item => {
+        const external = /^https?:\\/\\//i.test(item.url);
+        return '<button class="aurora-app-tile" data-registry-app="1" data-app-title="' + escText(item.title) +
+          '" data-app-url="' + escText(item.url) + '" title="' + escText(item.title) + '">' +
+          '<span class="tile-icon">' + escText(iconFor(item)) + '</span><small>' + escText(item.title) +
+          (external ? ' ↗' : '') + '</small></button>';
+      }).join('');
+      matrix.querySelectorAll('[data-registry-app]').forEach(button => {
+        button.addEventListener('click', () => {
+          const title=button.dataset.appTitle, path=button.dataset.appUrl;
+          if (/^https?:\\/\\//i.test(path)) {
+            sayRegistryStatus('Opening '+title);
+            window.open(path,'_blank','noopener,noreferrer');
+          } else {
+            openRoute(title,path);
+          }
+        });
+      });
+      sayRegistryStatus('Aurora launcher · '+usable.length+' applications indexed');
+    };
+    const sayRegistryStatus = message => {
+      if ($('statusMessage')) $('statusMessage').textContent=message;
+    };
+    try {
+      const [catalogResponse,indexResponse] = await Promise.all([
+        fetch('aurora_apps.json',{cache:'no-store'}),
+        fetch('aurora-app-index.json',{cache:'no-store'})
+      ]);
+      const catalog = catalogResponse.ok ? await catalogResponse.json() : {};
+      const indexData = indexResponse.ok ? await indexResponse.json() : {apps:localFallback};
+      const catalogApps = (catalog.categories || []).flatMap(category =>
+        (category.apps || []).map(item => ({...item, category:category.title}))
+      ).filter(item => item.url && item.url !== 'aurora_3d_desktop.html');
+      const merged = [...catalogApps, ...(indexData.apps || localFallback)];
+      render(merged);
+    } catch (error) {
+      console.warn('Aurora application registry fallback:',error);
+      render(localFallback);
+    }
+  }
+
   setProgress(72, 'Connecting Aurora application routes…');
   $('dockLauncher')?.addEventListener('click', () => app('launcher'));
 
