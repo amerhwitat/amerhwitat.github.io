@@ -91,6 +91,7 @@ jobs:
         run: |
           test -s scripts/build_ss64_command_catalog.py
           node --check apps/chimera-ii-os/web/aurora-interaction-hub.js
+          node --check apps/chimera-ii-os/web/aurora_3d_desktop.js
           grep -q 'ss64' apps/chimera-ii-os/web/aurora_3d_desktop.js
           grep -q 'العربية' apps/chimera-ii-os/web/command-console.html
       - name: Validate Chimera language runtime lab
