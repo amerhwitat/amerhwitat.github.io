@@ -134,7 +134,7 @@
         return true;
       });
       matrix.innerHTML = usable.map(item => {
-        const external = /^https?:\\/\\//i.test(item.url);
+        const external = /^https?:\/\//i.test(item.url);
         return '<button class="aurora-app-tile" data-registry-app="1" data-app-title="' + escText(item.title) +
           '" data-app-url="' + escText(item.url) + '" title="' + escText(item.title) + '">' +
           '<span class="tile-icon">' + escText(iconFor(item)) + '</span><small>' + escText(item.title) +
@@ -143,7 +143,7 @@
       matrix.querySelectorAll('[data-registry-app]').forEach(button => {
         button.addEventListener('click', () => {
           const title=button.dataset.appTitle, path=button.dataset.appUrl;
-          if (/^https?:\\/\\//i.test(path)) {
+          if (/^https?:\/\//i.test(path)) {
             sayRegistryStatus('Opening '+title);
             window.open(path,'_blank','noopener,noreferrer');
           } else {
