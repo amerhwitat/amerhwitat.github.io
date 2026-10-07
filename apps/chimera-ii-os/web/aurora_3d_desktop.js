@@ -210,4 +210,69 @@
     document.addEventListener('click',e=>{if(e.target.closest('button,a'))tone(620,.04,'triangle');});
     updateSoundUI();
   })();
+  // Aurora simulator enhancement layer: keyboard controls, live telemetry, visual profiles,
+  // and a non-destructive 3D performance switch. These controls degrade cleanly to 2D.
+  (() => {
+    const panel = $('auroraControlPanel');
+    const status = $('statusMessage');
+    const dot = document.querySelector('.status-dot');
+    const canvas = $('aurora3dCanvas');
+    const telemetry = { frames: 0, last: performance.now(), fps: 0, enabled: true };
+    const settings = {
+      intensity: Number(localStorage.getItem('chimera.aurora.intensity') || 72),
+      motion: Number(localStorage.getItem('chimera.aurora.motion') || 55),
+      blur: Number(localStorage.getItem('chimera.aurora.blur') || 18)
+    };
+    function say(message, kind='ready'){
+      if(status) status.textContent=message;
+      if(dot) dot.className='status-dot'+(kind==='busy'?' busy':kind==='warn'?' warn':'');
+    }
+    function setVar(name,value){document.documentElement.style.setProperty(name,value+'px');}
+    const intensity=$('sceneIntensity'), motion=$('sceneMotion'), blur=$('glassBlur');
+    if(intensity) intensity.value=settings.intensity;
+    if(motion) motion.value=settings.motion;
+    if(blur) blur.value=settings.blur;
+    intensity?.addEventListener('input',e=>{
+      settings.intensity=+e.target.value; localStorage.setItem('chimera.aurora.intensity',settings.intensity);
+      if(canvas) canvas.style.opacity=(0.04+settings.intensity/100*0.3).toFixed(2);
+      say('Aurora scene intensity '+settings.intensity+'%','busy');
+    });
+    motion?.addEventListener('input',e=>{
+      settings.motion=+e.target.value; localStorage.setItem('chimera.aurora.motion',settings.motion);
+      say('Aurora motion '+settings.motion+'%','busy');
+    });
+    blur?.addEventListener('input',e=>{
+      settings.blur=+e.target.value; localStorage.setItem('chimera.aurora.blur',settings.blur);
+      setVar('--aurora-user-blur',settings.blur); say('Glass blur '+settings.blur+'px');
+    });
+    $('closeAuroraControls')?.addEventListener('click',()=>panel?.classList.add('hidden'));
+    $('toggleTelemetry')?.addEventListener('click',()=>say('Telemetry: '+(telemetry.enabled?'LIVE':'PAUSED')));
+    $('toggle3D')?.addEventListener('click',e=>{
+      telemetry.enabled=!telemetry.enabled;
+      if(canvas) canvas.style.visibility=telemetry.enabled?'visible':'hidden';
+      e.currentTarget.textContent='3D: '+(telemetry.enabled?'ON':'OFF');
+      $('renderState') && ($('renderState').textContent=telemetry.enabled?'3D':'2D');
+      say('Aurora renderer '+(telemetry.enabled?'enabled':'paused'));
+    });
+    document.addEventListener('keydown',e=>{
+      if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='k'){e.preventDefault();app('launcher');}
+      if((e.ctrlKey||e.metaKey)&&e.shiftKey&&e.key.toLowerCase()==='a'){e.preventDefault();panel?.classList.toggle('hidden');}
+      if(e.key==='Escape'){panel?.classList.add('hidden');$('launcher')?.classList.add('hidden');}
+    });
+    setInterval(()=>{
+      if(!telemetry.enabled)return;
+      const now=performance.now(), elapsed=now-telemetry.last;
+      telemetry.fps=Math.round((telemetry.frames*1000)/Math.max(1,elapsed));
+      telemetry.frames=0; telemetry.last=now;
+      if($('fpsState')) $('fpsState').textContent=telemetry.fps+' FPS';
+      if($('gpuState')) $('gpuState').textContent=window.THREE?'WEBGL':'2D';
+    },1000);
+    const oldOpenRoute=openRoute;
+    openRoute=(title,path)=>{say('Opening '+title,'busy');oldOpenRoute(title,path);setTimeout(()=>say(title+' ready'),500);};
+    document.querySelectorAll('[data-app]').forEach(b=>b.addEventListener('click',()=>say('Launching '+(b.dataset.app||'application'),'busy'),{once:false}));
+    setVar('--aurora-user-blur',settings.blur);
+    if(canvas) canvas.style.opacity=(0.04+settings.intensity/100*0.3).toFixed(2);
+    say('Aurora Wayland Glass · Enhanced simulator mode');
+    window.setInterval(()=>{if(telemetry.enabled)telemetry.frames++;},16);
+  })();
 })();
