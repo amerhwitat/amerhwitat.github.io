@@ -39,6 +39,7 @@ function renderPython(){
 }
 ["pySearch","pyRepo","pyRole","pyKind"].forEach(id=>$(id).oninput=$(id).onchange=renderPython);
 $("pyRefresh").onclick=()=>{event("refresh-python-catalog","pyRefresh");loadPythonCatalog()};
+$("pyBuild").onclick=async()=>{event("build-all-python","pyBuild");$("output").textContent="Building Python files with the authorized local bridge…";try{const r=await fetch("http://127.0.0.1:8765/python/build-all",{method:"POST",headers:{"Content-Type":"application/json"},body:"{}"});const j=await r.json();if(!r.ok)throw Error(j.error||"build failed");$("output").textContent=JSON.stringify(j,null,2)}catch(e){$("output").textContent="Python build bridge unavailable. Configure CHIMERA_PYTHON_WORKSPACE on the local bridge.\n\n"+e.message}};
 $("pyExport").onclick=()=>{event("export-python-catalog","pyExport");if(!PY)return;const b=new Blob([JSON.stringify(PY,null,2)],{type:"application/json"}),u=URL.createObjectURL(b),a=document.createElement("a");a.href=u;a.download="chimera-python-catalog.json";a.click();URL.revokeObjectURL(u)};
 loadPythonCatalog();
 
