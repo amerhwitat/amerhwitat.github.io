@@ -1,0 +1,4255 @@
+{
+  "schema": "chimera-language-runtime-catalog/v1",
+  "generated": "2026-10-07",
+  "sourceCommit": "3fd48c589eacc90c80543befd0471c1c963704c2",
+  "source": "https://github.com/amerhwitat/ChimeraIIOS",
+  "totalTrackedFiles": 701,
+  "counts": {
+    "c": 112,
+    "cpp": 299,
+    "java": 26,
+    "python": 230,
+    "asm": 21,
+    "kotlin": 13
+  },
+  "targets": {
+    "asm": {
+      "mode": "native/JS emulator adapter",
+      "legacy": "Java Applet descriptor only",
+      "modern": "WASM/JS adapter"
+    },
+    "c": {
+      "mode": "native bridge/WASM",
+      "legacy": "ActiveX/COM descriptor only",
+      "modern": "WASM"
+    },
+    "cpp": {
+      "mode": "native bridge/WASM",
+      "legacy": "ActiveX/COM descriptor only",
+      "modern": "WASM"
+    },
+    "python": {
+      "mode": "Python runtime bridge",
+      "legacy": "ActiveX/COM descriptor only",
+      "modern": "Pyodide or local bridge"
+    },
+    "kotlin": {
+      "mode": "JVM/Android/WASM adapter",
+      "legacy": "Java Applet descriptor only",
+      "modern": "Kotlin/JVM or Kotlin/WASM"
+    },
+    "java": {
+      "mode": "JVM adapter",
+      "legacy": "Java Applet descriptor only",
+      "modern": "TeaVM/WASM or local JVM"
+    }
+  },
+  "files": [
+    {
+      "path": ".chimera-fix-backups/cat-fix-20261005-072100/chimera-cmd.c",
+      "sha": "298c1c777d50c7af7e8a77810af3f667e7defe7b",
+      "size": 7360,
+      "kind": "c"
+    },
+    {
+      "path": ".chimera-fix-backups/cat-fix-20261005-072140/chimera-cmd.c",
+      "sha": "e5679000879b09972719b92d2f9326fb625cf754",
+      "size": 7624,
+      "kind": "c"
+    },
+    {
+      "path": ".chimera-fix-backups/cat-fix-20261005-072252/chimera-cmd.c",
+      "sha": "8172e7ba96796e6b289341a8973cdf846928feb7",
+      "size": 7834,
+      "kind": "c"
+    },
+    {
+      "path": ".chimera-fix-backups/cat-fix-20261005-115814/chimera-cmd.c",
+      "sha": "6be08a160337e7c1de21a6e83f5a1ce6c4613173",
+      "size": 8154,
+      "kind": "c"
+    },
+    {
+      "path": ".chimera-fix-backups/command-compat-20261005-071709/chimera-cmd.c",
+      "sha": "898fe5f823ebf277675503cd0186a81a3b1632cf",
+      "size": 6696,
+      "kind": "c"
+    },
+    {
+      "path": ".chimera-fix-backups/command-compat-20261005-072021/chimera-cmd.c",
+      "sha": "90b7fe11e26fe2a82fcb0254f009c8b9fc45f6c3",
+      "size": 6708,
+      "kind": "c"
+    },
+    {
+      "path": ".chimera-fix-backups/command-compat-20261005-115822/chimera-cmd.c",
+      "sha": "6be08a160337e7c1de21a6e83f5a1ce6c4613173",
+      "size": 8154,
+      "kind": "c"
+    },
+    {
+      "path": ".chimera-step3-fix-backups/20261005-221732/scheduler.cpp",
+      "sha": "c8012b3fce7b1be416d334cec0ad6b63044fb57d",
+      "size": 4568,
+      "kind": "cpp"
+    },
+    {
+      "path": ".chimera-step3-fix-backups/20261005-221833/scheduler.cpp",
+      "sha": "1c788278a4123b126eb326cce6785841e252abb5",
+      "size": 5260,
+      "kind": "cpp"
+    },
+    {
+      "path": ".chimera-step3-fix-backups/20261005-222208/scheduler.cpp",
+      "sha": "2feb207d42ef092866532282ef21587152f8070e",
+      "size": 5861,
+      "kind": "cpp"
+    },
+    {
+      "path": "ISO-Tool/java/src/main/java/iso/tool/DependencyDetector.java",
+      "sha": "a4a9ffa99fc4f6209827a0a5af56c17c5cdc9670",
+      "size": 1813,
+      "kind": "java"
+    },
+    {
+      "path": "ISO-Tool/java/src/main/java/iso/tool/Main.java",
+      "sha": "4632d959db3f070ec1f9e74d0262023304ce0e07",
+      "size": 707,
+      "kind": "java"
+    },
+    {
+      "path": "ISO-Tool/java/src/main/java/iso/tool/PythonParityScanner.java",
+      "sha": "69ba6a79fea16205ecff9a6050e44c0c2acfd795",
+      "size": 413,
+      "kind": "java"
+    },
+    {
+      "path": "ISO-Tool/java/src/main/java/iso/tool/UnifiedGui.java",
+      "sha": "6082c22584a5b86ac66cae18dfa60c60763cb1ff",
+      "size": 2840,
+      "kind": "java"
+    },
+    {
+      "path": "ISO-Tool/java/src/main/java/iso/tool/WebLearningEngine.java",
+      "sha": "a3ecf436ce2751bfc65bd2544e37f4dc3d2fc0d6",
+      "size": 1779,
+      "kind": "java"
+    },
+    {
+      "path": "ISO-Tool/python/build_workspace.py",
+      "sha": "ce5dba9a5cac5cc28ef6bab21fd8196eec497c20",
+      "size": 1228,
+      "kind": "python"
+    },
+    {
+      "path": "ISO-Tool/python/detect_toolchains.py",
+      "sha": "1fca2101e6d88f55d6d5aec361f01b6d7ee1525f",
+      "size": 936,
+      "kind": "python"
+    },
+    {
+      "path": "ISO-Tool/python/iso_tool/ai_engine.py",
+      "sha": "b59122cbac776cf449276aa49ca17c6c5457e9ca",
+      "size": 1139,
+      "kind": "python"
+    },
+    {
+      "path": "ISO-Tool/python/iso_tool/application_discovery.py",
+      "sha": "62f93d91ce6e411fc5b49c730054f8d0a5f2e10d",
+      "size": 3403,
+      "kind": "python"
+    },
+    {
+      "path": "ISO-Tool/python/iso_tool/boot_builder.py",
+      "sha": "2ae70433d0816ebd63ff1e2ea1105fda0b53e645",
+      "size": 850,
+      "kind": "python"
+    },
+    {
+      "path": "ISO-Tool/python/iso_tool/build_adapters.py",
+      "sha": "f7345f151217fbe0ef15f4beb44c3beb2ca20591",
+      "size": 2205,
+      "kind": "python"
+    },
+    {
+      "path": "ISO-Tool/python/iso_tool/build_entrypoint.py",
+      "sha": "eea54f69ab4f72c744b056c80df2498010365f71",
+      "size": 6498,
+      "kind": "python"
+    },
+    {
+      "path": "ISO-Tool/python/iso_tool/build_planner.py",
+      "sha": "f5fa9d3c9d111ea037900c76d39827c0ce00a405",
+      "size": 1241,
+      "kind": "python"
+    },
+    {
+      "path": "ISO-Tool/python/iso_tool/builtin_boot_assembler.py",
+      "sha": "e697da04b7e1d178e716b4790a3c86613195b345",
+      "size": 1717,
+      "kind": "python"
+    },
+    {
+      "path": "ISO-Tool/python/iso_tool/dependencies.py",
+      "sha": "5897177d3b0c943775c4358bd93b234b63726fbb",
+      "size": 2104,
+      "kind": "python"
+    },
+    {
+      "path": "ISO-Tool/python/iso_tool/dependency_detector.py",
+      "sha": "5ad5394d86b40e4daa0119ce7aaa3c5b96f1c9bd",
+      "size": 2785,
+      "kind": "python"
+    },
+    {
+      "path": "ISO-Tool/python/iso_tool/document_intelligence.py",
+      "sha": "f5afb5e9f6eee839ec4a95239667d662ae5eb959",
+      "size": 1705,
+      "kind": "python"
+    },
+    {
+      "path": "ISO-Tool/python/iso_tool/gcc_bootstrap.py",
+      "sha": "0170e4d2554825ee1c42d7cf0828385dc442cc6d",
+      "size": 1636,
+      "kind": "python"
+    },
+    {
+      "path": "ISO-Tool/python/iso_tool/github_source.py",
+      "sha": "1d1f7b175f8fab501abd654ecbf17469769c1803",
+      "size": 3939,
+      "kind": "python"
+    },
+    {
+      "path": "ISO-Tool/python/iso_tool/image.py",
+      "sha": "492939d0c99c30ea3c9fa24ee8a958ab80c65ac3",
+      "size": 1707,
+      "kind": "python"
+    },
+    {
+      "path": "ISO-Tool/python/iso_tool/image_profiles.py",
+      "sha": "3e88d70fadc2134dc69b3a3b17cd1167133a2a77",
+      "size": 1173,
+      "kind": "python"
+    },
+    {
+      "path": "ISO-Tool/python/iso_tool/iso_merger.py",
+      "sha": "99a7c5e224ca9bfe38ec09484f353938bd0014cd",
+      "size": 1916,
+      "kind": "python"
+    },
+    {
+      "path": "ISO-Tool/python/iso_tool/learning_engine.py",
+      "sha": "60a9ce0e3f457bf3b578ac2c3f8b38888c6d4c67",
+      "size": 1285,
+      "kind": "python"
+    },
+    {
+      "path": "ISO-Tool/python/iso_tool/neural_engine.py",
+      "sha": "8503b9a7b108287f71ea6430e680c2122955ea36",
+      "size": 809,
+      "kind": "python"
+    },
+    {
+      "path": "ISO-Tool/python/iso_tool/output_manager.py",
+      "sha": "8ea60ea0dd6c64be2ea48b635134d9d77a5359d1",
+      "size": 1981,
+      "kind": "python"
+    },
+    {
+      "path": "ISO-Tool/python/iso_tool/rnn_engine.py",
+      "sha": "da3d7a8437a6350f1bf822b87d6c6096b35e81a6",
+      "size": 691,
+      "kind": "python"
+    },
+    {
+      "path": "ISO-Tool/python/iso_tool/source_archive.py",
+      "sha": "834e7c09cde4107d64a64b990d083668236b6512",
+      "size": 3124,
+      "kind": "python"
+    },
+    {
+      "path": "ISO-Tool/python/iso_tool/source_translator.py",
+      "sha": "2a8a5725dcaea4ce489a1f8a1a045042ce2ac01c",
+      "size": 4714,
+      "kind": "python"
+    },
+    {
+      "path": "ISO-Tool/python/iso_tool/toolchain_bootstrap.py",
+      "sha": "b1fa756b135175b4fe692b16b7aa476103fa2929",
+      "size": 2407,
+      "kind": "python"
+    },
+    {
+      "path": "ISO-Tool/python/iso_tool/toolchain_detector.py",
+      "sha": "cc99a0ba79fd594b58b695d124b902d36d53e5ab",
+      "size": 6011,
+      "kind": "python"
+    },
+    {
+      "path": "ISO-Tool/python/iso_tool/toolchain_runner.py",
+      "sha": "35cff03c3ddb347847f8ac32e9d6411499f286d8",
+      "size": 1768,
+      "kind": "python"
+    },
+    {
+      "path": "ISO-Tool/python/iso_tool/tree_scanner.py",
+      "sha": "e59a9ceff6e5837a79e41309c90ba351764ddf3b",
+      "size": 3245,
+      "kind": "python"
+    },
+    {
+      "path": "ISO-Tool/python/iso_tool/unified_gui.py",
+      "sha": "c937c6b4c296d9b18fc4e7cae3dc8db05fbfe003",
+      "size": 4099,
+      "kind": "python"
+    },
+    {
+      "path": "ISO-Tool/python/iso_tool/web_engine.py",
+      "sha": "c8908e9c3c2b9981ad55fc8793d97d786a0ca91b",
+      "size": 2587,
+      "kind": "python"
+    },
+    {
+      "path": "ISO-Tool/python/iso_tool/workspace_builder.py",
+      "sha": "dd4661e6b6fcdf3a7e8f52c719ca6342a40660e1",
+      "size": 4619,
+      "kind": "python"
+    },
+    {
+      "path": "ISO-Tool/python/launch_gui.py",
+      "sha": "552474ea0f12c4347b754d92341d33b557ebe5ef",
+      "size": 97,
+      "kind": "python"
+    },
+    {
+      "path": "ISO-Tool/python/main.py",
+      "sha": "63ebc1226c73563f604a050628849cf625a39177",
+      "size": 13152,
+      "kind": "python"
+    },
+    {
+      "path": "ISO-Tool/python/tests/test_application_discovery.py",
+      "sha": "ae63276789b9cb892d36e8b6a8a7a34328026008",
+      "size": 659,
+      "kind": "python"
+    },
+    {
+      "path": "ISO-Tool/python/tests/test_deep_scan_boot.py",
+      "sha": "2aba4b63ce44d4c266313fbc5ac8443a0a8ae097",
+      "size": 874,
+      "kind": "python"
+    },
+    {
+      "path": "ISO-Tool/python/tests/test_source_archive.py",
+      "sha": "0c24ee9fd82a0d807d02040d49d08e7b45066525",
+      "size": 1000,
+      "kind": "python"
+    },
+    {
+      "path": "ISO-Tool/python/tests/test_source_translator.py",
+      "sha": "7d2492c39fe58d65500c4fd944ae08a39e9225b4",
+      "size": 609,
+      "kind": "python"
+    },
+    {
+      "path": "ISO-Tool/python/tests/test_web_learning.py",
+      "sha": "0c1c2575ba45e3b11d713ef74ef9159792a82d4c",
+      "size": 336,
+      "kind": "python"
+    },
+    {
+      "path": "ISO-Tool/tools/compiler_manager.py",
+      "sha": "3760b691bcfde92ba66dd43995ca7cda8beaa985",
+      "size": 1750,
+      "kind": "python"
+    },
+    {
+      "path": "ISO-Tool/tools/toolchain.py",
+      "sha": "0c3412acbfb055b7dabf1377a9d0d5c7332dbc9d",
+      "size": 1811,
+      "kind": "python"
+    },
+    {
+      "path": "ISO-Tool/vcpp/DependencyDetector.cpp",
+      "sha": "e8f4226456eb3a03fa0cc568d37ba93d57b08bc1",
+      "size": 2021,
+      "kind": "cpp"
+    },
+    {
+      "path": "ISO-Tool/vcpp/DependencyDetector.hpp",
+      "sha": "dfb9007bd3d54a36b772c6957fc506a8f349ed90",
+      "size": 335,
+      "kind": "cpp"
+    },
+    {
+      "path": "ISO-Tool/vcpp/PythonParity.cpp",
+      "sha": "143b5b3498d402b15db696d5343e3707317bf615",
+      "size": 647,
+      "kind": "cpp"
+    },
+    {
+      "path": "ISO-Tool/vcpp/PythonParity.hpp",
+      "sha": "7711cfc3756e202dfd197b5c20c008b49cdeacab",
+      "size": 304,
+      "kind": "cpp"
+    },
+    {
+      "path": "ISO-Tool/vcpp/ToolchainDetector.cpp",
+      "sha": "f97817d96213e3f2227447b9204845e8668fd865",
+      "size": 1499,
+      "kind": "cpp"
+    },
+    {
+      "path": "ISO-Tool/vcpp/ToolchainDetector.hpp",
+      "sha": "d08780ba0076e3e633f070f97a7cc937c54d0bfc",
+      "size": 240,
+      "kind": "cpp"
+    },
+    {
+      "path": "ISO-Tool/vcpp/UnifiedGui.cpp",
+      "sha": "209c6c9d2dd94a2fbe83a4ae16663bbd9aa8be81",
+      "size": 3015,
+      "kind": "cpp"
+    },
+    {
+      "path": "ISO-Tool/vcpp/WebLearningEngine.cpp",
+      "sha": "43604c311a02b74d8ebda598fd011d2f3ff167a3",
+      "size": 1203,
+      "kind": "cpp"
+    },
+    {
+      "path": "ISO-Tool/vcpp/WebLearningEngine.hpp",
+      "sha": "c3270e061622180f517cc82f09320d92c4004d5c",
+      "size": 360,
+      "kind": "cpp"
+    },
+    {
+      "path": "ISO-Tool/vcpp/external_linkage.cpp",
+      "sha": "4fc986d040aaf643efd998c20a68d17b43629457",
+      "size": 178,
+      "kind": "cpp"
+    },
+    {
+      "path": "ISO-Tool/vcpp/windows_linkage.h",
+      "sha": "cd6ee55b25ed86a17255f5fcc37104eba427ae47",
+      "size": 295,
+      "kind": "c"
+    },
+    {
+      "path": "Mobile Microkernel/arch/arm64/exception_vectors.S",
+      "sha": "70cf6a41c420b4f54afade7dd5a8357a882bca13",
+      "size": 517,
+      "kind": "asm"
+    },
+    {
+      "path": "Mobile Microkernel/arch/riscv64/trap_entry.S",
+      "sha": "ed39b45ab34b644ca5e200113fbbf7e30c25371c",
+      "size": 439,
+      "kind": "asm"
+    },
+    {
+      "path": "Mobile Microkernel/include/chimera/mobile/capabilities.hpp",
+      "sha": "95654d6559c7f29deb6ab32121174ea12f7f7a82",
+      "size": 573,
+      "kind": "cpp"
+    },
+    {
+      "path": "Mobile Microkernel/include/chimera/mobile/drivers.hpp",
+      "sha": "82af14339122cbde7a59adcb0b07ae009fca19f4",
+      "size": 696,
+      "kind": "cpp"
+    },
+    {
+      "path": "Mobile Microkernel/include/chimera/mobile/hal_contract.hpp",
+      "sha": "0ac3904160459b6684995255728e5cd1fc713756",
+      "size": 937,
+      "kind": "cpp"
+    },
+    {
+      "path": "Mobile Microkernel/include/chimera/mobile/interrupt.hpp",
+      "sha": "af34ff80dc7234bb62861bd94f6e10aaa8dc8174",
+      "size": 509,
+      "kind": "cpp"
+    },
+    {
+      "path": "Mobile Microkernel/include/chimera/mobile/ipc.hpp",
+      "sha": "9ca111ae1234f7a7cd89ef75e2312ea5267fc1c4",
+      "size": 634,
+      "kind": "cpp"
+    },
+    {
+      "path": "Mobile Microkernel/include/chimera/mobile/memory.hpp",
+      "sha": "da3e3865d3e0b8e881b33bc1a5948e1f768cad34",
+      "size": 689,
+      "kind": "cpp"
+    },
+    {
+      "path": "Mobile Microkernel/include/chimera/mobile/mobile_abi.hpp",
+      "sha": "fcbf90fe6fbf47a0102e0535e0ceb0d975c0586e",
+      "size": 650,
+      "kind": "cpp"
+    },
+    {
+      "path": "Mobile Microkernel/include/chimera/mobile/mobile_kernel.hpp",
+      "sha": "28c2991e4a9d786db99a259fb028e7ad8f0bfa62",
+      "size": 759,
+      "kind": "cpp"
+    },
+    {
+      "path": "Mobile Microkernel/include/chimera/mobile/platform.hpp",
+      "sha": "23febeb73f4c61f27489c4f35981ab74b0dad91d",
+      "size": 1302,
+      "kind": "cpp"
+    },
+    {
+      "path": "Mobile Microkernel/include/chimera/mobile/power.hpp",
+      "sha": "b20d8c7ef80c4f47d1198dabb9a89a4e951a0259",
+      "size": 777,
+      "kind": "cpp"
+    },
+    {
+      "path": "Mobile Microkernel/include/chimera/mobile/scheduler.hpp",
+      "sha": "a3b5dbf34306b05286b0c17fdc6453538e8162ef",
+      "size": 789,
+      "kind": "cpp"
+    },
+    {
+      "path": "Mobile Microkernel/src/kernel/mobile_kernel.cpp",
+      "sha": "bb8cd05f47c9d934f695e4d0eb00ca55b83ed051",
+      "size": 778,
+      "kind": "cpp"
+    },
+    {
+      "path": "Mobile Microkernel/tests/hal_contract.cpp",
+      "sha": "a508106edb1310a1933fcfb74a837a4c32c9526b",
+      "size": 405,
+      "kind": "cpp"
+    },
+    {
+      "path": "Mobile Microkernel/tests/platform_contract.cpp",
+      "sha": "105b41dbbe0b91f31e5c2de53fe95c9e4de916e5",
+      "size": 669,
+      "kind": "cpp"
+    },
+    {
+      "path": "Mobile Microkernel/tests/smoke.cpp",
+      "sha": "179b75b33ec59233babfeb33722c80641329c89e",
+      "size": 691,
+      "kind": "cpp"
+    },
+    {
+      "path": "appcenter/cli/chimera-appctl.py",
+      "sha": "864a5c4870a67d5ea077ff5f27d35f97a6902e8c",
+      "size": 2862,
+      "kind": "python"
+    },
+    {
+      "path": "appcenter/tests/test_catalog.py",
+      "sha": "85dc081c212df92296fe408b0b550d98e9768734",
+      "size": 920,
+      "kind": "python"
+    },
+    {
+      "path": "applications/c/chm_application.h",
+      "sha": "1624e92900567ae2ec1856479acca21057acb443",
+      "size": 336,
+      "kind": "c"
+    },
+    {
+      "path": "applications/cpp/chm_application.hpp",
+      "sha": "0390c4f5ce78fa2c0ab6499d64034c87e1dd0587",
+      "size": 153,
+      "kind": "cpp"
+    },
+    {
+      "path": "applications/java/chimera/applications/Application.java",
+      "sha": "2a7f679a4dcf2e90a0030ec733667920c8603521",
+      "size": 188,
+      "kind": "java"
+    },
+    {
+      "path": "applications/kotlin/ChimeraApplications.kt",
+      "sha": "654cb66ef9465d992764f5bcad0313c883812b43",
+      "size": 233,
+      "kind": "kotlin"
+    },
+    {
+      "path": "applications/linux/chimera_linux_apps.c",
+      "sha": "49df48d25559ba4e3f1da7ba10e3821ab6854847",
+      "size": 322,
+      "kind": "c"
+    },
+    {
+      "path": "applications/macos/chimera_macos_apps.c",
+      "sha": "5e42059220c213a52ca712867620d6b3dad142ca",
+      "size": 342,
+      "kind": "c"
+    },
+    {
+      "path": "applications/python/__init__.py",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0,
+      "kind": "python"
+    },
+    {
+      "path": "applications/python/chimera_applications.py",
+      "sha": "887eef352f7cd9956d117e0127f275688be413b3",
+      "size": 546,
+      "kind": "python"
+    },
+    {
+      "path": "applications/windows/chimera_windows_apps.c",
+      "sha": "6acff22f16526e814d78f09734f6f494563ab406",
+      "size": 341,
+      "kind": "c"
+    },
+    {
+      "path": "arch/registern/ChimeraCorePool.cpp",
+      "sha": "f37ae59ef3ffa312f3a5aa7dae6ec3e77ae88568",
+      "size": 1936,
+      "kind": "cpp"
+    },
+    {
+      "path": "arch/registern/ChimeraCorePool.h",
+      "sha": "f5c985b16d83a0c218289a0ec17535da8507fb07",
+      "size": 853,
+      "kind": "c"
+    },
+    {
+      "path": "arch/registern/HostIsaBackend.cpp",
+      "sha": "46e8321e600e4b555a4743609f43b0afaa61de8f",
+      "size": 607,
+      "kind": "cpp"
+    },
+    {
+      "path": "arch/registern/HostIsaBackend.h",
+      "sha": "1347bd447791b6b7cd846e6fbb7af407976d451b",
+      "size": 526,
+      "kind": "c"
+    },
+    {
+      "path": "arch/registern/RegisterN.cpp",
+      "sha": "cffd85d596a9599ea28db8b2f3f92448e5f8997d",
+      "size": 3871,
+      "kind": "cpp"
+    },
+    {
+      "path": "arch/registern/RegisterN.h",
+      "sha": "9b530a6f908defdc0f5bbc1d2c2b4e76815ec155",
+      "size": 1276,
+      "kind": "c"
+    },
+    {
+      "path": "boot/include/chimera/boot_flags.h",
+      "sha": "59b13878587e5060085195bd8dbdb8a792b30e7d",
+      "size": 430,
+      "kind": "c"
+    },
+    {
+      "path": "boot/include/chimera/bootinfo.h",
+      "sha": "79b502259418e529abd7fca14351fda8cd2d592e",
+      "size": 984,
+      "kind": "c"
+    },
+    {
+      "path": "boot/include/chimera/cpu_profile.h",
+      "sha": "88b6cec97353991ea96b6894a4c867cb93711a1d",
+      "size": 601,
+      "kind": "c"
+    },
+    {
+      "path": "boot/iso/boot.c",
+      "sha": "94a3eec99f7bf0f0671ba156b603d17c04c9e832",
+      "size": 919,
+      "kind": "c"
+    },
+    {
+      "path": "boot/iso/multiboot2.S",
+      "sha": "9152cea42b48c72715abc3d205275f1c19125db9",
+      "size": 447,
+      "kind": "asm"
+    },
+    {
+      "path": "boot/iso/validate-iso.py",
+      "sha": "60656eae1df5e2a6cf2438436fdc22f0d19cd265",
+      "size": 1866,
+      "kind": "python"
+    },
+    {
+      "path": "boot/jasper/jasper_entry.asm",
+      "sha": "a083f832eba8d1d376a124bdc57c193e2cf305f5",
+      "size": 184,
+      "kind": "asm"
+    },
+    {
+      "path": "boot/jasper/jasper_main.cpp",
+      "sha": "11341a9b951ecfa43066751ec24af2c013760d1f",
+      "size": 652,
+      "kind": "cpp"
+    },
+    {
+      "path": "boot/livecd/koronos_live_entry.S",
+      "sha": "4d73b31e9c3f7d01f55f6a7bc0c54b94502c3548",
+      "size": 190,
+      "kind": "asm"
+    },
+    {
+      "path": "boot/livecd/koronos_live_main.cpp",
+      "sha": "bea8b0a791d71f10e818aa3b1a4c858c46a4c505",
+      "size": 276,
+      "kind": "cpp"
+    },
+    {
+      "path": "boot/spitfire/sf0_mbr.asm",
+      "sha": "d05d7058e87179bd9c3a5dc50d7460257561e181",
+      "size": 629,
+      "kind": "asm"
+    },
+    {
+      "path": "boot/spitfire/sf1_longmode.asm",
+      "sha": "7c121daaaefb44c099163d0cce52e697678d7110",
+      "size": 1366,
+      "kind": "asm"
+    },
+    {
+      "path": "boot/spitfire/sf2_loader.cpp",
+      "sha": "df84b839ff45555b53bf11f9243be0b3602c5e59",
+      "size": 1109,
+      "kind": "cpp"
+    },
+    {
+      "path": "boot/spitfire/sf2_loader.h",
+      "sha": "2c6d0e20e8f90237a2bfa1782943d20430963cfb",
+      "size": 288,
+      "kind": "c"
+    },
+    {
+      "path": "boot/spitfire/sfu_uefi.c",
+      "sha": "9f5ec7493e59e1a6dcf79c862ebbaddd8375104a",
+      "size": 494,
+      "kind": "c"
+    },
+    {
+      "path": "boot/spitfire/sfu_uefi.h",
+      "sha": "cf501c5e4cfab620dc8ee49c9c6c50b6a91e1cfa",
+      "size": 242,
+      "kind": "c"
+    },
+    {
+      "path": "boot/splash/aurora_boot_ui.h",
+      "sha": "e5a8bf77207aed729c3030d629a582c620232151",
+      "size": 861,
+      "kind": "c"
+    },
+    {
+      "path": "boot/uefi/ChimeraLoader.c",
+      "sha": "78a1024b869ba79909a51ec4a5b7301c02c475c7",
+      "size": 1536,
+      "kind": "c"
+    },
+    {
+      "path": "boot/x86/entry/mode_switch.S",
+      "sha": "297de0d8bf20174b393f4ce51c0212eee91b9648",
+      "size": 1310,
+      "kind": "asm"
+    },
+    {
+      "path": "boot/x86/mbr/boot.asm",
+      "sha": "f7f916c22108a81e6033af0f5df75459cb83533e",
+      "size": 341,
+      "kind": "asm"
+    },
+    {
+      "path": "building_blocks/boot/boot_contract_tests.cpp",
+      "sha": "5ebd260ea6b4df52992c6cdb05ef0c6357f1e45f",
+      "size": 265,
+      "kind": "cpp"
+    },
+    {
+      "path": "building_blocks/boot/boot_info.hpp",
+      "sha": "96bf5d9903141a96cd38b6a5b63abb422d3ae44c",
+      "size": 856,
+      "kind": "cpp"
+    },
+    {
+      "path": "building_blocks/compatibility/foreign_arch.hpp",
+      "sha": "2643c79d721936f052aa5b59d5b4520c45a2b920",
+      "size": 887,
+      "kind": "cpp"
+    },
+    {
+      "path": "building_blocks/database/Hive/registry_contract.hpp",
+      "sha": "d2998e9ab6f1003a70dde0e8516f614879c330ca",
+      "size": 463,
+      "kind": "cpp"
+    },
+    {
+      "path": "building_blocks/database/Nucleus/record_contract.hpp",
+      "sha": "7d9de174246b23e90fed28d74a41525575329b53",
+      "size": 501,
+      "kind": "cpp"
+    },
+    {
+      "path": "building_blocks/desktop/Aurora/surface_contract.hpp",
+      "sha": "4b09561c159411003bc03967e59cbd2f8876c87c",
+      "size": 643,
+      "kind": "cpp"
+    },
+    {
+      "path": "building_blocks/kernel/ipc_contract.hpp",
+      "sha": "fc19d8afc14e4a853e5af4cd84347869b64c50f8",
+      "size": 760,
+      "kind": "cpp"
+    },
+    {
+      "path": "building_blocks/kernel/ipc_tests.cpp",
+      "sha": "6185734bbddc42ce2a32278fcb6d9d7c918dbc8a",
+      "size": 466,
+      "kind": "cpp"
+    },
+    {
+      "path": "building_blocks/kernel/scheduler_contract.hpp",
+      "sha": "a70e77473e80d79e78c9fca3f0577572b3ea2190",
+      "size": 965,
+      "kind": "cpp"
+    },
+    {
+      "path": "building_blocks/kernel/scheduler_tests.cpp",
+      "sha": "7486065e01b68da6fb95b70879d4a3a28a621818",
+      "size": 539,
+      "kind": "cpp"
+    },
+    {
+      "path": "building_blocks/memory/memory_contract.hpp",
+      "sha": "6767a886b853824a40aa03473e9f9681d5c0d90c",
+      "size": 646,
+      "kind": "cpp"
+    },
+    {
+      "path": "building_blocks/memory/memory_contract_tests.cpp",
+      "sha": "5e1b30c8d717a518341e3c4ae3c4be849ee57adc",
+      "size": 383,
+      "kind": "cpp"
+    },
+    {
+      "path": "building_blocks/networking/Spotnik/packet_contract.hpp",
+      "sha": "4b9e36fff576565a161c404a796f94fb20f53f25",
+      "size": 631,
+      "kind": "cpp"
+    },
+    {
+      "path": "building_blocks/robotics/vcore_contract.hpp",
+      "sha": "5295d3015fe08057c7eed23b24b06648ee89c9b0",
+      "size": 829,
+      "kind": "cpp"
+    },
+    {
+      "path": "building_blocks/runtime/registern_contract_tests.cpp",
+      "sha": "e6b186b41e5930eb8ea232b0675959f96f0ed809",
+      "size": 293,
+      "kind": "cpp"
+    },
+    {
+      "path": "building_blocks/runtime/registern_executor.hpp",
+      "sha": "95d590847f32b227e893a562744704b2272542ce",
+      "size": 2203,
+      "kind": "cpp"
+    },
+    {
+      "path": "building_blocks/runtime/registern_executor_tests.cpp",
+      "sha": "976fe788425b79f4ba470952a8e7db1fcc6b0c3b",
+      "size": 417,
+      "kind": "cpp"
+    },
+    {
+      "path": "building_blocks/runtime/registern_runtime.hpp",
+      "sha": "5f3d8c04c95739de020a840f6d1f57f79ac7312d",
+      "size": 775,
+      "kind": "cpp"
+    },
+    {
+      "path": "building_blocks/tools/isa/core_opcode_table.cpp",
+      "sha": "e873a2d60d5ce58b2aa57eba2f406f2f425a7098",
+      "size": 988,
+      "kind": "cpp"
+    },
+    {
+      "path": "building_blocks/tools/isa/core_opcode_table_test.cpp",
+      "sha": "ab1b2d1f6f776e41fe9d3d8df88174bc2de65e79",
+      "size": 315,
+      "kind": "cpp"
+    },
+    {
+      "path": "cloud/adapters/__init__.py",
+      "sha": "37e93830d2969c12bde6488478094f591e704d20",
+      "size": 363,
+      "kind": "python"
+    },
+    {
+      "path": "cloud/adapters/aws.py",
+      "sha": "cb92db7a7b2e6ed9fa7a0c50db62601c3e24287d",
+      "size": 66,
+      "kind": "python"
+    },
+    {
+      "path": "cloud/adapters/azure.py",
+      "sha": "4ae737990e1c0d459cefdc41132ca1cdc0460d33",
+      "size": 70,
+      "kind": "python"
+    },
+    {
+      "path": "cloud/adapters/common.py",
+      "sha": "343c9160259d65efb9d0468fc27840e50c7da8fb",
+      "size": 1369,
+      "kind": "python"
+    },
+    {
+      "path": "cloud/adapters/gcp.py",
+      "sha": "a323eaff6d55276e46df3a1b3e13f2d1157a1045",
+      "size": 66,
+      "kind": "python"
+    },
+    {
+      "path": "cloud/adapters/kubernetes.py",
+      "sha": "cfa1199f446dd8aebf888621f4f7c73b110ea7e2",
+      "size": 1536,
+      "kind": "python"
+    },
+    {
+      "path": "cloud/adapters/openshift.py",
+      "sha": "92b7dfe9b45ffdea7882b9c6d140b0bc296c50d7",
+      "size": 1506,
+      "kind": "python"
+    },
+    {
+      "path": "cloud/adapters/openstack.py",
+      "sha": "37100b15b043b1003a66ddd41ce6455521ab02f6",
+      "size": 1264,
+      "kind": "python"
+    },
+    {
+      "path": "cloud/adapters/public_cloud.py",
+      "sha": "e388bc2742d7b2f658c1a06e79d26b04f276e976",
+      "size": 1330,
+      "kind": "python"
+    },
+    {
+      "path": "compat/windows/pe/pe_inspect.cpp",
+      "sha": "79b13582e5ea982c8f77dc664472a66f3734dbee",
+      "size": 959,
+      "kind": "cpp"
+    },
+    {
+      "path": "compat/windows/pe/pe_loader.cpp",
+      "sha": "69648f63a68df7a808f18de721149488e3a46942",
+      "size": 9888,
+      "kind": "cpp"
+    },
+    {
+      "path": "compat/windows/pe/pe_loader.h",
+      "sha": "09479d366c4a28d743fd9f72acd9ed6cab90ec40",
+      "size": 1960,
+      "kind": "c"
+    },
+    {
+      "path": "database/catalog.py",
+      "sha": "68f6705e604dc8457a798683d9d81402dd763234",
+      "size": 659,
+      "kind": "python"
+    },
+    {
+      "path": "database/include/chimera/db_backend.hpp",
+      "sha": "16045e31c02970580060cada69705be3fe747879",
+      "size": 1153,
+      "kind": "cpp"
+    },
+    {
+      "path": "database/src/db_backend.cpp",
+      "sha": "6582c4cd7475f90dd58ef08dae4d78910ac1f6d1",
+      "size": 236,
+      "kind": "cpp"
+    },
+    {
+      "path": "desktop/aurora/apps/aurora_media.cpp",
+      "sha": "3c6042037b1d59258dec1d6cb2d996cd6c8c3a51",
+      "size": 621,
+      "kind": "cpp"
+    },
+    {
+      "path": "desktop/aurora/apps/aurora_peripherals.cpp",
+      "sha": "0e6ab2c806d43c97fb7fd15e59f234016cbd472c",
+      "size": 1875,
+      "kind": "cpp"
+    },
+    {
+      "path": "desktop/aurora/apps/aurora_settings.cpp",
+      "sha": "6159f6ba4bf9a05aa873b79a36a0ee1ea1c4abdc",
+      "size": 5008,
+      "kind": "cpp"
+    },
+    {
+      "path": "desktop/aurora/apps/aurora_video.cpp",
+      "sha": "5979d914fc965bd3256472d26b8a66531e2d684e",
+      "size": 621,
+      "kind": "cpp"
+    },
+    {
+      "path": "desktop/aurora/apps/chimera_neural_chat.cpp",
+      "sha": "f84ef55916bf77736f36a9a2ad49c8c4279afe28",
+      "size": 1605,
+      "kind": "cpp"
+    },
+    {
+      "path": "desktop/aurora/aurora-launcher.cpp",
+      "sha": "d11af6dc9fd41875d2be7e734d699cb4d13400bd",
+      "size": 2047,
+      "kind": "cpp"
+    },
+    {
+      "path": "desktop/aurora/aurora_context_menu.cpp",
+      "sha": "6ccb76417202481598363d5ac1556178697d6c94",
+      "size": 6223,
+      "kind": "cpp"
+    },
+    {
+      "path": "desktop/aurora/aurora_crypto_center.py",
+      "sha": "59da5a48a7d902f515b33a998678d8cc50d5498a",
+      "size": 1557,
+      "kind": "python"
+    },
+    {
+      "path": "desktop/aurora/aurora_flash_tool.py",
+      "sha": "d6dbaa6dcce3633da917d143799ab8edb0a788ca",
+      "size": 1805,
+      "kind": "python"
+    },
+    {
+      "path": "desktop/aurora/aurora_flash_tool_gui.py",
+      "sha": "715d1aaa80b2987b815bfca2a79e265b814bd309",
+      "size": 3022,
+      "kind": "python"
+    },
+    {
+      "path": "desktop/aurora/cloud_fabric_client.py",
+      "sha": "1b1a7ef893e42b597ea7a89fd601991a56b051d2",
+      "size": 829,
+      "kind": "python"
+    },
+    {
+      "path": "desktop/aurora/gui_server.py",
+      "sha": "f511567b1e0d084a44b64457da45e39dee6da7c5",
+      "size": 2873,
+      "kind": "python"
+    },
+    {
+      "path": "desktop/aurora/i18n/aurora_emoji.cpp",
+      "sha": "e3ef8aa55f179f8bf00df9bfe8f4aaf20c1c8af8",
+      "size": 1306,
+      "kind": "cpp"
+    },
+    {
+      "path": "desktop/aurora/i18n/aurora_emoji.hpp",
+      "sha": "6dfbf434283343990c1c2f1c95c5be4c5b12f379",
+      "size": 331,
+      "kind": "cpp"
+    },
+    {
+      "path": "desktop/aurora/i18n/aurora_locale.cpp",
+      "sha": "f04c8f6a284d12547d8ae205d695df17612b2c53",
+      "size": 1615,
+      "kind": "cpp"
+    },
+    {
+      "path": "desktop/aurora/i18n/aurora_locale.hpp",
+      "sha": "bab98a7304842234e870f983a1038ea0f2ff6391",
+      "size": 575,
+      "kind": "cpp"
+    },
+    {
+      "path": "desktop/aurora/i18n/aurora_utf.cpp",
+      "sha": "ce2b298b5434980febf25a89a915e441333ad6b3",
+      "size": 4303,
+      "kind": "cpp"
+    },
+    {
+      "path": "desktop/aurora/i18n/aurora_utf.hpp",
+      "sha": "fe28fa8019d1b2d1c602df8ac2b510c4b5e60bb6",
+      "size": 639,
+      "kind": "cpp"
+    },
+    {
+      "path": "desktop/aurora/i18n/aurora_utf_selftest.cpp",
+      "sha": "794651598e9f886138902b6c83d4da475129350c",
+      "size": 460,
+      "kind": "cpp"
+    },
+    {
+      "path": "desktop/aurora/icons/chimera_icons.cpp",
+      "sha": "1576d756e31767131aeb16f59afa6e1354b39022",
+      "size": 1295,
+      "kind": "cpp"
+    },
+    {
+      "path": "desktop/aurora/icons/chimera_icons.hpp",
+      "sha": "f182a759bdbbaabf706fa85bfec6d42216b959eb",
+      "size": 143,
+      "kind": "cpp"
+    },
+    {
+      "path": "desktop/aurora/input/aurora_input.cpp",
+      "sha": "663fc11315c6af8ff09aafd46ac459f8b77eaae2",
+      "size": 652,
+      "kind": "cpp"
+    },
+    {
+      "path": "desktop/aurora/input/aurora_input.hpp",
+      "sha": "a579489c171edefa527edc6ba663271207d2cb24",
+      "size": 964,
+      "kind": "cpp"
+    },
+    {
+      "path": "desktop/aurora/input/aurora_input_router.cpp",
+      "sha": "9ebcfabb1cc6d4dfd3c5ba141ba8088355db805d",
+      "size": 1986,
+      "kind": "cpp"
+    },
+    {
+      "path": "desktop/aurora/input/aurora_input_router.hpp",
+      "sha": "0a11a07602d2e7fc06541ca5c4405e96982ee323",
+      "size": 1274,
+      "kind": "cpp"
+    },
+    {
+      "path": "desktop/aurora/input/aurora_input_selftest.cpp",
+      "sha": "608138969ef55c4dc6fa239ecbae62e864ee2b5a",
+      "size": 1263,
+      "kind": "cpp"
+    },
+    {
+      "path": "desktop/aurora/repository_application_center.py",
+      "sha": "85db9990573ba23069906173d53ec87195487229",
+      "size": 1222,
+      "kind": "python"
+    },
+    {
+      "path": "desktop/aurora/wallpaper-service.py",
+      "sha": "645ee96982ded0e464b79fc60a5d5e950cd759b2",
+      "size": 832,
+      "kind": "python"
+    },
+    {
+      "path": "desktop/aurora/wayland/aurora_wayland_backend.hpp",
+      "sha": "f1ce5533975d39865fcf7ab8970f69e8dc5c780d",
+      "size": 1992,
+      "kind": "cpp"
+    },
+    {
+      "path": "desktop/c/desktop_event.h",
+      "sha": "7a32d69541d1b43c4668c82fd54f84ca3d2992d8",
+      "size": 882,
+      "kind": "c"
+    },
+    {
+      "path": "desktop/cpp/chm_desktop.hpp",
+      "sha": "6d258f24d11927b33f476cc60ac79d098e5c49ca",
+      "size": 1860,
+      "kind": "cpp"
+    },
+    {
+      "path": "desktop/cpp/chm_i18n.hpp",
+      "sha": "1e8b4f2fb7ca7e69079460cca1f20b9faad1508e",
+      "size": 762,
+      "kind": "cpp"
+    },
+    {
+      "path": "desktop/i18n/chimera_i18n.h",
+      "sha": "fe2c2337a53371e5fb99f1b46abfc67db42c6bab",
+      "size": 514,
+      "kind": "c"
+    },
+    {
+      "path": "desktop/java/chimera/i18n/ChimeraLocale.java",
+      "sha": "9bed400e3c057a3a53829da51807889aa76a62ff",
+      "size": 574,
+      "kind": "java"
+    },
+    {
+      "path": "desktop/kotlin/ChimeraDesktop.kt",
+      "sha": "97da5a17dfa89724aeb7abc4ad3c60c62295c5dc",
+      "size": 967,
+      "kind": "kotlin"
+    },
+    {
+      "path": "desktop/kotlin/ChimeraLocale.kt",
+      "sha": "cfc46be6b9302d84501eef7dfb9db3af27b2cfbc",
+      "size": 372,
+      "kind": "kotlin"
+    },
+    {
+      "path": "desktop/localization/update_cldr_languages.py",
+      "sha": "80b406e10454857b8633a72047c93a266c49fc8a",
+      "size": 1355,
+      "kind": "python"
+    },
+    {
+      "path": "desktop/python/chimera_desktop.py",
+      "sha": "afce3e3179ce55391746a61ccbfd6b5fe716c116",
+      "size": 1959,
+      "kind": "python"
+    },
+    {
+      "path": "desktop/python/chimera_i18n.py",
+      "sha": "8efc4c38037ff5f65ab980781fbe511aa27abb8a",
+      "size": 861,
+      "kind": "python"
+    },
+    {
+      "path": "desktop/python/chimera_ui_controls.py",
+      "sha": "ad2441b87322bbacc8402f8e10ccc36a6817e066",
+      "size": 1193,
+      "kind": "python"
+    },
+    {
+      "path": "desktop/wallpaper/wallpaper_scheduler.py",
+      "sha": "12e6200c922eeb5c094fc2158e976f80f03e4a76",
+      "size": 2576,
+      "kind": "python"
+    },
+    {
+      "path": "devops/chimera_pipeline.py",
+      "sha": "7610c66ef0f8d661c92af80af8715e7b6e7a9c16",
+      "size": 1555,
+      "kind": "python"
+    },
+    {
+      "path": "drivers/c/chm_driver_acquisition.h",
+      "sha": "01413ca5520a1456c84be319bfcaa048fe632c9e",
+      "size": 1080,
+      "kind": "c"
+    },
+    {
+      "path": "drivers/c/platform/chimera_driver_adapter.h",
+      "sha": "bc64cd7680211078c891b01a14dca03773112021",
+      "size": 311,
+      "kind": "c"
+    },
+    {
+      "path": "drivers/cpp/hardware_registry.hpp",
+      "sha": "5ac23bc32b1b0a7f087775212741d6134cae3c21",
+      "size": 1026,
+      "kind": "cpp"
+    },
+    {
+      "path": "drivers/java/HardwareRegistry.java",
+      "sha": "b3f8b3a644af96ce52e884f011b869bd53814150",
+      "size": 912,
+      "kind": "java"
+    },
+    {
+      "path": "drivers/kotlin/HardwareRegistry.kt",
+      "sha": "b54587c795b981fb10be2a937fee0c8628017210",
+      "size": 322,
+      "kind": "kotlin"
+    },
+    {
+      "path": "drivers/linux/chimera_driver_acquisition.c",
+      "sha": "b25d6506763dbd59f26acbdbbd8f2503a39a8e01",
+      "size": 1048,
+      "kind": "c"
+    },
+    {
+      "path": "drivers/linux/chimera_linux_adapter.c",
+      "sha": "98c3c9d6e7604bfe15a922c6d684652731db84ff",
+      "size": 806,
+      "kind": "c"
+    },
+    {
+      "path": "drivers/printer/ghost_printer.c",
+      "sha": "b3c64830c9ae38f7da8cda00e77acd54e976a987",
+      "size": 753,
+      "kind": "c"
+    },
+    {
+      "path": "drivers/python/driver_acquisition.py",
+      "sha": "fc1d20a48ab52e189f9089a9ca67715630c5718d",
+      "size": 5424,
+      "kind": "python"
+    },
+    {
+      "path": "drivers/python/hardware_registry.py",
+      "sha": "7415242f3987014701164603f2ca25cb32291f6c",
+      "size": 830,
+      "kind": "python"
+    },
+    {
+      "path": "drivers/tests/test_driver_acquisition_policy.py",
+      "sha": "26f9f448df4e435f87999b8cbba4b2b7405cbb74",
+      "size": 2211,
+      "kind": "python"
+    },
+    {
+      "path": "drivers/tools/acquire_official_driver_sources.py",
+      "sha": "6fd360b0fa8572b39c6e1685ea03040dcf0b93d3",
+      "size": 1743,
+      "kind": "python"
+    },
+    {
+      "path": "drivers/unix/chimera_unix_adapter.c",
+      "sha": "390549daa73bf922265f42a262af090bb961c001",
+      "size": 568,
+      "kind": "c"
+    },
+    {
+      "path": "drivers/windows/chimera_driver_acquisition.c",
+      "sha": "f988b7b3cff7a7b7f07304fed64b34e889d47e26",
+      "size": 886,
+      "kind": "c"
+    },
+    {
+      "path": "drivers/windows/chimera_windows_adapter.c",
+      "sha": "2c6bb422ebda431a97791999ff0998226fc7d978",
+      "size": 762,
+      "kind": "c"
+    },
+    {
+      "path": "filesystems/qfs/qfs_format.h",
+      "sha": "ab5716ef7275da8d41eff9c74fc0e6f9438401bd",
+      "size": 601,
+      "kind": "c"
+    },
+    {
+      "path": "filesystems/qfs/qfs_mkfs.py",
+      "sha": "69bb145ac756b4012014a35235025e95af2a8f1c",
+      "size": 2238,
+      "kind": "python"
+    },
+    {
+      "path": "hardware/host_scanner.py",
+      "sha": "31bab98a102b12e0c2d098c28651c188aeef1de3",
+      "size": 2182,
+      "kind": "python"
+    },
+    {
+      "path": "include/arpa/inet.h",
+      "sha": "c8d35658c4dd8a1e258fcd4a55310a1e52e13ef8",
+      "size": 972,
+      "kind": "c"
+    },
+    {
+      "path": "include/chimera.h",
+      "sha": "2202cf589909992bc0a852278247914059b90cd3",
+      "size": 2171,
+      "kind": "c"
+    },
+    {
+      "path": "include/chimera/ISA_EncoderDecoder.hpp",
+      "sha": "62f0f68097097168369ebf3367c0ba7eec0109d3",
+      "size": 1713,
+      "kind": "cpp"
+    },
+    {
+      "path": "include/chimera/RegisterN.hpp",
+      "sha": "80efcd7c5f176dab72d583793101988d1a6d7541",
+      "size": 3038,
+      "kind": "cpp"
+    },
+    {
+      "path": "include/chimera/ai/discipline.h",
+      "sha": "aefb9a98281657329b14107136f6a5fa4eb43866",
+      "size": 642,
+      "kind": "c"
+    },
+    {
+      "path": "include/chimera/ai/media.h",
+      "sha": "07dc725d8246240131526b1cb42ccaad987a85f2",
+      "size": 625,
+      "kind": "c"
+    },
+    {
+      "path": "include/chimera/ai/runtime.h",
+      "sha": "a72fcc9eb85e065adb2173bf2dbb65453a3087ff",
+      "size": 1165,
+      "kind": "c"
+    },
+    {
+      "path": "include/chimera/arch_context.hpp",
+      "sha": "9ddfd99cbeaf4a052e1e00d0bbc8a47816262397",
+      "size": 671,
+      "kind": "cpp"
+    },
+    {
+      "path": "include/chimera/aurora.hpp",
+      "sha": "9da16ec22b80745ad6b70164f77972f43abe2292",
+      "size": 409,
+      "kind": "cpp"
+    },
+    {
+      "path": "include/chimera/bootinfo.h",
+      "sha": "497a5ff2ad1c7def92fa25b353c2e6c014c2dc4a",
+      "size": 334,
+      "kind": "c"
+    },
+    {
+      "path": "include/chimera/bootinfo.hpp",
+      "sha": "c89146561c1a5e4b258fc9d4c0f71dc1db3a7bee",
+      "size": 1377,
+      "kind": "cpp"
+    },
+    {
+      "path": "include/chimera/dashboard/dashboard.h",
+      "sha": "9f81de3d1a1d5ecebe3ff6be611bf06c01ce108e",
+      "size": 837,
+      "kind": "c"
+    },
+    {
+      "path": "include/chimera/data/data.h",
+      "sha": "533827a46d0c71a04c86bb3813d636b912d339c8",
+      "size": 437,
+      "kind": "c"
+    },
+    {
+      "path": "include/chimera/dma.hpp",
+      "sha": "9a79b6c84a79add4bedfdedf63cc83dbe70c9d98",
+      "size": 1097,
+      "kind": "cpp"
+    },
+    {
+      "path": "include/chimera/filesystem_matrix.hpp",
+      "sha": "b5e513890db558fac9b07081a58e5af0e1c20169",
+      "size": 4757,
+      "kind": "cpp"
+    },
+    {
+      "path": "include/chimera/iot/iot.h",
+      "sha": "a045de0a5a9dfb72b6736b6c37ad789a6565b9d5",
+      "size": 792,
+      "kind": "c"
+    },
+    {
+      "path": "include/chimera/isa8192.hpp",
+      "sha": "6b49f5b6c0e7abc40689f3070ac8db1ba9498b21",
+      "size": 2184,
+      "kind": "cpp"
+    },
+    {
+      "path": "include/chimera/isa_bitfields.hpp",
+      "sha": "a6212a2a5832eb9570bea5df01960274a5ed49fc",
+      "size": 1555,
+      "kind": "cpp"
+    },
+    {
+      "path": "include/chimera/isa_catalog.hpp",
+      "sha": "7359c93997414b08ef8c3664cf65dcf9f123a91e",
+      "size": 1321,
+      "kind": "cpp"
+    },
+    {
+      "path": "include/chimera/isa_extension_catalog.hpp",
+      "sha": "26560d8f5fc7f832c50d4f3ea85dd41b2c8722b6",
+      "size": 3994,
+      "kind": "cpp"
+    },
+    {
+      "path": "include/chimera/isa_extension_ops.hpp",
+      "sha": "735775c3dbc86f22de9aaf8491469593667ad5dc",
+      "size": 1548,
+      "kind": "cpp"
+    },
+    {
+      "path": "include/chimera/isa_runtime_bridge.hpp",
+      "sha": "ef60cab97a83deab9b0401d333a1ee6724337df0",
+      "size": 787,
+      "kind": "cpp"
+    },
+    {
+      "path": "include/chimera/kernel_arch.hpp",
+      "sha": "79bcc21186771ebabc1eda1c15c560d9fb0c42fa",
+      "size": 2174,
+      "kind": "cpp"
+    },
+    {
+      "path": "include/chimera/linux_compat.hpp",
+      "sha": "4b98f33f350998a5543ba091765e7d465f13ad27",
+      "size": 1685,
+      "kind": "cpp"
+    },
+    {
+      "path": "include/chimera/memory_bus.hpp",
+      "sha": "ac77c85fc377d3dc7e46757781081c827728bfd2",
+      "size": 2086,
+      "kind": "cpp"
+    },
+    {
+      "path": "include/chimera/memory_bus_probe.hpp",
+      "sha": "0844c7d13e21b4ddabc3fe865a66f36eb07912d7",
+      "size": 707,
+      "kind": "cpp"
+    },
+    {
+      "path": "include/chimera/microkernel_services.hpp",
+      "sha": "0b6e3d8ad9031adb324a86302d3caa2d4d2fa530",
+      "size": 1072,
+      "kind": "cpp"
+    },
+    {
+      "path": "include/chimera/nbit_isa.hpp",
+      "sha": "41e6ddbe3da61fb277f36171864f516fd56f7e44",
+      "size": 1640,
+      "kind": "cpp"
+    },
+    {
+      "path": "include/chimera/nbit_runtime.hpp",
+      "sha": "b4032a9466477f01955d61e11d9eb1d303e0b29a",
+      "size": 2457,
+      "kind": "cpp"
+    },
+    {
+      "path": "include/chimera/network/ai_network.h",
+      "sha": "401f2aee2db586f12806006a36080ac6c082a88a",
+      "size": 659,
+      "kind": "c"
+    },
+    {
+      "path": "include/chimera/neural/hyperdimensional.hpp",
+      "sha": "1e9fa27ec098bf9cdf334b3b458fd2f9e056e9e8",
+      "size": 1530,
+      "kind": "cpp"
+    },
+    {
+      "path": "include/chimera/neural_node.hpp",
+      "sha": "a638d314e9edbe0afe61b71eafd25c74902e4e52",
+      "size": 1605,
+      "kind": "cpp"
+    },
+    {
+      "path": "include/chimera/parallel/parallel.h",
+      "sha": "ac87fd437aaed956c0b2584a58d76fd98aa0db6e",
+      "size": 595,
+      "kind": "c"
+    },
+    {
+      "path": "include/chimera/performance/performance.h",
+      "sha": "062c2cef4fb2fac6f9f666f116e7a9bcde20b9ab",
+      "size": 797,
+      "kind": "c"
+    },
+    {
+      "path": "include/chimera/quantum_bridge.hpp",
+      "sha": "2fde8fe2a187692218d46222516fcc942e944a09",
+      "size": 1147,
+      "kind": "cpp"
+    },
+    {
+      "path": "include/chimera/security/biometric_auth.hpp",
+      "sha": "fc6ad16bb91354eed948bbd5b11fa4e42c0f5330",
+      "size": 1005,
+      "kind": "cpp"
+    },
+    {
+      "path": "include/chimera/spotnik.hpp",
+      "sha": "4d73689d69839b1ca2e6f4fb8f972cc87966ffd1",
+      "size": 391,
+      "kind": "cpp"
+    },
+    {
+      "path": "include/chimera/state128.hpp",
+      "sha": "8102ba34b66d21e7502e3d89221d38c469edf3c1",
+      "size": 685,
+      "kind": "cpp"
+    },
+    {
+      "path": "include/chimera/unified_isa.hpp",
+      "sha": "5473b1a1d5dac52570f23d224308386db789b1ca",
+      "size": 1310,
+      "kind": "cpp"
+    },
+    {
+      "path": "include/chimera/universal_isa.hpp",
+      "sha": "143bb90e11c7a2b9f2735ff6f02888e5fecc79f3",
+      "size": 2426,
+      "kind": "cpp"
+    },
+    {
+      "path": "include/chimera/universal_microop.hpp",
+      "sha": "61787e61a1cfb276309fab32f9bc156cf834c324",
+      "size": 2887,
+      "kind": "cpp"
+    },
+    {
+      "path": "include/chimera/virtualization/cvel.h",
+      "sha": "30fe5119033fa4479913484370fe685df9829158",
+      "size": 2164,
+      "kind": "c"
+    },
+    {
+      "path": "include/chimera/virtualization/vm.h",
+      "sha": "fa46f04969f635269599719b63b611233eb670cf",
+      "size": 380,
+      "kind": "c"
+    },
+    {
+      "path": "include/netinet/in.h",
+      "sha": "05e09d1ecd2351aced5c162d92b8a3ec4c9766c8",
+      "size": 1886,
+      "kind": "c"
+    },
+    {
+      "path": "include/netinet/ip.h",
+      "sha": "9d1ed5402f1031acdc7bccf7828e4f5f5c9ab692",
+      "size": 597,
+      "kind": "c"
+    },
+    {
+      "path": "include/netinet/ip6.h",
+      "sha": "72b4dd4fdd6f5fbd72db2f70ec64f627d1319f5e",
+      "size": 467,
+      "kind": "c"
+    },
+    {
+      "path": "include/netinet/tcp.h",
+      "sha": "e721b29b351d67bd63c75ecdb8fd9dcd9def7b34",
+      "size": 449,
+      "kind": "c"
+    },
+    {
+      "path": "include/netinet/udp.h",
+      "sha": "cd5af7d28e4aa8745bea2dde6387d1c73a05fb6c",
+      "size": 203,
+      "kind": "c"
+    },
+    {
+      "path": "installer/chimera_installer.py",
+      "sha": "54ed86ea4863cf981ba9e196e7e8dcffd1f6babe",
+      "size": 6201,
+      "kind": "python"
+    },
+    {
+      "path": "installer/include/chimera/installer_core.hpp",
+      "sha": "732d5f28d1706864804968bdeeafc9250d576458",
+      "size": 1363,
+      "kind": "cpp"
+    },
+    {
+      "path": "installer/services/apply_service_plan.py",
+      "sha": "79ea49c1418afd6e5a9682fce65549edb796a639",
+      "size": 712,
+      "kind": "python"
+    },
+    {
+      "path": "installer/src/installer_cli.cpp",
+      "sha": "f291e86b93607317ba158189a92ffe3b55f9d508",
+      "size": 845,
+      "kind": "cpp"
+    },
+    {
+      "path": "installer/src/installer_core.cpp",
+      "sha": "e8638a538dc9e71ade238383d848576d902c7f9d",
+      "size": 10302,
+      "kind": "cpp"
+    },
+    {
+      "path": "installer/src/installer_gui.cpp",
+      "sha": "00a0ad8ee676149f2b3b3db5734d9cca87dcdf53",
+      "size": 709,
+      "kind": "cpp"
+    },
+    {
+      "path": "integrations/ue5/AuroraDesktop/Source/AuroraDesktop/AuroraDesktopModule.cpp",
+      "sha": "87249a3e04276e918801a494c0b487a54fa638f3",
+      "size": 365,
+      "kind": "cpp"
+    },
+    {
+      "path": "integrations/ue5/AuroraDesktop/Source/AuroraDesktop/AuroraDesktopModule.h",
+      "sha": "e8007f7934a5473f3841bbdee0f70f3fcbd1df3b",
+      "size": 201,
+      "kind": "c"
+    },
+    {
+      "path": "integrations/ue5/AuroraDesktop/Source/AuroraDesktop/AuroraUIManager.cpp",
+      "sha": "fa0ae879692a634f5ac93298b6341ab35e776b8b",
+      "size": 520,
+      "kind": "cpp"
+    },
+    {
+      "path": "integrations/ue5/AuroraDesktop/Source/AuroraDesktop/AuroraUIManager.h",
+      "sha": "925ffba357da31a95a1c194a5df195cb4d82e183",
+      "size": 161,
+      "kind": "c"
+    },
+    {
+      "path": "integrations/ue5/AuroraDesktop/Source/AuroraDesktop/WaylandClientLinux.cpp",
+      "sha": "908b326d8b8b4f8660a7669dc8d8820b8f96096d",
+      "size": 1047,
+      "kind": "cpp"
+    },
+    {
+      "path": "integrations/windows/KMDF_ChmEcho/Driver/Driver.c",
+      "sha": "f4f0a9783ad474c11eec01233d348f88e05441e7",
+      "size": 2118,
+      "kind": "c"
+    },
+    {
+      "path": "integrations/windows/KMDF_ChmEcho/Driver/chm_ioctl.h",
+      "sha": "f987f9d1d7d23ed631606b60e4cf026ecec0ada9",
+      "size": 167,
+      "kind": "c"
+    },
+    {
+      "path": "integrations/windows/KMDF_ChmEcho/UserModeTest/ChmEchoTest.cpp",
+      "sha": "f2689ccf7f97de5f85973fdc9962f2c84ecac0f2",
+      "size": 990,
+      "kind": "cpp"
+    },
+    {
+      "path": "isa/c/chimera_isa.h",
+      "sha": "2d2664998c3953b5b653d659a63d02b247957060",
+      "size": 366,
+      "kind": "c"
+    },
+    {
+      "path": "isa/cpp/chimera_isa.hpp",
+      "sha": "964cb9fb5b76a5d7a0ea5858d9e7fceb8ae8062e",
+      "size": 364,
+      "kind": "cpp"
+    },
+    {
+      "path": "isa/java/ChimeraISA.java",
+      "sha": "db2607fc4b5cf1fca71a93c6ab5a7cbdf281b68a",
+      "size": 378,
+      "kind": "java"
+    },
+    {
+      "path": "isa/kotlin/ChimeraISA.kt",
+      "sha": "d3093a6e0006ea84333a451f762fe13783537528",
+      "size": 273,
+      "kind": "kotlin"
+    },
+    {
+      "path": "isa/python/chimera_isa.py",
+      "sha": "08837cf8f5381b63ac6e0025e2478f3c43cbff6d",
+      "size": 707,
+      "kind": "python"
+    },
+    {
+      "path": "isa/registry.py",
+      "sha": "c0f7bbebb4d5fbe0a94ede322e9cb0da611e99d5",
+      "size": 6237,
+      "kind": "python"
+    },
+    {
+      "path": "isa/tools/import_llvm_targets.py",
+      "sha": "facf0f41366d3a6211189d9061e82c0a70a1959c",
+      "size": 1047,
+      "kind": "python"
+    },
+    {
+      "path": "java/chimera/desktop/DesktopEvent.java",
+      "sha": "df52ad901a3830c11240be01ecf0e3d5b04f069c",
+      "size": 614,
+      "kind": "java"
+    },
+    {
+      "path": "java/chimera/desktop/DesktopProfile.java",
+      "sha": "2ea0392c579eb1f9ed3afbdce99144fd076b8398",
+      "size": 462,
+      "kind": "java"
+    },
+    {
+      "path": "java/chimera/desktop/EventRouter.java",
+      "sha": "f9f61773ee48873a6371c93a10ccf9d86493190a",
+      "size": 497,
+      "kind": "java"
+    },
+    {
+      "path": "java/chimera/drivers/acquisition/AcquisitionPolicy.java",
+      "sha": "f74126ad8e38b17dc01313fce98e51894a479b73",
+      "size": 1706,
+      "kind": "java"
+    },
+    {
+      "path": "java/chimera/drivers/acquisition/DriverAcquisitionManager.java",
+      "sha": "c4bbc1aa10d01952058aac0c67dce890b2fb31ee",
+      "size": 2997,
+      "kind": "java"
+    },
+    {
+      "path": "java/chimera/drivers/acquisition/DriverAcquisitionManagerTest.java",
+      "sha": "e93ebcf5139e9dd0ebfc6d7649e6e6b6b4adc44d",
+      "size": 1456,
+      "kind": "java"
+    },
+    {
+      "path": "java/chimera/drivers/acquisition/DriverAcquisitionResult.java",
+      "sha": "e8e6a94ec89847ce9a55c7c2b754adf731fc15fd",
+      "size": 295,
+      "kind": "java"
+    },
+    {
+      "path": "java/chimera/drivers/acquisition/DriverArtifact.java",
+      "sha": "fb2b25bbd8d81afecab2269f81228d4ef1c40797",
+      "size": 374,
+      "kind": "java"
+    },
+    {
+      "path": "java/chimera/drivers/hardware/HardwareId.java",
+      "sha": "a35176649ff98d5221ea9d9ed192ad2cec308d9f",
+      "size": 888,
+      "kind": "java"
+    },
+    {
+      "path": "kernel/arch/aarch64/entry.S",
+      "sha": "a1462c3eab5aa55cd23aaf43e1f86e19cb584eea",
+      "size": 108,
+      "kind": "asm"
+    },
+    {
+      "path": "kernel/arch/aarch64/io.S",
+      "sha": "c937db9bd2679cde061a94d5499b105c5d7d111a",
+      "size": 153,
+      "kind": "asm"
+    },
+    {
+      "path": "kernel/arch/aarch64/priv.S",
+      "sha": "6d745ac1cee9c78ffff0840f6f3feca78ec7f788",
+      "size": 106,
+      "kind": "asm"
+    },
+    {
+      "path": "kernel/arch/riscv64/entry.S",
+      "sha": "e31f73a82f316e0f7b9095028db3012a01f4f2e6",
+      "size": 120,
+      "kind": "asm"
+    },
+    {
+      "path": "kernel/arch/riscv64/io.S",
+      "sha": "ae3df26f041662a2ea5c11cc6d997f38a02b180c",
+      "size": 153,
+      "kind": "asm"
+    },
+    {
+      "path": "kernel/arch/riscv64/priv.S",
+      "sha": "5d6473ea4a224e5e7b6282302319d74875a32a26",
+      "size": 109,
+      "kind": "asm"
+    },
+    {
+      "path": "kernel/arch/x86_64/entry.asm",
+      "sha": "20db7162841d84688caf9b7992a87127c4ba4f65",
+      "size": 3430,
+      "kind": "asm"
+    },
+    {
+      "path": "kernel/arch/x86_64/interrupts.asm",
+      "sha": "4446969ab97cda582e2ee03b005c06d12ab41da8",
+      "size": 1680,
+      "kind": "asm"
+    },
+    {
+      "path": "kernel/arch/x86_64/io.asm",
+      "sha": "93a5e0c2436bcafaec36af6bff352b22ae91c81f",
+      "size": 439,
+      "kind": "asm"
+    },
+    {
+      "path": "kernel/arch/x86_64/mode_switch.asm",
+      "sha": "ef1ca181b9e8ebb23cd9f724da80f1f3518075cd",
+      "size": 262,
+      "kind": "asm"
+    },
+    {
+      "path": "kernel/core/ai_model.cpp",
+      "sha": "6a5f4d43d08d2ab98f15b4cbe35fb94bdfff68e3",
+      "size": 434,
+      "kind": "cpp"
+    },
+    {
+      "path": "kernel/core/apc.cpp",
+      "sha": "a4e47774400bf249c92f371523a490187cb46b7d",
+      "size": 1855,
+      "kind": "cpp"
+    },
+    {
+      "path": "kernel/core/arch_init.cpp",
+      "sha": "2b166feeb9ecba355d91710c76e4a64402987a89",
+      "size": 2299,
+      "kind": "cpp"
+    },
+    {
+      "path": "kernel/core/boot_entry.cpp",
+      "sha": "cfe7e97b4888f22c4233c1f9b5ca54d94e5a909c",
+      "size": 418,
+      "kind": "cpp"
+    },
+    {
+      "path": "kernel/core/compat.cpp",
+      "sha": "5bae3aa81e5f2c46187a36d531b4cf45536e8e31",
+      "size": 12897,
+      "kind": "cpp"
+    },
+    {
+      "path": "kernel/core/device.cpp",
+      "sha": "eb24061e655d25c38860ecadc8ea4e8ed1c90d2e",
+      "size": 2077,
+      "kind": "cpp"
+    },
+    {
+      "path": "kernel/core/dpc.cpp",
+      "sha": "f6acb6016622dd8e7aaf01a51a087f73c188f067",
+      "size": 1518,
+      "kind": "cpp"
+    },
+    {
+      "path": "kernel/core/driver.cpp",
+      "sha": "b36db2e42a848c78d2e69bf9bb3b8df2662ebe44",
+      "size": 2487,
+      "kind": "cpp"
+    },
+    {
+      "path": "kernel/core/elf64.cpp",
+      "sha": "c6bc862845dc1e5d297d1fb4cf427a83efd176f8",
+      "size": 639,
+      "kind": "cpp"
+    },
+    {
+      "path": "kernel/core/firmware.cpp",
+      "sha": "ed0bd6e3752bdabdaee2b8435ed19941e5d0f643",
+      "size": 1587,
+      "kind": "cpp"
+    },
+    {
+      "path": "kernel/core/hardware.cpp",
+      "sha": "67bd1fd37b6bedcaa97f654260559d097e3e7a27",
+      "size": 4114,
+      "kind": "cpp"
+    },
+    {
+      "path": "kernel/core/interrupt.cpp",
+      "sha": "91a8ef8b8113f0945c933ae24741618f14a2fbcd",
+      "size": 3352,
+      "kind": "cpp"
+    },
+    {
+      "path": "kernel/core/isa_registry.cpp",
+      "sha": "1965f35c4f8268e163eb73c1f8c9967067ad7ac9",
+      "size": 927,
+      "kind": "cpp"
+    },
+    {
+      "path": "kernel/core/koronos.cpp",
+      "sha": "34309bc210740fd0b33b510242e978543e29e004",
+      "size": 13788,
+      "kind": "cpp"
+    },
+    {
+      "path": "kernel/core/learning.cpp",
+      "sha": "600f463cc17c14a0fbee2333dbab94b034159d26",
+      "size": 472,
+      "kind": "cpp"
+    },
+    {
+      "path": "kernel/core/microkernel.cpp",
+      "sha": "90fe8062c80fed7f36b64c9985d0c5e435709bb7",
+      "size": 4069,
+      "kind": "cpp"
+    },
+    {
+      "path": "kernel/core/module.cpp",
+      "sha": "d49d58a8424e73dca1911ebeba1909e6ba9052c5",
+      "size": 376,
+      "kind": "cpp"
+    },
+    {
+      "path": "kernel/core/multiboot_modules.cpp",
+      "sha": "28a4739ddde1c5dd0e08d3875cef216e98190f5e",
+      "size": 2753,
+      "kind": "cpp"
+    },
+    {
+      "path": "kernel/core/nbit.cpp",
+      "sha": "3e54d5ba9be183ab94e25bcfa967944c3c1d1dc8",
+      "size": 2770,
+      "kind": "cpp"
+    },
+    {
+      "path": "kernel/core/nbit_note.cpp",
+      "sha": "5a11f7905e6b4c532195059ca9dd98c463a2b415",
+      "size": 366,
+      "kind": "cpp"
+    },
+    {
+      "path": "kernel/core/object.cpp",
+      "sha": "370324c84e1f31072575421cbafc5314b8ec61b7",
+      "size": 186,
+      "kind": "cpp"
+    },
+    {
+      "path": "kernel/core/parallel.cpp",
+      "sha": "80122fc1e7c5ae71815aa46e56152ba12c95a0dc",
+      "size": 398,
+      "kind": "cpp"
+    },
+    {
+      "path": "kernel/core/platform_features.cpp",
+      "sha": "fba2dce0cbe5710d4c32236db73654c9843f5ae3",
+      "size": 7830,
+      "kind": "cpp"
+    },
+    {
+      "path": "kernel/core/process.cpp",
+      "sha": "b13726e98e4df2c7fe70c1432a9d75c29e968c19",
+      "size": 2915,
+      "kind": "cpp"
+    },
+    {
+      "path": "kernel/core/relocate.cpp",
+      "sha": "d08df1f16a845972358b3f90945b837f81a468e0",
+      "size": 706,
+      "kind": "cpp"
+    },
+    {
+      "path": "kernel/core/runtime.cpp",
+      "sha": "7e54388dbf8d73c9059eaad7de0b223f9ca556fb",
+      "size": 1825,
+      "kind": "cpp"
+    },
+    {
+      "path": "kernel/core/runtime_loop.cpp",
+      "sha": "8eb7184f53593e21e5c163393636d808d4d7feb2",
+      "size": 1605,
+      "kind": "cpp"
+    },
+    {
+      "path": "kernel/core/scheduler.cpp",
+      "sha": "ee50a7df6f356c8d51ef93c85e1b670114829ab0",
+      "size": 4662,
+      "kind": "cpp"
+    },
+    {
+      "path": "kernel/core/service.cpp",
+      "sha": "b109b2f7f4d6d82499df05fa57c39f24d4ae5d80",
+      "size": 2672,
+      "kind": "cpp"
+    },
+    {
+      "path": "kernel/core/sync.cpp",
+      "sha": "ba208fd8452e5ec6f396c54edac1ea02806b7238",
+      "size": 5927,
+      "kind": "cpp"
+    },
+    {
+      "path": "kernel/core/syscall.cpp",
+      "sha": "249fa1229ca9ecfe98c10dceddc15d6e0c1ae986",
+      "size": 2454,
+      "kind": "cpp"
+    },
+    {
+      "path": "kernel/core/thread.cpp",
+      "sha": "aaa241b283f2d5623030a9c0fe357c1a3e6af010",
+      "size": 2002,
+      "kind": "cpp"
+    },
+    {
+      "path": "kernel/core/timer.cpp",
+      "sha": "fe28e347fce61e0690f131e1d7627d44dd862aff",
+      "size": 1739,
+      "kind": "cpp"
+    },
+    {
+      "path": "kernel/core/utf8.cpp",
+      "sha": "ab6a23865e39850e72b555392abd85d6fa0ff5d2",
+      "size": 2533,
+      "kind": "cpp"
+    },
+    {
+      "path": "kernel/drivers/builtin/pc-display.cpp",
+      "sha": "16eb4eeee80639d75d00ece2faf0b476430f487b",
+      "size": 300,
+      "kind": "cpp"
+    },
+    {
+      "path": "kernel/drivers/builtin/pci-generic.cpp",
+      "sha": "e30b5d2c652f71b22f5fd074d65ec809cc7e8b42",
+      "size": 1094,
+      "kind": "cpp"
+    },
+    {
+      "path": "kernel/drivers/builtin/virtio.cpp",
+      "sha": "ca30ebc301fe39d76bd3a2b825bd59e144d9d844",
+      "size": 551,
+      "kind": "cpp"
+    },
+    {
+      "path": "kernel/generated/chimera_isa_registry.generated.h",
+      "sha": "1268285ffe28e81760cea1b0b1a84a1e01ed5eb2",
+      "size": 15875,
+      "kind": "c"
+    },
+    {
+      "path": "kernel/include/chimera/ai_model.h",
+      "sha": "4138e61a9c7debe8fddae4e683389a8b954fb33a",
+      "size": 275,
+      "kind": "c"
+    },
+    {
+      "path": "kernel/include/chimera/apc.h",
+      "sha": "2b0249f3ae3ad2d533dc739cde5c424ba32efdc8",
+      "size": 706,
+      "kind": "c"
+    },
+    {
+      "path": "kernel/include/chimera/compat.h",
+      "sha": "6a4e2a7b12d03fb308ed477bbb03758ad1e81ac5",
+      "size": 3525,
+      "kind": "c"
+    },
+    {
+      "path": "kernel/include/chimera/device.h",
+      "sha": "7cb0d966f1c6b3ca78603c1b9472c89972d4b8b3",
+      "size": 944,
+      "kind": "c"
+    },
+    {
+      "path": "kernel/include/chimera/dpc.h",
+      "sha": "1b0300214c3865a223704363761d494e04bf5c5e",
+      "size": 482,
+      "kind": "c"
+    },
+    {
+      "path": "kernel/include/chimera/driver.h",
+      "sha": "0f6a9c48d35ba183d9adf9e6ae836763ada5ee0a",
+      "size": 1229,
+      "kind": "c"
+    },
+    {
+      "path": "kernel/include/chimera/elf32.h",
+      "sha": "844956824534fa805598b93b971a5a667feb53ad",
+      "size": 433,
+      "kind": "c"
+    },
+    {
+      "path": "kernel/include/chimera/elf64.h",
+      "sha": "df749de7e745ec116362205e6c15f7f350eb37d7",
+      "size": 1471,
+      "kind": "c"
+    },
+    {
+      "path": "kernel/include/chimera/firmware.h",
+      "sha": "c7d76ee1c076c9741a7606de94e29f97005d4926",
+      "size": 766,
+      "kind": "c"
+    },
+    {
+      "path": "kernel/include/chimera/hardware.h",
+      "sha": "813afae5985146a03f3bc9b807d25aef2f9b0fe7",
+      "size": 2138,
+      "kind": "c"
+    },
+    {
+      "path": "kernel/include/chimera/interrupt.h",
+      "sha": "6579cb7bc104dc4b9805ba56f06d397d19162b6b",
+      "size": 925,
+      "kind": "c"
+    },
+    {
+      "path": "kernel/include/chimera/isa_registry.h",
+      "sha": "47afc0aa2fc96cb681e0a18918d67e0bc4eb633f",
+      "size": 413,
+      "kind": "c"
+    },
+    {
+      "path": "kernel/include/chimera/kernel_entry.h",
+      "sha": "bfe65591398675cbcbe87cc3de0260e88938f067",
+      "size": 274,
+      "kind": "c"
+    },
+    {
+      "path": "kernel/include/chimera/koronos_abi.h",
+      "sha": "4199edc2de6354c77ab0fb2c86a1f4897c1896fa",
+      "size": 1345,
+      "kind": "c"
+    },
+    {
+      "path": "kernel/include/chimera/learning.h",
+      "sha": "1e7b13de88c417daa531fb40923c637db30f5303",
+      "size": 401,
+      "kind": "c"
+    },
+    {
+      "path": "kernel/include/chimera/memory_map.h",
+      "sha": "76bd5bc77542dbe0ebb1f7324ab54fb8f14c3362",
+      "size": 277,
+      "kind": "c"
+    },
+    {
+      "path": "kernel/include/chimera/microkernel.h",
+      "sha": "6e6b0511a392d90c4ac096b01ae3d2b1b9cae045",
+      "size": 1222,
+      "kind": "c"
+    },
+    {
+      "path": "kernel/include/chimera/module.h",
+      "sha": "a4a71be815ae1e7cf8b0b480aebdade2969724a1",
+      "size": 255,
+      "kind": "c"
+    },
+    {
+      "path": "kernel/include/chimera/multiboot_modules.h",
+      "sha": "5ff625e8f5c1a110d2b397076f984c8f417ef5e0",
+      "size": 776,
+      "kind": "c"
+    },
+    {
+      "path": "kernel/include/chimera/nbit.h",
+      "sha": "09976ea00fe3e0ab2d583f520657f7251c51342b",
+      "size": 1441,
+      "kind": "c"
+    },
+    {
+      "path": "kernel/include/chimera/object.h",
+      "sha": "29c6ebeb8f42fdcedd24d6006a533881620e6ff7",
+      "size": 879,
+      "kind": "c"
+    },
+    {
+      "path": "kernel/include/chimera/parallel.h",
+      "sha": "9bd4d57f4b836e8c9eb81452bd3fa6ec70bf4856",
+      "size": 213,
+      "kind": "c"
+    },
+    {
+      "path": "kernel/include/chimera/platform_features.h",
+      "sha": "9d8839cb3d3f1f709381404703dceaf360c4d835",
+      "size": 4722,
+      "kind": "c"
+    },
+    {
+      "path": "kernel/include/chimera/process.h",
+      "sha": "3274fe38fbd3d4f9f74a2bf21785565161fd8425",
+      "size": 1096,
+      "kind": "c"
+    },
+    {
+      "path": "kernel/include/chimera/scheduler.h",
+      "sha": "a820df6767b56ab3e2666e5cd7e9ecdb3377bd42",
+      "size": 1018,
+      "kind": "c"
+    },
+    {
+      "path": "kernel/include/chimera/service.h",
+      "sha": "6fb2aec1f06102c08ca3f619667fe70ac872ecce",
+      "size": 1149,
+      "kind": "c"
+    },
+    {
+      "path": "kernel/include/chimera/sync.h",
+      "sha": "0aab221a10029067d4bc1bec68c2a2238ecc7999",
+      "size": 1865,
+      "kind": "c"
+    },
+    {
+      "path": "kernel/include/chimera/syscall.h",
+      "sha": "ba4a00e475073908474455367fa1cbd8b57624f4",
+      "size": 1553,
+      "kind": "c"
+    },
+    {
+      "path": "kernel/include/chimera/thread.h",
+      "sha": "5d867710968fb77b3ac385ec98cf5e25d1e98bfb",
+      "size": 850,
+      "kind": "c"
+    },
+    {
+      "path": "kernel/include/chimera/timer.h",
+      "sha": "c3311ba809ce6ad6576128c0d5568f4b24f516d4",
+      "size": 680,
+      "kind": "c"
+    },
+    {
+      "path": "kernel/include/chimera/utf8.h",
+      "sha": "bc62b68e75fe2df3a07a3deb12d4577b6129ca4a",
+      "size": 868,
+      "kind": "c"
+    },
+    {
+      "path": "kernel/ipc/spsc_ring.hpp",
+      "sha": "ea6598e3ef6fa5389b73d5db7bc80e7db37a9cb1",
+      "size": 637,
+      "kind": "cpp"
+    },
+    {
+      "path": "kernel/mm/buddy.hpp",
+      "sha": "d68d0c24121e2e826a5cba2f72090321a5a64656",
+      "size": 521,
+      "kind": "cpp"
+    },
+    {
+      "path": "kernel/modules/koronos_test_module.asm",
+      "sha": "aea0255c528295eecf22db5904cea0e8069aa993",
+      "size": 108,
+      "kind": "asm"
+    },
+    {
+      "path": "kernel/sched/chronos.hpp",
+      "sha": "ead15bd049a46213e8ae83a3bcf0263fa9a8d62e",
+      "size": 827,
+      "kind": "cpp"
+    },
+    {
+      "path": "kernel/tests/process_admission.cpp",
+      "sha": "a82a05f6e780c8d6893248ce137cd55842a6d70c",
+      "size": 1322,
+      "kind": "cpp"
+    },
+    {
+      "path": "knowledge/daemon/chimera_knowledge_daemon.cpp",
+      "sha": "de755e36ac854f30084bb91ce05b1e0f967b60cc",
+      "size": 1634,
+      "kind": "cpp"
+    },
+    {
+      "path": "knowledge/patch/chimera_patch_engine.cpp",
+      "sha": "aa54b1e77c9d27020fd57ac20d3452138e673dd9",
+      "size": 1724,
+      "kind": "cpp"
+    },
+    {
+      "path": "knowledge/patch/reboot_manager.cpp",
+      "sha": "7d6e0f883b2333a43c79581552d351453795ba02",
+      "size": 1069,
+      "kind": "cpp"
+    },
+    {
+      "path": "knowledge/patch/reboot_manager.hpp",
+      "sha": "203cb6cf2c95e7124d001f49656f7d6e2343d435",
+      "size": 274,
+      "kind": "cpp"
+    },
+    {
+      "path": "kotlin/apple/SharedKit.kt",
+      "sha": "5c50be1703bd91609aefec1e5a8d1125c748f0df",
+      "size": 239,
+      "kind": "kotlin"
+    },
+    {
+      "path": "kotlin/mobile/app/build.gradle.kts",
+      "sha": "0a521ec639c4b228add0bea682fa81d3f4de29c3",
+      "size": 496,
+      "kind": "kotlin"
+    },
+    {
+      "path": "kotlin/mobile/app/src/main/java/com/amerhwitat/chimera/mobile/CommunicationCore.kt",
+      "sha": "a8d971375cd205a38574e1edf945fa99f9db8da3",
+      "size": 2516,
+      "kind": "kotlin"
+    },
+    {
+      "path": "kotlin/mobile/app/src/main/java/com/amerhwitat/chimera/mobile/MainActivity.kt",
+      "sha": "bef2a56fdc6dd79c323d70b377b549c2b981f17e",
+      "size": 930,
+      "kind": "kotlin"
+    },
+    {
+      "path": "kotlin/mobile/build.gradle.kts",
+      "sha": "713412cf2e9c6f627b8ab3f6ecb271d946abf1d4",
+      "size": 136,
+      "kind": "kotlin"
+    },
+    {
+      "path": "kotlin/mobile/settings.gradle.kts",
+      "sha": "c041fb6015d70b25e09c414d7688ff34d5867f14",
+      "size": 291,
+      "kind": "kotlin"
+    },
+    {
+      "path": "lib/chimera-nbit/chimera_nint.hpp",
+      "sha": "ba4f19fd396d969181773f4245da01eb5209802f",
+      "size": 3013,
+      "kind": "cpp"
+    },
+    {
+      "path": "library/reference/chimera_ii_8192_cpu_emulator.py",
+      "sha": "0fa4f9eb60046751cfe4aa0ba5e50d80a5daa80e",
+      "size": 18168,
+      "kind": "python"
+    },
+    {
+      "path": "mobile/android/app/src/main/java/org/chimera2/mobile/MainActivity.java",
+      "sha": "3a859ff41e24465dbfc42f08a39395b3a961f2f1",
+      "size": 406,
+      "kind": "java"
+    },
+    {
+      "path": "mobile/build/validate-profile.py",
+      "sha": "38f8b610da5b1971065bcd8a2c4cfc7aa4c9fc16",
+      "size": 986,
+      "kind": "python"
+    },
+    {
+      "path": "mobile/runtime/chimera_mobile_init.c",
+      "sha": "badeb610b1ff0c254339e54954b70c307453e2c5",
+      "size": 573,
+      "kind": "c"
+    },
+    {
+      "path": "mobile/tools/validate-mobile-manifest.py",
+      "sha": "2fff38a5bbca92128736c1af9680b764e4f6e044",
+      "size": 429,
+      "kind": "python"
+    },
+    {
+      "path": "multidimensional/cpp/include/chm/md/Vector.hpp",
+      "sha": "9441d69dcb60944deefcd5f228b7574eacdeaf70",
+      "size": 345,
+      "kind": "cpp"
+    },
+    {
+      "path": "multidimensional/cpp/tests/test_multidimensional.cpp",
+      "sha": "3db1ba84adaf219b96fa19da15bd8d470501de48",
+      "size": 189,
+      "kind": "cpp"
+    },
+    {
+      "path": "multidimensional/python/chimera_md.py",
+      "sha": "5549477771f17d39e5b571f0aab6e5521add71c4",
+      "size": 311,
+      "kind": "python"
+    },
+    {
+      "path": "multidimensional/python/test_chimera_md.py",
+      "sha": "0eeb9adc1b53cdd2a631f1571ab85beec25eff9d",
+      "size": 356,
+      "kind": "python"
+    },
+    {
+      "path": "network/application_network.hpp",
+      "sha": "9f4eb7205e9d2116ec9fe1dac8df50286d10353d",
+      "size": 594,
+      "kind": "cpp"
+    },
+    {
+      "path": "neural/cpp/chm_neural.hpp",
+      "sha": "b54513f69460cbf9d18065a9646c51e4c189ec6e",
+      "size": 1481,
+      "kind": "cpp"
+    },
+    {
+      "path": "neural/python/chimera_neural.py",
+      "sha": "661ce12e866cf6f96446891818118409cde920cf",
+      "size": 929,
+      "kind": "python"
+    },
+    {
+      "path": "neural/tests/test_neural.py",
+      "sha": "9e78adde5bdea4e14c29fa1e45b698255f0632c2",
+      "size": 525,
+      "kind": "python"
+    },
+    {
+      "path": "p2p/cpp/chimera_p2p.hpp",
+      "sha": "85e7c238298aa02d1ee58c64cf6ef1f3640945e3",
+      "size": 573,
+      "kind": "cpp"
+    },
+    {
+      "path": "p2p/java/ChimeraP2PEnvelope.java",
+      "sha": "b1203f9dbe905c443a1226378ad6019dc2dbbf01",
+      "size": 746,
+      "kind": "java"
+    },
+    {
+      "path": "p2p/python/chimera_p2p.py",
+      "sha": "44ad8318e8c893659a4544805f1a35e2dcb5fede",
+      "size": 1325,
+      "kind": "python"
+    },
+    {
+      "path": "package-manager/chimera-pkg.py",
+      "sha": "96786ef223bf734aa451c95c4b1a88c830a560d7",
+      "size": 3780,
+      "kind": "python"
+    },
+    {
+      "path": "package/chimera_pkg.py",
+      "sha": "8a2cd6e79cfb6f7fcca749c0d0198942b76bcd74",
+      "size": 3670,
+      "kind": "python"
+    },
+    {
+      "path": "package/providers/data_platforms.py",
+      "sha": "374961623941be1964bcf456cec01266b27e509c",
+      "size": 1453,
+      "kind": "python"
+    },
+    {
+      "path": "quantum/c/chimera_quantum.c",
+      "sha": "3a21283273b74b614d086f295c97abef7c629d36",
+      "size": 1063,
+      "kind": "c"
+    },
+    {
+      "path": "quantum/c/chimera_quantum.h",
+      "sha": "ab65bf3405bfb5a9bd8943047766452d4241b0c2",
+      "size": 509,
+      "kind": "c"
+    },
+    {
+      "path": "quantum/c/include/chm_quantum.h",
+      "sha": "21215ceb3b2266ae15b8b20be61db5042679904e",
+      "size": 486,
+      "kind": "c"
+    },
+    {
+      "path": "quantum/c/src/chm_quantum.c",
+      "sha": "9aa5c8bd5a57f84566cbdeff317430353bafe22b",
+      "size": 627,
+      "kind": "c"
+    },
+    {
+      "path": "quantum/c/tests/test_quantum_api.c",
+      "sha": "bda8e4bffb10eaf32f84c4b922f7aa626a0bb174",
+      "size": 258,
+      "kind": "c"
+    },
+    {
+      "path": "quantum/cpp/include/chm/quantum/StateVector.hpp",
+      "sha": "59229275deb785ff44a0abd1fd3362dc4189b056",
+      "size": 406,
+      "kind": "cpp"
+    },
+    {
+      "path": "quantum/cpp/src/StateVector.cpp",
+      "sha": "a9aea8d197f77c51094751d04e5512cc739d66c0",
+      "size": 1802,
+      "kind": "cpp"
+    },
+    {
+      "path": "quantum/cpp/tests/test_quantum.cpp",
+      "sha": "8134937a528c19459c1048eb943f9073c48148bf",
+      "size": 221,
+      "kind": "cpp"
+    },
+    {
+      "path": "quantum/languages/java/ChimeraQuantum.java",
+      "sha": "44863a2b01016eee5831cc470ccb991d67fb12c0",
+      "size": 814,
+      "kind": "java"
+    },
+    {
+      "path": "quantum/languages/kotlin/ChimeraQuantum.kt",
+      "sha": "e3a9476dc2483667423b3507dae124b6d4ff18c5",
+      "size": 631,
+      "kind": "kotlin"
+    },
+    {
+      "path": "quantum/languages/python/chimera_quantum.py",
+      "sha": "240c95b5537767bca254e0867bc4a9cb423c3bf0",
+      "size": 918,
+      "kind": "python"
+    },
+    {
+      "path": "quantum/python/chimera_quantum.py",
+      "sha": "f0f53e0414e3d1bbdfef98b7f0108649c16f3467",
+      "size": 1491,
+      "kind": "python"
+    },
+    {
+      "path": "quantum/python/test_quantum.py",
+      "sha": "78e5ffd41f90e6e714260dd180d090a000d4f4e7",
+      "size": 373,
+      "kind": "python"
+    },
+    {
+      "path": "sdk/examples/c/hello_chimera.c",
+      "sha": "48b532d4751a6879f974e3bff4cdb00e0bd3d104",
+      "size": 198,
+      "kind": "c"
+    },
+    {
+      "path": "sdk/examples/cpp/hello_chimera.cpp",
+      "sha": "3da2bf07c544cdfe90df0027f7cb9ba5b0fa8492",
+      "size": 195,
+      "kind": "cpp"
+    },
+    {
+      "path": "sdk/examples/java/HelloChimera.java",
+      "sha": "1a93aa88811fe66907a242e339e137aa8752aa60",
+      "size": 205,
+      "kind": "java"
+    },
+    {
+      "path": "sdk/examples/python/hello_chimera.py",
+      "sha": "9490ecfaee454d2326c8ef2cc727a8bb2932b609",
+      "size": 108,
+      "kind": "python"
+    },
+    {
+      "path": "sdk/include/chimera/sdk.h",
+      "sha": "fa4a328fbc88563985654cb3a74e9c36ce6a6c97",
+      "size": 301,
+      "kind": "c"
+    },
+    {
+      "path": "sdk/java/src/chimera/runtime/ChimeraRuntime.java",
+      "sha": "045c021576fc9c3f0f929d378f412c630c8bb1da",
+      "size": 349,
+      "kind": "java"
+    },
+    {
+      "path": "sdk/java/src/org/chimera/sdk/ChimeraRuntime.java",
+      "sha": "7b8d6d9b50ab698683c4344ea6a1fa55aa4d4394",
+      "size": 356,
+      "kind": "java"
+    },
+    {
+      "path": "sdk/objective-c/ChimeraSDK.h",
+      "sha": "af6e5fde678741c84ef76325c87d8fc25f8edbcb",
+      "size": 123,
+      "kind": "c"
+    },
+    {
+      "path": "sdk/python/chimera/__init__.py",
+      "sha": "5c30a29da1d4be879e3ac34f7c1df309c7743c74",
+      "size": 157,
+      "kind": "python"
+    },
+    {
+      "path": "sdk/python/chimera_sdk/__init__.py",
+      "sha": "2ac93a3b37c5692456e1636e9ce7e068684febc7",
+      "size": 173,
+      "kind": "python"
+    },
+    {
+      "path": "sdk/python/chimera_sdk/runtime.py",
+      "sha": "8026f23fa53008fd96a814543ae21d21a13890a8",
+      "size": 505,
+      "kind": "python"
+    },
+    {
+      "path": "sdk/src/chimera_sdk.cpp",
+      "sha": "16bc1940622b0066e66150fabfaeccf4a8dc3817",
+      "size": 460,
+      "kind": "cpp"
+    },
+    {
+      "path": "sdk/tests/sdk_smoke.py",
+      "sha": "4f20711ff6def831da355a10dd97b7ad0f62d513",
+      "size": 205,
+      "kind": "python"
+    },
+    {
+      "path": "sdk/tools/chimera-sdk-config.cpp",
+      "sha": "5ea50240983c65ad3d3928cf9cd9c0e19fec1918",
+      "size": 445,
+      "kind": "cpp"
+    },
+    {
+      "path": "security/vulnerability/chimera-vuln-scan.py",
+      "sha": "573d6b58825708009fb5d335bb7aeb95c47b403a",
+      "size": 1974,
+      "kind": "python"
+    },
+    {
+      "path": "services/apache/apache-sync.py",
+      "sha": "4eab1abd2b7e373655014c2f0d07468ecd3946c1",
+      "size": 11142,
+      "kind": "python"
+    },
+    {
+      "path": "services/c/service.c",
+      "sha": "ac7dc8a1ef56758f400ef7c1417a650f24f285f6",
+      "size": 445,
+      "kind": "c"
+    },
+    {
+      "path": "services/c/service.h",
+      "sha": "0ab101b9f2fae0a376ee72586cab2a099115deb8",
+      "size": 504,
+      "kind": "c"
+    },
+    {
+      "path": "services/chimera-web/chimera_web.py",
+      "sha": "52c4d0c3b6e706a63cbdb40cded128bb9d165ec0",
+      "size": 12477,
+      "kind": "python"
+    },
+    {
+      "path": "services/cpp/chm_service.hpp",
+      "sha": "38a3676d79f614a8dbd3c8ec118d16cb155f849d",
+      "size": 607,
+      "kind": "cpp"
+    },
+    {
+      "path": "services/hardware/chimera-hwmode.cpp",
+      "sha": "34438d8b09a3a992e369bb1934f8348bd538a872",
+      "size": 2137,
+      "kind": "cpp"
+    },
+    {
+      "path": "services/java/chimera/services/Service.java",
+      "sha": "23d9444a70b680273e0f973b93b532c674eb5876",
+      "size": 117,
+      "kind": "java"
+    },
+    {
+      "path": "services/java/chimera/services/ServiceRegistry.java",
+      "sha": "9ae2b5c8f670f4eafc117d9fa6c09cf1fe4c8e70",
+      "size": 283,
+      "kind": "java"
+    },
+    {
+      "path": "services/kotlin/ChimeraServices.kt",
+      "sha": "63256fdaf8ac852aa36ee1afd614ec08f2009c79",
+      "size": 142,
+      "kind": "kotlin"
+    },
+    {
+      "path": "services/learning/learningd.py",
+      "sha": "0ccd5259ee9dd974af031b373577179a46fc7ca0",
+      "size": 2672,
+      "kind": "python"
+    },
+    {
+      "path": "services/linux/chimera_linux_services.c",
+      "sha": "b2e64c4517c708349ab6ab08eecbf3b20a104fb8",
+      "size": 339,
+      "kind": "c"
+    },
+    {
+      "path": "services/macos/chimera_macos_services.c",
+      "sha": "af54c7c175b108c044804878299f2f2e7b002c10",
+      "size": 329,
+      "kind": "c"
+    },
+    {
+      "path": "services/network/network-discoveryd.py",
+      "sha": "0771558a08690efc221a32b3f7bcf17030840fe2",
+      "size": 1946,
+      "kind": "python"
+    },
+    {
+      "path": "services/python/__init__.py",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0,
+      "kind": "python"
+    },
+    {
+      "path": "services/python/chimera_services.py",
+      "sha": "3eb410d25f59e1cedb6a741b4c675d1d75331c75",
+      "size": 1302,
+      "kind": "python"
+    },
+    {
+      "path": "services/windows/chimera_windows_services.c",
+      "sha": "fc7dc03f8716b9a694f8ae93f530b78eaf2f07b4",
+      "size": 321,
+      "kind": "c"
+    },
+    {
+      "path": "src/ai/media.cpp",
+      "sha": "1ec56409dca5f06aecaf36c3c75bb1fdd426db81",
+      "size": 1101,
+      "kind": "cpp"
+    },
+    {
+      "path": "src/ai/runtime.cpp",
+      "sha": "9a1508d0af9cd91018c6343f1a548dd3fd95a35e",
+      "size": 2125,
+      "kind": "cpp"
+    },
+    {
+      "path": "src/arch/x86_64/chimera_fastpath.S",
+      "sha": "379fd6ff2800067505594e4214cbeb3d9b9d2c54",
+      "size": 278,
+      "kind": "asm"
+    },
+    {
+      "path": "src/chimera-command-compat/chimera-cmd.c",
+      "sha": "6be08a160337e7c1de21a6e83f5a1ce6c4613173",
+      "size": 8154,
+      "kind": "c"
+    },
+    {
+      "path": "src/chimera.c",
+      "sha": "907210f2d3ddc3291284c0190a6219dfab0e8cf1",
+      "size": 3998,
+      "kind": "c"
+    },
+    {
+      "path": "src/dashboard/dashboard.cpp",
+      "sha": "7ca938a3dde459058a94688b78da704facb91cc1",
+      "size": 2452,
+      "kind": "cpp"
+    },
+    {
+      "path": "src/data/data.cpp",
+      "sha": "0b31617e1978bc1cae9bc098c299594573f39be3",
+      "size": 1704,
+      "kind": "cpp"
+    },
+    {
+      "path": "src/dma/dma.cpp",
+      "sha": "44430d5e0836572fad7cf4d9e7ef8cb5b4001065",
+      "size": 1741,
+      "kind": "cpp"
+    },
+    {
+      "path": "src/game/BizXtremeGameState.hpp",
+      "sha": "5d31fda900c543d5abe95bac8640a2ef40150179",
+      "size": 666,
+      "kind": "cpp"
+    },
+    {
+      "path": "src/iot/iot.cpp",
+      "sha": "493f10885fc8b7ca3370d739e17519ff268796a7",
+      "size": 1323,
+      "kind": "cpp"
+    },
+    {
+      "path": "src/isa/ISA_EncoderDecoder.cpp",
+      "sha": "667c0f7805930d5efacb012fd215a95cbc898de3",
+      "size": 5937,
+      "kind": "cpp"
+    },
+    {
+      "path": "src/isa/chimera_isa.cpp",
+      "sha": "4daf64ae7f05014772f5640e9ff93d941349e412",
+      "size": 12056,
+      "kind": "cpp"
+    },
+    {
+      "path": "src/isa/isa_bitfields.cpp",
+      "sha": "f0b96ff60e99d4023cee84926da20c5be5458dfc",
+      "size": 6123,
+      "kind": "cpp"
+    },
+    {
+      "path": "src/isa/nbit_isa.cpp",
+      "sha": "a8f3146f080746472f39c98092dc840fdc5e657b",
+      "size": 5517,
+      "kind": "cpp"
+    },
+    {
+      "path": "src/isa/unified_isa.cpp",
+      "sha": "061a1923d711fbd474dfb455c26213dc5f5c0b1d",
+      "size": 4339,
+      "kind": "cpp"
+    },
+    {
+      "path": "src/isa/universal_isa.cpp",
+      "sha": "79fae70f6f176032520893da178b35ea48514b6f",
+      "size": 1228,
+      "kind": "cpp"
+    },
+    {
+      "path": "src/kernel/arch_context.cpp",
+      "sha": "a393fdfb98d872b966d835552bf0ea4fe6cbbc88",
+      "size": 381,
+      "kind": "cpp"
+    },
+    {
+      "path": "src/kernel/bootinfo.cpp",
+      "sha": "4dc3b5b6bb26842371ad942b6db2e40eda8724d0",
+      "size": 993,
+      "kind": "cpp"
+    },
+    {
+      "path": "src/kernel/chimera_kernel_main.cpp",
+      "sha": "a83145b41a64345f0356b78e6d40ee04798f8edc",
+      "size": 2219,
+      "kind": "cpp"
+    },
+    {
+      "path": "src/kernel/kernel.cpp",
+      "sha": "72743406baa34d3efb548521f26aa72eb6716205",
+      "size": 470,
+      "kind": "cpp"
+    },
+    {
+      "path": "src/kernel/kernel_arch.cpp",
+      "sha": "8f9e264bf0d571689a6987b63b6ed8216d2fcdfe",
+      "size": 3119,
+      "kind": "cpp"
+    },
+    {
+      "path": "src/kernel/linux_compat.cpp",
+      "sha": "5d946f81e8b007faee553035373cfc3340abbe4e",
+      "size": 4146,
+      "kind": "cpp"
+    },
+    {
+      "path": "src/kernel/microkernel_services.cpp",
+      "sha": "df8c83bd51acead0e4d0116da309f780c6f44964",
+      "size": 260,
+      "kind": "cpp"
+    },
+    {
+      "path": "src/main.cpp",
+      "sha": "8ebccee52c63f172ef5f1ce367e3fb958d08ef32",
+      "size": 337,
+      "kind": "cpp"
+    },
+    {
+      "path": "src/memory/memory_bus.cpp",
+      "sha": "5b8f17b78c1762e273cc11cf28538a17670a84a6",
+      "size": 5326,
+      "kind": "cpp"
+    },
+    {
+      "path": "src/memory/memory_bus_probe.cpp",
+      "sha": "1ee74211a002b7d264a400e0303888514c513b83",
+      "size": 735,
+      "kind": "cpp"
+    },
+    {
+      "path": "src/net/inet.cpp",
+      "sha": "8c4c4bea1eb504f605e9c8d79cf6df1614e6b79d",
+      "size": 7013,
+      "kind": "cpp"
+    },
+    {
+      "path": "src/net/inet.h",
+      "sha": "607f28f1b29377bf1bb8093700e6375d43919433",
+      "size": 561,
+      "kind": "c"
+    },
+    {
+      "path": "src/net/spotnik.cpp",
+      "sha": "39eaadbb316da3b11919ad420e23d90d7b71b639",
+      "size": 503,
+      "kind": "cpp"
+    },
+    {
+      "path": "src/network/BizXtremePeerDirectory.hpp",
+      "sha": "bf3b39ebea60d54798c34740f4901d2166a565b0",
+      "size": 693,
+      "kind": "cpp"
+    },
+    {
+      "path": "src/network/ai_network.cpp",
+      "sha": "038c74ec03584b17ca8c50128090c1af9e1c7976",
+      "size": 841,
+      "kind": "cpp"
+    },
+    {
+      "path": "src/neural/hyperdimensional.cpp",
+      "sha": "7787b7a6eafea998a014502cad22723c32123d76",
+      "size": 3763,
+      "kind": "cpp"
+    },
+    {
+      "path": "src/neural/trusted_node.cpp",
+      "sha": "90dc454b033bce57cda61083f3cccdf990041ff2",
+      "size": 1085,
+      "kind": "cpp"
+    },
+    {
+      "path": "src/parallel/parallel.cpp",
+      "sha": "e5f383195a56365cc0e21d1aa5bd4f5b2c2357a3",
+      "size": 800,
+      "kind": "cpp"
+    },
+    {
+      "path": "src/performance/performance.cpp",
+      "sha": "bbee01bcf264575f2435b77d76a925fbea64b261",
+      "size": 1921,
+      "kind": "cpp"
+    },
+    {
+      "path": "src/runtime/nbit_runtime.cpp",
+      "sha": "c9efc31dec5a11396a4e7de4914a4cc5cb76ac11",
+      "size": 5660,
+      "kind": "cpp"
+    },
+    {
+      "path": "src/security/biometric_auth.cpp",
+      "sha": "138a5a696bfade7b272c4b6e51a6cd3a1a3e8c3e",
+      "size": 1142,
+      "kind": "cpp"
+    },
+    {
+      "path": "src/server.c",
+      "sha": "4975b07dd4f40f3034263d669a60d043a6b0ce38",
+      "size": 4644,
+      "kind": "c"
+    },
+    {
+      "path": "src/server_windows.c",
+      "sha": "339ea16ffc364421d38eec472d65a0e20a4cf2f4",
+      "size": 3652,
+      "kind": "c"
+    },
+    {
+      "path": "src/services/kore.cpp",
+      "sha": "106c986ff519e59ee0d1f9ece27dddd355b313e0",
+      "size": 533,
+      "kind": "cpp"
+    },
+    {
+      "path": "src/vcpp/ChimeraBootstrap.cpp",
+      "sha": "b6614f9e629ff6479b1a3aeb3cc2967c33ef2b13",
+      "size": 392,
+      "kind": "cpp"
+    },
+    {
+      "path": "src/virtualization/cvel.cpp",
+      "sha": "59c48d113f043ddb4b60744e12e83b09e8ffc4db",
+      "size": 3438,
+      "kind": "cpp"
+    },
+    {
+      "path": "src/virtualization/vm.cpp",
+      "sha": "cdbafd2886b70345a6366d8eb8256ef34e51a99f",
+      "size": 720,
+      "kind": "cpp"
+    },
+    {
+      "path": "standalone/LinuxCommandRegistry.cpp",
+      "sha": "27b33b396b23f29112712d6a2031545dea26e2ea",
+      "size": 3369,
+      "kind": "cpp"
+    },
+    {
+      "path": "standalone/LinuxCommandRegistry.hpp",
+      "sha": "7a82a1fde156f8598cd1ebc72910a1c2155cd0d0",
+      "size": 1134,
+      "kind": "cpp"
+    },
+    {
+      "path": "system/kore/kore.py",
+      "sha": "c69300aed690b237a4b5f7811b691d922760d343",
+      "size": 630,
+      "kind": "python"
+    },
+    {
+      "path": "system/languages/chm_awk.cpp",
+      "sha": "e38bb92f42cf2c61011158411c43b0a441f3dbdc",
+      "size": 1548,
+      "kind": "cpp"
+    },
+    {
+      "path": "system/languages/chm_sed.cpp",
+      "sha": "063c48b894616681df767a5cbb787fa56860847e",
+      "size": 1553,
+      "kind": "cpp"
+    },
+    {
+      "path": "system/resource/chimera_resource_manager.cpp",
+      "sha": "509388a57a89c4f1a18ba297bbc4bde05edbece7",
+      "size": 1777,
+      "kind": "cpp"
+    },
+    {
+      "path": "system/security/chimera_account_manager.cpp",
+      "sha": "71e58154c6a38a173768303ff89efd46b13e252f",
+      "size": 2991,
+      "kind": "cpp"
+    },
+    {
+      "path": "system/security/chimera_ad_manager.cpp",
+      "sha": "fdda2703c5af4c7f34de57ee93514cbcf7077d00",
+      "size": 7652,
+      "kind": "cpp"
+    },
+    {
+      "path": "system/security/chimera_group.cpp",
+      "sha": "176845cf198b486227279c247f6fe2c8ff824a7b",
+      "size": 1067,
+      "kind": "cpp"
+    },
+    {
+      "path": "system/security/chimera_group_mod.cpp",
+      "sha": "bd0d578ce5c8717f755679cb877ba1df202024bc",
+      "size": 712,
+      "kind": "cpp"
+    },
+    {
+      "path": "system/security/chimera_identity_store.hpp",
+      "sha": "61f103bc1e0768defa011858903fa1cd6ed9b436",
+      "size": 3509,
+      "kind": "cpp"
+    },
+    {
+      "path": "system/security/chimera_passwd.cpp",
+      "sha": "0cc998aafaa80bf79190135c313a821fda4ee1f8",
+      "size": 1294,
+      "kind": "cpp"
+    },
+    {
+      "path": "system/security/chimera_permissions.cpp",
+      "sha": "22f088e6dd02ad8c67b858174445a5c65f1b0e5d",
+      "size": 1167,
+      "kind": "cpp"
+    },
+    {
+      "path": "system/security/chimera_security_selftest.cpp",
+      "sha": "d69a04776abd6842d199638cbaa8bba573fdc09b",
+      "size": 526,
+      "kind": "cpp"
+    },
+    {
+      "path": "system/security/chimera_user_mod.cpp",
+      "sha": "0e623d4075aee6da7a86e02baad9bab98aa1bb19",
+      "size": 957,
+      "kind": "cpp"
+    },
+    {
+      "path": "system/storage/chimera_partition.cpp",
+      "sha": "08b04f440544908114dfdec0ba34ff9c8e7933f5",
+      "size": 5293,
+      "kind": "cpp"
+    },
+    {
+      "path": "system/storage/chimera_partition.hpp",
+      "sha": "5a486b3901c4b0200872c4de351ec4a739defa8d",
+      "size": 1019,
+      "kind": "cpp"
+    },
+    {
+      "path": "system/storage/chm-diskpart.cpp",
+      "sha": "a81a5692bc06275fb285424b4f78249fea0dbfdf",
+      "size": 125,
+      "kind": "cpp"
+    },
+    {
+      "path": "system/storage/chm-fdisk.cpp",
+      "sha": "0f9e704141021f7120bc32df328123c629f1e15b",
+      "size": 122,
+      "kind": "cpp"
+    },
+    {
+      "path": "system/storage/chm-gdisk.cpp",
+      "sha": "1fe681769baecaaebd72a2176d8d55aedcbc8400",
+      "size": 122,
+      "kind": "cpp"
+    },
+    {
+      "path": "system/storage/chm-parted.cpp",
+      "sha": "ca47ba0a53782f98ed721b3f0f00991274f7fc29",
+      "size": 123,
+      "kind": "cpp"
+    },
+    {
+      "path": "system/storage/chm_partition_cli.cpp",
+      "sha": "6c5e507e559058f41b9001e895c03d0148172dd8",
+      "size": 2943,
+      "kind": "cpp"
+    },
+    {
+      "path": "system/storage/chm_partition_cli.hpp",
+      "sha": "860d082f689f3b4888a2a80167d6fff8f21719dd",
+      "size": 111,
+      "kind": "cpp"
+    },
+    {
+      "path": "tests/ai/test_ai_discipline.cpp",
+      "sha": "c06f9977c09431db0ccf23fb58cb715eec533678",
+      "size": 145,
+      "kind": "cpp"
+    },
+    {
+      "path": "tests/ai/test_media.cpp",
+      "sha": "d1d80fc88d5bcedc32500a63ce866d7ff8fa1adc",
+      "size": 350,
+      "kind": "cpp"
+    },
+    {
+      "path": "tests/ai/test_runtime.cpp",
+      "sha": "8d38856d23111eac2d74f8a8feb0374107ecd32c",
+      "size": 629,
+      "kind": "cpp"
+    },
+    {
+      "path": "tests/applications/test_catalog.py",
+      "sha": "b2f520947910aa513b1bc30fe1e83829f22dd8d6",
+      "size": 247,
+      "kind": "python"
+    },
+    {
+      "path": "tests/boot/test_boot_abi.py",
+      "sha": "5cf4f6fa462357da111128c580753a11572d537d",
+      "size": 804,
+      "kind": "python"
+    },
+    {
+      "path": "tests/boot/test_koronos_contract.py",
+      "sha": "10e1ca4cafc7ad782a6d567d9d80e29bc35c7906",
+      "size": 414,
+      "kind": "python"
+    },
+    {
+      "path": "tests/boot/test_spitfire_layout.py",
+      "sha": "24915852c4e0fad26755e559778242dee21f18d9",
+      "size": 495,
+      "kind": "python"
+    },
+    {
+      "path": "tests/boot/test_uefi_layout.py",
+      "sha": "06c6c841490c49f7dfc549934db546aaeef14875",
+      "size": 317,
+      "kind": "python"
+    },
+    {
+      "path": "tests/build/test_build_manifest.py",
+      "sha": "20b2c3064a4565f66f867565fbfa8278155ec764",
+      "size": 845,
+      "kind": "python"
+    },
+    {
+      "path": "tests/build/test_orchestrator.py",
+      "sha": "45d8c8df2abc41b77c4c96b73a2715a6b0648c8d",
+      "size": 797,
+      "kind": "python"
+    },
+    {
+      "path": "tests/cloud/test_adapters.py",
+      "sha": "e12999509a28cc4e36b8acef8b3fca11b79ce9ec",
+      "size": 1304,
+      "kind": "python"
+    },
+    {
+      "path": "tests/cloud/test_cloud_cli.py",
+      "sha": "74fd9f7f260bd793c70642f82bc7cf610154476a",
+      "size": 1191,
+      "kind": "python"
+    },
+    {
+      "path": "tests/cognition/test_chimera_rnn.py",
+      "sha": "ea844df37fde4b4dbe03bbc6ad96d05466a6341d",
+      "size": 871,
+      "kind": "python"
+    },
+    {
+      "path": "tests/cognition/test_hardware_recommender.py",
+      "sha": "180af5da3a57eb7c0ba8f9de0e963fe053c0c56e",
+      "size": 831,
+      "kind": "python"
+    },
+    {
+      "path": "tests/dashboard/test_dashboard.cpp",
+      "sha": "6bf0753edd48b1a0e5ea2c906a9ac3ccd18f0d13",
+      "size": 1033,
+      "kind": "cpp"
+    },
+    {
+      "path": "tests/data/test_data.cpp",
+      "sha": "9b0b51fe4aa535bcfe08e780479d307aa7f179c3",
+      "size": 366,
+      "kind": "cpp"
+    },
+    {
+      "path": "tests/database/test_database_catalog.py",
+      "sha": "b348dd137ebc26deadeaf00a8df79bedf3960034",
+      "size": 585,
+      "kind": "python"
+    },
+    {
+      "path": "tests/desktop/test_arabic_desktop_contract.py",
+      "sha": "e02562e7275dc105b3407ab19a8cc4b9c5a5bf8c",
+      "size": 1170,
+      "kind": "python"
+    },
+    {
+      "path": "tests/desktop/test_ui_control_contract.py",
+      "sha": "bdc92eeafacfedb5875440746be750c197e5965c",
+      "size": 1153,
+      "kind": "python"
+    },
+    {
+      "path": "tests/devops/test_pipeline.py",
+      "sha": "96d0f8ee2811d91758e0affc63d1f5d688e06468",
+      "size": 835,
+      "kind": "python"
+    },
+    {
+      "path": "tests/filesystem/test_filesystem_matrix.cpp",
+      "sha": "1f2932ccb0be8094c4d41faa50aba5707ad89007",
+      "size": 935,
+      "kind": "cpp"
+    },
+    {
+      "path": "tests/filesystem/test_qfs.py",
+      "sha": "5c19b2cda6a696b03c9444398aa4bafbae0f0330",
+      "size": 860,
+      "kind": "python"
+    },
+    {
+      "path": "tests/help/test_help_core.py",
+      "sha": "abdeb5652362758a2bdf0461ed6c76ba54074041",
+      "size": 1409,
+      "kind": "python"
+    },
+    {
+      "path": "tests/image/test_chimera_image.py",
+      "sha": "0af373b4169f6d6103fcf618fd69afa4a5606ca7",
+      "size": 600,
+      "kind": "python"
+    },
+    {
+      "path": "tests/installer/test_installer_plan.py",
+      "sha": "16a63fc74d7702df648074a4c46c3730ad161f06",
+      "size": 1679,
+      "kind": "python"
+    },
+    {
+      "path": "tests/installer/test_installer_planner.py",
+      "sha": "6b37a9dce366e9af34679010db24f40d38a815f4",
+      "size": 527,
+      "kind": "python"
+    },
+    {
+      "path": "tests/iot/test_iot.cpp",
+      "sha": "468f4e18d6a2368bec0ae14251d566a8675f32b2",
+      "size": 596,
+      "kind": "cpp"
+    },
+    {
+      "path": "tests/isa/test_catalog.py",
+      "sha": "cf3c13f0474cf94f0fb5b72d55c396fb6f06b5f5",
+      "size": 1725,
+      "kind": "python"
+    },
+    {
+      "path": "tests/isa/test_generate_isa_bitfields.py",
+      "sha": "1d447c40c16121b5472d82ff241cf2d8e10a7fd6",
+      "size": 1995,
+      "kind": "python"
+    },
+    {
+      "path": "tests/isa/test_isa_extension_catalog.cpp",
+      "sha": "7ac8de5f5f7d006d6f953633b3c0bdf5ddd7c021",
+      "size": 1416,
+      "kind": "cpp"
+    },
+    {
+      "path": "tests/isa/test_isa_extension_ops.cpp",
+      "sha": "395c2134988bb7418bee9f6bbcb900f2844c9375",
+      "size": 719,
+      "kind": "cpp"
+    },
+    {
+      "path": "tests/isa/test_isa_registry.py",
+      "sha": "8c63c36ecdee991d622d7ed42480a1b952e21f9a",
+      "size": 757,
+      "kind": "python"
+    },
+    {
+      "path": "tests/iso/test_iso_layout.py",
+      "sha": "63c8e2bc1b6e8e14ad481e09f8a17af84d63a217",
+      "size": 541,
+      "kind": "python"
+    },
+    {
+      "path": "tests/kernel/firmware_device_test.cpp",
+      "sha": "5878291347cb25a6dff83d26d728b06fb84b53d4",
+      "size": 1074,
+      "kind": "cpp"
+    },
+    {
+      "path": "tests/kernel/hardware_nbit_test.cpp",
+      "sha": "38db325ea7108fc3a56b1bf3896e199659d6a9de",
+      "size": 1339,
+      "kind": "cpp"
+    },
+    {
+      "path": "tests/kernel/kernel_sync_test.cpp",
+      "sha": "94982ee1a9a1f1f81620a8b553eda9f15c3a6efb",
+      "size": 3288,
+      "kind": "cpp"
+    },
+    {
+      "path": "tests/kernel/platform_features_abi_stubs.cpp",
+      "sha": "54e90148389dc7b8c17c09345d35d6f50a35b202",
+      "size": 184,
+      "kind": "cpp"
+    },
+    {
+      "path": "tests/kernel/platform_features_test.cpp",
+      "sha": "0398fb8536019cf0aa422e2700b8097505f3dc4a",
+      "size": 2140,
+      "kind": "cpp"
+    },
+    {
+      "path": "tests/kernel/scheduler_runtime_test.cpp",
+      "sha": "06a4b6955b77166fdd2d76efbe605c7d69e2ad93",
+      "size": 1391,
+      "kind": "cpp"
+    },
+    {
+      "path": "tests/kernel/thread_lifecycle.cpp",
+      "sha": "7d8ef0f7fbc2b3b7fd920cfeea5063c617165c28",
+      "size": 568,
+      "kind": "cpp"
+    },
+    {
+      "path": "tests/network/test_ai_network.cpp",
+      "sha": "fe4d894b1e3ad71615f9a7d78e97a97c59114cef",
+      "size": 436,
+      "kind": "cpp"
+    },
+    {
+      "path": "tests/opensource/test_integration_contracts.py",
+      "sha": "97ef0ab457d0931af4c6342158978369f4bb3fb3",
+      "size": 2066,
+      "kind": "python"
+    },
+    {
+      "path": "tests/package/test_data_platforms.py",
+      "sha": "c2014f3691332261ace0df033f6513a12ef8a291",
+      "size": 333,
+      "kind": "python"
+    },
+    {
+      "path": "tests/parallel/test_parallel.cpp",
+      "sha": "ae4197f4ea3c1b45a1ecb1ffd7d46fafe991c068",
+      "size": 442,
+      "kind": "cpp"
+    },
+    {
+      "path": "tests/performance/test_performance.cpp",
+      "sha": "65b34a639f82abe738065036d412997d5d7b83a8",
+      "size": 706,
+      "kind": "cpp"
+    },
+    {
+      "path": "tests/qemu_e2e/test_boot_image.py",
+      "sha": "7cc1260c38f64b1ad89992f44f9252a72c086663",
+      "size": 1083,
+      "kind": "python"
+    },
+    {
+      "path": "tests/repair/test_repair.py",
+      "sha": "a6281d6a4bcf5b8b2e8419c613fbd1ed37df698c",
+      "size": 405,
+      "kind": "python"
+    },
+    {
+      "path": "tests/scaffold/test_scaffold.py",
+      "sha": "6ae646d18e4f071422d4ad9ee9c15fb9fd4596d7",
+      "size": 511,
+      "kind": "python"
+    },
+    {
+      "path": "tests/services/test_service_registry.py",
+      "sha": "b0a2e4a2fd6f99c7bcf86d9e049dc6a53cc99313",
+      "size": 300,
+      "kind": "python"
+    },
+    {
+      "path": "tests/test_chimera.c",
+      "sha": "29508f5692d86f14f20ee7a3f1c23756b26bb325",
+      "size": 1580,
+      "kind": "c"
+    },
+    {
+      "path": "tests/test_isa_registry.py",
+      "sha": "e83f4ddb95354370e8c5f113e21b69a9fb226d75",
+      "size": 1416,
+      "kind": "python"
+    },
+    {
+      "path": "tests/test_universal_isa_registry.py",
+      "sha": "20facddbc92aab9d9f8ffa9c1cfe6cccc5090af1",
+      "size": 1196,
+      "kind": "python"
+    },
+    {
+      "path": "tests/toolchain/test_toolchain_registry.py",
+      "sha": "348af42c0c65f3153369f123d40fe9ab5735aca6",
+      "size": 521,
+      "kind": "python"
+    },
+    {
+      "path": "tests/unit/test_biometric_auth.cpp",
+      "sha": "56eea1cee10084f83c38060c5336e0c5725dd23f",
+      "size": 451,
+      "kind": "cpp"
+    },
+    {
+      "path": "tests/unit/test_core.cpp",
+      "sha": "441d1d8789be711eb16019fa4c09e10ff16a3d51",
+      "size": 1770,
+      "kind": "cpp"
+    },
+    {
+      "path": "tests/unit/test_database_backend.cpp",
+      "sha": "9d133333b4e8d476d6127ff500fc20e503aff589",
+      "size": 370,
+      "kind": "cpp"
+    },
+    {
+      "path": "tests/unit/test_dma_manager.cpp",
+      "sha": "77f7e9c7d00718b08458bfb680f12e213afc824e",
+      "size": 722,
+      "kind": "cpp"
+    },
+    {
+      "path": "tests/unit/test_inet.cpp",
+      "sha": "64a1e98de8272474e58c9df3295014b2c541934d",
+      "size": 1082,
+      "kind": "cpp"
+    },
+    {
+      "path": "tests/unit/test_isa_bitfields.cpp",
+      "sha": "1ed1a72f0906d8c1005717e9f1fd2a4f8c2aafa7",
+      "size": 758,
+      "kind": "cpp"
+    },
+    {
+      "path": "tests/unit/test_isa_catalog.cpp",
+      "sha": "099e68465a33ae5111414028de0a8c9e53b9161c",
+      "size": 338,
+      "kind": "cpp"
+    },
+    {
+      "path": "tests/unit/test_isa_encoder_decoder.cpp",
+      "sha": "bf10dc9654510829be27f301a7ff2f38311b195c",
+      "size": 1106,
+      "kind": "cpp"
+    },
+    {
+      "path": "tests/unit/test_kernel_runtime.cpp",
+      "sha": "8e5c2e4a869011a92d678f9642756af560bb36eb",
+      "size": 1347,
+      "kind": "cpp"
+    },
+    {
+      "path": "tests/unit/test_linux_compatibility.cpp",
+      "sha": "21c534ce21faab71b90c05e7aad737026c8be5ed",
+      "size": 753,
+      "kind": "cpp"
+    },
+    {
+      "path": "tests/unit/test_memory_bus.cpp",
+      "sha": "53a08c7bb333c3c81ed8b101fe4f35765855a71a",
+      "size": 1013,
+      "kind": "cpp"
+    },
+    {
+      "path": "tests/unit/test_memory_bus_probe.cpp",
+      "sha": "79a4d07c8e3a94c06118d20124df06ccb5b20812",
+      "size": 571,
+      "kind": "cpp"
+    },
+    {
+      "path": "tests/unit/test_microkernel_services.cpp",
+      "sha": "4a6b56bde1d48e5f1de2c684d55c7c5ab7308242",
+      "size": 321,
+      "kind": "cpp"
+    },
+    {
+      "path": "tests/unit/test_nbit_extended_ops.cpp",
+      "sha": "0eb72e284300171832dd57aa18ec42ea75cba839",
+      "size": 1096,
+      "kind": "cpp"
+    },
+    {
+      "path": "tests/unit/test_nbit_isa.cpp",
+      "sha": "5e9ef8e26ea2e45bfb5f6aeb336b306ba360c67c",
+      "size": 690,
+      "kind": "cpp"
+    },
+    {
+      "path": "tests/unit/test_neural_hyperdimensional.cpp",
+      "sha": "da442e53eb283036412e92396866ccc929db248d",
+      "size": 870,
+      "kind": "cpp"
+    },
+    {
+      "path": "tests/unit/test_r8192_isa.cpp",
+      "sha": "60854943286ee0eb20725710bf6e7609c3a3fd7f",
+      "size": 1163,
+      "kind": "cpp"
+    },
+    {
+      "path": "tests/unit/test_trusted_node.cpp",
+      "sha": "6f970b31e9e1c54543a6bff20c09dec5b619d7d1",
+      "size": 585,
+      "kind": "cpp"
+    },
+    {
+      "path": "tests/unit/test_universal_isa.cpp",
+      "sha": "e799cde6fdc84bc181d74cf50d7123ec790f2026",
+      "size": 475,
+      "kind": "cpp"
+    },
+    {
+      "path": "tests/virtualization/test_cvel.cpp",
+      "sha": "e3d2fef430e5266644afa94a4b3bc1cd71040e49",
+      "size": 2573,
+      "kind": "cpp"
+    },
+    {
+      "path": "tests/virtualization/test_vm_lifecycle.cpp",
+      "sha": "92ae11143a9afe2294f54681bd778ff508be5ff7",
+      "size": 581,
+      "kind": "cpp"
+    },
+    {
+      "path": "tests/web/test_web_assets.py",
+      "sha": "c404ec1c7cdd1c135ed809ed5e9a7464813461a2",
+      "size": 2013,
+      "kind": "python"
+    },
+    {
+      "path": "tools/ai/chimera_ai_runtime.py",
+      "sha": "514a8d6bfbc27be982c4aa8173c2f5444590c242",
+      "size": 1442,
+      "kind": "python"
+    },
+    {
+      "path": "tools/amiga-local-core/bridge.py",
+      "sha": "9fd30db798a488bc18946048576e072002a6d443",
+      "size": 2961,
+      "kind": "python"
+    },
+    {
+      "path": "tools/boot/prepare-visual-assets.py",
+      "sha": "0b381a1dfe1e75c891738deae2f6972677f63b06",
+      "size": 6350,
+      "kind": "python"
+    },
+    {
+      "path": "tools/build/build_all_editions.py",
+      "sha": "4679e4edd1c8f881cf4169dfe64e20c58758e7e5",
+      "size": 2255,
+      "kind": "python"
+    },
+    {
+      "path": "tools/build/main.py",
+      "sha": "0f7a0700489204fbe09379f13568aff3ab407fe7",
+      "size": 1933,
+      "kind": "python"
+    },
+    {
+      "path": "tools/build/orchestrator.py",
+      "sha": "b0221fad1233a602b4b16c1ea5736ac68ffe2909",
+      "size": 7664,
+      "kind": "python"
+    },
+    {
+      "path": "tools/chimera-asm/chimera-as.cpp",
+      "sha": "304c1d9fcd237a212adb79cefd566fd38a12f774",
+      "size": 1740,
+      "kind": "cpp"
+    },
+    {
+      "path": "tools/chimera-asm/chimera-re.cpp",
+      "sha": "d591aa1d1adce55bb1b16d25c68a08d596472bb8",
+      "size": 1496,
+      "kind": "cpp"
+    },
+    {
+      "path": "tools/chimera-asm/chimera_tool.cpp",
+      "sha": "540db87c55b398a0cf13d5549690173d2eecbe94",
+      "size": 1374,
+      "kind": "cpp"
+    },
+    {
+      "path": "tools/chimera_service_plan.py",
+      "sha": "b546a31254cc80cc4ff2ada1334f521024a2dac5",
+      "size": 1764,
+      "kind": "python"
+    },
+    {
+      "path": "tools/cloud/chimera_cloud.py",
+      "sha": "1d8ef03dd01dc67cb80466421e3e534d445f1684",
+      "size": 2543,
+      "kind": "python"
+    },
+    {
+      "path": "tools/cloud/validate_cloud.py",
+      "sha": "d024053b1329ebcf86967f187836098d438a3490",
+      "size": 1019,
+      "kind": "python"
+    },
+    {
+      "path": "tools/cognition/chimera_hardware_recommender.py",
+      "sha": "7d1d4eb2bce36f5a89b1511d4d789fe4e2f91eaf",
+      "size": 3161,
+      "kind": "python"
+    },
+    {
+      "path": "tools/cognition/chimera_rnn.py",
+      "sha": "2e2226dd88f01455467e67e484433f02b80ac278",
+      "size": 2413,
+      "kind": "python"
+    },
+    {
+      "path": "tools/commands/crawl_ss64.py",
+      "sha": "ba7f8d78e9a073b0423afab7ea0b599213d0d617",
+      "size": 9221,
+      "kind": "python"
+    },
+    {
+      "path": "tools/dashboard/chimera_dashboard.py",
+      "sha": "b101842b767ab865507b1425df35b527525dfe86",
+      "size": 2240,
+      "kind": "python"
+    },
+    {
+      "path": "tools/data/chimera_data.py",
+      "sha": "f13b0da3c116823876de35eb9ecb71845cf86129",
+      "size": 2053,
+      "kind": "python"
+    },
+    {
+      "path": "tools/data/hadoop_doctor.py",
+      "sha": "f042fee89e26e2859af7074a83fd5d0e12557b9c",
+      "size": 257,
+      "kind": "python"
+    },
+    {
+      "path": "tools/data/openstack_doctor.py",
+      "sha": "329a5b3f364fd75d2d7a45f3343ad67def5dc675",
+      "size": 359,
+      "kind": "python"
+    },
+    {
+      "path": "tools/display/chimera-display-settings.py",
+      "sha": "1dfb754eac19d11ee6785ce0c9ab221501d67046",
+      "size": 3204,
+      "kind": "python"
+    },
+    {
+      "path": "tools/drivers/chimera-driver-panel.py",
+      "sha": "51edac375e47b75d86c94385947174dfac2a278c",
+      "size": 1556,
+      "kind": "python"
+    },
+    {
+      "path": "tools/game-center/bridge.py",
+      "sha": "bbf3df43779d080ea67f9def92e44e8999662b2c",
+      "size": 2580,
+      "kind": "python"
+    },
+    {
+      "path": "tools/generate_hardware_registry.py",
+      "sha": "2c1d8fa328e31e7f0b943951db523439aa72bdee",
+      "size": 852,
+      "kind": "python"
+    },
+    {
+      "path": "tools/generate_isa_bindings.py",
+      "sha": "12d3f061d76152d5d27d57c73d9f9ee469cb0e5d",
+      "size": 1311,
+      "kind": "python"
+    },
+    {
+      "path": "tools/help/help_core.py",
+      "sha": "9d50b34f89cb92ffbf9a78dba2b09e7f4d6e2a40",
+      "size": 3159,
+      "kind": "python"
+    },
+    {
+      "path": "tools/image/__init__.py",
+      "sha": "e7aac7175b0e8324bde01a38fbf7c242b09ba764",
+      "size": 69,
+      "kind": "python"
+    },
+    {
+      "path": "tools/image/chimera_image.py",
+      "sha": "c6febb48b70014c9c86c650c809922c78f20c105",
+      "size": 2574,
+      "kind": "python"
+    },
+    {
+      "path": "tools/installer/chimera_installer_backend.py",
+      "sha": "e4f428e34e4cf72763fc098104341f9a187249ff",
+      "size": 3404,
+      "kind": "python"
+    },
+    {
+      "path": "tools/installer/installer_plan.py",
+      "sha": "eace523f566c6b1ba99022a79ed61b33d8b31581",
+      "size": 4091,
+      "kind": "python"
+    },
+    {
+      "path": "tools/iot/chimera_iot.py",
+      "sha": "b81af030d4515099782634fee912640387eedfda",
+      "size": 995,
+      "kind": "python"
+    },
+    {
+      "path": "tools/isa/chimera_asm.py",
+      "sha": "a23efba783fc0ce1a32e1c1e46a2210af3e53ac4",
+      "size": 3410,
+      "kind": "python"
+    },
+    {
+      "path": "tools/isa/generate_encoder_decoder_sample.py",
+      "sha": "da7b953c57b18d167bf94ede707240c97d41f819",
+      "size": 1098,
+      "kind": "python"
+    },
+    {
+      "path": "tools/isa/generate_isa_bitfields.py",
+      "sha": "0743f8b7bb10ecf20ab3be120632352bf2bc3341",
+      "size": 6604,
+      "kind": "python"
+    },
+    {
+      "path": "tools/isa/generate_local_nbit_isa.py",
+      "sha": "818399ce3bea7873d0053bd3462e7c53fe1c0d7e",
+      "size": 4104,
+      "kind": "python"
+    },
+    {
+      "path": "tools/isa/generate_registry.py",
+      "sha": "d011c725514f9b6f2bf9111acbeba1122b8c2b32",
+      "size": 7994,
+      "kind": "python"
+    },
+    {
+      "path": "tools/isa/test_isa_conformance.py",
+      "sha": "7fa2babf226cf8b4c1a82c147364df46f1f8472b",
+      "size": 2588,
+      "kind": "python"
+    },
+    {
+      "path": "tools/isa/test_isa_toolchain.py",
+      "sha": "a6eb487723d9827e0a697f49c35f43fbc25cce68",
+      "size": 1455,
+      "kind": "python"
+    },
+    {
+      "path": "tools/isa/test_vector_generator.py",
+      "sha": "18fab41b26ea2c6169643ae60d26c93725ca0929",
+      "size": 3350,
+      "kind": "python"
+    },
+    {
+      "path": "tools/isa/validate-isa.py",
+      "sha": "fb6e46af1a6be7f6550e89e0c08d429e8f823fc1",
+      "size": 1329,
+      "kind": "python"
+    },
+    {
+      "path": "tools/isa_registry_report.py",
+      "sha": "021cb38dcd0b6b845028923a9a3b11f0ad751906",
+      "size": 829,
+      "kind": "python"
+    },
+    {
+      "path": "tools/kali/chimera-kali-export.py",
+      "sha": "d219b84aff3d634f193f2bd658b9c75e61b72fac",
+      "size": 550,
+      "kind": "python"
+    },
+    {
+      "path": "tools/kernel_depth_crawler.py",
+      "sha": "aa8a3d365ace3709ed627395e581a454fab91051",
+      "size": 1884,
+      "kind": "python"
+    },
+    {
+      "path": "tools/knowledge_update.py",
+      "sha": "37b1ace2544d6928d13f58e495316d22249bded4",
+      "size": 2020,
+      "kind": "python"
+    },
+    {
+      "path": "tools/koronos/validate_elf.py",
+      "sha": "9e0dd37d81267d28d726624c74d6a1edc6e6dacc",
+      "size": 521,
+      "kind": "python"
+    },
+    {
+      "path": "tools/linux/crawl_kernel_tree.py",
+      "sha": "64fc7f5eead780876cc3ef709a02ed85e1adeed0",
+      "size": 1428,
+      "kind": "python"
+    },
+    {
+      "path": "tools/load_isa_database.py",
+      "sha": "02026bee5ee82beefff209d4dcf19ef29eb60935",
+      "size": 1476,
+      "kind": "python"
+    },
+    {
+      "path": "tools/media/aurora_media_player.py",
+      "sha": "9e6f48c02824d4ca5c8ade4861e3f64785f05e32",
+      "size": 1031,
+      "kind": "python"
+    },
+    {
+      "path": "tools/media/aurora_video_player.py",
+      "sha": "433efd2ea989644fd290d26119293513797151bd",
+      "size": 1187,
+      "kind": "python"
+    },
+    {
+      "path": "tools/media/chimera_media.py",
+      "sha": "59f7cfc7e5d2f4f22201ff3b9fa390c533ae8711",
+      "size": 4466,
+      "kind": "python"
+    },
+    {
+      "path": "tools/media/file_associations.py",
+      "sha": "7536a8905ffa190a2d57e5a0a9c4e9637da7d9ec",
+      "size": 1279,
+      "kind": "python"
+    },
+    {
+      "path": "tools/media/file_metadata.py",
+      "sha": "f2e4d96932ec099701758d6559c05467941f1361",
+      "size": 3846,
+      "kind": "python"
+    },
+    {
+      "path": "tools/media/playback.py",
+      "sha": "f4c11457790f2e1eb8093765867a9626fe193284",
+      "size": 610,
+      "kind": "python"
+    },
+    {
+      "path": "tools/media/vision_mediapipe.py",
+      "sha": "0dbd05c33696c742e627e24083df94cd732c6ee1",
+      "size": 647,
+      "kind": "python"
+    },
+    {
+      "path": "tools/memory/validate_profiles.py",
+      "sha": "555e919fea13871a35d4116bc7c127dbbece877a",
+      "size": 1034,
+      "kind": "python"
+    },
+    {
+      "path": "tools/mobile/chimera-device-port-scan.py",
+      "sha": "7125434330d05c665a8dc98da755bf55eef71366",
+      "size": 5257,
+      "kind": "python"
+    },
+    {
+      "path": "tools/mobile/chimera-mobile-build.py",
+      "sha": "ff432028fab96fb4ac9f6e699437179e95b2a699",
+      "size": 9025,
+      "kind": "python"
+    },
+    {
+      "path": "tools/mobile/chimera-mobile-flash-gui.py",
+      "sha": "95fdafde59fad4ed16ed42c3c252fdffdf9faf4d",
+      "size": 6679,
+      "kind": "python"
+    },
+    {
+      "path": "tools/mobile/chimera-mobile-rom-discovery.py",
+      "sha": "b712993bd9e48825bc427856bea79c5042f5358a",
+      "size": 8054,
+      "kind": "python"
+    },
+    {
+      "path": "tools/mobile/discover-mobile-os.py",
+      "sha": "4032a0c77297a5774ee318d673b56f2d84f3c2fc",
+      "size": 1469,
+      "kind": "python"
+    },
+    {
+      "path": "tools/network/bridge.py",
+      "sha": "d871aff8fec2512a271bd6478240d565237563c3",
+      "size": 1602,
+      "kind": "python"
+    },
+    {
+      "path": "tools/network/chimera_browser.py",
+      "sha": "2e083ce60449839b5902f8410b1d57c1180fa1d2",
+      "size": 937,
+      "kind": "python"
+    },
+    {
+      "path": "tools/parallel/chimera_parallel.py",
+      "sha": "0d8bf81db474b0b1516a3e3868e8d6f0d89eb909",
+      "size": 956,
+      "kind": "python"
+    },
+    {
+      "path": "tools/pdf-reader/bridge.py",
+      "sha": "4d83150da817ce0f5375fdcb831f9070b826f911",
+      "size": 1975,
+      "kind": "python"
+    },
+    {
+      "path": "tools/portfolio/build_portfolio.py",
+      "sha": "513dcfdbc4dda0fdd6c32ef415c9031557c6d419",
+      "size": 4262,
+      "kind": "python"
+    },
+    {
+      "path": "tools/repair/chimera_repair.py",
+      "sha": "d47f4904555ad0d1e25afc073a7f4940a677fb5b",
+      "size": 1787,
+      "kind": "python"
+    },
+    {
+      "path": "tools/runtime/chimera-biometric-auth.py",
+      "sha": "ec0b82d16ccd42f8f78f8fd9457cbaacdda120d8",
+      "size": 2436,
+      "kind": "python"
+    },
+    {
+      "path": "tools/runtime/chimera-command.py",
+      "sha": "eaf722cdfb07ddee0b7f17dc5995d1659dcf2fa2",
+      "size": 6970,
+      "kind": "python"
+    },
+    {
+      "path": "tools/runtime/chimera-compat.py",
+      "sha": "4f0c25cc8c0190b7f6b9d9be782aed056be5ab20",
+      "size": 1792,
+      "kind": "python"
+    },
+    {
+      "path": "tools/runtime/chimera-korectl.py",
+      "sha": "325cf70265ded376b47add459b1e7486e85af934",
+      "size": 2170,
+      "kind": "python"
+    },
+    {
+      "path": "tools/runtime/chimera-local-bridge.py",
+      "sha": "17144fc5a8964f9c55a6285158db5f2268e2ff41",
+      "size": 12519,
+      "kind": "python"
+    },
+    {
+      "path": "tools/runtime/chimera-neural-dim.py",
+      "sha": "0f29e9322ccfd0afa66fca6ac2dae5f1c3a6aa45",
+      "size": 2099,
+      "kind": "python"
+    },
+    {
+      "path": "tools/runtime/chimera-pe.py",
+      "sha": "bdb3634eaac323aad4fd7c9ac26c68832eff3599",
+      "size": 2862,
+      "kind": "python"
+    },
+    {
+      "path": "tools/runtime/chimera-service.py",
+      "sha": "7baac62af9b0b6e28ef48e0189fa4a2cffd86d36",
+      "size": 390,
+      "kind": "python"
+    },
+    {
+      "path": "tools/runtime/chimera-systemctl.py",
+      "sha": "0af057d22ad3fd1ba5b054d21f3f7268d2d8cc05",
+      "size": 1101,
+      "kind": "python"
+    },
+    {
+      "path": "tools/runtime/kore-manager.py",
+      "sha": "289cd21f338cdfdb1f6b70d2d4f76e5ff24caa6f",
+      "size": 2546,
+      "kind": "python"
+    },
+    {
+      "path": "tools/scaffold/chimera_scaffold.py",
+      "sha": "a426ce1ec0d99d1a64b443aa5717ce7bf966b3b7",
+      "size": 2193,
+      "kind": "python"
+    },
+    {
+      "path": "tools/security/chimera_sentinel.py",
+      "sha": "c14a69cf48c62f420a5dca2c4fbd210c7b4e5d97",
+      "size": 3003,
+      "kind": "python"
+    },
+    {
+      "path": "tools/shell/generate_command_registry.py",
+      "sha": "de108bf11949cffeb1cef0117b795b50270751e0",
+      "size": 2795,
+      "kind": "python"
+    },
+    {
+      "path": "tools/source_import/import_w2k_asm.py",
+      "sha": "a671c3722780d09a455d8a4a1d3d967bbef8e869",
+      "size": 771,
+      "kind": "python"
+    },
+    {
+      "path": "tools/ss64/chimera-ss64-arabic-aliases.py",
+      "sha": "69e150606a052e351a0def8e82977f254ac02604",
+      "size": 6079,
+      "kind": "python"
+    },
+    {
+      "path": "tools/tests/test_boot_measurements.py",
+      "sha": "81890c33736d709a0925023a6508ff57347ac303",
+      "size": 575,
+      "kind": "python"
+    },
+    {
+      "path": "tools/tests/test_boot_modes.py",
+      "sha": "966f285ae612e9f38388923aa5d444859ff4f9f7",
+      "size": 574,
+      "kind": "python"
+    },
+    {
+      "path": "tools/tests/test_hardware_profile.py",
+      "sha": "49e9c5960d0f44f71b8e8f8cd176ae7db891d2ae",
+      "size": 438,
+      "kind": "python"
+    },
+    {
+      "path": "tools/tests/test_installer_service_selection.py",
+      "sha": "1b10cfc0db3044d45d26b46e931a5b71fb9e75b2",
+      "size": 1003,
+      "kind": "python"
+    },
+    {
+      "path": "tools/tests/test_service_registry.py",
+      "sha": "a7ae3ea6b622c6a75d96ba04ff1790a1f4d4792c",
+      "size": 1634,
+      "kind": "python"
+    },
+    {
+      "path": "tools/thamudic-nlp/bridge.py",
+      "sha": "0987705cbf99fd8218b3327bbe4aac043440bd03",
+      "size": 16451,
+      "kind": "python"
+    },
+    {
+      "path": "tools/toolchain/validate_registry.py",
+      "sha": "634a396048ce79f53d297c1cfb4cc463ce8c02af",
+      "size": 865,
+      "kind": "python"
+    },
+    {
+      "path": "tools/update_driver_sources.py",
+      "sha": "56e95722d2586da8f4edeefb63f56b179a145c70",
+      "size": 893,
+      "kind": "python"
+    },
+    {
+      "path": "tools/validate_isa_catalog.py",
+      "sha": "3cca5f129782f784219b711d2286bb397436be4f",
+      "size": 1222,
+      "kind": "python"
+    },
+    {
+      "path": "tools/validate_isa_registry.py",
+      "sha": "3945243d9e4e38303e93f7e225ff14420326dc62",
+      "size": 2318,
+      "kind": "python"
+    },
+    {
+      "path": "tools/validate_open_source_matrix.py",
+      "sha": "e220858780b3152535c823784e2b7267425ebe04",
+      "size": 903,
+      "kind": "python"
+    },
+    {
+      "path": "tools/validate_provenance.py",
+      "sha": "9f502043bfab1953e54bc91bcd2314ded271a4c3",
+      "size": 917,
+      "kind": "python"
+    },
+    {
+      "path": "tools/virtualization/chimera_vm.cpp",
+      "sha": "cd6f8d90ae620544f6447b6fddd7c4373486d587",
+      "size": 1038,
+      "kind": "cpp"
+    },
+    {
+      "path": "tools/web-ui/audit.py",
+      "sha": "03501ed0b400f39c3ed5fcb1fbdb70d06528aa41",
+      "size": 2846,
+      "kind": "python"
+    },
+    {
+      "path": "userland/boot/chimera_boot_learning.cpp",
+      "sha": "a36358c10c112bf65ed1fe2681c4a9f356fcf0c5",
+      "size": 5058,
+      "kind": "cpp"
+    },
+    {
+      "path": "userland/boot/chimera_runtime_recovery.cpp",
+      "sha": "1ce96b16b948b6c3f17dee87769689918d63a435",
+      "size": 4786,
+      "kind": "cpp"
+    },
+    {
+      "path": "userland/commands/chimera_diagnostics.cpp",
+      "sha": "8358e911c5f9e4bec0f3a9a19e837c17e75098b3",
+      "size": 864,
+      "kind": "cpp"
+    },
+    {
+      "path": "userland/commands/chimera_utils.cpp",
+      "sha": "21453f74d8bc4ba77caeec05f73d753ba611e169",
+      "size": 2441,
+      "kind": "cpp"
+    },
+    {
+      "path": "userland/commands/chm-reboot.cpp",
+      "sha": "a8df51dfeb59f9b06e1457e8052cd1aa30c5bf72",
+      "size": 919,
+      "kind": "cpp"
+    },
+    {
+      "path": "userland/commands/chm-utf8.cpp",
+      "sha": "ef11fc84dd4e566d8f4007747479d7662a1f5a58",
+      "size": 789,
+      "kind": "cpp"
+    },
+    {
+      "path": "userland/commands/chmctl.cpp",
+      "sha": "c73ad49e3152c763fa21fc28d288115d9f817ced",
+      "size": 1420,
+      "kind": "cpp"
+    },
+    {
+      "path": "userland/commands/chmhelp.cpp",
+      "sha": "b9d648a97cdf1dc87dbc24e21de4a1b57c397e06",
+      "size": 1282,
+      "kind": "cpp"
+    },
+    {
+      "path": "userland/shell/chimera_shell.cpp",
+      "sha": "7ab565dace6a152f18d650a909ebb011b5af122b",
+      "size": 12796,
+      "kind": "cpp"
+    },
+    {
+      "path": "userland/shell/chimera_shell.hpp",
+      "sha": "1e5975589b75453511a234c16de265ea25551181",
+      "size": 790,
+      "kind": "cpp"
+    },
+    {
+      "path": "userland/shell/main.cpp",
+      "sha": "e3679f628ce392fb09c247acdfaac4947c08f219",
+      "size": 852,
+      "kind": "cpp"
+    },
+    {
+      "path": "userspace/cef/manifest.hpp",
+      "sha": "6fa889df26ce19396532af47e0dfacba547fb5f8",
+      "size": 374,
+      "kind": "cpp"
+    },
+    {
+      "path": "userspace/hive/registry.hpp",
+      "sha": "4da7d7e45394162b47263dc306439146565f97ab",
+      "size": 488,
+      "kind": "cpp"
+    },
+    {
+      "path": "voice/cpp/include/chm/voice/Voice.hpp",
+      "sha": "6fd564504e431115078b8b962be7c25bded0d9a5",
+      "size": 841,
+      "kind": "cpp"
+    },
+    {
+      "path": "voice/cpp/src/voiceconnect.cpp",
+      "sha": "92f4cd62cc1e1d8f822488976544a8a614bf18b5",
+      "size": 3336,
+      "kind": "cpp"
+    },
+    {
+      "path": "voice/python/chimera_voice.py",
+      "sha": "c310d0b51c9b0c894f60c51aa761e7d3de3937ee",
+      "size": 1084,
+      "kind": "python"
+    }
+  ]
+}
