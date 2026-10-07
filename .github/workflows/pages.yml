@@ -56,6 +56,20 @@ jobs:
         run: node --check apps/chimera-ii-os/web/game-center.js
       - name: Validate Aurora Interaction Hub JavaScript
         run: node --check apps/chimera-ii-os/web/aurora-interaction-hub.js
+      - name: Validate Aurora Ecosystem Center
+        run: |
+          python3 - <<'PY'
+          import json
+          p='apps/chimera-ii-os/web/aurora-ecosystem-catalog.json'
+          d=json.load(open(p,encoding='utf-8'))
+          assert d['schema']=='aurora-ecosystem-catalog/v1'
+          assert len(d['repositories']) >= 14
+          assert len(d['builtIn']) >= 10
+          print('Ecosystem catalog:',len(d['repositories']),'repos /',len(d['builtIn']),'apps')
+          PY
+          node --check apps/chimera-ii-os/web/aurora-ecosystem-center.js
+          test -s apps/chimera-ii-os/web/aurora-ecosystem-center.html
+          test -s apps/chimera-ii-os/web/aurora-ecosystem-catalog.json
       - name: Validate AAA Game Lab manifest
         run: python3 -c "import json; d=json.load(open('apps/chimera-ii-os/web/aaa-game-lab.json')); assert d['schema']=='aurora-aaa-game-lab/v1' and len(d['projects'])==3"
       - name: Validate Aurora Interaction Hub assets
