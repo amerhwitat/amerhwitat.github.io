@@ -66,7 +66,8 @@
     else if (name === 'help') showWindow('Unified Help', '<h2>man / help</h2><p>Use <b>man PAGE</b>, <b>man SECTION PAGE</b>, or <b>man NAMESPACE:PAGE</b>. Linux, POSIX, BSD, Bash, Zsh, Windows and PowerShell sources are exposed through the unified help layer.</p>');
     else if (name === 'desktop') showDesktopProfiles();
     else if (name === 'hercules') showWindow('Hercules Runtime', '<h2>Chimera II Hercules Runtime</h2><p>External runtime integrated with Aurora.</p><p><a class="profile-card" href="hercules-integration.html">Open integrated Hercules surface</a></p><p><a class="profile-card" target="_blank" rel="noopener" href="https://chimera-iios-120143.onhercules.app/">Open runtime directly</a></p>');
-    else if (name === 'search') $('desktopSearch').focus();
+    else if (name === 'hercules') showWindow('Hercules Runtime', '<h2>Chimera II Hercules Runtime</h2><p>External runtime integrated with Aurora.</p><p><a class="profile-card" href="hercules-integration.html">Open integrated Hercules surface</a></p><p><a class="profile-card" target="_blank" rel="noopener" href="https://chimera-iios-120143.onhercules.app/">Open runtime directly</a></p>');
+    else if (name === 'repo-studio') showWindow('Repository App Studio', '<h2>Aurora Repository App Studio</h2><p>Guest session: no password. Browser-safe repository applications and Java/JVM/native adapters.</p><p><a class="profile-card" href="repository-app-studio.html">Open Repository App Studio</a></p>');    else if (name === 'search') $('desktopSearch').focus();
     else if (name === 'home') { $('launcher').classList.add('hidden'); $('window').classList.add('hidden'); }
   }
   function showDesktopProfiles() {
