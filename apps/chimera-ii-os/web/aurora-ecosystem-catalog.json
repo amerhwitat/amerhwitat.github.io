@@ -189,6 +189,11 @@
       "hercules",
       "Hercules Runtime Bridge",
       "Open the external Chimera II Hercules runtime through the Aurora integration surface."
+    ],
+    [
+      "repo-studio",
+      "Repository App Studio",
+      "Guest-access launcher for browser-safe repository applications and Java/JVM/native adapters."
     ]
   ],
   "integrations": [
@@ -197,6 +202,12 @@
       "https://chimera-iios-120143.onhercules.app/",
       "hercules-integration.html",
       "External Chimera II runtime; integrated launcher and fallback direct-open surface."
+    ],
+    [
+      "Repository App Studio",
+      "https://github.com/amerhwitat/amerhwitat.github.io",
+      "repository-app-studio.html",
+      "Guest application launcher and browser runtime adapters for six requested repositories."
     ]
   ]
 }
