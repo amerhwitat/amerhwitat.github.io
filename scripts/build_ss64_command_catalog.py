@@ -98,7 +98,10 @@ def crawl(platform,start,max_depth=2,max_pages=80):
                 found.setdefault(clean.lower(),(clean,target))
             if depth<max_depth and target not in queued and len(queued)<max_pages:
                 queued.add(target); q.append((target,depth+1))
-    return list(found.values()),len(seen)items=[]; stats={}
+    return list(found.values()),len(seen)
+
+items=[]
+stats={}
 for platform,start in URLS.items():
     rows,pages=crawl(platform,start)
     stats[platform]={"pages":pages,"links":len(rows)}
