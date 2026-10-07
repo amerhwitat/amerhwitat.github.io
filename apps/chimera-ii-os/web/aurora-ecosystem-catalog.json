@@ -1,0 +1,189 @@
+{
+  "schema": "aurora-ecosystem-catalog/v1",
+  "generated": "2026-10-07",
+  "repositories": [
+    [
+      "ChimeraIIOS",
+      "Chimera II OS",
+      "https://github.com/amerhwitat/ChimeraIIOS",
+      "Aurora, Koronos, 8192-bit ISA, ISO/Flash, MAME, emulators, P2P, OCR/PDF, Game Center, Code IDE"
+    ],
+    [
+      "BizX",
+      "BizX Platform",
+      "https://github.com/amerhwitat/BizX",
+      "Asset Browser, Internet Scanner, NetworkUnified, ISO Tool, game vault, retro media"
+    ],
+    [
+      "BizXtreme",
+      "BizXtreme",
+      "https://github.com/amerhwitat/BizXtreme",
+      "WebGL/3D, unified games, wallets/crypto research, networking, mobile, progression, survival/tycoon"
+    ],
+    [
+      "general",
+      "Agent Research Forge",
+      "https://github.com/amerhwitat/general",
+      "Deep research, crawler, code search, document index, project builder, artifacts, agents"
+    ],
+    [
+      "nlp",
+      "NLP & Ancient Languages",
+      "https://github.com/amerhwitat/nlp",
+      "Thamudic scanner, ancient NLP, OCR, Amiga, ISO Tool, artifact database"
+    ],
+    [
+      "PDFreaderPY",
+      "PDFreaderPY",
+      "https://github.com/amerhwitat/PDFreaderPY",
+      "PDF processing, Thamudic scanner, ancient object catalog, parallel search, P2P"
+    ],
+    [
+      "CPU4096",
+      "CPU4096",
+      "https://github.com/amerhwitat/CPU4096",
+      "Wide-register CPU, ISA research, cross-language workloads, crypto/AI, filesystem/P2P"
+    ],
+    [
+      "CPU4096Simulator",
+      "CPU4096 Simulator",
+      "https://github.com/amerhwitat/CPU4096Simulator",
+      "CPU simulation, Aurora shell, IDE, CLI catalog, toolchain, installer, P2P"
+    ],
+    [
+      "eth-key-check",
+      "Ethereum / Crypto Research",
+      "https://github.com/amerhwitat/eth-key-check",
+      "Address verification, audit, crypto database, AI/ML, interoperability, P2P"
+    ],
+    [
+      "keygen",
+      "Keygen / Koronos Research",
+      "https://github.com/amerhwitat/keygen",
+      "Key-generation research, Koronos runtime, knowledge bus, 128D vectors, network interoperability"
+    ],
+    [
+      "bruteforce",
+      "Computational Search Research",
+      "https://github.com/amerhwitat/bruteforce",
+      "Authorized search research, crypto research, AI boundaries, cross-language implementations"
+    ],
+    [
+      "test",
+      "Chimera Prototypes",
+      "https://github.com/amerhwitat/test",
+      "Python runtime, boot/installer, emulator, ISA8192, desktop sync, P2P, native Aurora"
+    ],
+    [
+      "VanG",
+      "VanG",
+      "https://github.com/amerhwitat/VanG",
+      "Aurora integration, desktop sync, 128D P2P, mobile communications, Apple"
+    ],
+    [
+      "amerhwitat.github.io",
+      "Aurora Web Platform",
+      "https://github.com/amerhwitat/amerhwitat.github.io",
+      "Web UI, games, MAME, emulators, wallet, Python, OCR, research, ISO/Flash"
+    ]
+  ],
+  "inspiration": [
+    [
+      "WebOS",
+      "https://github.com/Martin-R-D/WebOS",
+      "window manager, virtual filesystem, terminal, paint, settings"
+    ],
+    [
+      "ChargerOS",
+      "https://github.com/Flamechargerr/ChargerOS",
+      "mini-app ecosystem, formula engine, graphing calculator, games"
+    ],
+    [
+      "WebLinuxOS",
+      "https://github.com/saya-ch/WebLinuxOS",
+      "command palette, virtual desktops, IndexedDB, network tools, developer tools"
+    ],
+    [
+      "DaedalOS",
+      "https://github.com/code/app-daedalos",
+      "file explorer, archives, IndexedDB, media and context actions"
+    ],
+    [
+      "SimplexOS",
+      "https://github.com/exanx/SimplexOS",
+      "persistent apps, widgets, paint, media player, app installer"
+    ]
+  ],
+  "builtIn": [
+    [
+      "json",
+      "JSON Inspector",
+      "Format, validate and inspect JSON locally."
+    ],
+    [
+      "regex",
+      "Regex Lab",
+      "Test regular expressions with highlighted matches."
+    ],
+    [
+      "hash",
+      "Hash & Encoding Lab",
+      "SHA-256, Base64 and text encoding utilities."
+    ],
+    [
+      "graph",
+      "Graphing Calculator",
+      "Plot mathematical expressions locally on Canvas."
+    ],
+    [
+      "kanban",
+      "Kanban Board",
+      "Persistent local project board."
+    ],
+    [
+      "markdown",
+      "Markdown Studio",
+      "Local Markdown editor with rendered preview."
+    ],
+    [
+      "api",
+      "HTTP/API Lab",
+      "Inspect CORS-enabled GET/HEAD endpoints."
+    ],
+    [
+      "network",
+      "Network Diagnostics",
+      "Browser connectivity, WebRTC and WebSocket checks."
+    ],
+    [
+      "files",
+      "File Workspace",
+      "File System Access API with download fallback."
+    ],
+    [
+      "palette",
+      "Color & Palette Lab",
+      "Generate/copy Aurora CSS palettes."
+    ],
+    [
+      "diff",
+      "Text Diff",
+      "Local line-based text comparison."
+    ],
+    [
+      "units",
+      "Unit Converter",
+      "Storage, length, frequency and temperature conversions."
+    ],
+    [
+      "notes",
+      "Persistent Notes",
+      "Local notes stored in browser storage."
+    ],
+    [
+      "timer",
+      "Focus Timer",
+      "Pomodoro/focus timer."
+    ]
+  ]
+}
