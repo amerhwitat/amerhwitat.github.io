@@ -52,6 +52,12 @@ jobs:
         run: python3 scripts/check_wallet_python_catalog.py
       - name: Validate Wallet Center JavaScript
         run: node --check apps/chimera-ii-os/web/wallet-center.js
+      - name: Validate Aurora Interaction Hub JavaScript
+        run: node --check apps/chimera-ii-os/web/aurora-interaction-hub.js
+      - name: Validate Aurora Interaction Hub assets
+        run: |
+          test -f apps/chimera-ii-os/web/aurora-interaction-hub.html
+          test -f apps/chimera-ii-os/web/aurora-interaction-hub.js
       - name: Rebuild full-text search index
         run: python3 scripts/build_search_index.py
       - uses: actions/configure-pages@v5
