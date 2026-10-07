@@ -10,6 +10,14 @@
 </head>
 <body>
   <div id="aurora3d" class="aurora3d" aria-label="Aurora Wayland Glass Web Desktop">
+    <div id="desktopLoader" class="desktop-loader" role="status" aria-live="polite">
+      <div class="loader-card">
+        <div class="loader-brand">CHIMERA II</div>
+        <div class="loader-title">Aurora Desktop</div>
+        <div class="loader-track"><span id="desktopProgress"></span></div>
+        <div id="desktopProgressText">Loading Aurora environment… 0%</div>
+      </div>
+    </div>
     <canvas id="aurora3dCanvas" aria-hidden="true"></canvas>
     <div class="desktop-ui">
       <header class="topbar glass">
@@ -62,7 +70,6 @@
       </section>
     </div>
   </div>
-  <script src="https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.min.js"></script>
-  <script src="aurora_3d_desktop.js?v=20261007-reference-shell-1"></script>
+  <script src="aurora_3d_desktop.js?v=20261007-inputfix-loader-1"></script>
 </body>
 </html>
