@@ -31,13 +31,15 @@ async function loadPythonCatalog(){
   }catch(e){$("pyStatus").textContent="Python catalog unavailable: "+e.message}
 }
 function renderPython(){
- if(!PY)return;const q=$("pySearch").value.toLowerCase(),repo=$("pyRepo").value,kind=$("pyKind").value;
- const rows=PY.files.filter(x=>(!repo||x.repo===repo)&&(!kind||x.kind===kind)&&(!q||(x.repo+" "+x.path+" "+x.kind).toLowerCase().includes(q)));
+ if(!PY)return;const q=$("pySearch").value.toLowerCase(),repo=$("pyRepo").value,role=$("pyRole").value,kind=$("pyKind").value;
+ const rows=PY.files.filter(x=>(!repo||x.repo===repo)&&(!role||x.role===role)&&(!kind||x.kind===kind)&&(!q||(x.repo+" "+x.path+" "+x.kind).toLowerCase().includes(q)));
  $("pyStatus").textContent=rows.length+" matching Python files · "+PY.summary.total_python_files+" indexed total.";
- $("pyCatalog").innerHTML=rows.map(x=>`<tr><td><b>${esc(x.repo)}</b></td><td><code>${esc(x.path)}</code></td><td><span class="pill">${esc(x.kind)}</span></td><td class="code-count">${Number(x.size).toLocaleString()} B</td><td class="code-action"><a class="btn" href="${esc(x.url)}" target="_blank" rel="noopener">Source</a><button class="btn" data-pycopy="${esc(x.url)}">Copy URL</button></td></tr>`).join("")||'<tr><td colspan="5">No matching Python files.</td></tr>';
- $("pyCatalog").querySelectorAll("[data-pycopy]").forEach(b=>b.onclick=async()=>{try{await navigator.clipboard.writeText(b.dataset.pycopy);b.textContent="Copied";setTimeout(()=>b.textContent="Copy URL",1200)}catch{prompt("Copy source URL:",b.dataset.pycopy)}});
+ $("pyCatalog").innerHTML=rows.map(x=>`<tr><td><b>${esc(x.repo)}</b></td><td><code>${esc(x.path)}</code></td><td><span class="pill">${esc(x.role)}</span></td><td><span class="pill">${esc(x.kind)}</span></td><td class="code-count">${Number(x.size).toLocaleString()} B</td><td class="code-action"><a class="btn" href="${esc(x.url)}" target="_blank" rel="noopener">Source</a><button class="btn" data-pycopy="${esc(x.url)}">Copy URL</button>${x.runnable?`<button class="btn primary" data-pyrun="${esc(x.repo)}|${esc(x.path)}">Run</button>`:""}</td></tr>`).join("")||'<tr><td colspan="5">No matching Python files.</td></tr>';
+ $("pyCatalog").querySelectorAll("[data-pyrun]").forEach(b=>b.onclick=()=>runPython(b.dataset.pyrun.split("|")[0],b.dataset.pyrun.split("|").slice(1).join("|")));\n $("pyCatalog").querySelectorAll("[data-pycopy]").forEach(b=>b.onclick=async()=>{try{await navigator.clipboard.writeText(b.dataset.pycopy);b.textContent="Copied";setTimeout(()=>b.textContent="Copy URL",1200)}catch{prompt("Copy source URL:",b.dataset.pycopy)}});
 }
-["pySearch","pyRepo","pyKind"].forEach(id=>$(id).oninput=$(id).onchange=renderPython);
+["pySearch","pyRepo","pyRole","pyKind"].forEach(id=>$(id).oninput=$(id).onchange=renderPython);
 $("pyRefresh").onclick=()=>{event("refresh-python-catalog","pyRefresh");loadPythonCatalog()};
 $("pyExport").onclick=()=>{event("export-python-catalog","pyExport");if(!PY)return;const b=new Blob([JSON.stringify(PY,null,2)],{type:"application/json"}),u=URL.createObjectURL(b),a=document.createElement("a");a.href=u;a.download="chimera-python-catalog.json";a.click();URL.revokeObjectURL(u)};
 loadPythonCatalog();
+
+async function runPython(repo,path){event("run-python",repo+"/"+path);try{const r=await fetch("http://127.0.0.1:8765/python/run",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({repo,path})});const j=await r.json();if(!r.ok)throw Error(j.error||"runner unavailable");$("output").textContent=JSON.stringify(j,null,2)}catch(e){$("output").textContent="Python runtime unavailable. Start the authorized Chimera local bridge and configure its Python workspace.\n\n"+e.message}}
