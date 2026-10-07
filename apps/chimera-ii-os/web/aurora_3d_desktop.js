@@ -1,6 +1,22 @@
 (() => {
   'use strict';
   const $ = id => document.getElementById(id);
+  const loader = $('desktopLoader');
+  const progressBar = $('desktopProgress');
+  const progressText = $('desktopProgressText');
+  const loaderStarted = performance.now();
+  function setProgress(value, message) {
+    const n = Math.max(0, Math.min(100, value));
+    if (progressBar) progressBar.style.width = n + '%';
+    if (progressText) progressText.textContent = message + ' ' + n + '%';
+  }
+  function finishLoading() {
+    setProgress(100, 'Aurora ready');
+    const delay = Math.max(0, 550 - (performance.now() - loaderStarted));
+    setTimeout(() => loader?.classList.add('hidden'), delay);
+  }
+  setProgress(18, 'Loading desktop shell…');
+
   const state = {
     profile: localStorage.getItem('chimera.desktop.profile') || 'aurora-native',
     profiles: []
@@ -95,6 +111,7 @@
     }
   }
 
+  setProgress(48, 'Binding application controls…');
   document.querySelectorAll('[data-app]').forEach(button => {
     button.addEventListener('click', event => {
       event.preventDefault();
@@ -103,6 +120,7 @@
   });
 
   $('launcherButton')?.addEventListener('click', () => app('launcher'));
+  setProgress(72, 'Connecting Aurora application routes…');
   $('dockLauncher')?.addEventListener('click', () => app('launcher'));
 
   document.querySelectorAll('[data-window]').forEach(button => button.addEventListener('click', () => {
@@ -175,7 +193,11 @@
       $('modeLabel') && ($('modeLabel').textContent='Aurora Web desktop · 2D fallback');
     }
   }
+  // The desktop is intentionally independent of Three.js/CDN availability.
+  // The checked-in SVG/CSS environment is the primary renderer.
+  setProgress(88, 'Finalizing visual environment…');
   initScene();
+  finishLoading();
 
   // Interaction sounds and window dragging are optional enhancements.
   (() => {
