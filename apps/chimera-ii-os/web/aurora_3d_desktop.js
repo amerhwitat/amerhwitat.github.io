@@ -55,7 +55,18 @@
   }
   function showWindow(title, html) {
     $('windowTitle').textContent = title; $('windowContent').innerHTML = html; $('window').classList.remove('hidden');
+    requestAnimationFrame(() => $('windowContent').querySelector('a,button,input')?.focus({preventScroll:true}));
   }
+  const routeMap = {
+    hub:'aurora-interaction-hub.html', files:'artifact-library.html', terminal:'aurora_terminal.html', browser:'index.html',
+    code:'chimera_code_ide.html', settings:'system_control_center.html', help:'command-console.html', ss64:'command-console.html',
+    emulators:'retro_emulators.html', emulator:'aurora-emulator.html', games:'game-center.html', network:'network-engine.html', research:'research-lab.html',
+    mame:'mame-center.html', playstation:'playstation_emulators.html', iso:'iso-flash-center.html', ocr:'ocr-studio.html', isa:'isa-explorer.html',
+    pdf:'pdf-reader.html', health:'health.html', crash:'crash_center.html', desktop:'desktop_switcher.html', repo:'repository-app-studio.html',
+    language:'chimera-language-runtime.html', hercules:'hercules-integration.html'
+  };
+  function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+  function openRoute(title,path){showWindow(title, '<iframe loading="lazy" title="'+esc(title)+'" src="'+path+'"></iframe>');}
   function app(name) {
     if (name === 'launcher') { $('launcher').classList.toggle('hidden'); return; }
     if (name === 'files') showWindow('Files', '<h2>Home</h2><p>Desktop · Documents · Downloads · Music · Pictures · Videos</p><div class="profile-list"><div class="profile-card">▰ Desktop</div><div class="profile-card">▰ Documents</div><div class="profile-card">▰ Downloads</div><div class="profile-card">▰ Projects</div></div>');
@@ -67,6 +78,7 @@
     else if (name === 'desktop') showDesktopProfiles();
     else if (name === 'hub') openRoute('Aurora Interaction Hub','aurora-interaction-hub.html');
     else if (name === 'emulators') openRoute('Retro Emulators','retro_emulators.html');
+    else if (name === 'emulator') openRoute('Aurora Emulator','aurora-emulator.html');
     else if (name === 'games') openRoute('Game Center','game-center.html');
     else if (name === 'network') openRoute('Network Engine','network-engine.html');
     else if (name === 'research') openRoute('Research Lab','research-lab.html');
@@ -96,7 +108,12 @@
   animate(0);
 })();
 
-  // Smooth interaction + keyboard/mouse sound effects. Web Audio starts only after user interaction.
+
+// Secondary interaction layer: isolated scope so the desktop runtime cannot leak globals.
+(() => {
+  'use strict';
+  const $ = id => document.getElementById(id);
+ Web Audio starts only after user interaction.
   const soundKey='chimera.aurora.sounds'; let soundOn=localStorage.getItem(soundKey)!=='off';
   let audioCtx=null;
   function ensureAudio(){if(!soundOn)return null;if(!audioCtx) audioCtx=new (window.AudioContext||window.webkitAudioContext)();if(audioCtx.state==='suspended')audioCtx.resume();return audioCtx;}
@@ -123,3 +140,5 @@
     box.querySelectorAll('[data-route]').forEach(b=>b.addEventListener('click',()=>openRoute(b.textContent.trim(),b.dataset.route)));
   }).catch(()=>{});
   updateSoundUI();
+
+})();
