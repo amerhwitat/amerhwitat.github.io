@@ -229,5 +229,53 @@
     "type": "retro",
     "source": "BizXtreme Retro",
     "description": "User-owned AtariST media target; launch through the compatible emulator center."
+  },
+  {
+    "id": "aaa-skyfall-protocol",
+    "title": "Skyfall Protocol",
+    "type": "aaa-original",
+    "source": "Aurora AAA Lab",
+    "description": "Cinematic sci-fi infiltration prototype with branching mission beats, traversal and extraction.",
+    "storyboard": [
+      "Cold open: orbital debris enters atmosphere",
+      "Act I: infiltrate the storm refinery",
+      "Act II: choose rescue or sabotage",
+      "Act III: escape during the reactor collapse"
+    ],
+    "runtime": "Browser prototype + local runtime bridge",
+    "build": "HTML5 Canvas; optional Unreal/O3DE vertical-slice target",
+    "license": "Original Chimera II design"
+  },
+  {
+    "id": "aaa-desert-of-echoes",
+    "title": "Desert of Echoes",
+    "type": "aaa-original",
+    "source": "Aurora AAA Lab",
+    "description": "Open-world archaeological expedition prototype built around traversal, discovery and dynamic weather.",
+    "storyboard": [
+      "Prologue: buried signal detected",
+      "Chapter I: cross the salt basin",
+      "Chapter II: decode the ancient observatory",
+      "Finale: survive the aurora storm"
+    ],
+    "runtime": "Browser prototype + local runtime bridge",
+    "build": "HTML5 Canvas; optional O3DE/Unreal vertical-slice target",
+    "license": "Original Chimera II design"
+  },
+  {
+    "id": "aaa-neon-frontier",
+    "title": "Neon Frontier",
+    "type": "aaa-original",
+    "source": "Aurora AAA Lab",
+    "description": "Futuristic city pursuit prototype combining driving, investigation and faction choices.",
+    "storyboard": [
+      "Opening chase through the lower city",
+      "Investigation: trace a stolen core",
+      "Faction choice: expose or sell the evidence",
+      "Final chase: escape the blackout grid"
+    ],
+    "runtime": "Browser prototype + local runtime bridge",
+    "build": "HTML5 Canvas; optional Unreal/O3DE vertical-slice target",
+    "license": "Original Chimera II design"
   }
 ]
