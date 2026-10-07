@@ -65,6 +65,7 @@
     else if (name === 'settings') showWindow('Settings', '<h2>Desktop Settings</h2><p>Glass effects · accessibility · renderer · profile selection</p>');
     else if (name === 'help') showWindow('Unified Help', '<h2>man / help</h2><p>Use <b>man PAGE</b>, <b>man SECTION PAGE</b>, or <b>man NAMESPACE:PAGE</b>. Linux, POSIX, BSD, Bash, Zsh, Windows and PowerShell sources are exposed through the unified help layer.</p>');
     else if (name === 'desktop') showDesktopProfiles();
+    else if (name === 'hercules') showWindow('Hercules Runtime', '<h2>Chimera II Hercules Runtime</h2><p>External runtime integrated with Aurora.</p><p><a class="profile-card" href="hercules-integration.html">Open integrated Hercules surface</a></p><p><a class="profile-card" target="_blank" rel="noopener" href="https://chimera-iios-120143.onhercules.app/">Open runtime directly</a></p>');
     else if (name === 'search') $('desktopSearch').focus();
     else if (name === 'home') { $('launcher').classList.add('hidden'); $('window').classList.add('hidden'); }
   }
