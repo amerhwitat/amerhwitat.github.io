@@ -56,8 +56,9 @@ class Links(html.parser.HTMLParser):
             self.in_a=False
 
 def fetch(url):
-    req=urllib.request.Request(url,headers={"User-Agent":"Aurora-SS64-Indexer/2.0"})
-    return urllib.request.urlopen(req,timeout=30).read().decode("utf-8","ignore")
+    req=urllib.request.Request(url,headers={"User-Agent":"Aurora-SS64-Indexer/2.1"})
+    with urllib.request.urlopen(req,timeout=10) as response:
+        return response.read().decode("utf-8","ignore")
 
 def command_from_url(url,platform):
     p=urllib.parse.urlparse(url)
@@ -71,34 +72,33 @@ def command_from_url(url,platform):
     # Detail pages with a descriptive title are still useful command references.
     return leaf
 
-def crawl(platform,start,max_depth=3,max_pages=2500):
+def crawl(platform,start,max_depth=2,max_pages=80):
+    """Bound the remote crawl so one upstream site cannot stall deployment."""
     root=urllib.parse.urlparse(start)
-    q=deque([(start,0)]); seen=set(); found={}
+    root_path=root.path.rstrip("/") + "/"
+    q=deque([(start,0)]); seen=set(); queued={start}; found={}
     while q and len(seen)<max_pages:
         url,depth=q.popleft()
         u=urllib.parse.urldefrag(urllib.parse.urljoin(start,url))[0]
-        if u in seen:continue
         p=urllib.parse.urlparse(u)
-        if p.netloc!=root.netloc or not p.path.startswith(root.path):continue
+        if p.netloc!=root.netloc or not p.path.startswith(root_path): continue
+        if u in seen: continue
         seen.add(u)
         try: html=fetch(u)
-        except Exception as e:
-            print("WARN",platform,u,e); continue
+        except Exception as e: print("WARN",platform,u,e); continue
         parser=Links(); parser.feed(html)
         for label,href in parser.links:
-            target=urllib.parse.urljoin(u,href)
+            target=urllib.parse.urldefrag(urllib.parse.urljoin(u,href))[0]
             tp=urllib.parse.urlparse(target)
-            if tp.netloc!=root.netloc or not tp.path.startswith(root.path):continue
+            if tp.netloc!=root.netloc or not tp.path.startswith(root_path): continue
+            if not tp.path.lower().endswith((".html","/")): continue
             cmd=command_from_url(target,platform)
             clean=re.sub(r"\s+"," ",label).strip()
-            # A-Z indexes expose command labels; detail URLs provide recursive coverage.
             if clean and re.match(r"^[A-Za-z0-9_%+./:@#!?$-]+$",clean) and len(clean)<=100:
                 found.setdefault(clean.lower(),(clean,target))
-            if depth<max_depth:
-                q.append((target,depth+1))
-    return list(found.values()),len(seen)
-
-items=[]; stats={}
+            if depth<max_depth and target not in queued and len(queued)<max_pages:
+                queued.add(target); q.append((target,depth+1))
+    return list(found.values()),len(seen)items=[]; stats={}
 for platform,start in URLS.items():
     rows,pages=crawl(platform,start)
     stats[platform]={"pages":pages,"links":len(rows)}
@@ -125,7 +125,7 @@ out={
     "schema":"aurora-ss64-command-catalog/v2",
     "generated_from":list(URLS.values()),
     "recursive":True,
-    "max_depth":3,
+    "max_depth":2,
     "crawl_stats":stats,
     "commands":items,
 }
