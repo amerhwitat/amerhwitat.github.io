@@ -35,7 +35,8 @@ function renderPython(){
  const rows=PY.files.filter(x=>(!repo||x.repo===repo)&&(!role||x.role===role)&&(!kind||x.kind===kind)&&(!q||(x.repo+" "+x.path+" "+x.kind).toLowerCase().includes(q)));
  $("pyStatus").textContent=rows.length+" matching Python files · "+PY.summary.total_python_files+" indexed total.";
  $("pyCatalog").innerHTML=rows.map(x=>`<tr><td><b>${esc(x.repo)}</b></td><td><code>${esc(x.path)}</code></td><td><span class="pill">${esc(x.role)}</span></td><td><span class="pill">${esc(x.kind)}</span></td><td class="code-count">${Number(x.size).toLocaleString()} B</td><td class="code-action"><a class="btn" href="${esc(x.url)}" target="_blank" rel="noopener">Source</a><button class="btn" data-pycopy="${esc(x.url)}">Copy URL</button>${x.runnable?`<button class="btn primary" data-pyrun="${esc(x.repo)}|${esc(x.path)}">Run</button>`:""}</td></tr>`).join("")||'<tr><td colspan="5">No matching Python files.</td></tr>';
- $("pyCatalog").querySelectorAll("[data-pyrun]").forEach(b=>b.onclick=()=>runPython(b.dataset.pyrun.split("|")[0],b.dataset.pyrun.split("|").slice(1).join("|")));\n $("pyCatalog").querySelectorAll("[data-pycopy]").forEach(b=>b.onclick=async()=>{try{await navigator.clipboard.writeText(b.dataset.pycopy);b.textContent="Copied";setTimeout(()=>b.textContent="Copy URL",1200)}catch{prompt("Copy source URL:",b.dataset.pycopy)}});
+ $("pyCatalog").querySelectorAll("[data-pyrun]").forEach(b=>b.onclick=()=>runPython(b.dataset.pyrun.split("|")[0],b.dataset.pyrun.split("|").slice(1).join("|")));
+ $("pyCatalog").querySelectorAll("[data-pycopy]").forEach(b=>b.onclick=async()=>{try{await navigator.clipboard.writeText(b.dataset.pycopy);b.textContent="Copied";setTimeout(()=>b.textContent="Copy URL",1200)}catch{prompt("Copy source URL:",b.dataset.pycopy)}});
 }
 ["pySearch","pyRepo","pyRole","pyKind"].forEach(id=>$(id).oninput=$(id).onchange=renderPython);
 $("pyRefresh").onclick=()=>{event("refresh-python-catalog","pyRefresh");loadPythonCatalog()};
