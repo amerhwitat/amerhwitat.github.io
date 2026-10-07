@@ -247,6 +247,8 @@
       $('modeLabel') && ($('modeLabel').textContent='Aurora Web desktop · 2D fallback');
     }
   }
+  loadAuroraApplicationRegistry();
+
   // The desktop is intentionally independent of Three.js/CDN availability.
   // The checked-in SVG/CSS environment is the primary renderer.
   setProgress(88, 'Finalizing visual environment…');
