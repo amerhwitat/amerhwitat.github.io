@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2560 1440" width="2560" height="1440">
+<defs>
+ <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#020816"/><stop offset=".48" stop-color="#0b2340"/><stop offset="1" stop-color="#07131f"/></linearGradient>
+ <radialGradient id="aurora" cx=".5" cy=".28" r=".62"><stop stop-color="#62e8ff" stop-opacity=".48"/><stop offset=".38" stop-color="#786dff" stop-opacity=".23"/><stop offset="1" stop-color="#07111f" stop-opacity="0"/></radialGradient>
+ <linearGradient id="mountain" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#213c59"/><stop offset=".55" stop-color="#10243a"/><stop offset="1" stop-color="#08131f"/></linearGradient>
+ <linearGradient id="water" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#123a52"/><stop offset="1" stop-color="#040b16"/></linearGradient>
+ <filter id="blur40"><feGaussianBlur stdDeviation="40"/></filter>
+ <filter id="blur12"><feGaussianBlur stdDeviation="12"/></filter>
+ <linearGradient id="cube" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#a8f2ff" stop-opacity=".22"/><stop offset="1" stop-color="#8874ff" stop-opacity=".04"/></linearGradient>
+</defs>
+<rect width="2560" height="1440" fill="url(#sky)"/>
+<rect width="2560" height="900" fill="url(#aurora)"/>
+<g filter="url(#blur40)" opacity=".65">
+ <path d="M180 510 C520 220 760 650 1100 350 S1640 520 1980 250 S2340 430 2520 180" fill="none" stroke="#4de4d7" stroke-width="85"/>
+ <path d="M40 600 C420 390 700 710 1060 470 S1590 690 1930 420 S2310 580 2590 330" fill="none" stroke="#786bff" stroke-width="60"/>
+</g>
+<g opacity=".22" fill="none" stroke="#b6f7ff">
+ <path d="M140 420 C520 170 770 650 1110 340 S1650 500 1990 230 S2340 390 2510 150" stroke-width="5"/>
+ <path d="M120 475 C500 225 760 700 1100 390 S1650 550 1990 280 S2350 440 2530 205" stroke-width="3"/>
+ <path d="M100 535 C470 290 760 760 1090 440 S1640 610 1970 335 S2350 495 2550 260" stroke-width="2"/>
+</g>
+<path d="M0 930 L360 610 590 790 930 410 1230 830 1510 500 1820 830 2160 470 2560 860 V1440 H0Z" fill="url(#mountain)"/>
+<path d="M0 1030 L430 720 650 870 930 560 1190 900 1510 620 1800 930 2160 580 2560 920 V1440 H0Z" fill="#0a1a2b" opacity=".92"/>
+<path d="M0 1110 Q640 980 1280 1115 T2560 1080 V1440 H0Z" fill="url(#water)"/>
+<g opacity=".16" stroke="#78dcff" fill="none">
+ <path d="M180 1160 Q650 1110 1100 1170 T2100 1160" stroke-width="3"/>
+ <path d="M120 1215 Q700 1160 1260 1225 T2460 1200" stroke-width="2"/>
+ <path d="M300 1280 Q760 1235 1320 1290 T2280 1270" stroke-width="2"/>
+</g>
+<g opacity=".18" stroke="#a9f5ff" fill="url(#cube)">
+ <path d="M430 450 l170-95 165 95-170 100z M430 450v190l165 100V550z M765 450v190L595 740V550z"/>
+ <path d="M1900 520 l150-82 145 82-150 88z M1900 520v170l145 86V608z M2195 520v170l-150 86V608z"/>
+</g>
+<g fill="#d7f8ff">
+ <circle cx="310" cy="230" r="2"/><circle cx="560" cy="155" r="3"/><circle cx="850" cy="285" r="2"/><circle cx="1260" cy="170" r="2"/><circle cx="1530" cy="260" r="3"/><circle cx="1800" cy="130" r="2"/><circle cx="2200" cy="300" r="2"/><circle cx="2390" cy="180" r="3"/>
+</g>
+<rect width="2560" height="1440" fill="url(#aurora)" opacity=".28"/>
+</svg>

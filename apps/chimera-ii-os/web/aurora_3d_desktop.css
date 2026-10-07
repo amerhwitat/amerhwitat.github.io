@@ -1,6 +1,6 @@
 html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#06101e;color:#f2f7ff;font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
 :root{--glass:rgba(9,18,35,.58);--line:rgba(220,240,255,.16);--muted:#aebed0;--cyan:#55d7ff;--violet:#9a73ff}
-.aurora3d{position:fixed;inset:0;overflow:hidden;background:#071321 url("../../../assets/chimera-aurora-background.svg") center/cover no-repeat}
+.aurora3d{position:fixed;inset:0;overflow:hidden;background:#071321 url("aurora-desktop-background.svg") center/cover no-repeat}
 .aurora3d:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(3,9,20,.55) 0%,rgba(5,11,23,.08) 34%,rgba(2,7,15,.28) 100%);pointer-events:none}
 .aurora3d canvas{position:absolute;inset:0;width:100%;height:100%;display:block;opacity:.18;mix-blend-mode:screen}
 .desktop-ui{position:absolute;inset:0;pointer-events:none;z-index:2}
