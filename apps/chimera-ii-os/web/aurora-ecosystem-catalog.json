@@ -184,6 +184,19 @@
       "timer",
       "Focus Timer",
       "Pomodoro/focus timer."
+    ],
+    [
+      "hercules",
+      "Hercules Runtime Bridge",
+      "Open the external Chimera II Hercules runtime through the Aurora integration surface."
+    ]
+  ],
+  "integrations": [
+    [
+      "Hercules Runtime",
+      "https://chimera-iios-120143.onhercules.app/",
+      "hercules-integration.html",
+      "External Chimera II runtime; integrated launcher and fallback direct-open surface."
     ]
   ]
 }
