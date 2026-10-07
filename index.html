@@ -78,7 +78,37 @@ mark{background:rgba(95,208,255,.25);color:var(--fg);border-radius:4px;padding:0
   </header>
 
   <section class="hero3d" aria-label="Aurora interactive application gallery"><canvas id="aurora3d"></canvas><div class="copy"><div class="tagline">AURORA · CHIMERA · RESEARCH · STUDIO</div><h2>One portal.<br>Every application.</h2><p>Explore Chimera II OS, Aurora, Thamudic research, CPU simulators, BizXtreme, retro computing, developer tools and the command ecosystem through one interactive glass interface.</p><div class="hero-actions"><a class="primary" href="apps/chimera-ii-os/web/aurora_3d_desktop.html">Launch Aurora 3D</a><a href="apps/chimera-ii-os/web/thamudicscan.html">Open ThamudicScan</a><a href="apps/chimera-ii-os/web/command-console.html">Command Center</a><a href="apps/chimera-ii-os/web/smart-model.html">Smart Model</a><a href="apps/chimera-ii-os/web/isa-explorer.html">ISA Explorer</a><a href="apps/chimera-ii-os/web/wallet-center.html">Wallet &amp; Ecosystem Center</a><a href="apps/chimera-ii-os/web/mame-center.html">MAME Arcade</a><a href="apps/chimera-ii-os/web/game-center.html">Game Center</a><a href="apps/chimera-ii-os/web/ancient-ocr.html">Ancient Auto OCR</a><a href="apps/chimera-ii-os/web/backend-status.html">Backend Gateway</a></div></div><div class="app-hud"><span><b id="heroApps">0</b> applications</span><span><b>3</b> platforms</span><span><b>SS64</b> command index</span><span><b>𐪀</b> epigraphic lab</span></div></section>
-  <div class="stats">
+  <section id="auroraDesktopWall" aria-label="Aurora Desktop application wall" style="margin:22px 0 28px;padding:22px;border:1px solid rgba(120,180,255,.22);border-radius:24px;background:rgba(12,28,52,.55);backdrop-filter:blur(18px)">
+  <div style="display:flex;flex-wrap:wrap;gap:12px;align-items:end;justify-content:space-between">
+    <div><span style="letter-spacing:.14em;font-size:11px;color:#9db4d4">AURORA WAYLAND · UNIFIED WEB UI</span><h2 style="margin:.35rem 0">Every Aurora surface, one landing page</h2><p style="margin:.2rem 0;color:#9db4d4">Launch the 3D desktop, terminals, emulators, research tools, games, networking, OCR, ISO/Flash and runtime labs directly from this portal.</p></div>
+    <a href="apps/chimera-ii-os/web/aurora_3d_desktop.html" style="padding:10px 14px;border:1px solid rgba(120,180,255,.35);border-radius:12px;background:rgba(95,208,255,.08)">Open Aurora 3D Desktop →</a>
+  </div>
+  <div id="auroraWallGrid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px;margin-top:16px">
+    <a href="apps/chimera-ii-os/web/aurora-interaction-hub.html">◎ Interaction Hub</a>
+    <a href="apps/chimera-ii-os/web/aurora_terminal.html">⌘ Aurora Terminal</a>
+    <a href="apps/chimera-ii-os/web/command-console.html">⌘ SS64 / العربية</a>
+    <a href="apps/chimera-ii-os/web/game-center.html">🎮 Game Center</a>
+    <a href="apps/chimera-ii-os/web/mame-center.html">▦ MAME Center</a>
+    <a href="apps/chimera-ii-os/web/retro_emulators.html">▦ Retro Emulators</a>
+    <a href="apps/chimera-ii-os/web/playstation_emulators.html">▣ PlayStation Hub</a>
+    <a href="apps/chimera-ii-os/web/network-engine.html">⌁ Network Engine</a>
+    <a href="apps/chimera-ii-os/web/network_monitor.html">⌁ Network Monitor</a>
+    <a href="apps/chimera-ii-os/web/research-lab.html">𐪀 Research Lab</a>
+    <a href="apps/chimera-ii-os/web/ancient-ocr.html">𐪀 Ancient OCR</a>
+    <a href="apps/chimera-ii-os/web/ocr-studio.html">⌗ OCR Studio</a>
+    <a href="apps/chimera-ii-os/web/isa-explorer.html">⌬ ISA Explorer</a>
+    <a href="apps/chimera-ii-os/web/chimera_code_ide.html">&lt;/&gt; Code IDE</a>
+    <a href="apps/chimera-ii-os/web/chimera-language-runtime.html">⌬ Language Runtime</a>
+    <a href="apps/chimera-ii-os/web/repository-app-studio.html">▣ Repository App Studio</a>
+    <a href="apps/chimera-ii-os/web/iso-flash-center.html">▤ ISO &amp; Flash</a>
+    <a href="apps/chimera-ii-os/web/hercules-integration.html">⚡ Hercules Runtime</a>
+    <a href="apps/chimera-ii-os/web/pdf-reader.html">▤ PDF Reader</a>
+    <a href="apps/chimera-ii-os/web/system_control_center.html">⚙ System Control</a>
+    <a href="apps/chimera-ii-os/web/health.html">♥ Health</a>
+    <a href="apps/chimera-ii-os/web/crash_center.html">⚠ Crash Center</a>
+  </div>
+</section>
+<div class="stats">
     <span class="pill"><b id="appcount">0</b> apps</span>
     <span class="pill"><b>10</b> repositories</span>
     <span class="pill">static build · no backend</span>
@@ -194,6 +224,13 @@ const APPS = [
 ];
 
 const root=document.getElementById('root');
+const auroraWall=document.getElementById('auroraWallGrid');
+function renderAuroraWall(){
+  if(!auroraWall || typeof APPS==='undefined') return;
+  const featured=APPS.filter(a=>/Chimera II OS|BizX|Research|Published Pages/.test(a.group)).slice(0,60);
+  auroraWall.innerHTML=featured.map(a=>'<a href="'+esc(a.path)+'" title="'+esc(a.desc)+'">'+esc(a.title)+'</a>').join('');
+}
+
 const q=document.getElementById('q');
 const empty=document.getElementById('empty');
 document.getElementById('appcount').textContent=APPS.length; document.getElementById('heroApps').textContent=APPS.length;
@@ -294,6 +331,7 @@ function renderPages(term){
   }).join('');
 }
 q.addEventListener('input',render);
+renderAuroraWall();
 render();
 </script>
 <script type="module">import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js';const c=document.getElementById('aurora3d');if(c){const s=new THREE.Scene(),cam=new THREE.PerspectiveCamera(45,1,.1,100),r=new THREE.WebGLRenderer({canvas:c,alpha:true,antialias:true});r.setPixelRatio(Math.min(devicePixelRatio,2));const g=new THREE.Group();s.add(g);g.add(new THREE.Mesh(new THREE.IcosahedronGeometry(1.8,2),new THREE.MeshStandardMaterial({color:0x5fd0ff,metalness:.7,roughness:.22,wireframe:true,transparent:true,opacity:.7})));const ring=new THREE.Mesh(new THREE.TorusGeometry(2.35,.012,8,160),new THREE.MeshBasicMaterial({color:0x7d8cff,transparent:true,opacity:.55}));ring.rotation.x=.9;g.add(ring);s.add(new THREE.AmbientLight(0x9ecfff,1.4));const l=new THREE.PointLight(0x5fd0ff,20,20);l.position.set(3,3,5);s.add(l);function z(){const b=c.getBoundingClientRect();r.setSize(b.width,b.height,false);cam.aspect=b.width/b.height;cam.updateProjectionMatrix()}addEventListener('resize',z);z();cam.position.z=6.5;function f(t){g.rotation.y=t*.00018;ring.rotation.z=t*.00012;r.render(s,cam);requestAnimationFrame(f)}requestAnimationFrame(f)}</script></body>
