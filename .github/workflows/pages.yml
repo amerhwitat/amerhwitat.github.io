@@ -107,6 +107,16 @@ jobs:
           for k in ('asm','c','cpp','python','kotlin','java'): assert d['counts'].get(k,0)>0
           print('Language runtime catalog:',d['totalTrackedFiles'],'tracked files')
           PY
+      - name: Validate Hercules artwork manifest
+        run: |
+          test -s apps/chimera-ii-os/web/hercules-artwork-manifest.json
+          python3 - <<'PY'
+          import json
+          d=json.load(open('apps/chimera-ii-os/web/hercules-artwork-manifest.json',encoding='utf-8'))
+          assert d['schema']=='aurora-hercules-artwork/v1'
+          assert 'remote' in d['strategy'] and 'local' in d['strategy']
+          print('Hercules artwork manifest: PASS')
+          PY
       - name: Validate Hercules integration surface
         run: |
           test -s apps/chimera-ii-os/web/hercules-integration.html
