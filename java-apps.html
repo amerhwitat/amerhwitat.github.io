@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#071120">
+<title>Java Desktop Portfolio — Amer Hwitat</title>
+<style>
+:root{color-scheme:dark;--bg:#071120;--panel:#10223b;--line:#294765;--fg:#eaf3ff;--muted:#a8bdd6;--accent:#5fd0ff}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 10% 0,#18345a,var(--bg) 55%);color:var(--fg);font:16px/1.6 system-ui,Segoe UI,sans-serif}
+main{max-width:1050px;margin:auto;padding:36px 22px 70px}a{color:var(--accent)}header{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;align-items:center}h1{font-size:clamp(2rem,5vw,3.3rem);line-height:1.1;margin:.5rem 0}p{color:var(--muted)}.tag{font-size:.75rem;letter-spacing:.15em;color:var(--accent)}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:26px}.card{border:1px solid var(--line);border-radius:16px;background:linear-gradient(145deg,#10233de8,#0b192ce8);padding:20px;display:flex;flex-direction:column;gap:8px}.card h2{font-size:1.15rem;margin:0}.state{font-size:.75rem;border:1px solid var(--line);border-radius:999px;padding:3px 9px;align-self:flex-start;color:var(--muted)}.links{display:flex;flex-wrap:wrap;gap:12px;margin-top:auto;padding-top:8px}.note{border-left:3px solid var(--accent);padding:10px 15px;background:#10233d88;border-radius:0 10px 10px 0}footer{margin-top:36px;border-top:1px solid var(--line);padding-top:18px;color:var(--muted);font-size:.9rem}
+</style>
+</head>
+<body><main>
+<header><div><div class="tag">JAVA · DESKTOP · RESEARCH</div><h1>Java Application Portfolio</h1><p>Native JVM desktop applications and shared Java components for the project repositories.</p></div><a href="/">← Main portfolio</a></header>
+<div class="note">Java desktop applications run on a local JVM. GitHub Pages is a static website, so this page links to their source and build workflows; it does not pretend to execute desktop bytecode inside the browser.</div>
+<section class="grid" aria-label="Java projects">
+<article class="card"><span class="state">GUI PR opened</span><h2>PDF Reader — Java Swing</h2><p>Native desktop PDF viewer with file selection, page selection, asynchronous PDFBox rendering, and the existing ingestion/provenance adapter. OCR remains a separate pipeline until its algorithms are ported and parity-tested.</p><div class="links"><a href="https://github.com/amerhwitat/PDFreaderPY/pull/3">Review GUI pull request</a><a href="https://github.com/amerhwitat/PDFreaderPY/tree/main/java">Java source</a></div></article>
+<article class="card"><span class="state">Java model + contract tests</span><h2>CPU4096</h2><p>Unsigned fixed-width register model, arithmetic/bitwise operations, shifts, and little-endian snapshots validated against shared contract fixtures. A Java GUI is not yet claimed.</p><div class="links"><a href="https://github.com/amerhwitat/CPU4096/tree/main/java">Java source</a><a href="https://github.com/amerhwitat/CPU4096/actions">Build checks</a></div></article>
+<article class="card"><span class="state">Java runtime subset + tests</span><h2>CPU4096 Simulator</h2><p>Headless Java wide-word and CPU-core subset with shared runtime fixtures. Full JavaFX UI and complete ISA parity remain future work.</p><div class="links"><a href="https://github.com/amerhwitat/CPU4096Simulator/tree/main/java">Java source</a><a href="https://github.com/amerhwitat/CPU4096Simulator/actions">Build checks</a></div></article>
+<article class="card"><span class="state">Java driver module</span><h2>Chimera II OS</h2><p>Java driver-acquisition module and tests complement the freestanding native boot/runtime. Java does not replace Spit Fire, Jasper/GRUB, or Koronos before a JVM exists.</p><div class="links"><a href="https://github.com/amerhwitat/ChimeraIIOS">Repository</a><a href="https://github.com/amerhwitat/ChimeraIIOS/blob/main/docs/JAVA_PORTFOLIO_MIGRATION.md">Migration tracker</a></div></article>
+<article class="card"><span class="state">Inventory / porting queue</span><h2>NLP, keys, and business tools</h2><p>Python-heavy projects require per-module ports with fixtures and behavioral parity; cryptographic and key-handling logic must retain security properties rather than be replaced by a superficial GUI.</p><div class="links"><a href="https://github.com/amerhwitat/nlp">NLP</a><a href="https://github.com/amerhwitat/keygen">Keygen</a><a href="https://github.com/amerhwitat/eth-key-check">Ethereum key checker</a><a href="https://github.com/amerhwitat/BizX">BizX</a><a href="https://github.com/amerhwitat/BizXtreme">BizXtreme</a></div></article>
+</section>
+<footer>Migration policy: preserve Python reference implementations until the Java version passes tests and fixture-based parity checks. Build and publish each native desktop artifact through its own repository workflow before marking it released.</footer>
+</main></body></html>
