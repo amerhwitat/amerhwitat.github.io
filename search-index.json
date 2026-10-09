@@ -581,6 +581,13 @@
       "g": "Chimera II OS",
       "d": "Hosted React desktop SPA for Aurora, Koronos, kernel and terminal exploration. Web UI availability is not proof of native kernel execution or ISO boot.",
       "x": "chimera-iios-120143.onhercules.app React Chimera II OS Aurora Koronos kernel terminal desktop SPA"
+    },
+    {
+      "p": "apps/chimera-ii-os/web/index.html",
+      "t": "Chimera II OS Web Apps — 154-file inventory",
+      "g": "Chimera II OS",
+      "d": "Project-reported inventory of 154 web files covering Aurora desktop, terminal, ISA explorer, emulators, OCR, wallet, installer and related tools. Snapshot count should be regenerated as the repository changes.",
+      "x": "ChimeraIIOS web files 154 Aurora desktop terminal ISA explorer emulators OCR wallet installer apps"
     }
   ]
 }
