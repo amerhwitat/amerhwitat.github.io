@@ -39,6 +39,30 @@ for dp,dn,fn in os.walk('.'):
         desc=html.unescape(dm.group(1).strip()) if dm else ""
         body=text_of(raw)
         entries.append({"p":p,"t":title[:160],"g":group_of(p),"d":desc[:200],"x":body[:900]})
+# Catalog entries are authored in index.html's JavaScript data, so the HTML crawler
+# cannot see them. Add stable virtual search records so deployment regeneration
+# preserves the hosted-app and repository inventory search contract.
+virtual_entries = [
+    {"p":"index.html","t":"Amer Hwitat — Chimera II OS ecosystem hub","g":"Hub",
+     "d":"Static hub hero, APPS catalogue, REPOS index, search-index.json full-text page search, five Thamudic / Ancient North Arabian script families, and the Chimera II OS web app collection.",
+     "x":"APPS REPOS static hub full-text page search search-index.json ThamudicScan v2.4.1 upload camera five-stage pipeline five script families sample inscriptions field tips export Chimera II OS React Aurora Koronos kernel terminal 154 web files 680 files 3123 files 2.1 GB"},
+    {"p":"apps/thamudic-scanner/index.html","t":"ThamudicScan v2.4.1 — Ancient North Arabian Scanner","g":"Thamudic",
+     "d":"Scanner feature reference: upload/camera, five-stage pipeline, five script families, sample inscriptions, field tips and export. The abbreviated BuiltWithRocket deployment URL is not verified; this published scanner is the fallback.",
+     "x":"ThamudicScan v2.4.1 Thamudic Safaitic Dadanitic Hismaic Taymanitic Ancient North Arabian upload camera OCR five-stage pipeline sample inscriptions field tips export"},
+    {"p":"https://chimera-iios-120143.onhercules.app/","t":"Chimera II OS — Hosted Aurora Desktop SPA","g":"Chimera II OS",
+     "d":"Hosted React desktop SPA for Aurora, Koronos, kernel and terminal exploration. Web UI availability is not proof of native kernel execution or ISO boot.",
+     "x":"chimera-iios-120143.onhercules.app React Chimera II OS Aurora Koronos kernel terminal desktop SPA"},
+    {"p":"apps/chimera-ii-os/web/index.html","t":"Chimera II OS Web Apps — 154-file inventory","g":"Chimera II OS",
+     "d":"Project-reported inventory of 154 web files covering Aurora desktop, terminal, ISA explorer, emulators, OCR, wallet, installer and related tools. Snapshot count should be regenerated as the repository changes.",
+     "x":"ChimeraIIOS web files 154 Aurora desktop terminal ISA explorer emulators OCR wallet installer apps"}
+]
+for virtual in virtual_entries:
+    match = next((i for i, entry in enumerate(entries)
+                  if entry["p"] == virtual["p"] and entry["t"] == virtual["t"]), None)
+    if match is None:
+        entries.append(virtual)
+    else:
+        entries[match].update(virtual)
 entries.sort(key=lambda e:(e["g"],e["p"]))
 json.dump({"generated_by":"amerhwitat.github.io hub indexer","pages":entries},open('search-index.json','w',encoding='utf-8'),ensure_ascii=False)
 print("indexed pages:",len(entries),"| bytes:",os.path.getsize('search-index.json'))

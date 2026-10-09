@@ -1,0 +1,58 @@
+name: Static hub catalog validation
+
+on:
+  pull_request:
+    paths:
+      - "index.html"
+      - "search-index.json"
+      - "scripts/build_search_index.py"
+      - "scripts/check_site_links.py"
+      - "apps/chimera-ii-os/web/**"
+      - "apps/thamudic-scanner/**"
+      - ".github/workflows/site-catalog-check.yml"
+  push:
+    branches: [main]
+    paths:
+      - "index.html"
+      - "search-index.json"
+      - "scripts/build_search_index.py"
+      - "scripts/check_site_links.py"
+      - "apps/chimera-ii-os/web/**"
+      - "apps/thamudic-scanner/**"
+      - ".github/workflows/site-catalog-check.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Rebuild full-text index
+        run: python3 scripts/build_search_index.py
+      - name: Validate app and repository catalog
+        run: |
+          python3 - <<'PY'
+          import json, re
+          from pathlib import Path
+          html = Path("index.html").read_text(encoding="utf-8")
+          apps_raw = re.search(r"const APPS = (.*?);\nconst REPOS = ", html, re.S)
+          repos_raw = re.search(r"const REPOS = (.*?);\n\nconst esc", html, re.S)
+          assert apps_raw and repos_raw, "APPS/REPOS catalog declarations missing"
+          apps, repos = json.loads(apps_raw.group(1)), json.loads(repos_raw.group(1))
+          titles = {a["title"] for a in apps}
+          assert "ThamudicScan v2.4.1 — Scanner" in titles
+          assert "Chimera II OS — Hosted Aurora Desktop" in titles
+          assert "Chimera II OS Web Apps — 154-file inventory" in titles
+          assert any(r["title"] == "ChimeraIIOS" for r in repos)
+          assert any(r["title"] == "amerhwitat.github.io" for r in repos)
+          index = json.loads(Path("search-index.json").read_text(encoding="utf-8"))
+          pages = index["pages"]
+          assert any(p["t"] == "ThamudicScan v2.4.1 — Ancient North Arabian Scanner" for p in pages)
+          assert any(p["p"].startswith("https://chimera-iios-120143.onhercules.app") for p in pages)
+          assert any("154-file inventory" in p["t"] for p in pages)
+          print(f"PASS: {len(apps)} apps, {len(repos)} repositories, {len(pages)} indexed pages")
+          PY
+      - name: Check local site links
+        run: python3 scripts/check_site_links.py
