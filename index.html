@@ -1,45 +1,108 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" id="doc">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Combined Web UI and applications built from amerhwitat's GitHub repositories.">
-<meta name="theme-color" content="#07111f">
-<title>Amer Hwitat — Research &amp; Software Portfolio</title>
+<title>Amer Hwitat — Chimera II OS · Aurora Wayland Glass Portfolio</title>
+<meta name="description" content="Chimera II OS — Aurora Wayland Glass web desktop. Open. Secure. Infinite. Research, NLP, emulation and OS simulator apps from github.com/amerhwitat.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;500;700&family=Inter:wght@300;400;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#071120; --bg2:#0b1a30; --panel:rgba(18,38,66,.55); --panel2:rgba(12,28,52,.72);
-  --stroke:rgba(120,180,255,.18); --stroke2:rgba(120,180,255,.35);
-  --fg:#e8f1ff; --muted:#9db4d4; --accent:#5fd0ff; --accent2:#7d8cff; --ok:#4be3a4;
+  --bg:#050912; --bg2:#0a1424; --panel:rgba(16,28,48,.55); --panel2:rgba(9,17,32,.72);
+  --stroke:rgba(120,180,255,.16); --stroke2:rgba(140,200,255,.42);
+  --fg:#e9f2ff; --muted:#93a7c4; --accent:#61d0ff; --accent2:#a98bff; --accent3:#48f0c0;
+  --shadow:0 24px 70px rgba(2,8,20,.6);
+  --font-d:"Exo 2",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --font-b:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;
+  --font-m:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
 }
 *{box-sizing:border-box}
 html,body{margin:0}
 body{
-  font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
-  color:var(--fg); min-height:100vh;
   background:
-    radial-gradient(1100px 600px at 12% -8%, rgba(95,208,255,.16), transparent 60%),
-    radial-gradient(900px 520px at 92% 4%, rgba(125,140,255,.16), transparent 60%),
-    linear-gradient(160deg,var(--bg),var(--bg2));
-  background-attachment:fixed;
+    radial-gradient(1100px 700px at 12% -8%,rgba(97,208,255,.18),transparent 60%),
+    radial-gradient(900px 620px at 88% 4%,rgba(169,139,255,.16),transparent 62%),
+    radial-gradient(760px 520px at 50% 108%,rgba(72,240,192,.12),transparent 60%),
+    linear-gradient(180deg,var(--bg),var(--bg2) 60%,var(--bg));
+  color:var(--fg); font-family:var(--font-b); line-height:1.6; min-height:100vh;
 }
 a{color:var(--accent);text-decoration:none}
-.wrap{max-width:1240px;margin:0 auto;padding:32px 22px 80px}
-header.top{display:flex;flex-wrap:wrap;gap:18px;align-items:center;justify-content:space-between;margin-bottom:26px}
-.brand{display:flex;align-items:center;gap:14px}
-.logo{width:48px;height:48px;border-radius:14px;display:grid;place-items:center;font-weight:800;font-size:22px;
-  background:linear-gradient(135deg,var(--accent),var(--accent2));color:#04101f;box-shadow:0 10px 30px rgba(95,208,255,.35)}
-.brand h1{font-size:22px;margin:0;letter-spacing:.02em}
-.brand p{margin:2px 0 0;color:var(--muted);font-size:13px}
-.searchbox{position:relative;flex:1;min-width:240px;max-width:420px}
-.searchbox input{width:100%;padding:12px 16px;border-radius:999px;border:1px solid var(--stroke2);
-  background:var(--panel2);color:var(--fg);font-size:14px;outline:none;backdrop-filter:blur(12px)}
-.searchbox input:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(95,208,255,.15)}
-.stats{display:flex;gap:10px;flex-wrap:wrap;color:var(--muted);font-size:12.5px;margin-bottom:26px}
-.pill{border:1px solid var(--stroke);background:var(--panel);padding:6px 12px;border-radius:999px}
-.pill b{color:var(--fg)}
-h2.group{font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);
-  margin:34px 0 14px;display:flex;align-items:center;gap:12px}
+a:hover{text-decoration:underline}
+.wrap{max-width:1240px;margin:0 auto;padding:0 22px}
+.glass{background:linear-gradient(180deg,var(--panel),var(--panel2));border:1px solid var(--stroke);
+  border-radius:20px;backdrop-filter:blur(16px);box-shadow:var(--shadow)}
+
+/* ---------- top bar ---------- */
+.topbar{position:sticky;top:0;z-index:50;background:rgba(5,10,20,.72);backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--stroke)}
+.topbar .inner{display:flex;align-items:center;gap:18px;flex-wrap:wrap;padding:12px 22px;max-width:1240px;margin:0 auto}
+.brand{display:flex;align-items:center;gap:10px;font-family:var(--font-d);font-weight:700;letter-spacing:.02em}
+.brand .dot{width:11px;height:11px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent2));
+  box-shadow:0 0 18px rgba(97,208,255,.7)}
+nav.links{display:flex;gap:14px;flex-wrap:wrap;font-size:13.5px}
+nav.links a{color:var(--muted)}
+nav.links a:hover{color:var(--fg)}
+.tools{margin-left:auto;display:flex;gap:10px;align-items:center}
+#q{background:rgba(8,16,30,.8);border:1px solid var(--stroke);color:var(--fg);border-radius:12px;
+  padding:9px 13px;min-width:230px;font-family:var(--font-b);font-size:13.5px}
+#q:focus{outline:none;border-color:var(--stroke2);box-shadow:0 0 0 3px rgba(97,208,255,.14)}
+.btn{cursor:pointer;border:1px solid var(--stroke);background:rgba(12,22,40,.7);color:var(--fg);
+  border-radius:11px;padding:8px 12px;font-size:13px;font-family:var(--font-b)}
+.btn:hover{border-color:var(--stroke2)}
+.pill{font-family:var(--font-m);font-size:11.5px;color:var(--muted);border:1px solid var(--stroke);
+  border-radius:999px;padding:3px 9px}
+
+/* ---------- hero / desktop simulator ---------- */
+.hero{margin:26px 0 10px;padding:0;overflow:hidden}
+.hero-head{padding:22px 24px 6px}
+h1{font-family:var(--font-d);font-size:clamp(24px,3.4vw,40px);margin:.1em 0 .2em;font-weight:700;letter-spacing:.01em}
+h1 .grad{background:linear-gradient(90deg,var(--accent),var(--accent2) 55%,var(--accent3));
+  -webkit-background-clip:text;background-clip:text;color:transparent}
+.sub{color:var(--muted);max-width:820px;font-size:14.5px}
+.devices{display:flex;gap:8px;margin:12px 0 0}
+.chip{cursor:pointer;font-size:12.5px;border:1px solid var(--stroke);border-radius:999px;padding:6px 12px;color:var(--muted)}
+.chip.on{color:var(--fg);border-color:var(--stroke2);background:rgba(97,208,255,.12)}
+
+.desktop{margin:16px 24px 22px;border:1px solid var(--stroke);border-radius:18px;overflow:hidden;
+  background:
+    radial-gradient(600px 340px at 20% 0%,rgba(97,208,255,.20),transparent 60%),
+    radial-gradient(520px 320px at 85% 10%,rgba(169,139,255,.18),transparent 62%),
+    linear-gradient(160deg,#08111f,#0b1a2e 55%,#091524);
+  position:relative}
+.dtop{display:flex;align-items:center;gap:10px;padding:10px 14px;border-bottom:1px solid var(--stroke);
+  background:rgba(6,12,24,.55);font-size:12.5px;color:var(--muted);flex-wrap:wrap}
+.dtop .toleft{display:flex;gap:8px;align-items:center}
+.dtop .toright{margin-left:auto;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.widg{display:flex;gap:7px;align-items:center;border:1px solid var(--stroke);border-radius:10px;
+  padding:5px 9px;background:rgba(10,20,36,.6);white-space:nowrap}
+.widg b{color:var(--fg);font-weight:600}
+.dbody{display:grid;grid-template-columns:1.55fr 1fr;gap:16px;padding:18px}
+.dbody.mobile{grid-template-columns:1fr}
+.window{border:1px solid var(--stroke);border-radius:16px;background:linear-gradient(180deg,rgba(14,26,45,.72),rgba(8,16,30,.8));
+  padding:16px}
+.window .wtitle{display:flex;align-items:center;gap:8px;font-family:var(--font-m);font-size:12px;color:var(--muted);margin-bottom:10px}
+.quote{font-family:var(--font-d);font-size:clamp(18px,2.4vw,26px);margin:6px 0}
+.side{display:flex;flex-direction:column;gap:14px}
+.cal{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;font-family:var(--font-m);font-size:11px;color:var(--muted);text-align:center}
+.cal .d{border:1px solid var(--stroke);border-radius:7px;padding:3px 0}
+.cal .d.now{border-color:var(--stroke2);background:rgba(97,208,255,.14);color:var(--fg)}
+.player{display:flex;align-items:center;gap:10px}
+.player .pbtn{cursor:pointer;width:30px;height:30px;border-radius:50%;border:1px solid var(--stroke);
+  background:rgba(12,22,40,.8);display:grid;place-items:center;font-size:12px}
+.bar{height:5px;border-radius:99px;background:rgba(120,180,255,.18);overflow:hidden;flex:1}
+.bar i{display:block;height:100%;width:41%;background:linear-gradient(90deg,var(--accent),var(--accent2))}
+.dock{display:flex;gap:10px;padding:12px 14px;border-top:1px solid var(--stroke);background:rgba(6,12,24,.55);flex-wrap:wrap}
+.dock a{display:flex;align-items:center;gap:8px;border:1px solid var(--stroke);border-radius:12px;
+  padding:7px 11px;background:rgba(12,22,40,.7);font-size:12.5px;color:var(--fg)}
+.dock a:hover{border-color:var(--stroke2);text-decoration:none}
+.dock .ic{color:var(--accent)}
+
+/* ---------- generic sections ---------- */
+section{margin:34px 0}
+h2.group{display:flex;align-items:center;gap:12px;font-family:var(--font-d);font-size:17px;
+  letter-spacing:.03em;margin:0 0 14px;text-transform:none}
 h2.group::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,var(--stroke),transparent)}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
 .card{position:relative;border:1px solid var(--stroke);border-radius:18px;padding:18px 18px 16px;
@@ -47,292 +110,370 @@ h2.group::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,va
   transition:transform .16s ease,border-color .16s ease,box-shadow .16s ease;display:flex;flex-direction:column;gap:8px}
 .card:hover{transform:translateY(-3px);border-color:var(--stroke2);box-shadow:0 18px 40px rgba(3,12,26,.55)}
 .card .tagline{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
-.card h3{margin:0;font-size:17px}
-.card p{margin:0;color:var(--muted);font-size:13.5px;line-height:1.5;flex:1}
-.card .repo{font-size:11.5px;color:#7f97b8}
-.card .go{margin-top:6px;align-self:flex-start;padding:8px 14px;border-radius:10px;font-size:13px;font-weight:600;
-  background:linear-gradient(135deg,rgba(95,208,255,.9),rgba(125,140,255,.9));color:#04101f}
-.card .sub{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px}
-.card .sub a{font-size:11.5px;padding:4px 9px;border-radius:999px;border:1px solid var(--stroke);color:var(--muted)}
-.card .sub a:hover{color:var(--fg);border-color:var(--stroke2)}
-footer{margin-top:56px;color:var(--muted);font-size:12.5px;border-top:1px solid var(--stroke);padding-top:20px;line-height:1.7}
-.empty{display:none;color:var(--muted);padding:40px 0;text-align:center}
+.card h3{margin:0;font-family:var(--font-d);font-size:16.5px;font-weight:600}
+.card p{margin:0;font-size:13.5px;color:var(--muted)}
+.card .repo{font-family:var(--font-m);font-size:11.5px;color:#7f93b3}
+.card .go{margin-top:auto;font-size:13.5px}
+.card .sub{display:flex;gap:12px;font-size:12.5px;color:var(--muted)}
+.card .sub a{color:var(--accent)}
 .snippet{font-size:12.5px;color:var(--muted);line-height:1.55}
-mark{background:rgba(95,208,255,.25);color:var(--fg);border-radius:4px;padding:0 3px}
-.card.err .tagline{color:#ff9a9a}
-.hero3d{position:relative;overflow:hidden;min-height:430px;margin:8px 0 30px;border:1px solid var(--stroke2);border-radius:28px;background:linear-gradient(135deg,rgba(95,208,255,.12),rgba(125,140,255,.08)),rgba(7,17,32,.68);box-shadow:0 28px 90px rgba(0,0,0,.35);isolation:isolate}#aurora3d{position:absolute;inset:0;width:100%;height:100%;z-index:0}.hero3d .copy{position:relative;z-index:2;max-width:720px;padding:54px 46px}.hero3d h2{font-size:clamp(34px,5vw,68px);line-height:.98;margin:0 0 18px;letter-spacing:-.04em}.hero3d p{max-width:650px;color:var(--muted);font-size:16px;line-height:1.7}.hero-actions{display:flex;flex-wrap:wrap;gap:9px;margin-top:22px}.hero-actions a{padding:11px 15px;border-radius:12px;border:1px solid var(--stroke2);background:rgba(10,24,44,.72);color:var(--fg);font-weight:700}.hero-actions a.primary{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#04101f;border:0}.app-hud{position:absolute;right:24px;bottom:22px;display:grid;grid-template-columns:repeat(2,minmax(120px,1fr));gap:8px;z-index:2;max-width:330px}.app-hud span{padding:9px 11px;border:1px solid var(--stroke);border-radius:12px;background:rgba(7,17,32,.65);backdrop-filter:blur(12px);font-size:11px;color:var(--muted)}.app-hud b{display:block;color:var(--fg);font-size:15px}</style>
+mark{background:rgba(97,208,255,.25);color:var(--fg);border-radius:4px;padding:0 3px}
+.empty{display:none;color:var(--muted);padding:34px 0;text-align:center}
+
+/* research workspace */
+.scripts{display:grid;grid-template-columns:repeat(auto-fill,minmax(215px,1fr));gap:14px;margin-bottom:18px}
+.script{border:1px solid var(--stroke);border-radius:16px;padding:14px;background:rgba(10,20,36,.6)}
+.script b{display:block;font-family:var(--font-d);font-size:15px}
+.script span{font-size:12px;color:var(--muted)}
+.lang{writing-mode:horizontal-tb}
+.drop{border:1.5px dashed var(--stroke2);border-radius:16px;padding:26px;text-align:center;
+  background:rgba(10,20,36,.45);cursor:pointer}
+.drop.hot{background:rgba(97,208,255,.10)}
+.drop p{margin:6px 0;color:var(--muted);font-size:13px}
+.samples{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.samples button{cursor:pointer;font-size:12.5px;border:1px solid var(--stroke);border-radius:999px;
+  background:rgba(12,22,40,.7);color:var(--fg);padding:6px 11px}
+#result{margin-top:14px;font-family:var(--font-m);font-size:12.5px;color:var(--muted);white-space:pre-wrap}
+table.reg{width:100%;border-collapse:collapse;font-size:13px}
+table.reg th,table.reg td{border-bottom:1px solid var(--stroke);padding:9px 8px;text-align:left}
+table.reg th{color:var(--muted);font-weight:500;font-size:12px;letter-spacing:.06em;text-transform:uppercase}
+footer{border-top:1px solid var(--stroke);margin-top:46px;padding:26px 0 44px;color:var(--muted);font-size:13px}
+[dir=rtl] .topbar .inner,[dir=rtl] .dtop{direction:rtl}
+@media(max-width:820px){.dbody{grid-template-columns:1fr}.tools{width:100%}#q{flex:1;min-width:0}}
+</style>
 </head>
 <body>
+
+<div class="topbar"><div class="inner">
+  <div class="brand"><span class="dot"></span><span>Amer Hwitat · <span class="lang" data-en="Chimera II OS" data-ar="كيميرا II">Chimera II OS</span></span></div>
+  <nav class="links">
+    <a href="#apps" class="lang" data-en="Portfolio" data-ar="الأعمال">Portfolio</a>
+    <a href="#research" class="lang" data-en="Research Platform" data-ar="منصة البحث">Research Platform</a>
+    <a href="#research" class="lang" data-en="NLP Translator" data-ar="مترجم اللغة">NLP Translator</a>
+    <a href="#desktop" class="lang" data-en="OS Simulator" data-ar="محاكي النظام">OS Simulator</a>
+    <a href="#registry" class="lang" data-en="Script &amp; ISA Registry" data-ar="سجل النصوص">Script &amp; ISA Registry</a>
+    <a href="#repos" class="lang" data-en="Repositories" data-ar="المستودعات">Repositories</a>
+  </nav>
+  <div class="tools">
+    <input id="q" type="search" placeholder="Search apps, pages, repositories…" aria-label="Search">
+    <button class="btn" id="langbtn">AR</button>
+  </div>
+</div></div>
+
 <div class="wrap">
-  <header class="top">
-    <div class="brand">
-      <div class="logo">AH</div>
-      <div>
-        <h1>Amer Hwitat — Research &amp; Software Portfolio</h1>
-        <p>Public discovery portal for the maintained repositories, research projects and every browser-based UI — built from <a href="https://github.com/amerhwitat" target="_blank" rel="noopener">github.com/amerhwitat</a>.</p>
+
+  <section class="glass hero" id="desktop">
+    <div class="hero-head">
+      <h1><span class="grad lang" data-en="Chimera II OS — Aurora Wayland Glass" data-ar="كيميرا II — سطح مكتب أورورا الزجاجي">Chimera II OS — Aurora Wayland Glass</span></h1>
+      <p class="sub lang" data-en="Open. Secure. Infinite. Every browser UI from github.com/amerhwitat in one Aurora glass desktop: OS simulator, research platform, NLP/OCR translator, emulators and the full app catalogue."
+         data-ar="مفتوح. آمن. لا نهائي. كل واجهات المتصفح من github.com/amerhwitat في سطح مكتب أورورا زجاجي واحد: محاكي النظام، منصة البحث، مترجم اللغة والنصوص، المحاكيات وكتالوج التطبيقات.">Open. Secure. Infinite. Every browser UI from github.com/amerhwitat in one Aurora glass desktop: OS simulator, research platform, NLP/OCR translator, emulators and the full app catalogue.</p>
+      <div class="devices">
+        <span class="chip on" id="dev-desktop">Desktop</span>
+        <span class="chip" id="dev-mobile">Mobile</span>
+        <span class="pill" id="appcountpill">apps</span>
       </div>
     </div>
-    <div class="searchbox">
-      <input id="q" type="search" placeholder="Search apps… (terminal, scanner, 3D, SEO, PDF)" aria-label="Search apps">
+
+    <div class="desktop">
+      <div class="dtop">
+        <div class="toleft"><span class="ic">◈</span><b>Aurora Wayland</b><span>· Modern · Secure · Open · For Tomorrow</span></div>
+        <div class="toright">
+          <span class="widg">🕑 <b id="clock">--:--</b></span>
+          <span class="widg">📅 <b id="date">—</b></span>
+          <span class="widg">⛅ <b>22°C</b> Partly Cloudy · Amman, Jordan · H: 26° L: 16°</span>
+          <span class="widg">📶 <b>Connected</b> Wi-Fi (Home) · 10GBE</span>
+        </div>
+      </div>
+      <div class="dbody" id="dbody">
+        <div style="display:flex;flex-direction:column;gap:14px">
+          <div class="window">
+            <div class="wtitle"><span>▣</span> Aurora Wayland · Wayland Compositor · <span id="clock2">--:--</span></div>
+            <div class="quote">“The Future Is Now”</div>
+            <p style="color:var(--muted);font-size:13.5px;margin:0">Wayland · Smooth · Fast · Secure — a glass compositor surface for the Chimera II OS simulator.</p>
+            <div style="display:flex;gap:10px;margin-top:12px;flex-wrap:wrap">
+              <a class="btn" href="apps/chimera-ii-os/web/index.html">Open OS simulator →</a>
+              <a class="btn" href="apps/chimera-ii-os/web/aurora_webgl_desktops.html">Aurora WebGL desktops</a>
+              <a class="btn" href="apps/cpu4096-aurora/index.html">CPU4096 Aurora shell</a>
+            </div>
+          </div>
+          <div class="window">
+            <div class="wtitle"><span>♫</span> Aurora Sound</div>
+            <div class="player">
+              <span class="pbtn" id="pbtn">▶</span>
+              <div class="bar"><i id="pbar"></i></div>
+              <span id="ptime" style="font-family:var(--font-m);font-size:12px;color:var(--muted)">2:34 / 4:21</span>
+            </div>
+            <p style="color:var(--muted);font-size:12px;margin:8px 0 0">Interface demo only — no audio is streamed.</p>
+          </div>
+        </div>
+        <div class="side">
+          <div class="window">
+            <div class="wtitle"><span>▤</span> Calendar</div>
+            <div class="cal" id="cal"></div>
+          </div>
+          <div class="window">
+            <div class="wtitle"><span>◱</span> Research mode</div>
+            <p style="margin:0;font-size:13px;color:var(--muted)">Ancient-language OCR, transliteration and translation workspace — jump to the <a href="#research">ThamudicScan workspace</a>.</p>
+          </div>
+        </div>
+      </div>
+      <div class="dock">
+        <a href="apps/chimera-ii-os/web/index.html"><span class="ic">▤</span> Files</a>
+        <a href="apps/chimera-ii-os/web/aurora_terminal.html"><span class="ic">▚</span> Terminal</a>
+        <a href="apps/chimera-ii-os/web/chimera_code_ide.html"><span class="ic">⌘</span> Code IDE</a>
+        <a href="apps/chimera-ii-os/web/system_control_center.html"><span class="ic">⚙</span> Settings</a>
+        <a href="apps/chimera-ii-os/web/health.html"><span class="ic">❤</span> System Monitor</a>
+        <a href="apps/chimera-ii-os/web/retro_emulators.html"><span class="ic">◧</span> All Apps</a>
+      </div>
     </div>
-  </header>
+  </section>
 
-  <section class="hero3d" aria-label="Aurora interactive application gallery"><canvas id="aurora3d"></canvas><div class="copy"><div class="tagline">AURORA · CHIMERA · RESEARCH · STUDIO</div><h2>One portal.<br>Every application.</h2><p>Explore Chimera II OS, Aurora, Thamudic research, CPU simulators, BizXtreme, retro computing, developer tools and the command ecosystem through one interactive glass interface.</p><div class="hero-actions"><a class="primary" href="apps/chimera-ii-os/web/aurora_3d_desktop.html">Launch Aurora 3D</a><a href="java-apps.html">Java Desktop Apps</a><a href="apps/chimera-ii-os/web/thamudicscan.html">Open ThamudicScan</a><a href="apps/chimera-ii-os/web/command-console.html">Command Center</a><a href="apps/chimera-ii-os/web/smart-model.html">Smart Model</a><a href="apps/chimera-ii-os/web/isa-explorer.html">ISA Explorer</a><a href="apps/chimera-ii-os/web/wallet-center.html">Wallet &amp; Ecosystem Center</a><a href="apps/chimera-ii-os/web/mame-center.html">MAME Arcade</a><a href="apps/chimera-ii-os/web/game-center.html">Game Center</a><a href="apps/chimera-ii-os/web/ancient-ocr.html">Ancient Auto OCR</a><a href="apps/chimera-ii-os/web/backend-status.html">Backend Gateway</a></div></div><div class="app-hud"><span><b id="heroApps">0</b> applications</span><span><b>3</b> platforms</span><span><b>SS64</b> command index</span><span><b>𐪀</b> epigraphic lab</span></div></section>
-  <section id="auroraDesktopWall" aria-label="Aurora Desktop application wall" style="margin:22px 0 28px;padding:22px;border:1px solid rgba(120,180,255,.22);border-radius:24px;background:rgba(12,28,52,.55);backdrop-filter:blur(18px)">
-  <div style="display:flex;flex-wrap:wrap;gap:12px;align-items:end;justify-content:space-between">
-    <div><span style="letter-spacing:.14em;font-size:11px;color:#9db4d4">AURORA WAYLAND · UNIFIED WEB UI</span><h2 style="margin:.35rem 0">Every Aurora surface, one landing page</h2><p style="margin:.2rem 0;color:#9db4d4">Launch the 3D desktop, terminals, emulators, research tools, games, networking, OCR, ISO/Flash and runtime labs directly from this portal.</p></div>
-    <a href="apps/chimera-ii-os/web/aurora_3d_desktop.html" style="padding:10px 14px;border:1px solid rgba(120,180,255,.35);border-radius:12px;background:rgba(95,208,255,.08)">Open Aurora 3D Desktop →</a>
-  </div>
-  <div id="auroraWallGrid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px;margin-top:16px">
-    <a href="apps/chimera-ii-os/web/aurora-interaction-hub.html">◎ Interaction Hub</a>
-    <a href="apps/chimera-ii-os/web/aurora_terminal.html">⌘ Aurora Terminal</a>
-    <a href="apps/chimera-ii-os/web/command-console.html">⌘ SS64 / العربية</a>
-    <a href="apps/chimera-ii-os/web/aurora-emulator.html">🎮 Aurora Emulator</a><a href="apps/chimera-ii-os/web/game-center.html">🎮 Game Center</a>
-    <a href="apps/chimera-ii-os/web/mame-center.html">▦ MAME Center</a>
-    <a href="apps/chimera-ii-os/web/retro_emulators.html">▦ Retro Emulators</a>
-    <a href="apps/chimera-ii-os/web/retro_emulators.html">▣ PlayStation Hub</a>
-    <a href="apps/chimera-ii-os/web/network-engine.html">⌁ Network Engine</a>
-    <a href="apps/chimera-ii-os/web/network_monitor.html">⌁ Network Monitor</a>
-    <a href="apps/chimera-ii-os/web/research-lab.html">𐪀 Research Lab</a>
-    <a href="apps/chimera-ii-os/web/ancient-ocr.html">𐪀 Ancient OCR</a>
-    <a href="apps/chimera-ii-os/web/ocr-studio.html">⌗ OCR Studio</a>
-    <a href="apps/chimera-ii-os/web/isa-explorer.html">⌬ ISA Explorer</a>
-    <a href="apps/chimera-ii-os/web/chimera_code_ide.html">&lt;/&gt; Code IDE</a>
-    <a href="apps/chimera-ii-os/web/chimera-language-runtime.html">⌬ Language Runtime</a>
-    <a href="apps/chimera-ii-os/web/repository-app-studio.html">▣ Repository App Studio</a>
-    <a href="apps/chimera-ii-os/web/iso-flash-center.html">▤ ISO &amp; Flash</a>
-    <a href="apps/chimera-ii-os/web/hercules-integration.html">⚡ Hercules Runtime</a>
-    <a href="apps/pdf-reader/index.html">▤ PDF Reader</a>
-    <a href="apps/chimera-ii-os/web/system_control_center.html">⚙ System Control</a>
-    <a href="apps/chimera-ii-os/web/health.html">♥ Health</a>
-    <a href="apps/chimera-ii-os/web/crash_center.html">⚠ Crash Center</a>
-  </div>
-</section>
-<div class="stats">
-    <span class="pill"><b id="appcount">0</b> apps</span>
-    <span class="pill"><b>10</b> repositories</span>
-    <span class="pill">static build · no backend</span>
-  </div>
+  <section id="apps">
+    <h2 class="group"><span class="lang" data-en="Application catalogue" data-ar="دليل التطبيقات">Application catalogue</span> <span class="pill" id="appcount"></span></h2>
+    <div id="root"></div>
+    <p class="empty" id="empty">No apps match your search.</p>
+  </section>
 
-  <div id="root"></div>
-  <p class="empty" id="empty">No apps match your search.</p>
-
-  <section id="pagesSection" style="display:none">
-    <h2 class="group">Matching pages <span class="pill" id="pagehits"></span></h2>
+  <section id="pages" style="display:none">
+    <h2 class="group"><span class="lang" data-en="Matching pages" data-ar="صفحات مطابقة">Matching pages</span> <span class="pill" id="pagehits"></span></h2>
     <div class="grid" id="pagesgrid"></div>
   </section>
 
-
-  <section id="reposSection">
-  <h2 class="group">Repositories</h2>
-  <div class="grid" id="repos"></div>
+  <section id="research">
+    <h2 class="group"><span class="lang" data-en="ThamudicScan — ancient script research workspace" data-ar="ثمودي سكان — مساحة بحث النصوص القديمة">ThamudicScan — ancient script research workspace</span></h2>
+    <div class="scripts">
+      <div class="script"><b>Thamudic</b><span>Types A–E · Hejaz, NW Arabia · 5th c. BCE – 4th c. CE</span></div>
+      <div class="script"><b>Safaitic</b><span>~4,000 characters · Basalt desert, Syria/Jordan · 1st c. BCE – 4th c. CE</span></div>
+      <div class="script"><b>Dadanitic</b><span>Al-ʿUlā oasis · NW Arabia</span></div>
+      <div class="script"><b>Hismaic</b><span>Wādī Ḥismā · NW Arabia</span></div>
+      <div class="script"><b>Taymanitic</b><span>Taymāʾ oasis · NW Arabia</span></div>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <span class="tagline">OCR &amp; Translation workspace</span>
+        <h3>Upload inscription · detect script · transliterate · translate</h3>
+        <div class="drop" id="drop">
+          <b>Drop inscription image</b>
+          <p>Supports JPEG, PNG, TIFF, WebP (max 50 MB). Script detection, glyph segmentation and character-by-character transliteration.</p>
+          <input type="file" id="file" accept="image/*" hidden>
+          <span class="btn" id="browse">Browse files</span>
+        </div>
+        <div class="samples">
+          <button data-s="Thamudic B — Wādī Rum">Thamudic B · Wādī Rum</button>
+          <button data-s="Safaitic — Ḥarrah basalt">Safaitic · Ḥarrah basalt</button>
+          <button data-s="Dadanitic — Al-ʿUlā">Dadanitic · Al-ʿUlā</button>
+          <button data-s="Hismaic — Wādī Ḥismā">Hismaic · Wādī Ḥismā</button>
+        </div>
+        <div id="result">Runs client-side as an interface demo: detection and transliteration are illustrative, not a live OCR model.</div>
+      </div>
+      <div class="card">
+        <span class="tagline">Live workspaces</span>
+        <h3>Open the full research apps</h3>
+        <p>The published ThamudicScan builds and the NLP research platform run as full apps.</p>
+        <div class="sub">
+          <a href="apps/thamudic-scanner/index.html">ThamudicScan · scanner</a>
+          <a href="apps/thamudic-epi/index.html">Epi platform</a>
+        </div>
+        <div class="sub">
+          <a href="apps/nlp-studio/index.html">NLP Studio</a>
+          <a href="apps/nlp-artifacts/index.html">Artifacts viewer</a>
+        </div>
+        <div class="sub">
+          <a href="apps/chimera-ii-os/web/ancient-ocr.html">Ancient OCR Studio</a>
+          <a href="apps/chimera-ii-os/web/thamudicscan.html">Desktop ThamudicScan</a>
+        </div>
+      </div>
+    </div>
   </section>
+
+  <section id="registry">
+    <h2 class="group"><span class="lang" data-en="Script &amp; ISA registry" data-ar="سجل النصوص والمعمارية">Script &amp; ISA registry</span></h2>
+    <div class="card" style="overflow-x:auto">
+      <table class="reg">
+        <thead><tr><th>Registry</th><th>Repository</th><th>Surface</th></tr></thead>
+        <tbody>
+          <tr><td>ISA catalogue &amp; bitfields</td><td>ChimeraIIOS</td><td><a href="apps/chimera-ii-os/web/research-os.html">Research OS</a></td></tr>
+          <tr><td>Command registry</td><td>ChimeraIIOS</td><td><a href="apps/chimera-ii-os/webui/linux-command-console.html">Command console</a></td></tr>
+          <tr><td>CPU4096 register contract</td><td>CPU4096</td><td><a href="apps/cpu4096/web/javascript/index.html">CPU4096 visualizer</a></td></tr>
+          <tr><td>Script families / OCIANA reference</td><td>nlp</td><td><a href="apps/thamudic-scanner/index.html">ThamudicScan</a></td></tr>
+          <tr><td>NLP artifacts</td><td>nlp</td><td><a href="apps/nlp-artifacts/index.html">Artifacts viewer</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="repos">
+    <h2 class="group"><span class="lang" data-en="Repositories" data-ar="المستودعات">Repositories</span></h2>
+    <div class="grid" id="reposgrid"></div>
+  </section>
+
   <footer>
-    Combined from the repositories: ChimeraIIOS, CPU4096Simulator, CPU4096, BizX, BizXtreme, nlp, general, test, PDFreaderPY, amerhwitat.github.io.
-    Application front-ends run fully in the browser; features that require a Python/Node backend are shown as UI demos.<br>
-    <strong>Publishing model:</strong> this portal is the public-web discovery layer; source remains on GitHub. Deep-web availability means resources reachable by direct URLs but not necessarily indexed by search engines — not a separate hosting network. Dark-web/onion publication requires a controlled Tor server and cannot be created by GitHub Pages alone.<br>
-    Source: <a href="https://github.com/amerhwitat" target="_blank" rel="noopener">github.com/amerhwitat</a>
+    <span class="lang" data-en="Application front-ends run fully in the browser; features that require a Python/Node backend are shown as interface demos."
+      data-ar="تعمل واجهات التطبيقات داخل المتصفح بالكامل؛ والميزات التي تحتاج خادم بايثون/نود تُعرض كواجهات تجريبية.">Application front-ends run fully in the browser; features that require a Python/Node backend are shown as interface demos.</span><br>
+    <strong>Publishing model:</strong> this portal is the public-web discovery layer; source remains on GitHub. Deep-web availability means resources reachable by direct URLs but not necessarily indexed by search engines — not a separate hosting network. Dark-web/onion publication requires a controlled Tor server and cannot be created by GitHub Pages alone.<br><br>
+    <span class="pill">github.com/amerhwitat</span> <span class="pill">Aurora Wayland Glass</span>
   </footer>
 </div>
 
 <script>
-const APPS = [
-  {group:"Research (nlp)", title:"Aurora Research Lab", tag:"NLP · Crypto Research", repo:"nlp + bruteforce", desc:"Unified research surface for verified NLP/OCR, transliteration, translation, provenance and safe cryptographic research.", path:"apps/chimera-ii-os/web/research-lab.html"},
-  {group:"Chimera II OS", title:"Chimera II OS Rocket Simulator", tag:"External simulator", repo:"Built with Rocket", desc:"External Chimera II OS simulator surface supplied by the project owner.", path:"https://chimeraiios-kukp34.public.builtwithrocket.new/chimera-ii-os-simulator"},
-  {group:"Chimera II OS", title:"OCR Studio", tag:"OCR · Translation", repo:"ChimeraIIOS",
-   desc:"Automatic image OCR, translation and script-aware transliteration in the browser.", path:"apps/chimera-ii-os/web/ocr-studio.html"},
-  {group:"Ancient Language Research", title:"Ancient Language Auto OCR", tag:"Ancient · OCR · NLP", repo:"nlp + ThamudicScan", desc:"Automatic image OCR with registered ancient-language detection and the complete documented NLP target-language catalog.", path:"apps/chimera-ii-os/web/ancient-ocr.html"},
-  {group:"Ancient Language Research", title:"Aurora ThamudicScan", tag:"Thamudic · OCR · NLP", repo:"amerhwitat/nlp",
-   desc:"Ancient North Arabian research scanner with OCR/media import, transliteration, translation, script reports, sessions, provenance, voice and exports.", path:"apps/chimera-ii-os/web/thamudicscan.html"},
-  {group:"Chimera II OS", title:"Aurora Network Engine", tag:"Networking", repo:"BizXtreme + Rocket",
-   desc:"Network Engine integration hub for Chimera II OS, BizXtreme NetworkUnified, P2P/presence and verified network test boundaries.", path:"apps/chimera-ii-os/web/network-engine.html"},
-  {group:"Wallet & Ecosystem", title:"Aurora Wallet & Ecosystem Center", tag:"Wallet · Crypto · AI", repo:"BizXtreme + bruteforce + ChimeraIIOS", desc:"Unified non-custodial wallet UI for watch-only research, transaction intents, policy approvals, AI assistance, game economy, P2P and safe cryptographic research.", path:"apps/chimera-ii-os/web/wallet-center.html"},
-  {group:"BizX & BizXtreme", title:"BizXtreme Unified Platform", tag:"Game · Network · AI", repo:"BizXtreme",
-   desc:"Unified BizXtreme surface for NetworkUnified, P2P/multiplayer, game engine, business simulation, assets, crypto interfaces, AI, rendering and mobile adapters.", path:"https://github.com/amerhwitat/BizXtreme"},
-  {group:"Chimera II OS", title:"Aurora Artifact Library", tag:"Library", repo:"ChimeraIIOS",
-   desc:"Unified browser catalog for repository artwork, documentation, Init.mp4 and lawful internet media sources.", path:"apps/chimera-ii-os/web/artifact-library.html"},
-  {group:"Chimera II OS", title:"Chimera II OS — Home", tag:"Aurora Wayland Glass", repo:"ChimeraIIOS",
-   desc:"Architecture explorer for the Chimera II machine, kernel, I/O, graphics and 128D research layers.",
-   path:"apps/chimera-ii-os/web/index.html"},
-  {group:"Chimera II OS", title:"Aurora 3D Desktop", tag:"Desktop", repo:"ChimeraIIOS",
-   desc:"WebGL/Three.js Aurora desktop with glass shell, app launcher and 3D surfaces.",
-   path:"apps/chimera-ii-os/web/aurora_3d_desktop.html"},
-  {group:"Chimera II OS", title:"Chimera Code IDE", tag:"Developer", repo:"ChimeraIIOS",
-   desc:"Browser code IDE surface for the Chimera toolchain.", path:"apps/chimera-ii-os/web/chimera_code_ide.html"},
-  {group:"Chimera II OS", title:"Aurora Terminal", tag:"Terminal", repo:"ChimeraIIOS",
-   desc:"Aurora CLI terminal for the simulated runtime.", path:"apps/chimera-ii-os/web/aurora_terminal.html"},
-  {group:"Chimera II OS", title:"System Control Center", tag:"Control", repo:"ChimeraIIOS",
-   desc:"Central control surface for system, services and settings.", path:"apps/chimera-ii-os/web/system_control_center.html"},
-  {group:"Chimera II OS", title:"Desktop Profiles", tag:"Desktop", repo:"ChimeraIIOS",
-   desc:"Switch between Aurora desktop profiles and layouts.", path:"apps/chimera-ii-os/web/desktop_switcher.html"},
-  {group:"Chimera II OS", title:"MAME Arcade Center", tag:"MAME · WebAssembly · Controls", repo:"MAME + Aurora", desc:"Dynamic MAME frontend with local ROM selection, control mapping, save-state adapter, game database and fullscreen runtime.", path:"apps/chimera-ii-os/web/mame-center.html"},
-  {group:"BizX & BizXtreme", title:"Complete Game Center", tag:"Games · Saves · Controls", repo:"BizXtreme", desc:"Dynamic BizXtreme game database, T-Rex, cards, storylines, events, progression and local save/export controls.", path:"apps/chimera-ii-os/web/game-center.html"},
-  {group:"Chimera II OS", title:"Retro Emulators", tag:"Emulation", repo:"ChimeraIIOS",
-   desc:"Retro emulator launcher for the Chimera desktop.", path:"apps/chimera-ii-os/web/retro_emulators.html"},
-  {group:"Chimera II OS", title:"Installer Manager", tag:"Packages", repo:"ChimeraIIOS",
-   desc:"Package and installer manager UI.", path:"apps/chimera-ii-os/web/installer_manager.html"},
-  {group:"Chimera II OS", title:"Network Monitor", tag:"Telemetry", repo:"ChimeraIIOS",
-   desc:"Observability dashboard for network/runtime telemetry.", path:"apps/chimera-ii-os/web/network_monitor.html"},
-  {group:"Chimera II OS", title:"Crash Center", tag:"Diagnostics", repo:"ChimeraIIOS",
-   desc:"Crash and diagnostics reporting surface.", path:"apps/chimera-ii-os/web/crash_center.html"},
-  {group:"Chimera II OS", title:"Health", tag:"Diagnostics", repo:"ChimeraIIOS",
-   desc:"System health dashboard.", path:"apps/chimera-ii-os/web/health.html"},
-  {group:"Chimera II OS", title:"Research OS", tag:"Research", repo:"ChimeraIIOS",
-   desc:"Research OS publication and library archive view.", path:"apps/chimera-ii-os/web/research-os.html"},
-  {group:"Chimera II OS", title:"Linux Command Console", tag:"Terminal", repo:"ChimeraIIOS webui",
-   desc:"Sandboxed Linux/POSIX command console UI.", path:"apps/chimera-ii-os/webui/linux-command-console.html"},
+const APPS = [{"group": "Research (nlp)", "title": "Aurora Research Lab", "tag": "NLP · Crypto Research", "repo": "nlp + bruteforce", "desc": "Unified research surface for verified NLP/OCR, transliteration, translation, provenance and safe cryptographic research.", "path": "apps/chimera-ii-os/web/research-lab.html"}, {"group": "Chimera II OS", "title": "Chimera II OS Rocket Simulator", "tag": "External simulator", "repo": "Built with Rocket", "desc": "External Chimera II OS simulator surface supplied by the project owner.", "path": "https://chimeraiios-kukp34.public.builtwithrocket.new/chimera-ii-os-simulator"}, {"group": "Chimera II OS", "title": "OCR Studio", "tag": "OCR · Translation", "repo": "ChimeraIIOS", "desc": "Automatic image OCR, translation and script-aware transliteration in the browser.", "path": "apps/chimera-ii-os/web/ocr-studio.html"}, {"group": "Ancient Language Research", "title": "Ancient Language Auto OCR", "tag": "Ancient · OCR · NLP", "repo": "nlp + ThamudicScan", "desc": "Automatic image OCR with registered ancient-language detection and the complete documented NLP target-language catalog.", "path": "apps/chimera-ii-os/web/ancient-ocr.html"}, {"group": "Ancient Language Research", "title": "Aurora ThamudicScan", "tag": "Thamudic · OCR · NLP", "repo": "amerhwitat/nlp", "desc": "Ancient North Arabian research scanner with OCR/media import, transliteration, translation, script reports, sessions, provenance, voice and exports.", "path": "apps/chimera-ii-os/web/thamudicscan.html"}, {"group": "Chimera II OS", "title": "Aurora Network Engine", "tag": "Networking", "repo": "BizXtreme + Rocket", "desc": "Network Engine integration hub for Chimera II OS, BizXtreme NetworkUnified, P2P/presence and verified network test boundaries.", "path": "apps/chimera-ii-os/web/network-engine.html"}, {"group": "Wallet & Ecosystem", "title": "Aurora Wallet & Ecosystem Center", "tag": "Wallet · Crypto · AI", "repo": "BizXtreme + bruteforce + ChimeraIIOS", "desc": "Unified non-custodial wallet UI for watch-only research, transaction intents, policy approvals, AI assistance, game economy, P2P and safe cryptographic research.", "path": "apps/chimera-ii-os/web/wallet-center.html"}, {"group": "BizX & BizXtreme", "title": "BizXtreme Unified Platform", "tag": "Game · Network · AI", "repo": "BizXtreme", "desc": "Unified BizXtreme surface for NetworkUnified, P2P/multiplayer, game engine, business simulation, assets, crypto interfaces, AI, rendering and mobile adapters.", "path": "https://github.com/amerhwitat/BizXtreme"}, {"group": "Chimera II OS", "title": "Aurora Artifact Library", "tag": "Library", "repo": "ChimeraIIOS", "desc": "Unified browser catalog for repository artwork, documentation, Init.mp4 and lawful internet media sources.", "path": "apps/chimera-ii-os/web/artifact-library.html"}, {"group": "Chimera II OS", "title": "Chimera II OS — Home", "tag": "Aurora Wayland Glass", "repo": "ChimeraIIOS", "desc": "Architecture explorer for the Chimera II machine, kernel, I/O, graphics and 128D research layers.", "path": "apps/chimera-ii-os/web/index.html"}, {"group": "Chimera II OS", "title": "Aurora 3D Desktop", "tag": "Desktop", "repo": "ChimeraIIOS", "desc": "WebGL/Three.js Aurora desktop with glass shell, app launcher and 3D surfaces.", "path": "apps/chimera-ii-os/web/aurora_3d_desktop.html"}, {"group": "Chimera II OS", "title": "Chimera Code IDE", "tag": "Developer", "repo": "ChimeraIIOS", "desc": "Browser code IDE surface for the Chimera toolchain.", "path": "apps/chimera-ii-os/web/chimera_code_ide.html"}, {"group": "Chimera II OS", "title": "Aurora Terminal", "tag": "Terminal", "repo": "ChimeraIIOS", "desc": "Aurora CLI terminal for the simulated runtime.", "path": "apps/chimera-ii-os/web/aurora_terminal.html"}, {"group": "Chimera II OS", "title": "System Control Center", "tag": "Control", "repo": "ChimeraIIOS", "desc": "Central control surface for system, services and settings.", "path": "apps/chimera-ii-os/web/system_control_center.html"}, {"group": "Chimera II OS", "title": "Desktop Profiles", "tag": "Desktop", "repo": "ChimeraIIOS", "desc": "Switch between Aurora desktop profiles and layouts.", "path": "apps/chimera-ii-os/web/desktop_switcher.html"}, {"group": "Chimera II OS", "title": "MAME Arcade Center", "tag": "MAME · WebAssembly · Controls", "repo": "MAME + Aurora", "desc": "Dynamic MAME frontend with local ROM selection, control mapping, save-state adapter, game database and fullscreen runtime.", "path": "apps/chimera-ii-os/web/mame-center.html"}, {"group": "BizX & BizXtreme", "title": "Complete Game Center", "tag": "Games · Saves · Controls", "repo": "BizXtreme", "desc": "Dynamic BizXtreme game database, T-Rex, cards, storylines, events, progression and local save/export controls.", "path": "apps/chimera-ii-os/web/game-center.html"}, {"group": "Chimera II OS", "title": "Retro Emulators", "tag": "Emulation", "repo": "ChimeraIIOS", "desc": "Retro emulator launcher for the Chimera desktop.", "path": "apps/chimera-ii-os/web/retro_emulators.html"}, {"group": "Chimera II OS", "title": "Installer Manager", "tag": "Packages", "repo": "ChimeraIIOS", "desc": "Package and installer manager UI.", "path": "apps/chimera-ii-os/web/installer_manager.html"}, {"group": "Chimera II OS", "title": "Network Monitor", "tag": "Telemetry", "repo": "ChimeraIIOS", "desc": "Observability dashboard for network/runtime telemetry.", "path": "apps/chimera-ii-os/web/network_monitor.html"}, {"group": "Chimera II OS", "title": "Crash Center", "tag": "Diagnostics", "repo": "ChimeraIIOS", "desc": "Crash and diagnostics reporting surface.", "path": "apps/chimera-ii-os/web/crash_center.html"}, {"group": "Chimera II OS", "title": "Health", "tag": "Diagnostics", "repo": "ChimeraIIOS", "desc": "System health dashboard.", "path": "apps/chimera-ii-os/web/health.html"}, {"group": "Chimera II OS", "title": "Research OS", "tag": "Research", "repo": "ChimeraIIOS", "desc": "Research OS publication and library archive view.", "path": "apps/chimera-ii-os/web/research-os.html"}, {"group": "Chimera II OS", "title": "Linux Command Console", "tag": "Terminal", "repo": "ChimeraIIOS webui", "desc": "Sandboxed Linux/POSIX command console UI.", "path": "apps/chimera-ii-os/webui/linux-command-console.html"}, {"group": "CPU4096", "title": "CPU4096 Simulator — Aurora Web Desktop", "tag": "Simulator", "repo": "CPU4096Simulator", "desc": "4096-bit / 8192-bit CPU simulator with ISA catalog, runtime, keygen and command console.", "path": "apps/cpu4096-simulator/public/index.html", "sub": [{"t": "Code IDE", "p": "apps/cpu4096-simulator/public/chimera_code_ide.html"}, {"t": "Control Center", "p": "apps/cpu4096-simulator/public/system_control_center.html"}, {"t": "Installer", "p": "apps/cpu4096-simulator/public/installer_manager.html"}, {"t": "Retro Emulators", "p": "apps/cpu4096-simulator/public/retro_emulators.html"}, {"t": "Desktop Profiles", "p": "apps/cpu4096-simulator/public/desktop_switcher.html"}]}, {"group": "CPU4096", "title": "CPU4096 Visualizer", "tag": "Simulator", "repo": "CPU4096", "desc": "Browser visualizer for the 4096-bit CPU register model.", "path": "apps/cpu4096/web/javascript/index.html"}, {"group": "BizX & BizXtreme", "title": "BizX Asset Browser", "tag": "Game assets", "repo": "BizX", "desc": "Search and import openly licensed images, audio, HDRI and textures.", "path": "apps/bizx-asset-browser/index.html"}, {"group": "BizX & BizXtreme", "title": "BizXtreme 3D", "tag": "Game", "repo": "BizXtreme", "desc": "Three.js 3D game/asset viewer for the BizXtreme project.", "path": "apps/bizxtreme-3d/index.html"}, {"group": "Research (nlp)", "title": "Thamudic Scanner", "tag": "Research", "repo": "nlp", "desc": "React UI for the Thamudic / Ancient North Arabian research scanner.", "path": "apps/thamudic-scanner/index.html"}, {"group": "Research (nlp)", "title": "Thamudic Epi Platform", "tag": "Research", "repo": "nlp", "desc": "React/TS platform UI for Thamudic epigraphic research.", "path": "apps/thamudic-epi/index.html"}, {"group": "Research (nlp)", "title": "Amiga Emulator", "tag": "Emulation", "repo": "nlp", "desc": "Browser adapter/UI for the Amiga emulator integration.", "path": "apps/nlp-amiga/index.html"}, {"group": "Studio & Tools", "title": "Chimera 3D/4D Studio", "tag": "Graphics", "repo": "general", "desc": "PlayCanvas-based 3D/4D modelling and VFX studio UI.", "path": "apps/chimera-3d4d/index.html"}, {"group": "Studio & Tools", "title": "SEO Tool", "tag": "Web tool", "repo": "general", "desc": "Technical SEO scanner + authorized deep-web research UI.", "path": "apps/seo-tool/index.html"}, {"group": "Studio & Tools", "title": "Aurora Mobile", "tag": "Mobile", "repo": "general", "desc": "Aurora Wayland Glass mobile shell UI.", "path": "apps/aurora-mobile/index.html", "sub": [{"t": "App Store", "p": "apps/aurora-mobile/store/index.html"}]}, {"group": "Studio & Tools", "title": "Agent Research Forge", "tag": "AI", "repo": "general", "desc": "UI for researching public sources and generating reviewed project artifacts.", "path": "apps/agent-research-forge/index.html"}, {"group": "More", "title": "Chimera Test Suite", "tag": "Aurora", "repo": "test", "desc": "Aurora 3D desktop + shell test application.", "path": "apps/chimera-test-suite/index.html", "sub": [{"t": "3D Desktop", "p": "apps/chimera-test-suite/aurora_3d_desktop.html"}]}, {"group": "More", "title": "PDF Reader", "tag": "Utility", "repo": "PDFreaderPY", "desc": "Local in-browser PDF handling UI.", "path": "apps/pdf-reader/index.html"}, {"group": "Published Pages", "title": "Chimera Pages", "tag": "Site", "repo": "amerhwitat.github.io", "desc": "Existing published Chimera landing page.", "path": "apps/chimera-pages/index.html"}, {"group": "Published Pages", "title": "Thamudic Pages", "tag": "Site", "repo": "amerhwitat.github.io", "desc": "Existing published Thamudic landing page.", "path": "apps/thamudic-pages/index.html"}, {"group": "Chimera II OS", "title": "Aurora WebGL Desktops", "tag": "Desktop", "repo": "ChimeraIIOS", "desc": "Multiple Aurora WebGL desktop surfaces with glass shells and switching.", "path": "apps/chimera-ii-os/web/aurora_webgl_desktops.html"}, {"group": "Chimera II OS", "title": "Network Console", "tag": "Networking", "repo": "ChimeraIIOS", "desc": "Network console for the simulated Chimera stack.", "path": "apps/chimera-ii-os/web/network.html"}, {"group": "Chimera II OS", "title": "Chimera PDF Reader", "tag": "Utility", "repo": "ChimeraIIOS", "desc": "In-desktop PDF reader surface for the Aurora shell.", "path": "apps/chimera-ii-os/web/pdf-reader.html"}, {"group": "Chimera II OS", "title": "PlayStation Emulators", "tag": "Emulation", "repo": "ChimeraIIOS", "desc": "PlayStation emulator launcher and configuration surface.", "path": "apps/chimera-ii-os/web/playstation_emulators.html"}, {"group": "Chimera II OS", "title": "Portfolio", "tag": "Landing", "repo": "ChimeraIIOS", "desc": "Portfolio landing page shipped with the Chimera II web desktop.", "path": "apps/chimera-ii-os/web/portfolio.html"}, {"group": "Research Platform", "title": "NLP Studio", "tag": "NLP", "repo": "nlp", "desc": "NLP studio workspace for corpus loading, annotation and model runs.", "path": "apps/nlp-studio/index.html"}, {"group": "Research Platform", "title": "NLP Artifacts", "tag": "Registry", "repo": "nlp", "desc": "Artifact viewer for generated NLP research outputs.", "path": "apps/nlp-artifacts/index.html"}, {"group": "CPU4096", "title": "CPU4096 Aurora Shell", "tag": "Simulator", "repo": "CPU4096Simulator", "desc": "Full Aurora shell build for the 4096-bit CPU simulator (desktop, IDE, installer, emulators).", "path": "apps/cpu4096-aurora/index.html"}, {"group": "BizX", "title": "BizX Network GUI", "tag": "Networking", "repo": "BizX", "desc": "NetworkUnified GUI for the BizX platform.", "path": "apps/bizx-network/index.html"}, {"group": "BizXtreme", "title": "BizXtreme Network GUI", "tag": "Networking", "repo": "BizXtreme", "desc": "NetworkUnified GUI for the BizXtreme platform.", "path": "apps/bizxtreme-network/index.html"}];
+const REPOS = [{"title": "ChimeraIIOS", "tag": "Operating system", "desc": "Operating-system, CPU, multidimensional computing and systems research.", "url": "https://github.com/amerhwitat/ChimeraIIOS", "app": "apps/chimera-ii-os/web/index.html"}, {"title": "ChimeraIIOS Rocket UI", "tag": "External live UI", "desc": "Rocket-built Chimera II OS interface. Linked as an external live surface and source reference.", "url": "https://chimeraiios-ruw578.app.builtwithrocket.new", "live": "https://chimeraiios-ruw578.app.builtwithrocket.new"}, {"title": "CPU4096", "tag": "CPU research", "desc": "4096-bit CPU research and register model.", "url": "https://github.com/amerhwitat/CPU4096", "app": "apps/cpu4096/web/javascript/index.html"}, {"title": "CPU4096Simulator", "tag": "Simulator", "desc": "4096/8192-bit CPU simulator, ISA catalog and runtime.", "url": "https://github.com/amerhwitat/CPU4096Simulator", "app": "apps/cpu4096-simulator/public/index.html"}, {"title": "BizX / BizXtreme", "tag": "Platform", "desc": "BizX components are maintained inside the BizXtreme repository; includes game, network, crypto, asset and multilingual adapters.", "url": "https://github.com/amerhwitat/BizXtreme", "app": "apps/bizx-asset-browser/index.html"}, {"title": "BizXtreme", "tag": "Platform", "desc": "Extended game, graphics, networking and crypto application platform.", "url": "https://github.com/amerhwitat/BizXtreme", "app": "apps/bizxtreme-3d/index.html"}, {"title": "general", "tag": "Portfolio", "desc": "Portfolio-wide applications, tools and integrations.", "url": "https://github.com/amerhwitat/general", "app": "apps/chimera-3d4d/index.html"}, {"title": "nlp", "tag": "Research", "desc": "Natural-language processing and Thamudic epigraphic research.", "url": "https://github.com/amerhwitat/nlp", "app": "apps/thamudic-scanner/index.html"}, {"title": "bruteforce", "tag": "Safe crypto research", "desc": "Cryptographic research, hashing, validation, benchmarks and isolated test workflows.", "url": "https://github.com/amerhwitat/bruteforce", "app": "apps/chimera-ii-os/web/research-lab.html"}, {"title": "PDFreaderPY", "tag": "Utility", "desc": "PDF research and local document tooling.", "url": "https://github.com/amerhwitat/PDFreaderPY", "app": "apps/pdf-reader/index.html"}, {"title": "test", "tag": "Test suite", "desc": "Development and test projects.", "url": "https://github.com/amerhwitat/test", "app": "apps/chimera-test-suite/index.html"}, {"title": "keygen", "tag": "Crypto research", "desc": "Key-generation research scripts.", "url": "https://github.com/amerhwitat/keygen"}, {"title": "eth-key-check", "tag": "Crypto research", "desc": "Ethereum key-check research scripts.", "url": "https://github.com/amerhwitat/eth-key-check"}, {"title": "amerhwitat.github.io", "tag": "Site source", "desc": "Source of this portal and the published pages.", "url": "https://github.com/amerhwitat/amerhwitat.github.io"}];
 
-  {group:"CPU4096", title:"CPU4096 Simulator — Aurora Web Desktop", tag:"Simulator", repo:"CPU4096Simulator",
-   desc:"4096-bit / 8192-bit CPU simulator with ISA catalog, runtime, keygen and command console.",
-   path:"apps/cpu4096-simulator/public/index.html",
-   sub:[["Code IDE","apps/cpu4096-simulator/public/chimera_code_ide.html"],["Control Center","apps/cpu4096-simulator/public/system_control_center.html"],["Installer","apps/cpu4096-simulator/public/installer_manager.html"],["Retro Emulators","apps/cpu4096-simulator/public/retro_emulators.html"],["Desktop Profiles","apps/cpu4096-simulator/public/desktop_switcher.html"]]},
-  {group:"CPU4096", title:"CPU4096 Visualizer", tag:"Simulator", repo:"CPU4096",
-   desc:"Browser visualizer for the 4096-bit CPU register model.", path:"apps/cpu4096/web/javascript/index.html"},
+const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const root = document.getElementById('root');
+const empty = document.getElementById('empty');
 
-  {group:"BizX & BizXtreme", title:"BizX Asset Browser", tag:"Game assets", repo:"BizX",
-   desc:"Search and import openly licensed images, audio, HDRI and textures.", path:"apps/bizx-asset-browser/index.html"},
-  {group:"BizX & BizXtreme", title:"BizXtreme 3D", tag:"Game", repo:"BizXtreme",
-   desc:"Three.js 3D game/asset viewer for the BizXtreme project.", path:"apps/bizxtreme-3d/index.html"},
-
-  {group:"Research (nlp)", title:"Thamudic Scanner", tag:"Research", repo:"nlp",
-   desc:"React UI for the Thamudic / Ancient North Arabian research scanner.", path:"apps/thamudic-scanner/index.html"},
-  {group:"Research (nlp)", title:"Thamudic Epi Platform", tag:"Research", repo:"nlp",
-   desc:"React/TS platform UI for Thamudic epigraphic research.", path:"apps/thamudic-epi/index.html"},
-  {group:"Research (nlp)", title:"Amiga Emulator", tag:"Emulation", repo:"nlp",
-   desc:"Browser adapter/UI for the Amiga emulator integration.", path:"apps/nlp-amiga/index.html"},
-
-  {group:"Studio & Tools", title:"Chimera 3D/4D Studio", tag:"Graphics", repo:"general",
-   desc:"PlayCanvas-based 3D/4D modelling and VFX studio UI.", path:"apps/chimera-3d4d/index.html"},
-  {group:"Studio & Tools", title:"SEO Tool", tag:"Web tool", repo:"general",
-   desc:"Technical SEO scanner + authorized deep-web research UI.", path:"apps/seo-tool/index.html"},
-  {group:"Studio & Tools", title:"Aurora Mobile", tag:"Mobile", repo:"general",
-   desc:"Aurora Wayland Glass mobile shell UI.", path:"apps/aurora-mobile/index.html",
-   sub:[["App Store","apps/aurora-mobile/store/index.html"]]},
-  {group:"Studio & Tools", title:"Agent Research Forge", tag:"AI", repo:"general",
-   desc:"UI for researching public sources and generating reviewed project artifacts.", path:"apps/agent-research-forge/index.html"},
-
-  {group:"More", title:"Chimera Test Suite", tag:"Aurora", repo:"test",
-   desc:"Aurora 3D desktop + shell test application.", path:"apps/chimera-test-suite/index.html",
-   sub:[["3D Desktop","apps/chimera-test-suite/aurora_3d_desktop.html"]]},
-  {group:"More", title:"PDF Reader", tag:"Utility", repo:"PDFreaderPY",
-   desc:"Local in-browser PDF handling UI.", path:"apps/pdf-reader/index.html"},
-
-  {group:"Published Pages", title:"Chimera Pages", tag:"Site", repo:"amerhwitat.github.io",
-   desc:"Existing published Chimera landing page.", path:"apps/chimera-pages/index.html"},
-  {group:"Published Pages", title:"Thamudic Pages", tag:"Site", repo:"amerhwitat.github.io",
-   desc:"Existing published Thamudic landing page.", path:"apps/thamudic-pages/index.html"}
-];
-
-const root=document.getElementById('root');
-const auroraWall=document.getElementById('auroraWallGrid');
-function renderAuroraWall(){
-  if(!auroraWall || typeof APPS==='undefined') return;
-  const featured=APPS.filter(a=>/Chimera II OS|BizX|Research|Published Pages/.test(a.group)).slice(0,60);
-  auroraWall.innerHTML=featured.map(a=>'<a href="'+esc(a.path)+'" title="'+esc(a.desc)+'">'+esc(a.title)+'</a>').join('');
+/* ---------------- apps ---------------- */
+function render(term){
+  term = (term || '').trim().toLowerCase();
+  const groups = [...new Set(APPS.map(a => a.group))];
+  let shown = 0, html = '';
+  for (const g of groups){
+    const items = APPS.filter(a => a.group === g && (!term || (a.title + a.desc + a.tag + a.repo).toLowerCase().includes(term)));
+    if (!items.length) continue;
+    shown += items.length;
+    html += `<h2 class="group">${esc(g)} <span class="pill">${items.length}</span></h2><div class="grid">` +
+      items.map(a => `<article class="card">
+        <span class="tagline">${esc(a.tag)}</span>
+        <h3>${esc(a.title)}</h3>
+        <p>${esc(a.desc)}</p>
+        ${a.sub && a.sub.length ? `<div class="sub">${a.sub.map(s => `<a href="${s.p}">${esc(s.t)}</a>`).join('')}</div>` : ''}
+        <span class="repo">${esc(a.repo)}</span>
+        <a class="go" href="${a.path}">Open app →</a>
+      </article>`).join('') + '</div>';
+  }
+  root.innerHTML = html;
+  empty.style.display = shown ? 'none' : 'block';
+  document.getElementById('appcount').textContent = APPS.length;
+  document.getElementById('appcountpill').textContent = APPS.length + ' apps';
+  renderRepos(term);
+  renderPages(term);
 }
 
-const q=document.getElementById('q');
-const empty=document.getElementById('empty');
-document.getElementById('appcount').textContent=APPS.length; document.getElementById('heroApps').textContent=APPS.length;
-const REPOS = [
- {title:"ChimeraIIOS", tag:"Operating system", desc:"Operating-system, CPU, multidimensional computing and systems research.", url:"https://github.com/amerhwitat/ChimeraIIOS", app:"apps/chimera-ii-os/web/index.html"},
- {title:"ChimeraIIOS Rocket UI", tag:"External live UI", desc:"Rocket-built Chimera II OS interface. Linked as an external live surface and source reference.", url:"https://chimeraiios-ruw578.app.builtwithrocket.new", live:"https://chimeraiios-ruw578.app.builtwithrocket.new"},
- {title:"CPU4096", tag:"CPU research", desc:"4096-bit CPU research and register model.", url:"https://github.com/amerhwitat/CPU4096", app:"apps/cpu4096/web/javascript/index.html"},
- {title:"CPU4096Simulator", tag:"Simulator", desc:"4096/8192-bit CPU simulator, ISA catalog and runtime.", url:"https://github.com/amerhwitat/CPU4096Simulator", app:"apps/cpu4096-simulator/public/index.html"},
- {title:"BizX / BizXtreme", tag:"Platform", desc:"BizX components are maintained inside the BizXtreme repository; includes game, network, crypto, asset and multilingual adapters.", url:"https://github.com/amerhwitat/BizXtreme", app:"apps/bizx-asset-browser/index.html"},
- {title:"BizXtreme", tag:"Platform", desc:"Extended game, graphics, networking and crypto application platform.", url:"https://github.com/amerhwitat/BizXtreme", app:"apps/bizxtreme-3d/index.html"},
- {title:"general", tag:"Portfolio", desc:"Portfolio-wide applications, tools and integrations.", url:"https://github.com/amerhwitat/general", app:"apps/chimera-3d4d/index.html"},
- {title:"nlp", tag:"Research", desc:"Natural-language processing and Thamudic epigraphic research.", url:"https://github.com/amerhwitat/nlp", app:"apps/thamudic-scanner/index.html"},
- {title:"bruteforce", tag:"Safe crypto research", desc:"Cryptographic research, hashing, validation, benchmarks and isolated test workflows.", url:"https://github.com/amerhwitat/bruteforce", app:"apps/chimera-ii-os/web/research-lab.html"},
- {title:"PDFreaderPY", tag:"Utility", desc:"PDF research and local document tooling.", url:"https://github.com/amerhwitat/PDFreaderPY", app:"apps/pdf-reader/index.html"},
- {title:"test", tag:"Test suite", desc:"Development and test projects.", url:"https://github.com/amerhwitat/test", app:"apps/chimera-test-suite/index.html"},
- {title:"keygen", tag:"Crypto research", desc:"Key-generation research scripts.", url:"https://github.com/amerhwitat/keygen"},
- {title:"eth-key-check", tag:"Crypto research", desc:"Ethereum key-check research scripts.", url:"https://github.com/amerhwitat/eth-key-check"},
-,
- {title:"amerhwitat.github.io", tag:"Site source", desc:"Source of this portal and the published pages.", url:"https://github.com/amerhwitat/amerhwitat.github.io"}
-];
-const reposEl=document.getElementById('repos');
-const reposSection=document.getElementById('reposSection');
+/* ---------------- repositories ---------------- */
+const reposGrid = document.getElementById('reposgrid');
 function renderRepos(term){
-  const items=REPOS.filter(r=>!term || (r.title+r.desc+r.tag).toLowerCase().includes(term));
-  reposSection.style.display=items.length?'':'none';
-  reposEl.innerHTML=items.map(r=>`<article class="card">
+  const items = REPOS.filter(r => !term || (r.title + r.desc + r.tag).toLowerCase().includes(term));
+  reposGrid.innerHTML = items.map(r => `<article class="card">
     <span class="tagline">${esc(r.tag)}</span>
     <h3>${esc(r.title)}</h3>
     <p>${esc(r.desc)}</p>
-    ${(r.app||r.live)?`<div class="sub">${r.app?`<a href="${r.app}">In-site app</a>`:''}${r.live?`<a href="${r.live}" target="_blank" rel="noopener">Live demo</a>`:''}</div>`:''}
+    ${(r.app || r.live) ? `<div class="sub">${r.app ? `<a href="${r.app}">In-site app</a>` : ''}${r.live ? `<a href="${r.live}" target="_blank" rel="noopener">Live demo</a>` : ''}</div>` : ''}
     <a class="go" href="${r.url}" target="_blank" rel="noopener">View on GitHub →</a>
   </article>`).join('');
 }
 
-
-function esc(s){return s.replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
-
-function render(){
-  const term=q.value.trim().toLowerCase();
-  const groups=[...new Set(APPS.map(a=>a.group))];
-  let html='', shown=0;
-  for(const g of groups){
-    const items=APPS.filter(a=>a.group===g && (!term || (a.title+a.desc+a.tag+a.repo).toLowerCase().includes(term)));
-    if(!items.length) continue;
-    html+=`<h2 class="group">${esc(g)}</h2><div class="grid">`;
-    for(const a of items){
-      shown++;
-      const sub=(a.sub||[]).map(([t,p])=>`<a href="${p}">${esc(t)}</a>`).join('');
-      html+=`<article class="card">
-        <span class="tagline">${esc(a.tag)}</span>
-        <h3>${esc(a.title)}</h3>
-        <p>${esc(a.desc)}</p>
-        <span class="repo">${esc(a.repo)}</span>
-        ${sub?`<div class="sub">${sub}</div>`:''}
-        <a class="go" href="${a.path}">Open app →</a>
-      </article>`;
-    }
-    html+='</div>';
-  }
-  root.innerHTML=html;
-  empty.style.display=shown?'none':'block';
-  renderRepos(term);
-  renderPages(term);
-}
-let INDEX=[];
-fetch('search-index.json').then(r=>r.ok?r.json():null).then(d=>{ if(d&&d.pages) INDEX=d.pages; }).catch(()=>{});
-const pagesSection=document.getElementById('pagesSection');
-const pagesGrid=document.getElementById('pagesgrid');
-const pageHits=document.getElementById('pagehits');
-function hl(t,term){
-  const e=esc(term).replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
-  try{ return t.replace(new RegExp(e,'ig'),m=>`<mark>${m}</mark>`); }catch(_){ return t; }
+/* ---------------- full-text page search ---------------- */
+let INDEX = [];
+fetch('search-index.json').then(r => r.ok ? r.json() : null).then(d => { if (d && d.pages) INDEX = d.pages; }).catch(() => {});
+const pagesSection = document.getElementById('pages');
+const pagesGrid = document.getElementById('pagesgrid');
+const pageHits = document.getElementById('pagehits');
+function hl(t, term){
+  const e = esc(term).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  try { return t.replace(new RegExp(e, 'ig'), m => `<mark>${m}</mark>`); } catch (_) { return t; }
 }
 function renderPages(term){
-  if(!term || term.length<2 || !INDEX.length){ pagesSection.style.display='none'; return; }
-  const hits=[];
-  for(const e of INDEX){
-    const inT=e.t.toLowerCase().includes(term), inD=(e.d||'').toLowerCase().includes(term), inX=(e.x||'').toLowerCase().includes(term);
-    if(!inT && !inD && !inX) continue;
-    hits.push({e,score:(inT?100:0)+(inD?20:0)+(inX?5:0)});
+  if (!term || term.length < 2 || !INDEX.length){ pagesSection.style.display = 'none'; return; }
+  const hits = [];
+  for (const e of INDEX){
+    const inT = e.t.toLowerCase().includes(term), inD = (e.d || '').toLowerCase().includes(term), inX = (e.x || '').toLowerCase().includes(term);
+    if (!inT && !inD && !inX) continue;
+    hits.push({e, score: (inT ? 100 : 0) + (inD ? 20 : 0) + (inX ? 5 : 0)});
   }
-  if(!hits.length){ pagesSection.style.display='none'; return; }
-  hits.sort((a,b)=>b.score-a.score);
-  const top=hits.slice(0,24);
-  pagesSection.style.display='';
-  pageHits.innerHTML='<b>'+top.length+'</b> of '+hits.length+' page'+(hits.length>1?'s':'');
-  pagesGrid.innerHTML=top.map(({e})=>{
-    const src=e.d||e.x||'';
-    const i=src.toLowerCase().indexOf(term);
-    const snip=i<0? src.slice(0,180) : (i>60?'\u2026':'')+src.slice(Math.max(0,i-60),i+150);
+  if (!hits.length){ pagesSection.style.display = 'none'; return; }
+  hits.sort((a, b) => b.score - a.score);
+  const top = hits.slice(0, 24);
+  pagesSection.style.display = '';
+  pageHits.innerHTML = '<b>' + top.length + '</b> of ' + hits.length + ' page' + (hits.length > 1 ? 's' : '');
+  pagesGrid.innerHTML = top.map(({e}) => {
+    const src = e.d || e.x || '';
+    const i = src.toLowerCase().indexOf(term);
+    const snip = i < 0 ? src.slice(0, 180) : (i > 60 ? '…' : '') + src.slice(Math.max(0, i - 60), i + 150);
     return `<article class="card">
       <span class="tagline">${esc(e.g)}</span>
       <h3>${esc(e.t)}</h3>
-      <p class="snippet">${hl(esc(snip),term)}&hellip;</p>
+      <p class="snippet">${hl(esc(snip), term)}&hellip;</p>
       <span class="repo">${esc(e.p)}</span>
-      <a class="go" href="${e.p}">Open page \u2192</a>
+      <a class="go" href="${e.p}">Open page →</a>
     </article>`;
   }).join('');
 }
-q.addEventListener('input',render);
-renderAuroraWall();
-render();
+
+/* ---------------- desktop widgets ---------------- */
+const DAYS = ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
+function tick(){
+  const d = new Date();
+  const t = d.toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'});
+  document.getElementById('clock').textContent = t;
+  document.getElementById('clock2').textContent = t;
+  document.getElementById('date').textContent = d.toLocaleDateString([], {weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'});
+}
+tick(); setInterval(tick, 20000);
+(function calendar(){
+  const cal = document.getElementById('cal');
+  const now = new Date();
+  const first = new Date(now.getFullYear(), now.getMonth(), 1);
+  const offset = (first.getDay() + 6) % 7;      /* Monday-first */
+  const days = new Date(now.getFullYear(), now.getMonth() + 1, 0).getDate();
+  let out = DAYS.map(d => `<div>${d}</div>`).join('');
+  for (let i = 0; i < offset; i++) out += '<div></div>';
+  for (let d = 1; d <= days; d++) out += `<div class="d${d === now.getDate() ? ' now' : ''}">${d}</div>`;
+  cal.innerHTML = out;
+})();
+document.getElementById('pbtn').addEventListener('click', e => {
+  const on = e.target.textContent === '▶';
+  e.target.textContent = on ? '❚❚' : '▶';
+  document.getElementById('ptime').textContent = on ? '2:41 / 4:21' : '2:34 / 4:21';
+});
+function setDevice(mobile){
+  document.getElementById('dbody').classList.toggle('mobile', mobile);
+  document.getElementById('dev-desktop').classList.toggle('on', !mobile);
+  document.getElementById('dev-mobile').classList.toggle('on', mobile);
+}
+document.getElementById('dev-desktop').addEventListener('click', () => setDevice(false));
+document.getElementById('dev-mobile').addEventListener('click', () => setDevice(true));
+
+/* ---------------- language toggle ---------------- */
+let lang = 'en';
+document.getElementById('langbtn').addEventListener('click', () => {
+  lang = lang === 'en' ? 'ar' : 'en';
+  document.documentElement.lang = lang;
+  document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+  document.getElementById('langbtn').textContent = lang === 'en' ? 'AR' : 'EN';
+  document.querySelectorAll('.lang').forEach(el => { const v = el.dataset[lang]; if (v) el.textContent = v; });
+});
+
+/* ---------------- research workspace demo ---------------- */
+const drop = document.getElementById('drop'), file = document.getElementById('file'), result = document.getElementById('result');
+const FAMILIES = [
+  {name: 'Thamudic B', region: 'Wādī Rum', glyphs: '𐪀𐪁𐪑𐪃 𐪈𐪕𐪂', tr: 's-l-m · h-m-d', en: 'Peace · the praised one'},
+  {name: 'Safaitic', region: 'Ḥarrah basalt', glyphs: '𐪊𐪋𐪌 𐪃𐪄', tr: "b-ʿ-l · n-m-r", en: 'Lord · leopard'},
+  {name: 'Dadanitic', region: 'Al-ʿUlā', glyphs: '𐪝𐪞𐪟', tr: 'm-n-ʿ-t', en: 'dedication formula'},
+  {name: 'Hismaic', region: 'Wādī Ḥismā', glyphs: '𐪅𐪆𐪇 𐪈', tr: 'ʾ-s-d', en: 'lion · personal name'}
+];
+function analyse(label){
+  const f = FAMILIES[Math.abs([...String(label)].reduce((a, c) => a + c.charCodeAt(0), 0)) % FAMILIES.length];
+  result.textContent =
+    'Input          : ' + label + '\n' +
+    'Script family  : ' + f.name + ' (' + f.region + ')\n' +
+    'Segmentation   : 4 glyph clusters detected\n' +
+    'Transliteration: ' + f.tr + '\n' +
+    'Reading        : ' + f.en + '\n' +
+    'Reference      : OCIANA-style catalogue entry (interface demo — not a live OCR run)';
+}
+drop.addEventListener('click', () => file.click());
+['dragenter','dragover'].forEach(ev => drop.addEventListener(ev, e => { e.preventDefault(); drop.classList.add('hot'); }));
+['dragleave','drop'].forEach(ev => drop.addEventListener(ev, () => drop.classList.remove('hot')));
+drop.addEventListener('drop', e => { e.preventDefault(); const f = e.dataTransfer.files[0]; if (f) analyse(f.name); });
+document.getElementById('browse').addEventListener('click', e => { e.stopPropagation(); file.click(); });
+file.addEventListener('change', () => { if (file.files[0]) analyse(file.files[0].name); });
+document.querySelectorAll('.samples button').forEach(b => b.addEventListener('click', () => analyse(b.dataset.s)));
+
+/* ---------------- search wiring ---------------- */
+const q = document.getElementById('q');
+q.addEventListener('input', () => render(q.value));
+render('');
 </script>
-<script type="module">import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js';const c=document.getElementById('aurora3d');if(c){const s=new THREE.Scene(),cam=new THREE.PerspectiveCamera(45,1,.1,100),r=new THREE.WebGLRenderer({canvas:c,alpha:true,antialias:true});r.setPixelRatio(Math.min(devicePixelRatio,2));const g=new THREE.Group();s.add(g);g.add(new THREE.Mesh(new THREE.IcosahedronGeometry(1.8,2),new THREE.MeshStandardMaterial({color:0x5fd0ff,metalness:.7,roughness:.22,wireframe:true,transparent:true,opacity:.7})));const ring=new THREE.Mesh(new THREE.TorusGeometry(2.35,.012,8,160),new THREE.MeshBasicMaterial({color:0x7d8cff,transparent:true,opacity:.55}));ring.rotation.x=.9;g.add(ring);s.add(new THREE.AmbientLight(0x9ecfff,1.4));const l=new THREE.PointLight(0x5fd0ff,20,20);l.position.set(3,3,5);s.add(l);function z(){const b=c.getBoundingClientRect();r.setSize(b.width,b.height,false);cam.aspect=b.width/b.height;cam.updateProjectionMatrix()}addEventListener('resize',z);z();cam.position.z=6.5;function f(t){g.rotation.y=t*.00018;ring.rotation.z=t*.00012;r.render(s,cam);requestAnimationFrame(f)}requestAnimationFrame(f)}</script></body>
+</body>
 </html>

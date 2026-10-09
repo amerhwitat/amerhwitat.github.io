@@ -1,0 +1,22 @@
+{
+  "schema":"chimera-desktop-profiles/v1",
+  "default":"aurora-native",
+  "profiles":[
+    {"id":"aurora-native","title":"Aurora Wayland Glass","family":"Aurora","mode":"native-or-web"},
+    {"id":"linux-gnome","title":"Ubuntu / GNOME","family":"Linux","mode":"session-adapter"},
+    {"id":"linux-kde-plasma","title":"KDE Plasma","family":"Linux","mode":"session-adapter"},
+    {"id":"linux-xfce","title":"Xfce","family":"Linux","mode":"session-adapter"},
+    {"id":"linux-cinnamon","title":"Cinnamon","family":"Linux","mode":"session-adapter"},
+    {"id":"linux-mate","title":"MATE","family":"Linux","mode":"session-adapter"},
+    {"id":"linux-lxqt","title":"LXQt / LXDE","family":"Linux","mode":"session-adapter"},
+    {"id":"linux-budgie","title":"Budgie","family":"Linux","mode":"session-adapter"},
+    {"id":"linux-pantheon","title":"Pantheon","family":"Linux","mode":"session-adapter"},
+    {"id":"linux-deepin","title":"Deepin","family":"Linux","mode":"session-adapter"},
+    {"id":"linux-enlightenment","title":"Enlightenment","family":"Linux","mode":"session-adapter"},
+    {"id":"linux-cosmic","title":"COSMIC","family":"Linux","mode":"session-adapter"},
+    {"id":"windows-11","title":"Windows 11 UI","family":"Windows","mode":"web-profile-or-vm"},
+    {"id":"windows-10","title":"Windows 10 UI","family":"Windows","mode":"web-profile-or-vm"},
+    {"id":"windows-classic","title":"Classic Windows UI","family":"Windows","mode":"web-profile-or-vm"},
+    {"id":"retro-desktop","title":"Retro Computer Desktop","family":"Retro","mode":"emulator-shell"}
+  ]
+}
