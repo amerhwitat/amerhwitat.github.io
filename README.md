@@ -1,5 +1,7 @@
 # Amer Hwitat — Public Research Web
 
+[![GitHub Pages deployment](https://github.com/amerhwitat/amerhwitat.github.io/actions/workflows/pages.yml/badge.svg?branch=main)](https://github.com/amerhwitat/amerhwitat.github.io/actions/workflows/pages.yml) [![Static hub validation](https://github.com/amerhwitat/amerhwitat.github.io/actions/workflows/site-catalog-check.yml/badge.svg?branch=main)](https://github.com/amerhwitat/amerhwitat.github.io/actions/workflows/site-catalog-check.yml)
+
 This repository hosts the public web surface for Amer Hwitat's open research projects, including the Chimera II OS ecosystem.
 
 ## Complete source-code citation index
