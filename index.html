@@ -256,7 +256,7 @@ footer{border-top:1px solid var(--stroke);margin-top:46px;padding:26px 0 44px;co
         <div class="drop" id="drop">
           <b>Drop inscription image</b>
           <p>Supports JPEG, PNG, TIFF, WebP (max 50 MB). Script detection, glyph segmentation and character-by-character transliteration.</p>
-          <input type="file" id="file" accept="image/*" hidden>
+          <input type="file" id="file" accept="image/*" capture="environment" hidden>
           <span class="btn" id="browse">Browse files</span>
         </div>
         <div class="samples">
@@ -264,8 +264,11 @@ footer{border-top:1px solid var(--stroke);margin-top:46px;padding:26px 0 44px;co
           <button data-s="Safaitic — Ḥarrah basalt">Safaitic · Ḥarrah basalt</button>
           <button data-s="Dadanitic — Al-ʿUlā">Dadanitic · Al-ʿUlā</button>
           <button data-s="Hismaic — Wādī Ḥismā">Hismaic · Wādī Ḥismā</button>
+          <button data-s="Taymanitic — Taymāʾ oasis">Taymanitic · Taymāʾ</button>
         </div>
-        <div id="result">Runs client-side as an interface demo: detection and transliteration are illustrative, not a live OCR model.</div>
+        <p class="snippet"><b>Field tips:</b> Photograph the inscription straight-on, use even light, include the full inscription and scale when possible, avoid sharpening filters, and keep the original image with site/context metadata.</p>
+        <div class="samples"><button type="button" id="export-result">Export report (.txt)</button></div>
+        <div id="result">Five-stage workflow preview: import → image quality check → script-family review → glyph/transliteration review → export. Results here are illustrative, not a live OCR model.</div>
       </div>
       <div class="card">
         <span class="tagline">Live workspaces</span>
@@ -451,7 +454,8 @@ const FAMILIES = [
   {name: 'Thamudic B', region: 'Wādī Rum', glyphs: '𐪀𐪁𐪑𐪃 𐪈𐪕𐪂', tr: 's-l-m · h-m-d', en: 'Peace · the praised one'},
   {name: 'Safaitic', region: 'Ḥarrah basalt', glyphs: '𐪊𐪋𐪌 𐪃𐪄', tr: "b-ʿ-l · n-m-r", en: 'Lord · leopard'},
   {name: 'Dadanitic', region: 'Al-ʿUlā', glyphs: '𐪝𐪞𐪟', tr: 'm-n-ʿ-t', en: 'dedication formula'},
-  {name: 'Hismaic', region: 'Wādī Ḥismā', glyphs: '𐪅𐪆𐪇 𐪈', tr: 'ʾ-s-d', en: 'lion · personal name'}
+  {name: 'Hismaic', region: 'Wādī Ḥismā', glyphs: '𐪅𐪆𐪇 𐪈', tr: 'ʾ-s-d', en: 'lion · personal name'},
+  {name: 'Taymanitic', region: 'Taymāʾ oasis', glyphs: '𐪑𐪒𐪓', tr: 't-y-m', en: 'sample sequence · reading requires epigraphic review'}
 ];
 function analyse(label){
   const f = FAMILIES[Math.abs([...String(label)].reduce((a, c) => a + c.charCodeAt(0), 0)) % FAMILIES.length];
@@ -468,6 +472,10 @@ drop.addEventListener('click', () => file.click());
 ['dragleave','drop'].forEach(ev => drop.addEventListener(ev, () => drop.classList.remove('hot')));
 drop.addEventListener('drop', e => { e.preventDefault(); const f = e.dataTransfer.files[0]; if (f) analyse(f.name); });
 document.getElementById('browse').addEventListener('click', e => { e.stopPropagation(); file.click(); });
+document.getElementById('export-result').addEventListener('click', () => {
+  const blob = new Blob([result.textContent + '\\n\\nNote: interface-demo output; verify readings against a qualified epigraphic source.'], {type: 'text/plain;charset=utf-8'});
+  const url = URL.createObjectURL(blob); const a = document.createElement('a'); a.href = url; a.download = 'thamudic-scan-report.txt'; a.click(); URL.revokeObjectURL(url);
+});
 file.addEventListener('change', () => { if (file.files[0]) analyse(file.files[0].name); });
 document.querySelectorAll('.samples button').forEach(b => b.addEventListener('click', () => analyse(b.dataset.s)));
 
