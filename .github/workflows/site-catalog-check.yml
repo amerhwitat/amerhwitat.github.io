@@ -37,8 +37,8 @@ jobs:
           import json, re
           from pathlib import Path
           html = Path("index.html").read_text(encoding="utf-8")
-          apps_raw = re.search(r"const APPS = (.*?);\\nconst REPOS = ", html, re.S)
-          repos_raw = re.search(r"const REPOS = (.*?);\\n\\nconst esc", html, re.S)
+          apps_raw = re.search(r"const APPS = (.*?);\nconst REPOS = ", html, re.S)
+          repos_raw = re.search(r"const REPOS = (.*?);\n\nconst esc", html, re.S)
           assert apps_raw and repos_raw, "APPS/REPOS catalog declarations missing"
           apps, repos = json.loads(apps_raw.group(1)), json.loads(repos_raw.group(1))
           titles = {a["title"] for a in apps}
