@@ -5,7 +5,7 @@ ROOT=Path(__file__).resolve().parents[1]
 files=[p for p in ROOT.rglob("*") if p.is_file() and p.suffix.lower() in {".html",".js",".css",".json"} and ".git" not in p.parts]
 repo_files={p.relative_to(ROOT).as_posix() for p in files}
 errors=[]; checked=0
-PAT=re.compile(r'''(?<![\w-])(?:href|src|action)\s*=\s*["']([^"']+)["']''',re.I)
+PAT=re.compile(r'''(?:\s|<)(?:href|src|action)\s*=\s*["']([^"']+)["']''',re.I)
 def check(base,raw):
     global checked
     raw=raw.strip()
