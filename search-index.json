@@ -1,1 +1,586 @@
-{"generated_by": "amerhwitat.github.io hub indexer", "pages": [{"p": "apps/bizx-network/index.html", "t": "BizX Network API Console", "g": "Apps", "d": "", "x": "BizX Network API Console BizX Network API Console Local API: http://127.0.0.1:8787 API catalog Health Config Interfaces Ready"}, {"p": "apps/bizxtreme-network/index.html", "t": "BizXtreme Network API Console", "g": "Apps", "d": "", "x": "BizXtreme Network API Console BizXtreme Network API Console Local API: http://127.0.0.1:8787 API catalog Health Config Interfaces Ready"}, {"p": "apps/index.html", "t": "Apps — Amer Hwitat", "g": "Apps", "d": "", "x": "App directory Redirecting to the portfolio & app hub … 28 apps. Chimera II OS — Home Chimera II OS Aurora 3D Desktop Chimera II OS Chimera Code IDE Chimera II OS Aurora Terminal Chimera II OS System Control Center Chimera II OS Desktop Profiles Chimera II OS Retro Emulators Chimera II OS Installer Manager Chimera II OS Network Monitor Chimera II OS Crash Center Chimera II OS Health Chimera II OS Research OS Chimera II OS Linux Command Console Chimera II OS CPU4096 Simulator — Aurora Web Desktop CPU4096 CPU4096 Visualizer CPU4096 BizX Asset Browser BizX & BizXtreme BizXtreme 3D BizX & BizXtreme Thamudic Scanner Research (nlp) Thamudic Epi Platform Research (nlp) Amiga Emulator Research (nlp) Chimera 3D/4D Studio Studio & Tools SEO Tool Studio & Tools Aurora Mobile Studio & Tools Agent Research Forge Studio & Tools Chimera Test Suite More PDF Reader More Chimera Pages Published Pages Thamu"}, {"p": "apps/nlp-artifacts/index.html", "t": "Ancient Artifacts Research Database", "g": "Apps", "d": "", "x": "ANCIENT ARTIFACTS Dashboard Scanner Artifacts Research Ancient Artifact Research Database Thamudic · Ancient North Arabian · multilingual NLP · evidence and provenance Refresh Artifacts 0 Scans 0 Media 0 Annotations 0 Script scanner Ancient North Arabian Dadanitic Safaitic Hismaic Taymanitic Thamudic B Scan & transliterate Ready. All types artifact inscription seal coin manuscript Search Title Script Period Location Translation Evidence policy Recognition, transliteration, translation, historical metadata, media and provenance are stored separately. Unsupported ancient-language translations remain explicitly unavailable rather than being invented."}, {"p": "apps/nlp-studio/index.html", "t": "NLP / Ancient Script Studio", "g": "Apps", "d": "Upload or photograph an ancient inscription, run OCR, then view transliteration and translation.", "x": "𐪀 NLP / Ancient Script Studio OCR · Transliteration · Translation for ancient inscriptions detecting… Upload image / PDF Camera Type / paste text ⇪ Drag & drop an inscription image or PDF or browse files — PNG, JPG, WEBP, BMP, TIFF, PDF (max 10 MB) 📷 Open camera Uses your device camera to photograph an inscription. Script Source language Target English العربية (Arabic) Decipher ✦ Working… 0% Upload OCR Scan Transliteration Translation Results Original text ⧉ 🔊 — Transliteration ⧉ 🔊 — Translation ⧉ 🔊 — Unicode & script metadata Translation history Refresh NLP / Ancient Script Studio · Evidence-first: attested original · scholarly transliteration · corpus-backed translation"}, {"p": "apps/bizx-asset-browser/index.html", "t": "BizX Free Asset Browser", "g": "BizX", "d": "", "x": "BizX Asset Browser Browse openly licensed assets and import them into the game. Openverse Poly Haven Kenney image audio Search Installed assets"}, {"p": "apps/bizxtreme-3d/index.html", "t": "BizXtreme — The Living Frontier", "g": "BizXtreme", "d": "", "x": "BIZXTREME AURORA FRONTIER BIZXTREME THE LIVING FRONTIER STARTER PACK READY ▶ Play Continue Dashboard Missions Events Inventory Marketplace Wallet Settings Frontier Status Chapter 1 · Awakening Save/resume enabled · Local Hall of Fame"}, {"p": "apps/cpu4096-aurora/chimera_code_ide.html", "t": "Chimera Code IDE", "g": "CPU4096", "d": "", "x": "Chimera Code IDE C/C++ workspace for Linux, Windows and Chimera CISC/RISC targets. GCC G++ Clang Clang++ MSVC Clang-cl Chimera CISC Chimera RISC C++23 C++20 C++17 C++14 C++11 C++26-preview C23 C17 CMake Ninja Make Meson Build Run Debug #include <iostream>\\n\\nint main() {\\n std::cout << \"Hello, Chimera II!\\\\n\";\\n return 0;\\n}\\n Ready. Native compilation requires an authorized Chimera toolchain adapter. Targets"}, {"p": "apps/cpu4096-aurora/desktop_switcher.html", "t": "Chimera Desktop Switcher", "g": "CPU4096", "d": "", "x": "AURORA SESSION MANAGER Desktop Switcher Choose an Aurora, Linux, Windows-style or retro desktop profile."}, {"p": "apps/cpu4096-aurora/index.html", "t": "Chimera II · Aurora Web Desktop", "g": "CPU4096", "d": "", "x": "CHIMERA II / P4096 Web Runtime 4096-bit simulator + 8192-bit Chimera II model · Aurora Wayland Glass CPU Width 4096-bit P4096 8192-bit Chimera II Run ADD 10 + 32 Refresh Loading… ISA Loading… Runtime & Services Loading… Keygen Generate Ed25519 key pair Random 256-bit value Command Console / Aurora Terminal Linux/POSIX, Bash/Zsh, Windows CMD, PowerShell, Windows Coreutils and Chimera commands. Enter command Run Ready. Type help. Research simulator. Web terminal is sandboxed and never executes arbitrary host commands."}, {"p": "apps/cpu4096-aurora/installer_manager.html", "t": "Chimera II Installer Manager", "g": "CPU4096", "d": "", "x": "CHIMERA II Installer Manager Linux, Windows and Chimera package catalog. Web catalog · dry-run All platforms linux windows chimera Refresh Available Details Select an application. Install Dry Run Remove Update Native operations require an authorized backend."}, {"p": "apps/cpu4096-aurora/retro_emulators.html", "t": "Retro Emulator Center", "g": "CPU4096", "d": "", "x": "CHIMERA RETRO COMPUTING Retro Emulator Center Open-source emulator catalog and adapter entry points. ROMs, disk images and proprietary firmware are not included."}, {"p": "apps/cpu4096-aurora/system_control_center.html", "t": "Chimera System Control Center", "g": "CPU4096", "d": "", "x": "Chimera System Control Center CPU4096 simulation observability and preferences. Processes Services"}, {"p": "apps/cpu4096/web/javascript/index.html", "t": "CPU4096 Web", "g": "CPU4096", "d": "", "x": "CPU4096 Web CPU4096 Visualizer"}, {"p": "apps/cpu4096-simulator/public/chimera_code_ide.html", "t": "Chimera Code IDE", "g": "CPU4096 Simulator", "d": "", "x": "Chimera Code IDE C/C++ workspace for Linux, Windows and Chimera CISC/RISC targets. GCC G++ Clang Clang++ MSVC Clang-cl Chimera CISC Chimera RISC C++23 C++20 C++17 C++14 C++11 C++26-preview C23 C17 CMake Ninja Make Meson Build Run Debug #include <iostream>\\n\\nint main() {\\n std::cout << \"Hello, Chimera II!\\\\n\";\\n return 0;\\n}\\n Ready. Native compilation requires an authorized Chimera toolchain adapter. Targets"}, {"p": "apps/cpu4096-simulator/public/desktop_switcher.html", "t": "Chimera Desktop Switcher", "g": "CPU4096 Simulator", "d": "", "x": "AURORA SESSION MANAGER Desktop Switcher Choose an Aurora, Linux, Windows-style or retro desktop profile."}, {"p": "apps/cpu4096-simulator/public/index.html", "t": "Chimera II · Aurora Web Desktop", "g": "CPU4096 Simulator", "d": "", "x": "CHIMERA II / P4096 Web Runtime 4096-bit simulator + 8192-bit Chimera II model · Aurora Wayland Glass CPU Width 4096-bit P4096 8192-bit Chimera II Run ADD 10 + 32 Refresh Loading… ISA Loading… Runtime & Services Loading… Keygen Generate Ed25519 key pair Random 256-bit value Command Console / Aurora Terminal Linux/POSIX, Bash/Zsh, Windows CMD, PowerShell, Windows Coreutils and Chimera commands. Enter command Run Ready. Type help. Research simulator. Web terminal is sandboxed and never executes arbitrary host commands."}, {"p": "apps/cpu4096-simulator/public/installer_manager.html", "t": "Chimera II Installer Manager", "g": "CPU4096 Simulator", "d": "", "x": "CHIMERA II Installer Manager Linux, Windows and Chimera package catalog. Web catalog · dry-run All platforms linux windows chimera Refresh Available Details Select an application. Install Dry Run Remove Update Native operations require an authorized backend."}, {"p": "apps/cpu4096-simulator/public/retro_emulators.html", "t": "Retro Emulator Center", "g": "CPU4096 Simulator", "d": "", "x": "CHIMERA RETRO COMPUTING Retro Emulator Center Open-source emulator catalog and adapter entry points. ROMs, disk images and proprietary firmware are not included."}, {"p": "apps/cpu4096-simulator/public/system_control_center.html", "t": "Chimera System Control Center", "g": "CPU4096 Simulator", "d": "", "x": "Chimera System Control Center CPU4096 simulation observability and preferences. Processes Services"}, {"p": "chimera/index.html", "t": "Chimera II OS — Public Research Index", "g": "Chimera", "d": "Chimera II OS public research index by Amer Hwitat — open research operating system, Koronos kernel, Spit Fire bootloader, Jasper boot manager, C8192/R8192 ISA research, CPU4096, Aurora desktop, mobil", "x": "Chimera II OS Open research operating-system and virtual-processor ecosystem by Amer Hwitat. Canonical source repository · Complete portfolio summary ChimeraIIOS Koronos C8192 R8192 CPU4096 Aurora 128D Framework RISC CISC Neural Simulation Core ChimeraIIOS CPU4096 CPU4096Simulator general / mobile test / Python integration keygen / Java track Research & tools NLP/data research PDFreaderPY eth-key-check bruteforce / crypto reference BizX BizXtreme / WebGL Documentation Amer Hwitat bibliography Library research archive CI/CD plan Crypto provenance Visuals & web Aurora Web UI Mobile Edition visual Public web repository Media publication Current Library media candidates are catalogued in the Chimera publication registry. Video publication links are recorded only after an authenticated upload succeeds. Publication & media registry Publication policy GitHub is the current canonical public forg"}, {"p": "apps/chimera-ii-os/docs/index.html", "t": "Chimera II OS", "g": "Chimera II OS", "d": "", "x": "Chimera II OS Chimera II OS Public web entry point for the Chimera II OS project. Source repository Architecture includes Koronos, Spit Fire, Jasper, Spotnik, Aurora, Nucleus, Hive, Kore and Aegis."}, {"p": "apps/chimera-ii-os/web/ancient-ocr.html", "t": "Aurora Ancient Language Auto OCR", "g": "Chimera II OS", "d": "Aurora Ancient Language Auto OCR — Thamudic, Ancient North Arabian and related ancient-language research with NLP translation targets.", "x": "← Aurora OCR Studio ThamudicScan Research Lab ANCIENT NLP · AUTOMATIC OCR Ancient Language Auto OCR Choose an image and the browser starts scanning automatically. The pipeline uses the NLP repository's ancient-language registry, Unicode/script detection, Tesseract.js where an appropriate trained model exists, and an optional Chimera/NLP API for deeper ancient-script OCR and translation. Source language Target language — NLP live target catalog Image NLP API (optional) Scan automatically Translate detected text Export JSON Loading the live NLP language catalog… OCR / detected text Detected scripts/languages Translation A capability entry is not proof that a translation model/corpus is installed. The UI preserves provider-required/unavailable states. Pipeline evidence"}, {"p": "apps/chimera-ii-os/web/artifact-library.html", "t": "Chimera II OS — Aurora Artifact Library", "g": "Chimera II OS", "d": "", "x": "CHIMERA II OS · AURORA LIBRARY Artifacts, artwork & research sources One browser index for repository-native artwork, documentation, generated media, and lawful internet discovery sources. External artwork is linked or loaded from its source; it is not silently copied into the repository. ← Portal All types Artwork Video Documentation Internet source Sync Chimera manifest Load Internet artwork Repository catalog loaded from the canonical ChimeraIIOS artwork manifest. Internet results are optional."}, {"p": "apps/chimera-ii-os/web/aurora-ecosystem-center.html", "t": "Aurora Ecosystem Center", "g": "Chimera II OS", "d": "", "x": "AURORA · ECOSYSTEM CENTER All Projects · All Apps · One Web Workspace A static-safe integration layer for Amer Hwitat repositories plus original browser utilities inspired by common WebOS patterns. Native operations remain behind the local Chimera bridge. Export Catalog Interaction Hub Aurora Home Repository Portfolio Original Browser Apps These are new, license-safe implementations using browser APIs; no third-party source code is copied. Open-Source Inspiration Output Select an app above."}, {"p": "apps/chimera-ii-os/web/aurora-emulator.html", "t": "Aurora Emulator · Chimera II", "g": "Chimera II OS", "d": "", "x": "CHIMERA II · AURORA WAYLAND · EMULATION AURORA EMULATOR Unified browser launcher for Aurora's retro, MAME, Amiga and PlayStation surfaces, with an optional local Chimera runtime bridge for host-backed emulation. ← Aurora 3D Desktop Interaction Hub All Retro Emulators ▦ Retro Emulators Browser-safe emulator adapters and the existing multi-system catalog. Launch ▣ MAME Center Arcade emulation, browser MAME core and local runtime controls. Launch MAME ◈ Amiga Scripted Amiga Emulator browser surface and local runtime path. Launch Amiga 🎮 PlayStation PS1–PS5 catalog with experimental newer-generation adapters. Launch PlayStation Local Chimera Bridge The published page never receives privileged OS access. When the authorized local bridge is running, Aurora can hand off host-backed emulator launches and MAME state/media operations. Checking local bridge…"}, {"p": "apps/chimera-ii-os/web/aurora-interaction-hub.html", "t": "Aurora Interaction Hub", "g": "Chimera II OS", "d": "", "x": "AURORA · INTERACTION HUB Chimera II Web Workspace One interactive launch surface for Aurora tools, OS controls, research, emulation, Python, networking and wallet workflows. Reset Export workspace map"}, {"p": "apps/chimera-ii-os/web/aurora_3d_desktop.html", "t": "Chimera II — Aurora 3D Desktop", "g": "Chimera II OS", "d": "", "x": "CHIMERA II Aurora Desktop Loading Aurora environment… 0% ☾ CHIMERA Chimera II OS ▦ Gates Aurora Desktop Aurora Wayland Glass ⌁ ◉ ▣ 98% 🔊 --:-- 〉_ Terminal ⚙ Settings ▱ Files i About Chimera ∿ System Monitor ▥ Library ▣ ISA Explorer CHIMERA II OS Open. Secure. Infinite. Application — □ × ⌘ ◉ 〉_ ∿ ▱ ▥ ▣ ⚙ i AURORA 3D Desktop Controls × Scene intensity Motion Glass blur 3D: ON Telemetry GPU WEBGL FPS -- MODE 3D PROFILE AURORA Aurora Wayland Glass · System Ready Ctrl+K launcher · Ctrl+Shift+A controls A Local Account Home Files Terminal Settings Help / man Desktop Profiles AURORA · ALL WEB UI · EMULATOR READY PINNED ▰ Files ⌘ Terminal ◉ Browser </> Chimera Code ⚙ Settings ? Unified Help ✦ Desktop ⚡ Hercules ▣ Repo Studio ⌬ Runtime Lab 🎮 Aurora Emulator ⌘ SS64 / العربية ◎ All Aurora Apps ▦ Emulators 🎮 Game Center ⌁ Network 𐪀 Research RECOMMENDED Project Chimera II · Aurora Wayland Guide · Sys"}, {"p": "apps/chimera-ii-os/web/aurora_terminal.html", "t": "Aurora Command Center", "g": "Chimera II OS", "d": "", "x": "← Aurora ⌘ Aurora Command Center Linux Windows CMD PowerShell macOS Run Run in Chimera SS64-derived catalog for Linux, Windows CMD/PowerShell and macOS. The catalog is regenerated during Pages deployment. Browser execution is sandboxed; native-only commands are handed to Chimera. Ready. Try: عرض, اقرأ, اكتب, مسار, قائمة, احذف, بحث, تشغيل"}, {"p": "apps/chimera-ii-os/web/aurora_webgl_desktops.html", "t": "Chimera II · WebGL Desktop Gallery", "g": "Chimera II OS", "d": "", "x": "◈ Chimera II Aurora Wayland Glass WebGL 2 desktop renderer ☰ Desktops WEBGL DESKTOP ENGINE AURORA Live 3D desktop surface with Chimera II runtime telemetry. System Runtime Renderer Settings Fullscreen Kernel Koronos · live Renderer WebGL 2 FPS -- Targets 10 ready × Chimera II Runtime"}, {"p": "apps/chimera-ii-os/web/backend-status.html", "t": "Aurora Backend Status", "g": "Chimera II OS", "d": "", "x": "← Aurora Dynamic Backend Gateway GitHub Pages remains the public static frontend. Enter an authorized Chimera backend URL to enable native telemetry, commands, installer actions and toolchain execution. Credentials are never stored by this page. Save backend Use static mode Status Checking… Check now GitHub dynamic data Loading… Local Chimera backend The repository already contains apps/chimera-test-suite/server.js , which proxies /api/* to the capability-gated Python runtime. Run it locally and set its URL here. node apps/chimera-test-suite/server.js"}, {"p": "apps/chimera-ii-os/web/chimera-language-runtime.html", "t": "Chimera II — Language & Legacy Runtime Lab", "g": "Chimera II OS", "d": "", "x": "CHIMERA II · AURORA WAYLAND · RUNTIME LAB Language, JVM, WASM & Legacy Runtime Emulator Complete tracked source inventory for Chimera II ASM/C/C++/Python/Kotlin/Java, with modern browser adapters and explicit legacy compatibility descriptors. ← Aurora Desktop ISO & Flash Center Repository App Studio Source Repository Runtime policy Java Applet: represented as a compatibility target only; current Chrome/Edge/Firefox/Safari do not execute the historical Java browser plugin. ActiveX: represented as a Windows COM/ActiveX compatibility target only; modern Chromium/Firefox do not host ActiveX. The runnable web path is JavaScript/WebAssembly, Pyodide/local Python bridge, Kotlin/JVM or Kotlin/WASM, and authorized local native/JVM bridges. ISO creation, flashing, device access and privileged native execution remain behind the existing local Chimera bridge. Adapter matrix Runtime console Aurora Ru"}, {"p": "apps/chimera-ii-os/web/chimera_code_ide.html", "t": "Chimera Code IDE", "g": "Chimera II OS", "d": "", "x": "Chimera Code IDE C/C++ workspace for Linux, Windows and Chimera CISC/RISC targets. GCC G++ Clang Clang++ MSVC Clang-cl Chimera CISC Chimera RISC C++23 C++20 C++17 C++14 C++11 C++26-preview C23 C17 CMake Ninja Make Meson Build Run Debug #include \\n\\nint main() {\\n std::cout Ready. Native compilation requires an authorized Chimera toolchain adapter. Targets"}, {"p": "apps/chimera-ii-os/web/command-console.html", "t": "Aurora Command Center", "g": "Chimera II OS", "d": "", "x": "← Aurora ⌘ مركز أوامر Aurora SS64 Linux Windows CMD PowerShell macOS تشغيل تشغيل في Chimera فهرس SS64 لأنظمة Linux وWindows CMD/PowerShell وmacOS، مع تعريب الأوامر الشائعة. المصدر المرجعي: SS64. The catalog is regenerated during Pages deployment. Browser execution is sandboxed; native-only commands are handed to Chimera. Ready. Try: عرض, اقرأ, اكتب, مسار, قائمة, احذف, بحث, تشغيل"}, {"p": "apps/chimera-ii-os/web/crash_center.html", "t": "Aurora Crash Center", "g": "Chimera II OS", "d": "", "x": "⚠ Aurora Crash Center Crash reporting, dump inventory, service health and recovery state for Aurora Wayland / Chimera II. No crash event observed by this web client. Crash dumps N/A Native backend required for filesystem inventory. Crash service UNKNOWN Backend endpoint: /api/crash Last crash N/A Timestamp supplied by backend. Recovery READY Web client remains isolated from host restart controls. Crash-dump services systemd-coredump · coredumpctl · kdump · crash · apport · ABRT · core_pattern · minidump · Windows Error Reporting · WER · ProcDump · Event Viewer The catalog describes supported services; actual collection and retention are performed only by an authorized native backend. Crash screen policy On an unhandled Aurora web exception, the UI records a local diagnostic event and presents a recovery screen. It does not pretend to be a kernel panic or fabricate a native core dump. Tes"}, {"p": "apps/chimera-ii-os/web/desktop_switcher.html", "t": "Aurora Desktop Switcher", "g": "Chimera II OS", "d": "", "x": "AURORA SESSION MANAGER Desktop Switcher Choose a Linux, Windows, Aurora, or retro desktop profile for the Web desktop renderer. Native Linux sessions require the corresponding desktop to be installed; Windows profiles can use a visual shell or an authorized VM/RDP backend. Launch Three.js Aurora Desktop Return to Aurora"}, {"p": "apps/chimera-ii-os/web/game-center.html", "t": "Aurora Game Center", "g": "Chimera II OS", "d": "", "x": "AURORA · BIZX · BIZXTREME Complete Game Center Unified dynamic catalog, gameplay controls, progression, saves, events, cards, T-Rex and emulator handoffs. Game assets remain license-gated and ROMs remain user-supplied. Aurora MAME Arcade Retro Catalog BizXtreme ↗ All types card runner story event retro catalog aaa-original Reset local save Export database state Selected None Score 0 XP 0 Choose a game from the database. All Games & Features Activity"}, {"p": "apps/chimera-ii-os/web/health.html", "t": "Chimera II OS — System Health", "g": "Chimera II OS", "d": "Chimera II OS Aurora System Health and KPI Center", "x": "AURORA WAYLAND GLASS · SYSTEM HEALTH Chimera II Health Center Unified operational KPI view for the machine, kernel, runtime, graphics, applications and research planes. Collecting… Subsystem health Telemetry source Web UI telemetry is active. Native Chimera metrics are used when /api/kpi is available. Refresh now Export snapshot"}, {"p": "apps/chimera-ii-os/web/hercules-integration.html", "t": "Chimera II — Hercules Integration", "g": "Chimera II OS", "d": "", "x": "CHIMERA II · HERCULES RUNTIME BRIDGE AURORA × HERCULES Integrated launcher for the external Chimera II application runtime plus the complete Aurora web application surface. The visual layer follows the Aurora Wayland Glass artwork language. Open Hercules Runtime Return to Aurora Desktop Open Interaction Hub REMOTE RUNTIME If embedding is blocked by the runtime host, use “Open Hercules Runtime”. Aurora App Matrix Every currently exposed Aurora application surface is launchable here. Integrated Feature Domains"}, {"p": "apps/chimera-ii-os/web/index.html", "t": "Chimera II OS — Aurora Wayland Glass", "g": "Chimera II OS", "d": "Chimera II OS Aurora Wayland Glass architecture and Web UI", "x": "Skip to content AURORA WAYLAND GLASS DESKTOP CHIMERA II OS 8192-bit ISA · deterministic kernel · zero-copy I/O · 128D research plane 3D Desktop Desktop Profiles Architecture ISA Kernel Terminal Standards CHIMERA ARCHITECTURE EXPLORER A unified view of the machine, kernel, I/O, graphics, and research layers. Explore the native R8192 machine model, compatibility frontends, Koronos kernel boundaries, DMA/IOMMU ownership, Aurora presentation stack, and 128D research plane. Launch Aurora 3D Web Desktop Open ISO & Flash Center Open Ecosystem Center Open Hercules Runtime Open Repository App Studio DEPTH 12 MODEL SYSTEM MAP Core domains Loading… INSTRUCTION SET ISA Matrix 284 native opcodes Chimera II native and compatibility instruction-set families Family Style Width Role Status KORONOS Kernel and I/O layers Loading… AURORA WEB TERMINAL Cross-platform CLI SANDBOXED Chimera II Web Terminal Linu"}, {"p": "apps/chimera-ii-os/web/installer_manager.html", "t": "Chimera II — Installer Manager", "g": "Chimera II OS", "d": "", "x": "CHIMERA II Installer Manager Applications, packages, and authorized platform backends. Web catalog · dry-run All platforms linux windows chimera All package formats Refresh Available Details Select an application. Install Dry Run Remove Update Installed No native inventory reported. Operation log Installer Manager ready. Native operations require an authorized backend."}, {"p": "apps/chimera-ii-os/web/isa-explorer.html", "t": "Chimera ISA Explorer", "g": "Chimera II OS", "d": "", "x": "← Aurora Smart Model CHIMERA ISA / R8192 + MULTI-ARCH Instruction Set Explorer Loading complete ISA registry…"}, {"p": "apps/chimera-ii-os/web/iso-flash-center.html", "t": "Chimera II ISO & Flash Center", "g": "Chimera II OS", "d": "", "x": "AURORA · CHIMERA II · TOOLING ISO & Flash Center Web control surface for the existing Chimera II ISO-Tool and Aurora Flash Tool. Aurora Interaction Hub Game Center Bridge: checking… GitHub Pages cannot directly mount ISOs or write block devices. When the Chimera localhost bridge is running, these controls call the native tools on the same computer. Flash safety: flashing destroys data on the selected device. Verify the removable target, image SHA-256, and recovery plan before enabling the native flash action. ISO-Tool Uses Chimera II's existing iso-tool.sh for native ISO inspection and verification. Local ISO path ISO Information Verify ISO Native ISO-Tool also supports extract, modify, repack and QEMU test. The Web UI exposes non-destructive info/verify actions directly. Flash Tool Uses Aurora Flash Tool with SHA-256 verification and explicit native confirmation. Local image / ISO path "}, {"p": "apps/chimera-ii-os/web/javascript/index.html", "t": "Chimera II Web Runtime", "g": "Chimera II OS", "d": "", "x": "Chimera II Web Runtime Browser dashboard for architecture, ISA and runtime telemetry."}, {"p": "apps/chimera-ii-os/web/mame-center.html", "t": "Aurora MAME Arcade Center", "g": "Chimera II OS", "d": "", "x": "AURORA · CHIMERA II · ARCADE MAME Arcade Center Dynamic browser frontend for MAME/WebAssembly cores, local ROM sets, controls, saves, diagnostics and game metadata. No copyrighted ROMs are bundled. Aurora Retro Catalog Game Center MAME source ↗ All systems Arcade Atari Commodore Apple MSX Nintendo Sega ZX Spectrum Scan local ROMs ROM ZIPs Load MAME JS/WASM ▶ Launch selected Core: not loaded · ROMs: user-supplied · storage: IndexedDB Select a game and load a compatible Emscripten MAME/libretro-style core. Pause Reset Fullscreen Save state Load state Sound Insert coin P1 Start Controls Click a mapping field and press a key. Gamepad buttons use the same action layer. Controls persist locally per game. Database Diagnostics"}, {"p": "apps/chimera-ii-os/web/network-engine.html", "t": "Aurora Network Engine — Chimera II OS", "g": "Chimera II OS", "d": "Aurora Network Engine integration surface for Chimera II OS, BizXtreme NetworkUnified and the external Rocket Network Engine.", "x": "✦ Aurora Network Engine Chimera II OS network integration hub · BizXtreme NetworkUnified · Rocket live surface Aurora Home Research Lab Open Network Engine ↗ Integration status: external Rocket Network Engine is linked as the authoritative live UI. This page adds the verified repository-side integration catalog and navigation; Rocket internals were not fetchable from the build environment, so no inaccessible feature is represented as a confirmed Rocket implementation. Transport & session Network sessions Expose a common surface for online/offline modes, session state, presence and multiplayer adapters. WebSocket / WebRTC adapter boundary P2P / libp2p integration point Consent-based presence Offline-safe runtime mode API NetworkUnified BizXtreme consolidates networking/API behavior behind the versioned bizxtreme.network.api.v1 contract. Python, Node.js, TypeScript Go, Rust, Java, C#, C++ "}, {"p": "apps/chimera-ii-os/web/network.html", "t": "Chimera II Network Hub", "g": "Chimera II OS", "d": "", "x": "AURORA NETWORK FABRIC Network Hub Opt-in LAN · P2P WebRTC · client/server presence offline CONNECTED FRONTIER Connect users safely. LAN discovery uses an explicit local beacon. Internet peer introduction uses a WebSocket signaling service you select. There is no arbitrary Internet port scanning. ✦ Identity Nickname Avatar ✦ Aurora 🦊 Fox 🐺 Wolf 🤖 Robot ★ Star Save identity Randomize LAN discovery Local bridge Scan LAN Stop Clear UDP broadcast beacon only. Internet / client-server Signaling WebSocket Room Connect Disconnect Compatible signaling must relay presence and offer/answer/candidate messages. Connected users 0 No peers yet. Session No active P2P session. Connect first peer Client/server mode Activity Network Hub ready. ChimeraIIOS · Aurora Network Hub Opt-in discovery · explicit signaling · no Internet port scan"}, {"p": "apps/chimera-ii-os/web/network_monitor.html", "t": "Aurora Network Monitor", "g": "Chimera II OS", "d": "", "x": "◉ Aurora Network Monitor TCP/IP, interfaces, routes, DNS and socket-observation center. Native values appear only when a host telemetry backend is connected. Command families ip · ss · netstat · ifconfig · route · arp · ping · traceroute · tracepath · mtr · dig · nslookup · host · resolvectl · ethtool · tcpdump · nstat · lsof Windows equivalents: ipconfig · netstat · route · arp · tracert · pathping · nslookup · netsh · Test-NetConnection · Get-NetAdapter · Get-NetTCPConnection"}, {"p": "apps/chimera-ii-os/web/ocr-studio.html", "t": "Chimera II OS — Aurora OCR Studio", "g": "Chimera II OS", "d": "Chimera II OS Aurora OCR workspace — upload an image and automatically OCR, translate and transliterate it.", "x": "AURORA WEB TOOL · CHIMERA II OS OCR → Translate → Transliterate Upload an image. The browser automatically recognizes text, translates it to your target language, and produces a script-aware transliteration. No image is uploaded to the Chimera server by this page. 𐪀 Ancient Auto OCR ← Portal Image Choose image or drop it here OCR language English Arabic Greek Russian Hebrew Turkish German French Spanish Italian Target translation English Arabic Greek Russian French German Spanish Italian Turkish Transliteration Latin / English letters Arabic script Greek script Cyrillic Scan automatically Source image Waiting for an image… OCR text Copy OCR Translation Copy translation Transliteration Copy transliteration Pipeline OCR runs locally in the browser through Tesseract.js. Translation uses the public MyMemory translation endpoint when available; if the network translation service is unavailabl"}, {"p": "apps/chimera-ii-os/web/pdf-reader.html", "t": "Chimera II — PDF Reader", "g": "Chimera II OS", "d": "", "x": "AURORA · DOCUMENT TOOLS PDF Reader Upload a PDF and see the actual document immediately, with local PyPDF text extraction when the bridge is available. Reader ready PDF / PYPDF Upload → render → read The uploaded PDF remains in your browser. The viewer renders every page; the optional local bridge extracts searchable text and metadata with PyPDF. PDF PDF document Page Zoom 100% 125% 150% 200% Open document Previous Next Fit width Extract text Back to Aurora Choose a PDF to display it here. Extracted text No PDF loaded. ChimeraIIOS · PDF Reader Browser renderer + optional local PyPDF bridge"}, {"p": "apps/chimera-ii-os/web/playstation_emulators.html", "t": "Chimera II · Aurora PlayStation Emulator Hub", "g": "Chimera II OS", "d": "", "x": "◈ CHIMERA II AURORA · EMULATORS · PLAYSTATION Retro Lab Fullscreen NATIVE ADAPTER CATALOG · PSX → PS5 PlayStation Emulator Hub One Aurora panel for PlayStation emulators from PSX/PS1 through PS5. Installed emulators are detected locally; official source pages are provided for missing components. Chimera II never bundles games, BIOS, keys, or proprietary firmware. All generations PSX / PS1 PS2 PS3 PS4 PS5"}, {"p": "apps/chimera-ii-os/web/portfolio.html", "t": "Chimera II OS — Unified Portfolio Apps", "g": "Chimera II OS", "d": "Chimera II OS unified portfolio application launcher", "x": "← Aurora Control Center CHIMERA II OS AURORA PORTFOLIO BRIDGE Unified Portfolio Apps One Web UI catalog for the maintained application and research repositories connected to Chimera II OS. WEB · NATIVE · RESEARCH Ctrl/⌘+K search All categories Sort: name Sort: category Favorites only ★ 0 Runtime boundary GitHub Pages provides the launcher/catalog and browser-safe apps. Native executables, privileged services, large local cores, ROMs, BIOS/firmware and private data remain on the operator's machine or authorized service. Repository links open the source of record."}, {"p": "apps/chimera-ii-os/web/repository-app-studio.html", "t": "Aurora Repository App Studio", "g": "Chimera II OS", "d": "", "x": "● Guest · no password · local session Aurora Repository App Studio Runnable browser editions and launch adapters for the requested Chimera II repositories. Java source is exposed as portable Java runners for Aurora's local execution bridge; browser builds run without a server. All repositories Web-runnable Java / JVM Native / bridge Aurora Desktop Hercules Guest control model: Guest can launch and use all browser-safe applications. Native OS, device, filesystem-write, network-privileged and other capability-gated actions remain controlled by the local Chimera bridge; GitHub Pages cannot grant those privileges by itself. Browser Runtime A deterministic, client-only research console. It never sends entered values to a server. Aurora Repository App Studio Guest session ready. Select an application above."}, {"p": "apps/chimera-ii-os/web/research-lab.html", "t": "Aurora Research Lab — Chimera II OS", "g": "Chimera II OS", "d": "Aurora Research Lab for Chimera II OS: NLP, ancient-script OCR, transliteration, translation, safe cryptographic research and simulator integration.", "x": "✦ Aurora Research Lab Chimera II OS · NLP · OCR · Transliteration · Safe Crypto Research Aurora Home OCR Studio Artifact Library NLP Repo Crypto Repo Unified research surface This page exposes verified capabilities from the amerhwitat/nlp and amerhwitat/bruteforce repositories and connects them to the existing browser tools. It does not pretend a static GitHub Pages site is a native Python/C++ runtime. Thamudic / Ancient North Arabian Image/PDF → OCR Script detection Transliteration Translation Provenance Hashing Test vectors Benchmarks Open Rocket Simulator ↗ NLP Scanner Source ↗ Crypto Catalog ↗ Ancient-language NLP The NLP repository documents an image/PDF → CV/OCR → script detection → NLP/tokenization → transliteration → corpus/symbolic checks → translation flow, with provenance and audit logging. Python Thamudic Web Scanner Web API OCR & translation bridge Use the browser-local OCR "}, {"p": "apps/chimera-ii-os/web/research-os.html", "t": "Chimera II OS — Open Research Operating System", "g": "Chimera II OS", "d": "Chimera II OS — open research operating system, virtual processor, Aurora mobile edition, source-code federation and technical bibliography by Amer Hwitat.", "x": "PUBLIC RESEARCH OS · 2026 Chimera II OS A research-grade operating-system, virtual-processor, mobile, desktop, networking and intelligent-computing ecosystem. Author / research lead: Amer Hwitat Canonical source ChimeraIIOS CPU4096 CPU4096Simulator Mobile / general Research Author bibliography Library research archive Open-source publication plan CI/CD plan Architecture Spit Fire → Jasper → Koronos → Kore/Spotnik → Aurora → applications. R8192/C8192 and RegisterN remain research/emulation targets rather than claims of existing silicon. Mobile Edition Aurora-inspired mobile glass UI with bilingual English/Arabic presentation, system telemetry, applications, store, files, terminal, security and device services. Mobile landing visual specification Source-code federation GitHub GitLab Codeberg / Forgejo SourceHut Git GitHub is canonical until secondary mirrors are explicitly created. No fabr"}, {"p": "apps/chimera-ii-os/web/retro_emulators.html", "t": "Chimera Retro Emulators", "g": "Chimera II OS", "d": "", "x": "CHIMERA RETRO COMPUTING Retro Computer Emulators MAME Arcade Center Complete Game Center Unified catalog and launcher adapters for classic computers and consoles. Legal ROMs, disks and firmware remain user-supplied."}, {"p": "apps/chimera-ii-os/web/smart-model.html", "t": "Aurora Smart Model", "g": "Chimera II OS", "d": "", "x": "← Aurora ISA Explorer Command Center RNN + LLM / ON-DEVICE INTELLIGENCE Aurora Smart Model Local click learning is a small recurrent model trained in the browser. Optional language generation uses a WebGPU/WASM Transformers.js model. Your click history stays local unless an authorized Chimera backend is configured. Model Aurora RNN Learner — local Qwen2.5-0.5B-Instruct — WebGPU/WASM Load model Prompt Describe the current Chimera Aurora workspace and suggest my next useful action. Generate Model not loaded. Learning telemetry No events yet. Export learning JSON Clear local learning The site records UI intent (page, element, action, timestamp) rather than passwords, form contents, or private keys. Backend persistence is opt-in."}, {"p": "apps/chimera-ii-os/web/system_control_center.html", "t": "Chimera System Control Center", "g": "Chimera II OS", "d": "", "x": "CHIMERA II System Control Center System management, preferences and health Detecting backend… ↻ Refresh ⌂ Overview ◫ Processes ⚙ Services ◒ Performance ☷ Settings ▣ Desktop ◉ Startup ⚠ Recovery LIVE SYSTEM STATE Checking system health… Metrics are sourced from the available backend. Unknown values are never fabricated. — Health System components Readiness and telemetry provenance Processes Live process inventory PID Process User CPU Memory State Health Services Service inventory and lifecycle state Service Description State Startup PID Health Actions Performance & KPIs Telemetry with source, confidence and timestamp Settings & Preferences Changes are stored locally unless a native settings backend is available. Desktop profile Theme Aurora Auto Light Dark Taskbar behavior Show Control Center Compact Minimal Enable system notifications Power/session policy Always confirm Session controls "}, {"p": "apps/chimera-ii-os/web/thamudicscan.html", "t": "Aurora ThamudicScan", "g": "Chimera II OS", "d": "", "x": "𐪀 Aurora ThamudicScan Ancient North Arabian / Thamudic research, scanning, transliteration, translation and evidence-aware reporting. Aurora Home Research Lab Softr Scanner ↗ Open ThamudicScan ↗ Integrated source: amerhwitat/nlp . The Bubble deployment is retained as a live external surface. The repository also provides a first-party React/Vite + FastAPI deployment and canonical research pipeline. Unsupported readings remain explicitly unavailable rather than being fabricated. Softr feature bridge: the supplied Softr deployment is preserved as a live reference; the portal exposes the documented first-party scanner capabilities without claiming undocumented Softr internals. Scan Inscription & document scanner Keyword-aware text scanning UTF-8 inscription/document uploads Bounded file handling Unicode validation for U+10A80–U+10A9F Source, historical text, code points and recognition confi"}, {"p": "apps/chimera-ii-os/web/wallet-center.html", "t": "Aurora Wallet & Ecosystem Center", "g": "Chimera II OS", "d": "", "x": "AURORA · CHIMERA · BIZX · BIZXTREME · CRYPTO RESEARCH Wallet & Ecosystem Center A unified browser surface for non-custodial wallet connections, watch-only portfolio research, transaction intents, game-economy payments, NetworkUnified/P2P, AI assistance, asset discovery and safe cryptographic research. Signing secrets stay outside this UI. Aurora Home Research Lab Network Engine Smart Model BizXtreme Source Crypto Research Source Wallet mode: watch-only / simulation · No private key, seed phrase or credential is accepted. 🔐 Non-custodial wallet adapter Connect a user-controlled provider; display accounts, chains, balances and transaction status without importing secrets. EVM Bitcoin Solana TON 📊 Portfolio & watch-only Track public addresses, assets, transaction IDs and ownership states. Unknown addresses remain observation-only. 🧾 Transaction intent Prepare recipient, asset, amount, netwo"}, {"p": "apps/chimera-ii-os/webui/linux-command-console.html", "t": "Chimera II Linux Command Console", "g": "Chimera II OS", "d": "", "x": "Chimera II Linux command capability registry Chimera II Aurora terminal\\nCapability-scoped WebSocket session.\\n\\n Run"}, {"p": "apps/chimera-test-suite/aurora_3d_desktop.html", "t": "Aurora 3D Desktop — Chimera II", "g": "More", "d": "", "x": "✦ CHIMERA II Aurora / Linux ◈ Aurora Desktop — □ × SPITFIRE → KORONOS → JASPER → AURORA Chimera II Unified Linux and Windows desktop presentation layer. Open Terminal Man / Help CII ⌘ Terminal × Chimera II Terminal\\nLinux/POSIX + Bash/Zsh + Windows CMD + PowerShell\\nType: help, man ls, man powershell:Get-Process, desktop windows chimera@aurora:$ Run ▤ Unified Man / Help × ▣ Files × Virtualized Chimera workspace 📁 projects 📁 docs 📁 source 📄 README.md ✦ ⌘ ▤ ▣ ◫ Desktop Profiles Aurora / Linux GNOME / Linux KDE Plasma / Linux Xfce / Linux Cinnamon / Linux MATE / Linux LXQt / Linux Windows 11 Windows 10 Classic Windows"}, {"p": "apps/chimera-test-suite/index.html", "t": "Aurora — Chimera II OS", "g": "More", "d": "", "x": "✦ CHIMERA II Connecting… ◉ Aurora Boot STARTING 0% Initializing Spitfire Spitfire loader Hardware discovery Memory fabric Koronos kernel System services Jasper desktop manager Wayland compositor Aurora desktop READY ✧ Aurora Three.js Desktop Launch 3D Desktop Unified Linux/Windows desktop presentation layer with Aurora glass styling. ◈ Aurora System — □ × SPITFIRE → KORONOS → JASPER → AURORA Chimera II OS A responsive desktop session gated by completed system boot. Open Aurora 3D / Linux + Windows Profiles CII ◉ Spitfire boot sequence LIVE Loading… ⬢ Koronos kernel RUNNING Loading… ✦ Jasper Desktop Manager STARTING Waiting for boot state… ⌘ System services Refresh ✧ Aurora Wayland STARTING Waiting for boot completion… ⌘ Chimera Terminal — □ × Chimera II Terminal — Aurora Web UI Linux/POSIX + Bash/Zsh + Windows CMD + PowerShell compatibility catalog loaded. Type help , man <command> , or "}, {"p": "apps/chimera-test-suite/javascript/index.html", "t": "Web Test Harness", "g": "More", "d": "", "x": "Web Test Harness Browser Test Harness Run smoke test"}, {"p": "apps/pdf-reader/index.html", "t": "PDFreaderPY Web", "g": "More", "d": "", "x": "PDFreaderPY Web PDFreaderPY Web Select a PDF for local browser handling."}, {"p": "404.html", "t": "Not found — Amer Hwitat Web UI", "g": "Portfolio", "d": "", "x": "404 That app or page was not found. ← Back to the app hub"}, {"p": "index.html", "t": "Amer Hwitat — Chimera II OS · Aurora Wayland Glass Portfolio", "g": "Portfolio", "d": "Chimera II OS — Aurora Wayland Glass web desktop. Open. Secure. Infinite. Research, NLP, emulation and OS simulator apps from github.com/amerhwitat.", "x": "Amer Hwitat · Chimera II OS Portfolio Research Platform NLP Translator OS Simulator Script & ISA Registry Repositories AR Chimera II OS — Aurora Wayland Glass Open. Secure. Infinite. Every browser UI from github.com/amerhwitat in one Aurora glass desktop: OS simulator, research platform, NLP/OCR translator, emulators and the full app catalogue. Desktop Mobile apps ◈ Aurora Wayland · Modern · Secure · Open · For Tomorrow 🕑 --:-- 📅 — ⛅ 22°C Partly Cloudy · Amman, Jordan · H: 26° L: 16° 📶 Connected Wi-Fi (Home) · 10GBE ▣ Aurora Wayland · Wayland Compositor · --:-- “The Future Is Now” Wayland · Smooth · Fast · Secure — a glass compositor surface for the Chimera II OS simulator. Open OS simulator → Aurora WebGL desktops CPU4096 Aurora shell ♫ Aurora Sound ▶ 2:34 / 4:21 Interface demo only — no audio is streamed. ▤ Calendar ◱ Research mode Ancient-language OCR, transliteration and translation "}, {"p": "java-apps.html", "t": "Java Desktop Portfolio — Amer Hwitat", "g": "Portfolio", "d": "", "x": "JAVA · DESKTOP · RESEARCH Java Application Portfolio Native JVM desktop applications and shared Java components for the project repositories. ← Main portfolio Java desktop applications run on a local JVM. GitHub Pages is a static website, so this page links to their source and build workflows; it does not pretend to execute desktop bytecode inside the browser. GUI PR opened PDF Reader — Java Swing Native desktop PDF viewer with file selection, page selection, asynchronous PDFBox rendering, and the existing ingestion/provenance adapter. OCR remains a separate pipeline until its algorithms are ported and parity-tested. Review GUI pull request Java source Java model + contract tests CPU4096 Unsigned fixed-width register model, arithmetic/bitwise operations, shifts, and little-endian snapshots validated against shared contract fixtures. A Java GUI is not yet claimed. Java source Build checks"}, {"p": "apps/chimera-pages/index.html", "t": "Chimera II OS — Public Research Index", "g": "Published pages", "d": "Chimera II OS public research index by Amer Hwitat — open research operating system, Koronos kernel, Spit Fire bootloader, Jasper boot manager, C8192/R8192 ISA research, CPU4096, Aurora desktop, mobil", "x": "Chimera II OS Open research operating-system and virtual-processor ecosystem by Amer Hwitat. Canonical source repository · Complete portfolio summary ChimeraIIOS Koronos C8192 R8192 CPU4096 Aurora 128D Framework RISC CISC Neural Simulation Core ChimeraIIOS CPU4096 CPU4096Simulator general / mobile test / Python integration keygen / Java track Research & tools NLP/data research PDFreaderPY eth-key-check bruteforce / crypto reference BizX BizXtreme / WebGL Documentation Amer Hwitat bibliography Library research archive CI/CD plan Crypto provenance Visuals & web Aurora Web UI Mobile Edition visual Public web repository Media publication Current Library media candidates are catalogued in the Chimera publication registry. Video publication links are recorded only after an authenticated upload succeeds. Publication & media registry Publication policy GitHub is the current canonical public forg"}, {"p": "apps/thamudic-pages/index.html", "t": "Thamudic / Ancient North Arabian Scanner Research", "g": "Published pages", "d": "Thamudic and Ancient North Arabian inscription scanner research: image segmentation, glyph evidence, Unicode, transliteration and scholarly verification.", "x": "Thamudic / Ancient North Arabian Scanner Research portal for photographing, segmenting, cataloguing and studying Ancient North Arabian inscriptions, including material historically grouped as Thamudic. Architecture Image → normalization → segmentation → glyph candidates → evidence record → optional classifier → scholarly verification → transliteration/translation The baseline implementation is maintained in amerhwitat/nlp as thamudic_scanner.py . It does not require Tesseract or camel_tools. Scholarly sources OCIANA — Thamudic overview Unicode — Old North Arabian Unicode Core Specification Writing Systems Technical Resources Recent external demo references Bubble Thamudic Scan Thamudic Translator UI Historical Artifacts Database UI These are external references; their source code is not assumed to be open-source. Open-source engineering references DigitalPasts/CuReD Coptic Scriptorium OC"}, {"p": "apps/nlp-amiga/index.html", "t": "Aurora Amiga Emulator", "g": "Research (nlp)", "d": "", "x": "← Aurora Retro catalog Launch vAmigaWeb ↗ SAE source ↗ vAmiga source ↗ SAE API ↗ Loading emulator integration… Aurora Amiga Emulator Browser-first Amiga integration with local SAE/vAmigaWeb adapter support and a verified live vAmigaWeb fallback. Kickstart and disk images are supplied by the user and stay in browser-controlled storage. ▶ Start Ⅱ Pause ↻ Reset ⛶ Fullscreen Use live vAmigaWeb Integration ready Amiga display Start launches the live vAmigaWeb browser emulator when the optional local SAE bundle is not packaged. Kickstart ROM DF0 DF1 HDF/VHD Insert DF0 Eject DF0 🎮 Gamepad Machine Model A500 A500+ A600 A1200 A2000 A3000 A4000/030 Video PAL NTSC CPU: 68000 Chipset: OCS Chip RAM / Fast RAM are controlled by the selected emulator core. Diagnostics GitHub Pages cannot execute fetch_upstream.sh/ps1. Start therefore opens the maintained vAmigaWeb web emulator; local SAE sources remain"}, {"p": "apps/thamudic-epi/index.html", "t": "apps/thamudic-epi/index.html", "g": "Research (nlp)", "d": "", "x": ""}, {"p": "apps/thamudic-scanner/index.html", "t": "Thamudic Scanner", "g": "Research (nlp)", "d": "Thamudic and Ancient North Arabian research scanner", "x": ""}, {"p": "apps/agent-research-forge/index.html", "t": "AgentResearchForge", "g": "Studio & Tools", "d": "", "x": "AgentResearchForge Research public web/library/document sources and generate reviewed project artifacts. python typescript javascript cpp rust go java csharp Research / Build Import document"}, {"p": "apps/aurora-mobile/index.html", "t": "Aurora Wayland Mobile", "g": "Studio & Tools", "d": "", "x": "AURORA Search anything… ☰ ⌂ Home ▦ Apps ▱ Files ⚙ Settings ⬇ Downloads ◉ Terminal ⌘ أوامر SS64 ▣ N-bit ⚡ Power Chimera II OS Mobile AURORA WAYLAND · GLASS · CHIMERA II System CPU · Memory · Storage Adaptive Resource Fabric Thermal · Battery · Frame budget Execution ARM64 · R8192 · C8192 · N-bit ▦ ⌕ ▰ ⌁ ⚙ ⋮"}, {"p": "apps/aurora-mobile/store/index.html", "t": "Chimera Store", "g": "Studio & Tools", "d": "", "x": "Chimera II Mobile Store One store · many ecosystems · one security policy ARM64 Android Swift .deb RPM pacman Debian apt · apt-get · dpkg Install Arch pacman · AUR-compatible source workflow Install Android APK · isolated Android runtime Install Swift SwiftPM · Foundation · SwiftNIO Install Universal Flatpak · Snap · AppImage Install Developer Git · GitHub · source builds Install"}, {"p": "apps/chimera-3d4d/index.html", "t": "Chimera 3D/4D Studio", "g": "Studio & Tools", "d": "", "x": "Chimera 3D/4D Model Sculpt Texture Rig Animate VFX Render"}, {"p": "apps/seo-tool/index.html", "t": "SEO-Tool", "g": "Studio & Tools", "d": "", "x": "SEO-Tool Technical SEO + authorized deep-web research. Scan Pages 0 Issues 0 Links 0 Status idle Ready."}, {"p": "thamudic/index.html", "t": "Thamudic / Ancient North Arabian Scanner Research", "g": "Thamudic", "d": "Thamudic and Ancient North Arabian inscription scanner research: image segmentation, glyph evidence, Unicode, transliteration and scholarly verification.", "x": "Thamudic / Ancient North Arabian Scanner Research portal for photographing, segmenting, cataloguing and studying Ancient North Arabian inscriptions, including material historically grouped as Thamudic. Architecture Image → normalization → segmentation → glyph candidates → evidence record → optional classifier → scholarly verification → transliteration/translation The baseline implementation is maintained in amerhwitat/nlp as thamudic_scanner.py . It does not require Tesseract or camel_tools. Scholarly sources OCIANA — Thamudic overview Unicode — Old North Arabian Unicode Core Specification Writing Systems Technical Resources Recent external demo references Bubble Thamudic Scan Thamudic Translator UI Historical Artifacts Database UI These are external references; their source code is not assumed to be open-source. Open-source engineering references DigitalPasts/CuReD Coptic Scriptorium OC"}, {"p": "web/javascript/index.html", "t": "Amer Hwitat Web Hub", "g": "Web", "d": "", "x": "Amer Hwitat Web Hub Project Web Hub Entry point for browser demonstrations and documentation."}]}
+{
+  "generated_by": "amerhwitat.github.io hub indexer",
+  "pages": [
+    {
+      "p": "apps/bizx-network/index.html",
+      "t": "BizX Network API Console",
+      "g": "Apps",
+      "d": "",
+      "x": "BizX Network API Console BizX Network API Console Local API: http://127.0.0.1:8787 API catalog Health Config Interfaces Ready"
+    },
+    {
+      "p": "apps/bizxtreme-network/index.html",
+      "t": "BizXtreme Network API Console",
+      "g": "Apps",
+      "d": "",
+      "x": "BizXtreme Network API Console BizXtreme Network API Console Local API: http://127.0.0.1:8787 API catalog Health Config Interfaces Ready"
+    },
+    {
+      "p": "apps/index.html",
+      "t": "Apps — Amer Hwitat",
+      "g": "Apps",
+      "d": "",
+      "x": "App directory Redirecting to the portfolio & app hub … 28 apps. Chimera II OS — Home Chimera II OS Aurora 3D Desktop Chimera II OS Chimera Code IDE Chimera II OS Aurora Terminal Chimera II OS System Control Center Chimera II OS Desktop Profiles Chimera II OS Retro Emulators Chimera II OS Installer Manager Chimera II OS Network Monitor Chimera II OS Crash Center Chimera II OS Health Chimera II OS Research OS Chimera II OS Linux Command Console Chimera II OS CPU4096 Simulator — Aurora Web Desktop CPU4096 CPU4096 Visualizer CPU4096 BizX Asset Browser BizX & BizXtreme BizXtreme 3D BizX & BizXtreme Thamudic Scanner Research (nlp) Thamudic Epi Platform Research (nlp) Amiga Emulator Research (nlp) Chimera 3D/4D Studio Studio & Tools SEO Tool Studio & Tools Aurora Mobile Studio & Tools Agent Research Forge Studio & Tools Chimera Test Suite More PDF Reader More Chimera Pages Published Pages Thamu"
+    },
+    {
+      "p": "apps/nlp-artifacts/index.html",
+      "t": "Ancient Artifacts Research Database",
+      "g": "Apps",
+      "d": "",
+      "x": "ANCIENT ARTIFACTS Dashboard Scanner Artifacts Research Ancient Artifact Research Database Thamudic · Ancient North Arabian · multilingual NLP · evidence and provenance Refresh Artifacts 0 Scans 0 Media 0 Annotations 0 Script scanner Ancient North Arabian Dadanitic Safaitic Hismaic Taymanitic Thamudic B Scan & transliterate Ready. All types artifact inscription seal coin manuscript Search Title Script Period Location Translation Evidence policy Recognition, transliteration, translation, historical metadata, media and provenance are stored separately. Unsupported ancient-language translations remain explicitly unavailable rather than being invented."
+    },
+    {
+      "p": "apps/nlp-studio/index.html",
+      "t": "NLP / Ancient Script Studio",
+      "g": "Apps",
+      "d": "Upload or photograph an ancient inscription, run OCR, then view transliteration and translation.",
+      "x": "𐪀 NLP / Ancient Script Studio OCR · Transliteration · Translation for ancient inscriptions detecting… Upload image / PDF Camera Type / paste text ⇪ Drag & drop an inscription image or PDF or browse files — PNG, JPG, WEBP, BMP, TIFF, PDF (max 10 MB) 📷 Open camera Uses your device camera to photograph an inscription. Script Source language Target English العربية (Arabic) Decipher ✦ Working… 0% Upload OCR Scan Transliteration Translation Results Original text ⧉ 🔊 — Transliteration ⧉ 🔊 — Translation ⧉ 🔊 — Unicode & script metadata Translation history Refresh NLP / Ancient Script Studio · Evidence-first: attested original · scholarly transliteration · corpus-backed translation"
+    },
+    {
+      "p": "apps/bizx-asset-browser/index.html",
+      "t": "BizX Free Asset Browser",
+      "g": "BizX",
+      "d": "",
+      "x": "BizX Asset Browser Browse openly licensed assets and import them into the game. Openverse Poly Haven Kenney image audio Search Installed assets"
+    },
+    {
+      "p": "apps/bizxtreme-3d/index.html",
+      "t": "BizXtreme — The Living Frontier",
+      "g": "BizXtreme",
+      "d": "",
+      "x": "BIZXTREME AURORA FRONTIER BIZXTREME THE LIVING FRONTIER STARTER PACK READY ▶ Play Continue Dashboard Missions Events Inventory Marketplace Wallet Settings Frontier Status Chapter 1 · Awakening Save/resume enabled · Local Hall of Fame"
+    },
+    {
+      "p": "apps/cpu4096-aurora/chimera_code_ide.html",
+      "t": "Chimera Code IDE",
+      "g": "CPU4096",
+      "d": "",
+      "x": "Chimera Code IDE C/C++ workspace for Linux, Windows and Chimera CISC/RISC targets. GCC G++ Clang Clang++ MSVC Clang-cl Chimera CISC Chimera RISC C++23 C++20 C++17 C++14 C++11 C++26-preview C23 C17 CMake Ninja Make Meson Build Run Debug #include <iostream>\\n\\nint main() {\\n std::cout << \"Hello, Chimera II!\\\\n\";\\n return 0;\\n}\\n Ready. Native compilation requires an authorized Chimera toolchain adapter. Targets"
+    },
+    {
+      "p": "apps/cpu4096-aurora/desktop_switcher.html",
+      "t": "Chimera Desktop Switcher",
+      "g": "CPU4096",
+      "d": "",
+      "x": "AURORA SESSION MANAGER Desktop Switcher Choose an Aurora, Linux, Windows-style or retro desktop profile."
+    },
+    {
+      "p": "apps/cpu4096-aurora/index.html",
+      "t": "Chimera II · Aurora Web Desktop",
+      "g": "CPU4096",
+      "d": "",
+      "x": "CHIMERA II / P4096 Web Runtime 4096-bit simulator + 8192-bit Chimera II model · Aurora Wayland Glass CPU Width 4096-bit P4096 8192-bit Chimera II Run ADD 10 + 32 Refresh Loading… ISA Loading… Runtime & Services Loading… Keygen Generate Ed25519 key pair Random 256-bit value Command Console / Aurora Terminal Linux/POSIX, Bash/Zsh, Windows CMD, PowerShell, Windows Coreutils and Chimera commands. Enter command Run Ready. Type help. Research simulator. Web terminal is sandboxed and never executes arbitrary host commands."
+    },
+    {
+      "p": "apps/cpu4096-aurora/installer_manager.html",
+      "t": "Chimera II Installer Manager",
+      "g": "CPU4096",
+      "d": "",
+      "x": "CHIMERA II Installer Manager Linux, Windows and Chimera package catalog. Web catalog · dry-run All platforms linux windows chimera Refresh Available Details Select an application. Install Dry Run Remove Update Native operations require an authorized backend."
+    },
+    {
+      "p": "apps/cpu4096-aurora/retro_emulators.html",
+      "t": "Retro Emulator Center",
+      "g": "CPU4096",
+      "d": "",
+      "x": "CHIMERA RETRO COMPUTING Retro Emulator Center Open-source emulator catalog and adapter entry points. ROMs, disk images and proprietary firmware are not included."
+    },
+    {
+      "p": "apps/cpu4096-aurora/system_control_center.html",
+      "t": "Chimera System Control Center",
+      "g": "CPU4096",
+      "d": "",
+      "x": "Chimera System Control Center CPU4096 simulation observability and preferences. Processes Services"
+    },
+    {
+      "p": "apps/cpu4096/web/javascript/index.html",
+      "t": "CPU4096 Web",
+      "g": "CPU4096",
+      "d": "",
+      "x": "CPU4096 Web CPU4096 Visualizer"
+    },
+    {
+      "p": "apps/cpu4096-simulator/public/chimera_code_ide.html",
+      "t": "Chimera Code IDE",
+      "g": "CPU4096 Simulator",
+      "d": "",
+      "x": "Chimera Code IDE C/C++ workspace for Linux, Windows and Chimera CISC/RISC targets. GCC G++ Clang Clang++ MSVC Clang-cl Chimera CISC Chimera RISC C++23 C++20 C++17 C++14 C++11 C++26-preview C23 C17 CMake Ninja Make Meson Build Run Debug #include <iostream>\\n\\nint main() {\\n std::cout << \"Hello, Chimera II!\\\\n\";\\n return 0;\\n}\\n Ready. Native compilation requires an authorized Chimera toolchain adapter. Targets"
+    },
+    {
+      "p": "apps/cpu4096-simulator/public/desktop_switcher.html",
+      "t": "Chimera Desktop Switcher",
+      "g": "CPU4096 Simulator",
+      "d": "",
+      "x": "AURORA SESSION MANAGER Desktop Switcher Choose an Aurora, Linux, Windows-style or retro desktop profile."
+    },
+    {
+      "p": "apps/cpu4096-simulator/public/index.html",
+      "t": "Chimera II · Aurora Web Desktop",
+      "g": "CPU4096 Simulator",
+      "d": "",
+      "x": "CHIMERA II / P4096 Web Runtime 4096-bit simulator + 8192-bit Chimera II model · Aurora Wayland Glass CPU Width 4096-bit P4096 8192-bit Chimera II Run ADD 10 + 32 Refresh Loading… ISA Loading… Runtime & Services Loading… Keygen Generate Ed25519 key pair Random 256-bit value Command Console / Aurora Terminal Linux/POSIX, Bash/Zsh, Windows CMD, PowerShell, Windows Coreutils and Chimera commands. Enter command Run Ready. Type help. Research simulator. Web terminal is sandboxed and never executes arbitrary host commands."
+    },
+    {
+      "p": "apps/cpu4096-simulator/public/installer_manager.html",
+      "t": "Chimera II Installer Manager",
+      "g": "CPU4096 Simulator",
+      "d": "",
+      "x": "CHIMERA II Installer Manager Linux, Windows and Chimera package catalog. Web catalog · dry-run All platforms linux windows chimera Refresh Available Details Select an application. Install Dry Run Remove Update Native operations require an authorized backend."
+    },
+    {
+      "p": "apps/cpu4096-simulator/public/retro_emulators.html",
+      "t": "Retro Emulator Center",
+      "g": "CPU4096 Simulator",
+      "d": "",
+      "x": "CHIMERA RETRO COMPUTING Retro Emulator Center Open-source emulator catalog and adapter entry points. ROMs, disk images and proprietary firmware are not included."
+    },
+    {
+      "p": "apps/cpu4096-simulator/public/system_control_center.html",
+      "t": "Chimera System Control Center",
+      "g": "CPU4096 Simulator",
+      "d": "",
+      "x": "Chimera System Control Center CPU4096 simulation observability and preferences. Processes Services"
+    },
+    {
+      "p": "chimera/index.html",
+      "t": "Chimera II OS — Public Research Index",
+      "g": "Chimera",
+      "d": "Chimera II OS public research index by Amer Hwitat — open research operating system, Koronos kernel, Spit Fire bootloader, Jasper boot manager, C8192/R8192 ISA research, CPU4096, Aurora desktop, mobil",
+      "x": "Chimera II OS Open research operating-system and virtual-processor ecosystem by Amer Hwitat. Canonical source repository · Complete portfolio summary ChimeraIIOS Koronos C8192 R8192 CPU4096 Aurora 128D Framework RISC CISC Neural Simulation Core ChimeraIIOS CPU4096 CPU4096Simulator general / mobile test / Python integration keygen / Java track Research & tools NLP/data research PDFreaderPY eth-key-check bruteforce / crypto reference BizX BizXtreme / WebGL Documentation Amer Hwitat bibliography Library research archive CI/CD plan Crypto provenance Visuals & web Aurora Web UI Mobile Edition visual Public web repository Media publication Current Library media candidates are catalogued in the Chimera publication registry. Video publication links are recorded only after an authenticated upload succeeds. Publication & media registry Publication policy GitHub is the current canonical public forg"
+    },
+    {
+      "p": "apps/chimera-ii-os/docs/index.html",
+      "t": "Chimera II OS",
+      "g": "Chimera II OS",
+      "d": "",
+      "x": "Chimera II OS Chimera II OS Public web entry point for the Chimera II OS project. Source repository Architecture includes Koronos, Spit Fire, Jasper, Spotnik, Aurora, Nucleus, Hive, Kore and Aegis."
+    },
+    {
+      "p": "apps/chimera-ii-os/web/ancient-ocr.html",
+      "t": "Aurora Ancient Language Auto OCR",
+      "g": "Chimera II OS",
+      "d": "Aurora Ancient Language Auto OCR — Thamudic, Ancient North Arabian and related ancient-language research with NLP translation targets.",
+      "x": "← Aurora OCR Studio ThamudicScan Research Lab ANCIENT NLP · AUTOMATIC OCR Ancient Language Auto OCR Choose an image and the browser starts scanning automatically. The pipeline uses the NLP repository's ancient-language registry, Unicode/script detection, Tesseract.js where an appropriate trained model exists, and an optional Chimera/NLP API for deeper ancient-script OCR and translation. Source language Target language — NLP live target catalog Image NLP API (optional) Scan automatically Translate detected text Export JSON Loading the live NLP language catalog… OCR / detected text Detected scripts/languages Translation A capability entry is not proof that a translation model/corpus is installed. The UI preserves provider-required/unavailable states. Pipeline evidence"
+    },
+    {
+      "p": "apps/chimera-ii-os/web/artifact-library.html",
+      "t": "Chimera II OS — Aurora Artifact Library",
+      "g": "Chimera II OS",
+      "d": "",
+      "x": "CHIMERA II OS · AURORA LIBRARY Artifacts, artwork & research sources One browser index for repository-native artwork, documentation, generated media, and lawful internet discovery sources. External artwork is linked or loaded from its source; it is not silently copied into the repository. ← Portal All types Artwork Video Documentation Internet source Sync Chimera manifest Load Internet artwork Repository catalog loaded from the canonical ChimeraIIOS artwork manifest. Internet results are optional."
+    },
+    {
+      "p": "apps/chimera-ii-os/web/aurora-ecosystem-center.html",
+      "t": "Aurora Ecosystem Center",
+      "g": "Chimera II OS",
+      "d": "",
+      "x": "AURORA · ECOSYSTEM CENTER All Projects · All Apps · One Web Workspace A static-safe integration layer for Amer Hwitat repositories plus original browser utilities inspired by common WebOS patterns. Native operations remain behind the local Chimera bridge. Export Catalog Interaction Hub Aurora Home Repository Portfolio Original Browser Apps These are new, license-safe implementations using browser APIs; no third-party source code is copied. Open-Source Inspiration Output Select an app above."
+    },
+    {
+      "p": "apps/chimera-ii-os/web/aurora-emulator.html",
+      "t": "Aurora Emulator · Chimera II",
+      "g": "Chimera II OS",
+      "d": "",
+      "x": "CHIMERA II · AURORA WAYLAND · EMULATION AURORA EMULATOR Unified browser launcher for Aurora's retro, MAME, Amiga and PlayStation surfaces, with an optional local Chimera runtime bridge for host-backed emulation. ← Aurora 3D Desktop Interaction Hub All Retro Emulators ▦ Retro Emulators Browser-safe emulator adapters and the existing multi-system catalog. Launch ▣ MAME Center Arcade emulation, browser MAME core and local runtime controls. Launch MAME ◈ Amiga Scripted Amiga Emulator browser surface and local runtime path. Launch Amiga 🎮 PlayStation PS1–PS5 catalog with experimental newer-generation adapters. Launch PlayStation Local Chimera Bridge The published page never receives privileged OS access. When the authorized local bridge is running, Aurora can hand off host-backed emulator launches and MAME state/media operations. Checking local bridge…"
+    },
+    {
+      "p": "apps/chimera-ii-os/web/aurora-interaction-hub.html",
+      "t": "Aurora Interaction Hub",
+      "g": "Chimera II OS",
+      "d": "",
+      "x": "AURORA · INTERACTION HUB Chimera II Web Workspace One interactive launch surface for Aurora tools, OS controls, research, emulation, Python, networking and wallet workflows. Reset Export workspace map"
+    },
+    {
+      "p": "apps/chimera-ii-os/web/aurora_3d_desktop.html",
+      "t": "Chimera II — Aurora 3D Desktop",
+      "g": "Chimera II OS",
+      "d": "",
+      "x": "CHIMERA II Aurora Desktop Loading Aurora environment… 0% ☾ CHIMERA Chimera II OS ▦ Gates Aurora Desktop Aurora Wayland Glass ⌁ ◉ ▣ 98% 🔊 --:-- 〉_ Terminal ⚙ Settings ▱ Files i About Chimera ∿ System Monitor ▥ Library ▣ ISA Explorer CHIMERA II OS Open. Secure. Infinite. Application — □ × ⌘ ◉ 〉_ ∿ ▱ ▥ ▣ ⚙ i AURORA 3D Desktop Controls × Scene intensity Motion Glass blur 3D: ON Telemetry GPU WEBGL FPS -- MODE 3D PROFILE AURORA Aurora Wayland Glass · System Ready Ctrl+K launcher · Ctrl+Shift+A controls A Local Account Home Files Terminal Settings Help / man Desktop Profiles AURORA · ALL WEB UI · EMULATOR READY PINNED ▰ Files ⌘ Terminal ◉ Browser </> Chimera Code ⚙ Settings ? Unified Help ✦ Desktop ⚡ Hercules ▣ Repo Studio ⌬ Runtime Lab 🎮 Aurora Emulator ⌘ SS64 / العربية ◎ All Aurora Apps ▦ Emulators 🎮 Game Center ⌁ Network 𐪀 Research RECOMMENDED Project Chimera II · Aurora Wayland Guide · Sys"
+    },
+    {
+      "p": "apps/chimera-ii-os/web/aurora_terminal.html",
+      "t": "Aurora Command Center",
+      "g": "Chimera II OS",
+      "d": "",
+      "x": "← Aurora ⌘ Aurora Command Center Linux Windows CMD PowerShell macOS Run Run in Chimera SS64-derived catalog for Linux, Windows CMD/PowerShell and macOS. The catalog is regenerated during Pages deployment. Browser execution is sandboxed; native-only commands are handed to Chimera. Ready. Try: عرض, اقرأ, اكتب, مسار, قائمة, احذف, بحث, تشغيل"
+    },
+    {
+      "p": "apps/chimera-ii-os/web/aurora_webgl_desktops.html",
+      "t": "Chimera II · WebGL Desktop Gallery",
+      "g": "Chimera II OS",
+      "d": "",
+      "x": "◈ Chimera II Aurora Wayland Glass WebGL 2 desktop renderer ☰ Desktops WEBGL DESKTOP ENGINE AURORA Live 3D desktop surface with Chimera II runtime telemetry. System Runtime Renderer Settings Fullscreen Kernel Koronos · live Renderer WebGL 2 FPS -- Targets 10 ready × Chimera II Runtime"
+    },
+    {
+      "p": "apps/chimera-ii-os/web/backend-status.html",
+      "t": "Aurora Backend Status",
+      "g": "Chimera II OS",
+      "d": "",
+      "x": "← Aurora Dynamic Backend Gateway GitHub Pages remains the public static frontend. Enter an authorized Chimera backend URL to enable native telemetry, commands, installer actions and toolchain execution. Credentials are never stored by this page. Save backend Use static mode Status Checking… Check now GitHub dynamic data Loading… Local Chimera backend The repository already contains apps/chimera-test-suite/server.js , which proxies /api/* to the capability-gated Python runtime. Run it locally and set its URL here. node apps/chimera-test-suite/server.js"
+    },
+    {
+      "p": "apps/chimera-ii-os/web/chimera-language-runtime.html",
+      "t": "Chimera II — Language & Legacy Runtime Lab",
+      "g": "Chimera II OS",
+      "d": "",
+      "x": "CHIMERA II · AURORA WAYLAND · RUNTIME LAB Language, JVM, WASM & Legacy Runtime Emulator Complete tracked source inventory for Chimera II ASM/C/C++/Python/Kotlin/Java, with modern browser adapters and explicit legacy compatibility descriptors. ← Aurora Desktop ISO & Flash Center Repository App Studio Source Repository Runtime policy Java Applet: represented as a compatibility target only; current Chrome/Edge/Firefox/Safari do not execute the historical Java browser plugin. ActiveX: represented as a Windows COM/ActiveX compatibility target only; modern Chromium/Firefox do not host ActiveX. The runnable web path is JavaScript/WebAssembly, Pyodide/local Python bridge, Kotlin/JVM or Kotlin/WASM, and authorized local native/JVM bridges. ISO creation, flashing, device access and privileged native execution remain behind the existing local Chimera bridge. Adapter matrix Runtime console Aurora Ru"
+    },
+    {
+      "p": "apps/chimera-ii-os/web/chimera_code_ide.html",
+      "t": "Chimera Code IDE",
+      "g": "Chimera II OS",
+      "d": "",
+      "x": "Chimera Code IDE C/C++ workspace for Linux, Windows and Chimera CISC/RISC targets. GCC G++ Clang Clang++ MSVC Clang-cl Chimera CISC Chimera RISC C++23 C++20 C++17 C++14 C++11 C++26-preview C23 C17 CMake Ninja Make Meson Build Run Debug #include \\n\\nint main() {\\n std::cout Ready. Native compilation requires an authorized Chimera toolchain adapter. Targets"
+    },
+    {
+      "p": "apps/chimera-ii-os/web/command-console.html",
+      "t": "Aurora Command Center",
+      "g": "Chimera II OS",
+      "d": "",
+      "x": "← Aurora ⌘ مركز أوامر Aurora SS64 Linux Windows CMD PowerShell macOS تشغيل تشغيل في Chimera فهرس SS64 لأنظمة Linux وWindows CMD/PowerShell وmacOS، مع تعريب الأوامر الشائعة. المصدر المرجعي: SS64. The catalog is regenerated during Pages deployment. Browser execution is sandboxed; native-only commands are handed to Chimera. Ready. Try: عرض, اقرأ, اكتب, مسار, قائمة, احذف, بحث, تشغيل"
+    },
+    {
+      "p": "apps/chimera-ii-os/web/crash_center.html",
+      "t": "Aurora Crash Center",
+      "g": "Chimera II OS",
+      "d": "",
+      "x": "⚠ Aurora Crash Center Crash reporting, dump inventory, service health and recovery state for Aurora Wayland / Chimera II. No crash event observed by this web client. Crash dumps N/A Native backend required for filesystem inventory. Crash service UNKNOWN Backend endpoint: /api/crash Last crash N/A Timestamp supplied by backend. Recovery READY Web client remains isolated from host restart controls. Crash-dump services systemd-coredump · coredumpctl · kdump · crash · apport · ABRT · core_pattern · minidump · Windows Error Reporting · WER · ProcDump · Event Viewer The catalog describes supported services; actual collection and retention are performed only by an authorized native backend. Crash screen policy On an unhandled Aurora web exception, the UI records a local diagnostic event and presents a recovery screen. It does not pretend to be a kernel panic or fabricate a native core dump. Tes"
+    },
+    {
+      "p": "apps/chimera-ii-os/web/desktop_switcher.html",
+      "t": "Aurora Desktop Switcher",
+      "g": "Chimera II OS",
+      "d": "",
+      "x": "AURORA SESSION MANAGER Desktop Switcher Choose a Linux, Windows, Aurora, or retro desktop profile for the Web desktop renderer. Native Linux sessions require the corresponding desktop to be installed; Windows profiles can use a visual shell or an authorized VM/RDP backend. Launch Three.js Aurora Desktop Return to Aurora"
+    },
+    {
+      "p": "apps/chimera-ii-os/web/game-center.html",
+      "t": "Aurora Game Center",
+      "g": "Chimera II OS",
+      "d": "",
+      "x": "AURORA · BIZX · BIZXTREME Complete Game Center Unified dynamic catalog, gameplay controls, progression, saves, events, cards, T-Rex and emulator handoffs. Game assets remain license-gated and ROMs remain user-supplied. Aurora MAME Arcade Retro Catalog BizXtreme ↗ All types card runner story event retro catalog aaa-original Reset local save Export database state Selected None Score 0 XP 0 Choose a game from the database. All Games & Features Activity"
+    },
+    {
+      "p": "apps/chimera-ii-os/web/health.html",
+      "t": "Chimera II OS — System Health",
+      "g": "Chimera II OS",
+      "d": "Chimera II OS Aurora System Health and KPI Center",
+      "x": "AURORA WAYLAND GLASS · SYSTEM HEALTH Chimera II Health Center Unified operational KPI view for the machine, kernel, runtime, graphics, applications and research planes. Collecting… Subsystem health Telemetry source Web UI telemetry is active. Native Chimera metrics are used when /api/kpi is available. Refresh now Export snapshot"
+    },
+    {
+      "p": "apps/chimera-ii-os/web/hercules-integration.html",
+      "t": "Chimera II — Hercules Integration",
+      "g": "Chimera II OS",
+      "d": "",
+      "x": "CHIMERA II · HERCULES RUNTIME BRIDGE AURORA × HERCULES Integrated launcher for the external Chimera II application runtime plus the complete Aurora web application surface. The visual layer follows the Aurora Wayland Glass artwork language. Open Hercules Runtime Return to Aurora Desktop Open Interaction Hub REMOTE RUNTIME If embedding is blocked by the runtime host, use “Open Hercules Runtime”. Aurora App Matrix Every currently exposed Aurora application surface is launchable here. Integrated Feature Domains"
+    },
+    {
+      "p": "apps/chimera-ii-os/web/index.html",
+      "t": "Chimera II OS — Aurora Wayland Glass",
+      "g": "Chimera II OS",
+      "d": "Chimera II OS Aurora Wayland Glass architecture and Web UI",
+      "x": "Skip to content AURORA WAYLAND GLASS DESKTOP CHIMERA II OS 8192-bit ISA · deterministic kernel · zero-copy I/O · 128D research plane 3D Desktop Desktop Profiles Architecture ISA Kernel Terminal Standards CHIMERA ARCHITECTURE EXPLORER A unified view of the machine, kernel, I/O, graphics, and research layers. Explore the native R8192 machine model, compatibility frontends, Koronos kernel boundaries, DMA/IOMMU ownership, Aurora presentation stack, and 128D research plane. Launch Aurora 3D Web Desktop Open ISO & Flash Center Open Ecosystem Center Open Hercules Runtime Open Repository App Studio DEPTH 12 MODEL SYSTEM MAP Core domains Loading… INSTRUCTION SET ISA Matrix 284 native opcodes Chimera II native and compatibility instruction-set families Family Style Width Role Status KORONOS Kernel and I/O layers Loading… AURORA WEB TERMINAL Cross-platform CLI SANDBOXED Chimera II Web Terminal Linu"
+    },
+    {
+      "p": "apps/chimera-ii-os/web/installer_manager.html",
+      "t": "Chimera II — Installer Manager",
+      "g": "Chimera II OS",
+      "d": "",
+      "x": "CHIMERA II Installer Manager Applications, packages, and authorized platform backends. Web catalog · dry-run All platforms linux windows chimera All package formats Refresh Available Details Select an application. Install Dry Run Remove Update Installed No native inventory reported. Operation log Installer Manager ready. Native operations require an authorized backend."
+    },
+    {
+      "p": "apps/chimera-ii-os/web/isa-explorer.html",
+      "t": "Chimera ISA Explorer",
+      "g": "Chimera II OS",
+      "d": "",
+      "x": "← Aurora Smart Model CHIMERA ISA / R8192 + MULTI-ARCH Instruction Set Explorer Loading complete ISA registry…"
+    },
+    {
+      "p": "apps/chimera-ii-os/web/iso-flash-center.html",
+      "t": "Chimera II ISO & Flash Center",
+      "g": "Chimera II OS",
+      "d": "",
+      "x": "AURORA · CHIMERA II · TOOLING ISO & Flash Center Web control surface for the existing Chimera II ISO-Tool and Aurora Flash Tool. Aurora Interaction Hub Game Center Bridge: checking… GitHub Pages cannot directly mount ISOs or write block devices. When the Chimera localhost bridge is running, these controls call the native tools on the same computer. Flash safety: flashing destroys data on the selected device. Verify the removable target, image SHA-256, and recovery plan before enabling the native flash action. ISO-Tool Uses Chimera II's existing iso-tool.sh for native ISO inspection and verification. Local ISO path ISO Information Verify ISO Native ISO-Tool also supports extract, modify, repack and QEMU test. The Web UI exposes non-destructive info/verify actions directly. Flash Tool Uses Aurora Flash Tool with SHA-256 verification and explicit native confirmation. Local image / ISO path "
+    },
+    {
+      "p": "apps/chimera-ii-os/web/javascript/index.html",
+      "t": "Chimera II Web Runtime",
+      "g": "Chimera II OS",
+      "d": "",
+      "x": "Chimera II Web Runtime Browser dashboard for architecture, ISA and runtime telemetry."
+    },
+    {
+      "p": "apps/chimera-ii-os/web/mame-center.html",
+      "t": "Aurora MAME Arcade Center",
+      "g": "Chimera II OS",
+      "d": "",
+      "x": "AURORA · CHIMERA II · ARCADE MAME Arcade Center Dynamic browser frontend for MAME/WebAssembly cores, local ROM sets, controls, saves, diagnostics and game metadata. No copyrighted ROMs are bundled. Aurora Retro Catalog Game Center MAME source ↗ All systems Arcade Atari Commodore Apple MSX Nintendo Sega ZX Spectrum Scan local ROMs ROM ZIPs Load MAME JS/WASM ▶ Launch selected Core: not loaded · ROMs: user-supplied · storage: IndexedDB Select a game and load a compatible Emscripten MAME/libretro-style core. Pause Reset Fullscreen Save state Load state Sound Insert coin P1 Start Controls Click a mapping field and press a key. Gamepad buttons use the same action layer. Controls persist locally per game. Database Diagnostics"
+    },
+    {
+      "p": "apps/chimera-ii-os/web/network-engine.html",
+      "t": "Aurora Network Engine — Chimera II OS",
+      "g": "Chimera II OS",
+      "d": "Aurora Network Engine integration surface for Chimera II OS, BizXtreme NetworkUnified and the external Rocket Network Engine.",
+      "x": "✦ Aurora Network Engine Chimera II OS network integration hub · BizXtreme NetworkUnified · Rocket live surface Aurora Home Research Lab Open Network Engine ↗ Integration status: external Rocket Network Engine is linked as the authoritative live UI. This page adds the verified repository-side integration catalog and navigation; Rocket internals were not fetchable from the build environment, so no inaccessible feature is represented as a confirmed Rocket implementation. Transport & session Network sessions Expose a common surface for online/offline modes, session state, presence and multiplayer adapters. WebSocket / WebRTC adapter boundary P2P / libp2p integration point Consent-based presence Offline-safe runtime mode API NetworkUnified BizXtreme consolidates networking/API behavior behind the versioned bizxtreme.network.api.v1 contract. Python, Node.js, TypeScript Go, Rust, Java, C#, C++ "
+    },
+    {
+      "p": "apps/chimera-ii-os/web/network.html",
+      "t": "Chimera II Network Hub",
+      "g": "Chimera II OS",
+      "d": "",
+      "x": "AURORA NETWORK FABRIC Network Hub Opt-in LAN · P2P WebRTC · client/server presence offline CONNECTED FRONTIER Connect users safely. LAN discovery uses an explicit local beacon. Internet peer introduction uses a WebSocket signaling service you select. There is no arbitrary Internet port scanning. ✦ Identity Nickname Avatar ✦ Aurora 🦊 Fox 🐺 Wolf 🤖 Robot ★ Star Save identity Randomize LAN discovery Local bridge Scan LAN Stop Clear UDP broadcast beacon only. Internet / client-server Signaling WebSocket Room Connect Disconnect Compatible signaling must relay presence and offer/answer/candidate messages. Connected users 0 No peers yet. Session No active P2P session. Connect first peer Client/server mode Activity Network Hub ready. ChimeraIIOS · Aurora Network Hub Opt-in discovery · explicit signaling · no Internet port scan"
+    },
+    {
+      "p": "apps/chimera-ii-os/web/network_monitor.html",
+      "t": "Aurora Network Monitor",
+      "g": "Chimera II OS",
+      "d": "",
+      "x": "◉ Aurora Network Monitor TCP/IP, interfaces, routes, DNS and socket-observation center. Native values appear only when a host telemetry backend is connected. Command families ip · ss · netstat · ifconfig · route · arp · ping · traceroute · tracepath · mtr · dig · nslookup · host · resolvectl · ethtool · tcpdump · nstat · lsof Windows equivalents: ipconfig · netstat · route · arp · tracert · pathping · nslookup · netsh · Test-NetConnection · Get-NetAdapter · Get-NetTCPConnection"
+    },
+    {
+      "p": "apps/chimera-ii-os/web/ocr-studio.html",
+      "t": "Chimera II OS — Aurora OCR Studio",
+      "g": "Chimera II OS",
+      "d": "Chimera II OS Aurora OCR workspace — upload an image and automatically OCR, translate and transliterate it.",
+      "x": "AURORA WEB TOOL · CHIMERA II OS OCR → Translate → Transliterate Upload an image. The browser automatically recognizes text, translates it to your target language, and produces a script-aware transliteration. No image is uploaded to the Chimera server by this page. 𐪀 Ancient Auto OCR ← Portal Image Choose image or drop it here OCR language English Arabic Greek Russian Hebrew Turkish German French Spanish Italian Target translation English Arabic Greek Russian French German Spanish Italian Turkish Transliteration Latin / English letters Arabic script Greek script Cyrillic Scan automatically Source image Waiting for an image… OCR text Copy OCR Translation Copy translation Transliteration Copy transliteration Pipeline OCR runs locally in the browser through Tesseract.js. Translation uses the public MyMemory translation endpoint when available; if the network translation service is unavailabl"
+    },
+    {
+      "p": "apps/chimera-ii-os/web/pdf-reader.html",
+      "t": "Chimera II — PDF Reader",
+      "g": "Chimera II OS",
+      "d": "",
+      "x": "AURORA · DOCUMENT TOOLS PDF Reader Upload a PDF and see the actual document immediately, with local PyPDF text extraction when the bridge is available. Reader ready PDF / PYPDF Upload → render → read The uploaded PDF remains in your browser. The viewer renders every page; the optional local bridge extracts searchable text and metadata with PyPDF. PDF PDF document Page Zoom 100% 125% 150% 200% Open document Previous Next Fit width Extract text Back to Aurora Choose a PDF to display it here. Extracted text No PDF loaded. ChimeraIIOS · PDF Reader Browser renderer + optional local PyPDF bridge"
+    },
+    {
+      "p": "apps/chimera-ii-os/web/playstation_emulators.html",
+      "t": "Chimera II · Aurora PlayStation Emulator Hub",
+      "g": "Chimera II OS",
+      "d": "",
+      "x": "◈ CHIMERA II AURORA · EMULATORS · PLAYSTATION Retro Lab Fullscreen NATIVE ADAPTER CATALOG · PSX → PS5 PlayStation Emulator Hub One Aurora panel for PlayStation emulators from PSX/PS1 through PS5. Installed emulators are detected locally; official source pages are provided for missing components. Chimera II never bundles games, BIOS, keys, or proprietary firmware. All generations PSX / PS1 PS2 PS3 PS4 PS5"
+    },
+    {
+      "p": "apps/chimera-ii-os/web/portfolio.html",
+      "t": "Chimera II OS — Unified Portfolio Apps",
+      "g": "Chimera II OS",
+      "d": "Chimera II OS unified portfolio application launcher",
+      "x": "← Aurora Control Center CHIMERA II OS AURORA PORTFOLIO BRIDGE Unified Portfolio Apps One Web UI catalog for the maintained application and research repositories connected to Chimera II OS. WEB · NATIVE · RESEARCH Ctrl/⌘+K search All categories Sort: name Sort: category Favorites only ★ 0 Runtime boundary GitHub Pages provides the launcher/catalog and browser-safe apps. Native executables, privileged services, large local cores, ROMs, BIOS/firmware and private data remain on the operator's machine or authorized service. Repository links open the source of record."
+    },
+    {
+      "p": "apps/chimera-ii-os/web/repository-app-studio.html",
+      "t": "Aurora Repository App Studio",
+      "g": "Chimera II OS",
+      "d": "",
+      "x": "● Guest · no password · local session Aurora Repository App Studio Runnable browser editions and launch adapters for the requested Chimera II repositories. Java source is exposed as portable Java runners for Aurora's local execution bridge; browser builds run without a server. All repositories Web-runnable Java / JVM Native / bridge Aurora Desktop Hercules Guest control model: Guest can launch and use all browser-safe applications. Native OS, device, filesystem-write, network-privileged and other capability-gated actions remain controlled by the local Chimera bridge; GitHub Pages cannot grant those privileges by itself. Browser Runtime A deterministic, client-only research console. It never sends entered values to a server. Aurora Repository App Studio Guest session ready. Select an application above."
+    },
+    {
+      "p": "apps/chimera-ii-os/web/research-lab.html",
+      "t": "Aurora Research Lab — Chimera II OS",
+      "g": "Chimera II OS",
+      "d": "Aurora Research Lab for Chimera II OS: NLP, ancient-script OCR, transliteration, translation, safe cryptographic research and simulator integration.",
+      "x": "✦ Aurora Research Lab Chimera II OS · NLP · OCR · Transliteration · Safe Crypto Research Aurora Home OCR Studio Artifact Library NLP Repo Crypto Repo Unified research surface This page exposes verified capabilities from the amerhwitat/nlp and amerhwitat/bruteforce repositories and connects them to the existing browser tools. It does not pretend a static GitHub Pages site is a native Python/C++ runtime. Thamudic / Ancient North Arabian Image/PDF → OCR Script detection Transliteration Translation Provenance Hashing Test vectors Benchmarks Open Rocket Simulator ↗ NLP Scanner Source ↗ Crypto Catalog ↗ Ancient-language NLP The NLP repository documents an image/PDF → CV/OCR → script detection → NLP/tokenization → transliteration → corpus/symbolic checks → translation flow, with provenance and audit logging. Python Thamudic Web Scanner Web API OCR & translation bridge Use the browser-local OCR "
+    },
+    {
+      "p": "apps/chimera-ii-os/web/research-os.html",
+      "t": "Chimera II OS — Open Research Operating System",
+      "g": "Chimera II OS",
+      "d": "Chimera II OS — open research operating system, virtual processor, Aurora mobile edition, source-code federation and technical bibliography by Amer Hwitat.",
+      "x": "PUBLIC RESEARCH OS · 2026 Chimera II OS A research-grade operating-system, virtual-processor, mobile, desktop, networking and intelligent-computing ecosystem. Author / research lead: Amer Hwitat Canonical source ChimeraIIOS CPU4096 CPU4096Simulator Mobile / general Research Author bibliography Library research archive Open-source publication plan CI/CD plan Architecture Spit Fire → Jasper → Koronos → Kore/Spotnik → Aurora → applications. R8192/C8192 and RegisterN remain research/emulation targets rather than claims of existing silicon. Mobile Edition Aurora-inspired mobile glass UI with bilingual English/Arabic presentation, system telemetry, applications, store, files, terminal, security and device services. Mobile landing visual specification Source-code federation GitHub GitLab Codeberg / Forgejo SourceHut Git GitHub is canonical until secondary mirrors are explicitly created. No fabr"
+    },
+    {
+      "p": "apps/chimera-ii-os/web/retro_emulators.html",
+      "t": "Chimera Retro Emulators",
+      "g": "Chimera II OS",
+      "d": "",
+      "x": "CHIMERA RETRO COMPUTING Retro Computer Emulators MAME Arcade Center Complete Game Center Unified catalog and launcher adapters for classic computers and consoles. Legal ROMs, disks and firmware remain user-supplied."
+    },
+    {
+      "p": "apps/chimera-ii-os/web/smart-model.html",
+      "t": "Aurora Smart Model",
+      "g": "Chimera II OS",
+      "d": "",
+      "x": "← Aurora ISA Explorer Command Center RNN + LLM / ON-DEVICE INTELLIGENCE Aurora Smart Model Local click learning is a small recurrent model trained in the browser. Optional language generation uses a WebGPU/WASM Transformers.js model. Your click history stays local unless an authorized Chimera backend is configured. Model Aurora RNN Learner — local Qwen2.5-0.5B-Instruct — WebGPU/WASM Load model Prompt Describe the current Chimera Aurora workspace and suggest my next useful action. Generate Model not loaded. Learning telemetry No events yet. Export learning JSON Clear local learning The site records UI intent (page, element, action, timestamp) rather than passwords, form contents, or private keys. Backend persistence is opt-in."
+    },
+    {
+      "p": "apps/chimera-ii-os/web/system_control_center.html",
+      "t": "Chimera System Control Center",
+      "g": "Chimera II OS",
+      "d": "",
+      "x": "CHIMERA II System Control Center System management, preferences and health Detecting backend… ↻ Refresh ⌂ Overview ◫ Processes ⚙ Services ◒ Performance ☷ Settings ▣ Desktop ◉ Startup ⚠ Recovery LIVE SYSTEM STATE Checking system health… Metrics are sourced from the available backend. Unknown values are never fabricated. — Health System components Readiness and telemetry provenance Processes Live process inventory PID Process User CPU Memory State Health Services Service inventory and lifecycle state Service Description State Startup PID Health Actions Performance & KPIs Telemetry with source, confidence and timestamp Settings & Preferences Changes are stored locally unless a native settings backend is available. Desktop profile Theme Aurora Auto Light Dark Taskbar behavior Show Control Center Compact Minimal Enable system notifications Power/session policy Always confirm Session controls "
+    },
+    {
+      "p": "apps/chimera-ii-os/web/thamudicscan.html",
+      "t": "Aurora ThamudicScan",
+      "g": "Chimera II OS",
+      "d": "",
+      "x": "𐪀 Aurora ThamudicScan Ancient North Arabian / Thamudic research, scanning, transliteration, translation and evidence-aware reporting. Aurora Home Research Lab Softr Scanner ↗ Open ThamudicScan ↗ Integrated source: amerhwitat/nlp . The Bubble deployment is retained as a live external surface. The repository also provides a first-party React/Vite + FastAPI deployment and canonical research pipeline. Unsupported readings remain explicitly unavailable rather than being fabricated. Softr feature bridge: the supplied Softr deployment is preserved as a live reference; the portal exposes the documented first-party scanner capabilities without claiming undocumented Softr internals. Scan Inscription & document scanner Keyword-aware text scanning UTF-8 inscription/document uploads Bounded file handling Unicode validation for U+10A80–U+10A9F Source, historical text, code points and recognition confi"
+    },
+    {
+      "p": "apps/chimera-ii-os/web/wallet-center.html",
+      "t": "Aurora Wallet & Ecosystem Center",
+      "g": "Chimera II OS",
+      "d": "",
+      "x": "AURORA · CHIMERA · BIZX · BIZXTREME · CRYPTO RESEARCH Wallet & Ecosystem Center A unified browser surface for non-custodial wallet connections, watch-only portfolio research, transaction intents, game-economy payments, NetworkUnified/P2P, AI assistance, asset discovery and safe cryptographic research. Signing secrets stay outside this UI. Aurora Home Research Lab Network Engine Smart Model BizXtreme Source Crypto Research Source Wallet mode: watch-only / simulation · No private key, seed phrase or credential is accepted. 🔐 Non-custodial wallet adapter Connect a user-controlled provider; display accounts, chains, balances and transaction status without importing secrets. EVM Bitcoin Solana TON 📊 Portfolio & watch-only Track public addresses, assets, transaction IDs and ownership states. Unknown addresses remain observation-only. 🧾 Transaction intent Prepare recipient, asset, amount, netwo"
+    },
+    {
+      "p": "apps/chimera-ii-os/webui/linux-command-console.html",
+      "t": "Chimera II Linux Command Console",
+      "g": "Chimera II OS",
+      "d": "",
+      "x": "Chimera II Linux command capability registry Chimera II Aurora terminal\\nCapability-scoped WebSocket session.\\n\\n Run"
+    },
+    {
+      "p": "apps/chimera-test-suite/aurora_3d_desktop.html",
+      "t": "Aurora 3D Desktop — Chimera II",
+      "g": "More",
+      "d": "",
+      "x": "✦ CHIMERA II Aurora / Linux ◈ Aurora Desktop — □ × SPITFIRE → KORONOS → JASPER → AURORA Chimera II Unified Linux and Windows desktop presentation layer. Open Terminal Man / Help CII ⌘ Terminal × Chimera II Terminal\\nLinux/POSIX + Bash/Zsh + Windows CMD + PowerShell\\nType: help, man ls, man powershell:Get-Process, desktop windows chimera@aurora:$ Run ▤ Unified Man / Help × ▣ Files × Virtualized Chimera workspace 📁 projects 📁 docs 📁 source 📄 README.md ✦ ⌘ ▤ ▣ ◫ Desktop Profiles Aurora / Linux GNOME / Linux KDE Plasma / Linux Xfce / Linux Cinnamon / Linux MATE / Linux LXQt / Linux Windows 11 Windows 10 Classic Windows"
+    },
+    {
+      "p": "apps/chimera-test-suite/index.html",
+      "t": "Aurora — Chimera II OS",
+      "g": "More",
+      "d": "",
+      "x": "✦ CHIMERA II Connecting… ◉ Aurora Boot STARTING 0% Initializing Spitfire Spitfire loader Hardware discovery Memory fabric Koronos kernel System services Jasper desktop manager Wayland compositor Aurora desktop READY ✧ Aurora Three.js Desktop Launch 3D Desktop Unified Linux/Windows desktop presentation layer with Aurora glass styling. ◈ Aurora System — □ × SPITFIRE → KORONOS → JASPER → AURORA Chimera II OS A responsive desktop session gated by completed system boot. Open Aurora 3D / Linux + Windows Profiles CII ◉ Spitfire boot sequence LIVE Loading… ⬢ Koronos kernel RUNNING Loading… ✦ Jasper Desktop Manager STARTING Waiting for boot state… ⌘ System services Refresh ✧ Aurora Wayland STARTING Waiting for boot completion… ⌘ Chimera Terminal — □ × Chimera II Terminal — Aurora Web UI Linux/POSIX + Bash/Zsh + Windows CMD + PowerShell compatibility catalog loaded. Type help , man <command> , or "
+    },
+    {
+      "p": "apps/chimera-test-suite/javascript/index.html",
+      "t": "Web Test Harness",
+      "g": "More",
+      "d": "",
+      "x": "Web Test Harness Browser Test Harness Run smoke test"
+    },
+    {
+      "p": "apps/pdf-reader/index.html",
+      "t": "PDFreaderPY Web",
+      "g": "More",
+      "d": "",
+      "x": "PDFreaderPY Web PDFreaderPY Web Select a PDF for local browser handling."
+    },
+    {
+      "p": "404.html",
+      "t": "Not found — Amer Hwitat Web UI",
+      "g": "Portfolio",
+      "d": "",
+      "x": "404 That app or page was not found. ← Back to the app hub"
+    },
+    {
+      "p": "index.html",
+      "t": "Amer Hwitat — Chimera II OS · Aurora Wayland Glass Portfolio",
+      "g": "Portfolio",
+      "d": "Chimera II OS — Aurora Wayland Glass web desktop. Open. Secure. Infinite. Research, NLP, emulation and OS simulator apps from github.com/amerhwitat.",
+      "x": "Amer Hwitat · Chimera II OS Portfolio Research Platform NLP Translator OS Simulator Script & ISA Registry Repositories AR Chimera II OS — Aurora Wayland Glass Open. Secure. Infinite. Every browser UI from github.com/amerhwitat in one Aurora glass desktop: OS simulator, research platform, NLP/OCR translator, emulators and the full app catalogue. Desktop Mobile apps ◈ Aurora Wayland · Modern · Secure · Open · For Tomorrow 🕑 --:-- 📅 — ⛅ 22°C Partly Cloudy · Amman, Jordan · H: 26° L: 16° 📶 Connected Wi-Fi (Home) · 10GBE ▣ Aurora Wayland · Wayland Compositor · --:-- “The Future Is Now” Wayland · Smooth · Fast · Secure — a glass compositor surface for the Chimera II OS simulator. Open OS simulator → Aurora WebGL desktops CPU4096 Aurora shell ♫ Aurora Sound ▶ 2:34 / 4:21 Interface demo only — no audio is streamed. ▤ Calendar ◱ Research mode Ancient-language OCR, transliteration and translation "
+    },
+    {
+      "p": "java-apps.html",
+      "t": "Java Desktop Portfolio — Amer Hwitat",
+      "g": "Portfolio",
+      "d": "",
+      "x": "JAVA · DESKTOP · RESEARCH Java Application Portfolio Native JVM desktop applications and shared Java components for the project repositories. ← Main portfolio Java desktop applications run on a local JVM. GitHub Pages is a static website, so this page links to their source and build workflows; it does not pretend to execute desktop bytecode inside the browser. GUI PR opened PDF Reader — Java Swing Native desktop PDF viewer with file selection, page selection, asynchronous PDFBox rendering, and the existing ingestion/provenance adapter. OCR remains a separate pipeline until its algorithms are ported and parity-tested. Review GUI pull request Java source Java model + contract tests CPU4096 Unsigned fixed-width register model, arithmetic/bitwise operations, shifts, and little-endian snapshots validated against shared contract fixtures. A Java GUI is not yet claimed. Java source Build checks"
+    },
+    {
+      "p": "apps/chimera-pages/index.html",
+      "t": "Chimera II OS — Public Research Index",
+      "g": "Published pages",
+      "d": "Chimera II OS public research index by Amer Hwitat — open research operating system, Koronos kernel, Spit Fire bootloader, Jasper boot manager, C8192/R8192 ISA research, CPU4096, Aurora desktop, mobil",
+      "x": "Chimera II OS Open research operating-system and virtual-processor ecosystem by Amer Hwitat. Canonical source repository · Complete portfolio summary ChimeraIIOS Koronos C8192 R8192 CPU4096 Aurora 128D Framework RISC CISC Neural Simulation Core ChimeraIIOS CPU4096 CPU4096Simulator general / mobile test / Python integration keygen / Java track Research & tools NLP/data research PDFreaderPY eth-key-check bruteforce / crypto reference BizX BizXtreme / WebGL Documentation Amer Hwitat bibliography Library research archive CI/CD plan Crypto provenance Visuals & web Aurora Web UI Mobile Edition visual Public web repository Media publication Current Library media candidates are catalogued in the Chimera publication registry. Video publication links are recorded only after an authenticated upload succeeds. Publication & media registry Publication policy GitHub is the current canonical public forg"
+    },
+    {
+      "p": "apps/thamudic-pages/index.html",
+      "t": "Thamudic / Ancient North Arabian Scanner Research",
+      "g": "Published pages",
+      "d": "Thamudic and Ancient North Arabian inscription scanner research: image segmentation, glyph evidence, Unicode, transliteration and scholarly verification.",
+      "x": "Thamudic / Ancient North Arabian Scanner Research portal for photographing, segmenting, cataloguing and studying Ancient North Arabian inscriptions, including material historically grouped as Thamudic. Architecture Image → normalization → segmentation → glyph candidates → evidence record → optional classifier → scholarly verification → transliteration/translation The baseline implementation is maintained in amerhwitat/nlp as thamudic_scanner.py . It does not require Tesseract or camel_tools. Scholarly sources OCIANA — Thamudic overview Unicode — Old North Arabian Unicode Core Specification Writing Systems Technical Resources Recent external demo references Bubble Thamudic Scan Thamudic Translator UI Historical Artifacts Database UI These are external references; their source code is not assumed to be open-source. Open-source engineering references DigitalPasts/CuReD Coptic Scriptorium OC"
+    },
+    {
+      "p": "apps/nlp-amiga/index.html",
+      "t": "Aurora Amiga Emulator",
+      "g": "Research (nlp)",
+      "d": "",
+      "x": "← Aurora Retro catalog Launch vAmigaWeb ↗ SAE source ↗ vAmiga source ↗ SAE API ↗ Loading emulator integration… Aurora Amiga Emulator Browser-first Amiga integration with local SAE/vAmigaWeb adapter support and a verified live vAmigaWeb fallback. Kickstart and disk images are supplied by the user and stay in browser-controlled storage. ▶ Start Ⅱ Pause ↻ Reset ⛶ Fullscreen Use live vAmigaWeb Integration ready Amiga display Start launches the live vAmigaWeb browser emulator when the optional local SAE bundle is not packaged. Kickstart ROM DF0 DF1 HDF/VHD Insert DF0 Eject DF0 🎮 Gamepad Machine Model A500 A500+ A600 A1200 A2000 A3000 A4000/030 Video PAL NTSC CPU: 68000 Chipset: OCS Chip RAM / Fast RAM are controlled by the selected emulator core. Diagnostics GitHub Pages cannot execute fetch_upstream.sh/ps1. Start therefore opens the maintained vAmigaWeb web emulator; local SAE sources remain"
+    },
+    {
+      "p": "apps/thamudic-epi/index.html",
+      "t": "apps/thamudic-epi/index.html",
+      "g": "Research (nlp)",
+      "d": "",
+      "x": ""
+    },
+    {
+      "p": "apps/thamudic-scanner/index.html",
+      "t": "Thamudic Scanner",
+      "g": "Research (nlp)",
+      "d": "Thamudic and Ancient North Arabian research scanner",
+      "x": ""
+    },
+    {
+      "p": "apps/agent-research-forge/index.html",
+      "t": "AgentResearchForge",
+      "g": "Studio & Tools",
+      "d": "",
+      "x": "AgentResearchForge Research public web/library/document sources and generate reviewed project artifacts. python typescript javascript cpp rust go java csharp Research / Build Import document"
+    },
+    {
+      "p": "apps/aurora-mobile/index.html",
+      "t": "Aurora Wayland Mobile",
+      "g": "Studio & Tools",
+      "d": "",
+      "x": "AURORA Search anything… ☰ ⌂ Home ▦ Apps ▱ Files ⚙ Settings ⬇ Downloads ◉ Terminal ⌘ أوامر SS64 ▣ N-bit ⚡ Power Chimera II OS Mobile AURORA WAYLAND · GLASS · CHIMERA II System CPU · Memory · Storage Adaptive Resource Fabric Thermal · Battery · Frame budget Execution ARM64 · R8192 · C8192 · N-bit ▦ ⌕ ▰ ⌁ ⚙ ⋮"
+    },
+    {
+      "p": "apps/aurora-mobile/store/index.html",
+      "t": "Chimera Store",
+      "g": "Studio & Tools",
+      "d": "",
+      "x": "Chimera II Mobile Store One store · many ecosystems · one security policy ARM64 Android Swift .deb RPM pacman Debian apt · apt-get · dpkg Install Arch pacman · AUR-compatible source workflow Install Android APK · isolated Android runtime Install Swift SwiftPM · Foundation · SwiftNIO Install Universal Flatpak · Snap · AppImage Install Developer Git · GitHub · source builds Install"
+    },
+    {
+      "p": "apps/chimera-3d4d/index.html",
+      "t": "Chimera 3D/4D Studio",
+      "g": "Studio & Tools",
+      "d": "",
+      "x": "Chimera 3D/4D Model Sculpt Texture Rig Animate VFX Render"
+    },
+    {
+      "p": "apps/seo-tool/index.html",
+      "t": "SEO-Tool",
+      "g": "Studio & Tools",
+      "d": "",
+      "x": "SEO-Tool Technical SEO + authorized deep-web research. Scan Pages 0 Issues 0 Links 0 Status idle Ready."
+    },
+    {
+      "p": "thamudic/index.html",
+      "t": "Thamudic / Ancient North Arabian Scanner Research",
+      "g": "Thamudic",
+      "d": "Thamudic and Ancient North Arabian inscription scanner research: image segmentation, glyph evidence, Unicode, transliteration and scholarly verification.",
+      "x": "Thamudic / Ancient North Arabian Scanner Research portal for photographing, segmenting, cataloguing and studying Ancient North Arabian inscriptions, including material historically grouped as Thamudic. Architecture Image → normalization → segmentation → glyph candidates → evidence record → optional classifier → scholarly verification → transliteration/translation The baseline implementation is maintained in amerhwitat/nlp as thamudic_scanner.py . It does not require Tesseract or camel_tools. Scholarly sources OCIANA — Thamudic overview Unicode — Old North Arabian Unicode Core Specification Writing Systems Technical Resources Recent external demo references Bubble Thamudic Scan Thamudic Translator UI Historical Artifacts Database UI These are external references; their source code is not assumed to be open-source. Open-source engineering references DigitalPasts/CuReD Coptic Scriptorium OC"
+    },
+    {
+      "p": "web/javascript/index.html",
+      "t": "Amer Hwitat Web Hub",
+      "g": "Web",
+      "d": "",
+      "x": "Amer Hwitat Web Hub Project Web Hub Entry point for browser demonstrations and documentation."
+    },
+    {
+      "p": "index.html",
+      "t": "Amer Hwitat — Chimera II OS ecosystem hub",
+      "g": "Hub",
+      "d": "Static hub hero, APPS application catalogue, REPOS repository index, search-index.json full-text page search, five Thamudic / Ancient North Arabian script families, 154 web files under apps/chimera-ii-os/web/, desktop, terminal, ISA explorer, emulators, OCR, wallet and installer.",
+      "x": "amerhwitat.github.io static hub APPS REPOS search-index.json full text page search ThamudicScan v2.4.1 upload camera five stage pipeline five script families sample inscriptions field tips export Chimera II OS React desktop SPA Aurora Koronos kernel terminal 154 files 680 files ChimeraIIOS 3123 files 2.1 GB"
+    },
+    {
+      "p": "apps/thamudic-scanner/index.html",
+      "t": "ThamudicScan v2.4.1 — Ancient North Arabian Scanner",
+      "g": "Thamudic",
+      "d": "Scanner feature reference: upload/camera, five-stage pipeline, five script families, sample inscriptions, field tips and export. The abbreviated BuiltWithRocket deployment URL is not verified; this local published scanner is the fallback.",
+      "x": "ThamudicScan Thamudic Safaitic Dadanitic Hismaic Taymanitic Ancient North Arabian upload camera OCR five-stage pipeline sample inscriptions field tips export v2.4.1"
+    },
+    {
+      "p": "https://chimera-iios-120143.onhercules.app",
+      "t": "Chimera II OS — Hosted Aurora Desktop SPA",
+      "g": "Chimera II OS",
+      "d": "Hosted React desktop SPA for Aurora, Koronos, kernel and terminal exploration. Web UI availability is not proof of native kernel execution or ISO boot.",
+      "x": "chimera-iios-120143.onhercules.app React Chimera II OS Aurora Koronos kernel terminal desktop SPA"
+    }
+  ]
+}
