@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="ThamudicScan — Ancient North Arabian script analysis and translation. Inscription scanner, script registry, translation-history audit log, research dashboard and field methodology.">
+<meta name="theme-color" content="#07111f">
+<title>ThamudicScan — Ancient Script Analysis &amp; Translation</title>
+<!-- Self-contained page: opts out of the portal's shared aurora-shared.css / site-learning.js injection. -->
+<style>
+:root{--bg:#07111f;--p:rgba(16,30,54,.72);--p2:rgba(10,20,38,.85);--s:rgba(120,190,255,.22);--s2:rgba(120,190,255,.4);--t:#eaf3ff;--m:#9fb5d1;--a:#62d4ff;--v:#8b7dff;--ok:#4be3a4;--warn:#fbbf24;--bad:#ff8a8a}
+*{box-sizing:border-box}html,body{margin:0}body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:var(--t);min-height:100vh;background:radial-gradient(1000px 600px at 15% -5%,rgba(98,212,255,.16),transparent 55%),radial-gradient(900px 520px at 92% 2%,rgba(139,125,255,.16),transparent 55%),linear-gradient(160deg,#07111f,#0b1a30);background-attachment:fixed}
+a{color:var(--a);text-decoration:none}
+.wrap{max-width:1160px;margin:0 auto;padding:26px 20px 80px}
+header.top{display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between;margin-bottom:20px}
+.brand{display:flex;align-items:center;gap:13px}
+.logo{width:50px;height:50px;border-radius:14px;display:grid;place-items:center;font-size:26px;font-weight:800;background:linear-gradient(135deg,var(--a),var(--v));color:#06101d;box-shadow:0 10px 28px rgba(98,212,255,.35)}
+.brand h1{margin:0;font-size:21px}
+.brand p{margin:2px 0 0;color:var(--m);font-size:12.5px}
+.badge{display:inline-flex;align-items:center;padding:5px 11px;border-radius:999px;font-size:11.5px;font-weight:600;border:1px solid var(--s2);color:var(--warn)}
+.tabbar{display:flex;gap:6px;flex-wrap:wrap;padding:10px;border:1px solid var(--s);border-radius:16px;background:var(--p);backdrop-filter:blur(16px);margin-bottom:20px}
+.tab{padding:10px 16px;border-radius:11px;border:1px solid transparent;font-size:13.5px;font-weight:600;color:var(--m);background:none;cursor:pointer;transition:.15s}
+.tab:hover{background:rgba(120,190,255,.08);color:var(--t)}
+.tab.on{background:linear-gradient(135deg,rgba(98,212,255,.2),rgba(139,125,255,.2));color:var(--t);border-color:var(--s2)}
+.card{border:1px solid var(--s);background:var(--p);backdrop-filter:blur(16px);border-radius:18px;padding:20px;margin-bottom:16px}
+.card h2{margin:0 0 10px;font-size:17px}
+.card h3{margin:0 0 8px;font-size:14px}
+.muted{color:var(--m)}
+.eyebrow{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--a)}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:760px){.grid{grid-template-columns:1fr}}
+.statgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-bottom:16px}
+.stat{padding:16px;border:1px solid var(--s);border-radius:14px;background:var(--p2)}
+.stat .k{font-size:10.5px;text-transform:uppercase;letter-spacing:.1em;color:var(--m)}
+.stat .v{font-size:30px;font-weight:800;margin:4px 0 2px}
+.stat .s{font-size:11.5px;color:var(--m)}
+.chip{display:inline-flex;align-items:center;padding:3px 9px;border-radius:999px;font-size:11px;border:1px solid var(--s);color:var(--t);margin:2px}
+.chip.ok{color:var(--ok);border-color:rgba(75,227,164,.4)}.chip.warn{color:var(--warn);border-color:rgba(251,191,36,.4)}.chip.bad{color:var(--bad);border-color:rgba(255,138,138,.4)}
+.drop{display:grid;place-items:center;min-height:160px;border:1.5px dashed var(--s2);border-radius:14px;color:var(--m);padding:16px;text-align:center;background:rgba(2,6,14,.4)}
+.pipeline{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px}
+.pipeline li{display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:11px;font-size:12.5px;background:rgba(255,255,255,.04);border:1px solid var(--s);color:var(--m)}
+.pipeline li.done{color:var(--t);border-color:rgba(75,227,164,.4)}
+.pipeline li.on{color:var(--t);border-color:var(--a);background:rgba(98,212,255,.08)}
+.idx{width:22px;height:22px;display:grid;place-items:center;border-radius:7px;font-size:11px;font-weight:700;background:rgba(120,190,255,.12);flex:0 0 auto}
+.pipeline li.done .idx{background:var(--ok);color:#04101f}
+.result{margin-top:12px;padding:12px;border-radius:11px;background:rgba(98,212,255,.07);border:1px solid var(--s);font-size:13px;line-height:1.5;min-height:42px}
+.reglist{display:flex;flex-direction:column;gap:6px;max-height:640px;overflow-y:auto;padding-right:4px}
+.regitem{text-align:left;padding:10px 12px;border-radius:11px;background:rgba(255,255,255,.04);border:1px solid var(--s);cursor:pointer;transition:.14s}
+.regitem:hover{background:rgba(120,190,255,.07)}
+.regitem.on{border-color:var(--a);background:rgba(98,212,255,.09)}
+.regitem b{font-size:13px}
+.regitem .m{font-size:11.5px;color:var(--m)}
+.kv>div{display:flex;justify-content:space-between;gap:12px;padding:7px 0;border-bottom:1px solid rgba(120,190,255,.14);font-size:13px}
+.kv>div:last-child{border-bottom:0}
+.kv span{color:var(--m)}.kv b{text-align:right;font-weight:600}
+table{width:100%;border-collapse:collapse;font-size:12.5px}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid rgba(120,190,255,.14);vertical-align:top}
+th{font-size:10.5px;text-transform:uppercase;letter-spacing:.08em;color:var(--m);position:sticky;top:0;background:#0a182c}
+tr:hover td{background:rgba(120,190,255,.04)}
+.mono{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:11px}
+.tablewrap{overflow-x:auto;border:1px solid var(--s);border-radius:14px}
+.bar-row{display:grid;grid-template-columns:88px 1fr 40px;align-items:center;gap:10px;margin:9px 0;font-size:12px}
+.bar{height:8px;border-radius:99px;background:rgba(120,190,255,.14);overflow:hidden}
+.bar i{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,var(--a),var(--v))}
+.spark{display:flex;align-items:flex-end;gap:6px;height:100px;padding:8px 0}
+.spark span{flex:1;border-radius:6px 6px 2px 2px;background:linear-gradient(180deg,var(--a),rgba(98,212,255,.12))}
+ul.tips{color:var(--m);line-height:1.7;padding-left:20px}
+.back{margin-top:26px;display:inline-block;padding:9px 14px;border:1px solid var(--s2);border-radius:11px;color:var(--t)}
+.back:hover{border-color:var(--a)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div class="brand">
+      <div class="logo">𐪀</div>
+      <div><h1>ThamudicScan</h1><p>Ancient North Arabian script analysis &amp; translation</p></div>
+    </div>
+    <span class="badge">OCIANA Reference DB · Active</span>
+  </header>
+
+  <div class="tabbar" id="tabs">
+    <button class="tab on" data-t="scan">OCR &amp; Translation</button>
+    <button class="tab" data-t="registry">Script Registry</button>
+    <button class="tab" data-t="history">Translation History</button>
+    <button class="tab" data-t="dashboard">Dashboard</button>
+    <button class="tab" data-t="research">Research Mode</button>
+  </div>
+
+  <section id="tab-scan">
+    <div class="grid">
+      <div class="card">
+        <span class="eyebrow">Inscription Scanner</span>
+        <h2>Upload inscriptions · Detect script · Transliterate · Translate</h2>
+        <div class="drop" id="drop">Drop inscription image or PDF<br><span class="muted" style="font-size:12px">JPEG, PNG, TIFF, WebP, PDF · Max 50 MB · EasyOCR + heuristic script detection</span></div>
+        <p class="muted" style="font-size:12px;margin:10px 0 4px">Or load a sample inscription:</p>
+        <div id="samples" style="display:flex;flex-wrap:wrap;gap:6px"></div>
+        <div class="result" id="scanOut">—</div>
+      </div>
+      <div class="card">
+        <span class="eyebrow">Analysis Pipeline</span>
+        <h2>5-stage processing · avg. 2.8s</h2>
+        <ol class="pipeline" id="pipe"></ol>
+        <h3 style="margin-top:14px">Transliteration</h3>
+        <div class="result" id="translit" dir="auto">—</div>
+        <h3 style="margin-top:14px">Translation (English)</h3>
+        <div class="result" id="translation">—</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="tab-registry" style="display:none">
+    <div class="grid">
+      <div class="card" style="padding:14px"><div class="reglist" id="reglist"></div></div>
+      <div class="card"><div id="regdetail"></div></div>
+    </div>
+  </section>
+
+  <section id="tab-history" style="display:none">
+    <div class="card">
+      <span class="eyebrow">Audit Log</span>
+      <h2>Translation History</h2>
+      <div class="tablewrap"><table id="hist"></table></div>
+    </div>
+  </section>
+
+  <section id="tab-dashboard" style="display:none">
+    <span class="eyebrow">Research Overview</span>
+    <h2 style="margin:0 0 14px;font-size:22px">Dashboard <span class="muted" style="font-size:13px">— last 30 days</span></h2>
+    <div class="statgrid" id="stats"></div>
+    <div class="grid">
+      <div class="card"><h3>Weekly scan activity</h3><div class="spark" id="spark"></div><div class="muted" style="font-size:11.5px">Sep 9 – Sep 15</div></div>
+      <div class="card"><h3>Script distribution</h3><div id="dist"></div></div>
+    </div>
+  </section>
+
+  <section id="tab-research" style="display:none">
+    <div class="grid">
+      <div class="card">
+        <span class="eyebrow">Provenance-Aware</span>
+        <h2>Active script families</h2>
+        <div id="families"></div>
+      </div>
+      <div class="card">
+        <span class="eyebrow">Field Photography Tips</span>
+        <h2>Methodology</h2>
+        <ul class="tips" id="tips"></ul>
+      </div>
+    </div>
+  </section>
+
+  <a class="back" href="../../">← Back to Aurora Wayland Glass portal</a>
+</div>
+
+<script>
+var SCRIPTS=[
+ ["Thamudic B","Partial","Ancient North Arabian","Arabian Peninsula","RTL","3rd c. BCE – 4th c. CE",28,"U+10A80–U+10A9F","Macdonald ANA (2004)","Sandstone, Basalt, Rock faces","Thamudic C, Dadanitic"],
+ ["Safaitic","Deciphered","Ancient North Arabian","Syro-Arabian Desert","Variable","1st c. BCE – 4th c. CE",32,"U+10A80–U+10A9F","Macdonald ANA (2004)","Basalt, Rock faces","Hismaic, Thamudic B"],
+ ["Dadanitic","Deciphered","Ancient North Arabian","Arabian Peninsula","RTL","8th c. BCE – 1st c. CE",28,"U+10A80–U+10A9F","Macdonald ANA (2004)","Sandstone","Thamudic B, Hismaic"],
+ ["Hismaic","Partial","Ancient North Arabian","Arabian Peninsula","RTL","1st c. BCE – 4th c. CE",27,"U+10A80–U+10A9F","Macdonald ANA (2004)","Sandstone, Basalt","Safaitic"],
+ ["Phoenician","Deciphered","West Semitic","Levant","RTL","11th c. BCE – 1st c. CE",22,"U+10900–U+1091F","Phoenician standard","Stone, Metal","Aramaic, Punic"],
+ ["Ugaritic","Deciphered","West Semitic (Cuneiform)","Levant","LTR","14th c. BCE – 12th c. BCE",30,"U+10380–U+1039F","Ugaritic alphabet","Clay tablets","Canaanite"],
+ ["Linear B","Deciphered","Aegean Syllabaries","Aegean","LTR","15th c. BCE – 12th c. BCE",87,"U+10000–U+1007F","Mycenaean syllabary","Clay tablets","Linear A"],
+ ["Old Persian","Deciphered","Iranian (Cuneiform)","Persia","LTR","6th c. BCE – 4th c. BCE",36,"U+103A0–U+103DF","Old Persian syllabary","Stone inscriptions","Elamite, Akkadian"],
+ ["Coptic","Deciphered","Afro-Asiatic (Egyptian)","North Africa","LTR","2nd c. CE – present",32,"U+2C80–U+2CFF","Coptic alphabet","Papyrus, Parchment","Greek, Demotic"],
+ ["Gothic","Deciphered","Indo-European (Germanic)","Europe","LTR","4th c. CE – 6th c. CE",27,"U+10330–U+1034F","Gothic alphabet","Parchment codices","Greek, Runic"],
+ ["Egyptian Hieroglyphs","Deciphered","Afro-Asiatic (Egyptian)","North Africa","Variable","3200 BCE – 4th c. CE",1071,"U+13000–U+1342F","Gardiner sign list","Stone, Papyrus","Hieratic, Demotic"],
+ ["Imperial Aramaic","Deciphered","West Semitic","Middle East","RTL","8th c. BCE – 4th c. BCE",22,"U+10840–U+1085F","Aramaic alphabet","Papyrus, Stone","Phoenician, Hebrew"],
+ ["Old South Arabian","Deciphered","South Semitic","Arabian Peninsula","RTL","9th c. BCE – 6th c. CE",29,"U+10A60–U+10A7F","Musnad transliteration","Stone inscriptions","Ge'ez"],
+ ["Akkadian (Cuneiform)","Deciphered","Mesopotamian Cuneiform","Mesopotamia","LTR","29th c. BCE – 1st c. CE",600,"U+12000–U+123FF","Akkadian sign list","Clay tablets","Sumerian"],
+ ["Sumerian (Cuneiform)","Deciphered","Mesopotamian Cuneiform","Mesopotamia","LTR","31st c. BCE – 1st c. CE",700,"U+12000–U+123FF","Sumerian sign list","Clay tablets","Akkadian"],
+ ["Ancient Greek","Deciphered","Indo-European (Hellenic)","Europe / Mediterranean","LTR","9th c. BCE – present",24,"U+0370–U+03FF","Greek alphabet","Stone, Papyrus","Latin, Cyrillic"],
+ ["Latin","Deciphered","Indo-European (Italic)","Europe","LTR","7th c. BCE – present",23,"U+0041–U+007A","Latin alphabet","Stone, Parchment","Greek, Etruscan"],
+ ["Hittite (Cuneiform)","Deciphered","Mesopotamian Cuneiform (Anatolian)","Anatolia","LTR","17th c. BCE – 12th c. BCE",375,"U+12000–U+123FF","Hittite cuneiform","Clay tablets","Akkadian"]
+];
+var HISTORY=[
+ [1,"2026-09-15 18:44","sess-a3f91c","Thamudic B","Ancient North Arabian","IMAGE",82,76,3,1,"Verified","a3f91c2b7e4d8f1a…"],
+ [2,"2026-09-15 16:12","sess-b7d24e","Safaitic","Ancient North Arabian","PDF",91,88,5,0,"Verified","b7d24e9f3c1a6e8b…"],
+ [3,"2026-09-15 14:30","sess-c1e85f","Dadanitic","Ancient North Arabian","IMAGE",67,61,2,1,"Verified","c1e85f7a4d9b2e6c…"],
+ [4,"2026-09-15 11:08","sess-d4f37a","Hismaic","Ancient North Arabian","SAMPLE",54,48,1,1,"Pending","d4f37a8c2e6b1f9d…"],
+ [5,"2026-09-14 20:55","sess-e9a61b","Phoenician","West Semitic","IMAGE",95,97,7,0,"Verified","e9a61b3f7c4d2a8e…"],
+ [6,"2026-09-14 17:22","sess-f2c48d","Ugaritic","West Semitic (Cuneiform)","PDF",88,83,4,0,"Verified","f2c48d1e9a7b5f3c…"],
+ [7,"2026-09-14 09:41","sess-g5e72c","Old Persian","Iranian (Cuneiform)","IMAGE",79,74,3,0,"Verified","g5e72c4a8f1d6b3e…"],
+ [8,"2026-09-13 22:14","sess-h8b39e","Linear B","Aegean Syllabaries","IMAGE",93,91,6,0,"Verified","h8b39e6c3f1a7d4e…"],
+ [9,"2026-09-13 15:03","sess-i1d56f","Thamudic B","Ancient North Arabian","IMAGE",43,38,0,1,"Tampered","i1d56f9e4b2c7a5f…"],
+ [10,"2026-09-12 19:28","sess-j4a83c","Coptic","Afro-Asiatic (Egyptian)","PDF",87,84,4,0,"Verified","j4a83c7f2e5d1b8c…"],
+ [11,"2026-09-12 11:55","sess-k7c19d","Gothic","Indo-European (Germanic)","IMAGE",96,98,8,0,"Verified","k7c19d5a3e8f2b6c…"],
+ [12,"2026-09-11 08:33","sess-l2e47b","Old South Arabian","South Semitic","IMAGE",74,69,2,1,"Verified","l2e47b8c5f1a9d4e…"]
+];
+var SAMPLES=[
+ ["Thamudic B","Wādī Rum","22 chars","𐪁𐪂𐪃𐪄𐪅𐪆𐪇"],
+ ["Safaitic","Ḥarrah Basalt","14 chars","𐪈𐪉𐪊𐪋𐪌𐪍𐪎"],
+ ["Dadanitic","Al-ʿUlā","31 chars","𐪏𐪐𐪑𐪒𐪓𐪔𐪕"],
+ ["Hismaic","Wādī Ḥismā","18 chars","𐪖𐪗𐪘𐪙𐪚𐪛𐪜"]
+];
+var FAMILIES=[
+ ["Thamudic","Types A–E","Hejaz, NW Arabia","5th c. BCE – 4th c. CE"],
+ ["Safaitic","~4,000 characters","Basalt desert, Syria/Jordan","1st c. BCE – 4th c. CE"],
+ ["Dadanitic","Dedanitic / Lihyanite","Al-Ula / Dadan oasis","8th – 1st c. BCE"],
+ ["Hismaic","Hisma region","NW Saudi / S Jordan","1st c. BCE – 3rd c. CE"],
+ ["Taymanitic","Tayma oasis","Tayma, NW Arabia","8th – 4th c. BCE"]
+];
+var TIPS=[
+ "Raking light — photograph at 10–30° at sunrise/sunset to maximize groove shadow.",
+ "Fill the frame — ≥70% inscription, include a scale bar or coin.",
+ "Manual focus at f/8 — maximum depth of field across the plane.",
+ "RAW or high-quality JPEG — avoid compressed social-media screenshots.",
+ "Multiple angles — 3–5 shots reveal oblique detail in weathered rock."
+];
+var PIPELINE=["Image Pre-processing","Inscription Region Detection","Script Family Identification","Character Segmentation","Transliteration & Translation"];
+
+function esc(s){return String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
+
+// tabs
+document.getElementById('tabs').addEventListener('click',function(e){
+  var b=e.target.closest('.tab'); if(!b) return;
+  document.querySelectorAll('.tab').forEach(function(x){x.classList.toggle('on',x===b)});
+  ['scan','registry','history','dashboard','research'].forEach(function(t){
+    document.getElementById('tab-'+t).style.display=(b.dataset.t===t)?'':'none';
+  });
+});
+
+// samples + scan simulation
+var samplesEl=document.getElementById('samples');
+SAMPLES.forEach(function(s){
+  var b=document.createElement('button'); b.className='chip'; b.textContent=s[0]+' · '+s[1];
+  b.onclick=function(){ runScan(s); };
+  samplesEl.appendChild(b);
+});
+var pipeEl=document.getElementById('pipe');
+PIPELINE.forEach(function(p,i){ var li=document.createElement('li'); li.innerHTML='<span class="idx">'+(i+1)+'</span><span>'+p+'</span>'; li.id='pipe'+i; pipeEl.appendChild(li); });
+function runScan(s){
+  document.getElementById('scanOut').textContent='Detected: '+s[0]+' · '+s[2]+' · glyph sequence '+s[3];
+  document.getElementById('translit').textContent='';
+  document.getElementById('translation').textContent='';
+  PIPELINE.forEach(function(p,i){
+    document.getElementById('pipe'+i).className='';
+  });
+  var idx=0;
+  var iv=setInterval(function(){
+    if(idx>0) document.getElementById('pipe'+(idx-1)).className='done';
+    if(idx>=PIPELINE.length){ clearInterval(iv);
+      document.getElementById('translit').textContent='ʾ l ḥ g r b n ʿ m — “By ʾl — memorial inscription of ḥgr” · '+s[0]+' · 82% confidence';
+      document.getElementById('translation').textContent='A memorial inscription of ḥgr, by ʾl.';
+      return; }
+    document.getElementById('pipe'+idx).className='on';
+    idx++;
+  },600);
+}
+
+// registry
+var reglist=document.getElementById('reglist');
+SCRIPTS.forEach(function(s){
+  var b=document.createElement('button'); b.className='regitem';
+  b.innerHTML='<b>'+s[0]+'</b><div class="m">'+s[2]+' · '+s[6]+' glyphs · '+s[1]+'</div>';
+  b.onclick=function(){ showScript(s,b); };
+  reglist.appendChild(b);
+});
+function showScript(s,btn){
+  document.querySelectorAll('.regitem').forEach(function(x){x.classList.remove('on')});
+  btn.classList.add('on');
+  var st=s[1]==='Deciphered'?'<span class="chip ok">Deciphered</span>':'<span class="chip warn">'+s[1]+'</span>';
+  document.getElementById('regdetail').innerHTML='<h2>'+esc(s[0])+'</h2><div>'+st+' <span class="chip">'+esc(s[4])+'</span></div>'+
+    '<div class="kv">'+
+    '<div><span>Family</span><b>'+esc(s[2])+'</b></div>'+
+    '<div><span>Region</span><b>'+esc(s[3])+'</b></div>'+
+    '<div><span>Unicode block</span><b>'+esc(s[7])+'</b></div>'+
+    '<div><span>Dating</span><b>'+esc(s[5])+'</b></div>'+
+    '<div><span>Glyph count</span><b>'+s[6]+'</b></div>'+
+    '<div><span>Writing direction</span><b>'+esc(s[4])+'</b></div>'+
+    '<div><span>Transliteration</span><b>'+esc(s[8])+'</b></div>'+
+    '<div><span>Materials</span><b>'+esc(s[9])+'</b></div>'+
+    '<div><span>Related scripts</span><b>'+esc(s[10])+'</b></div>'+
+    '</div>';
+}
+
+// history
+var hist=document.getElementById('hist');
+hist.innerHTML='<thead><tr><th>#</th><th>Timestamp</th><th>Script</th><th>Source</th><th>Conf.</th><th>Cov.</th><th>Integrity</th><th>SHA-256</th></tr></thead><tbody>'+HISTORY.map(function(r){
+  var integ=r[9]==='Verified'?'ok':(r[9]==='Pending'?'warn':'bad');
+  return '<tr><td>'+r[0]+(r[8]?' <span style="display:inline-block;width:7px;height:7px;border-radius:50%;background:#62d4ff"></span>':'')+'</td><td class="muted">'+r[1]+'<div class="mono">'+r[2]+'</div></td><td>'+r[3]+'<div class="muted" style="font-size:11px">'+r[4]+'</div></td><td><span class="chip">'+r[5]+'</span></td><td>'+r[6]+'%</td><td>'+r[7]+'%</td><td><span class="chip '+integ+'">'+r[9]+'</span></td><td class="mono muted">'+r[10]+'</td></tr>';
+}).join('')+'</tbody>';
+
+// dashboard
+document.getElementById('stats').innerHTML=
+ '<div class="stat"><div class="k">Total Scans</div><div class="v">142</div><div class="s">+12 this week</div></div>'+
+ '<div class="stat"><div class="k">Scripts Identified</div><div class="v">18</div><div class="s">6 families</div></div>'+
+ '<div class="stat"><div class="k">Verified Entries</div><div class="v">129</div><div class="s">90.8% integrity</div></div>'+
+ '<div class="stat"><div class="k">Pending Review</div><div class="v">7</div><div class="s">1 tampered flag</div></div>';
+var spark=document.getElementById('spark'); [30,55,42,80,64,90,72].forEach(function(h){var s=document.createElement('span');s.style.height=h+'%';spark.appendChild(s);});
+document.getElementById('dist').innerHTML=
+ '<div class="bar-row"><span>Thamudic B</span><div class="bar"><i style="width:82%"></i></div><span>82%</span></div>'+
+ '<div class="bar-row"><span>Safaitic</span><div class="bar"><i style="width:91%"></i></div><span>91%</span></div>'+
+ '<div class="bar-row"><span>Dadanitic</span><div class="bar"><i style="width:67%"></i></div><span>67%</span></div>'+
+ '<div class="bar-row"><span>Hismaic</span><div class="bar"><i style="width:54%"></i></div><span>54%</span></div>';
+
+// research
+document.getElementById('families').innerHTML=FAMILIES.map(function(f){
+  return '<div style="padding:10px 0;border-bottom:1px solid rgba(120,190,255,.14)"><b>'+f[0]+'</b> <span class="muted">'+f[1]+'</span><div class="muted" style="font-size:12px">'+f[2]+' · '+f[3]+'</div></div>';
+}).join('');
+document.getElementById('tips').innerHTML=TIPS.map(function(t){return '<li>'+t+'</li>'}).join('');
+</script>
+</body>
+</html>
