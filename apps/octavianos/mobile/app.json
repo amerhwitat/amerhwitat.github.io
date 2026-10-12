@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "OctavianOS Companion",
+    "slug": "octavianos-companion",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "dark",
+    "ios": { "supportsTablet": true, "bundleIdentifier": "org.octavianos.companion" },
+    "android": { "package": "org.octavianos.companion" }
+  }
+}
