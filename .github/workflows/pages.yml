@@ -22,6 +22,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Build OctavianOS React web companion
+        run: |
+          set -euo pipefail
+          cd apps/octavianos
+          npm install --no-audit --no-fund
+          npm run build
+          test -s dist/index.html
+          cd ../..
+          test -s apps/octavianos/mobile/App.tsx
+          test -s apps/octavianos/mobile/app.json
       - name: Build SS64 command catalog
         run: python3 scripts/build_ss64_command_catalog.py
       - name: Package open-source SAE Amiga browser core
