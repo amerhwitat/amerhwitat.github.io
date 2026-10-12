@@ -60,5 +60,9 @@ jobs:
           npm install --no-audit --no-fund
           npm run build
           test -s dist/index.html
+          rm -rf node_modules
+          cd mobile
+          npm install --no-audit --no-fund
+          rm -rf node_modules
       - name: Check local site links
         run: python3 scripts/check_site_links.py
