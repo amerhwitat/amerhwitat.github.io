@@ -1,0 +1,46 @@
+name: OctavianOS React Native companion checks
+
+on:
+  push:
+    paths:
+      - 'apps/octavianos/**'
+      - '.github/workflows/octavianos-native.yml'
+  pull_request:
+    paths:
+      - 'apps/octavianos/**'
+      - '.github/workflows/octavianos-native.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  react-web:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: apps/octavianos/package-lock.json
+      - name: Build React web UI
+        working-directory: apps/octavianos
+        run: |
+          npm install --no-audit --no-fund
+          npm run build
+          test -s dist/index.html
+  react-native:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: apps/octavianos/mobile/package-lock.json
+      - name: Install and type-check Expo companion
+        working-directory: apps/octavianos/mobile
+        run: |
+          npm install --no-audit --no-fund
+          npm run typecheck
