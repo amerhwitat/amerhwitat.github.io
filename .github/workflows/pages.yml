@@ -33,7 +33,7 @@ jobs:
           cd mobile
           npm install --no-audit --no-fund
           rm -rf node_modules
-          cd ../..
+          cd ../../..
           test -s apps/octavianos/mobile/App.tsx
           test -s apps/octavianos/mobile/app.json
       - name: Build SS64 command catalog
