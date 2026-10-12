@@ -29,6 +29,10 @@ jobs:
           npm install --no-audit --no-fund
           npm run build
           test -s dist/index.html
+          rm -rf node_modules
+          cd mobile
+          npm install --no-audit --no-fund
+          rm -rf node_modules
           cd ../..
           test -s apps/octavianos/mobile/App.tsx
           test -s apps/octavianos/mobile/app.json
