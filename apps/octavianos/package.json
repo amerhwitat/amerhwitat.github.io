@@ -1,0 +1,25 @@
+{
+  "name": "octavianos-react-companion",
+  "private": true,
+  "version": "0.1.0",
+  "description": "OctavianOS browser desktop and React Native companion UI",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "build": "vite build",
+    "preview": "vite preview --host 0.0.0.0",
+    "native": "expo start"
+  },
+  "dependencies": {
+    "@expo/vector-icons": "^14.0.4",
+    "expo": "~52.0.0",
+    "expo-status-bar": "~2.0.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-native": "0.76.5",
+    "react-native-web": "~0.19.13"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "vite": "^6.0.5"
+  }
+}

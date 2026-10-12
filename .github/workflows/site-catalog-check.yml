@@ -54,5 +54,15 @@ jobs:
           assert any("154-file inventory" in p["t"] for p in pages)
           print(f"PASS: {len(apps)} apps, {len(repos)} repositories, {len(pages)} indexed pages")
           PY
+      - name: Build OctavianOS React app for local-link validation
+        run: |
+          cd apps/octavianos
+          npm install --no-audit --no-fund
+          npm run build
+          test -s dist/index.html
+          rm -rf node_modules
+          cd mobile
+          npm install --no-audit --no-fund
+          rm -rf node_modules
       - name: Check local site links
         run: python3 scripts/check_site_links.py
