@@ -18,3 +18,13 @@ button:focus-visible,a:focus-visible,[role=button]:focus-visible{outline:2px sol
 .site-workflow-status{position:fixed;left:14px;bottom:14px;z-index:99998;max-width:min(420px,calc(100vw - 28px));padding:8px 12px;border:1px solid rgba(124,207,255,.22);border-radius:10px;background:rgba(7,18,34,.82);color:#dcefff;font:12px/1.4 system-ui,sans-serif;pointer-events:none;opacity:0;transform:translateY(5px);transition:opacity .2s,transform .2s}
 .site-workflow-status.visible{opacity:1;transform:translateY(0)}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+
+/* Ambient dimensional lighting for the entire published site; never intercepts input. */
+body{background-blend-mode:screen,normal}
+body::before{content:"";position:fixed;inset:0;z-index:9990;pointer-events:none;opacity:.15;background:radial-gradient(ellipse at 12% 18%,rgba(64,177,255,.35),transparent 38%),radial-gradient(ellipse at 86% 78%,rgba(135,92,255,.25),transparent 42%);animation:siteAmbientDrift 22s ease-in-out infinite alternate}
+@keyframes siteAmbientDrift{from{transform:translate3d(-1%,0,0) scale(1)}to{transform:translate3d(1%,1%,0) scale(1.04)}}
+button,.btn,input,select,textarea,[role=button]{transition:transform .18s ease,box-shadow .18s ease,filter .18s ease}
+button:hover,.btn:hover,[role=button]:hover{filter:brightness(1.08);box-shadow:0 8px 20px rgba(28,133,255,.18)}
+button:active,.btn:active,[role=button]:active{transform:translateY(1px) scale(.985)}
+svg,img[role=img],.icon,.app-icon,[data-icon]{filter:drop-shadow(0 3px 5px rgba(0,0,0,.2))}
+@media(prefers-reduced-motion:reduce){body::before{animation:none}}
