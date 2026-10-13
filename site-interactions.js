@@ -5,7 +5,7 @@
   window.__siteInteractionLayerLoaded = true;
   const KEY = 'amerhwitat.site.sounds';
   let soundOn = false, audio = null, statusTimer = 0;
-  try { soundOn = localStorage.getItem(KEY) !== 'off'; } catch (_) { soundOn = true; }
+  try { soundOn = localStorage.getItem(KEY) === 'on'; } catch (_) { soundOn = false; }
   const status = document.createElement('div');
   status.className = 'site-workflow-status'; status.setAttribute('role','status'); status.setAttribute('aria-live','polite');
   document.addEventListener('DOMContentLoaded', () => {
@@ -14,8 +14,9 @@
     const toggle = document.createElement('button');
     toggle.type = 'button'; toggle.className = 'site-sound-toggle'; toggle.setAttribute('aria-pressed',String(soundOn));
     toggle.setAttribute('aria-label','Toggle interface interaction sounds');
+    toggle.title = 'Sound effects are off until you enable them. Shortcut: Ctrl/⌘+Shift+S';
     const drawToggle = () => { toggle.textContent = (soundOn ? '🔊' : '🔇') + ' UI sounds'; toggle.setAttribute('aria-pressed',String(soundOn)); };
-    toggle.addEventListener('click', () => { soundOn = !soundOn; try { localStorage.setItem(KEY,soundOn?'on':'off'); } catch (_) {} drawToggle(); if(soundOn) tone('click'); announce('Interface sounds '+(soundOn?'enabled':'muted')); });
+    toggle.addEventListener('click', () => { soundOn = !soundOn; try { localStorage.setItem(KEY,soundOn?'on':'off'); } catch (_) {} drawToggle(); toggle.title = soundOn ? 'Sound effects enabled. Click to mute.' : 'Sound effects are off. Click to enable.'; if(soundOn) tone('click'); announce('Interface sounds '+(soundOn?'enabled':'muted')); });
     drawToggle(); document.body.appendChild(toggle);
   });
   function tone(kind) {
