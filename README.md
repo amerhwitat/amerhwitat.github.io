@@ -15,6 +15,18 @@ This repository hosts the public web surface for Amer Hwitat's open research pro
 
 The links above are the README-level citations for all maintained web/application code. The repository tree remains the detailed source-of-record boundary.
 
+## Cross-repository application discovery
+
+- **Portfolio hub:** https://amerhwitat.github.io/
+- **Recursive app explorer:** https://amerhwitat.github.io/apps/repository-app-explorer/
+- **Explorer source:** [apps/repository-app-explorer/index.html](apps/repository-app-explorer/index.html)
+- **Regression tests:** [scripts/test_repository_app_explorer.py](scripts/test_repository_app_explorer.py)
+- **Audit tracking:** [issue #8](https://github.com/amerhwitat/amerhwitat.github.io/issues/8)
+
+The explorer scans the allowlisted public repository trees using GitHub's unauthenticated API and surfaces likely web pages, manifests, Python entry points, native project files and documentation. It escapes source-derived values before rendering, marks partial/truncated scans, honors reduced-motion preferences and keeps sound opt-in. It does not execute downloaded code, scan private repositories or prove that a detected project builds or runs. GitHub API rate limits and truncated trees can make results incomplete.
+
+The app catalog also links directly to cross-repository projects, while the search-index builder now indexes external project cards from the homepage catalog. CI includes regression assertions for explorer behavior and the generated search index. A passing catalog check is not a substitute for language-specific builds, security review, browser/device tests or native OS boot validation; those remain tracked in issue #8.
+
 ## Centralized Apple implementations
 
 The portfolio Apple source tree is centralized at [`general/Apple-Implementations`](https://github.com/amerhwitat/general/tree/master/Apple-Implementations). It contains Objective-C/Xcode and Flutter iOS/macOS companions for the portfolio applications. This web repository remains the public discovery/documentation surface.
