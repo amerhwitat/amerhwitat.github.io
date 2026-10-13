@@ -19,13 +19,21 @@ def check(base,raw):
     checked+=1
     if target.is_file() or (target.is_dir() and (target/"index.html").is_file()) or (target/"index.html").is_file(): return
     errors.append(f"{base.relative_to(ROOT)} -> {raw} -> missing {rel}")
-for p in files:
-    if p.name=="search-index.json": continue
-    try:s=p.read_text(encoding="utf-8",errors="ignore")
-    except:continue
-    for m in PAT.finditer(s):check(p,m.group(1))
-    for m in re.finditer(r'''location\.(?:href|assign|replace)\s*=\s*["']([^"']+)["']''',s,re.I):check(p,m.group(1))
-print(f"Checked {checked} local links.")
-if errors:
-    print("\n".join(errors[:200])); print(f"FAILED: {len(errors)} missing local links."); sys.exit(1)
-print("PASS: no missing local href/src/action targets detected.")
+def main():
+    global errors, checked
+    errors = []
+    checked = 0
+    for p in files:
+        if p.name=="search-index.json": continue
+        try:s=p.read_text(encoding="utf-8",errors="ignore")
+        except:continue
+        for m in PAT.finditer(s):check(p,m.group(1))
+        for m in re.finditer(r'''location\.(?:href|assign|replace)\s*=\s*["']([^"']+)["']''',s,re.I):check(p,m.group(1))
+    print(f"Checked {checked} local links.")
+    if errors:
+        print("\n".join(errors[:200])); print(f"FAILED: {len(errors)} missing local links."); sys.exit(1)
+    print("PASS: no missing local href/src/action targets detected.")
+
+
+if __name__ == "__main__":
+    main()
