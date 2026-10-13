@@ -1,12 +1,12 @@
 {
   "schema": "aurora-ecosystem-catalog/v1",
-  "generated": "2026-10-07",
+  "generated": "2026-10-13",
   "repositories": [
     [
-      "ChimeraIIOS",
-      "Chimera II OS",
-      "https://github.com/amerhwitat/ChimeraIIOS",
-      "Aurora, Koronos, 8192-bit ISA, ISO/Flash, MAME, emulators, P2P, OCR/PDF, Game Center, Code IDE"
+      "amerhwitat.github.io",
+      "Aurora Web Platform",
+      "https://github.com/amerhwitat/amerhwitat.github.io",
+      "Web UI, games, MAME, emulators, wallet, Python, OCR, research, ISO/Flash"
     ],
     [
       "BizX",
@@ -21,22 +21,16 @@
       "WebGL/3D, unified games, wallets/crypto research, networking, mobile, progression, survival/tycoon"
     ],
     [
-      "general",
-      "Agent Research Forge",
-      "https://github.com/amerhwitat/general",
-      "Deep research, crawler, code search, document index, project builder, artifacts, agents"
+      "bruteforce",
+      "Computational Search Research",
+      "https://github.com/amerhwitat/bruteforce",
+      "Authorized search research, crypto research, AI boundaries, cross-language implementations"
     ],
     [
-      "nlp",
-      "NLP & Ancient Languages",
-      "https://github.com/amerhwitat/nlp",
-      "Thamudic scanner, ancient NLP, OCR, Amiga, ISO Tool, artifact database"
-    ],
-    [
-      "PDFreaderPY",
-      "PDFreaderPY",
-      "https://github.com/amerhwitat/PDFreaderPY",
-      "PDF processing, Thamudic scanner, ancient object catalog, parallel search, P2P"
+      "ChimeraIIOS",
+      "Chimera II OS",
+      "https://github.com/amerhwitat/ChimeraIIOS",
+      "Aurora, Koronos, 8192-bit ISA, ISO/Flash, MAME, emulators, P2P, OCR/PDF, Game Center, Code IDE"
     ],
     [
       "CPU4096",
@@ -57,34 +51,40 @@
       "Address verification, audit, crypto database, AI/ML, interoperability, P2P"
     ],
     [
+      "general",
+      "Agent Research Forge",
+      "https://github.com/amerhwitat/general",
+      "Deep research, crawler, code search, document index, project builder, artifacts, agents"
+    ],
+    [
       "keygen",
       "Keygen / Koronos Research",
       "https://github.com/amerhwitat/keygen",
       "Key-generation research, Koronos runtime, knowledge bus, 128D vectors, network interoperability"
     ],
     [
-      "bruteforce",
-      "Computational Search Research",
-      "https://github.com/amerhwitat/bruteforce",
-      "Authorized search research, crypto research, AI boundaries, cross-language implementations"
+      "nlp",
+      "NLP & Ancient Languages",
+      "https://github.com/amerhwitat/nlp",
+      "Thamudic scanner, ancient NLP, OCR, Amiga, ISO Tool, artifact database"
+    ],
+    [
+      "OctavianOS",
+      "OctavianOS",
+      "https://github.com/amerhwitat/OctavianOS",
+      "Aurora Wayland Glass desktop, Marine desktop, React web companion, mobile companion, OS migration and release acceptance"
+    ],
+    [
+      "PDFreaderPY",
+      "PDFreaderPY",
+      "https://github.com/amerhwitat/PDFreaderPY",
+      "PDF processing, Thamudic scanner, ancient object catalog, parallel search, P2P"
     ],
     [
       "test",
       "Chimera Prototypes",
       "https://github.com/amerhwitat/test",
       "Python runtime, boot/installer, emulator, ISA8192, desktop sync, P2P, native Aurora"
-    ],
-    [
-      "VanG",
-      "VanG",
-      "https://github.com/amerhwitat/VanG",
-      "Aurora integration, desktop sync, 128D P2P, mobile communications, Apple"
-    ],
-    [
-      "amerhwitat.github.io",
-      "Aurora Web Platform",
-      "https://github.com/amerhwitat/amerhwitat.github.io",
-      "Web UI, games, MAME, emulators, wallet, Python, OCR, research, ISO/Flash"
     ]
   ],
   "inspiration": [
