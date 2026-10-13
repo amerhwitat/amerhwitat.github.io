@@ -50,6 +50,7 @@ jobs:
           assert "Chimera II OS Web Apps — 154-file inventory" in titles
           assert any(r["title"] == "ChimeraIIOS" for r in repos)
           assert any(r["title"] == "amerhwitat.github.io" for r in repos)
+          assert any(r["title"] == "OctavianOS" for r in repos)
           index = json.loads(Path("search-index.json").read_text(encoding="utf-8"))
           pages = index["pages"]
           assert any(p["t"] == "ThamudicScan v2.4.1 — Ancient North Arabian Scanner" for p in pages)
