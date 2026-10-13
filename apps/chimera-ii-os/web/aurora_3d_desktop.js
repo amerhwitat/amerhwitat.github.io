@@ -263,7 +263,7 @@
     function tone(freq,dur,type='sine',gain=.018){const a=ensureAudio();if(!a)return;const o=a.createOscillator(),g=a.createGain();o.type=type;o.frequency.value=freq;g.gain.setValueAtTime(gain,a.currentTime);g.gain.exponentialRampToValueAtTime(.0001,a.currentTime+dur);o.connect(g).connect(a.destination);o.start();o.stop(a.currentTime+dur);}
     function updateSoundUI(){const b=$('soundToggle');if(b){b.textContent=soundOn?'🔊':'🔇';b.setAttribute('aria-pressed',String(soundOn));}}
     $('soundToggle')?.addEventListener('click',()=>{soundOn=!soundOn;localStorage.setItem(soundKey,soundOn?'on':'off');if(soundOn)tone(740,.08);updateSoundUI();});
-    document.addEventListener('click',e=>{if(e.target.closest('button,a'))tone(620,.04,'triangle');});
+    // Shared site-interactions.js owns global click/double-click sounds to avoid duplicate tones.
     updateSoundUI();
   })();
   // Aurora simulator enhancement layer: keyboard controls, live telemetry, visual profiles,
