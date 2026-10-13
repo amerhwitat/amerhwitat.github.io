@@ -33,7 +33,7 @@ class RepositoryExplorerContractTests(unittest.TestCase):
         self.assertIn("GitHub API", self.html)
 
     def test_untrusted_paths_and_names_are_escaped_before_rendering(self):
-        self.assertIn("function esc(s)", self.html)
+        self.assertIn("const esc=s=>", self.html)
         self.assertIn("esc(x.path)", self.html)
         self.assertIn("esc(x.repo)", self.html)
         self.assertIn("rel=\"noopener noreferrer\"", self.html)
