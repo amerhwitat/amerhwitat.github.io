@@ -25,6 +25,8 @@ on:
       - "scripts/build_search_index.py"
       - "scripts/check_site_links.py"
       - "apps/chimera-ii-os/web/**"
+      - "apps/cpu4096-simulator/public/**"
+      - "apps/octavianos/**"
       - "apps/thamudic-scanner/**"
       - ".github/workflows/site-catalog-check.yml"
 
