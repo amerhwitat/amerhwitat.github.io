@@ -82,6 +82,7 @@ jobs:
           rm -rf node_modules
           cd mobile
           npm install --no-audit --no-fund
+          npm run typecheck
           rm -rf node_modules
       - name: Test site-local link resolution
         run: python3 -m unittest scripts/test_check_site_links.py

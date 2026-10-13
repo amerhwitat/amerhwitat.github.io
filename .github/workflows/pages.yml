@@ -42,6 +42,7 @@ jobs:
           rm -rf node_modules
           cd mobile
           npm install --no-audit --no-fund
+          npm run typecheck
           rm -rf node_modules
           cd ../../..
           test -s apps/octavianos/mobile/App.tsx
