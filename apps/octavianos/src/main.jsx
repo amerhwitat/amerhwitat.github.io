@@ -1,8 +1,6 @@
 import React, { useMemo, useState } from "react";
 import { createRoot } from "react-dom/client";
 import "./style.css";
-import "../../../site-interactions.css";
-import "../../../site-interactions.js";
 
 const apps = [
   { icon: "📁", name: "Files", description: "File manager integration awaits native userspace." },
