@@ -22,6 +22,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Build generated app output before validating local links
+        run: |
+          set -euo pipefail
+          cd apps/octavianos
+          npm install --no-audit --no-fund
+          npm run build
+          test -s dist/index.html
+          rm -rf node_modules
       - name: Test site-local link resolution
         run: python3 -m unittest scripts/test_check_site_links.py
       - name: Validate every app catalog destination
