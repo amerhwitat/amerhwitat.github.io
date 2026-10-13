@@ -58,7 +58,7 @@ jobs:
           assert any(p["t"] == "ThamudicScan v2.4.1 — Ancient North Arabian Scanner" for p in pages)
           assert any(p["p"].startswith("https://chimera-iios-120143.onhercules.app") for p in pages)
           assert any("154-file inventory" in p["t"] for p in pages)
-          for title in ("General Integration & Application Index", "BizX — Cross-platform Game Framework", "CPU4096 — Multi-language Simulator", "NLP & Ancient North Arabian Toolkit", "Java / Koronos Research Runtime"):
+          for title in ("General Integration & Application Index", "BizX — Cross-platform Game Framework", "CPU4096 — Multi-language Simulator", "NLP & Ancient North Arabian Toolkit", "Java / Koronos Research Runtime", "AgentResearchForge", "SEO-Tool", "WorkflowStudio"):
             assert any(p["t"] == title for p in pages), f"Missing repository app in search index: {title}"
           print(f"PASS: {len(apps)} apps, {len(repos)} repositories, {len(pages)} indexed pages")
           PY
