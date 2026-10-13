@@ -8,6 +8,8 @@ on:
       - "scripts/build_search_index.py"
       - "scripts/check_site_links.py"
       - "apps/chimera-ii-os/web/**"
+      - "apps/cpu4096-simulator/public/**"
+      - "apps/octavianos/**"
       - "apps/thamudic-scanner/**"
       - "apps/repository-app-explorer/**"
       - "scripts/test_repository_app_explorer.py"
@@ -53,11 +55,19 @@ jobs:
           assert any(r["title"] == "ChimeraIIOS" for r in repos)
           assert any(r["title"] == "amerhwitat.github.io" for r in repos)
           assert any(r["title"] == "OctavianOS" for r in repos)
+          assert "OctavianOS Aurora Wayland Glass — Web Preview" in titles
+          assert "OctavianOS Marine Desktop — Web Preview" in titles
+          assert any(a["path"] == "apps/chimera-ii-os/web/command-console.html" for a in apps)
+          assert any(a["path"] == "apps/cpu4096-simulator/public/chimera_code_ide.html" for a in apps)
+          assert Path("apps/octavianos/aurora/index.html").is_file()
+          assert Path("apps/octavianos/marine/index.html").is_file()
           index = json.loads(Path("search-index.json").read_text(encoding="utf-8"))
           pages = index["pages"]
           assert any(p["t"] == "ThamudicScan v2.4.1 — Ancient North Arabian Scanner" for p in pages)
           assert any(p["p"].startswith("https://chimera-iios-120143.onhercules.app") for p in pages)
           assert any("154-file inventory" in p["t"] for p in pages)
+          assert any(p["p"] == "apps/octavianos/aurora/index.html" for p in pages)
+          assert any(p["p"] == "apps/octavianos/marine/index.html" for p in pages)
           for title in ("General Integration & Application Index", "BizX — Cross-platform Game Framework", "CPU4096 — Multi-language Simulator", "NLP & Ancient North Arabian Toolkit", "Java / Koronos Research Runtime", "AgentResearchForge", "SEO-Tool", "WorkflowStudio"):
             assert any(p["t"] == title for p in pages), f"Missing repository app in search index: {title}"
           print(f"PASS: {len(apps)} apps, {len(repos)} repositories, {len(pages)} indexed pages")
