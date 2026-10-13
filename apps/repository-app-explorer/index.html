@@ -22,19 +22,19 @@ const repos=[
 const $=id=>document.getElementById(id);let items=[],sound=false,ctx=null;
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 function tone(freq=620){if(!sound)return;try{const C=window.AudioContext||window.webkitAudioContext;if(!C)return;ctx ||= new C();if(ctx.state==='suspended')ctx.resume();const o=ctx.createOscillator(),g=ctx.createGain();o.frequency.value=freq;g.gain.setValueAtTime(.035,ctx.currentTime);g.gain.exponentialRampToValueAtTime(.001,ctx.currentTime+.09);o.connect(g);g.connect(ctx.destination);o.start();o.stop(ctx.currentTime+.1)}catch{}}
+const BUILD_MANIFESTS=new Set([
+ 'package.json','pyproject.toml','cargo.toml','cargo.lock','go.mod','go.work',
+ 'pom.xml','build.gradle','build.gradle.kts','gradlew','settings.gradle','settings.gradle.kts',
+ 'composer.json','pubspec.yaml','requirements.txt','requirements-dev.txt','pipfile',
+ 'poetry.lock','pdm.lock','setup.py','setup.cfg','tox.ini','makefile','gnumakefile',
+ 'cmakelists.txt','meson.build','build.zig','deno.json','deno.jsonc','bun.lockb',
+ 'mix.exs','rebar.config','package.swift','justfile','flake.nix','project.yml'
+]);
 function classify(path){
  const p=path.toLowerCase(),base=p.split('/').pop();
  if(/(^|\/)(index|main|app|home)\.(html|htm)$/.test(p))return'Web page';
  if(base==='manifest.json'||base==='site.webmanifest')return'Web app manifest';
- const manifests=new Set([
-  'package.json','pyproject.toml','cargo.toml','cargo.lock','go.mod','go.work',
-  'pom.xml','build.gradle','build.gradle.kts','gradlew','settings.gradle','settings.gradle.kts',
-  'composer.json','pubspec.yaml','requirements.txt','requirements-dev.txt','pipfile',
-  'poetry.lock','pdm.lock','setup.py','setup.cfg','tox.ini','makefile','gnumakefile',
-  'cmakelists.txt','meson.build','build.zig','deno.json','deno.jsonc','bun.lockb',
-  'mix.exs','rebar.config','package.swift','justfile','flake.nix','project.yml'
- ]);
- if(manifests.has(base)||/\.(sln|csproj|vcxproj|vbproj|xcodeproj|xcworkspace)$/.test(base))return'Build manifest';
+ if(BUILD_MANIFESTS.has(base)||/\.(sln|csproj|vcxproj|vbproj|xcodeproj|xcworkspace)$/.test(base))return'Build manifest';
  if(/(^|\/)(main|app|index|program|server|cli|gui|run)\.(c|cc|cpp|cxx|h|hpp|rs|go|java|kt|kts|swift|m|mm|cs|fs|vb|dart|py|rb|php|pl|pm|r|jl|lua|sh|bash|zsh|ps1|bat|cmd|ex|exs|erl|hrl|hs|lhs|scala|sc|clj|cljs|cljc|cl|lisp|f|for|f90|f95|f03|f08|adb|ads|pas|pp|d|nim|zig|v|sol|ts|tsx|js|jsx|vue|svelte)$/i.test(p))return'Source entry point';
  if(/(^|\/)(readme|getting-started|quickstart)(\.|$)/.test(p))return'Documentation';
  return''
