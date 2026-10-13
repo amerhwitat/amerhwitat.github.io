@@ -150,6 +150,7 @@ footer{border-top:1px solid var(--stroke);margin-top:46px;padding:26px 0 44px;co
 .wthumb:hover{transform:translateY(-4px) scale(1.02);border-color:var(--accent)}
 .wthumb span{position:absolute;left:0;right:0;bottom:0;padding:8px 10px;font-size:11px;background:linear-gradient(180deg,transparent,rgba(4,10,20,.92));color:var(--fg)}
 </style>
+  <link rel="stylesheet" href="/site-interactions.css?v=1">
 </head>
 <body>
 <div class="pagebg" aria-hidden="true"></div>
@@ -988,5 +989,6 @@ const q = document.getElementById('q');
 q.addEventListener('input', () => render(q.value));
 render('');
 </script>
+  <script src="/site-interactions.js?v=1" defer></script>
 </body>
 </html>
