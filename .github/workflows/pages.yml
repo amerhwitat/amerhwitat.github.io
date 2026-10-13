@@ -3,6 +3,8 @@ name: Deploy site to GitHub Pages
 on:
   push:
     branches: [ main ]
+  pull_request:
+    branches: [ main ]
   workflow_dispatch:
 
 permissions:
@@ -15,7 +17,17 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  validate-site:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Test site-local link resolution
+        run: python3 -m unittest scripts/test_check_site_links.py
+      - name: Check local site links
+        run: python3 scripts/check_site_links.py
   deploy:
+    if: github.event_name != 'pull_request'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
