@@ -833,6 +833,116 @@ const APPS = [
     "desc": "Searches public repository trees for app entry points, package manifests and language signals; links directly to source and labels partial scans.",
     "path": "apps/repository-app-explorer/index.html"
   }
+  ,
+  {
+    "group": "Cross-language Applications",
+    "title": "General Integration & Application Index",
+    "tag": "Python · Kotlin · Apple · Web · Automation",
+    "repo": "general",
+    "desc": "Integration workspace with AgentResearchForge, SEO-Tool, WebContactCrawler, email workflow tools, WorkflowStudio and mobile/Apple implementation trees. Source discovery is not a build/runtime claim.",
+    "path": "https://github.com/amerhwitat/general#readme",
+    "action": "Explore project"
+  },
+  {
+    "group": "Games & Business Platforms",
+    "title": "BizX — Cross-platform Game Framework",
+    "tag": "Python · Node.js · Java · C# · C++ · TypeScript",
+    "repo": "BizX",
+    "desc": "Business simulation and game framework research, including RPG/strategy, networking, asset browsing and multiple build-system entry points.",
+    "path": "https://github.com/amerhwitat/BizX#readme",
+    "action": "Explore project"
+  },
+  {
+    "group": "Games & Business Platforms",
+    "title": "BizXtreme — Extended Game Platform",
+    "tag": "WebGL · Three.js · Unity · Kotlin · Flutter",
+    "repo": "BizXtreme",
+    "desc": "Extended game/platform source including WebGL, Unity/C#, wallet and game systems, networking, AI and mobile implementation material.",
+    "path": "https://github.com/amerhwitat/BizXtreme#readme",
+    "action": "Explore project"
+  },
+  {
+    "group": "CPU & ISA Research",
+    "title": "CPU4096 — Multi-language Simulator",
+    "tag": "C++ · Java · Node.js · Python · .NET · Apple",
+    "repo": "CPU4096",
+    "desc": "Configurable wide-register CPU simulator and research workloads with several language-specific implementations.",
+    "path": "https://github.com/amerhwitat/CPU4096#readme",
+    "action": "Explore project"
+  },
+  {
+    "group": "CPU & ISA Research",
+    "title": "CPU4096Simulator — Web & Runtime",
+    "tag": "JavaScript · Node.js · C++ · Java · Python",
+    "repo": "CPU4096Simulator",
+    "desc": "Browser/runtime research for wide arithmetic, ISA inventory, memory/MMIO, kernel models, networking and dashboard components.",
+    "path": "https://github.com/amerhwitat/CPU4096Simulator#readme",
+    "action": "Explore project"
+  },
+  {
+    "group": "Document & Language Research",
+    "title": "PDFreaderPY — Document Ingestion",
+    "tag": "Python · PDF · OCR/data adapters",
+    "repo": "PDFreaderPY",
+    "desc": "PDF/document-ingestion utilities and ancient-object catalog adapters with source trees and protocol contracts.",
+    "path": "https://github.com/amerhwitat/PDFreaderPY#readme",
+    "action": "Explore project"
+  },
+  {
+    "group": "Document & Language Research",
+    "title": "NLP & Ancient North Arabian Toolkit",
+    "tag": "Python · C++ · .NET · Visual C++ · Web",
+    "repo": "nlp",
+    "desc": "Thamudic and Ancient North Arabian research with OCR, script detection, tokenization, transliteration and provenance-oriented tooling.",
+    "path": "https://github.com/amerhwitat/nlp#readme",
+    "action": "Explore project"
+  },
+  {
+    "group": "Runtime & Conformance",
+    "title": "Chimera II Python Research Platform",
+    "tag": "Python · Web adapters · Desktop lifecycle",
+    "repo": "test",
+    "desc": "Host-side consolidation, adapters, tests and conformance work; distinct from the native kernel source of record.",
+    "path": "https://github.com/amerhwitat/test#readme",
+    "action": "Explore project"
+  },
+  {
+    "group": "Cryptography Research",
+    "title": "Ethereum Key/Address Verification",
+    "tag": "Python · Node.js · Java · C++ · Apple",
+    "repo": "eth-key-check",
+    "desc": "Cross-language Ethereum key/address verification and research utilities. Use documented verification flows; never submit private keys or seed phrases to a web UI.",
+    "path": "https://github.com/amerhwitat/eth-key-check#readme",
+    "action": "Explore project"
+  },
+  {
+    "group": "Cryptography Research",
+    "title": "Safe Crypto Research & Benchmarks",
+    "tag": "Cross-language · Verification · Synthetic tests",
+    "repo": "bruteforce",
+    "desc": "Historical crypto experiments with a documented safe research boundary, verification and synthetic benchmarking. No wallet-cracking or private-key recovery UI is exposed here.",
+    "path": "https://github.com/amerhwitat/bruteforce#readme",
+    "action": "Explore project"
+  },
+  {
+    "group": "Runtime & Conformance",
+    "title": "Java / Koronos Research Runtime",
+    "tag": "Java 25 · Maven · Apple · Runtime models",
+    "repo": "keygen",
+    "desc": "Isolated Java implementation track for Koronos processor/kernel concepts, runtime/service integration and concurrency research.",
+    "path": "https://github.com/amerhwitat/keygen#readme",
+    "action": "Explore project"
+  },
+  {
+    "group": "Developer Tools",
+    "title": "Repository Test & Prototype Workspace",
+    "tag": "Experiments · Source · Tests",
+    "repo": "test",
+    "desc": "Additional prototype and test workspace; individual source entry points are discoverable in Repository App Explorer.",
+    "path": "https://github.com/amerhwitat/test",
+    "action": "Explore project"
+  }
+
 ];
 const REPOS = [
   {
@@ -974,7 +1084,7 @@ function render(term){
         <p>${esc(a.desc)}</p>
         ${a.sub && a.sub.length ? `<div class="sub">${a.sub.map(s => `<a href="${s.p}">${esc(s.t)}</a>`).join('')}</div>` : ''}
         <span class="repo">${esc(a.repo)}</span>
-        <a class="go" href="${a.path}">Open app →</a>
+        <a class="go" href="${a.path}">${esc(a.action || "Open app")} →</a>
       </article>`).join('') + '</div>';
   }
   root.innerHTML = html;
