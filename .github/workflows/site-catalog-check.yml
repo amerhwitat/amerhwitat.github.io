@@ -65,6 +65,7 @@ jobs:
           assert Path("apps/octavianos/marine/index.html").is_file()
           index = json.loads(Path("search-index.json").read_text(encoding="utf-8"))
           pages = index["pages"]
+          assert len(pages) == len({p["p"] for p in pages}), "Duplicate search-index destinations"
           assert any(p["t"] == "ThamudicScan v2.4.1 — Ancient North Arabian Scanner" for p in pages)
           assert any(p["p"].startswith("https://chimera-iios-120143.onhercules.app") for p in pages)
           assert any("154-file inventory" in p["t"] for p in pages)
