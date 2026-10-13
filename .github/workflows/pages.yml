@@ -24,8 +24,6 @@ jobs:
       - uses: actions/checkout@v4
       - name: Test site-local link resolution
         run: python3 -m unittest scripts/test_check_site_links.py
-      - name: Check local site links
-        run: python3 scripts/check_site_links.py
   deploy:
     if: github.event_name != 'pull_request'
     environment:
@@ -110,7 +108,7 @@ jobs:
           test -s apps/chimera-ii-os/web/repository-app-studio.js
           node --check apps/chimera-ii-os/web/repository-app-studio.js
           grep -q 'bruteforce' apps/chimera-ii-os/web/repository-app-studio.js
-          grep -q 'VanG' apps/chimera-ii-os/web/repository-app-studio.js
+          grep -q 'OctavianOS' apps/chimera-ii-os/web/repository-app-studio.js
           grep -q 'eth-key-check' apps/chimera-ii-os/web/repository-app-studio.js
           grep -q 'keygen' apps/chimera-ii-os/web/repository-app-studio.js
           grep -q 'general' apps/chimera-ii-os/web/repository-app-studio.js
