@@ -87,6 +87,20 @@ for virtual in virtual_entries:
         entries.append(virtual)
     else:
         entries[match].update(virtual)
+# A single URL should have one canonical search record. Prefer the explicit
+# inventory/hosted-preview labels when an older catalog alias shares that URL.
+preferred_titles = {
+    "apps/chimera-ii-os/web/index.html": "Chimera II OS Web Apps — 154-file inventory",
+    "apps/thamudic-scanner/index.html": "ThamudicScan v2.4.1 — Ancient North Arabian Scanner",
+    "https://chimera-iios-120143.onhercules.app/": "Chimera II OS — Hosted Aurora Desktop SPA",
+}
+by_path = {}
+for entry in entries:
+    path = entry["p"]
+    current = by_path.get(path)
+    if current is None or entry["t"] == preferred_titles.get(path):
+        by_path[path] = entry
+entries = list(by_path.values())
 entries.sort(key=lambda e:(e["g"],e["p"]))
 json.dump({"generated_by":"amerhwitat.github.io hub indexer","pages":entries},open('search-index.json','w',encoding='utf-8'),ensure_ascii=False)
 print("indexed pages:",len(entries),"| bytes:",os.path.getsize('search-index.json'))
