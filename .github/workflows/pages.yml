@@ -101,6 +101,19 @@ jobs:
           grep -q 'keygen' apps/chimera-ii-os/web/repository-app-studio.js
           grep -q 'general' apps/chimera-ii-os/web/repository-app-studio.js
           grep -q 'Guest' apps/chimera-ii-os/web/repository-app-studio.html
+      - name: Validate MAME Arcade Center controls
+        run: |
+          test -s apps/chimera-ii-os/web/mame-center.html
+          test -s apps/chimera-ii-os/web/mame-center.js
+          test -s apps/chimera-ii-os/web/mame-game-db.json
+          node --check apps/chimera-ii-os/web/mame-center.js
+          python3 - <<'PY'
+          import json
+          data=json.load(open('apps/chimera-ii-os/web/mame-game-db.json',encoding='utf-8'))
+          assert isinstance(data,list) and data, 'MAME catalogue must be a non-empty array'
+          assert all({'id','title','system'} <= set(item) for item in data), 'MAME entries need id/title/system'
+          print(f'MAME Arcade Center catalogue: {len(data)} entries')
+          PY
       - name: Validate Aurora Emulator surface
         run: |
           test -s apps/chimera-ii-os/web/aurora-emulator.html
