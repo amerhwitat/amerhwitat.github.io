@@ -36,7 +36,7 @@ function App() {
       </section>
     </main>
     <footer className="dock">{apps.slice(0,6).map(app=><button key={app.name} aria-label={app.name} title={app.name} onClick={()=>openApp(app)}>{app.icon}</button>)}</footer>
-    <footer className="legal">OctavianOS preview · Web UI only · <a href="https://github.com/amerhwitat/OctavianOS">OS source</a> · <a href="https://github.com/amerhwitat/OctavianOS/releases">Releases</a></footer>
+    <footer className="legal">OctavianOS preview · Web UI only · <a href="https://github.com/amerhwitat/OctavianOS">OS source</a> · <a href="https://github.com/amerhwitat/OctavianOS/releases">Releases</a> · <a href="/project-updates.html">Build &amp; release status</a></footer>
   </div>;
 }
 createRoot(document.getElementById("root")).render(<App />);
