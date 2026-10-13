@@ -9,6 +9,9 @@ on:
       - "scripts/check_site_links.py"
       - "apps/chimera-ii-os/web/**"
       - "apps/thamudic-scanner/**"
+      - "site-interactions.css"
+      - "site-interactions.js"
+      - ".github/workflows/pages.yml"
       - ".github/workflows/site-catalog-check.yml"
   push:
     branches: [main]
@@ -53,6 +56,21 @@ jobs:
           assert any(p["p"].startswith("https://chimera-iios-120143.onhercules.app") for p in pages)
           assert any("154-file inventory" in p["t"] for p in pages)
           print(f"PASS: {len(apps)} apps, {len(repos)} repositories, {len(pages)} indexed pages")
+          PY
+      - name: Validate shared interaction and MAME frontend scripts
+        run: |
+          node --check site-interactions.js
+          node --check apps/chimera-ii-os/web/mame-center.js
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          data=json.loads(Path('apps/chimera-ii-os/web/mame-game-db.json').read_text(encoding='utf-8'))
+          assert isinstance(data,list) and data
+          assert all({'id','title','system'} <= set(x) for x in data)
+          page=Path('apps/chimera-ii-os/web/mame-center.html').read_text(encoding='utf-8')
+          for ident in ('scan','roms','loadCore','launch','pause','reset','fullscreen','save','load','sound','coin','p1','map','db','log'):
+              assert f'id="{ident}"' in page, f'Missing control {ident}'
+          print(f'PASS: shared interactions and MAME controls; {len(data)} catalogue entries')
           PY
       - name: Build OctavianOS React app for local-link validation
         run: |

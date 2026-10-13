@@ -1,0 +1,30 @@
+/* Shared interaction layer: tactile 3D icons, buttons and accessible focus. */
+:root{--site-icon-depth:5px;--site-icon-glow:rgba(76,204,255,.32)}
+.ic,.icon,.app-icon,.dock-icon,.tile-icon,.aurora-mark,.rail-orb,.app-card .app-icon,.brand .dot,[data-icon],.dock button>span:first-child,.app-grid button>span:first-child{
+  transform:translateZ(0);transform-style:preserve-3d;transition:transform .18s ease,filter .18s ease,box-shadow .18s ease;
+  filter:drop-shadow(0 3px 0 rgba(0,0,0,.25)) drop-shadow(0 7px 10px rgba(0,0,0,.22));
+}
+button:hover .ic,button:hover .icon,button:hover .app-icon,button:hover .dock-icon,button:hover .tile-icon,button:hover .aurora-mark,button:hover .rail-orb,button:hover [data-icon],a:hover .ic,a:hover .icon{
+  transform:perspective(420px) translateY(-3px) rotateX(7deg) rotateY(-5deg) scale(1.055);
+  filter:brightness(1.12) drop-shadow(0 5px 0 rgba(0,0,0,.28)) drop-shadow(0 10px 14px var(--site-icon-glow));
+}
+button:active .ic,button:active .icon,button:active .app-icon,button:active .dock-icon,button:active .tile-icon,button:active .aurora-mark,button:active [data-icon]{
+  transform:perspective(420px) translateY(2px) scale(.96);filter:brightness(.94);
+}
+button,a,[role=button]{-webkit-tap-highlight-color:transparent}
+button:focus-visible,a:focus-visible,[role=button]:focus-visible{outline:2px solid #65dcff;outline-offset:3px}
+.site-sound-toggle{position:fixed;right:14px;bottom:14px;z-index:99999;display:flex;align-items:center;gap:7px;border:1px solid rgba(124,207,255,.42);border-radius:999px;padding:9px 13px;background:rgba(7,18,34,.88);color:#eaf7ff;font:600 12px/1.2 system-ui,sans-serif;box-shadow:0 8px 24px rgba(0,0,0,.32);backdrop-filter:blur(12px);cursor:pointer}
+.site-sound-toggle:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(48,173,255,.2)}
+.site-workflow-status{position:fixed;left:14px;bottom:14px;z-index:99998;max-width:min(420px,calc(100vw - 28px));padding:8px 12px;border:1px solid rgba(124,207,255,.22);border-radius:10px;background:rgba(7,18,34,.82);color:#dcefff;font:12px/1.4 system-ui,sans-serif;pointer-events:none;opacity:0;transform:translateY(5px);transition:opacity .2s,transform .2s}
+.site-workflow-status.visible{opacity:1;transform:translateY(0)}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+
+/* Ambient dimensional lighting for the entire published site; never intercepts input. */
+body{background-blend-mode:screen,normal}
+body::before{content:"";position:fixed;inset:0;z-index:9990;pointer-events:none;opacity:.15;background:radial-gradient(ellipse at 12% 18%,rgba(64,177,255,.35),transparent 38%),radial-gradient(ellipse at 86% 78%,rgba(135,92,255,.25),transparent 42%);animation:siteAmbientDrift 22s ease-in-out infinite alternate}
+@keyframes siteAmbientDrift{from{transform:translate3d(-1%,0,0) scale(1)}to{transform:translate3d(1%,1%,0) scale(1.04)}}
+button,.btn,input,select,textarea,[role=button]{transition:transform .18s ease,box-shadow .18s ease,filter .18s ease}
+button:hover,.btn:hover,[role=button]:hover{filter:brightness(1.08);box-shadow:0 8px 20px rgba(28,133,255,.18)}
+button:active,.btn:active,[role=button]:active{transform:translateY(1px) scale(.985)}
+svg,img[role=img],.icon,.app-icon,[data-icon]{filter:drop-shadow(0 3px 5px rgba(0,0,0,.2))}
+@media(prefers-reduced-motion:reduce){body::before{animation:none}}
