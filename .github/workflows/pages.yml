@@ -196,7 +196,7 @@ jobs:
                   continue
               updated = source
               # Refresh already-injected assets as well as new pages to avoid stale browser caches.
-              updated = re.sub(r'((?:href|src)=["\\'][^"\\']*site-interactions\\.(?:css|js))(?:\\?v=[^"\\']*)?(["\\'])', r'\\1?v=3\\2', updated, flags=re.I)
+              updated = re.sub(r"""((?:href|src)=["'][^"']*site-interactions\\.(?:css|js))(?:\\?v=[^"']*)?(["'])""", r"\\1?v=3\\2", updated, flags=re.I)
               if "site-interactions.css" not in updated and re.search(r"</head\s*>", updated, re.I):
                   updated = re.sub(r"</head\s*>", '  <link rel="stylesheet" href="/site-interactions.css?v=3">\n</head>', updated, count=1, flags=re.I)
               if "site-interactions.js" not in updated and re.search(r"</body\s*>", updated, re.I):
