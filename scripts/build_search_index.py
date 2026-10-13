@@ -56,6 +56,30 @@ virtual_entries = [
      "d":"Project-reported inventory of 154 web files covering Aurora desktop, terminal, ISA explorer, emulators, OCR, wallet, installer and related tools. Snapshot count should be regenerated as the repository changes.",
      "x":"ChimeraIIOS web files 154 Aurora desktop terminal ISA explorer emulators OCR wallet installer apps"}
 ]
+# Catalog entries live in the homepage JavaScript data rather than rendered HTML.
+# Index external project links too, so repository-only apps remain discoverable by search.
+hub_html = open("index.html", encoding="utf-8").read()
+apps_match = re.search(r"const APPS = (.*?);\\nconst REPOS = ", hub_html, re.S)
+if apps_match:
+    try:
+        hub_apps = json.loads(apps_match.group(1))
+    except json.JSONDecodeError as exc:
+        raise SystemExit(f"Cannot index APPS catalog: {exc}") from exc
+    for app in hub_apps:
+        target = app.get("path", "")
+        if not isinstance(target, str) or not target.startswith(("https://", "http://")):
+            continue
+        virtual_entries.append({
+            "p": target,
+            "t": app.get("title", target)[:160],
+            "g": app.get("group", "Portfolio"),
+            "d": app.get("desc", "")[:200],
+            "x": " ".join((app.get("title", ""), app.get("tag", ""),
+                           app.get("repo", ""), app.get("desc", "")))[:900]
+        })
+else:
+    raise SystemExit("Cannot find APPS catalog in index.html")
+
 for virtual in virtual_entries:
     match = next((i for i, entry in enumerate(entries)
                   if entry["p"] == virtual["p"] and entry["t"] == virtual["t"]), None)
