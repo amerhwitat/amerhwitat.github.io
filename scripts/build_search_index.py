@@ -59,7 +59,7 @@ virtual_entries = [
 # Catalog entries live in the homepage JavaScript data rather than rendered HTML.
 # Index external project links too, so repository-only apps remain discoverable by search.
 hub_html = open("index.html", encoding="utf-8").read()
-apps_match = re.search(r"const APPS = (.*?);\\nconst REPOS = ", hub_html, re.S)
+apps_match = re.search(r"const APPS = (.*?);\nconst REPOS = ", hub_html, re.S)
 if apps_match:
     try:
         hub_apps = json.loads(apps_match.group(1))
