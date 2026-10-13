@@ -9,6 +9,8 @@ on:
       - "scripts/check_site_links.py"
       - "apps/chimera-ii-os/web/**"
       - "apps/thamudic-scanner/**"
+      - "apps/repository-app-explorer/**"
+      - "scripts/test_repository_app_explorer.py"
       - "site-interactions.css"
       - "site-interactions.js"
       - ".github/workflows/pages.yml"
@@ -84,6 +86,8 @@ jobs:
           npm install --no-audit --no-fund
           npm run typecheck
           rm -rf node_modules
+      - name: Test repository explorer contract
+        run: python3 -m unittest scripts/test_repository_app_explorer.py
       - name: Test site-local link resolution
         run: python3 -m unittest scripts/test_check_site_links.py
       - name: Check local site links
