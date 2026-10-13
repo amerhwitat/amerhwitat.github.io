@@ -7,6 +7,7 @@ on:
       - "search-index.json"
       - "scripts/build_search_index.py"
       - "scripts/check_site_links.py"
+      - "scripts/check_app_catalog.py"
       - "apps/chimera-ii-os/web/**"
       - "apps/cpu4096-simulator/public/**"
       - "apps/octavianos/**"
@@ -107,3 +108,5 @@ jobs:
         run: python3 -m unittest scripts/test_check_site_links.py
       - name: Check local site links
         run: python3 scripts/check_site_links.py
+      - name: Validate every app catalog destination
+        run: python3 scripts/check_app_catalog.py
