@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Regression tests for site-local URL resolution."""
+"""Regression tests for site-local URL and asset resolution."""
 import importlib.util
 import tempfile
 import unittest
@@ -16,6 +16,7 @@ class SiteLinkResolutionTests(unittest.TestCase):
         self.temp = tempfile.TemporaryDirectory()
         self.root = Path(self.temp.name)
         (self.root / "apps").mkdir()
+        (self.root / "assets").mkdir()
         self.page = self.root / "index.html"
         self.page.write_text("<html></html>", encoding="utf-8")
         CHECKER.ROOT = self.root
@@ -41,6 +42,30 @@ class SiteLinkResolutionTests(unittest.TestCase):
         page = self.root / "apps" / "parent.html"
         page.write_text("ok", encoding="utf-8")
         CHECKER.check(page, "child.html")
+        self.assertEqual(CHECKER.errors, [])
+
+    def test_srcset_checks_each_local_candidate(self):
+        (self.root / "assets" / "small.webp").write_bytes(b"image")
+        CHECKER.check_srcset(self.page, "/assets/small.webp 1x, /assets/missing.webp 2x")
+        self.assertEqual(len(CHECKER.errors), 1)
+        self.assertIn("missing assets/missing.webp", CHECKER.errors[0])
+
+    def test_srcset_data_uri_is_not_misparsed(self):
+        CHECKER.check_srcset(self.page, "data:image/png;base64,AAAA 1x")
+        self.assertEqual(CHECKER.errors, [])
+
+    def test_css_url_checks_local_asset(self):
+        css = self.root / "assets" / "site.css"
+        css.write_text("body { background: url('./missing.webp'); }", encoding="utf-8")
+        import re
+        match = CHECKER.CSS_URL_PATTERN.search(css.read_text(encoding="utf-8"))
+        CHECKER.check(css, match.group(1))
+        self.assertEqual(len(CHECKER.errors), 1)
+        self.assertIn("missing assets/missing.webp", CHECKER.errors[0])
+
+    def test_external_and_data_urls_are_ignored(self):
+        for value in ("https://example.org/a.png", "//cdn.example.org/a.png", "data:image/png;base64,AA==", "#section"):
+            CHECKER.check(self.page, value)
         self.assertEqual(CHECKER.errors, [])
 
 
