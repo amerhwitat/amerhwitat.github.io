@@ -26,6 +26,16 @@ class RepositoryExplorerContractTests(unittest.TestCase):
         self.assertIn(("general", "master"), self.repo_pairs)
         self.assertIn(("OctavianOS", "main"), self.repo_pairs)
 
+    def test_build_manifests_and_multilanguage_entrypoints_are_classified(self):
+        # Keep the browser-side classifier broad enough to discover non-web projects.
+        for expected in (
+            "'cmakelists.txt'", "'go.mod'", "'cargo.toml'", "'requirements.txt'",
+            "'build.gradle.kts'", "'package.swift'", "'build.zig'",
+            "'Build manifest'", "'Source entry point'",
+            "|rs|go|java|kt|kts|swift|", "|dart|py|rb|php|pl|pm|"
+        ):
+            self.assertIn(expected, self.html)
+
     def test_partial_results_and_api_failures_are_visible(self):
         self.assertIn("t.truncated", self.html)
         self.assertIn("catch(e)", self.html)
