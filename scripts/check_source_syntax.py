@@ -30,6 +30,19 @@ def main() -> int:
         )
         if result.returncode:
             details = (result.stderr or result.stdout).strip()
+            lines = (result.stderr or "").splitlines()
+            caret_index = next((i for i, line in enumerate(lines) if line.strip() == "^"), None)
+            if caret_index is not None and caret_index >= 2:
+                caret_line = lines[caret_index]
+                column = len(caret_line) - len(caret_line.lstrip(" "))
+                try:
+                    source = path.read_text(encoding="utf-8")
+                    details += (
+                        f"\nParser context near column {column}: "
+                        f"{source[max(0, column - 80):column + 100]!r}"
+                    )
+                except OSError:
+                    pass
             failures.append(f"JavaScript syntax: {path.relative_to(ROOT)}\n{details}")
     for path in py_files:
         try:
