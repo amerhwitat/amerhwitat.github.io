@@ -102,6 +102,8 @@ jobs:
           npm install --no-audit --no-fund
           npm run typecheck
           rm -rf node_modules
+      - name: Syntax-check all published app JavaScript and Python tooling
+        run: python3 scripts/check_source_syntax.py
       - name: Test repository explorer contract
         run: python3 -m unittest scripts/test_repository_app_explorer.py
       - name: Test site-local link resolution
