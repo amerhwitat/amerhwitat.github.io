@@ -12,6 +12,28 @@ ROOT = Path(__file__).resolve().parents[1]
 SKIP_PARTS = {".git", "node_modules", "dist", "build", "vendor", ".venv", "__pycache__"}
 
 
+def split_statements_for_diagnostics(source: str) -> str:
+    """Add line breaks after semicolons outside strings to localize parser errors."""
+    output = []
+    quote = None
+    escaped = False
+    for char in source:
+        output.append(char)
+        if quote:
+            if escaped:
+                escaped = False
+            elif char == "\\\\":
+                escaped = True
+            elif char == quote:
+                quote = None
+            continue
+        if char in ("'", '"', "`"):
+            quote = char
+        elif char == ";":
+            output.append("\\n")
+    return "".join(output)
+
+
 def main() -> int:
     js_files = sorted(
         p for p in ROOT.rglob("*.js")
@@ -60,6 +82,24 @@ def main() -> int:
                     )
                 except OSError:
                     pass
+            # Node truncates caret output for very long minified lines. Reparse
+            # a diagnostic-only copy with safe statement line breaks to expose
+            # the failing line/column without changing the source file.
+            try:
+                source = path.read_text(encoding="utf-8")
+                diagnostic_source = split_statements_for_diagnostics(source)
+                diagnostic = subprocess.run(
+                    ["node", "--check"],
+                    input=diagnostic_source,
+                    cwd=ROOT,
+                    text=True,
+                    capture_output=True,
+                    check=False,
+                )
+                if diagnostic.returncode:
+                    details += "\\nDiagnostic parse after line splitting:\\n" + diagnostic.stderr.strip()
+            except OSError:
+                pass
             failures.append(f"JavaScript syntax: {path.relative_to(ROOT)}\n{details}")
     for path in py_files:
         try:
