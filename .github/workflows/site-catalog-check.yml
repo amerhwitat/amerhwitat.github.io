@@ -118,7 +118,10 @@ jobs:
           for path in paths:
               if path.startswith(("http://", "https://", "mailto:")):
                   continue
-              relative = path.lstrip("/")
+              if path.startswith("/"):
+                  relative = path.lstrip("/")
+              else:
+                  relative = str(Path("apps/chimera-ii-os/web") / path)
               if relative and not Path(relative).is_file():
                   missing.append(path)
           assert not missing, "Missing Aurora App Studio routes: " + ", ".join(sorted(missing))
