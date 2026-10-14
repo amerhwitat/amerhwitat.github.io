@@ -38,8 +38,8 @@ function buildJavaBundle(){
  "gradle.properties":"org.gradle.jvmargs=-Xmx2g -Dfile.encoding=UTF-8\nandroid.useAndroidX=true\n",
  "app/build.gradle":"plugins { id 'com.android.application' }\n\nandroid {\n    namespace '"+packageName+"'\n    compileSdk 35\n    defaultConfig { applicationId '"+packageName+"' minSdk 24 targetSdk 35 versionCode 1 versionName '0.1.0' testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner' }\n    testOptions { unitTests.returnDefaultValues = true }\n}\n\ndependencies { testImplementation 'junit:junit:4.13.2' }\n",
  "app/src/main/AndroidManifest.xml":manifest,
- "app/src/main/java/"+packagePath+"/MainActivity.java":source,
- "app/src/test/java/"+packagePath+"/PackageContractTest.java":testSource,
+ ["app/src/main/java/"+packagePath+"/MainActivity.java"]:source,
+ ["app/src/test/java/"+packagePath+"/PackageContractTest.java"]:testSource,
  "README.md":"# "+app+"\n\nGenerated Java Android WebView companion scaffold.\n\n## Requirements\n- JDK 17 or the version supported by Android Gradle Plugin 8.7.x\n- Android SDK Platform 35 and platform tools\n- Gradle 8.9-compatible environment (wrapper files are not bundled)\n\n## Build and test\n1. Open this folder in Android Studio, allow Gradle sync, and install required SDK components.\n2. Run gradle test for the JVM unit test and gradle assembleDebug to compile the Android app.\n3. Run on an emulator/device and test offline/error states, back navigation, accessibility, and network restrictions.\n4. Configure app signing and privacy disclosures before release.\n\nThis is a WebView wrapper for https://amerhwitat.github.io, not a Java port of the OS kernel or native repository applications."
  }};
 }
