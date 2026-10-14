@@ -34,7 +34,6 @@ const javaBundle = JSON.parse(downloaded.text);
 for (const path of ["settings.gradle","build.gradle","gradle.properties","app/build.gradle","app/src/main/AndroidManifest.xml","app/src/main/java/org/example/auroratest/MainActivity.java","app/src/test/java/org/example/auroratest/PackageContractTest.java","README.md"]) {
   assert.ok(javaBundle.files[path], "Missing Java bundle file: " + path);
 }
-assert.equal(JSON.parse(javaBundle.files["app/build.gradle"]).namespace, undefined); // Gradle is Groovy DSL, not JSON.
 assert.match(javaBundle.files["app/build.gradle"], /compileSdk 35/);
 assert.match(javaBundle.files["app/build.gradle"], /junit:junit:4\.13\.2/);
 
