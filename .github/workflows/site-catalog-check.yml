@@ -93,17 +93,6 @@ jobs:
               assert f'id="{ident}"' in page, f'Missing control {ident}'
           print(f'PASS: shared interactions and MAME controls; {len(data)} catalogue entries')
           PY
-      - name: Build OctavianOS React app for local-link validation
-        run: |
-          cd apps/octavianos
-          npm install --no-audit --no-fund
-          npm run build
-          test -s dist/index.html
-          rm -rf node_modules
-          cd mobile
-          npm install --no-audit --no-fund
-          npm run typecheck
-          rm -rf node_modules
       - name: Validate Aurora App Studio scripts and internal launch routes
         run: |
           node --check apps/chimera-ii-os/web/repository-app-studio.js
@@ -131,6 +120,17 @@ jobs:
           assert "const featureRecords=[" in source and "Userspace handoff verifier" in source
           print(f"PASS: App Studio script syntax, {len(paths)} internal routes, 3 framework targets")
           PY
+      - name: Build OctavianOS React app for local-link validation
+        run: |
+          cd apps/octavianos
+          npm install --no-audit --no-fund
+          npm run build
+          test -s dist/index.html
+          rm -rf node_modules
+          cd mobile
+          npm install --no-audit --no-fund
+          npm run typecheck
+          rm -rf node_modules
       - name: Test repository explorer contract
         run: python3 -m unittest scripts/test_repository_app_explorer.py
       - name: Test site-local link resolution
