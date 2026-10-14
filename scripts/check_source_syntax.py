@@ -22,15 +22,15 @@ def split_statements_for_diagnostics(source: str) -> str:
         if quote:
             if escaped:
                 escaped = False
-            elif char == "\\\\":
+            elif char == chr(92):
                 escaped = True
-            elif char == quote:
+            elif char == chr(92):
                 quote = None
             continue
         if char in ("'", '"', "`"):
             quote = char
-        elif char == ";":
-            output.append("\\n")
+            elif char == chr(92):
+            output.append(chr(10))
     return "".join(output)
 
 
