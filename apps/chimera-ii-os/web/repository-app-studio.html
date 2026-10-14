@@ -23,4 +23,18 @@ Select an application above.</textarea>
 <textarea id="javaOutput" class="codebox" spellcheck="false" aria-label="Generated Java source" readonly>// Choose “Generate Java source” to create a Java WebView starter.</textarea>
 <p class="muted">Security defaults: HTTPS-only navigation to the portfolio host, no JavaScript bridge, external hosts/schemes blocked, and no arbitrary local-file access. This wrapper does not magically port native applications into the browser.</p>
 </section>
+
+<section class="panel" style="padding:18px;margin-top:16px" aria-labelledby="osFeaturesHeading">
+<h2 id="osFeaturesHeading">ChimeraIIOS + OctavianOS · Feature Observatory</h2>
+<p class="muted">Feature cards are sourced from the two repositories' manifests, implementation files, and tests. “Source-level” means the contract or code exists; it is not a claim that an ISO booted or a native userspace reached readiness.</p>
+<div class="bar"><input id="featureQ" class="input" placeholder="Filter boot, Koronos, N-bit, ISA, mobile, artwork…"><select id="featureFilter" class="select"><option value="all">All features</option><option value="ChimeraIIOS">ChimeraIIOS</option><option value="OctavianOS">OctavianOS</option><option value="shared">Shared / migrated</option></select></div>
+<div id="featureGrid" class="grid"></div>
+</section>
+<section class="panel" style="padding:18px;margin-top:16px" aria-labelledby="frameworkHeading">
+<h2 id="frameworkHeading">Multi-framework UI starter exporter</h2>
+<p class="muted">Create a downloadable source bundle for a browser companion in Angular, Vite + React, or React Native. This ports the reusable web companion shell and repository feature catalog, not the freestanding C/C++/assembly kernel, hardware drivers, or privileged OS operations. Those require language- and platform-specific implementations.</p>
+<div class="bar"><label for="framework">Target framework</label><select id="framework" class="select"><option value="vite-react">Vite + React + TypeScript</option><option value="angular">Angular standalone + TypeScript</option><option value="react-native">React Native + TypeScript</option></select><label for="frameworkAppName">App name</label><input id="frameworkAppName" class="input" value="Aurora Feature Observatory" maxlength="60"><button id="generateFramework" class="btn primary" type="button">Generate source bundle</button><button id="downloadFramework" class="btn" type="button">Download bundle JSON</button></div>
+<textarea id="frameworkOutput" class="codebox" spellcheck="false" aria-label="Generated framework source bundle" readonly>// Select a target framework and generate its source bundle.</textarea>
+<p class="muted">Bundle contains source files and dependency/build metadata. Install dependencies, run the framework's build/test commands, add platform-specific navigation/accessibility/security tests, and verify the actual target before release.</p>
+</section>
 </main><script src="repository-app-studio.js"></script></body></html>
