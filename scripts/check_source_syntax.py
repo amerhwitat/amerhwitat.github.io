@@ -28,6 +28,23 @@ def main() -> int:
             capture_output=True,
             check=False,
         )
+        # Valid browser ES modules may use CDN imports while their folder has no
+        # package.json type=module. Retry that specific Node CommonJS diagnostic
+        # in module parse mode; the source is parsed, never imported or executed.
+        if result.returncode and "Cannot use import statement outside a module" in result.stderr:
+            try:
+                source = path.read_text(encoding="utf-8")
+                result = subprocess.run(
+                    ["node", "--input-type=module", "--check"],
+                    input=source,
+                    cwd=ROOT,
+                    text=True,
+                    capture_output=True,
+                    check=False,
+                )
+            except OSError as exc:
+                failures.append(f"JavaScript syntax: {path.relative_to(ROOT)}\n{exc}")
+                continue
         if result.returncode:
             details = (result.stderr or result.stdout).strip()
             lines = (result.stderr or "").splitlines()
