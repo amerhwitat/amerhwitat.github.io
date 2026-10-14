@@ -93,6 +93,33 @@ jobs:
               assert f'id="{ident}"' in page, f'Missing control {ident}'
           print(f'PASS: shared interactions and MAME controls; {len(data)} catalogue entries')
           PY
+      - name: Validate Aurora App Studio scripts and internal launch routes
+        run: |
+          node --check apps/chimera-ii-os/web/repository-app-studio.js
+          node scripts/test_app_studio_generators.js
+          python3 - <<'PY'
+          import re
+          from pathlib import Path
+          source = Path("apps/chimera-ii-os/web/repository-app-studio.js").read_text(encoding="utf-8")
+          page = Path("apps/chimera-ii-os/web/repository-app-studio.html").read_text(encoding="utf-8")
+          paths = set(re.findall(r'["\'](/[^"\' ]+\.html|/[^"\' ]+/index\.html|/)["\']', source))
+          paths.update(re.findall(r'href="([^"]+\.html)"', page))
+          missing = []
+          for path in paths:
+              if path.startswith(("http://", "https://", "mailto:")):
+                  continue
+              if path.startswith("/"):
+                  relative = path.lstrip("/")
+              else:
+                  relative = str(Path("apps/chimera-ii-os/web") / path)
+              if relative and not Path(relative).is_file():
+                  missing.append(path)
+          assert not missing, "Missing Aurora App Studio routes: " + ", ".join(sorted(missing))
+          for target in ("vite-react", "angular", "react-native"):
+              assert target in source, "Missing framework exporter target: " + target
+          assert "const featureRecords=[" in source and "Userspace handoff verifier" in source
+          print(f"PASS: App Studio script syntax, {len(paths)} internal routes, 3 framework targets")
+          PY
       - name: Build OctavianOS React app for local-link validation
         run: |
           cd apps/octavianos
