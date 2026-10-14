@@ -24,12 +24,12 @@ def split_statements_for_diagnostics(source: str) -> str:
                 escaped = False
             elif char == chr(92):
                 escaped = True
-            elif char == chr(92):
+            elif char == quote:
                 quote = None
             continue
-        if char in ("'", '"', "`"):
+        if char in ("'", '"', chr(96)):
             quote = char
-            elif char == chr(92):
+        elif char == ";":
             output.append(chr(10))
     return "".join(output)
 
