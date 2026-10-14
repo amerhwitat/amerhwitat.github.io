@@ -107,6 +107,7 @@ jobs:
       - name: Validate Aurora App Studio scripts and internal launch routes
         run: |
           node --check apps/chimera-ii-os/web/repository-app-studio.js
+          node scripts/test_app_studio_generators.js
           python3 - <<'PY'
           import re
           from pathlib import Path
