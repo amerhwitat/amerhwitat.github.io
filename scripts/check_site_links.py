@@ -88,10 +88,11 @@ def main():
         for match in LOCATION_PATTERN.finditer(source):
             check(path, match.group(1))
         # CSS image/font assets and stylesheet imports are not HTML href/src attributes.
-        for match in CSS_URL_PATTERN.finditer(source):
-            check(path, match.group(1))
-        for match in CSS_IMPORT_PATTERN.finditer(source):
-            check(path, match.group(1))
+        if path.suffix.lower() == ".css":
+            for match in CSS_URL_PATTERN.finditer(source):
+                check(path, match.group(1))
+            for match in CSS_IMPORT_PATTERN.finditer(source):
+                check(path, match.group(1))
     print(f"Checked {checked} local links and static asset references.")
     if errors:
         print("\n".join(errors[:200]))
