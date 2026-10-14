@@ -924,6 +924,20 @@
       "g": "Web",
       "d": "",
       "x": "Amer Hwitat Web Hub Project Web Hub Entry point for browser demonstrations and documentation."
+    },
+    {
+      "p": "apps/cpu4096-simulator/index.html",
+      "t": "CPU4096Simulator Java Runtime Guide",
+      "g": "Developer Tools",
+      "d": "Java assembler, execution semantics, memory bus, and cross-language contract guide.",
+      "x": "CPU4096 Simulator Java assembler opcode runtime contracts Maven tests machine code"
+    },
+    {
+      "p": "apps/pdf-reader/java-tools.html",
+      "t": "PDFreaderPY Java Tools Guide",
+      "g": "PDF and Documents",
+      "d": "Java PDF extraction, selectable-text search, JSONL matches, and provenance tooling; OCR is not included.",
+      "x": "PDFreaderPY Java PDF text search extraction Java CLI JSONL page line column OCR"
     }
   ]
 }
