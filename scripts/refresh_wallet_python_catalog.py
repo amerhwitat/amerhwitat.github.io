@@ -91,7 +91,7 @@ def conversion_plan(path: str, kind: str, role: str) -> dict[str, str]:
         return {"target": "developer-tool", "status": "keep-as-tool", "reason": "Build, catalog and maintenance tasks should remain developer tooling unless a specific user workflow is identified."}
     if any(x in lower for x in ("kernel", "driver", "boot", "firmware", "flash", "iso", "serial", "ctypes", "mmap")):
         return {"target": "native-local-bridge", "status": "needs-capability-adapter", "reason": "Privileged, hardware, filesystem or native capabilities cannot be supplied by static hosting alone."}
-    if any(x in lower for x in ("http.server", "server.py", "network", "socket", "tcp", "interfaces")):
+    if any(x in lower for x in ("http.server", "server.py", "network", "socket", "tcp", "interfaces", "assetbrowser", "asset_browser", "/api/")):
         return {"target": "browser-gui-plus-local-service", "status": "needs-service-parity", "reason": "Port the controls and pure logic to the browser; keep network sockets and authorization on a configured local service."}
     if kind == "ai" or any(x in lower for x in ("ocr", "model", "neural", "torch", "tensorflow", "translation")):
         return {"target": "web-worker-wasm-or-local-model", "status": "needs-dependency-audit", "reason": "Choose a browser worker/WASM implementation or local model service after auditing model size and dependencies."}
