@@ -22,6 +22,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Refresh Python catalog for PR validation
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python3 scripts/refresh_wallet_python_catalog.py
+      - name: Validate refreshed Python catalog
+        run: python3 scripts/check_wallet_python_catalog.py
+      - name: Check Python catalog generator syntax
+        run: python3 -m py_compile scripts/refresh_wallet_python_catalog.py
       - name: Build generated app output before validating local links
         run: |
           set -euo pipefail
