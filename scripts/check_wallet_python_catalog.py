@@ -14,4 +14,9 @@ assert all(x["path"].lower().endswith(".py") for x in files)
 assert all(x.get("role") in {"entrypoint","module","library","test"} for x in files)
 assert d["summary"]["runnable_files"]==sum(1 for x in files if x.get("runnable"))
 assert all(x["url"].startswith("https://github.com/amerhwitat/") for x in files)
+assert all(isinstance(x.get("conversion_plan"),dict) for x in files)
+assert all({"target","status","reason"} <= set(x["conversion_plan"]) for x in files)
+assert d["summary"]["conversion_plan_counts"] == {target:sum(1 for x in files if x["conversion_plan"]["target"]==target) for target in sorted({x["conversion_plan"]["target"] for x in files})}
+assert all(x["conversion_plan"]["status"] in {"keep-as-test","keep-as-tool","needs-capability-adapter","needs-service-parity","needs-dependency-audit","needs-feature-port","needs-domain-parity","needs-dependency-and-parity-audit"} for x in files)
+
 print(f"Python catalog integrity: PASS ({len(files)} files / {len(repos)} repositories)")
