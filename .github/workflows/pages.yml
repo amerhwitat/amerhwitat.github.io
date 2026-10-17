@@ -30,6 +30,8 @@ jobs:
         run: python3 scripts/check_wallet_python_catalog.py
       - name: Check Python catalog generator syntax
         run: python3 -m py_compile scripts/refresh_wallet_python_catalog.py
+      - name: Validate browser network console JavaScript
+        run: node --check apps/network-console/app.js
       - name: Build generated app output before validating local links
         run: |
           set -euo pipefail
