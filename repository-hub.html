@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#071120">
+<title>All Repositories & Web Apps — Amer Hwitat</title>
+<meta name="description" content="A searchable directory of Amer Hwitat's public GitHub repositories, published browser apps, source projects, and Java desktop tools.">
+<style>
+:root{color-scheme:dark;--bg:#06101e;--panel:#0e2037;--line:#294663;--fg:#edf5ff;--muted:#a9bdd4;--accent:#60d2ff;--green:#5ce3bc}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 10% 0,#16365b 0,transparent 45%),linear-gradient(180deg,#06101e,#091729 70%,#06101e);color:var(--fg);font:16px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}.wrap{max-width:1180px;margin:auto;padding:30px 20px 70px}
+header{display:flex;gap:18px;justify-content:space-between;align-items:center;flex-wrap:wrap}h1{font-size:clamp(2rem,5vw,3.3rem);line-height:1.1;margin:.4rem 0}p{color:var(--muted)}.eyebrow{font-size:.75rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent)}
+.controls{display:flex;gap:10px;flex-wrap:wrap;margin:24px 0 12px}.controls input,.controls select{background:#09182b;border:1px solid var(--line);border-radius:12px;padding:12px 14px;color:var(--fg);font:inherit}.controls input{flex:1;min-width:220px}.count{color:var(--muted);font-size:.9rem;margin:8px 0 18px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,285px),1fr));gap:15px}.card{display:flex;flex-direction:column;gap:8px;padding:19px;border:1px solid var(--line);border-radius:17px;background:linear-gradient(145deg,#102641ee,#09182bea);min-height:215px}.card h2{font-size:1.12rem;margin:0}.card p{margin:0;font-size:.94rem}.tags{display:flex;gap:6px;flex-wrap:wrap}.tag{border:1px solid var(--line);border-radius:999px;padding:2px 8px;font-size:.72rem;color:var(--muted)}.links{display:flex;gap:12px;flex-wrap:wrap;margin-top:auto;padding-top:10px;font-size:.9rem}.note{border-left:3px solid var(--green);background:#102b2b77;padding:12px 15px;border-radius:0 10px 10px 0;margin:20px 0}.empty{display:none;padding:30px;text-align:center;color:var(--muted);border:1px dashed var(--line);border-radius:14px}
+footer{border-top:1px solid var(--line);margin-top:30px;padding-top:18px;color:var(--muted);font-size:.9rem}
+</style>
+</head>
+<body><main class="wrap">
+<header><div><div class="eyebrow">Portfolio · Source · Web UI</div><h1>All repositories, one web hub</h1><p>Search public repositories and open published browser experiences where available. Every card distinguishes an existing web entry from source-only projects.</p></div><a href="/">← Main portfolio</a></header>
+<div class="note"><strong>Publication status:</strong> a repository link is not proof that an application is deployed or fully working. Browser apps run in the browser; JavaFX desktop apps run on a local JVM. Native OS/kernel components remain native. Build, runtime, and hardware acceptance are reported only when verified.</div>
+<div class="controls"><input id="filter" type="search" placeholder="Search repositories, apps, or technologies…" aria-label="Search repository directory"><select id="kind" aria-label="Filter by publication type"><option value="all">All projects</option><option value="web">Published web entry</option><option value="source">Source repository</option><option value="desktop">Desktop / JVM</option><option value="os">Operating systems</option></select></div>
+<div class="count" id="count" aria-live="polite"></div>
+<section class="grid" id="projects" aria-label="Repository directory">
+<article class="card" data-kind="os source" data-search="ChimeraIIOS operating system Koronos kernel Aurora boot ISO ISA native toolchain hosted runtime"><div class="tags"><span class="tag">Operating system</span><span class="tag">Source repository</span></div><h2>ChimeraIIOS</h2><p>OS research project covering Koronos, native toolchain, ISA catalog, hosted runtime, and Aurora desktop. Boot-to-userspace and ISO acceptance remain separate verification gates.</p><div class="links"><a href="https://github.com/amerhwitat/ChimeraIIOS">Source repository ↗</a><a href="/apps/chimera-ii-os/web/aurora_3d_desktop.html">Aurora 3D web desktop ↗</a><a href="/apps/chimera-ii-os/web/thamudicscan.html">ThamudicScan ↗</a></div></article>
+<article class="card" data-kind="os source" data-search="OctavianOS successor operating system boot chain Koronos installer recovery Aurora migration"><div class="tags"><span class="tag">Operating system</span><span class="tag">Source repository</span></div><h2>OctavianOS</h2><p>Successor OS repository for source migration, boot/runtime work, ISA catalog, build pipeline, and Aurora. Source import and real boot acceptance must be verified independently.</p><div class="links"><a href="https://github.com/amerhwitat/OctavianOS">Source repository ↗</a><a href="/project-updates.html">Build & release status ↗</a></div></article>
+<article class="card" data-kind="web source" data-search="CPU4096Simulator Java JavaFX CPU assembler simulator registers flags web runtime guide"><div class="tags"><span class="tag">Web guide</span><span class="tag">JavaFX desktop</span></div><h2>CPU4096Simulator</h2><p>Software CPU model with an assembly workbench. The implemented opcode subset and conformance coverage remain partial; this is not physical hardware execution.</p><div class="links"><a href="/apps/cpu4096-simulator/index.html">Browser guide ↗</a><a href="https://github.com/amerhwitat/CPU4096Simulator/tree/main/java">Java source ↗</a><a href="https://github.com/amerhwitat/CPU4096Simulator/actions">CI status ↗</a></div></article>
+<article class="card" data-kind="web desktop source" data-search="PDFreaderPY PDF reader Java PDFBox JavaFX searchable text OCR"><div class="tags"><span class="tag">Web guide</span><span class="tag">JavaFX desktop</span></div><h2>PDFreaderPY</h2><p>PDF reader and Java text extraction/search tools. The JavaFX desktop UI handles selectable text; OCR for scanned pages is not included.</p><div class="links"><a href="/apps/pdf-reader/java-tools.html">Browser guide ↗</a><a href="https://github.com/amerhwitat/PDFreaderPY/tree/main/java">Java source ↗</a><a href="https://github.com/amerhwitat/PDFreaderPY/actions">CI status ↗</a></div></article>
+<article class="card" data-kind="web source" data-search="BizX business platform networking asset browser email sender web GUI"><div class="tags"><span class="tag">Web UI source</span></div><h2>BizX</h2><p>Business platform repository with multiple modules and web interface sources. Each module's backend, security requirements, and deployability must be validated separately.</p><div class="links"><a href="https://github.com/amerhwitat/BizX">Source repository ↗</a><a href="https://github.com/amerhwitat/BizX/tree/main/emailsender/web">Email sender web source ↗</a><a href="https://github.com/amerhwitat/BizX/tree/main/InternetScanner/web">Internet scanner web source ↗</a></div></article>
+<article class="card" data-kind="web source" data-search="BizXtreme games business simulation rendering network mobile AI platform"><div class="tags"><span class="tag">Web app entry</span><span class="tag">Source repository</span></div><h2>BizXtreme</h2><p>Unified platform spanning game systems, simulation, networking, assets, AI, rendering, and mobile adapters.</p><div class="links"><a href="https://github.com/amerhwitat/BizXtreme">Source repository ↗</a><a href="/apps/chimera-ii-os/web/game-center.html">Game Center ↗</a></div></article>
+<article class="card" data-kind="source" data-search="general Java utilities general purpose repository"><div class="tags"><span class="tag">Source repository</span></div><h2>general</h2><p>General-purpose code repository. Individual modules should be surfaced here only after their build, dependencies, and runnable web entry have been audited.</p><div class="links"><a href="https://github.com/amerhwitat/general">Source repository ↗</a></div></article>
+<article class="card" data-kind="source" data-search="nlp natural language processing translator ancient language Thamudic Amiga"><div class="tags"><span class="tag">Source repository</span><span class="tag">Research</span></div><h2>nlp</h2><p>Language-processing and research projects, including ancient-language and emulator-related work. The portfolio links only to browser pages already present.</p><div class="links"><a href="https://github.com/amerhwitat/nlp">Source repository ↗</a><a href="/apps/chimera-ii-os/web/thamudicscan.html">ThamudicScan web entry ↗</a></div></article>
+<article class="card" data-kind="source" data-search="CPU4096 wide integer arithmetic bit width model"><div class="tags"><span class="tag">Source repository</span></div><h2>CPU4096</h2><p>Fixed-width arithmetic and CPU-model research. No standalone hosted UI is asserted here until its build and browser integration are verified.</p><div class="links"><a href="https://github.com/amerhwitat/CPU4096">Source repository ↗</a></div></article>
+<article class="card" data-kind="source" data-search="keygen key generation utility repository"><div class="tags"><span class="tag">Source repository</span></div><h2>keygen</h2><p>Source project. Review the repository's own documentation and safety constraints before running any generated tooling.</p><div class="links"><a href="https://github.com/amerhwitat/keygen">Source repository ↗</a></div></article>
+<article class="card" data-kind="source" data-search="bruteforce research utility repository"><div class="tags"><span class="tag">Source repository</span></div><h2>bruteforce</h2><p>Source project catalog entry; no hosted execution interface is exposed by this page.</p><div class="links"><a href="https://github.com/amerhwitat/bruteforce">Source repository ↗</a></div></article>
+<article class="card" data-kind="source" data-search="eth-key-check Ethereum key check utility"><div class="tags"><span class="tag">Source repository</span></div><h2>eth-key-check</h2><p>Source project catalog entry. This portfolio does not request or collect private keys or secrets.</p><div class="links"><a href="https://github.com/amerhwitat/eth-key-check">Source repository ↗</a></div></article>
+<article class="card" data-kind="source" data-search="test test repository experiments"><div class="tags"><span class="tag">Source repository</span></div><h2>test</h2><p>Repository entry for experiments and testing. No public web application is asserted without a verified app entry.</p><div class="links"><a href="https://github.com/amerhwitat/test">Source repository ↗</a></div></article>
+</section>
+<div class="empty" id="empty">No projects match this search. Try a different term or filter.</div>
+<footer>Directory of public repositories found for this portfolio pass. Private repositories are not listed. A source link means source is available; it does not imply deployment, production readiness, or completed acceptance testing. <a href="/">Main portfolio</a> · <a href="/java-apps.html">Java application portfolio</a></footer>
+</main>
+<script>
+(() => {
+ const filter = document.getElementById('filter');
+ const kind = document.getElementById('kind');
+ const cards = [...document.querySelectorAll('.card')];
+ const count = document.getElementById('count');
+ const empty = document.getElementById('empty');
+ function render() {
+   const q = filter.value.trim().toLowerCase();
+   const k = kind.value;
+   let visible = 0;
+   for (const card of cards) {
+     const kinds = card.dataset.kind.split(/\s+/);
+     const matches = (!q || (card.dataset.search + ' ' + card.textContent).toLowerCase().includes(q)) && (k === 'all' || kinds.includes(k));
+     card.hidden = !matches;
+     if (matches) visible++;
+   }
+   count.textContent = visible + ' of ' + cards.length + ' projects shown';
+   empty.style.display = visible ? 'none' : 'block';
+ }
+ filter.addEventListener('input', render);
+ kind.addEventListener('change', render);
+ render();
+})();
+</script>
+</body></html>
