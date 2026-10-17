@@ -45,7 +45,7 @@ export function classifyIP(ip) {
   }
   const ipv6 = parseIPv6(ip);
   if (!ipv6) return null;
-  if (ipv6.every(value => value === 0) && ipv6[7] === 1) {
+  if (ipv6.slice(0, 7).every(value => value === 0) && ipv6[7] === 1) {
     return { family: 6, scope: "loopback", note: "IPv6 loopback address" };
   }
   if (ipv6.every(value => value === 0)) {
