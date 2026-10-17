@@ -938,6 +938,13 @@
       "g": "PDF and Documents",
       "d": "Java PDF extraction, selectable-text search, JSONL matches, and provenance tooling; OCR is not included.",
       "x": "PDFreaderPY Java PDF text search extraction Java CLI JSONL page line column OCR"
+    },
+    {
+      "p": "repository-hub.html",
+      "t": "All Repositories & Web Apps",
+      "g": "Portfolio",
+      "d": "Searchable directory of public GitHub repositories, published browser apps, and Java desktop tools.",
+      "x": "repository hub all projects ChimeraIIOS OctavianOS BizX BizXtreme general nlp CPU4096 CPU4096Simulator PDFreaderPY keygen bruteforce eth-key-check test JavaFX"
     }
   ]
 }
