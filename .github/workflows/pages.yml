@@ -232,6 +232,8 @@ jobs:
           if changed == 0:
               print("Existing includes may already cover all pages.")
           PY
+      - name: Syntax-check all published app JavaScript and Python tooling
+        run: python3 scripts/check_source_syntax.py
       - uses: actions/upload-pages-artifact@v3
         with:
           path: .
