@@ -1,0 +1,182 @@
+{
+  "schema": "repository-enhancements-status/v1",
+  "updated_utc": "2026-10-18T06:10:00Z",
+  "publication_note": "Status links and review artifacts are published here. Open/draft PRs are not represented as merged releases; CI success is not equivalent to native userspace readiness.",
+  "repositories": [
+    {
+      "name": "ChimeraIIOS",
+      "url": "https://github.com/amerhwitat/ChimeraIIOS",
+      "main_commit": "ae5978595c4220090252137b097d4c930ad7655a",
+      "main_commit_url": "https://github.com/amerhwitat/ChimeraIIOS/commit/ae5978595c4220090252137b097d4c930ad7655a",
+      "enhancements": [
+        {
+          "name": "ISO target routing and offline Aurora artwork",
+          "status": "draft_pr_ci_mostly_passed",
+          "pr": 129,
+          "url": "https://github.com/amerhwitat/ChimeraIIOS/pull/129",
+          "head": "5651f3c521dad2744b4f9866fa9616b5d4c10972",
+          "checks": [
+            {
+              "name": "Boot Artifact Validation",
+              "result": "success",
+              "url": "https://github.com/amerhwitat/ChimeraIIOS/actions/runs/39102575928"
+            },
+            {
+              "name": "Desktop Compatibility CI",
+              "result": "success",
+              "url": "https://github.com/amerhwitat/ChimeraIIOS/actions/runs/39102575835"
+            },
+            {
+              "name": "ISA, installer and command conformance",
+              "result": "success",
+              "url": "https://github.com/amerhwitat/ChimeraIIOS/actions/runs/39102575749"
+            },
+            {
+              "name": "Chimera II CI/CD",
+              "result": "in_progress",
+              "url": "https://github.com/amerhwitat/ChimeraIIOS/actions/runs/39102575766"
+            }
+          ],
+          "limits": [
+            "Draft PR; not merged.",
+            "QEMU remains a kernel-entry smoke test, not interactive GRUB or production userspace acceptance.",
+            "Installer disk operations remain disabled until an installation backend is configured."
+          ]
+        },
+        {
+          "name": "Live userspace handoff diagnostics",
+          "status": "draft_pr",
+          "pr": 128,
+          "url": "https://github.com/amerhwitat/ChimeraIIOS/pull/128",
+          "head": "ff4d1572b7e4f1b631eb075a63e483b6f29f3565",
+          "limits": [
+            "Reports that production userspace launch adapter is not wired rather than claiming a queued handoff is running."
+          ]
+        },
+        {
+          "name": "Production boot acceptance gate",
+          "status": "open_pr",
+          "pr": 127,
+          "url": "https://github.com/amerhwitat/ChimeraIIOS/pull/127",
+          "head": "0c4d9b87cbdfff4e5b4670b4a316cd606896ba34",
+          "limits": [
+            "Acceptance requires ordered kernel, target-selection, userspace-originated init, userspace I/O, and target-ready markers."
+          ]
+        },
+        {
+          "name": "Self-healing / ISA-aware learning context",
+          "status": "draft_pr",
+          "pr": 126,
+          "url": "https://github.com/amerhwitat/ChimeraIIOS/pull/126",
+          "head": "9190f6f101275a5f1aa5664fe71cffd715f2c473",
+          "limits": [
+            "Deterministic triage/context baseline only; no trained model or production kernel hook is claimed."
+          ]
+        },
+        {
+          "name": "Native process memory / ring-3 work",
+          "status": "open_draft_work",
+          "url": "https://github.com/amerhwitat/ChimeraIIOS/pulls",
+          "limits": [
+            "Address-space, physical-frame, TSS/syscall, timer timeout, and user launch work remains subject to native kernel and QEMU acceptance."
+          ]
+        }
+      ],
+      "existing_artifacts": [
+        {
+          "name": "Koronos build artifacts",
+          "url": "https://api.github.com/repos/amerhwitat/ChimeraIIOS/actions/artifacts/12097850006/zip",
+          "run": "https://github.com/amerhwitat/ChimeraIIOS/actions/runs/39023060523"
+        },
+        {
+          "name": "Koronos boot diagnostics",
+          "url": "https://api.github.com/repos/amerhwitat/ChimeraIIOS/actions/artifacts/12097840539/zip",
+          "run": "https://github.com/amerhwitat/ChimeraIIOS/actions/runs/39023060502"
+        }
+      ]
+    },
+    {
+      "name": "OctavianOS",
+      "url": "https://github.com/amerhwitat/OctavianOS",
+      "main_commit": "1e8719397a05efbe39dc3e8aa30f5c5b39170e01",
+      "main_commit_url": "https://github.com/amerhwitat/OctavianOS/commit/1e8719397a05efbe39dc3e8aa30f5c5b39170e01",
+      "enhancements": [
+        {
+          "name": "Local Octopus Aurora wallpaper and desktop artwork",
+          "status": "main_ci_passed",
+          "url": "https://github.com/amerhwitat/OctavianOS/commit/1e8719397a05efbe39dc3e8aa30f5c5b39170e01",
+          "check": {
+            "name": "Desktop artwork and layout contracts",
+            "result": "success",
+            "url": "https://github.com/amerhwitat/OctavianOS/actions/runs/39102538432"
+          }
+        },
+        {
+          "name": "Self-healing and ISA-aware learning context",
+          "status": "draft_pr",
+          "pr": 50,
+          "url": "https://github.com/amerhwitat/OctavianOS/pull/50",
+          "head": "13759cb17ab923aa7272e64d145ecb81c5b404c0",
+          "limits": [
+            "Deterministic recovery baseline and context extraction only; QEMU fault injection and real service-manager integration remain outstanding."
+          ]
+        },
+        {
+          "name": "Port Koronos target-specific userspace launch",
+          "status": "draft_pr",
+          "pr": 49,
+          "url": "https://github.com/amerhwitat/OctavianOS/pull/49",
+          "head": "cf1385d908ff107f5e060cb31c0adcae694e7b33",
+          "limits": [
+            "Native kernel build / full ISO userspace acceptance must pass before release."
+          ]
+        },
+        {
+          "name": "Vendored Chimera source snapshot",
+          "status": "open_pr",
+          "pr": 42,
+          "url": "https://github.com/amerhwitat/OctavianOS/pull/42",
+          "head": "c5d150970fa7ee02c3d2eaac28160509cbf3ba6e",
+          "limits": [
+            "Source parity is not a proof of boot, userspace readiness, ISA conformance, or hardware support."
+          ]
+        }
+      ],
+      "existing_artifacts": [
+        {
+          "name": "Native ISO candidate (review only)",
+          "url": "https://api.github.com/repos/amerhwitat/OctavianOS/actions/artifacts/12098728600/zip",
+          "run": "https://github.com/amerhwitat/OctavianOS/actions/runs/39026915853"
+        },
+        {
+          "name": "Full ISO QEMU trace",
+          "url": "https://api.github.com/repos/amerhwitat/OctavianOS/actions/artifacts/12098504422/zip",
+          "run": "https://github.com/amerhwitat/OctavianOS/actions/runs/39026915853"
+        }
+      ],
+      "release_gate": "The previously observed full-ISO QEMU check timed out without the expected KORONOS READY debug-console trace; keep ISO as a review candidate until the full-ISO boot test passes."
+    },
+    {
+      "name": "amerhwitat.github.io",
+      "url": "https://github.com/amerhwitat/amerhwitat.github.io",
+      "main_commit": "34650755717faa9b1c9f2323067f9cff3121c378",
+      "main_commit_url": "https://github.com/amerhwitat/amerhwitat.github.io/commit/34650755717faa9b1c9f2323067f9cff3121c378",
+      "site": "https://amerhwitat.github.io/",
+      "latest_pages_run": {
+        "name": "Deploy site to GitHub Pages",
+        "result": "success",
+        "url": "https://github.com/amerhwitat/amerhwitat.github.io/actions/runs/39022256142"
+      },
+      "pull_request": {
+        "number": 13,
+        "url": "https://github.com/amerhwitat/amerhwitat.github.io/pull/13",
+        "name": "Syntax-check all published app scripts",
+        "status": "open_review"
+      },
+      "notes": [
+        "Portfolio main branch Pages deployment passed.",
+        "PR #13 adds a JavaScript/Python syntax gate; keep it separate until mergeability is resolved."
+      ]
+    }
+  ]
+}
