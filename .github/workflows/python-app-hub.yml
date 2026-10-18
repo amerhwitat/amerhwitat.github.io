@@ -21,8 +21,12 @@ jobs:
           python-version: "3.11"
       - name: Syntax check
         run: python -m compileall -q apps/python-app-hub
+      - name: Install ISO test dependency
+        run: python -m pip install "pycdlib>=1.14.0,<2"
       - name: Validate inventory JSON
         run: python -m json.tool apps/python-app-hub/apps.json >/dev/null
+      - name: Run ISO tests
+        run: python -m unittest discover -s apps/python-app-hub/super-flash-iso -p "test_*.py" -v
       - name: Verify tool safety gates exist
         run: |
           python - <<'PY'
@@ -41,14 +45,24 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-      - name: Install PyInstaller
-        run: python -m pip install --upgrade pip pyinstaller
+      - name: Install desktop build dependencies
+        run: python -m pip install --upgrade pip && python -m pip install "pyinstaller>=6.10,<7" "pycdlib>=1.14.0,<2"
       - name: Build Python Application Hub GUI
         run: python -m PyInstaller --noconfirm --clean --onefile --windowed --name PythonAppHub --add-data "apps/python-app-hub/apps.json;." apps/python-app-hub/python_app_hub.py
       - name: Build Super Flash & ISO Tool GUI
         run: python -m PyInstaller --noconfirm --onefile --windowed --name SuperFlashISO apps/python-app-hub/super-flash-iso/super_flash_iso.py
+      - name: Add version and SHA-256 checksums
+        shell: pwsh
+        run: |
+          "Product=Python Desktop Tools" | Set-Content dist/VERSION.txt
+          "Version=1.0.0" | Add-Content dist/VERSION.txt
+          "Build=${{ github.run_number }}" | Add-Content dist/VERSION.txt
+          "Commit=${{ github.sha }}" | Add-Content dist/VERSION.txt
+          Get-FileHash -Algorithm SHA256 dist/PythonAppHub.exe,dist/SuperFlashISO.exe |
+            ForEach-Object { "$($_.Hash.ToLower())  $([IO.Path]::GetFileName($_.Path))" } |
+            Set-Content dist/SHA256SUMS.txt
       - name: Package Windows downloads
-        run: Compress-Archive -Path dist/PythonAppHub.exe,dist/SuperFlashISO.exe -DestinationPath dist/PythonDesktopTools-Windows-x64.zip
+        run: Compress-Archive -Path dist/PythonAppHub.exe,dist/SuperFlashISO.exe,dist/VERSION.txt,dist/SHA256SUMS.txt -DestinationPath dist/PythonDesktopTools-Windows-x64.zip
       - name: Upload Windows executable
         uses: actions/upload-artifact@v4
         with:
