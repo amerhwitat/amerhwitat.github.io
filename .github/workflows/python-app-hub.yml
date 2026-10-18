@@ -28,7 +28,7 @@ jobs:
           python - <<'PY'
           from pathlib import Path
           p = Path("apps/python-app-hub/super-flash-iso/super_flash_iso.py").read_text()
-          required = ["IsBoot", "IsSystem", 'BusType', 'ERASE DISK', "read-back verification", "current[\"name\"]"]
+          required = ["IsBoot", "IsSystem", 'BusType', 'ERASE DISK', "self.verify_var", "handle.read(len(expected))"]
           missing = [item for item in required if item not in p]
           if missing:
               raise SystemExit("Missing safety checks: " + ", ".join(missing))
