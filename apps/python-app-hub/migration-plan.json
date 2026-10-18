@@ -1,0 +1,203 @@
+{
+  "schema_version": 1,
+  "generated_utc": "2026-10-18",
+  "scope": "Repository tree scan using GitHub recursive Git Trees API; file counts below reflect scanned default-branch trees. This is a migration backlog, not a claim that ports are complete.",
+  "acceptance_gates": [
+    "Identify source behavior and dependencies before porting.",
+    "Create Python 3.11+ module without deleting or replacing the original.",
+    "Add unit tests and deterministic fixtures for behavior and failure cases.",
+    "Add Tkinter GUI or browser-compatible frontend as appropriate.",
+    "Run tests on Linux and Windows CI; package with PyInstaller where a desktop executable is useful.",
+    "Publish version, platform requirements, SHA-256 checksums and build evidence.",
+    "Promote only after parity and platform acceptance; native kernel, boot, driver and assembly code remains native."
+  ],
+  "repositories": [
+    {
+      "repo": "amerhwitat.github.io",
+      "tree_files": 666,
+      "priority": "P0",
+      "status": "hub-and-tools-started",
+      "candidates": [
+        "apps/iso-tool/app.js",
+        "apps/cpu4096-simulator/public/app.js",
+        "apps/chimera-test-suite/server.js",
+        "apps/agent-research-forge/app.js"
+      ],
+      "next": "Add parity tests and Python API/GUI wrappers for browser tools; keep static frontends static."
+    },
+    {
+      "repo": "nlp",
+      "tree_files": 606,
+      "priority": "P0",
+      "status": "mixed-language-existing-python",
+      "candidates": [
+        "ISO-Tool/python/main.py",
+        "ThamudicEpiPlatform/server/app.py",
+        "ThamudicScan/server/main.py",
+        "ThamudicScan/server/run.py",
+        "nlp-studio/backend/main.py",
+        "crypot-app/app.py"
+      ],
+      "next": "Inventory requirements and tests per module; standardize launch commands and build independent GUI executables."
+    },
+    {
+      "repo": "general",
+      "tree_files": 570,
+      "priority": "P1",
+      "status": "mixed-language-existing-python",
+      "candidates": [
+        "AgentResearchForge/api/app.py",
+        "EmailKeywordCrawler/python/main.py",
+        "SEO-Tool/SEO_Tool/cli.py",
+        "SEO-Tool/SEO_Tool/gui.py",
+        "WorkflowStudio/services/python/main.py"
+      ],
+      "next": "Reuse existing Python implementations; package standalone GUI/CLI tools after tests."
+    },
+    {
+      "repo": "BizX",
+      "tree_files": 553,
+      "priority": "P1",
+      "status": "mixed-language-existing-python",
+      "candidates": [
+        "AssetBrowser/python/app.py",
+        "InternetScanner/languages/python/gui.py",
+        "NetworkUnified/python/app.py"
+      ],
+      "next": "Port independent asset and network management utilities, with safe scope and offline tests."
+    },
+    {
+      "repo": "BizXtreme",
+      "tree_files": 384,
+      "priority": "P1",
+      "status": "mixed-language-existing-python",
+      "candidates": [
+        "AssetBrowser/python/app.py",
+        "NetworkUnified/python/app.py",
+        "UnifiedGame/launcher/python/main.py"
+      ],
+      "next": "Package reusable Python components and compare game/asset behaviors against existing vectors."
+    },
+    {
+      "repo": "ChimeraIIOS",
+      "tree_files": 2592,
+      "priority": "P1",
+      "status": "mixed-language-native-boundaries",
+      "candidates": [
+        "ISO-Tool/python/main.py",
+        "tools/build/main.py",
+        "web/app.js",
+        "web/runtime/app.js"
+      ],
+      "next": "Port host-side ISO/build/diagnostic tools first; do not replace Koronos, drivers, bootloader or assembly."
+    },
+    {
+      "repo": "OctavianOS",
+      "tree_files": 2580,
+      "priority": "P1",
+      "status": "vendor-and-native-boundaries",
+      "candidates": [
+        "vendor/chimera-ii-os/source/ISO-Tool/python/main.py",
+        "vendor/chimera-ii-os/source/tools/build/main.py",
+        "apps/"
+      ],
+      "next": "Avoid duplicating vendor changes; sync verified upstream Python tools and add Octavian-specific tests."
+    },
+    {
+      "repo": "test",
+      "tree_files": 126,
+      "priority": "P2",
+      "status": "existing-python-prototypes",
+      "candidates": [
+        "chimera_py/main.py",
+        "research_app/cli.py",
+        "research_app/index.py",
+        "web/server.js"
+      ],
+      "next": "Convert prototypes into tested reusable modules and GUI wrappers."
+    },
+    {
+      "repo": "CPU4096Simulator",
+      "tree_files": 123,
+      "priority": "P2",
+      "status": "mixed-language",
+      "candidates": [
+        "public/app.js",
+        "server.js",
+        "web/javascript/app.js"
+      ],
+      "next": "Port simulator core against instruction/register/flag vectors before UI rewrite."
+    },
+    {
+      "repo": "keygen",
+      "tree_files": 137,
+      "priority": "P2",
+      "status": "java-heavy",
+      "candidates": [
+        "node/src/index.js",
+        "web/javascript/app.js"
+      ],
+      "next": "Define cryptographic test vectors and secret-handling rules before porting key-generation behavior."
+    },
+    {
+      "repo": "CPU4096",
+      "tree_files": 74,
+      "priority": "P2",
+      "status": "mixed-language",
+      "candidates": [
+        "main.cpp",
+        "node/src/index.js",
+        "web/javascript/app.js"
+      ],
+      "next": "Implement instruction-level Python reference simulator only where reference semantics are documented."
+    },
+    {
+      "repo": "PDFreaderPY",
+      "tree_files": 70,
+      "priority": "P2",
+      "status": "python-present",
+      "candidates": [
+        "ancient_object_catalog_bridge.py",
+        "ancient_script_ingest.py",
+        "web/javascript/app.js"
+      ],
+      "next": "Audit existing Python document/Thamudic tools and build GUI packaging around tested functions."
+    },
+    {
+      "repo": "eth-key-check",
+      "tree_files": 94,
+      "priority": "P2",
+      "status": "mixed-language-security-sensitive",
+      "candidates": [
+        "balance_scanner.py",
+        "node/src/cli.js",
+        "node/src/index.js"
+      ],
+      "next": "Use published test vectors; never log private keys, seed phrases or credentials."
+    },
+    {
+      "repo": "bruteforce",
+      "tree_files": 69,
+      "priority": "P2",
+      "status": "mixed-language-security-sensitive",
+      "candidates": [
+        "Apicallpk-right-seq01.py",
+        "crypto_research_gui.py",
+        "node/src/index.js"
+      ],
+      "next": "Prioritize defensive audit utilities; add rate limits and safe local-only tests; do not expose credential attacks."
+    },
+    {
+      "repo": "VanG",
+      "tree_files": 22,
+      "priority": "P3",
+      "status": "native-mobile-prototypes",
+      "candidates": [
+        "apple/Sources/Main.swift",
+        "kotlin/"
+      ],
+      "next": "Share portable business logic in Python where it helps; preserve platform-native app shell."
+    }
+  ],
+  "prioritization": "P0 means immediate tools/portfolio; P1 means existing Python and host-side utilities; P2 means mixed-language apps requiring behavioral tests; P3 means platform-native prototypes."
+}
