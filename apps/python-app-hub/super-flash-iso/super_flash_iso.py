@@ -57,6 +57,71 @@ def list_usb_disks():
     return found
 
 
+def inspect_iso9660(path: Path) -> dict:
+    """Inspect the ISO9660 primary volume descriptor without mounting the image."""
+    with path.open("rb") as stream:
+        stream.seek(16 * 2048)
+        pvd = stream.read(2048)
+    if len(pvd) < 2048 or pvd[0] != 1 or pvd[1:6] != b"CD001" or pvd[6] != 1:
+        raise ValueError("No valid ISO9660 primary volume descriptor at sector 16.")
+    volume = pvd[40:72].decode("ascii", errors="replace").strip().strip("\\x00")
+    blocks = int.from_bytes(pvd[80:84], "little")
+    block_size = int.from_bytes(pvd[128:130], "little")
+    return {"volume_id": volume, "blocks": blocks, "block_size": block_size,
+            "declared_bytes": blocks * block_size, "file_bytes": path.stat().st_size}
+
+
+def create_iso_from_directory(source_dir: Path, output_path: Path) -> None:
+    """Create a Joliet ISO from a directory tree using pycdlib."""
+    try:
+        import pycdlib
+    except ImportError as exc:
+        raise RuntimeError("ISO creation requires pycdlib; install requirements.txt and retry.") from exc
+    source_dir = source_dir.resolve()
+    if not source_dir.is_dir():
+        raise ValueError("Choose an existing source directory.")
+    if output_path.exists() and output_path.resolve().is_relative_to(source_dir):
+        raise ValueError("The output ISO cannot be created inside its own source directory.")
+    iso = pycdlib.PyCdlib()
+    iso.new(interchange_level=3, joliet=3, rock_ridge="1.09")
+    directory_count = 0
+    file_count = 0
+
+    def add_tree(folder: Path, iso_parent: str, joliet_parent: str):
+        nonlocal directory_count, file_count
+        entries = sorted(folder.iterdir(), key=lambda p: (not p.is_dir(), p.name.casefold()))
+        dir_index = 0
+        file_index = 0
+        for entry in entries:
+            if entry.is_symlink():
+                continue
+            if entry.is_dir():
+                dir_index += 1
+                iso_name = f"D{dir_index:06d}"
+                iso_path = iso_parent.rstrip("/") + "/" + iso_name
+                joliet_path = joliet_parent.rstrip("/") + "/" + entry.name
+                iso.add_directory(iso_path=iso_path, joliet_path=joliet_path)
+                directory_count += 1
+                add_tree(entry, iso_path, joliet_path)
+            elif entry.is_file():
+                file_index += 1
+                iso_name = f"F{file_index:06d}.BIN;1"
+                iso_path = iso_parent.rstrip("/") + "/" + iso_name
+                joliet_path = joliet_parent.rstrip("/") + "/" + entry.name
+                iso.add_file(str(entry), iso_path=iso_path, joliet_path=joliet_path)
+                file_count += 1
+
+    try:
+        add_tree(source_dir, "", "")
+        iso.write(str(output_path))
+    finally:
+        iso.close()
+    if not output_path.is_file() or output_path.stat().st_size < 17 * 2048:
+        raise IOError("ISO writer did not produce a plausible ISO image.")
+    # Re-read the descriptor as a post-build sanity check.
+    inspect_iso9660(output_path)
+
+
 class FlashTool(tk.Tk):
     def __init__(self):
         super().__init__()
@@ -91,6 +156,9 @@ class FlashTool(tk.Tk):
         self.hash_var = tk.StringVar(value="SHA-256: —")
         ttk.Label(row2, textvariable=self.hash_var).pack(side="left", fill="x", expand=True)
         ttk.Button(row2, text="Calculate SHA-256", command=self.calculate_hash).pack(side="right")
+        iso_actions = ttk.Frame(image_box); iso_actions.pack(fill="x", pady=(8, 0))
+        ttk.Button(iso_actions, text="Inspect ISO9660 metadata", command=self.inspect_selected_iso).pack(side="left")
+        ttk.Button(iso_actions, text="Create ISO from folder…", command=self.create_iso_dialog).pack(side="left", padx=(8, 0))
 
         disk_box = ttk.LabelFrame(root, text="2. Select removable USB disk", padding=10)
         disk_box.pack(fill="x", pady=5)
@@ -125,6 +193,47 @@ class FlashTool(tk.Tk):
         ttk.Label(root, textvariable=self.status, wraplength=840).pack(anchor="w", pady=(12, 0))
         ttk.Label(root, text="No generic mobile ROM flashing is attempted: Android firmware and recovery procedures vary by device and vendor.",
                   wraplength=840).pack(anchor="w", pady=(4, 0))
+
+
+    def inspect_selected_iso(self):
+        if not self.image_path:
+            messagebox.showinfo("Select image", "Choose an image first.")
+            return
+        try:
+            details = inspect_iso9660(self.image_path)
+            messagebox.showinfo("ISO9660 inspection",
+                f'Volume ID: {details["volume_id"] or "(blank)"}\n'
+                f'Logical block size: {details["block_size"]:,} bytes\n'
+                f'Declared image size: {details["declared_bytes"]:,} bytes\n'
+                f'Actual file size: {details["file_bytes"]:,} bytes')
+        except Exception as exc:
+            messagebox.showerror("ISO inspection failed", str(exc))
+
+    def create_iso_dialog(self):
+        source = filedialog.askdirectory(title="Choose folder contents for new ISO")
+        if not source:
+            return
+        output = filedialog.asksaveasfilename(title="Save new ISO image",
+            defaultextension=".iso", filetypes=[("ISO image", "*.iso")])
+        if not output:
+            return
+        source_path, output_path = Path(source), Path(output)
+        if output_path.exists() and not messagebox.askyesno("Overwrite ISO?",
+                f"{output_path} already exists. Replace it?"):
+            return
+        self.status.set("Creating ISO image…")
+        def worker():
+            try:
+                create_iso_from_directory(source_path, output_path)
+                details = inspect_iso9660(output_path)
+                self.after(0, lambda: self.status.set(f"ISO created and validated: {output_path.name}"))
+                self.after(0, lambda: messagebox.showinfo("ISO created",
+                    f"Created and validated {output_path}\n{details['file_bytes']:,} bytes\n"
+                    f"Volume: {details['volume_id'] or '(blank)'}"))
+            except Exception as exc:
+                self.after(0, lambda: self.status.set("ISO creation failed: " + str(exc)))
+                self.after(0, lambda: messagebox.showerror("ISO creation failed", str(exc)))
+        threading.Thread(target=worker, daemon=True).start()
 
     def choose_image(self):
         chosen = filedialog.askopenfilename(
