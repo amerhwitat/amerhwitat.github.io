@@ -1,0 +1,349 @@
+{
+  "generated_utc": "2026-10-18",
+  "scope": "Snapshot of 15 accessible owner repositories previously scanned.",
+  "note": "Inventory and migration plan only; not all source has been ported or all applications compiled.",
+  "repositories": [
+    {
+      "id": "general",
+      "name": "general",
+      "branch": "master",
+      "files": 570,
+      "areas": [
+        "Agent Research Forge",
+        "Workflow Studio",
+        "email tools",
+        "SEO tools",
+        "Chimera 3D/4D"
+      ],
+      "languages": [
+        "Python",
+        "C/C++",
+        "Dart",
+        "Objective-C",
+        "Java",
+        "TypeScript"
+      ],
+      "python": "existing",
+      "detail": "Python exists alongside many non-Python implementations; port app-by-app and preserve native boundaries.",
+      "url": "https://github.com/amerhwitat/general"
+    },
+    {
+      "id": "BizX",
+      "name": "BizX",
+      "branch": "main",
+      "files": 553,
+      "areas": [
+        "Asset Browser",
+        "Internet Scanner",
+        "Network Unified",
+        "Mobile Unified",
+        "ISO Tool",
+        "email sender"
+      ],
+      "languages": [
+        "Python",
+        "Java",
+        "JavaScript",
+        "Kotlin",
+        "Dart",
+        "Rust",
+        "TypeScript"
+      ],
+      "python": "partial",
+      "detail": "Mixed-language utilities; assess each app and its current tests before replacing implementations.",
+      "url": "https://github.com/amerhwitat/BizX"
+    },
+    {
+      "id": "BizXtreme",
+      "name": "BizXtreme",
+      "branch": "main",
+      "files": 384,
+      "areas": [
+        "Asset Browser",
+        "Network Unified",
+        "Unified Game",
+        "ISO Tool",
+        "Unity integrations"
+      ],
+      "languages": [
+        "Python",
+        "Java",
+        "C#",
+        "JavaScript",
+        "Kotlin",
+        "Rust"
+      ],
+      "python": "partial",
+      "detail": "Mixed-language repository; prioritize standalone utilities and UI adapters.",
+      "url": "https://github.com/amerhwitat/BizXtreme"
+    },
+    {
+      "id": "test",
+      "name": "test",
+      "branch": "main",
+      "files": 126,
+      "areas": [
+        "Chimera Python",
+        "Research App",
+        "Web UI",
+        "Java samples"
+      ],
+      "languages": [
+        "Python",
+        "Java",
+        "JavaScript",
+        "Swift",
+        "Kotlin"
+      ],
+      "python": "existing",
+      "detail": "Prototypes and test apps; prioritize runnable entry points.",
+      "url": "https://github.com/amerhwitat/test"
+    },
+    {
+      "id": "VanG",
+      "name": "VanG",
+      "branch": "main",
+      "files": 22,
+      "areas": [
+        "Apple/mobile prototypes"
+      ],
+      "languages": [
+        "Swift",
+        "Kotlin"
+      ],
+      "python": "planned",
+      "detail": "Port platform-independent logic to Python where appropriate; native mobile shells may remain native.",
+      "url": "https://github.com/amerhwitat/VanG"
+    },
+    {
+      "id": "eth-key-check",
+      "name": "eth-key-check",
+      "branch": "main",
+      "files": 94,
+      "areas": [
+        "Ethereum key checking",
+        "Web UI",
+        "CLI"
+      ],
+      "languages": [
+        "Python",
+        "Java",
+        "JavaScript",
+        "C++",
+        "Kotlin",
+        "Swift"
+      ],
+      "python": "partial",
+      "detail": "Security-sensitive handling requires careful validation and never logging secrets.",
+      "url": "https://github.com/amerhwitat/eth-key-check"
+    },
+    {
+      "id": "bruteforce",
+      "name": "bruteforce",
+      "branch": "main",
+      "files": 69,
+      "areas": [
+        "Security research utilities",
+        "CLI",
+        "Web UI"
+      ],
+      "languages": [
+        "Python",
+        "Java",
+        "JavaScript",
+        "C++",
+        "Kotlin",
+        "Swift"
+      ],
+      "python": "partial",
+      "detail": "Restrict public UI to authorized defensive testing and rate-limited, safe workflows.",
+      "url": "https://github.com/amerhwitat/bruteforce"
+    },
+    {
+      "id": "keygen",
+      "name": "keygen",
+      "branch": "main",
+      "files": 137,
+      "areas": [
+        "Key generation tools",
+        "CLI",
+        "Web UI"
+      ],
+      "languages": [
+        "Java",
+        "JavaScript",
+        "C++",
+        "Kotlin",
+        "Swift"
+      ],
+      "python": "planned",
+      "detail": "Port only after algorithm and cryptographic test vectors are specified.",
+      "url": "https://github.com/amerhwitat/keygen"
+    },
+    {
+      "id": "CPU4096",
+      "name": "CPU4096",
+      "branch": "main",
+      "files": 74,
+      "areas": [
+        "CPU architecture experiments",
+        "ISA tools",
+        "Web UI"
+      ],
+      "languages": [
+        "Java",
+        "JavaScript",
+        "C++",
+        "Kotlin",
+        "Swift"
+      ],
+      "python": "partial",
+      "detail": "Use architecture conformance vectors to verify Python simulator behavior.",
+      "url": "https://github.com/amerhwitat/CPU4096"
+    },
+    {
+      "id": "PDFreaderPY",
+      "name": "PDFreaderPY",
+      "branch": "main",
+      "files": 70,
+      "areas": [
+        "PDF reader",
+        "Thamudic tools",
+        "JavaFX documentation"
+      ],
+      "languages": [
+        "Python",
+        "Java",
+        "JavaScript",
+        "C++",
+        "C#",
+        "Kotlin"
+      ],
+      "python": "existing",
+      "detail": "Reuse existing Python code where suitable; compare feature parity before replacement.",
+      "url": "https://github.com/amerhwitat/PDFreaderPY"
+    },
+    {
+      "id": "CPU4096Simulator",
+      "name": "CPU4096Simulator",
+      "branch": "main",
+      "files": 123,
+      "areas": [
+        "CPU simulator",
+        "machine-code execution",
+        "ISA UI"
+      ],
+      "languages": [
+        "Java",
+        "JavaScript",
+        "C++",
+        "Kotlin",
+        "Swift"
+      ],
+      "python": "planned",
+      "detail": "Port simulator logic with shared instruction/register/flag test vectors.",
+      "url": "https://github.com/amerhwitat/CPU4096Simulator"
+    },
+    {
+      "id": "nlp",
+      "name": "nlp",
+      "branch": "main",
+      "files": 606,
+      "areas": [
+        "ThamudicScan",
+        "Thamudic Epi Platform",
+        "NLP Studio",
+        "Amiga tools",
+        "ISO Tool"
+      ],
+      "languages": [
+        "Python",
+        "Java",
+        "C#",
+        "JavaScript",
+        "C++",
+        "Rust",
+        "TypeScript"
+      ],
+      "python": "partial",
+      "detail": "Multiple language implementations; module-by-module conversion and tests are needed.",
+      "url": "https://github.com/amerhwitat/nlp"
+    },
+    {
+      "id": "ChimeraIIOS",
+      "name": "ChimeraIIOS",
+      "branch": "main",
+      "files": 2589,
+      "areas": [
+        "Koronos kernel",
+        "Aurora desktop",
+        "ISA registry",
+        "ISO Tool",
+        "N-bit emulation",
+        "mobile microkernel",
+        "web runtime"
+      ],
+      "languages": [
+        "C",
+        "C++",
+        "Python",
+        "JavaScript",
+        "Java",
+        "Shell",
+        "TypeScript"
+      ],
+      "python": "partial",
+      "detail": "Kernel, bootloader and driver code stays native; Python is suitable for tooling, GUI and automation.",
+      "url": "https://github.com/amerhwitat/ChimeraIIOS"
+    },
+    {
+      "id": "amerhwitat.github.io",
+      "name": "amerhwitat.github.io",
+      "branch": "main",
+      "files": 653,
+      "areas": [
+        "Portfolio hub",
+        "Aurora web desktop",
+        "Chimera web UI",
+        "Asset Browser",
+        "network tools",
+        "3D/4D demos"
+      ],
+      "languages": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "Python",
+        "C++"
+      ],
+      "python": "partial",
+      "detail": "Static pages stay browser-compatible; Python GUI tools are distributed as separate Windows executables.",
+      "url": "https://github.com/amerhwitat/amerhwitat.github.io"
+    },
+    {
+      "id": "OctavianOS",
+      "name": "OctavianOS",
+      "branch": "main",
+      "files": 2577,
+      "areas": [
+        "Koronos integration",
+        "Aurora Wayland Glass",
+        "Marine desktop",
+        "mobile/microkernel",
+        "ISO tooling"
+      ],
+      "languages": [
+        "C",
+        "C++",
+        "Python",
+        "JavaScript",
+        "Java",
+        "Shell",
+        "TypeScript"
+      ],
+      "python": "partial",
+      "detail": "Kernel/boot path remains native; Python is suitable for management tools and desktop utilities.",
+      "url": "https://github.com/amerhwitat/OctavianOS"
+    }
+  ]
+}
