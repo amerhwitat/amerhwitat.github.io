@@ -64,7 +64,7 @@ def inspect_iso9660(path: Path) -> dict:
         pvd = stream.read(2048)
     if len(pvd) < 2048 or pvd[0] != 1 or pvd[1:6] != b"CD001" or pvd[6] != 1:
         raise ValueError("No valid ISO9660 primary volume descriptor at sector 16.")
-    volume = pvd[40:72].decode("ascii", errors="replace").rstrip("\\x00 ").strip()
+    volume = pvd[40:72].decode("ascii", errors="replace").rstrip("\x00 ").strip()
     blocks = int.from_bytes(pvd[80:84], "little")
     block_size = int.from_bytes(pvd[128:130], "little")
     return {"volume_id": volume, "blocks": blocks, "block_size": block_size,
