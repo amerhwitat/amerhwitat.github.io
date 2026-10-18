@@ -232,10 +232,25 @@
         "flash_tool": "https://amerhwitat.github.io/apps/python-app-hub/super-flash-iso/",
         "source": "https://github.com/amerhwitat/amerhwitat.github.io/tree/main/apps/python-app-hub",
         "windows_build": "https://github.com/amerhwitat/amerhwitat.github.io/actions/workflows/python-app-hub.yml",
-        "status": "Python 3.11/Tkinter GUI source committed; PyInstaller Windows build and safety-gate CI queued after latest commits; not yet verified as a successful executable build",
+        "status": "Windows PyInstaller build and ISO tests verified successful on CI",
         "iso_creation": "Implemented in source; ISO tests and PyInstaller build are running in CI",
         "migration_plan": "15 repository trees scanned; 51 source candidates cataloged in apps/python-app-hub/migration-plan.json",
-        "versioning": "Windows artifact contains VERSION.txt and SHA256SUMS.txt when latest workflow passes"
+        "versioning": "Windows artifact contains VERSION.txt and SHA256SUMS.txt when latest workflow passes",
+        "latest_verified_build": {
+          "workflow_run": 39104028277,
+          "commit": "2b7a9d0b66152536a699c3dd0b1500aa33eb534c",
+          "workflow_url": "https://github.com/amerhwitat/amerhwitat.github.io/actions/runs/39104028277",
+          "artifact_id": 12127871027,
+          "artifact_name": "PythonDesktopTools-Windows-x64",
+          "artifact_url": "https://api.github.com/repos/amerhwitat/amerhwitat.github.io/actions/artifacts/12127871027/zip",
+          "includes": [
+            "PythonAppHub.exe",
+            "SuperFlashISO.exe",
+            "VERSION.txt",
+            "SHA256SUMS.txt"
+          ],
+          "verification": "Linux and Windows ISO tests passed; both PyInstaller GUI builds and artifact packaging/upload passed."
+        }
       }
     }
   ]
