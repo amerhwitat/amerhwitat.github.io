@@ -1,0 +1,285 @@
+from __future__ import annotations
+
+import hashlib
+import json
+import os
+import shutil
+import subprocess
+import threading
+import tkinter as tk
+from tkinter import filedialog, messagebox, ttk
+from pathlib import Path
+
+APP_TITLE = "Super Flash & ISO Tool"
+CHUNK = 4 * 1024 * 1024
+
+
+def sha256_file(path: Path) -> str:
+    digest = hashlib.sha256()
+    with path.open("rb") as stream:
+        for block in iter(lambda: stream.read(CHUNK), b""):
+            digest.update(block)
+    return digest.hexdigest()
+
+
+def powershell_json(script: str):
+    completed = subprocess.run(
+        ["powershell.exe", "-NoProfile", "-NonInteractive", "-ExecutionPolicy", "RemoteSigned", "-Command", script],
+        capture_output=True, text=True, timeout=20, check=False,
+    )
+    if completed.returncode:
+        raise RuntimeError((completed.stderr or completed.stdout or "PowerShell query failed").strip())
+    output = completed.stdout.strip()
+    if not output:
+        return []
+    parsed = json.loads(output)
+    return parsed if isinstance(parsed, list) else [parsed]
+
+
+def list_usb_disks():
+    script = (
+        "Get-Disk | Select-Object Number,FriendlyName,BusType,Size,IsBoot,IsSystem,IsReadOnly,OperationalStatus "
+        "| ConvertTo-Json -Compress"
+    )
+    rows = powershell_json(script)
+    found = []
+    for row in rows:
+        bus = str(row.get("BusType", ""))
+        # Intentionally restrict raw writes to USB disks, and never offer boot/system disks.
+        if bus.lower() != "usb" or row.get("IsBoot") or row.get("IsSystem"):
+            continue
+        size = int(row.get("Size") or 0)
+        found.append({
+            "number": int(row["Number"]), "name": str(row.get("FriendlyName") or "USB disk"),
+            "size": size, "read_only": bool(row.get("IsReadOnly")),
+            "status": str(row.get("OperationalStatus") or ""),
+        })
+    return found
+
+
+class FlashTool(tk.Tk):
+    def __init__(self):
+        super().__init__()
+        self.title(APP_TITLE)
+        self.geometry("900x680")
+        self.minsize(760, 590)
+        self.image_path: Path | None = None
+        self.disks = []
+        self.disk_by_label = {}
+        self.busy = False
+        self._build()
+        self.refresh_disks()
+        self.detect_mobile_tools()
+
+    def _build(self):
+        root = ttk.Frame(self, padding=16)
+        root.pack(fill="both", expand=True)
+        ttk.Label(root, text=APP_TITLE, font=("Segoe UI", 21, "bold")).pack(anchor="w")
+        ttk.Label(root, text="Image inspection, SHA-256 validation, guarded USB imaging, and mobile-tool diagnostics.",
+                  wraplength=840).pack(anchor="w", pady=(4, 12))
+        warning = ttk.Label(root, text="WARNING: writing an image erases the selected USB disk. Boot/system disks are excluded.",
+                            foreground="#b00020", wraplength=840)
+        warning.pack(anchor="w", pady=(0, 12))
+
+        image_box = ttk.LabelFrame(root, text="1. Select and inspect an image", padding=10)
+        image_box.pack(fill="x", pady=5)
+        row = ttk.Frame(image_box); row.pack(fill="x")
+        self.image_label = ttk.Label(row, text="No image selected", wraplength=650)
+        self.image_label.pack(side="left", fill="x", expand=True)
+        ttk.Button(row, text="Choose image…", command=self.choose_image).pack(side="right")
+        row2 = ttk.Frame(image_box); row2.pack(fill="x", pady=(8, 0))
+        self.hash_var = tk.StringVar(value="SHA-256: —")
+        ttk.Label(row2, textvariable=self.hash_var).pack(side="left", fill="x", expand=True)
+        ttk.Button(row2, text="Calculate SHA-256", command=self.calculate_hash).pack(side="right")
+
+        disk_box = ttk.LabelFrame(root, text="2. Select removable USB disk", padding=10)
+        disk_box.pack(fill="x", pady=5)
+        row = ttk.Frame(disk_box); row.pack(fill="x")
+        self.disk_combo = ttk.Combobox(row, state="readonly")
+        self.disk_combo.pack(side="left", fill="x", expand=True)
+        ttk.Button(row, text="Refresh disks", command=self.refresh_disks).pack(side="left", padx=(8, 0))
+        self.disk_detail = tk.StringVar(value="USB disk details appear here.")
+        ttk.Label(disk_box, textvariable=self.disk_detail, wraplength=820).pack(anchor="w", pady=(8, 0))
+        self.disk_combo.bind("<<ComboboxSelected>>", self.on_disk_selected)
+
+        write_box = ttk.LabelFrame(root, text="3. Guarded raw image write", padding=10)
+        write_box.pack(fill="x", pady=5)
+        ttk.Label(write_box, text="Type the exact confirmation shown for the selected disk. Run as Administrator if Windows requires it.",
+                  wraplength=820).pack(anchor="w")
+        self.confirm_var = tk.StringVar()
+        ttk.Entry(write_box, textvariable=self.confirm_var).pack(fill="x", pady=7)
+        self.verify_var = tk.BooleanVar(value=True)
+        ttk.Checkbutton(write_box, text="Read back and verify written bytes (slower)", variable=self.verify_var).pack(anchor="w")
+        self.write_button = ttk.Button(write_box, text="ERASE USB AND WRITE IMAGE", command=self.start_write)
+        self.write_button.pack(anchor="w", pady=(8, 0))
+        self.progress = ttk.Progressbar(write_box, mode="determinate", maximum=100)
+        self.progress.pack(fill="x", pady=(8, 0))
+
+        mobile_box = ttk.LabelFrame(root, text="4. Mobile tools (diagnostics only)", padding=10)
+        mobile_box.pack(fill="x", pady=5)
+        self.mobile_var = tk.StringVar(value="Checking for adb / fastboot…")
+        ttk.Label(mobile_box, textvariable=self.mobile_var, wraplength=820).pack(anchor="w")
+        ttk.Button(mobile_box, text="Check connected Android devices", command=self.detect_mobile_tools).pack(anchor="w", pady=(8, 0))
+
+        self.status = tk.StringVar(value="Ready. Inspect the image and verify the target disk before writing.")
+        ttk.Label(root, textvariable=self.status, wraplength=840).pack(anchor="w", pady=(12, 0))
+        ttk.Label(root, text="No generic mobile ROM flashing is attempted: Android firmware and recovery procedures vary by device and vendor.",
+                  wraplength=840).pack(anchor="w", pady=(4, 0))
+
+    def choose_image(self):
+        chosen = filedialog.askopenfilename(
+            title="Choose disk image",
+            filetypes=[("Disk images", "*.iso *.img *.bin *.rom *.raw *.vhd *.vhdx"), ("All files", "*.*")]
+        )
+        if not chosen:
+            return
+        path = Path(chosen)
+        if not path.is_file() or path.stat().st_size <= 0:
+            messagebox.showerror("Invalid image", "Choose a non-empty regular file.")
+            return
+        self.image_path = path
+        self.image_label.configure(text=f"{path}  ({path.stat().st_size:,} bytes)")
+        self.hash_var.set("SHA-256: not calculated")
+        self.status.set("Image selected. Calculate its hash and inspect the target disk.")
+
+    def calculate_hash(self):
+        if not self.image_path:
+            messagebox.showinfo("Select image", "Choose an image first.")
+            return
+        self.status.set("Calculating SHA-256…")
+        def worker():
+            try:
+                digest = sha256_file(self.image_path)
+                self.after(0, lambda: self.hash_var.set("SHA-256: " + digest))
+                self.after(0, lambda: self.status.set("Image hash calculated."))
+            except Exception as exc:
+                self.after(0, lambda: messagebox.showerror("Hash failed", str(exc)))
+        threading.Thread(target=worker, daemon=True).start()
+
+    def refresh_disks(self):
+        try:
+            self.disks = list_usb_disks()
+            labels = []
+            self.disk_by_label = {}
+            for d in self.disks:
+                label = f'Disk {d["number"]} — {d["name"]} — {d["size"]:,} bytes'
+                labels.append(label); self.disk_by_label[label] = d
+            self.disk_combo["values"] = labels
+            if labels:
+                self.disk_combo.current(0); self.on_disk_selected()
+                self.status.set(f"Found {len(labels)} eligible USB disk(s).")
+            else:
+                self.disk_detail.set("No eligible USB disks found. Boot/system disks are deliberately excluded.")
+                self.status.set("No eligible USB disk detected. Connect a removable USB drive and refresh.")
+        except Exception as exc:
+            self.disks = []; self.disk_combo["values"] = []
+            self.disk_detail.set("Could not query disks. Windows PowerShell/Get-Disk is required.")
+            self.status.set("Disk query failed: " + str(exc))
+
+    def on_disk_selected(self, _event=None):
+        d = self.disk_by_label.get(self.disk_combo.get())
+        if not d:
+            return
+        self.disk_detail.set(
+            f'Confirmation required: ERASE DISK {d["number"]} | Capacity: {d["size"]:,} bytes | '
+            f'Read-only: {d["read_only"]} | Status: {d["status"]}'
+        )
+
+    def detect_mobile_tools(self):
+        adb, fastboot = shutil.which("adb"), shutil.which("fastboot")
+        pieces = [f"adb: {adb or 'not installed'}", f"fastboot: {fastboot or 'not installed'}"]
+        if adb:
+            try:
+                r = subprocess.run([adb, "devices"], capture_output=True, text=True, timeout=8)
+                pieces.append("adb devices: " + " | ".join(r.stdout.strip().splitlines()[1:]) if r.stdout.strip() else "adb devices: no output")
+            except Exception as exc:
+                pieces.append("adb query failed: " + str(exc))
+        if fastboot:
+            try:
+                r = subprocess.run([fastboot, "devices"], capture_output=True, text=True, timeout=8)
+                pieces.append("fastboot devices: " + (r.stdout.strip() or "none"))
+            except Exception as exc:
+                pieces.append("fastboot query failed: " + str(exc))
+        self.mobile_var.set("   ".join(pieces))
+
+    def start_write(self):
+        if self.busy:
+            return
+        image = self.image_path
+        d = self.disk_by_label.get(self.disk_combo.get())
+        if not image or not image.is_file():
+            messagebox.showerror("No image", "Choose a valid image first."); return
+        if not d:
+            messagebox.showerror("No target", "Select an eligible USB disk."); return
+        if d["read_only"]:
+            messagebox.showerror("Read-only disk", "The selected disk is read-only."); return
+        size = image.stat().st_size
+        if size <= 0 or size > d["size"]:
+            messagebox.showerror("Capacity mismatch", "Image must be non-empty and no larger than the selected USB disk."); return
+        expected = f'ERASE DISK {d["number"]}'
+        if self.confirm_var.get().strip() != expected:
+            messagebox.showerror("Confirmation mismatch", f'Type exactly: {expected}'); return
+        message = (f'You are about to overwrite USB Disk {d["number"]} ({d["name"]}), capacity {d["size"]:,} bytes, '
+                   f'with {image.name} ({size:,} bytes). ALL EXISTING DATA ON THAT DISK WILL BE LOST.')
+        if not messagebox.askyesno("Final destructive confirmation", message + "\n\nContinue?"):
+            return
+        self.busy = True; self.write_button.configure(state="disabled"); self.progress["value"] = 0
+        threading.Thread(target=self._write_worker, args=(image, d, size, self.verify_var.get()), daemon=True).start()
+
+    def _write_worker(self, image: Path, disk: dict, total: int, verify: bool):
+        handle = None
+        try:
+            # Re-query immediately before opening the raw device to reduce stale-selection risk.
+            current = {x["number"]: x for x in list_usb_disks()}.get(disk["number"])
+            if not current or current["name"] != disk["name"] or current["size"] != disk["size"] or current["read_only"]:
+                raise RuntimeError("USB device identity/state changed. Refresh the disk list and retry.")
+            handle = open(r"\\.\PhysicalDrive" + str(disk["number"]), "r+b", buffering=0)
+            written = 0
+            with image.open("rb") as source:
+                while True:
+                    block = source.read(CHUNK)
+                    if not block:
+                        break
+                    n = handle.write(block)
+                    if n != len(block):
+                        raise IOError(f"Short raw-device write at byte {written}.")
+                    written += n
+                    percent = int(written * 100 / total)
+                    self.after(0, lambda p=percent: self.progress.configure(value=p))
+            handle.flush()
+            if verify:
+                handle.seek(0)
+                with image.open("rb") as source:
+                    checked = 0
+                    while True:
+                        expected = source.read(CHUNK)
+                        if not expected:
+                            break
+                        actual = handle.read(len(expected))
+                        if actual != expected:
+                            raise IOError(f"Read-back verification failed at byte {checked}.")
+                        checked += len(expected)
+                        percent = int(checked * 100 / total)
+                        self.after(0, lambda p=percent: self.progress.configure(value=p))
+            self.after(0, lambda: messagebox.showinfo("Write complete", f"Image written successfully. Verification: {'passed' if verify else 'not requested'}. Safely eject the USB disk before unplugging."))
+            self.after(0, lambda: self.status.set("Write complete. Verify boot behavior on the target device."))
+        except Exception as exc:
+            self.after(0, lambda: messagebox.showerror("Write failed", f"{exc}\n\nNo success is claimed. Inspect the disk before retrying."))
+            self.after(0, lambda: self.status.set("Write failed: " + str(exc)))
+        finally:
+            if handle:
+                try: handle.close()
+                except Exception: pass
+            self.after(0, self._write_finished)
+
+    def _write_finished(self):
+        self.busy = False
+        self.write_button.configure(state="normal")
+        self.refresh_disks()
+
+
+if __name__ == "__main__":
+    if os.name != "nt":
+        # Image inspection/hash UI still works cross-platform; physical disk write requires Windows.
+        pass
+    FlashTool().mainloop()
