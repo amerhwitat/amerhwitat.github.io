@@ -80,7 +80,7 @@ def create_iso_from_directory(source_dir: Path, output_path: Path) -> None:
     source_dir = source_dir.resolve()
     if not source_dir.is_dir():
         raise ValueError("Choose an existing source directory.")
-    if output_path.exists() and output_path.resolve().is_relative_to(source_dir):
+    if output_path.resolve().is_relative_to(source_dir):
         raise ValueError("The output ISO cannot be created inside its own source directory.")
     iso = pycdlib.PyCdlib()
     iso.new(interchange_level=3, joliet=3)
@@ -156,6 +156,11 @@ class FlashTool(tk.Tk):
         self.hash_var = tk.StringVar(value="SHA-256: —")
         ttk.Label(row2, textvariable=self.hash_var).pack(side="left", fill="x", expand=True)
         ttk.Button(row2, text="Calculate SHA-256", command=self.calculate_hash).pack(side="right")
+        row3 = ttk.Frame(image_box); row3.pack(fill="x", pady=(8, 0))
+        ttk.Label(row3, text="Expected SHA-256 (optional):").pack(side="left")
+        self.expected_hash_var = tk.StringVar()
+        ttk.Entry(row3, textvariable=self.expected_hash_var).pack(side="left", fill="x", expand=True, padx=8)
+        ttk.Button(row3, text="Verify checksum", command=self.verify_expected_hash).pack(side="right")
         iso_actions = ttk.Frame(image_box); iso_actions.pack(fill="x", pady=(8, 0))
         ttk.Button(iso_actions, text="Inspect ISO9660 metadata", command=self.inspect_selected_iso).pack(side="left")
         ttk.Button(iso_actions, text="Create ISO from folder…", command=self.create_iso_dialog).pack(side="left", padx=(8, 0))
@@ -187,13 +192,38 @@ class FlashTool(tk.Tk):
         mobile_box.pack(fill="x", pady=5)
         self.mobile_var = tk.StringVar(value="Checking for adb / fastboot…")
         ttk.Label(mobile_box, textvariable=self.mobile_var, wraplength=820).pack(anchor="w")
-        ttk.Button(mobile_box, text="Check connected Android devices", command=self.detect_mobile_tools).pack(anchor="w", pady=(8, 0))
+        mobile_buttons = ttk.Frame(mobile_box); mobile_buttons.pack(anchor="w", pady=(8, 0))
+        ttk.Button(mobile_buttons, text="Check connected Android devices", command=self.detect_mobile_tools).pack(side="left")
+        ttk.Button(mobile_buttons, text="Read-only device preflight", command=self.mobile_preflight).pack(side="left", padx=(8, 0))
 
         self.status = tk.StringVar(value="Ready. Inspect the image and verify the target disk before writing.")
         ttk.Label(root, textvariable=self.status, wraplength=840).pack(anchor="w", pady=(12, 0))
         ttk.Label(root, text="No generic mobile ROM flashing is attempted: Android firmware and recovery procedures vary by device and vendor.",
                   wraplength=840).pack(anchor="w", pady=(4, 0))
 
+
+    def verify_expected_hash(self):
+        if not self.image_path:
+            messagebox.showinfo("Select image", "Choose an image first.")
+            return
+        expected = self.expected_hash_var.get().strip().lower()
+        if len(expected) != 64 or any(ch not in "0123456789abcdef" for ch in expected):
+            messagebox.showerror("Invalid checksum", "Enter a 64-character hexadecimal SHA-256 digest.")
+            return
+        image = self.image_path
+        self.status.set("Verifying expected SHA-256…")
+        def worker():
+            try:
+                actual = sha256_file(image)
+                passed = actual.lower() == expected
+                self.after(0, lambda: self.hash_var.set("SHA-256: " + actual))
+                self.after(0, lambda: self.status.set("SHA-256 verification " + ("PASSED" if passed else "FAILED")))
+                self.after(0, lambda: messagebox.showinfo("Checksum result" if passed else "Checksum mismatch",
+                    f"Expected: {expected}\nActual:   {actual}\n\n" +
+                    ("The digest matches." if passed else "Do not flash this image until its origin and integrity are verified.")))
+            except Exception as exc:
+                self.after(0, lambda: messagebox.showerror("Checksum failed", str(exc)))
+        threading.Thread(target=worker, daemon=True).start()
 
     def inspect_selected_iso(self):
         if not self.image_path:
@@ -310,6 +340,48 @@ class FlashTool(tk.Tk):
             except Exception as exc:
                 pieces.append("fastboot query failed: " + str(exc))
         self.mobile_var.set("   ".join(pieces))
+
+    def mobile_preflight(self):
+        adb, fastboot = shutil.which("adb"), shutil.which("fastboot")
+        if not adb and not fastboot:
+            messagebox.showinfo("Mobile preflight", "Install Android Platform Tools (adb/fastboot) first.")
+            return
+        lines = ["READ-ONLY PREFLIGHT — no flash/write commands will be issued."]
+        def query(command, timeout=8):
+            result = subprocess.run(command, capture_output=True, text=True, timeout=timeout, check=False)
+            return (result.stdout + "\n" + result.stderr).strip()
+        try:
+            if adb:
+                devices = query([adb, "devices", "-l"])
+                lines.extend(["", "ADB devices:", devices or "(no output)"])
+                serials = []
+                for line in devices.splitlines()[1:]:
+                    fields = line.split()
+                    if len(fields) >= 2 and fields[1] == "device":
+                        serials.append(fields[0])
+                if len(serials) == 1:
+                    serial = serials[0]
+                    for prop in ("ro.product.manufacturer", "ro.product.model", "ro.product.device",
+                                 "ro.build.fingerprint", "ro.boot.flash.locked", "ro.boot.verifiedbootstate"):
+                        value = query([adb, "-s", serial, "shell", "getprop", prop])
+                        lines.append(f"{prop}: {value or '(empty)'}")
+                elif len(serials) > 1:
+                    lines.append("ADB preflight skipped: multiple authorized devices; disconnect extras to avoid ambiguity.")
+            if fastboot:
+                devices = query([fastboot, "devices"])
+                lines.extend(["", "Fastboot devices:", devices or "(none detected)"])
+                serials = [line.split()[0] for line in devices.splitlines() if line.split()]
+                if len(serials) == 1:
+                    serial = serials[0]
+                    for variable in ("product", "is-userspace", "unlocked", "current-slot", "secure"):
+                        value = query([fastboot, "-s", serial, "getvar", variable])
+                        lines.append(f"fastboot {variable}: {value or '(not reported)'}")
+                elif len(serials) > 1:
+                    lines.append("Fastboot preflight skipped: multiple devices detected.")
+            lines.append("\nNo firmware was written. A model-specific signed profile and vendor documentation are required before any future flashing support.")
+            messagebox.showinfo("Mobile device preflight", "\n".join(lines)[:12000])
+        except Exception as exc:
+            messagebox.showerror("Mobile preflight failed", str(exc))
 
     def start_write(self):
         if self.busy:
