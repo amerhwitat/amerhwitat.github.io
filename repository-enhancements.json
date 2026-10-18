@@ -1,6 +1,6 @@
 {
   "schema": "repository-enhancements-status/v1",
-  "updated_utc": "2026-10-18T06:12:00Z",
+  "updated_utc": "2026-10-18T06:20:00Z",
   "publication_note": "Status links and review artifacts are published here. Open/draft PRs are not represented as merged releases; CI success is not equivalent to native userspace readiness.",
   "repositories": [
     {
@@ -211,7 +211,9 @@
         "Portfolio main branch Pages deployment passed.",
         "PR #13 adds a JavaScript/Python syntax gate; keep it separate until mergeability is resolved.",
         "Java Application Hub catalogs 15 accessible repositories and 62 application areas; the inventory distinguishes existing Java from partial coverage and port candidates.",
-        "Java Swing desktop companion compiled and packaged successfully in GitHub Actions; browser UI is published as static HTML/JS and does not execute JVM bytecode directly."
+        "Java Swing desktop companion compiled and packaged successfully in GitHub Actions; browser UI is published as static HTML/JS and does not execute JVM bytecode directly.",
+        "Python Application Hub indexes 15 repositories and 62 application areas as migration inventory, not completed ports.",
+        "Super Flash & ISO Tool implements image hashing and guarded USB raw writing with boot/system disk exclusion, typed confirmation, capacity checks and optional read-back verification; generic phone ROM flashing is not supported."
       ],
       "latest_native_ci_run": {
         "name": "Chimera II Native CI",
@@ -224,6 +226,13 @@
         "inventory": "https://github.com/amerhwitat/amerhwitat.github.io/blob/main/apps/java-app-hub/apps.json",
         "java_build": "https://github.com/amerhwitat/amerhwitat.github.io/actions/runs/39103099809",
         "status": "web GUI and Java Swing source committed; Java 17 Maven compile/package workflow passed; latest Pages deployment pending at last check"
+      },
+      "python_application_hub": {
+        "web": "https://amerhwitat.github.io/apps/python-app-hub/",
+        "flash_tool": "https://amerhwitat.github.io/apps/python-app-hub/super-flash-iso/",
+        "source": "https://github.com/amerhwitat/amerhwitat.github.io/tree/main/apps/python-app-hub",
+        "windows_build": "https://github.com/amerhwitat/amerhwitat.github.io/actions/workflows/python-app-hub.yml",
+        "status": "Python 3.11/Tkinter GUI source committed; PyInstaller Windows build and safety-gate CI queued after latest commits; not yet verified as a successful executable build"
       }
     }
   ]
