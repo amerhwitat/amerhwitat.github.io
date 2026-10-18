@@ -64,7 +64,7 @@ def inspect_iso9660(path: Path) -> dict:
         pvd = stream.read(2048)
     if len(pvd) < 2048 or pvd[0] != 1 or pvd[1:6] != b"CD001" or pvd[6] != 1:
         raise ValueError("No valid ISO9660 primary volume descriptor at sector 16.")
-    volume = pvd[40:72].decode("ascii", errors="replace").strip().strip("\\x00")
+    volume = pvd[40:72].decode("ascii", errors="replace").rstrip("\\x00 ").strip()
     blocks = int.from_bytes(pvd[80:84], "little")
     block_size = int.from_bytes(pvd[128:130], "little")
     return {"volume_id": volume, "blocks": blocks, "block_size": block_size,
@@ -83,7 +83,7 @@ def create_iso_from_directory(source_dir: Path, output_path: Path) -> None:
     if output_path.exists() and output_path.resolve().is_relative_to(source_dir):
         raise ValueError("The output ISO cannot be created inside its own source directory.")
     iso = pycdlib.PyCdlib()
-    iso.new(interchange_level=3, joliet=3, rock_ridge="1.09")
+    iso.new(interchange_level=3, joliet=3)
     directory_count = 0
     file_count = 0
 
