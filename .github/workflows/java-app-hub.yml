@@ -1,0 +1,29 @@
+name: Java Application Hub CI
+on:
+  push:
+    paths: ["apps/java-app-hub/**", ".github/workflows/java-app-hub.yml"]
+  pull_request:
+    paths: ["apps/java-app-hub/**", ".github/workflows/java-app-hub.yml"]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  compile:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+          cache: maven
+      - name: Compile and package Swing GUI
+        run: mvn -B -f apps/java-app-hub/java/pom.xml clean package
+      - name: Validate web catalog JSON
+        run: python -m json.tool apps/java-app-hub/apps.json >/dev/null
+      - name: Upload JAR artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: java-application-hub
+          path: apps/java-app-hub/java/target/java-application-hub-1.0.0.jar
+          if-no-files-found: error
