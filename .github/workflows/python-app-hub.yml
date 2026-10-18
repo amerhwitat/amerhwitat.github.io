@@ -9,6 +9,12 @@ on:
       - "apps/python-app-hub/**"
       - ".github/workflows/python-app-hub.yml"
   workflow_dispatch:
+    inputs:
+      publish_release:
+        description: "Create a durable GitHub Release with the verified Windows ZIP"
+        required: true
+        default: false
+        type: boolean
 permissions:
   contents: read
 jobs:
@@ -71,3 +77,38 @@ jobs:
           name: PythonDesktopTools-Windows-x64
           path: dist/PythonDesktopTools-Windows-x64.zip
           if-no-files-found: error
+
+  publish-release:
+    if: ${{ github.event_name == 'workflow_dispatch' && inputs.publish_release }}
+    needs: build-windows
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      actions: read
+    steps:
+      - name: Download Windows artifact from this run
+        uses: actions/download-artifact@v4
+        with:
+          name: PythonDesktopTools-Windows-x64
+          path: release-artifact
+      - name: Prepare release notes
+        run: |
+          cat > RELEASE_NOTES.md <<'EOF'
+          Python Desktop Tools release.
+
+          Assets:
+          - PythonAppHub.exe: searchable repository inventory GUI.
+          - SuperFlashISO.exe: ISO9660 inspect/create, SHA-256 validation, guarded USB imaging and read-only Android preflight.
+          - VERSION.txt and SHA256SUMS.txt: build metadata and executable hashes.
+
+          Windows x64. Verify SHA256SUMS.txt before running. Raw USB writing is destructive.
+          Phone firmware flashing is not implemented; mobile features are read-only diagnostics.
+          EOF
+      - name: Publish durable GitHub Release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          TAG="python-tools-v1.0.${{ github.run_number }}"
+          gh release create "$TAG" release-artifact/PythonDesktopTools-Windows-x64.zip \
+            --title "Python Desktop Tools v1.0.${{ github.run_number }}" \
+            --notes-file RELEASE_NOTES.md
