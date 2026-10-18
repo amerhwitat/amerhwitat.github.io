@@ -27,3 +27,39 @@ jobs:
           name: java-application-hub
           path: apps/java-app-hub/java/target/java-application-hub-1.0.0.jar
           if-no-files-found: error
+
+  package-windows-gui:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+          cache: maven
+      - name: Compile Swing GUI for Windows packaging
+        run: mvn -B -f apps/java-app-hub/java/pom.xml clean package
+      - name: Package self-contained Windows app image
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = "Stop"
+          $root = "apps/java-app-hub/java/target"
+          $inputDir = Join-Path $root "jpackage-input"
+          $dest = Join-Path $root "jpackage"
+          New-Item -ItemType Directory -Force -Path $inputDir | Out-Null
+          Copy-Item (Join-Path $root "java-application-hub-1.0.0.jar") $inputDir
+          jpackage --type app-image --input $inputDir --dest $dest --name JavaApplicationHub --main-jar java-application-hub-1.0.0.jar --main-class io.amerhwitat.javahub.Main --app-version 1.0.0 --vendor "Amer Hwitat"
+          $exe = Join-Path $dest "JavaApplicationHub/JavaApplicationHub.exe"
+          if (!(Test-Path $exe)) { throw "jpackage did not create JavaApplicationHub.exe" }
+          $zip = Join-Path $root "JavaApplicationHub-Windows-x64.zip"
+          Compress-Archive -Path (Join-Path $dest "JavaApplicationHub/*") -DestinationPath $zip -Force
+          $hash = (Get-FileHash -Algorithm SHA256 $zip).Hash.ToLower()
+          "SHA256  JavaApplicationHub-Windows-x64.zip  $hash" | Set-Content (Join-Path $root "SHA256SUMS.txt")
+      - uses: actions/upload-artifact@v4
+        with:
+          name: JavaApplicationHub-Windows-x64
+          path: |
+            apps/java-app-hub/java/target/JavaApplicationHub-Windows-x64.zip
+            apps/java-app-hub/java/target/SHA256SUMS.txt
+          if-no-files-found: error
+          retention-days: 30
