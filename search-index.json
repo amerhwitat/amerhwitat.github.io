@@ -966,6 +966,20 @@
       "g": "Projects & Releases",
       "d": "Machine-readable repository commits, pull request states, validation results, artifacts, and release gates.",
       "x": "enhancement manifest build validation workflow artifact draft pull request kernel boot release"
+    },
+    {
+      "p": "apps/java-app-hub/index.html",
+      "t": "Java Application Hub",
+      "g": "Java & Cross-Repository Tools",
+      "d": "Searchable inventory of 15 accessible repositories and 62 application areas, with Java migration status and source links. Includes a separate Java Swing desktop companion.",
+      "x": "Java JavaFX Swing Maven JVM repository application catalog migration conversion GUI build CI"
+    },
+    {
+      "p": "apps/java-app-hub/apps.json",
+      "t": "Java Application Hub Inventory (JSON)",
+      "g": "Java & Cross-Repository Tools",
+      "d": "Machine-readable snapshot of repositories, languages, application areas and Java port status.",
+      "x": "repository tree inventory source code languages Java conversion applications"
     }
   ]
 }
