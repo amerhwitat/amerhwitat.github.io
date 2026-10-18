@@ -232,7 +232,10 @@
         "flash_tool": "https://amerhwitat.github.io/apps/python-app-hub/super-flash-iso/",
         "source": "https://github.com/amerhwitat/amerhwitat.github.io/tree/main/apps/python-app-hub",
         "windows_build": "https://github.com/amerhwitat/amerhwitat.github.io/actions/workflows/python-app-hub.yml",
-        "status": "Python 3.11/Tkinter GUI source committed; PyInstaller Windows build and safety-gate CI queued after latest commits; not yet verified as a successful executable build"
+        "status": "Python 3.11/Tkinter GUI source committed; PyInstaller Windows build and safety-gate CI queued after latest commits; not yet verified as a successful executable build",
+        "iso_creation": "Implemented in source; ISO tests and PyInstaller build are running in CI",
+        "migration_plan": "15 repository trees scanned; 51 source candidates cataloged in apps/python-app-hub/migration-plan.json",
+        "versioning": "Windows artifact contains VERSION.txt and SHA256SUMS.txt when latest workflow passes"
       }
     }
   ]
