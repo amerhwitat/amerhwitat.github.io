@@ -1,6 +1,6 @@
 {
   "schema": "repository-enhancements-status/v1",
-  "updated_utc": "2026-10-18T06:10:00Z",
+  "updated_utc": "2026-10-18T06:15:00Z",
   "publication_note": "Status links and review artifacts are published here. Open/draft PRs are not represented as merged releases; CI success is not equivalent to native userspace readiness.",
   "repositories": [
     {
@@ -11,15 +11,20 @@
       "enhancements": [
         {
           "name": "ISO target routing and offline Aurora artwork",
-          "status": "draft_pr_ci_mostly_passed",
+          "status": "draft_pr_all_observed_checks_passed",
           "pr": 129,
           "url": "https://github.com/amerhwitat/ChimeraIIOS/pull/129",
           "head": "5651f3c521dad2744b4f9866fa9616b5d4c10972",
           "checks": [
             {
-              "name": "Boot Artifact Validation",
+              "name": "Chimera Boot Artifact Validation",
               "result": "success",
               "url": "https://github.com/amerhwitat/ChimeraIIOS/actions/runs/39102575928"
+            },
+            {
+              "name": "Arabic desktop compatibility",
+              "result": "success",
+              "url": "https://github.com/amerhwitat/ChimeraIIOS/actions/runs/39102575866"
             },
             {
               "name": "Desktop Compatibility CI",
@@ -27,19 +32,44 @@
               "url": "https://github.com/amerhwitat/ChimeraIIOS/actions/runs/39102575835"
             },
             {
+              "name": "UI Control Contract",
+              "result": "success",
+              "url": "https://github.com/amerhwitat/ChimeraIIOS/actions/runs/39102575792"
+            },
+            {
+              "name": "Aurora Desktop Power and Interaction Validation",
+              "result": "success",
+              "url": "https://github.com/amerhwitat/ChimeraIIOS/actions/runs/39102575786"
+            },
+            {
+              "name": "Chimera II CI/CD",
+              "result": "success",
+              "url": "https://github.com/amerhwitat/ChimeraIIOS/actions/runs/39102575766"
+            },
+            {
               "name": "ISA, installer and command conformance",
               "result": "success",
               "url": "https://github.com/amerhwitat/ChimeraIIOS/actions/runs/39102575749"
             },
             {
-              "name": "Chimera II CI/CD",
-              "result": "in_progress",
-              "url": "https://github.com/amerhwitat/ChimeraIIOS/actions/runs/39102575766"
+              "name": "Boot and ISO validation",
+              "result": "success",
+              "url": "https://github.com/amerhwitat/ChimeraIIOS/actions/runs/39102575715"
+            },
+            {
+              "name": "Koronos VMware/QEMU Boot Matrix",
+              "result": "success",
+              "url": "https://github.com/amerhwitat/ChimeraIIOS/actions/runs/39102575725"
+            },
+            {
+              "name": "Structured ISO",
+              "result": "success",
+              "url": "https://github.com/amerhwitat/ChimeraIIOS/actions/runs/39102575714"
             }
           ],
           "limits": [
-            "Draft PR; not merged.",
-            "QEMU remains a kernel-entry smoke test, not interactive GRUB or production userspace acceptance.",
+            "Draft PR; all listed workflow checks passed on head 5651f3c521dad2744b4f9866fa9616b5d4c10972.",
+            "QEMU coverage does not prove production userspace-ready or interactive GRUB acceptance.",
             "Installer disk operations remain disabled until an installation backend is configured."
           ]
         },
@@ -55,12 +85,13 @@
         },
         {
           "name": "Production boot acceptance gate",
-          "status": "open_pr",
+          "status": "open_not_mergeable",
           "pr": 127,
           "url": "https://github.com/amerhwitat/ChimeraIIOS/pull/127",
           "head": "0c4d9b87cbdfff4e5b4670b4a316cd606896ba34",
           "limits": [
-            "Acceptance requires ordered kernel, target-selection, userspace-originated init, userspace I/O, and target-ready markers."
+            "GitHub currently reports mergeable=false; resolve conflict/merge state and rerun checks before merge.",
+            "Acceptance must verify userspace-originated init, userspace I/O, and target-ready markers."
           ]
         },
         {
@@ -123,35 +154,38 @@
         },
         {
           "name": "Port Koronos target-specific userspace launch",
-          "status": "draft_pr",
+          "status": "draft_pr_not_mergeable",
           "pr": 49,
           "url": "https://github.com/amerhwitat/OctavianOS/pull/49",
           "head": "cf1385d908ff107f5e060cb31c0adcae694e7b33",
           "limits": [
-            "Native kernel build / full ISO userspace acceptance must pass before release."
+            "GitHub currently reports mergeable=false.",
+            "Full-ISO QEMU acceptance must produce the expected debug-console readiness marker before release."
           ]
         },
         {
           "name": "Vendored Chimera source snapshot",
-          "status": "open_pr",
+          "status": "open_pr_not_mergeable_native_iso_smoke_fails",
           "pr": 42,
           "url": "https://github.com/amerhwitat/OctavianOS/pull/42",
           "head": "c5d150970fa7ee02c3d2eaac28160509cbf3ba6e",
           "limits": [
-            "Source parity is not a proof of boot, userspace readiness, ISA conformance, or hardware support."
+            "GitHub currently reports mergeable=false.",
+            "Native kernel build workflow fails at full-ISO QEMU smoke: no debugcon output after 25 seconds (QEMU exit 124).",
+            "Candidate ISO is review-only until root cause is fixed and the full ISO reaches KORONOS READY."
           ]
         }
       ],
       "existing_artifacts": [
         {
-          "name": "Native ISO candidate (review only)",
-          "url": "https://api.github.com/repos/amerhwitat/OctavianOS/actions/artifacts/12098728600/zip",
-          "run": "https://github.com/amerhwitat/OctavianOS/actions/runs/39026915853"
+          "name": "Latest native ISO candidate (review only)",
+          "url": "https://github.com/amerhwitat/OctavianOS/actions/runs/39098325212/artifacts/12125209217",
+          "run": "https://github.com/amerhwitat/OctavianOS/actions/runs/39098325212"
         },
         {
-          "name": "Full ISO QEMU trace",
-          "url": "https://api.github.com/repos/amerhwitat/OctavianOS/actions/artifacts/12098504422/zip",
-          "run": "https://github.com/amerhwitat/OctavianOS/actions/runs/39026915853"
+          "name": "Latest full-ISO QEMU trace (no debugcon output)",
+          "url": "https://github.com/amerhwitat/OctavianOS/actions/runs/39098325212/artifacts/12125398502",
+          "run": "https://github.com/amerhwitat/OctavianOS/actions/runs/39098325212"
         }
       ],
       "release_gate": "The previously observed full-ISO QEMU check timed out without the expected KORONOS READY debug-console trace; keep ISO as a review candidate until the full-ISO boot test passes."
@@ -159,13 +193,13 @@
     {
       "name": "amerhwitat.github.io",
       "url": "https://github.com/amerhwitat/amerhwitat.github.io",
-      "main_commit": "34650755717faa9b1c9f2323067f9cff3121c378",
+      "main_commit": "bfb441fa4cbe4043c389dfdae4b92a4386bdf61b",
       "main_commit_url": "https://github.com/amerhwitat/amerhwitat.github.io/commit/34650755717faa9b1c9f2323067f9cff3121c378",
       "site": "https://amerhwitat.github.io/",
       "latest_pages_run": {
         "name": "Deploy site to GitHub Pages",
-        "result": "success",
-        "url": "https://github.com/amerhwitat/amerhwitat.github.io/actions/runs/39022256142"
+        "result": "in_progress_at_last_check",
+        "url": "https://github.com/amerhwitat/amerhwitat.github.io/actions/runs/39102772999"
       },
       "pull_request": {
         "number": 13,
@@ -176,7 +210,12 @@
       "notes": [
         "Portfolio main branch Pages deployment passed.",
         "PR #13 adds a JavaScript/Python syntax gate; keep it separate until mergeability is resolved."
-      ]
+      ],
+      "latest_native_ci_run": {
+        "name": "Chimera II Native CI",
+        "result": "success",
+        "url": "https://github.com/amerhwitat/amerhwitat.github.io/actions/runs/39102772993"
+      }
     }
   ]
 }
