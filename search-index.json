@@ -952,6 +952,20 @@
       "g": "Developer Tools",
       "d": "Search and inspect the Python inventory across public repositories; preview source and use an explicitly configured local bridge for runnable entrypoints.",
       "x": "Python GUI workbench Python catalog source preview runnable entrypoints modules libraries tests BizX BizXtreme ChimeraIIOS nlp build run local bridge"
+    },
+    {
+      "p": "project-updates.html",
+      "t": "ChimeraIIOS & OctavianOS — Build and Release Status",
+      "g": "Projects & Releases",
+      "d": "Current enhancement inventory, source pull requests, CI evidence, review artifacts, and native ISO acceptance blockers for ChimeraIIOS and OctavianOS.",
+      "x": "ChimeraIIOS OctavianOS Koronos Aurora ISO QEMU CI CD release acceptance PR userspace artwork Octopus"
+    },
+    {
+      "p": "repository-enhancements.json",
+      "t": "Repository Enhancement Status (JSON)",
+      "g": "Projects & Releases",
+      "d": "Machine-readable repository commits, pull request states, validation results, artifacts, and release gates.",
+      "x": "enhancement manifest build validation workflow artifact draft pull request kernel boot release"
     }
   ]
 }
