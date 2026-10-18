@@ -31,7 +31,11 @@
     "NLP ancient-language registry",
     "ThamudicEpiPlatform target-language catalog",
     "Aurora MAME Arcade Center",
-    "Aurora Complete Game Center"
+    "Aurora Complete Game Center",
+    "OctavianOS web companion",
+    "OS Build & Release Status",
+    "Repository enhancement status manifest",
+    "Current CI review artifacts for ChimeraIIOS and OctavianOS"
   ],
   "purpose": "Expose Chimera II OS project documentation and web entry points.",
   "live_surfaces": {
@@ -50,6 +54,10 @@
     "ancient_ocr": "https://amerhwitat.github.io/apps/chimera-ii-os/web/ancient-ocr.html",
     "ancient_language_registry": "https://amerhwitat.github.io/apps/chimera-ii-os/web/ancient-language-registry.json",
     "mame_center": "apps/chimera-ii-os/web/mame-center.html",
-    "game_center": "apps/chimera-ii-os/web/game-center.html"
+    "game_center": "apps/chimera-ii-os/web/game-center.html",
+    "status_page": "https://amerhwitat.github.io/project-updates.html",
+    "enhancement_manifest": "https://amerhwitat.github.io/repository-enhancements.json",
+    "octavianos_source": "https://github.com/amerhwitat/OctavianOS",
+    "octavianos_companion": "https://amerhwitat.github.io/apps/octavianos/"
   }
 }
