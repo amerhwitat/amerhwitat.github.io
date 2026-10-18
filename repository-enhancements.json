@@ -1,6 +1,6 @@
 {
   "schema": "repository-enhancements-status/v1",
-  "updated_utc": "2026-10-18T06:15:00Z",
+  "updated_utc": "2026-10-18T06:12:00Z",
   "publication_note": "Status links and review artifacts are published here. Open/draft PRs are not represented as merged releases; CI success is not equivalent to native userspace readiness.",
   "repositories": [
     {
@@ -193,8 +193,8 @@
     {
       "name": "amerhwitat.github.io",
       "url": "https://github.com/amerhwitat/amerhwitat.github.io",
-      "main_commit": "bfb441fa4cbe4043c389dfdae4b92a4386bdf61b",
-      "main_commit_url": "https://github.com/amerhwitat/amerhwitat.github.io/commit/34650755717faa9b1c9f2323067f9cff3121c378",
+      "main_commit": "5f41d062eeb1b525f83de234c19dda0a8a268bdc",
+      "main_commit_url": "https://github.com/amerhwitat/amerhwitat.github.io/commit/5f41d062eeb1b525f83de234c19dda0a8a268bdc",
       "site": "https://amerhwitat.github.io/",
       "latest_pages_run": {
         "name": "Deploy site to GitHub Pages",
@@ -209,12 +209,21 @@
       },
       "notes": [
         "Portfolio main branch Pages deployment passed.",
-        "PR #13 adds a JavaScript/Python syntax gate; keep it separate until mergeability is resolved."
+        "PR #13 adds a JavaScript/Python syntax gate; keep it separate until mergeability is resolved.",
+        "Java Application Hub catalogs 15 accessible repositories and 62 application areas; the inventory distinguishes existing Java from partial coverage and port candidates.",
+        "Java Swing desktop companion compiled and packaged successfully in GitHub Actions; browser UI is published as static HTML/JS and does not execute JVM bytecode directly."
       ],
       "latest_native_ci_run": {
         "name": "Chimera II Native CI",
         "result": "success",
         "url": "https://github.com/amerhwitat/amerhwitat.github.io/actions/runs/39102772993"
+      },
+      "java_application_hub": {
+        "web": "https://amerhwitat.github.io/apps/java-app-hub/",
+        "source": "https://github.com/amerhwitat/amerhwitat.github.io/tree/main/apps/java-app-hub",
+        "inventory": "https://github.com/amerhwitat/amerhwitat.github.io/blob/main/apps/java-app-hub/apps.json",
+        "java_build": "https://github.com/amerhwitat/amerhwitat.github.io/actions/runs/39103099809",
+        "status": "web GUI and Java Swing source committed; Java 17 Maven compile/package workflow passed; latest Pages deployment pending at last check"
       }
     }
   ]
