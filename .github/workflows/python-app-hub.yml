@@ -1,0 +1,55 @@
+name: Python Application Hub and Windows executables
+on:
+  push:
+    paths:
+      - "apps/python-app-hub/**"
+      - ".github/workflows/python-app-hub.yml"
+  pull_request:
+    paths:
+      - "apps/python-app-hub/**"
+      - ".github/workflows/python-app-hub.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  test-python:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Syntax check
+        run: python -m compileall -q apps/python-app-hub
+      - name: Validate inventory JSON
+        run: python -m json.tool apps/python-app-hub/apps.json >/dev/null
+      - name: Verify tool safety gates exist
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p = Path("apps/python-app-hub/super-flash-iso/super_flash_iso.py").read_text()
+          required = ["IsBoot", "IsSystem", 'BusType', 'ERASE DISK', "read-back verification", "current[\"name\"]"]
+          missing = [item for item in required if item not in p]
+          if missing:
+              raise SystemExit("Missing safety checks: " + ", ".join(missing))
+          print("Flash safety gate static checks: PASS")
+          PY
+  build-windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install PyInstaller
+        run: python -m pip install --upgrade pip pyinstaller
+      - name: Build GUI executable
+        run: python -m PyInstaller --noconfirm --clean --onefile --windowed --name SuperFlashISO apps/python-app-hub/super-flash-iso/super_flash_iso.py
+      - name: Package download
+        run: Compress-Archive -Path dist/SuperFlashISO.exe -DestinationPath dist/SuperFlashISO-Windows-x64.zip
+      - name: Upload Windows executable
+        uses: actions/upload-artifact@v4
+        with:
+          name: SuperFlashISO-Windows-x64
+          path: dist/SuperFlashISO-Windows-x64.zip
+          if-no-files-found: error
