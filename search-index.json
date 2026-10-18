@@ -980,6 +980,20 @@
       "g": "Java & Cross-Repository Tools",
       "d": "Machine-readable snapshot of repositories, languages, application areas and Java port status.",
       "x": "repository tree inventory source code languages Java conversion applications"
+    },
+    {
+      "p": "apps/python-app-hub/index.html",
+      "t": "Python Application Hub",
+      "g": "Python & Desktop Tools",
+      "d": "Searchable cross-repository inventory, Python migration status, GUI tool links, and Windows PyInstaller build artifacts.",
+      "x": "Python 3 Python GUI Tkinter PyInstaller Windows EXE application catalog conversion"
+    },
+    {
+      "p": "apps/python-app-hub/super-flash-iso/index.html",
+      "t": "Super Flash & ISO Tool",
+      "g": "Python & Desktop Tools",
+      "d": "Windows desktop image inspection, SHA-256, guarded removable USB imaging, read-back verification, and Android ADB/Fastboot diagnostics.",
+      "x": "ISO IMG BIN ROM USB flash disk image writer SHA256 verify PyInstaller Windows mobile fastboot adb"
     }
   ]
 }
