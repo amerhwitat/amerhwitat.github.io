@@ -8,6 +8,7 @@ const apps = [
   { icon: "⌘", name: "Terminal", description: "Open the hosted Aurora terminal interface.", href: "https://amerhwitat.github.io/apps/chimera-ii-os/web/aurora_terminal.html" },
   { icon: "⚙️", name: "Settings", description: "Open the hosted system control center.", href: "https://amerhwitat.github.io/apps/chimera-ii-os/web/system_control_center.html" },
   { icon: "🧩", name: "App Library", description: "Browse the portfolio app catalog.", href: "https://amerhwitat.github.io/apps/repository-app-explorer/" },
+  { icon: "🧰", name: "Application Center", description: "Search paint tools, media players, games, office apps and developer tools.", href: "https://amerhwitat.github.io/apps/octavianos/application-center.html" },
   { icon: "🌊", name: "Marine", description: "Open the Marine desktop web preview.", href: "https://amerhwitat.github.io/apps/octavianos/marine/index.html" },
   { icon: "✨", name: "Aurora", description: "Open the Aurora Wayland Glass desktop web preview.", href: "https://amerhwitat.github.io/apps/octavianos/aurora/index.html" },
   { icon: "📊", name: "System Monitor", description: "Open the hosted system health dashboard.", href: "https://amerhwitat.github.io/apps/chimera-ii-os/web/health.html" },
@@ -22,7 +23,7 @@ function App() {
   return <div className="shell">
     <header className="menubar"><button className="brand" onClick={() => {setActive("Overview");setNotice("Welcome to the OctavianOS React preview.");}}>◈ OCTAVIANOS</button><nav className={mobileMenu ? "menu-links open" : "menu-links"}>{["Overview","Applications","Architecture","Mobile"].map(item=><button key={item} className={active===item?"selected":""} onClick={()=>{setActive(item);setMobileMenu(false);}}>{item}</button>)}</nav><button className="menu-toggle" onClick={()=>setMobileMenu(!mobileMenu)} aria-label="Toggle menu">☰</button><span className="clock">{new Date().toLocaleTimeString([], {hour:"2-digit",minute:"2-digit"})}</span></header>
     <main className="workspace">
-      <aside className="desktop-icons">{[{icon:"📁",name:"Files",href:apps.find(a=>a.name==="Files").href},{icon:"🧩",name:"Applications",href:"https://amerhwitat.github.io/apps/repository-app-explorer/"},{icon:"🌌",name:"Artwork",href:"https://amerhwitat.github.io/apps/aurora-glass-desktop/index.html"},{icon:"📱",name:"Mobile",href:"https://amerhwitat.github.io/apps/aurora-mobile/index.html"}].map(item=><a key={item.name} className="desktop-icon" href={item.href}><span>{item.icon}</span>{item.name}</a>)}</aside>
+      <aside className="desktop-icons">{[{icon:"📁",name:"Files",href:apps.find(a=>a.name==="Files").href},{icon:"🧰",name:"Application Center",href:"https://amerhwitat.github.io/apps/octavianos/application-center.html"},{icon:"🌌",name:"Artwork",href:"https://amerhwitat.github.io/apps/aurora-glass-desktop/index.html"},{icon:"📱",name:"Mobile",href:"https://amerhwitat.github.io/apps/aurora-mobile/index.html"}].map(item=><a key={item.name} className="desktop-icon" href={item.href}><span>{item.icon}</span>{item.name}</a>)}</aside>
       <section className="panel">
         <div className="panel-top"><span className="dot red"/><span className="dot yellow"/><span className="dot green"/><span className="panel-title">{active} · OctavianOS</span></div>
         <div className="panel-content">
