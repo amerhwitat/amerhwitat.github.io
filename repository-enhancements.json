@@ -1,7 +1,7 @@
 {
   "schema": "repository-enhancements-status/v1",
-  "updated_utc": "2026-10-19T15:30:00Z",
-  "publication_note": "The desktop application catalog and preview app increment are committed to the open draft source PR branches and website status branch. Preview syntax/regression checks are still running or pending for native validation; a catalog entry is not a packaged app. No new Pages deployment or production release is claimed.",
+  "updated_utc": "2026-10-19T15:45:00Z",
+  "publication_note": "Desktop app catalog and launcher changes are committed to the two open draft PR branches and this website status branch. Latest desktop preview/native CI is queued; prior preview checks passed before the final Linux host-launcher increment. The website validation is running; the Pages workflow's validate-site job passed but its deploy job was skipped for this PR branch. No production app packages or OS releases are claimed.",
   "repositories": [
     {
       "name": "ChimeraIIOS",
@@ -114,33 +114,43 @@
         },
         {
           "name": "Cross-platform desktop parity preview and native GTK shell improvements",
-          "status": "draft_pr_app_catalog_and_preview_checks_passed_native_validation_pending",
+          "status": "draft_pr_app_catalog_preview_native_launcher_validation_pending",
           "pr": 156,
           "url": "https://github.com/amerhwitat/ChimeraIIOS/pull/156",
-          "head": "34b4e0f335aba5eb10ce438905e0cf660d777608",
+          "head": "8cc3c56a277dc5bd7b47b8ba5aa6db7fba5d62b8",
           "checks": [
             {
-              "name": "Desktop parity preview checks including app launcher JavaScript",
-              "result": "success",
-              "url": "https://github.com/amerhwitat/ChimeraIIOS/actions/runs/39247529852"
+              "name": "Desktop parity preview checks",
+              "result": "queued",
+              "url": "https://github.com/amerhwitat/ChimeraIIOS/actions/runs/39248000352"
             },
             {
               "name": "Native Desktop Suite Build and acceptance-contract tests",
               "result": "queued",
-              "url": "https://github.com/amerhwitat/ChimeraIIOS/actions/runs/39247529962"
+              "url": "https://github.com/amerhwitat/ChimeraIIOS/actions/runs/39248000223"
             },
             {
               "name": "Repository validation",
               "result": "queued",
-              "url": "https://github.com/amerhwitat/ChimeraIIOS/actions/runs/39247529869"
+              "url": "https://github.com/amerhwitat/ChimeraIIOS/actions/runs/39248000289"
+            },
+            {
+              "name": "Arabic desktop compatibility",
+              "result": "success",
+              "url": "https://github.com/amerhwitat/ChimeraIIOS/actions/runs/39248000330"
+            },
+            {
+              "name": "Aurora desktop power and interaction validation",
+              "result": "success",
+              "url": "https://github.com/amerhwitat/ChimeraIIOS/actions/runs/39248000221"
             }
           ],
           "limits": [
             "Draft PR; not merged.",
-            "The shared preview now includes browser-local Paint Studio with PNG export, local audio/video playback, image viewing, text export, a basic calculator and Tic-Tac-Toe.",
-            "Desktop App Catalog lists 43 third-party candidates with upstream links, platform scope, license notes and explicit integration states; catalog-only does not mean installed or runnable.",
-            "Browser preview remains non-native (nativeSessionAdapter=false). No host shell, filesystem-wide access, native codec service, package installer or Koronos process launch is claimed.",
-            "A new application-ecosystem native acceptance gate remains not_implemented until target packages, licensing/notices, process/session launch, MIME associations, permissions/sandboxing, update integrity and per-target runtime tests pass.",
+            "Shared preview includes Paint Studio with PNG export, local-file audio/video playback, image viewing, text export, a basic calculator and a playable Tic-Tac-Toe mini-game.",
+            "The app catalog lists 43 third-party candidates across seven categories with upstream links, platform scope, license notes and explicit integration states; catalog-only does not mean installed or runnable.",
+            "The Linux GTK host shell now has fixed allowlisted launch candidates for painting, media, image viewing, game launchers, text editors, calculators and office suites; this is host integration, not Koronos-native process/session launch or Windows/macOS runtime support.",
+            "The application-ecosystem native acceptance gate remains not_implemented until target-native packages, license/notice review, launch/open-file/quit, permission/signature, update, accessibility and compatibility tests pass.",
             "Six-case production userspace acceptance, Aurora handoff, installer, Recovery and AP-backed SMP remain separate release gates."
           ]
         }
@@ -209,28 +219,33 @@
         },
         {
           "name": "Cross-platform desktop parity preview and native GTK shell improvements",
-          "status": "draft_pr_app_catalog_preview_checks_pending_native_validation_pending",
+          "status": "draft_pr_app_catalog_native_launcher_validation_pending",
           "pr": 79,
           "url": "https://github.com/amerhwitat/OctavianOS/pull/79",
-          "head": "7657e3e1f2d4eb556aebd7d2c850ab672c0f5333",
+          "head": "e974c3a8a952b0bbdbd2a84a33b787eef34f2f98",
           "checks": [
             {
               "name": "Desktop parity preview checks",
-              "result": "pending",
-              "url": "https://github.com/amerhwitat/OctavianOS/actions"
+              "result": "queued",
+              "url": "https://github.com/amerhwitat/OctavianOS/actions/runs/39248006185"
             },
             {
               "name": "Native Desktop Suite Build and acceptance-contract tests",
-              "result": "pending",
-              "url": "https://github.com/amerhwitat/OctavianOS/actions"
+              "result": "queued",
+              "url": "https://github.com/amerhwitat/OctavianOS/actions/runs/39248006649"
+            },
+            {
+              "name": "Desktop artwork and layout contracts",
+              "result": "queued",
+              "url": "https://github.com/amerhwitat/OctavianOS/actions/runs/39248006387"
             }
           ],
           "limits": [
             "Draft PR; not merged.",
-            "The shared preview now includes browser-local Paint Studio with PNG export, local audio/video playback, image viewing, text export, a basic calculator and Tic-Tac-Toe.",
-            "Desktop App Catalog lists 43 third-party candidates with upstream links, platform scope, license notes and explicit integration states; catalog-only does not mean installed or runnable.",
-            "Browser preview remains non-native (nativeSessionAdapter=false). No host shell, filesystem-wide access, native codec service, package installer or Koronos process launch is claimed.",
-            "A new application-ecosystem native acceptance gate remains not_implemented until target packages, licensing/notices, process/session launch, MIME associations, permissions/sandboxing, update integrity and per-target runtime tests pass.",
+            "Shared preview includes Paint Studio with PNG export, local-file audio/video playback, image viewing, text export, a basic calculator and a playable Tic-Tac-Toe mini-game.",
+            "The app catalog lists 43 third-party candidates across seven categories with upstream links, platform scope, license notes and explicit integration states; catalog-only does not mean installed or runnable.",
+            "The Linux GTK host shell now has fixed allowlisted launch candidates for painting, media, image viewing, game launchers, text editors, calculators and office suites; this is host integration, not Koronos-native process/session launch or Windows/macOS runtime support.",
+            "The application-ecosystem native acceptance gate remains not_implemented until target-native packages, license/notice review, launch/open-file/quit, permission/signature, update, accessibility and compatibility tests pass.",
             "Six-case production userspace acceptance, Aurora handoff, installer, Recovery and AP-backed SMP remain separate release gates."
           ]
         }
@@ -273,7 +288,8 @@
         "Java Swing desktop companion compiled and packaged successfully in GitHub Actions; browser UI is published as static HTML/JS and does not execute JVM bytecode directly.",
         "Python Application Hub indexes 15 repositories and 62 application areas as migration inventory, not completed ports.",
         "Super Flash & ISO Tool implements image hashing and guarded USB raw writing with boot/system disk exclusion, typed confirmation, capacity checks and optional read-back verification; generic phone ROM flashing is not supported.",
-        "Desktop Application Ecosystem catalog added on the status branch: 43 third-party app candidates and six browser-preview apps; website validation and Pages deployment still need confirmation."
+        "Desktop Application Ecosystem catalog added on the status branch: 43 third-party app candidates and six browser-preview apps; website validation and Pages deployment still need confirmation.",
+        "Desktop Application Ecosystem page and JSON are on the open status branch; the static catalog validation was still in progress at the last poll. The Pages workflow's validate-site job passed but its deploy job was skipped because this is a PR branch."
       ],
       "latest_native_ci_run": {
         "name": "Chimera II Native CI",
@@ -316,7 +332,7 @@
         "web": "https://amerhwitat.github.io/apps/desktop-app-catalog/",
         "source": "https://github.com/amerhwitat/amerhwitat.github.io/tree/docs/update-koronos-dbus-userspace-status/apps/desktop-app-catalog",
         "source_pr": "https://github.com/amerhwitat/amerhwitat.github.io/pull/58",
-        "status": "committed_to_status_branch_validation_and_deployment_pending",
+        "status": "committed_to_status_branch_validation_in_progress_pages_deploy_skipped_for_pr",
         "third_party_catalog_entries": 43,
         "built_in_browser_preview_apps": 6,
         "app_categories": [
@@ -332,7 +348,9 @@
           "Catalog is broad, not exhaustive.",
           "Upstream apps are not automatically bundled or certified runnable.",
           "Browser preview apps are not native Koronos packages."
-        ]
+        ],
+        "validation": "https://github.com/amerhwitat/amerhwitat.github.io/actions/runs/39247792928",
+        "pages_workflow": "https://github.com/amerhwitat/amerhwitat.github.io/actions/runs/39247793013"
       }
     }
   ]
