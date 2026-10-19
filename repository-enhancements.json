@@ -1,7 +1,7 @@
 {
   "schema": "repository-enhancements-status/v1",
-  "updated_utc": "2026-10-19T13:25:00Z",
-  "publication_note": "Status links and review artifacts are published here. Open/draft PRs are not represented as merged releases; CI success is not equivalent to native userspace readiness.",
+  "updated_utc": "2026-10-19T15:00:00Z",
+  "publication_note": "Status links and review artifacts are published here. Open/draft PRs are not represented as merged releases; CI success is not equivalent to native userspace readiness. The latest docs-triggered site-local-link workflow was cancelled before its final all-links step and Pages deploy was skipped; the separate static hub/catalog validation passed. No new deployment is claimed.",
   "repositories": [
     {
       "name": "ChimeraIIOS",
@@ -141,7 +141,7 @@
             "Six-case production userspace acceptance, Aurora handoff, installer, Recovery, and AP-backed SMP remain separate release gates.",
             "Host GTK shell now tracks and reaps launched host child processes via GLib child-watch callbacks; this is not a Koronos-native session manager.",
             "Native GTK compile and headless smoke tests passed on this draft head; this does not establish a production Koronos desktop session or full Windows/Linux/BSD/macOS feature parity.",
-            "New explicit native acceptance-gate contract and fail-closed regression test committed; latest native workflow is still running."
+            "Latest preview and native-suite workflows completed successfully; see linked run evidence. These checks do not implement missing OS subsystems."
           ]
         }
       ],
@@ -232,7 +232,7 @@
             "Six-case production userspace acceptance, Aurora handoff, installer, Recovery, and AP-backed SMP remain separate release gates.",
             "Host GTK shell now tracks and reaps launched host child processes via GLib child-watch callbacks; this is not a Koronos-native session manager.",
             "Native GTK compile and headless smoke tests passed on this draft head; this does not establish a production Koronos desktop session or full Windows/Linux/BSD/macOS feature parity.",
-            "New explicit native acceptance-gate contract and fail-closed regression test committed; latest native workflow is still running and latest preview is queued."
+            "Latest preview and native-suite workflows completed successfully; see linked run evidence. These checks do not implement missing OS subsystems."
           ]
         }
       ],
