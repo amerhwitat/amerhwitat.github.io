@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Verified production userspace acceptance status for Chimera II OS and Koronos.">
+<meta name="theme-color" content="#07111f">
+<title>Koronos Userspace Acceptance — Chimera II OS</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="aurora_shell.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header"><div class="shell header-inner">
+<div><p class="eyebrow">KORONOS · PRODUCTION GATE</p><h1>Userspace Acceptance</h1><p>Live · Installer · Recovery · BIOS / UEFI</p></div>
+<nav aria-label="Primary navigation"><a href="index.html">Architecture</a><a href="aurora_3d_desktop.html">3D Desktop</a><a href="desktop_switcher.html">Desktop Profiles</a><a href="https://github.com/amerhwitat/OctavianOS/issues/47">Engineering blocker</a></nav>
+</div></header>
+<main id="main" class="shell">
+<section class="hero"><div><p class="eyebrow">FAIL-CLOSED STATUS</p><h2>Production handoff is not yet accepted.</h2><p>The kernel build can pass while production init still fails to execute. This page deliberately distinguishes kernel readiness from a real ring-3 init process and does not treat generated or kernel-authored readiness messages as proof.</p><p><a class="status-pill" href="https://github.com/amerhwitat/OctavianOS/actions/runs/39183883211">Inspect failing acceptance run</a> <a class="status-pill" href="https://github.com/amerhwitat/ChimeraIIOS/pull/125">Review upstream ring-3 candidate</a></p></div><span class="status-pill" aria-label="Production acceptance failed">NOT ACCEPTED</span></section>
+<section aria-labelledby="matrix-title"><div class="section-heading"><div><p class="eyebrow">REQUIRED GATES</p><h2 id="matrix-title">Production acceptance matrix</h2></div></div>
+<div class="table-wrap"><table><caption>Current known status; BIOS/UEFI production payload results require separate trace evidence.</caption><thead><tr><th>Target</th><th>Current result</th><th>Evidence required</th></tr></thead><tbody>
+<tr><th scope="row">Live init</th><td>FAIL</td><td>CPL 3 syscall acknowledgement and matching real init PID readiness</td></tr>
+<tr><th scope="row">Installer init</th><td>FAIL</td><td>CPL 3 syscall acknowledgement and matching real init PID readiness</td></tr>
+<tr><th scope="row">Recovery init</th><td>FAIL</td><td>CPL 3 syscall acknowledgement and matching real init PID readiness</td></tr>
+<tr><th scope="row">BIOS × all targets</th><td>NOT VERIFIED</td><td>Three target-specific production traces</td></tr>
+<tr><th scope="row">UEFI × all targets</th><td>NOT VERIFIED</td><td>Three target-specific production traces</td></tr>
+<tr><th scope="row">Aurora after Live init</th><td>NOT VERIFIED</td><td>Real init handoff followed by compositor startup evidence</td></tr>
+<tr><th scope="row">Release publication</th><td>BLOCKED</td><td>All six boot cases and target-specific acceptance checks pass</td></tr>
+</tbody></table></div></section>
+<section><div class="section-heading"><div><p class="eyebrow">IMPLEMENTATION ORDER</p><h2>What must be connected</h2></div></div>
+<div class="layers">
+<article class="card"><h3>1. Production payload selection</h3><p>Select and validate the actual init executable from the chosen Live, Installer, or Recovery payload. A standalone probe ELF is not a substitute for production init.</p></article>
+<article class="card"><h3>2. Protected process execution</h3><p>Verify owned page tables and CR3, PT_LOAD permissions, NX/W^X, GDT/TSS/RSP0, ring-3 entry/return, and process-owned PID and exit semantics.</p></article>
+<article class="card"><h3>3. Real init handshake</h3><p>Require a syscall acknowledgement originating at CPL 3 and a subsequent readiness marker emitted by the actual target init with the same nonzero PID.</p></article>
+<article class="card"><h3>4. Six production boot cases</h3><p>Run Live, Installer, and Recovery on both BIOS and UEFI. Preserve debug traces and keep the acceptance verifier unchanged.</p></article>
+</div></section>
+<section><p><strong>Release policy:</strong> do not publish a production ISO or claim Aurora readiness until the acceptance evidence passes. Kernel-ready logs, ELF admission, synthetic markers, and standalone probe success are insufficient.</p></section>
+</main>
+<footer><div class="shell footer-inner"><span>ChimeraIIOS · experimental research architecture</span><span><a href="https://github.com/amerhwitat/OctavianOS/issues/47">Track implementation</a> · <a href="https://github.com/amerhwitat/ChimeraIIOS/issues/112">Upstream runtime issue</a></span></div></footer>
+</body></html>
