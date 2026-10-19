@@ -21,6 +21,9 @@
     profile: localStorage.getItem('chimera.desktop.profile') || 'aurora-native',
     profiles: []
   };
+  if (state.profile === 'marine-desktop' && !location.pathname.endsWith('/marine_desktop.html')) {
+    location.replace('marine_desktop.html');
+  }
 
   const routeMap = {
     hub:'aurora-interaction-hub.html', files:'artifact-library.html', terminal:'aurora_terminal.html',
@@ -66,6 +69,7 @@
     document.querySelectorAll('[data-profile]').forEach(b => b.addEventListener('click', () => {
       state.profile = b.dataset.profile;
       localStorage.setItem('chimera.desktop.profile', state.profile);
+      if (state.profile === 'marine-desktop') { location.href = 'marine_desktop.html'; return; }
       applyProfile();
       showDesktopProfiles();
     }));
@@ -77,6 +81,16 @@
     if ($('profileName')) $('profileName').textContent = title;
     if ($('railProfile')) $('railProfile').textContent = title;
     if ($('modeLabel')) $('modeLabel').textContent = p ? p.family + ' · ' + p.mode : 'Aurora Web desktop';
+    const allowedBackgrounds = new Set(['chimera-hero-3840x2160.svg','octavian-celestial-octopus-3840x2160.svg','marine-desktop.svg']);
+    const desktop = document.querySelector('.aurora3d');
+    if (desktop && p && allowedBackgrounds.has(p.background)) {
+      desktop.style.backgroundImage = 'linear-gradient(180deg,rgba(3,9,20,.42),rgba(2,7,15,.3)),url("' + p.background + '")';
+      desktop.style.backgroundPosition = 'center'; desktop.style.backgroundSize = 'cover';
+    }
+    if (desktop && p && p.id === 'aurora-native') {
+      const saved = localStorage.getItem('chimera.desktop.background');
+      if (allowedBackgrounds.has(saved)) desktop.style.backgroundImage = 'linear-gradient(180deg,rgba(3,9,20,.42),rgba(2,7,15,.3)),url("' + saved + '")';
+    }
   }
 
   function app(name) {
