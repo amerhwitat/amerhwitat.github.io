@@ -1,7 +1,7 @@
 {
   "schema": "repository-enhancements-status/v1",
-  "updated_utc": "2026-10-19T16:00:00Z",
-  "publication_note": "The desktop application ecosystem and preview/host-launcher increment is committed to both open draft source PRs. On the current heads, Chimera preview, native desktop suite, repository validation, Arabic compatibility and power/interaction checks passed; Octavian preview, native desktop suite and boot-routing contracts passed. Website catalog validation is running on the status branch; Pages deployment is intentionally skipped for PR validation. No production third-party package set or OS release is claimed.",
+  "updated_utc": "2026-10-19T16:10:00Z",
+  "publication_note": "The application ecosystem catalog and preview/host-launcher changes are committed to both open draft source PRs and this website status branch. On current source heads, both preview suites and native desktop suites passed; Chimera repository validation and Octavian boot-routing/artwork checks passed. Static catalog validation passed on run #39248362535. The latest status-page validation is pending and Pages deployment is skipped for the PR branch. No production third-party package set or OS release is claimed.",
   "repositories": [
     {
       "name": "ChimeraIIOS",
@@ -219,7 +219,7 @@
         },
         {
           "name": "Cross-platform desktop parity preview and native GTK shell improvements",
-          "status": "draft_pr_preview_native_suite_and_boot_contracts_passed",
+          "status": "draft_pr_preview_native_suite_and_contract_checks_passed",
           "pr": 79,
           "url": "https://github.com/amerhwitat/OctavianOS/pull/79",
           "head": "e974c3a8a952b0bbdbd2a84a33b787eef34f2f98",
@@ -236,7 +236,7 @@
             },
             {
               "name": "Desktop artwork and layout contracts",
-              "result": "in_progress",
+              "result": "success",
               "url": "https://github.com/amerhwitat/OctavianOS/actions/runs/39248006387"
             },
             {
@@ -294,8 +294,7 @@
         "Python Application Hub indexes 15 repositories and 62 application areas as migration inventory, not completed ports.",
         "Super Flash & ISO Tool implements image hashing and guarded USB raw writing with boot/system disk exclusion, typed confirmation, capacity checks and optional read-back verification; generic phone ROM flashing is not supported.",
         "Desktop Application Ecosystem catalog added on the status branch: 43 third-party app candidates and six browser-preview apps; website validation and Pages deployment still need confirmation.",
-        "Desktop Application Ecosystem page and JSON are on the open status branch; the static catalog validation was still in progress at the last poll. The Pages workflow's validate-site job passed but its deploy job was skipped because this is a PR branch.",
-        "Desktop Application Ecosystem page and JSON are committed on the open status branch; static catalog validation is in progress. Pages validation is running, while the deploy job is skipped for the PR branch."
+        "Desktop Application Ecosystem page and JSON are on PR #58's status branch. Static catalog validation passed in run #39248362535; the latest status-page validation workflow #39248362238 is pending, and its deploy job is skipped for the PR branch."
       ],
       "latest_native_ci_run": {
         "name": "Chimera II Native CI",
@@ -338,7 +337,7 @@
         "web": "https://amerhwitat.github.io/apps/desktop-app-catalog/",
         "source": "https://github.com/amerhwitat/amerhwitat.github.io/tree/docs/update-koronos-dbus-userspace-status/apps/desktop-app-catalog",
         "source_pr": "https://github.com/amerhwitat/amerhwitat.github.io/pull/58",
-        "status": "committed_to_status_branch_static_validation_in_progress_pages_deploy_skipped_for_pr",
+        "status": "static_catalog_validation_passed_latest_status_refresh_validation_pending_pages_deploy_skipped_for_pr",
         "third_party_catalog_entries": 43,
         "built_in_browser_preview_apps": 6,
         "app_categories": [
@@ -355,8 +354,8 @@
           "Upstream apps are not automatically bundled or certified runnable.",
           "Browser preview apps are not native Koronos packages."
         ],
-        "validation": "https://github.com/amerhwitat/amerhwitat.github.io/actions/runs/39248142151",
-        "pages_workflow": "https://github.com/amerhwitat/amerhwitat.github.io/actions/runs/39248142159"
+        "validation": "https://github.com/amerhwitat/amerhwitat.github.io/actions/runs/39248362535",
+        "pages_workflow": "https://github.com/amerhwitat/amerhwitat.github.io/actions/runs/39248362238"
       }
     }
   ]
