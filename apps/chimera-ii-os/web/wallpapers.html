@@ -21,12 +21,16 @@
   const buttons = document.querySelectorAll('[data-background]');
   buttons.forEach((button) => button.addEventListener('click', () => {
     const asset = button.getAttribute('data-background');
+    if (!['chimera-hero-3840x2160.svg','octavian-celestial-octopus-3840x2160.svg','marine-desktop.svg'].includes(asset)) return;
+    localStorage.setItem('chimera.desktop.background', asset);
+    window.dispatchEvent(new CustomEvent('chimera-background-change', {detail:{asset}}));
     document.body.style.backgroundImage = 'linear-gradient(180deg,rgba(3,9,18,.68),rgba(3,9,18,.86)),url("' + asset + '")';
     document.body.classList.add('wallpaper-preview');
     buttons.forEach((item) => item.setAttribute('aria-pressed', String(item === button)));
   }));
   document.getElementById('clear-background').addEventListener('click', () => {
     document.body.style.backgroundImage = '';
+    localStorage.removeItem('chimera.desktop.background');
     document.body.classList.remove('wallpaper-preview');
     buttons.forEach((item) => item.setAttribute('aria-pressed', 'false'));
   });
