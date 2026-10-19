@@ -4,6 +4,12 @@
 
 This repository hosts the public web surface for Amer Hwitat's open research projects, including the Chimera II OS ecosystem.
 
+## Desktop evolution and GUI migration
+
+- **[Desktop Evolution Lab](apps/desktop-evolution/index.html):** interactive Aurora/Marine desktop feature planner covering broad desktop interaction patterns from Windows 3.1/3.11 through current and future-era concepts. It exports a local JSON planning file and does not claim to enable native OS features.
+- **[Portfolio GUI migration plan](docs/PORTFOLIO_GUI_MIGRATION.md):** architecture and acceptance guidance for Angular/TypeScript, Next.js/TypeScript, Spring Boot APIs, JavaFX/Swing, Python GUI ports, and native-code web bridges.
+- **Desktop identities:** retain **Aurora Wayland Glass Desktop** and **Marine Desktop** across ChimeraIIOS and OctavianOS.
+
 ## Complete source-code citation index
 
 | Area | Source |
