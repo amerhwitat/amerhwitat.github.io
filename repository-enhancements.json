@@ -1,6 +1,6 @@
 {
   "schema": "repository-enhancements-status/v1",
-  "updated_utc": "2026-10-19T13:20:00Z",
+  "updated_utc": "2026-10-19T13:25:00Z",
   "publication_note": "Status links and review artifacts are published here. Open/draft PRs are not represented as merged releases; CI success is not equivalent to native userspace readiness.",
   "repositories": [
     {
@@ -114,7 +114,7 @@
         },
         {
           "name": "Cross-platform desktop parity preview and native GTK shell improvements",
-          "status": "draft_pr_preview_passed_native_ci_in_progress",
+          "status": "draft_pr_preview_native_ci_and_gate_tests_passed",
           "pr": 156,
           "url": "https://github.com/amerhwitat/ChimeraIIOS/pull/156",
           "head": "b08ad2184d4e64a91de1a320bd63fc55858eba3f",
@@ -126,7 +126,7 @@
             },
             {
               "name": "Native Desktop Suite Build and acceptance-contract tests",
-              "result": "in_progress",
+              "result": "success",
               "url": "https://github.com/amerhwitat/ChimeraIIOS/actions/runs/39245086659"
             },
             {
@@ -209,19 +209,19 @@
         },
         {
           "name": "Cross-platform desktop parity preview and native GTK shell improvements",
-          "status": "draft_pr_native_ci_in_progress_preview_queued",
+          "status": "draft_pr_preview_native_ci_and_gate_tests_passed",
           "pr": 79,
           "url": "https://github.com/amerhwitat/OctavianOS/pull/79",
           "head": "20c5d9906842ba43ff2f0d2ec151d658cbb9f8d7",
           "checks": [
             {
               "name": "Desktop parity preview checks",
-              "result": "queued",
+              "result": "success",
               "url": "https://github.com/amerhwitat/OctavianOS/actions/runs/39245097181"
             },
             {
               "name": "Native Desktop Suite Build and acceptance-contract tests",
-              "result": "in_progress",
+              "result": "success",
               "url": "https://github.com/amerhwitat/OctavianOS/actions/runs/39245097160"
             }
           ],
