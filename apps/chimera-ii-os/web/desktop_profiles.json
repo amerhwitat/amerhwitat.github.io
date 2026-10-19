@@ -1,8 +1,14 @@
 {
   "schema": "chimera-desktop-profiles/v1",
   "default": "aurora-native",
+  "backgrounds": [
+    {"id":"aurora-horizon","title":"Infinite Research Horizon","asset":"chimera-hero-3840x2160.svg","family":"Aurora"},
+    {"id":"celestial-octopus","title":"Celestial Octopus Aurora","asset":"octavian-celestial-octopus-3840x2160.svg","family":"Aurora"},
+    {"id":"marine-ocean","title":"Marine Ocean Glass","asset":"marine-desktop.svg","family":"Marine"}
+  ],
   "profiles": [
-    {"id":"aurora-native","title":"Aurora Wayland Glass","family":"Aurora","mode":"native-or-web","description":"Chimera II native glass desktop and browser-compatible shell."},
+    {"id":"aurora-native","title":"Aurora Wayland Glass","family":"Aurora","mode":"native-or-web","background":"chimera-hero-3840x2160.svg","description":"Chimera II native glass desktop and browser-compatible shell with the Infinite Research Horizon artwork."},
+    {"id":"marine-desktop","title":"Marine Desktop","family":"Marine","mode":"web-shell","background":"marine-desktop.svg","description":"A Windows-inspired desktop shell with ocean-glass panels and coordinated marine artwork."},
     {"id":"linux-gnome","title":"Ubuntu / GNOME","family":"Linux","mode":"session-adapter","description":"GNOME Shell profile for Ubuntu and GNOME-based distributions."},
     {"id":"linux-kde-plasma","title":"KDE Plasma","family":"Linux","mode":"session-adapter","description":"KDE Plasma profile for Plasma-based Linux installations."},
     {"id":"linux-xfce","title":"Xfce","family":"Linux","mode":"session-adapter","description":"Lightweight Xfce desktop profile."},
