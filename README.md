@@ -7,6 +7,7 @@ This repository hosts the public web surface for Amer Hwitat's open research pro
 ## Desktop evolution and GUI migration
 
 - **[Desktop Evolution Lab](apps/desktop-evolution/index.html):** interactive Aurora/Marine desktop feature planner covering broad desktop interaction patterns from Windows 3.1/3.11 through current and future-era concepts. It exports a local JSON planning file and does not claim to enable native OS features.
+- **[Portfolio GUI Migration Dashboard](apps/portfolio-migration/index.html):** filterable cross-repository inventory of application migration candidates, target technologies and explicit verification states.
 - **[Portfolio GUI migration plan](docs/PORTFOLIO_GUI_MIGRATION.md):** architecture and acceptance guidance for Angular/TypeScript, Next.js/TypeScript, Spring Boot APIs, JavaFX/Swing, Python GUI ports, and native-code web bridges.
 - **Desktop identities:** retain **Aurora Wayland Glass Desktop** and **Marine Desktop** across ChimeraIIOS and OctavianOS.
 
@@ -44,17 +45,17 @@ The `apple/` directory contains a native SwiftUI/Xcode companion shell for iOS/i
 ## Chimera II OS public research index
 
 - **Public index:** `chimera/index.html`
-- **Complete portfolio summary:** `https://github.com/amerhwitat/ChimeraIIOS/blob/main/docs/CHIMERA_ECOSYSTEM_PORTFOLIO.md`
-- **Canonical OS source:** `https://github.com/amerhwitat/ChimeraIIOS`
-- **Mobile/embedded integration:** `https://github.com/amerhwitat/general`
-- **CPU research:** `https://github.com/amerhwitat/CPU4096`
-- **CPU simulator:** `https://github.com/amerhwitat/CPU4096Simulator`
-- **Python integration:** `https://github.com/amerhwitat/test`
-- **Java track:** `https://github.com/amerhwitat/keygen`
-- **NLP:** `https://github.com/amerhwitat/nlp`
-- **PDF research:** `https://github.com/amerhwitat/PDFreaderPY`
-- **Crypto research:** `https://github.com/amerhwitat/eth-key-check` and `https://github.com/amerhwitat/bruteforce`
-- **Graphics/application tracks:** `https://github.com/amerhwitat/BizX` and `https://github.com/amerhwitat/BizXtreme`
+- **Complete portfolio summary:** https://github.com/amerhwitat/ChimeraIIOS/blob/main/docs/CHIMERA_ECOSYSTEM_PORTFOLIO.md
+- **Canonical OS source:** https://github.com/amerhwitat/ChimeraIIOS
+- **Mobile/embedded integration:** https://github.com/amerhwitat/general
+- **CPU research:** https://github.com/amerhwitat/CPU4096
+- **CPU simulator:** https://github.com/amerhwitat/CPU4096Simulator
+- **Python integration:** https://github.com/amerhwitat/test
+- **Java track:** https://github.com/amerhwitat/keygen
+- **NLP:** https://github.com/amerhwitat/nlp
+- **PDF research:** https://github.com/amerhwitat/PDFreaderPY
+- **Crypto research:** https://github.com/amerhwitat/eth-key-check and https://github.com/amerhwitat/bruteforce
+- **Graphics/application tracks:** https://github.com/amerhwitat/BizX and https://github.com/amerhwitat/BizXtreme
 
 ## Portfolio-wide 128D + authenticated P2P
 
