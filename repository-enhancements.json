@@ -1,6 +1,6 @@
 {
   "schema": "repository-enhancements-status/v1",
-  "updated_utc": "2026-10-19T11:10:00Z",
+  "updated_utc": "2026-10-19T13:00:00Z",
   "publication_note": "Status links and review artifacts are published here. Open/draft PRs are not represented as merged releases; CI success is not equivalent to native userspace readiness.",
   "repositories": [
     {
@@ -114,7 +114,7 @@
         },
         {
           "name": "Cross-platform desktop parity preview and native GTK shell improvements",
-          "status": "draft_pr_preview_ci_passed_native_ci_in_progress",
+          "status": "draft_pr_preview_ci_and_native_ci_passed",
           "pr": 156,
           "url": "https://github.com/amerhwitat/ChimeraIIOS/pull/156",
           "head": "0ccf85322f0d63896f675e3c468b3adcba54d498",
@@ -126,16 +126,16 @@
             },
             {
               "name": "Native Desktop Suite Build",
-              "result": "in_progress",
+              "result": "success",
               "url": "https://github.com/amerhwitat/ChimeraIIOS/actions/runs/39241738934"
             }
           ],
           "limits": [
             "Draft PR; not merged.",
             "Browser preview remains explicitly non-native (nativeSessionAdapter=false).",
-            "Native GTK compile/smoke tests do not establish a production Koronos desktop session or full Windows/Linux/BSD/macOS feature parity.",
             "Six-case production userspace acceptance, Aurora handoff, installer, Recovery, and AP-backed SMP remain separate release gates.",
-            "Host GTK shell now tracks and reaps launched host child processes via GLib child-watch callbacks; this is not a Koronos-native session manager."
+            "Host GTK shell now tracks and reaps launched host child processes via GLib child-watch callbacks; this is not a Koronos-native session manager.",
+            "Native GTK compile and headless smoke tests passed on this draft head; this does not establish a production Koronos desktop session or full Windows/Linux/BSD/macOS feature parity."
           ]
         }
       ],
@@ -203,7 +203,7 @@
         },
         {
           "name": "Cross-platform desktop parity preview and native GTK shell improvements",
-          "status": "draft_pr_preview_ci_passed_native_ci_queued",
+          "status": "draft_pr_preview_ci_and_native_ci_passed",
           "pr": 79,
           "url": "https://github.com/amerhwitat/OctavianOS/pull/79",
           "head": "2f27a097a1598d20ed1325234a27b5522b2a3747",
@@ -215,7 +215,7 @@
             },
             {
               "name": "Octavian Native Desktop Suite Build",
-              "result": "queued",
+              "result": "success",
               "url": "https://github.com/amerhwitat/OctavianOS/actions/runs/39241751037"
             }
           ],
@@ -223,9 +223,9 @@
             "Draft PR; not merged.",
             "An earlier preview check failed because Aurora lacked an explicit Preview only label; the label was added and the subsequent preview run passed.",
             "Browser preview remains explicitly non-native (nativeSessionAdapter=false).",
-            "Native GTK compile/smoke tests do not establish a production Koronos desktop session or full Windows/Linux/BSD/macOS feature parity.",
             "Six-case production userspace acceptance, Aurora handoff, installer, Recovery, and AP-backed SMP remain separate release gates.",
-            "Host GTK shell now tracks and reaps launched host child processes via GLib child-watch callbacks; this is not a Koronos-native session manager."
+            "Host GTK shell now tracks and reaps launched host child processes via GLib child-watch callbacks; this is not a Koronos-native session manager.",
+            "Native GTK compile and headless smoke tests passed on this draft head; this does not establish a production Koronos desktop session or full Windows/Linux/BSD/macOS feature parity."
           ]
         }
       ],
