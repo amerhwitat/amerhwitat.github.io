@@ -42,6 +42,13 @@ jobs:
           npm run build
           test -s dist/index.html
           rm -rf node_modules
+      - name: Launch and exercise OctavianOS browser application prototypes
+        working-directory: apps/octavianos
+        run: |
+          npm install --no-save --no-package-lock playwright
+          npx playwright install --with-deps chromium
+          APP_DIR=. node browser-smoke.mjs
+          rm -rf node_modules
       - name: Test site-local link resolution
         run: python3 -m unittest scripts/test_check_site_links.py
       - name: Validate every app catalog destination
