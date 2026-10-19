@@ -1,6 +1,6 @@
 {
   "schema": "repository-enhancements-status/v1",
-  "updated_utc": "2026-10-19T09:30:00Z",
+  "updated_utc": "2026-10-19T09:35:00Z",
   "publication_note": "Status links and review artifacts are published here. Open/draft PRs are not represented as merged releases; CI success is not equivalent to native userspace readiness.",
   "repositories": [
     {
@@ -202,7 +202,7 @@
         },
         {
           "name": "Cross-platform desktop parity preview and native GTK shell improvements",
-          "status": "draft_pr_preview_ci_passed_native_ci_in_progress",
+          "status": "draft_pr_preview_ci_passed_native_ci_passed",
           "pr": 79,
           "url": "https://github.com/amerhwitat/OctavianOS/pull/79",
           "head": "ef4cc363f9780258c7204fb251399ebf9d234131",
@@ -219,7 +219,7 @@
             },
             {
               "name": "Octavian Native Desktop Suite Build",
-              "result": "in_progress",
+              "result": "success",
               "url": "https://github.com/amerhwitat/OctavianOS/actions/runs/39233457967"
             }
           ],
