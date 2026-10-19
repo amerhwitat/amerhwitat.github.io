@@ -1,6 +1,6 @@
 html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#06101e;color:#f2f7ff;font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
 :root{--glass:rgba(9,18,35,.58);--line:rgba(220,240,255,.16);--muted:#aebed0;--cyan:#55d7ff;--violet:#9a73ff}
-.aurora3d{position:fixed;inset:0;overflow:hidden;background:#071321 url("aurora-desktop-background.svg") center/cover no-repeat}
+.aurora3d{position:fixed;inset:0;overflow:hidden;background:#071321 url("chimera-hero-3840x2160.svg") center/cover no-repeat}
 .aurora3d:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(3,9,20,.55) 0%,rgba(5,11,23,.08) 34%,rgba(2,7,15,.28) 100%);pointer-events:none}
 .aurora3d canvas{position:absolute;inset:0;width:100%;height:100%;display:block;opacity:.18;mix-blend-mode:screen}
 .desktop-ui{position:absolute;inset:0;pointer-events:none;z-index:2}
@@ -48,3 +48,7 @@ button,input{font:inherit;color:inherit}
 .aurora-statusbar{position:absolute;left:18px;right:18px;bottom:86px;height:30px;padding:0 11px;border:1px solid rgba(190,225,255,.1);border-radius:999px;background:rgba(3,9,19,.42);backdrop-filter:blur(12px);display:flex;align-items:center;gap:8px;color:#9fb6ca;font-size:10px;z-index:4;pointer-events:none}
 .status-dot{width:6px;height:6px;border-radius:50%;background:#67e8c1;box-shadow:0 0 10px #67e8c1}.status-dot.busy{background:#67cfff;box-shadow:0 0 10px #67cfff}.status-dot.warn{background:#ffd166;box-shadow:0 0 10px #ffd166}.aurora-statusbar #statusHint{margin-left:auto;color:#6f879b}
 @media(max-width:650px){.aurora-control{left:12px;right:12px;top:62px;width:auto}.aurora-statusbar{bottom:72px;font-size:9px}.aurora-statusbar #statusHint{display:none}}
+
+/* Direct entry to the shared high-resolution wallpaper library. */
+.wallpaper-launch-link{pointer-events:auto;position:absolute;right:18px;bottom:12px;z-index:10;padding:9px 13px;border:1px solid rgba(190,225,255,.32);border-radius:12px;background:rgba(7,19,36,.78);backdrop-filter:blur(18px);color:#dff7ff;text-decoration:none;font-size:12px;box-shadow:0 8px 24px rgba(0,0,0,.35)}.wallpaper-launch-link:hover,.wallpaper-launch-link:focus-visible{background:rgba(27,62,94,.9);outline:2px solid #8bd6ff;outline-offset:2px}
+@media(max-width:620px){.wallpaper-launch-link{right:8px;bottom:72px}}
