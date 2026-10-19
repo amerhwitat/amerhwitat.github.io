@@ -31,6 +31,7 @@
     const button = event.target.closest('[data-profile]');
     if (!button || !catalog) return;
     localStorage.setItem(STORAGE_KEY, button.dataset.profile);
+    if (button.dataset.profile === 'marine-desktop') { window.location.href = 'marine_desktop.html'; return; }
     window.dispatchEvent(new CustomEvent('chimera-desktop-change', {
       detail: { id: button.dataset.profile }
     }));
