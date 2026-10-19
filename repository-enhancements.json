@@ -1,6 +1,6 @@
 {
   "schema": "repository-enhancements-status/v1",
-  "updated_utc": "2026-10-18T06:20:00Z",
+  "updated_utc": "2026-10-19T09:30:00Z",
   "publication_note": "Status links and review artifacts are published here. Open/draft PRs are not represented as merged releases; CI success is not equivalent to native userspace readiness.",
   "repositories": [
     {
@@ -111,6 +111,31 @@
           "limits": [
             "Address-space, physical-frame, TSS/syscall, timer timeout, and user launch work remains subject to native kernel and QEMU acceptance."
           ]
+        },
+        {
+          "name": "Cross-platform desktop parity preview and native GTK shell improvements",
+          "status": "draft_pr_preview_ci_passed_native_ci_passed",
+          "pr": 156,
+          "url": "https://github.com/amerhwitat/ChimeraIIOS/pull/156",
+          "head": "6f86dc05c69b9c4186260e0ffc2baaf6dffb50e8",
+          "checks": [
+            {
+              "name": "Desktop parity preview checks",
+              "result": "success",
+              "url": "https://github.com/amerhwitat/ChimeraIIOS/actions/runs/39227928970"
+            },
+            {
+              "name": "Native Desktop Suite Build",
+              "result": "success",
+              "url": "https://github.com/amerhwitat/ChimeraIIOS/actions/runs/39227928781"
+            }
+          ],
+          "limits": [
+            "Draft PR; not merged.",
+            "Browser preview remains explicitly non-native (nativeSessionAdapter=false).",
+            "Native GTK compile/smoke tests do not establish a production Koronos desktop session or full Windows/Linux/BSD/macOS feature parity.",
+            "Six-case production userspace acceptance, Aurora handoff, installer, Recovery, and AP-backed SMP remain separate release gates."
+          ]
         }
       ],
       "existing_artifacts": [
@@ -173,6 +198,37 @@
             "GitHub currently reports mergeable=false.",
             "Native kernel build workflow fails at full-ISO QEMU smoke: no debugcon output after 25 seconds (QEMU exit 124).",
             "Candidate ISO is review-only until root cause is fixed and the full ISO reaches KORONOS READY."
+          ]
+        },
+        {
+          "name": "Cross-platform desktop parity preview and native GTK shell improvements",
+          "status": "draft_pr_preview_ci_passed_native_ci_in_progress",
+          "pr": 79,
+          "url": "https://github.com/amerhwitat/OctavianOS/pull/79",
+          "head": "ef4cc363f9780258c7204fb251399ebf9d234131",
+          "checks": [
+            {
+              "name": "Desktop parity preview checks (after Preview only label fix)",
+              "result": "success",
+              "url": "https://github.com/amerhwitat/OctavianOS/actions/runs/39233458198"
+            },
+            {
+              "name": "Desktop artwork and layout contracts",
+              "result": "success",
+              "url": "https://github.com/amerhwitat/OctavianOS/actions/runs/39233457949"
+            },
+            {
+              "name": "Octavian Native Desktop Suite Build",
+              "result": "in_progress",
+              "url": "https://github.com/amerhwitat/OctavianOS/actions/runs/39233457967"
+            }
+          ],
+          "limits": [
+            "Draft PR; not merged.",
+            "An earlier preview check failed because Aurora lacked an explicit Preview only label; the label was added and the subsequent preview run passed.",
+            "Browser preview remains explicitly non-native (nativeSessionAdapter=false).",
+            "Native GTK compile/smoke tests do not establish a production Koronos desktop session or full Windows/Linux/BSD/macOS feature parity.",
+            "Six-case production userspace acceptance, Aurora handoff, installer, Recovery, and AP-backed SMP remain separate release gates."
           ]
         }
       ],
