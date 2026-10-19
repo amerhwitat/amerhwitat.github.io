@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#062b45">
+<meta name="description" content="Marine Desktop, the ocean-glass Windows-inspired desktop profile for Chimera II OS.">
+<title>Marine Desktop — Chimera II OS</title>
+<link rel="stylesheet" href="marine_desktop.css">
+</head>
+<body>
+<main class="marine" id="marineDesktop">
+  <header class="topbar">
+    <a class="brand" href="index.html" aria-label="Chimera II home"><span class="brand-mark">M</span><span><b>MARINE</b><small>CHIMERA II DESKTOP</small></span></a>
+    <div class="search"><span>⌕</span><input id="appSearch" type="search" placeholder="Search apps, files and settings" aria-label="Search desktop apps"></div>
+    <div class="tray"><span class="network">◉ Connected</span><button id="wallpaperToggle" type="button">Backgrounds</button><a href="desktop_switcher.html">Switch desktop</a><time id="clock">--:--</time></div>
+  </header>
+  <section class="desktop-area" aria-label="Marine desktop">
+    <div class="desktop-icons">
+      <a class="desktop-icon" href="index.html"><span class="icon tile-home">⌂</span><span>Home</span></a>
+      <a class="desktop-icon" href="artifact-library.html"><span class="icon tile-files">▤</span><span>Files</span></a>
+      <a class="desktop-icon" href="aurora_terminal.html"><span class="icon tile-terminal">›_</span><span>Terminal</span></a>
+      <a class="desktop-icon" href="system_control_center.html"><span class="icon tile-settings">⚙</span><span>Settings</span></a>
+      <a class="desktop-icon" href="aurora_3d_desktop.html"><span class="icon tile-aurora">✧</span><span>Aurora Glass</span></a>
+    </div>
+    <section class="welcome glass">
+      <p class="eyebrow">OCEAN GLASS · DESKTOP PROFILE</p>
+      <h1>Find your flow.</h1>
+      <p>Marine Desktop brings a calm, deep-water palette, translucent windows and the Chimera II application workspace together.</p>
+      <div class="actions"><a class="primary" href="index.html">Open Chimera workspace</a><button id="chooseBackground" type="button">Choose background</button></div>
+      <p class="notice">Web desktop shell · native OS services require a running system integration.</p>
+    </section>
+    <aside class="background-panel glass hidden" id="backgroundPanel" aria-label="Desktop backgrounds">
+      <div class="panel-heading"><div><p class="eyebrow">PERSONALIZATION</p><h2>Desktop backgrounds</h2></div><button id="closeBackgrounds" aria-label="Close backgrounds">×</button></div>
+      <button class="background-choice" data-background="marine-desktop.svg"><img src="marine-desktop.svg" alt=""><span><b>Marine Ocean Glass</b><small>Original marine artwork</small></span></button>
+      <button class="background-choice" data-background="chimera-hero-3840x2160.svg"><img src="chimera-hero-3840x2160.svg" alt=""><span><b>Infinite Research Horizon</b><small>Cosmic aurora and fractured glass</small></span></button>
+      <button class="background-choice" data-background="octavian-celestial-octopus-3840x2160.svg"><img src="octavian-celestial-octopus-3840x2160.svg" alt=""><span><b>Celestial Octopus Aurora</b><small>Deep space and luminous tentacles</small></span></button>
+    </aside>
+    <section class="start-menu glass hidden" id="startMenu" aria-label="Start menu">
+      <div class="start-title"><span class="brand-mark">M</span><div><b>Marine Desktop</b><small>Applications</small></div></div>
+      <a href="index.html">All Chimera applications <span>↗</span></a>
+      <a href="desktop_switcher.html">Desktop profiles <span>↗</span></a>
+      <a href="wallpapers.html">Wallpaper gallery <span>↗</span></a>
+      <a href="userspace-acceptance.html">Production acceptance status <span>↗</span></a>
+    </section>
+  </section>
+  <footer class="taskbar">
+    <button id="startButton" class="start-button" aria-expanded="false" aria-controls="startMenu"><span class="brand-mark">M</span><b>Start</b></button>
+    <a class="taskbar-app active" href="index.html">⌂ <span>Workspace</span></a>
+    <a class="taskbar-app" href="aurora_3d_desktop.html">✧ <span>Aurora</span></a>
+    <span class="taskbar-spacer"></span><span class="taskbar-label">Marine Desktop · Web shell</span>
+  </footer>
+</main>
+<script src="marine_desktop.js"></script>
+</body>
+</html>
