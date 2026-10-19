@@ -10,6 +10,7 @@ const apps = [
   { icon: "🧩", name: "App Library", description: "Browse the portfolio app catalog.", href: "https://amerhwitat.github.io/apps/repository-app-explorer/" },
   { icon: "🧰", name: "Application Center", description: "Search paint tools, media players, games, office apps and developer tools.", href: "https://amerhwitat.github.io/apps/octavianos/application-center.html" },
   { icon: "🎨", name: "Paint Studio", description: "Draw with a pen, shapes and eraser; undo, import images and export PNG.", href: "https://amerhwitat.github.io/apps/octavianos/paint-studio.html" },
+  { icon: "🎬", name: "Media Deck", description: "Play local audio and video with a queue, volume and playback speed.", href: "https://amerhwitat.github.io/apps/octavianos/media-deck.html" },
   { icon: "🌊", name: "Marine", description: "Open the Marine desktop web preview.", href: "https://amerhwitat.github.io/apps/octavianos/marine/index.html" },
   { icon: "✨", name: "Aurora", description: "Open the Aurora Wayland Glass desktop web preview.", href: "https://amerhwitat.github.io/apps/octavianos/aurora/index.html" },
   { icon: "📊", name: "System Monitor", description: "Open the hosted system health dashboard.", href: "https://amerhwitat.github.io/apps/chimera-ii-os/web/health.html" },
