@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="High-resolution Chimera II OS and OctavianOS desktop wallpapers. Preview, apply as page background, or download original 4K SVG artwork.">
+<meta name="theme-color" content="#07111f"><title>Aurora Wallpapers — Chimera II OS</title>
+<link rel="stylesheet" href="style.css"><link rel="stylesheet" href="wallpapers.css">
+</head>
+<body><a class="skip-link" href="#main">Skip to wallpapers</a>
+<header class="site-header"><div class="shell header-inner"><div><p class="eyebrow">AURORA ARTWORK LIBRARY</p><h1>DESKTOP WALLPAPERS</h1><p>Original 4K scalable artwork for desktop previews and web UI backgrounds</p></div>
+<nav aria-label="Primary navigation"><a href="index.html">Chimera II OS</a><a href="aurora_3d_desktop.html">3D Desktop</a><a href="userspace-acceptance.html">Userspace Acceptance</a></nav></div></header>
+<main id="main" class="shell wallpaper-main"><section class="wallpaper-intro"><p class="eyebrow">3840 × 2160 · 16:9 · SVG</p><h2>Choose your horizon</h2><p>Preview each wallpaper on this page or download the original vector artwork. Applying a preview changes only this page’s background; it does not alter your operating-system wallpaper.</p><p><button id="clear-background" type="button">Clear preview background</button></p></section>
+<section class="wallpaper-grid" aria-label="Available wallpapers">
+<article class="wallpaper-card"><img src="chimera-hero-3840x2160.svg" alt="Infinite Research Horizon: cosmic aurora, translucent cubes, mountain lake and luminous research lattice" loading="lazy"><div class="wallpaper-copy"><h3>Infinite Research Horizon</h3><p>Chimera II OS · cosmic aurora, fractured glass and mountain lake</p><div class="wallpaper-actions"><button type="button" data-background="chimera-hero-3840x2160.svg">Preview background</button><a href="chimera-hero-3840x2160.svg" download>Download SVG</a></div></div></article>
+<article class="wallpaper-card"><img src="chimera-infinite-research-horizon-3840x2160.svg" alt="Chimera II OS research horizon with aurora ribbons, translucent cubes and abstract data lattice" loading="lazy"><div class="wallpaper-copy"><h3>Infinite Research Horizon — 4K</h3><p>Chimera II OS · original 3840 × 2160 desktop wallpaper</p><div class="wallpaper-actions"><button type="button" data-background="chimera-infinite-research-horizon-3840x2160.svg">Preview background</button><a href="chimera-infinite-research-horizon-3840x2160.svg" download>Download SVG</a></div></div></article>
+<article class="wallpaper-card"><img src="octavian-celestial-octopus-3840x2160.svg" alt="OctavianOS celestial octopus aurora landscape in a luminous science-fiction palette" loading="lazy"><div class="wallpaper-copy"><h3>Celestial Octopus Aurora — 4K</h3><p>OctavianOS · celestial octopus motifs, glassy aurora and deep space</p><div class="wallpaper-actions"><button type="button" data-background="octavian-celestial-octopus-3840x2160.svg">Preview background</button><a href="octavian-celestial-octopus-3840x2160.svg" download>Download SVG</a></div></div></article>
+</section><p class="wallpaper-note">Artwork source: original project SVGs. SVG files scale cleanly to different screen sizes. Firmware splash screens may require separate rasterized derivatives and packaging.</p></main>
+<footer><div class="shell footer-inner"><span>Chimera II OS · Aurora Wayland Glass</span><a href="../../../project-updates.html">Build &amp; Release Status</a></div></footer>
+<script>
+(() => {
+  const buttons = document.querySelectorAll('[data-background]');
+  buttons.forEach((button) => button.addEventListener('click', () => {
+    const asset = button.getAttribute('data-background');
+    document.body.style.backgroundImage = 'linear-gradient(180deg,rgba(3,9,18,.68),rgba(3,9,18,.86)),url("' + asset + '")';
+    document.body.classList.add('wallpaper-preview');
+    buttons.forEach((item) => item.setAttribute('aria-pressed', String(item === button)));
+  }));
+  document.getElementById('clear-background').addEventListener('click', () => {
+    document.body.style.backgroundImage = '';
+    document.body.classList.remove('wallpaper-preview');
+    buttons.forEach((item) => item.setAttribute('aria-pressed', 'false'));
+  });
+})();
+</script></body></html>
