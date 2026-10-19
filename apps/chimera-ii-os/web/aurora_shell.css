@@ -1,3 +1,50 @@
 .aurora-launch-dock{position:fixed;z-index:99;left:18px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:7px;padding:9px;border:1px solid rgba(170,215,255,.18);border-radius:20px;background:rgba(9,20,35,.68);backdrop-filter:blur(24px);box-shadow:0 20px 60px #0008}.aurora-launch-dock b,.aurora-launch-dock button{width:44px;height:44px;display:grid;place-items:center;border:0;border-radius:13px;color:#e8f7ff;background:rgba(255,255,255,.05);cursor:pointer;font-weight:800}.aurora-launch-dock b{background:linear-gradient(135deg,#63b8ff,#9c7cff)}.aurora-launch-dock button:hover{background:rgba(99,184,255,.16);transform:scale(1.08)}
 body[data-desktop="linux-gnome"]{--desktop-accent:#e95420}body[data-desktop="linux-kde-plasma"]{--desktop-accent:#1d99f3}body[data-desktop="linux-xfce"]{--desktop-accent:#62a0ea}body[data-desktop="linux-cinnamon"]{--desktop-accent:#8b4513}body[data-desktop="linux-mate"]{--desktop-accent:#78a300}body[data-desktop="linux-lxqt"]{--desktop-accent:#0099cc}body[data-desktop="linux-budgie"]{--desktop-accent:#536878}body[data-desktop="linux-pantheon"]{--desktop-accent:#4a90e2}body[data-desktop="linux-deepin"]{--desktop-accent:#008cff}body[data-desktop="linux-enlightenment"]{--desktop-accent:#5b5be5}body[data-desktop="linux-cosmic"]{--desktop-accent:#6b4eff}body[data-desktop="windows-11"]{--desktop-accent:#0078d4}body[data-desktop="windows-10"]{--desktop-accent:#0078d4}body[data-desktop="windows-classic"]{--desktop-accent:#008080}body[data-desktop="retro-desktop"]{--desktop-accent:#ffcc00}.aurora-launch-dock{outline:2px solid color-mix(in srgb,var(--desktop-accent,#63b8ff) 28%,transparent)}
 @media(max-width:720px){.aurora-launch-dock{top:auto;bottom:16px;left:50%;transform:translateX(-50%);flex-direction:row}}
+
+/* Aurora tactile glass: beveled, chiseled controls with clear keyboard focus. */
+:root{
+  --aurora-edge:rgba(193,229,255,.32);
+  --aurora-highlight:rgba(255,255,255,.20);
+  --aurora-shadow:rgba(0,0,0,.56);
+  --aurora-face:linear-gradient(145deg,rgba(35,61,91,.92),rgba(9,19,35,.96));
+  --aurora-lift:0 1px 0 var(--aurora-highlight) inset,0 -2px 0 rgba(0,0,0,.32) inset,0 9px 18px var(--aurora-shadow),0 0 0 1px var(--aurora-edge);
+}
+:where(button,[role="button"],.status-pill,.site-header nav a,.menu-item,.aurora-menu a,.aurora-menu button,.desktop-card a,.desktop-card button,.launch-item){
+  position:relative;
+  border:1px solid var(--aurora-edge);
+  border-radius:12px;
+  background:var(--aurora-face);
+  box-shadow:var(--aurora-lift);
+  color:inherit;
+  text-decoration:none;
+  transition:transform .16s ease,box-shadow .16s ease,filter .16s ease,background .16s ease;
+  -webkit-tap-highlight-color:transparent;
+}
+:where(button,[role="button"],.status-pill,.site-header nav a,.menu-item,.aurora-menu a,.aurora-menu button,.desktop-card a,.desktop-card button,.launch-item){
+  text-shadow:0 1px 1px rgba(0,0,0,.6);
+}
+:where(button,[role="button"],.status-pill,.site-header nav a,.menu-item,.aurora-menu a,.aurora-menu button,.desktop-card a,.desktop-card button,.launch-item):hover{
+  filter:brightness(1.16) saturate(1.08);
+  transform:translateY(-2px);
+  box-shadow:0 1px 0 rgba(255,255,255,.28) inset,0 -2px 0 rgba(0,0,0,.25) inset,0 13px 24px rgba(0,0,0,.48),0 0 0 1px rgba(123,202,255,.58);
+}
+:where(button,[role="button"],.status-pill,.site-header nav a,.menu-item,.aurora-menu a,.aurora-menu button,.desktop-card a,.desktop-card button,.launch-item):active{
+  transform:translateY(1px) scale(.985);
+  box-shadow:0 1px 2px rgba(0,0,0,.4) inset,0 0 0 1px var(--aurora-edge);
+}
+:where(button,[role="button"],a,input,select,textarea,[tabindex]):focus-visible{
+  outline:3px solid #8bd6ff;
+  outline-offset:3px;
+}
+.site-header nav{gap:10px}
+.site-header nav a{display:inline-flex;align-items:center;justify-content:center;min-height:38px;padding:8px 13px}
+.status-pill{display:inline-flex;align-items:center;gap:8px;padding:11px 16px;background:linear-gradient(145deg,rgba(53,102,151,.95),rgba(15,34,61,.98));}
+.aurora-launch-dock{border-color:rgba(166,220,255,.34);background:linear-gradient(145deg,rgba(26,48,72,.88),rgba(5,13,25,.92));box-shadow:0 1px 0 rgba(255,255,255,.15) inset,0 22px 55px rgba(0,0,0,.62),0 0 28px rgba(86,173,255,.14)}
+.aurora-launch-dock button{border:1px solid rgba(190,225,255,.22);background:linear-gradient(145deg,rgba(255,255,255,.13),rgba(255,255,255,.025));box-shadow:0 1px 0 rgba(255,255,255,.18) inset,0 -2px 0 rgba(0,0,0,.28) inset,0 5px 10px rgba(0,0,0,.32)}
+.aurora-launch-dock b{border:1px solid rgba(255,255,255,.5);box-shadow:0 1px 0 rgba(255,255,255,.4) inset,0 -2px 0 rgba(0,0,0,.2) inset,0 6px 14px rgba(0,0,0,.35)}
+:where(.menu-item,.aurora-menu a,.aurora-menu button,.launch-item){padding:10px 13px}
+@media(prefers-reduced-motion:reduce){
+  :where(button,[role="button"],.status-pill,.site-header nav a,.menu-item,.aurora-menu a,.aurora-menu button,.desktop-card a,.desktop-card button,.launch-item){transition:none}
+  :where(button,[role="button"],.status-pill,.site-header nav a,.menu-item,.aurora-menu a,.aurora-menu button,.desktop-card a,.desktop-card button,.launch-item):hover{transform:none}
+}
