@@ -14,8 +14,8 @@
   "sourceSnapshots": [
     {
       "path": "apps/chimera-ii-os/web/aurora_apps.json",
-      "sha": "b59b73337b04fcfe239a408a818588fc16e51af2",
-      "entryCount": 44
+      "sha": "5f480e958b3a7b1f4e625f4a62cb4b482517c4d6",
+      "entryCount": 42
     },
     {
       "path": "search-index.json",
@@ -456,7 +456,7 @@
       "id": "aurora:amiga-center",
       "title": "Aurora Amiga Emulator Center",
       "category": "Chimera II",
-      "target": "../../../nlp-amiga/index.html",
+      "target": "/apps/nlp-amiga/index.html",
       "mode": "embedded",
       "executionClass": "embedded-web-app",
       "runtimeStatus": "catalogued-not-runtime-verified",
@@ -565,20 +565,6 @@
       }
     },
     {
-      "id": "aurora:desktop-switcher",
-      "title": "Desktop Switcher",
-      "category": "Desktop Environments",
-      "target": "desktop_switcher.html",
-      "mode": "embedded",
-      "executionClass": "embedded-web-app",
-      "runtimeStatus": "catalogued-not-runtime-verified",
-      "source": {
-        "repository": "amerhwitat/amerhwitat.github.io",
-        "path": "apps/chimera-ii-os/web/aurora_apps.json#categories[1].apps[0]",
-        "license": "not-audited"
-      }
-    },
-    {
       "id": "aurora:aurora",
       "title": "Aurora Wayland Glass",
       "category": "Desktop Environments",
@@ -588,7 +574,7 @@
       "runtimeStatus": "catalogued-not-runtime-verified",
       "source": {
         "repository": "amerhwitat/amerhwitat.github.io",
-        "path": "apps/chimera-ii-os/web/aurora_apps.json#categories[1].apps[1]",
+        "path": "apps/chimera-ii-os/web/aurora_apps.json#categories[1].apps[0]",
         "license": "not-audited"
       }
     },
@@ -602,7 +588,7 @@
       "runtimeStatus": "catalogued-not-runtime-verified",
       "source": {
         "repository": "amerhwitat/amerhwitat.github.io",
-        "path": "apps/chimera-ii-os/web/aurora_apps.json#categories[1].apps[2]",
+        "path": "apps/chimera-ii-os/web/aurora_apps.json#categories[1].apps[1]",
         "license": "not-audited"
       }
     },
@@ -616,7 +602,7 @@
       "runtimeStatus": "catalogued-not-runtime-verified",
       "source": {
         "repository": "amerhwitat/amerhwitat.github.io",
-        "path": "apps/chimera-ii-os/web/aurora_apps.json#categories[1].apps[3]",
+        "path": "apps/chimera-ii-os/web/aurora_apps.json#categories[1].apps[2]",
         "license": "not-audited"
       }
     },
@@ -630,7 +616,7 @@
       "runtimeStatus": "catalogued-not-runtime-verified",
       "source": {
         "repository": "amerhwitat/amerhwitat.github.io",
-        "path": "apps/chimera-ii-os/web/aurora_apps.json#categories[1].apps[4]",
+        "path": "apps/chimera-ii-os/web/aurora_apps.json#categories[1].apps[3]",
         "license": "not-audited"
       }
     },
@@ -644,7 +630,7 @@
       "runtimeStatus": "catalogued-not-runtime-verified",
       "source": {
         "repository": "amerhwitat/amerhwitat.github.io",
-        "path": "apps/chimera-ii-os/web/aurora_apps.json#categories[1].apps[5]",
+        "path": "apps/chimera-ii-os/web/aurora_apps.json#categories[1].apps[4]",
         "license": "not-audited"
       }
     },
@@ -658,7 +644,7 @@
       "runtimeStatus": "catalogued-not-runtime-verified",
       "source": {
         "repository": "amerhwitat/amerhwitat.github.io",
-        "path": "apps/chimera-ii-os/web/aurora_apps.json#categories[1].apps[6]",
+        "path": "apps/chimera-ii-os/web/aurora_apps.json#categories[1].apps[5]",
         "license": "not-audited"
       }
     },
@@ -705,20 +691,6 @@
       }
     },
     {
-      "id": "aurora:chimera-code",
-      "title": "Chimera Code IDE",
-      "category": "Development",
-      "target": "chimera_code_ide.html",
-      "mode": "embedded",
-      "executionClass": "embedded-web-app",
-      "runtimeStatus": "catalogued-not-runtime-verified",
-      "source": {
-        "repository": "amerhwitat/amerhwitat.github.io",
-        "path": "apps/chimera-ii-os/web/aurora_apps.json#categories[3].apps[0]",
-        "license": "not-audited"
-      }
-    },
-    {
       "id": "aurora:python",
       "title": "Python",
       "category": "Development",
@@ -728,7 +700,7 @@
       "runtimeStatus": "catalogued-not-runtime-verified",
       "source": {
         "repository": "amerhwitat/amerhwitat.github.io",
-        "path": "apps/chimera-ii-os/web/aurora_apps.json#categories[3].apps[1]",
+        "path": "apps/chimera-ii-os/web/aurora_apps.json#categories[3].apps[0]",
         "license": "not-audited"
       }
     },
@@ -742,7 +714,7 @@
       "runtimeStatus": "catalogued-not-runtime-verified",
       "source": {
         "repository": "amerhwitat/amerhwitat.github.io",
-        "path": "apps/chimera-ii-os/web/aurora_apps.json#categories[3].apps[2]",
+        "path": "apps/chimera-ii-os/web/aurora_apps.json#categories[3].apps[1]",
         "license": "not-audited"
       }
     },
@@ -756,7 +728,7 @@
       "runtimeStatus": "catalogued-not-runtime-verified",
       "source": {
         "repository": "amerhwitat/amerhwitat.github.io",
-        "path": "apps/chimera-ii-os/web/aurora_apps.json#categories[3].apps[3]",
+        "path": "apps/chimera-ii-os/web/aurora_apps.json#categories[3].apps[2]",
         "license": "not-audited"
       }
     }
