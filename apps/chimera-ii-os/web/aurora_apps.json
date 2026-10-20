@@ -177,7 +177,7 @@
           "id": "amiga-center",
           "title": "Aurora Amiga Emulator Center",
           "icon": "A500",
-          "url": "../../../nlp-amiga/index.html",
+          "url": "/apps/nlp-amiga/index.html",
           "mode": "embedded"
         },
         {
@@ -239,13 +239,6 @@
       "id": "desktop",
       "title": "Desktop Environments",
       "apps": [
-        {
-          "id": "desktop-switcher",
-          "title": "Desktop Switcher",
-          "icon": "▣",
-          "url": "desktop_switcher.html",
-          "mode": "embedded"
-        },
         {
           "id": "aurora",
           "title": "Aurora Wayland Glass",
@@ -322,13 +315,6 @@
       "id": "development",
       "title": "Development",
       "apps": [
-        {
-          "id": "chimera-code",
-          "title": "Chimera Code IDE",
-          "icon": "</>",
-          "url": "chimera_code_ide.html",
-          "mode": "embedded"
-        },
         {
           "id": "python",
           "title": "Python",

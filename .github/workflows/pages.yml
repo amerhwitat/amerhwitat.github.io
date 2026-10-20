@@ -32,6 +32,10 @@ jobs:
         run: python3 -m py_compile scripts/refresh_wallet_python_catalog.py
       - name: Validate browser network console JavaScript
         run: node --check apps/network-console/app.js
+      - name: Validate Amiga Center JavaScript syntax
+        run: node --check apps/nlp-amiga/app.js && node --check apps/nlp-amiga/emulator_adapter.js
+      - name: Test Amiga Center runtime truthfulness
+        run: python3 -m unittest scripts/test_amiga_center_contract.py
       - name: Test browser IP classification parity vectors
         run: node --test apps/network-console/ip-classifier.test.js
       - name: Build generated app output before validating local links
@@ -42,10 +46,18 @@ jobs:
           npm run build
           test -s dist/index.html
           rm -rf node_modules
+      - name: Validate Amiga Center JavaScript syntax
+        run: node --check apps/nlp-amiga/app.js && node --check apps/nlp-amiga/emulator_adapter.js
+      - name: Test Amiga Center runtime truthfulness
+        run: python3 -m unittest scripts/test_amiga_center_contract.py
       - name: Test site-local link resolution
         run: python3 -m unittest scripts/test_check_site_links.py
       - name: Validate every app catalog destination
         run: python3 scripts/check_app_catalog.py
+      - name: Test unified application catalog validation
+        run: python3 -m unittest scripts/test_validate_unified_app_catalog.py
+      - name: Validate Aurora app IDs and local launch targets
+        run: python3 scripts/validate_unified_app_catalog.py
       - name: Check all published local links
         run: python3 scripts/check_site_links.py
   deploy:
@@ -101,6 +113,10 @@ jobs:
         run: python3 scripts/check_site_links.py
       - name: Validate every app catalog destination
         run: python3 scripts/check_app_catalog.py
+      - name: Test unified application catalog validation
+        run: python3 -m unittest scripts/test_validate_unified_app_catalog.py
+      - name: Validate Aurora app IDs and local launch targets
+        run: python3 scripts/validate_unified_app_catalog.py
       - name: Refresh Wallet Python catalog from public repository trees
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
