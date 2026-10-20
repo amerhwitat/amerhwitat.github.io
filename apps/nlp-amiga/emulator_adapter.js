@@ -10,8 +10,9 @@
     async start(){
       if(!this.engine||!this.cfg){
         this.log('Opening vAmigaWeb externally. This page cannot inspect or certify the external emulator runtime.');
-        const opened=window.open('https://vamigaweb.github.io/','_blank','noopener');
-        return opened?{kind:'fallback-opened'}:{kind:'popup-blocked'};
+        const opened=window.open('https://vamigaweb.github.io/','_blank');
+        if(opened){try{opened.opener=null;}catch(_){/* Cross-origin navigation may already have begun. */}return {kind:'fallback-opened'};}
+        return {kind:'popup-blocked'};
       }
       try{
         const model=document.getElementById('model').value;
