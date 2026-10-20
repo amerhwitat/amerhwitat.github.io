@@ -1,0 +1,764 @@
+{
+  "schema": "unified-app-catalog/v1",
+  "generatedAt": "2026-10-20",
+  "status": "initial-reconciliation-snapshot",
+  "policy": {
+    "nativeExecutionVerified": false,
+    "catalogPresenceIsNotRuntimeEvidence": true,
+    "privateRepositoriesExcluded": true,
+    "licenseAudit": "pending",
+    "exhaustiveApplicationInventory": "pending",
+    "launcherSynchronization": "pending",
+    "linkAndInteractionTests": "pending"
+  },
+  "sourceSnapshots": [
+    {
+      "path": "apps/chimera-ii-os/web/aurora_apps.json",
+      "sha": "b59b73337b04fcfe239a408a818588fc16e51af2",
+      "entryCount": 44
+    },
+    {
+      "path": "search-index.json",
+      "sha": "daf4d6b7736ac7fbdaed0745a5b5883ee37c2fb8",
+      "entryCount": 142,
+      "entryClass": "indexed destinations; not all are applications"
+    },
+    {
+      "path": "apps/chimera-ii-os/web/aurora-ecosystem-catalog.json",
+      "sha": "d1b26c09690121982721cc19a94cfca11f344f2a",
+      "repositoryCount": 14
+    }
+  ],
+  "repositories": [
+    {
+      "name": "amerhwitat.github.io",
+      "title": "Aurora Web Platform",
+      "repositoryUrl": "https://github.com/amerhwitat/amerhwitat.github.io",
+      "capabilities": "Web UI, games, MAME, emulators, wallet, Python, OCR, research, ISO/Flash",
+      "visibility": "public",
+      "auditStatus": "listed-not-exhaustively-audited"
+    },
+    {
+      "name": "BizX",
+      "title": "BizX Platform",
+      "repositoryUrl": "https://github.com/amerhwitat/BizX",
+      "capabilities": "Asset Browser, Internet Scanner, NetworkUnified, ISO Tool, game vault, retro media",
+      "visibility": "public",
+      "auditStatus": "listed-not-exhaustively-audited"
+    },
+    {
+      "name": "BizXtreme",
+      "title": "BizXtreme",
+      "repositoryUrl": "https://github.com/amerhwitat/BizXtreme",
+      "capabilities": "WebGL/3D, unified games, wallets/crypto research, networking, mobile, progression, survival/tycoon",
+      "visibility": "public",
+      "auditStatus": "listed-not-exhaustively-audited"
+    },
+    {
+      "name": "bruteforce",
+      "title": "Computational Search Research",
+      "repositoryUrl": "https://github.com/amerhwitat/bruteforce",
+      "capabilities": "Authorized search research, crypto research, AI boundaries, cross-language implementations",
+      "visibility": "public",
+      "auditStatus": "listed-not-exhaustively-audited"
+    },
+    {
+      "name": "ChimeraIIOS",
+      "title": "Chimera II OS",
+      "repositoryUrl": "https://github.com/amerhwitat/ChimeraIIOS",
+      "capabilities": "Aurora, Koronos, 8192-bit ISA, ISO/Flash, MAME, emulators, P2P, OCR/PDF, Game Center, Code IDE",
+      "visibility": "public",
+      "auditStatus": "listed-not-exhaustively-audited"
+    },
+    {
+      "name": "CPU4096",
+      "title": "CPU4096",
+      "repositoryUrl": "https://github.com/amerhwitat/CPU4096",
+      "capabilities": "Wide-register CPU, ISA research, cross-language workloads, crypto/AI, filesystem/P2P",
+      "visibility": "public",
+      "auditStatus": "listed-not-exhaustively-audited"
+    },
+    {
+      "name": "CPU4096Simulator",
+      "title": "CPU4096 Simulator",
+      "repositoryUrl": "https://github.com/amerhwitat/CPU4096Simulator",
+      "capabilities": "CPU simulation, Aurora shell, IDE, CLI catalog, toolchain, installer, P2P",
+      "visibility": "public",
+      "auditStatus": "listed-not-exhaustively-audited"
+    },
+    {
+      "name": "eth-key-check",
+      "title": "Ethereum / Crypto Research",
+      "repositoryUrl": "https://github.com/amerhwitat/eth-key-check",
+      "capabilities": "Address verification, audit, crypto database, AI/ML, interoperability, P2P",
+      "visibility": "public",
+      "auditStatus": "listed-not-exhaustively-audited"
+    },
+    {
+      "name": "general",
+      "title": "Agent Research Forge",
+      "repositoryUrl": "https://github.com/amerhwitat/general",
+      "capabilities": "Deep research, crawler, code search, document index, project builder, artifacts, agents",
+      "visibility": "public",
+      "auditStatus": "listed-not-exhaustively-audited"
+    },
+    {
+      "name": "keygen",
+      "title": "Keygen / Koronos Research",
+      "repositoryUrl": "https://github.com/amerhwitat/keygen",
+      "capabilities": "Key-generation research, Koronos runtime, knowledge bus, 128D vectors, network interoperability",
+      "visibility": "public",
+      "auditStatus": "listed-not-exhaustively-audited"
+    },
+    {
+      "name": "nlp",
+      "title": "NLP & Ancient Languages",
+      "repositoryUrl": "https://github.com/amerhwitat/nlp",
+      "capabilities": "Thamudic scanner, ancient NLP, OCR, Amiga, ISO Tool, artifact database",
+      "visibility": "public",
+      "auditStatus": "listed-not-exhaustively-audited"
+    },
+    {
+      "name": "OctavianOS",
+      "title": "OctavianOS",
+      "repositoryUrl": "https://github.com/amerhwitat/OctavianOS",
+      "capabilities": "Aurora Wayland Glass desktop, Marine desktop, React web companion, mobile companion, OS migration and release acceptance",
+      "visibility": "public",
+      "auditStatus": "listed-not-exhaustively-audited"
+    },
+    {
+      "name": "PDFreaderPY",
+      "title": "PDFreaderPY",
+      "repositoryUrl": "https://github.com/amerhwitat/PDFreaderPY",
+      "capabilities": "PDF processing, Thamudic scanner, ancient object catalog, parallel search, P2P",
+      "visibility": "public",
+      "auditStatus": "listed-not-exhaustively-audited"
+    },
+    {
+      "name": "test",
+      "title": "Chimera Prototypes",
+      "repositoryUrl": "https://github.com/amerhwitat/test",
+      "capabilities": "Python runtime, boot/installer, emulator, ISA8192, desktop sync, P2P, native Aurora",
+      "visibility": "public",
+      "auditStatus": "listed-not-exhaustively-audited"
+    }
+  ],
+  "applications": [
+    {
+      "id": "aurora:architecture",
+      "title": "Architecture",
+      "category": "Chimera II",
+      "target": "#architecture",
+      "mode": "native-web",
+      "executionClass": "embedded-web-surface",
+      "runtimeStatus": "catalogued-not-runtime-verified",
+      "source": {
+        "repository": "amerhwitat/amerhwitat.github.io",
+        "path": "apps/chimera-ii-os/web/aurora_apps.json#categories[0].apps[0]",
+        "license": "not-audited"
+      }
+    },
+    {
+      "id": "aurora:isa",
+      "title": "ISA Explorer",
+      "category": "Chimera II",
+      "target": "#isa-section",
+      "mode": "native-web",
+      "executionClass": "embedded-web-surface",
+      "runtimeStatus": "catalogued-not-runtime-verified",
+      "source": {
+        "repository": "amerhwitat/amerhwitat.github.io",
+        "path": "apps/chimera-ii-os/web/aurora_apps.json#categories[0].apps[1]",
+        "license": "not-audited"
+      }
+    },
+    {
+      "id": "aurora:kernel",
+      "title": "Koronos Kernel",
+      "category": "Chimera II",
+      "target": "#kernel-section",
+      "mode": "native-web",
+      "executionClass": "embedded-web-surface",
+      "runtimeStatus": "catalogued-not-runtime-verified",
+      "source": {
+        "repository": "amerhwitat/amerhwitat.github.io",
+        "path": "apps/chimera-ii-os/web/aurora_apps.json#categories[0].apps[2]",
+        "license": "not-audited"
+      }
+    },
+    {
+      "id": "aurora:health",
+      "title": "System Health & KPIs",
+      "category": "Chimera II",
+      "target": "health.html",
+      "mode": "embedded",
+      "executionClass": "embedded-web-app",
+      "runtimeStatus": "catalogued-not-runtime-verified",
+      "source": {
+        "repository": "amerhwitat/amerhwitat.github.io",
+        "path": "apps/chimera-ii-os/web/aurora_apps.json#categories[0].apps[3]",
+        "license": "not-audited"
+      }
+    },
+    {
+      "id": "aurora:system-control-center",
+      "title": "System Control Center",
+      "category": "Chimera II",
+      "target": "system_control_center.html",
+      "mode": "embedded",
+      "executionClass": "embedded-web-app",
+      "runtimeStatus": "catalogued-not-runtime-verified",
+      "source": {
+        "repository": "amerhwitat/amerhwitat.github.io",
+        "path": "apps/chimera-ii-os/web/aurora_apps.json#categories[0].apps[4]",
+        "license": "not-audited"
+      }
+    },
+    {
+      "id": "aurora:installer-manager",
+      "title": "Chimera Installer Manager",
+      "category": "Chimera II",
+      "target": "installer_manager.html",
+      "mode": "embedded",
+      "executionClass": "embedded-web-app",
+      "runtimeStatus": "catalogued-not-runtime-verified",
+      "source": {
+        "repository": "amerhwitat/amerhwitat.github.io",
+        "path": "apps/chimera-ii-os/web/aurora_apps.json#categories[0].apps[5]",
+        "license": "not-audited"
+      }
+    },
+    {
+      "id": "aurora:network-monitor",
+      "title": "TCP/IP Network Monitor",
+      "category": "Chimera II",
+      "target": "network_monitor.html",
+      "mode": "embedded",
+      "executionClass": "embedded-web-app",
+      "runtimeStatus": "catalogued-not-runtime-verified",
+      "source": {
+        "repository": "amerhwitat/amerhwitat.github.io",
+        "path": "apps/chimera-ii-os/web/aurora_apps.json#categories[0].apps[6]",
+        "license": "not-audited"
+      }
+    },
+    {
+      "id": "aurora:crash-center",
+      "title": "Crash Center & Recovery",
+      "category": "Chimera II",
+      "target": "crash_center.html",
+      "mode": "embedded",
+      "executionClass": "embedded-web-app",
+      "runtimeStatus": "catalogued-not-runtime-verified",
+      "source": {
+        "repository": "amerhwitat/amerhwitat.github.io",
+        "path": "apps/chimera-ii-os/web/aurora_apps.json#categories[0].apps[7]",
+        "license": "not-audited"
+      }
+    },
+    {
+      "id": "aurora:desktop-switcher",
+      "title": "Desktop Switcher",
+      "category": "Chimera II",
+      "target": "desktop_switcher.html",
+      "mode": "embedded",
+      "executionClass": "embedded-web-app",
+      "runtimeStatus": "catalogued-not-runtime-verified",
+      "source": {
+        "repository": "amerhwitat/amerhwitat.github.io",
+        "path": "apps/chimera-ii-os/web/aurora_apps.json#categories[0].apps[8]",
+        "license": "not-audited"
+      }
+    },
+    {
+      "id": "aurora:retro-emulators",
+      "title": "Retro Computer Emulators",
+      "category": "Chimera II",
+      "target": "retro_emulators.html",
+      "mode": "embedded",
+      "executionClass": "embedded-web-app",
+      "runtimeStatus": "catalogued-not-runtime-verified",
+      "source": {
+        "repository": "amerhwitat/amerhwitat.github.io",
+        "path": "apps/chimera-ii-os/web/aurora_apps.json#categories[0].apps[9]",
+        "license": "not-audited"
+      }
+    },
+    {
+      "id": "aurora:chimera-code",
+      "title": "Chimera Code IDE",
+      "category": "Chimera II",
+      "target": "chimera_code_ide.html",
+      "mode": "embedded",
+      "executionClass": "embedded-web-app",
+      "runtimeStatus": "catalogued-not-runtime-verified",
+      "source": {
+        "repository": "amerhwitat/amerhwitat.github.io",
+        "path": "apps/chimera-ii-os/web/aurora_apps.json#categories[0].apps[10]",
+        "license": "not-audited"
+      }
+    },
+    {
+      "id": "aurora:terminal",
+      "title": "Aurora Terminal",
+      "category": "Chimera II",
+      "target": "aurora_terminal.html",
+      "mode": "embedded",
+      "executionClass": "embedded-web-app",
+      "runtimeStatus": "catalogued-not-runtime-verified",
+      "source": {
+        "repository": "amerhwitat/amerhwitat.github.io",
+        "path": "apps/chimera-ii-os/web/aurora_apps.json#categories[0].apps[11]",
+        "license": "not-audited"
+      }
+    },
+    {
+      "id": "aurora:standards",
+      "title": "Standards",
+      "category": "Chimera II",
+      "target": "#standards-section",
+      "mode": "native-web",
+      "executionClass": "embedded-web-surface",
+      "runtimeStatus": "catalogued-not-runtime-verified",
+      "source": {
+        "repository": "amerhwitat/amerhwitat.github.io",
+        "path": "apps/chimera-ii-os/web/aurora_apps.json#categories[0].apps[12]",
+        "license": "not-audited"
+      }
+    },
+    {
+      "id": "aurora:research-lab",
+      "title": "Aurora Research Lab",
+      "category": "Chimera II",
+      "target": "research-lab.html",
+      "mode": "embedded",
+      "executionClass": "embedded-web-app",
+      "runtimeStatus": "catalogued-not-runtime-verified",
+      "source": {
+        "repository": "amerhwitat/amerhwitat.github.io",
+        "path": "apps/chimera-ii-os/web/aurora_apps.json#categories[0].apps[13]",
+        "license": "not-audited"
+      }
+    },
+    {
+      "id": "aurora:chimera-simulator",
+      "title": "Chimera II OS Rocket Simulator",
+      "category": "Chimera II",
+      "target": "https://chimeraiios-kukp34.public.builtwithrocket.new/chimera-ii-os-simulator",
+      "mode": "external-web",
+      "executionClass": "external-link",
+      "runtimeStatus": "catalogued-not-runtime-verified",
+      "source": {
+        "repository": "amerhwitat/amerhwitat.github.io",
+        "path": "apps/chimera-ii-os/web/aurora_apps.json#categories[0].apps[14]",
+        "license": "not-audited"
+      }
+    },
+    {
+      "id": "aurora:ocr-studio",
+      "title": "Aurora OCR Studio",
+      "category": "Chimera II",
+      "target": "ocr-studio.html",
+      "mode": "embedded",
+      "executionClass": "embedded-web-app",
+      "runtimeStatus": "catalogued-not-runtime-verified",
+      "source": {
+        "repository": "amerhwitat/amerhwitat.github.io",
+        "path": "apps/chimera-ii-os/web/aurora_apps.json#categories[0].apps[15]",
+        "license": "not-audited"
+      }
+    },
+    {
+      "id": "aurora:artifact-library",
+      "title": "Aurora Artifact Library",
+      "category": "Chimera II",
+      "target": "artifact-library.html",
+      "mode": "embedded",
+      "executionClass": "embedded-web-app",
+      "runtimeStatus": "catalogued-not-runtime-verified",
+      "source": {
+        "repository": "amerhwitat/amerhwitat.github.io",
+        "path": "apps/chimera-ii-os/web/aurora_apps.json#categories[0].apps[16]",
+        "license": "not-audited"
+      }
+    },
+    {
+      "id": "aurora:rocket-ui",
+      "title": "ChimeraIIOS Rocket UI",
+      "category": "Chimera II",
+      "target": "https://chimeraiios-ruw578.app.builtwithrocket.new",
+      "mode": "external-web",
+      "executionClass": "external-link",
+      "runtimeStatus": "catalogued-not-runtime-verified",
+      "source": {
+        "repository": "amerhwitat/amerhwitat.github.io",
+        "path": "apps/chimera-ii-os/web/aurora_apps.json#categories[0].apps[17]",
+        "license": "not-audited"
+      }
+    },
+    {
+      "id": "aurora:network-engine",
+      "title": "Aurora Network Engine",
+      "category": "Chimera II",
+      "target": "network-engine.html",
+      "mode": "embedded",
+      "executionClass": "embedded-web-app",
+      "runtimeStatus": "catalogued-not-runtime-verified",
+      "source": {
+        "repository": "amerhwitat/amerhwitat.github.io",
+        "path": "apps/chimera-ii-os/web/aurora_apps.json#categories[0].apps[18]",
+        "license": "not-audited"
+      }
+    },
+    {
+      "id": "aurora:bizxtreme",
+      "title": "BizXtreme Unified Game",
+      "category": "Chimera II",
+      "target": "https://github.com/amerhwitat/BizXtreme",
+      "mode": "external-repo",
+      "executionClass": "external-link",
+      "runtimeStatus": "catalogued-not-runtime-verified",
+      "source": {
+        "repository": "amerhwitat/amerhwitat.github.io",
+        "path": "apps/chimera-ii-os/web/aurora_apps.json#categories[0].apps[19]",
+        "license": "not-audited"
+      }
+    },
+    {
+      "id": "aurora:thamudicscan",
+      "title": "Aurora ThamudicScan",
+      "category": "Chimera II",
+      "target": "thamudicscan.html",
+      "mode": "embedded",
+      "executionClass": "embedded-web-app",
+      "runtimeStatus": "catalogued-not-runtime-verified",
+      "source": {
+        "repository": "amerhwitat/amerhwitat.github.io",
+        "path": "apps/chimera-ii-os/web/aurora_apps.json#categories[0].apps[20]",
+        "license": "not-audited"
+      }
+    },
+    {
+      "id": "aurora:command-center",
+      "title": "Aurora Command Center",
+      "category": "Chimera II",
+      "target": "command-console.html",
+      "mode": "embedded",
+      "executionClass": "embedded-web-app",
+      "runtimeStatus": "catalogued-not-runtime-verified",
+      "source": {
+        "repository": "amerhwitat/amerhwitat.github.io",
+        "path": "apps/chimera-ii-os/web/aurora_apps.json#categories[0].apps[21]",
+        "license": "not-audited"
+      }
+    },
+    {
+      "id": "aurora:amiga-center",
+      "title": "Aurora Amiga Emulator Center",
+      "category": "Chimera II",
+      "target": "../../../nlp-amiga/index.html",
+      "mode": "embedded",
+      "executionClass": "embedded-web-app",
+      "runtimeStatus": "catalogued-not-runtime-verified",
+      "source": {
+        "repository": "amerhwitat/amerhwitat.github.io",
+        "path": "apps/chimera-ii-os/web/aurora_apps.json#categories[0].apps[22]",
+        "license": "not-audited"
+      }
+    },
+    {
+      "id": "aurora:backend-status",
+      "title": "Aurora Backend Gateway",
+      "category": "Chimera II",
+      "target": "backend-status.html",
+      "mode": "embedded",
+      "executionClass": "embedded-web-app",
+      "runtimeStatus": "catalogued-not-runtime-verified",
+      "source": {
+        "repository": "amerhwitat/amerhwitat.github.io",
+        "path": "apps/chimera-ii-os/web/aurora_apps.json#categories[0].apps[23]",
+        "license": "not-audited"
+      }
+    },
+    {
+      "id": "aurora:smart-model",
+      "title": "Aurora Smart Model",
+      "category": "Chimera II",
+      "target": "smart-model.html",
+      "mode": "embedded",
+      "executionClass": "embedded-web-app",
+      "runtimeStatus": "catalogued-not-runtime-verified",
+      "source": {
+        "repository": "amerhwitat/amerhwitat.github.io",
+        "path": "apps/chimera-ii-os/web/aurora_apps.json#categories[0].apps[24]",
+        "license": "not-audited"
+      }
+    },
+    {
+      "id": "aurora:isa-explorer",
+      "title": "Chimera ISA Explorer",
+      "category": "Chimera II",
+      "target": "isa-explorer.html",
+      "mode": "embedded",
+      "executionClass": "embedded-web-app",
+      "runtimeStatus": "catalogued-not-runtime-verified",
+      "source": {
+        "repository": "amerhwitat/amerhwitat.github.io",
+        "path": "apps/chimera-ii-os/web/aurora_apps.json#categories[0].apps[25]",
+        "license": "not-audited"
+      }
+    },
+    {
+      "id": "aurora:wallet-center",
+      "title": "Aurora Wallet & Ecosystem Center",
+      "category": "Chimera II",
+      "target": "wallet-center.html",
+      "mode": "embedded",
+      "executionClass": "embedded-web-app",
+      "runtimeStatus": "catalogued-not-runtime-verified",
+      "source": {
+        "repository": "amerhwitat/amerhwitat.github.io",
+        "path": "apps/chimera-ii-os/web/aurora_apps.json#categories[0].apps[26]",
+        "license": "not-audited"
+      }
+    },
+    {
+      "id": "aurora:ancient-ocr",
+      "title": "Aurora Ancient Language Auto OCR",
+      "category": "Chimera II",
+      "target": "ancient-ocr.html",
+      "mode": "embedded",
+      "executionClass": "embedded-web-app",
+      "runtimeStatus": "catalogued-not-runtime-verified",
+      "source": {
+        "repository": "amerhwitat/amerhwitat.github.io",
+        "path": "apps/chimera-ii-os/web/aurora_apps.json#categories[0].apps[27]",
+        "license": "not-audited"
+      }
+    },
+    {
+      "id": "aurora:mame-center",
+      "title": "Aurora MAME Arcade Center",
+      "category": "Chimera II",
+      "target": "mame-center.html",
+      "mode": "embedded",
+      "executionClass": "embedded-web-app",
+      "runtimeStatus": "catalogued-not-runtime-verified",
+      "source": {
+        "repository": "amerhwitat/amerhwitat.github.io",
+        "path": "apps/chimera-ii-os/web/aurora_apps.json#categories[0].apps[28]",
+        "license": "not-audited"
+      }
+    },
+    {
+      "id": "aurora:game-center",
+      "title": "Aurora Complete Game Center",
+      "category": "Chimera II",
+      "target": "game-center.html",
+      "mode": "embedded",
+      "executionClass": "embedded-web-app",
+      "runtimeStatus": "catalogued-not-runtime-verified",
+      "source": {
+        "repository": "amerhwitat/amerhwitat.github.io",
+        "path": "apps/chimera-ii-os/web/aurora_apps.json#categories[0].apps[29]",
+        "license": "not-audited"
+      }
+    },
+    {
+      "id": "aurora:desktop-switcher",
+      "title": "Desktop Switcher",
+      "category": "Desktop Environments",
+      "target": "desktop_switcher.html",
+      "mode": "embedded",
+      "executionClass": "embedded-web-app",
+      "runtimeStatus": "catalogued-not-runtime-verified",
+      "source": {
+        "repository": "amerhwitat/amerhwitat.github.io",
+        "path": "apps/chimera-ii-os/web/aurora_apps.json#categories[1].apps[0]",
+        "license": "not-audited"
+      }
+    },
+    {
+      "id": "aurora:aurora",
+      "title": "Aurora Wayland Glass",
+      "category": "Desktop Environments",
+      "target": "desktop_switcher.html",
+      "mode": "embedded",
+      "executionClass": "embedded-web-app",
+      "runtimeStatus": "catalogued-not-runtime-verified",
+      "source": {
+        "repository": "amerhwitat/amerhwitat.github.io",
+        "path": "apps/chimera-ii-os/web/aurora_apps.json#categories[1].apps[1]",
+        "license": "not-audited"
+      }
+    },
+    {
+      "id": "aurora:gnome",
+      "title": "Ubuntu / GNOME",
+      "category": "Desktop Environments",
+      "target": "desktop_switcher.html#linux-gnome",
+      "mode": "session-adapter",
+      "executionClass": "embedded-web-app",
+      "runtimeStatus": "catalogued-not-runtime-verified",
+      "source": {
+        "repository": "amerhwitat/amerhwitat.github.io",
+        "path": "apps/chimera-ii-os/web/aurora_apps.json#categories[1].apps[2]",
+        "license": "not-audited"
+      }
+    },
+    {
+      "id": "aurora:plasma",
+      "title": "KDE Plasma",
+      "category": "Desktop Environments",
+      "target": "desktop_switcher.html#linux-kde-plasma",
+      "mode": "session-adapter",
+      "executionClass": "embedded-web-app",
+      "runtimeStatus": "catalogued-not-runtime-verified",
+      "source": {
+        "repository": "amerhwitat/amerhwitat.github.io",
+        "path": "apps/chimera-ii-os/web/aurora_apps.json#categories[1].apps[3]",
+        "license": "not-audited"
+      }
+    },
+    {
+      "id": "aurora:xfce",
+      "title": "Xfce",
+      "category": "Desktop Environments",
+      "target": "desktop_switcher.html#linux-xfce",
+      "mode": "session-adapter",
+      "executionClass": "embedded-web-app",
+      "runtimeStatus": "catalogued-not-runtime-verified",
+      "source": {
+        "repository": "amerhwitat/amerhwitat.github.io",
+        "path": "apps/chimera-ii-os/web/aurora_apps.json#categories[1].apps[4]",
+        "license": "not-audited"
+      }
+    },
+    {
+      "id": "aurora:cinnamon",
+      "title": "Cinnamon",
+      "category": "Desktop Environments",
+      "target": "desktop_switcher.html#linux-cinnamon",
+      "mode": "session-adapter",
+      "executionClass": "embedded-web-app",
+      "runtimeStatus": "catalogued-not-runtime-verified",
+      "source": {
+        "repository": "amerhwitat/amerhwitat.github.io",
+        "path": "apps/chimera-ii-os/web/aurora_apps.json#categories[1].apps[5]",
+        "license": "not-audited"
+      }
+    },
+    {
+      "id": "aurora:windows-ui",
+      "title": "Windows UI Profiles",
+      "category": "Desktop Environments",
+      "target": "desktop_switcher.html#windows-11",
+      "mode": "web-profile-or-vm",
+      "executionClass": "embedded-web-app",
+      "runtimeStatus": "catalogued-not-runtime-verified",
+      "source": {
+        "repository": "amerhwitat/amerhwitat.github.io",
+        "path": "apps/chimera-ii-os/web/aurora_apps.json#categories[1].apps[6]",
+        "license": "not-audited"
+      }
+    },
+    {
+      "id": "aurora:process-monitor",
+      "title": "Process Monitor",
+      "category": "System & Monitoring",
+      "target": "#terminal-section",
+      "mode": "sandbox",
+      "executionClass": "embedded-web-surface",
+      "runtimeStatus": "catalogued-not-runtime-verified",
+      "source": {
+        "repository": "amerhwitat/amerhwitat.github.io",
+        "path": "apps/chimera-ii-os/web/aurora_apps.json#categories[2].apps[0]",
+        "license": "not-audited"
+      }
+    },
+    {
+      "id": "aurora:system-monitor",
+      "title": "System Monitor",
+      "category": "System & Monitoring",
+      "target": "#terminal-section",
+      "mode": "sandbox",
+      "executionClass": "embedded-web-surface",
+      "runtimeStatus": "catalogued-not-runtime-verified",
+      "source": {
+        "repository": "amerhwitat/amerhwitat.github.io",
+        "path": "apps/chimera-ii-os/web/aurora_apps.json#categories[2].apps[1]",
+        "license": "not-audited"
+      }
+    },
+    {
+      "id": "aurora:command-manual",
+      "title": "Command Manual / man",
+      "category": "System & Monitoring",
+      "target": "aurora_terminal.html",
+      "mode": "embedded",
+      "executionClass": "embedded-web-app",
+      "runtimeStatus": "catalogued-not-runtime-verified",
+      "source": {
+        "repository": "amerhwitat/amerhwitat.github.io",
+        "path": "apps/chimera-ii-os/web/aurora_apps.json#categories[2].apps[2]",
+        "license": "not-audited"
+      }
+    },
+    {
+      "id": "aurora:chimera-code",
+      "title": "Chimera Code IDE",
+      "category": "Development",
+      "target": "chimera_code_ide.html",
+      "mode": "embedded",
+      "executionClass": "embedded-web-app",
+      "runtimeStatus": "catalogued-not-runtime-verified",
+      "source": {
+        "repository": "amerhwitat/amerhwitat.github.io",
+        "path": "apps/chimera-ii-os/web/aurora_apps.json#categories[3].apps[0]",
+        "license": "not-audited"
+      }
+    },
+    {
+      "id": "aurora:python",
+      "title": "Python",
+      "category": "Development",
+      "target": "#terminal-section",
+      "mode": "sandbox",
+      "executionClass": "embedded-web-surface",
+      "runtimeStatus": "catalogued-not-runtime-verified",
+      "source": {
+        "repository": "amerhwitat/amerhwitat.github.io",
+        "path": "apps/chimera-ii-os/web/aurora_apps.json#categories[3].apps[1]",
+        "license": "not-audited"
+      }
+    },
+    {
+      "id": "aurora:bash",
+      "title": "Bash / Zsh",
+      "category": "Development",
+      "target": "#terminal-section",
+      "mode": "sandbox",
+      "executionClass": "embedded-web-surface",
+      "runtimeStatus": "catalogued-not-runtime-verified",
+      "source": {
+        "repository": "amerhwitat/amerhwitat.github.io",
+        "path": "apps/chimera-ii-os/web/aurora_apps.json#categories[3].apps[2]",
+        "license": "not-audited"
+      }
+    },
+    {
+      "id": "aurora:powershell",
+      "title": "PowerShell",
+      "category": "Development",
+      "target": "#terminal-section",
+      "mode": "sandbox",
+      "executionClass": "embedded-web-surface",
+      "runtimeStatus": "catalogued-not-runtime-verified",
+      "source": {
+        "repository": "amerhwitat/amerhwitat.github.io",
+        "path": "apps/chimera-ii-os/web/aurora_apps.json#categories[3].apps[3]",
+        "license": "not-audited"
+      }
+    }
+  ]
+}
