@@ -12,6 +12,9 @@ class AmigaCenterRuntimeContractTests(unittest.TestCase):
         self.assertIn("popup-blocked", ADAPTER)
         self.assertIn("vAmigaWeb opened in a new tab", APP)
         self.assertNotIn("started?'Running':'Integration Ready'", APP)
+        self.assertIn("window.open('https://vamigaweb.github.io/','_blank')", ADAPTER)
+        self.assertIn("opened.opener=null", ADAPTER)
+        self.assertNotIn("window.open('https://vamigaweb.github.io/','_blank','noopener')", ADAPTER)
 
     def test_pause_and_reset_require_local_runtime(self):
         self.assertIn("Pause unavailable: no running local SAE runtime", ADAPTER)
