@@ -19,7 +19,7 @@ for r in repos:
     assert parsed.scheme == "https" and parsed.netloc == "github.com"
     assert r.get("audit_status") == "root-signals-captured"
     assert isinstance(r.get("root_entries"), list) and r["root_entries"]
-    for field in ("build_signals", "test_signals", "api_signals", "gui_signals"):
+    for field in ("build_signals", "test_signals", "api_signals", "gui_signals", "ci_signals"):
         assert isinstance(r.get(field), list), f"{r['id']}: missing {field}"
     assert r.get("license_signal"), f"{r['id']}: license signal must be explicit"
 assert any(r["id"] == "CPU4096Simulator" and "package.json" in r["build_signals"] for r in repos)
