@@ -1,0 +1,470 @@
+{
+  "schema": "repository-root-evidence-v1",
+  "generated_at": "2026-10-22",
+  "evidence_policy": "Root-level GitHub contents only. These are repository metadata signals, not proof that builds/tests pass or that APIs are production-ready. Nested projects require separate manifests and test discovery.",
+  "repositories": [
+    {
+      "id": "nlp",
+      "name": "nlp",
+      "url": "https://github.com/amerhwitat/nlp",
+      "root_entries": [
+        "Dockerfile",
+        "docker-compose.yml",
+        "LICENSE",
+        "README.md",
+        ".github",
+        "tests",
+        "requirements-thamudic-scanner.txt",
+        "requirements-thamudic.txt",
+        "python",
+        "java",
+        "kotlin",
+        "cpp",
+        "dotnet",
+        "node",
+        "nodejs",
+        "web",
+        "THAMUDIC_SCANNER_GUI.md"
+      ],
+      "build_signals": [
+        "Dockerfile",
+        "docker-compose.yml",
+        "requirements-thamudic-scanner.txt",
+        "requirements-thamudic.txt"
+      ],
+      "test_signals": [
+        "tests/"
+      ],
+      "api_signals": [
+        "softr_api.py",
+        "docker-compose.yml"
+      ],
+      "gui_signals": [
+        "search_gui.py",
+        "search_gui_requests.py",
+        "copilot_gui.py",
+        "THAMUDIC_SCANNER_GUI.md",
+        "web/"
+      ],
+      "license_signal": "LICENSE",
+      "audit_status": "root-signals-captured",
+      "next_step": "Enumerate nested Python/Java/Node/.NET projects; identify entrypoints, dependency pins, tests, API auth/data flows, and existing web app boundaries."
+    },
+    {
+      "id": "bizx",
+      "name": "BizX",
+      "url": "https://github.com/amerhwitat/BizX",
+      "root_entries": [
+        "Dockerfile",
+        "docker-compose.yml",
+        "LICENSE",
+        "README.md",
+        ".github",
+        "build.sh",
+        "build.cmd",
+        "install-deps.sh",
+        "install-deps.cmd",
+        "python",
+        "javascript",
+        "typescript",
+        "java",
+        "kotlin",
+        "csharp",
+        "go",
+        "rust",
+        "php",
+        "ruby",
+        "web",
+        "desktop",
+        "mobile",
+        "network",
+        "contracts"
+      ],
+      "build_signals": [
+        "Dockerfile",
+        "docker-compose.yml",
+        "build.sh",
+        "build.cmd",
+        "install-deps.sh",
+        "install-deps.cmd"
+      ],
+      "test_signals": [
+        ".github"
+      ],
+      "api_signals": [
+        "run-network-api.sh",
+        "run-network-api.ps1",
+        "run-network-api.bat",
+        "network/",
+        "contracts/"
+      ],
+      "gui_signals": [
+        "web/",
+        "desktop/",
+        "mobile/"
+      ],
+      "license_signal": "LICENSE",
+      "audit_status": "root-signals-captured",
+      "next_step": "Inventory each language subproject and API contract separately; locate actual test commands and auth/secret boundaries before GUI adapters."
+    },
+    {
+      "id": "BizXtreme",
+      "name": "BizXtreme",
+      "url": "https://github.com/amerhwitat/BizXtreme",
+      "root_entries": [
+        "Dockerfile",
+        "docker-compose.yml",
+        "README.md",
+        ".github",
+        "build.sh",
+        "build.cmd",
+        "install-deps.sh",
+        "install-deps.cmd",
+        "python",
+        "java",
+        "kotlin",
+        "web",
+        "typescript",
+        "threejs",
+        "mobile",
+        "network",
+        "contracts",
+        "game",
+        "games"
+      ],
+      "build_signals": [
+        "Dockerfile",
+        "docker-compose.yml",
+        "build.sh",
+        "build.cmd",
+        "install-deps.sh",
+        "install-deps.cmd"
+      ],
+      "test_signals": [
+        ".github"
+      ],
+      "api_signals": [
+        "network/",
+        "contracts/"
+      ],
+      "gui_signals": [
+        "web/",
+        "threejs/",
+        "mobile/"
+      ],
+      "license_signal": "not-seen-at-root",
+      "audit_status": "root-signals-captured",
+      "next_step": "Confirm licensing and subproject boundaries; enumerate tests, API contracts, framework manifests, and security requirements."
+    },
+    {
+      "id": "PDFreaderPY",
+      "name": "PDFreaderPY",
+      "url": "https://github.com/amerhwitat/PDFreaderPY",
+      "root_entries": [
+        "Dockerfile",
+        "docker-compose.yml",
+        "LICENSE",
+        "README.md",
+        ".github",
+        "requirements.txt",
+        "tests",
+        "pdfreader_gui.py",
+        "web",
+        "java",
+        "kotlin",
+        "cpp",
+        "dotnet",
+        "node"
+      ],
+      "build_signals": [
+        "Dockerfile",
+        "docker-compose.yml",
+        "requirements.txt"
+      ],
+      "test_signals": [
+        "tests/"
+      ],
+      "api_signals": [
+        "ancient_object_catalog_bridge.py",
+        "ancient_script_ingest.py"
+      ],
+      "gui_signals": [
+        "pdfreader_gui.py",
+        "web/"
+      ],
+      "license_signal": "LICENSE",
+      "audit_status": "root-signals-captured",
+      "next_step": "Inspect requirements and tests; map Python PDF capabilities against the browser preview and keep unsupported OCR/extraction/annotation features explicitly unavailable."
+    },
+    {
+      "id": "CPU4096Simulator",
+      "name": "CPU4096Simulator",
+      "url": "https://github.com/amerhwitat/CPU4096Simulator",
+      "root_entries": [
+        "Dockerfile",
+        "docker-compose.yml",
+        "README.md",
+        ".github",
+        "package.json",
+        "server.js",
+        "src",
+        "test",
+        "public",
+        "web",
+        "java",
+        "kotlin",
+        "cpp",
+        "dotnet"
+      ],
+      "build_signals": [
+        "Dockerfile",
+        "docker-compose.yml",
+        "package.json",
+        "server.js"
+      ],
+      "test_signals": [
+        "test/"
+      ],
+      "api_signals": [
+        "server.js"
+      ],
+      "gui_signals": [
+        "public/",
+        "web/",
+        "src/"
+      ],
+      "license_signal": "LICENSE",
+      "audit_status": "root-signals-captured",
+      "next_step": "Read package scripts and lockfile, run JS tests/build, map simulator state/API contracts, and test deterministic CPU examples in the browser UI."
+    },
+    {
+      "id": "CPU4096",
+      "name": "CPU4096",
+      "url": "https://github.com/amerhwitat/CPU4096",
+      "root_entries": [
+        "Dockerfile",
+        "README.md",
+        ".github",
+        "main.cpp",
+        "headers.h",
+        "RegisterN.hpp",
+        "registerN.cbp",
+        "web",
+        "java",
+        "kotlin",
+        "dotnet",
+        "cpp"
+      ],
+      "build_signals": [
+        "Dockerfile",
+        "registerN.cbp"
+      ],
+      "test_signals": [
+        ".github"
+      ],
+      "api_signals": [
+        "not-seen-at-root"
+      ],
+      "gui_signals": [
+        "web/"
+      ],
+      "license_signal": "LICENSE",
+      "audit_status": "root-signals-captured",
+      "next_step": "Inspect native project metadata, compiler standards, sample inputs, tests, and existing web assets before selecting a shared simulator API."
+    },
+    {
+      "id": "eth-key-check",
+      "name": "eth-key-check",
+      "url": "https://github.com/amerhwitat/eth-key-check",
+      "root_entries": [
+        "Dockerfile",
+        "docker-compose.yml",
+        "README.md",
+        ".github",
+        "requirements.txt",
+        "requirements-ml.txt",
+        "tests",
+        "SAFE_CRYPTO_SCOPE.md",
+        "LANGUAGE_LAYOUT.md",
+        "balance_scanner.py",
+        "crypto_gui.py",
+        "web",
+        "java",
+        "kotlin",
+        "cpp",
+        "dotnet",
+        "node"
+      ],
+      "build_signals": [
+        "Dockerfile",
+        "docker-compose.yml",
+        "requirements.txt",
+        "requirements-ml.txt"
+      ],
+      "test_signals": [
+        "tests/"
+      ],
+      "api_signals": [
+        "not-seen-at-root"
+      ],
+      "gui_signals": [
+        "crypto_gui.py",
+        "crypto_ai_gui.py",
+        "web/"
+      ],
+      "license_signal": "not-seen-at-root",
+      "audit_status": "root-signals-captured",
+      "next_step": "Review cryptographic scope and tests; keep private keys local, avoid telemetry/logging of secrets, and verify entropy/security-sensitive operations before exposing UI."
+    },
+    {
+      "id": "bruteforce",
+      "name": "bruteforce",
+      "url": "https://github.com/amerhwitat/bruteforce",
+      "root_entries": [
+        "Dockerfile",
+        "docker-compose.yml",
+        "README.md",
+        ".github",
+        "requirements.txt",
+        "crypto_research_gui.py",
+        "web",
+        "python",
+        "java",
+        "kotlin",
+        "cpp",
+        "dotnet"
+      ],
+      "build_signals": [
+        "Dockerfile",
+        "docker-compose.yml",
+        "requirements.txt"
+      ],
+      "test_signals": [
+        ".github"
+      ],
+      "api_signals": [
+        "not-seen-at-root"
+      ],
+      "gui_signals": [
+        "crypto_research_gui.py",
+        "web/"
+      ],
+      "license_signal": "not-seen-at-root",
+      "audit_status": "root-signals-captured",
+      "next_step": "Determine documented purpose and safeguards, inspect existing tests and dependencies, and only expose bounded authorized workflows through any GUI."
+    },
+    {
+      "id": "keygen",
+      "name": "keygen",
+      "url": "https://github.com/amerhwitat/keygen",
+      "root_entries": [
+        "Dockerfile",
+        "docker-compose.yml",
+        "README.md",
+        ".github",
+        "pom.xml",
+        "src",
+        "web",
+        "java",
+        "kotlin",
+        "cpp",
+        "dotnet"
+      ],
+      "build_signals": [
+        "Dockerfile",
+        "docker-compose.yml",
+        "pom.xml"
+      ],
+      "test_signals": [
+        ".github"
+      ],
+      "api_signals": [
+        "not-seen-at-root"
+      ],
+      "gui_signals": [
+        "web/"
+      ],
+      "license_signal": "not-seen-at-root",
+      "audit_status": "root-signals-captured",
+      "next_step": "Inspect Maven dependencies and tests; audit entropy and cryptographic implementation, and never substitute frontend pseudo-randomness for secure key generation."
+    },
+    {
+      "id": "general",
+      "name": "general",
+      "url": "https://github.com/amerhwitat/general",
+      "root_entries": [
+        "Dockerfile",
+        "docker-compose.yml",
+        "README.md",
+        "LICENSE",
+        "SECURITY.md",
+        ".github",
+        "web",
+        "AgentResearchForge",
+        "WorkflowStudio",
+        "SEO-Tool",
+        "EmailKeywordCrawler",
+        "EmailListManager",
+        "applications",
+        "tools",
+        "shared",
+        "mobile"
+      ],
+      "build_signals": [
+        "Dockerfile",
+        "docker-compose.yml"
+      ],
+      "test_signals": [
+        ".github"
+      ],
+      "api_signals": [
+        "not-seen-at-root"
+      ],
+      "gui_signals": [
+        "web/",
+        "applications/",
+        "WorkflowStudio/"
+      ],
+      "license_signal": "LICENSE",
+      "audit_status": "root-signals-captured",
+      "next_step": "Split the monorepo by deployable application; capture each package manifest, API schema, tests, licensing, and security boundary before porting."
+    },
+    {
+      "id": "test",
+      "name": "test",
+      "url": "https://github.com/amerhwitat/test",
+      "root_entries": [
+        "Dockerfile",
+        "README.md",
+        ".github",
+        "requirements-modern.txt",
+        "requirements-python38.txt",
+        "tests",
+        "start_chimera.py",
+        "native",
+        "research_app",
+        "web",
+        "java",
+        "kotlin"
+      ],
+      "build_signals": [
+        "Dockerfile",
+        "requirements-modern.txt",
+        "requirements-python38.txt"
+      ],
+      "test_signals": [
+        "tests/"
+      ],
+      "api_signals": [
+        "not-seen-at-root"
+      ],
+      "gui_signals": [
+        "research_app/",
+        "web/"
+      ],
+      "license_signal": "not-seen-at-root",
+      "audit_status": "root-signals-captured",
+      "next_step": "Determine which directories are applications versus fixtures; inspect Python version constraints, test commands, native build requirements, and web entrypoints."
+    }
+  ]
+}
