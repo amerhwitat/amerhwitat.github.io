@@ -113,6 +113,8 @@ jobs:
         run: node --check apps/chimera-ii-os/web/game-center.js
       - name: Validate Aurora Interaction Hub JavaScript
         run: node --check apps/chimera-ii-os/web/aurora-interaction-hub.js
+      - name: Validate landing studio JavaScript
+        run: node --check landing-studio.js
       - name: Validate Aurora Ecosystem Center
         run: |
           python3 - <<'PY'
