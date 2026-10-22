@@ -29,20 +29,40 @@
   document.body.appendChild(backdrop);
   const input = $('#studio-command-input',backdrop), list = $('#studio-command-list',backdrop);
   let selected = 0;
+  let previouslyFocused = null;
   function drawCommands() {
     const term = input.value.trim().toLowerCase();
     const matches = links.filter(x => x.join(' ').toLowerCase().includes(term));
     selected = Math.min(selected,Math.max(0,matches.length-1));
     list.innerHTML = matches.length ? matches.map((x,i) => '<a href="'+x[1].replace(/&/g,'&amp;').replace(/"/g,'&quot;')+'" data-command-index="'+i+'" '+(i===selected?'aria-current="true"':'')+'><span>'+x[0]+'<br><small>'+x[2]+'</small></span><small>↗</small></a>').join('') : '<p style="padding:16px;color:#9fb6d1;font-size:13px">No destinations found. Try “desktop”, “research” or “release”.</p>';
   }
-  function openCommands() { backdrop.classList.add('open'); input.value=''; selected=0; drawCommands(); input.focus(); }
-  function closeCommands() { backdrop.classList.remove('open'); }
+  function openCommands() {
+    if (backdrop.classList.contains('open')) { input.focus(); return; }
+    previouslyFocused = document.activeElement;
+    backdrop.classList.add('open');
+    document.documentElement.style.overflow = 'hidden';
+    input.value = '';
+    selected = 0;
+    drawCommands();
+    input.focus();
+  }
+  function closeCommands() {
+    backdrop.classList.remove('open');
+    document.documentElement.style.overflow = '';
+    if (previouslyFocused && typeof previouslyFocused.focus === 'function') previouslyFocused.focus();
+  }
   $('#open-command')?.addEventListener('click',openCommands);
   document.addEventListener('keydown',e => {
     if ((e.ctrlKey||e.metaKey) && e.key.toLowerCase()==='k') { e.preventDefault(); openCommands(); }
     if (e.key==='/' && !e.ctrlKey && !e.metaKey && !e.altKey && !/^(INPUT|TEXTAREA|SELECT)$/.test(e.target.tagName) && !e.target.isContentEditable) { const search=$('#q'); if(search){e.preventDefault();search.focus();search.scrollIntoView({block:'nearest',behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});} }
     if (!backdrop.classList.contains('open')) return;
     const items = [...list.querySelectorAll('a')];
+    if (e.key === 'Tab') {
+      const focusable = [input, ...items];
+      if (e.shiftKey && document.activeElement === input) { e.preventDefault(); (items[items.length - 1] || input).focus(); }
+      else if (!e.shiftKey && document.activeElement === (items[items.length - 1] || input)) { e.preventDefault(); input.focus(); }
+      return;
+    }
     if (e.key==='Escape') { closeCommands(); $('#open-command')?.focus(); }
     else if (e.key==='ArrowDown' && items.length) { e.preventDefault(); selected=(selected+1)%items.length; drawCommands(); list.querySelector('[aria-current="true"]')?.scrollIntoView({block:'nearest'}); }
     else if (e.key==='ArrowUp' && items.length) { e.preventDefault(); selected=(selected-1+items.length)%items.length; drawCommands(); list.querySelector('[aria-current="true"]')?.scrollIntoView({block:'nearest'}); }
@@ -51,6 +71,7 @@
   input.addEventListener('input',()=>{selected=0;drawCommands();});
   backdrop.addEventListener('click',e=>{if(e.target===backdrop)closeCommands();});
   list.addEventListener('mousemove',e=>{const a=e.target.closest('[data-command-index]');if(a){selected=Number(a.dataset.commandIndex);list.querySelectorAll('a').forEach(n=>n.removeAttribute('aria-current'));a.setAttribute('aria-current','true');}});
+  list.addEventListener('focusin',e=>{const a=e.target.closest('[data-command-index]');if(a){selected=Number(a.dataset.commandIndex);list.querySelectorAll('a').forEach(n=>n.removeAttribute('aria-current'));a.setAttribute('aria-current','true');}});
   document.querySelectorAll('.launch-chips a').forEach(a=>a.addEventListener('click',()=>{try{sessionStorage.setItem('amerhwitat.lastWorkspace',a.textContent.trim())}catch(_){}}));
   // Make the header search immediately discoverable from the keyboard.
   const search = $('#q'); if(search) search.setAttribute('aria-keyshortcuts','/ Ctrl+K Meta+K');
