@@ -15,6 +15,7 @@ on:
       - "apps/octavianos/**"
       - "apps/thamudic-scanner/**"
       - "apps/repository-app-explorer/**"
+      - "apps/multi-language-repository-studio/**"
       - "scripts/test_repository_app_explorer.py"
       - "scripts/test_octavian_provider_checks.py"
       - "site-interactions.css"
@@ -34,6 +35,7 @@ on:
       - "apps/cpu4096-simulator/public/**"
       - "apps/octavianos/**"
       - "apps/thamudic-scanner/**"
+      - "apps/multi-language-repository-studio/**"
       - ".github/workflows/site-catalog-check.yml"
 
 permissions:
@@ -138,6 +140,20 @@ jobs:
           npm install --no-audit --no-fund
           npm run typecheck
           rm -rf node_modules
+      - name: Validate multi-language repository studio
+        run: |
+          node --check apps/multi-language-repository-studio/app.js
+          python3 - <<'PY'
+          from pathlib import Path
+          page = Path("apps/multi-language-repository-studio/index.html").read_text(encoding="utf-8")
+          app = Path("apps/multi-language-repository-studio/app.js").read_text(encoding="utf-8")
+          assert 'src="./app.js" defer' in page
+          assert "connect-src 'none'" in app and 'setAttribute("sandbox","allow-scripts")' in app
+          assert "runtime is bundled" in app
+          for target in ("python-app-hub/index.html", "java-app-hub/index.html", "chimera-language-runtime.html", "repository-app-explorer/index.html"):
+              assert target in page, f"Missing language workbench link: {target}"
+          print("PASS: multi-language studio script syntax, sandbox contract, and language GUI links")
+          PY
       - name: Test repository explorer contract
         run: python3 -m unittest scripts/test_repository_app_explorer.py
       - name: Test OctavianOS provider availability and launch states
