@@ -31,6 +31,12 @@ This plan coordinates the public application hub, ChimeraIIOS, and OctavianOS. I
 - Read actual capability and provider state before enabling actions. A UI control without a functioning backend must be disabled with a reason.
 - Driver assistance must remain sandboxed and advisory; require signed manifests, ABI checks, bounded probes, rollback, and acceptance tests. Model output must never be loaded as kernel code.
 
+## Browser GUI delivered in this branch
+
+- `apps/pdf-reader.html` is a new local-first PDF viewer UI. It previews a user-selected PDF through the browser's built-in PDF support, keeps file handling client-side, releases object URLs when closed, and clearly states that OCR, extraction, annotation, and historical-script analysis are not implemented in this UI.
+- The homepage `APPS` catalog now links to the viewer, and `apps/index.html` no longer points its PDF Reader item at the previously unresolved `apps/pdf-reader/index.html` path.
+- This is a browser GUI for viewing only; it is not a native PDFreaderPY port and does not establish that the Python processing backend is available inside either OS.
+
 ## Catalog validation implemented in this branch
 
 - `scripts/check_optional_apps_catalog.py` validates catalog schema, unique IDs, ISO update date, HTTPS upstream URLs, platform values, required license metadata, and fail-closed installation/launchability defaults.
