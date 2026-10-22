@@ -91,3 +91,16 @@ These are tracked acceptance requirements, not a declaration that the gates have
 - Flash Center UI checksum preflight: [85c7550e](https://github.com/amerhwitat/amerhwitat.github.io/commit/85c7550ee2795c29d2afa77fe3c96e74b069dbcf) and follow-up Mobile evidence link fix [0f6b0478](https://github.com/amerhwitat/amerhwitat.github.io/commit/0f6b04787e3af0e2358f70449b3fc5d15e9689d4).
 
 These are source changes, not proof of a successful real-device flash. The previous Mobile and production matrix runs were cancelled, so reruns and runtime evidence remain required before publication is treated as verified.
+
+
+## Interactive landing page refresh — 2026-10-22
+
+The portfolio homepage now includes a responsive Aurora-inspired glass hero, direct workspace launch links, a searchable keyboard-driven Quick Launch palette (Ctrl/⌘+K), and a persistent light/dark appearance toggle. The design respects reduced-motion preferences and includes Open Graph/social preview metadata.
+
+- Homepage: https://amerhwitat.github.io/
+- Landing styles: [landing-studio.css](landing-studio.css)
+- Landing interactions: [landing-studio.js](landing-studio.js)
+- Page entry: [index.html](index.html)
+- Pages workflow and link/catalog checks: [.github/workflows/pages.yml](.github/workflows/pages.yml)
+
+The source and workflow checks are committed; treat live deployment and browser-level acceptance as pending until the Pages run and deployed site are independently verified.
