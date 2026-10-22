@@ -117,6 +117,40 @@ jobs:
         run: node --check apps/chimera-ii-os/web/aurora-interaction-hub.js
       - name: Validate landing studio JavaScript
         run: node --check landing-studio.js
+      - name: Validate landing studio assets and Quick Launch destinations
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+          html = Path("index.html").read_text(encoding="utf-8")
+          css = Path("landing-studio.css").read_text(encoding="utf-8")
+          js = Path("landing-studio.js").read_text(encoding="utf-8")
+          assert 'href="/landing-studio.css?v=1"' in html, "landing stylesheet must be linked"
+          assert 'src="/landing-studio.js?v=1"' in html, "landing script must be linked"
+          assert 'id="metric-apps"' in html and "const APPS = [" in html, "catalog metric/data source missing"
+          # Catch accidental truncation or unbalanced CSS blocks before publishing.
+          assert css.count("{") == css.count("}"), "unbalanced CSS braces"
+          # Keep this list aligned with the fixed, curated Quick Launch destinations.
+          targets = [
+              "#apps",
+              "apps/aurora-glass-desktop/index.html",
+              "apps/chimera-ii-os/web/aurora_3d_desktop.html",
+              "apps/thamudic-scanner/index.html",
+              "apps/optional-app-center/index.html",
+              "repository-hub.html",
+              "project-updates.html",
+              "apps/chimera-ii-os/web/iso-flash-center.html",
+          ]
+          for target in targets:
+              if target.startswith("#"):
+                  assert target in html, f"missing in-page destination {target}"
+              else:
+                  assert Path(target).is_file(), f"Quick Launch destination missing: {target}"
+              assert target in js, f"Quick Launch destination not wired: {target}"
+          assert "prefers-reduced-motion" in css, "reduced-motion support missing"
+          assert "aria-modal" in js and "Escape" in js and "ArrowDown" in js, "keyboard dialog controls missing"
+          print(f"Landing studio contract: PASS ({len(targets)} destinations)")
+          PY
       - name: Validate Aurora Ecosystem Center
         run: |
           python3 - <<'PY'
