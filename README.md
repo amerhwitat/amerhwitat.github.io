@@ -70,3 +70,15 @@ The canonical Chimera II OS implementation is maintained in `amerhwitat/ChimeraI
 ## Licensing
 
 Original website and project documentation code is GPLv3-or-later where compatible. Third-party libraries, fonts, assets and generated external content retain their applicable licenses.
+
+
+## Cross-edition Mobile and ISO/Flash release status
+
+The public site, ChimeraIIOS, and OctavianOS share a release-evidence contract, but each target is tracked independently. A catalog entry, successful component compile, image checksum, or candidate probe is not proof of a bootable production system.
+
+- **Mobile edition:** architecture/device-specific builds and runtime checks are required for boot, touch/input, display, audio, storage, settings persistence, services, and desktop/session routing. Do not infer mobile readiness from x86_64 BIOS/UEFI results.
+- **ISO/Flash Center:** retain non-destructive image inspection and checksum verification separately from destructive writes. Flashing requires explicit confirmation (`CHIMERA_FLASH_CONFIRM=YES`), a validated image, an explicit `/dev/...` target, and post-write verification. Never run physical-device writes in CI or accept arbitrary shell commands.
+- **Production OS gate:** all six Live/Installer/Recovery × BIOS/UEFI runs must show genuine CPL3-originated syscalls and PID-bound readiness, followed by evidence for VFS/file operations, persistent storage, install/reboot, Recovery repair, Aurora handoff, functional preferences/providers, and AP-backed concurrency.
+- **Current engineering records:** [OctavianOS production handoff status](https://github.com/amerhwitat/OctavianOS/blob/feat/cross-os-settings-driver-compat-20261022/docs/PRODUCTION_USERSPACE_HANDOFF.md) · [ChimeraIIOS native-init integration status](https://github.com/amerhwitat/ChimeraIIOS/blob/feat/cross-os-settings-driver-compat-20261022/docs/NATIVE_INIT_INTEGRATION_STATUS.md).
+
+These are tracked acceptance requirements, not a declaration that the gates have passed. Keep release/publishing gates closed until matching runtime evidence is attached.
