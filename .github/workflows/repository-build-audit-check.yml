@@ -1,0 +1,25 @@
+name: Repository build inventory contract
+
+on:
+  pull_request:
+    paths:
+      - "apps/repository-build-audit.json"
+      - "scripts/check_repository_build_audit.py"
+      - ".github/workflows/repository-build-audit-check.yml"
+  push:
+    branches: [main]
+    paths:
+      - "apps/repository-build-audit.json"
+      - "scripts/check_repository_build_audit.py"
+      - ".github/workflows/repository-build-audit-check.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  validate-audit-contract:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate source-backed inventory structure and conservative evidence labels
+        run: python3 scripts/check_repository_build_audit.py
