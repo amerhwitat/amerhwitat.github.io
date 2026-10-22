@@ -25,7 +25,7 @@
     ['Flash Center','apps/chimera-ii-os/web/iso-flash-center.html','ISO verification and flash workflow']
   ];
   const backdrop = document.createElement('div'); backdrop.className = 'studio-command-backdrop'; backdrop.id = 'studio-command-backdrop';
-  backdrop.innerHTML = '<div class="studio-command" role="dialog" aria-modal="true" aria-labelledby="studio-command-title"><div class="studio-command-head"><label id="studio-command-title" for="studio-command-input">QUICK LAUNCH · Search destinations</label><input id="studio-command-input" type="search" placeholder="Type an app, workspace or action…" autocomplete="off"></div><div class="studio-command-list" id="studio-command-list"></div><div class="studio-command-foot"><span>↑ ↓ browse · Enter open · Esc close</span><span>Ctrl / ⌘ K</span></div></div>';
+  backdrop.innerHTML = '<div class="studio-command" role="dialog" aria-modal="true" aria-labelledby="studio-command-title"><div class="studio-command-head"><label id="studio-command-title" for="studio-command-input">QUICK LAUNCH · Search destinations</label><input id="studio-command-input" type="search" placeholder="Type an app, workspace or action…" autocomplete="off"><button type="button" class="studio-command-close" id="studio-command-close" aria-label="Close Quick Launch">×</button></div><div class="studio-command-list" id="studio-command-list"></div><div class="studio-command-foot"><span>↑ ↓ browse · Enter open · Esc close</span><span>Ctrl / ⌘ K</span></div></div>';
   document.body.appendChild(backdrop);
   const input = $('#studio-command-input',backdrop), list = $('#studio-command-list',backdrop);
   let selected = 0;
@@ -52,18 +52,20 @@
     if (previouslyFocused && typeof previouslyFocused.focus === 'function') previouslyFocused.focus();
   }
   $('#open-command')?.addEventListener('click',openCommands);
+  $('#studio-command-close',backdrop).addEventListener('click',closeCommands);
   document.addEventListener('keydown',e => {
     if ((e.ctrlKey||e.metaKey) && e.key.toLowerCase()==='k') { e.preventDefault(); openCommands(); }
     if (e.key==='/' && !e.ctrlKey && !e.metaKey && !e.altKey && !/^(INPUT|TEXTAREA|SELECT)$/.test(e.target.tagName) && !e.target.isContentEditable) { const search=$('#q'); if(search){e.preventDefault();search.focus();search.scrollIntoView({block:'nearest',behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});} }
     if (!backdrop.classList.contains('open')) return;
     const items = [...list.querySelectorAll('a')];
     if (e.key === 'Tab') {
-      const focusable = [input, ...items];
-      if (e.shiftKey && document.activeElement === input) { e.preventDefault(); (items[items.length - 1] || input).focus(); }
-      else if (!e.shiftKey && document.activeElement === (items[items.length - 1] || input)) { e.preventDefault(); input.focus(); }
+      const focusable = [input, $('#studio-command-close',backdrop), ...items].filter(Boolean);
+      const first = focusable[0], last = focusable[focusable.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
       return;
     }
-    if (e.key==='Escape') { closeCommands(); $('#open-command')?.focus(); }
+    if (e.key==='Escape') closeCommands();
     else if (e.key==='ArrowDown' && items.length) { e.preventDefault(); selected=(selected+1)%items.length; drawCommands(); list.querySelector('[aria-current="true"]')?.scrollIntoView({block:'nearest'}); }
     else if (e.key==='ArrowUp' && items.length) { e.preventDefault(); selected=(selected-1+items.length)%items.length; drawCommands(); list.querySelector('[aria-current="true"]')?.scrollIntoView({block:'nearest'}); }
     else if (e.key==='Enter' && items.length) { e.preventDefault(); items[selected]?.click(); }
