@@ -44,7 +44,7 @@ const langDefs=[
 ["Fortran","f90","fortran","program hello\n  print *, 'Hello, Fortran'\nend program hello"],
 ["Haskell","hs","haskell","main :: IO ()\nmain = putStrLn \"Hello, Haskell\""],
 ["Julia","jl","julia","println(\"Hello, Julia\")"],
-["Perl","pl","perl","use strict; use warnings;\nprint \"Hello, Perl\\n\";"],
+["Perl 5.44.0 (stable; host runtime)","pl","perl","use strict; use warnings;\n# OS runtime build: tools/perl-runtime/ (native Koronos execution is gated).\nprint \"Hello, Perl\\n\";"],
 ["MATLAB / Octave","m","matlab","disp('Hello, MATLAB / Octave')"],
 ["Zig","zig","zig","const std = @import(\"std\");\npub fn main() void {\n    std.debug.print(\"Hello, Zig\\n\", .{});\n}"]
 ];
