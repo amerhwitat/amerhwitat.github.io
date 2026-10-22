@@ -40,3 +40,8 @@ body.studio-light .topbar{background:#eef5f8e8}body.studio-light nav.links a{col
 
 .studio-command-list a[aria-current="true"]{background:#74cfff1b;outline:1px solid #74cfff55;outline-offset:-1px}
 .landing-hero :focus-visible,.launch-chips a:focus-visible,.landing-actions a:focus-visible,.landing-actions button:focus-visible,#studio-theme-toggle:focus-visible{outline:2px solid #8be7ff;outline-offset:3px}
+
+.studio-command-head{position:relative;padding-right:42px}
+.studio-command-close{position:absolute;right:0;top:0;width:32px;height:32px;border:1px solid var(--studio-line);border-radius:9px;background:transparent;color:inherit;font-size:22px;line-height:1;cursor:pointer}
+.studio-command-close:hover{background:#74cfff1b}
+.studio-command-close:focus-visible{outline:2px solid #8be7ff;outline-offset:2px}
