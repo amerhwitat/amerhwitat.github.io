@@ -2,123 +2,18 @@
   "generated_by": "amerhwitat.github.io hub catalog indexer",
   "pages": [
     {
-      "p": "apps/chimera-ii-os/web/ancient-ocr.html",
-      "t": "Ancient OCR Studio",
-      "g": "Ancient Language Research",
-      "d": "Ancient script OCR and translation workspace.",
-      "x": "OCR inscription image upload script family glyph segmentation transliteration translation"
-    },
-    {
-      "p": "apps/chimera-ii-os/web/thamudicscan.html",
-      "t": "Aurora ThamudicScan",
-      "g": "Ancient Language Research",
-      "d": "Ancient North Arabian research workspace within the Chimera II OS web desktop.",
-      "x": "ThamudicScan Thamudic Safaitic Dadanitic Hismaic Taymanitic epigraphy OCR transliteration translation"
-    },
-    {
-      "p": "apps/desktop-evolution/index.html",
-      "t": "Desktop Evolution Lab — Chimera II / OctavianOS",
-      "g": "Apps",
+      "p": "404.html",
+      "t": "Not found — Amer Hwitat Web UI",
+      "g": "Portfolio",
       "d": "",
-      "x": "Chimera II OS · OctavianOS · Portfolio GUI Desktop Evolution Lab Explore classic-to-modern desktop interaction patterns and choose a direction for Aurora Wayland Glass Desktop or Marine Desktop. This is a web prototype and feature planner, not a Windows emulator or a claim that native desktop services are implemented. Aurora · glass workspace Marine · task workspace Aurora Wayland Glass Desktop A spatial, translucent workspace with overview navigation, widgets, touch-friendly surfaces and keyboard-first controls. Glass surfaces Workspaces Wayland target Windows-era feature map Choose feature families inspired by desktop history from Windows 3.1/3.11 through Windows 12-era concepts. Availability in this prototype means selected for planning only. 0 feature groups selected Select all feature groups Clear Feature families Classic productivity Program Manager-style app groups and file-manage"
+      "x": "404 That app or page was not found. ← Back to the app hub"
     },
     {
-      "p": "apps/index.html",
-      "t": "Apps — Amer Hwitat",
-      "g": "Apps",
-      "d": "",
-      "x": "App directory Redirecting to the portfolio & app hub … 28 apps. Chimera II OS — Home Chimera II OS Aurora 3D Desktop Chimera II OS Chimera Code IDE Chimera II OS Aurora Terminal Chimera II OS System Control Center Chimera II OS Desktop Profiles Chimera II OS Retro Emulators Chimera II OS Installer Manager Chimera II OS Network Monitor Chimera II OS Crash Center Chimera II OS Health Chimera II OS Research OS Chimera II OS Linux Command Console Chimera II OS CPU4096 Simulator — Aurora Web Desktop CPU4096 CPU4096 Visualizer CPU4096 BizX Asset Browser BizX & BizXtreme BizXtreme 3D BizX & BizXtreme Thamudic Scanner Research (nlp) Thamudic Epi Platform Research (nlp) Amiga Emulator Research (nlp) Chimera 3D/4D Studio Studio & Tools SEO Tool Studio & Tools Aurora Mobile Studio & Tools Agent Research Forge Studio & Tools Chimera Test Suite More PDF Reader More Chimera Pages Published Pages Thamu"
-    },
-    {
-      "p": "apps/iso-tool/index.html",
-      "t": "ISO-Tool Browser Planner",
-      "g": "Apps",
-      "d": "Browser-native public repository inventory and multi-language build-plan generator inspired by ISO-Tool",
-      "x": "NLP · ISO-Tool browser port Repository → Build Plan Inspect a public GitHub repository, discover build manifests and language families, and generate a reviewable build plan without executing any commands. Portfolio Repository hub Python Workbench ISO-Tool Python source ↗ Execution boundary: this browser port reads public GitHub tree metadata only. It does not clone repositories, install dependencies, execute build commands, create ISOs, or access local files. Run actual builds through the local ISO-Tool Python application after reviewing the plan. Source discovery Inspect repository Public GitHub repository Branch / tag Scan repository tree Load sample report Export report JSON Export build plan CSV Enter a public repository and scan to begin. Files in tree — Language families — Build manifests — Recommended phases — Build intelligence Detected languages No scan No inventory yet. Plan Re"
-    },
-    {
-      "p": "apps/portfolio-migration/index.html",
-      "t": "Portfolio GUI Migration Dashboard",
-      "g": "Apps",
-      "d": "Cross-repository GUI migration inventory for Aurora, Marine, and the Amer Hwitat project portfolio.",
-      "x": "Aurora · Marine · Cross-language portfolio Portfolio GUI Migration Dashboard One visible inventory for the public project portfolio. This dashboard tracks candidate browser interfaces and migration paths; it does not assert that every source file has already been converted, tested, or deployed. Desktop Evolution Lab Repository App Explorer Migration architecture and acceptance guide Migration rules Aurora Wayland Glass Desktop remains the glass/workspace-oriented desktop; Marine Desktop remains the task-oriented desktop. Shared apps should use reusable web components while each desktop owns its shell, window behavior, permissions and theme. Angular + TypeScript and Next.js + TypeScript are alternative web application targets, not a requirement to duplicate every app in both frameworks. Spring Boot requires a separately hosted JVM service; GitHub Pages serves static assets only. JavaFX/Sw"
-    },
-    {
-      "p": "apps/workflow-studio/index.html",
-      "t": "WorkflowStudio",
-      "g": "Apps",
-      "d": "Browser GUI for the self-hosted WorkflowStudio Python API: projects, backlog items and advisory sequence scoring.",
-      "x": "general · WorkflowStudio Python API WorkflowStudio A browser GUI for the reference workflow service: projects, backlog work items, and advisory sequence scoring. Portfolio Repository hub Python Workbench Source ↗ Data and model boundary: This static page connects only to the API endpoint you configure. The reference Python service uses an in-memory store, so its records may be lost on restart. Sequence scoring is explicitly a reference contract, not a trained RNN guarantee. Configure API CORS for this page origin before use. Connection API settings Check service Python API base URL Not connected. Refresh projects Portfolio Create project Project ID Project name Owner Methodology Scrum Kanban Scrumban XP Lean Hybrid Create project Backlog Create work item Project Load or create a project first Item ID Title Type task epic story bug incident change problem Status backlog ready in_progress "
-    },
-    {
-      "p": "apps/bizx-network/index.html",
-      "t": "BizX Network GUI",
-      "g": "BizX",
-      "d": "NetworkUnified GUI for the BizX platform.",
-      "x": "BizX Network GUI Networking BizX NetworkUnified GUI for the BizX platform. BizX"
-    },
-    {
-      "p": "https://github.com/amerhwitat/BizX/tree/main/emailsender/web",
-      "t": "BizX Email Sender Web UI",
-      "g": "BizX",
-      "d": "Browser interface source; sending features need backend, consent and anti-abuse review.",
-      "x": "BizX Email Sender Web UI Web UI · source entry BizX Browser interface source; sending features need backend, consent and anti-abuse review."
-    },
-    {
-      "p": "https://github.com/amerhwitat/BizX/tree/main/InternetScanner/gui/web",
-      "t": "BizX Internet Scanner — GUI Web UI",
-      "g": "BizX",
-      "d": "GUI web entry point; source-backed, not hosted or production-ready.",
-      "x": "BizX Internet Scanner — GUI Web UI Web UI · source entry BizX GUI web entry point; source-backed, not hosted or production-ready."
-    },
-    {
-      "p": "https://github.com/amerhwitat/BizX/tree/main/InternetScanner/web",
-      "t": "BizX Internet Scanner — Web UI",
-      "g": "BizX",
-      "d": "Standalone InternetScanner web interface; build and backend requirements remain to be validated.",
-      "x": "BizX Internet Scanner — Web UI Web UI · source entry BizX Standalone InternetScanner web interface; build and backend requirements remain to be validated."
-    },
-    {
-      "p": "apps/chimera-ii-os/web/game-center.html",
-      "t": "Complete Game Center",
-      "g": "BizX & BizXtreme",
-      "d": "Dynamic BizXtreme game database, T-Rex, cards, storylines, events, progression and local save/export controls.",
-      "x": "Complete Game Center Games · Saves · Controls BizXtreme Dynamic BizXtreme game database, T-Rex, cards, storylines, events, progression and local save/export controls. BizX & BizXtreme"
-    },
-    {
-      "p": "https://github.com/amerhwitat/BizXtreme",
-      "t": "BizXtreme Unified Platform",
-      "g": "BizX & BizXtreme",
-      "d": "Unified BizXtreme surface for NetworkUnified, P2P/multiplayer, game engine, business simulation, assets, crypto interfaces, AI, rendering and mobile adapters.",
-      "x": "BizXtreme Unified Platform Game · Network · AI BizXtreme Unified BizXtreme surface for NetworkUnified, P2P/multiplayer, game engine, business simulation, assets, crypto interfaces, AI, rendering and mobile adapters. BizX & BizXtreme"
-    },
-    {
-      "p": "apps/bizxtreme-network/index.html",
-      "t": "BizXtreme Network GUI",
-      "g": "BizXtreme",
-      "d": "NetworkUnified GUI for the BizXtreme platform.",
-      "x": "BizXtreme Network GUI Networking BizXtreme NetworkUnified GUI for the BizXtreme platform. BizXtreme"
-    },
-    {
-      "p": "https://github.com/amerhwitat/BizXtreme/tree/main/web/javascript/standalone",
-      "t": "BizXtreme Three.js Standalone Web",
-      "g": "BizXtreme",
-      "d": "Standalone Three.js source; hosted BizXtreme 3D card remains the runnable portfolio surface.",
-      "x": "BizXtreme Three.js Standalone Web Three.js · source entry BizXtreme Standalone Three.js source; hosted BizXtreme 3D card remains the runnable portfolio surface."
-    },
-    {
-      "p": "https://github.com/amerhwitat/bruteforce/tree/main/web/javascript",
-      "t": "Bruteforce Repository — Web Entry",
-      "g": "bruteforce",
-      "d": "Source entry point, not hosted execution. Security testing must be authorized and bounded.",
-      "x": "Bruteforce Repository — Web Entry Research · source entry bruteforce Source entry point, not hosted execution. Security testing must be authorized and bounded."
-    },
-    {
-      "p": "chimera/index.html",
-      "t": "Chimera II OS — Public Research Index",
-      "g": "Chimera",
-      "d": "Chimera II OS public research index by Amer Hwitat — open research operating system, Koronos kernel, Spit Fire bootloader, Jasper boot manager, C8192/R8192 ISA research, CPU4096, Aurora desktop, mobil",
-      "x": "Chimera II OS Open research operating-system and virtual-processor ecosystem by Amer Hwitat. Canonical source repository · Complete portfolio summary ChimeraIIOS Koronos C8192 R8192 CPU4096 Aurora 128D Framework RISC CISC Neural Simulation Core ChimeraIIOS CPU4096 CPU4096Simulator general / mobile test / Python integration keygen / Java track Research & tools NLP/data research PDFreaderPY eth-key-check bruteforce / crypto reference BizX BizXtreme / WebGL Documentation Amer Hwitat bibliography Library research archive CI/CD plan Crypto provenance Visuals & web Aurora Web UI Mobile Edition visual Public web repository Media publication Current Library media candidates are catalogued in the Chimera publication registry. Video publication links are recorded only after an authenticated upload succeeds. Publication & media registry Publication policy GitHub is the current canonical public forg"
+      "p": "apps/agent-research-forge/index.html",
+      "t": "Agent Research Forge",
+      "g": "Studio & Tools",
+      "d": "UI for researching public sources and generating reviewed project artifacts.",
+      "x": "Agent Research Forge AI general UI for researching public sources and generating reviewed project artifacts. Studio & Tools"
     },
     {
       "p": "apps/aurora-glass-desktop/index.html",
@@ -128,11 +23,67 @@
       "x": "Aurora Wayland Glass Desktop Desktop OS · Wayland ChimeraIIOS Full Aurora Wayland Glass desktop simulator: window manager, dock, launcher, live clock/calendar, Amman weather, system-resource widgets, music player, ThamudicScan and every app surface."
     },
     {
+      "p": "apps/aurora-mobile/index.html",
+      "t": "Aurora Mobile",
+      "g": "Studio & Tools",
+      "d": "Aurora Wayland Glass mobile shell UI.",
+      "x": "Aurora Mobile Mobile general Aurora Wayland Glass mobile shell UI. Studio & Tools"
+    },
+    {
+      "p": "apps/aurora-mobile/store/index.html",
+      "t": "Chimera Store",
+      "g": "Studio & Tools",
+      "d": "",
+      "x": "Chimera II Mobile Store One store · many ecosystems · one security policy ARM64 Android Swift .deb RPM pacman Debian apt · apt-get · dpkg Install Arch pacman · AUR-compatible source workflow Install Android APK · isolated Android runtime Install Swift SwiftPM · Foundation · SwiftNIO Install Universal Flatpak · Snap · AppImage Install Developer Git · GitHub · source builds Install"
+    },
+    {
+      "p": "apps/bizx-asset-browser/index.html",
+      "t": "BizX / BizXtreme",
+      "g": "Repositories",
+      "d": "BizX components are maintained inside the BizXtreme repository; includes game, network, crypto, asset and multilingual adapters.",
+      "x": "BizX / BizXtreme Platform BizX components are maintained inside the BizXtreme repository; includes game, network, crypto, asset and multilingual adapters. GitHub repository source code"
+    },
+    {
+      "p": "apps/bizx-network/index.html",
+      "t": "BizX Network GUI",
+      "g": "BizX",
+      "d": "NetworkUnified GUI for the BizX platform.",
+      "x": "BizX Network GUI Networking BizX NetworkUnified GUI for the BizX platform. BizX"
+    },
+    {
+      "p": "apps/bizxtreme-3d/index.html",
+      "t": "BizXtreme",
+      "g": "Repositories",
+      "d": "Extended game, graphics, networking and crypto application platform.",
+      "x": "BizXtreme Platform Extended game, graphics, networking and crypto application platform. GitHub repository source code"
+    },
+    {
+      "p": "apps/bizxtreme-network/index.html",
+      "t": "BizXtreme Network GUI",
+      "g": "BizXtreme",
+      "d": "NetworkUnified GUI for the BizXtreme platform.",
+      "x": "BizXtreme Network GUI Networking BizXtreme NetworkUnified GUI for the BizXtreme platform. BizXtreme"
+    },
+    {
+      "p": "apps/chimera-3d4d/index.html",
+      "t": "general",
+      "g": "Repositories",
+      "d": "Portfolio-wide applications, tools and integrations.",
+      "x": "general Portfolio Portfolio-wide applications, tools and integrations. GitHub repository source code"
+    },
+    {
       "p": "apps/chimera-ii-os/docs/index.html",
       "t": "Chimera II OS",
       "g": "Chimera II OS",
       "d": "",
       "x": "Chimera II OS Chimera II OS Public web entry point for the Chimera II OS project. Source repository Architecture includes Koronos, Spit Fire, Jasper, Spotnik, Aurora, Nucleus, Hive, Kore and Aegis."
+    },
+    {
+      "p": "apps/chimera-ii-os/web/ancient-ocr.html",
+      "t": "Ancient OCR Studio",
+      "g": "Ancient Language Research",
+      "d": "Ancient script OCR and translation workspace.",
+      "x": "OCR inscription image upload script family glyph segmentation transliteration translation"
     },
     {
       "p": "apps/chimera-ii-os/web/artifact-library.html",
@@ -224,6 +175,13 @@
       "g": "Chimera II OS",
       "d": "Switch between Aurora desktop profiles and layouts.",
       "x": "Desktop Profiles Desktop ChimeraIIOS Switch between Aurora desktop profiles and layouts. Chimera II OS"
+    },
+    {
+      "p": "apps/chimera-ii-os/web/game-center.html",
+      "t": "Complete Game Center",
+      "g": "BizX & BizXtreme",
+      "d": "Dynamic BizXtreme game database, T-Rex, cards, storylines, events, progression and local save/export controls.",
+      "x": "Complete Game Center Games · Saves · Controls BizXtreme Dynamic BizXtreme game database, T-Rex, cards, storylines, events, progression and local save/export controls. BizX & BizXtreme"
     },
     {
       "p": "apps/chimera-ii-os/web/health.html",
@@ -345,6 +303,13 @@
       "x": "● Guest · no password · local session Aurora Repository App Studio Runnable browser editions and launch adapters for the requested Chimera II repositories. Java source is exposed as portable Java runners for Aurora's local execution bridge; browser builds run without a server. All repositories Web-runnable Java / JVM Native / bridge Aurora Desktop Hercules Guest control model: Guest can launch and use all browser-safe applications. Native OS, device, filesystem-write, network-privileged and other capability-gated actions remain controlled by the local Chimera bridge; GitHub Pages cannot grant those privileges by itself. Browser Runtime A deterministic, client-only research console. It never sends entered values to a server. Aurora Repository App Studio Guest session ready. Select an application above."
     },
     {
+      "p": "apps/chimera-ii-os/web/research-lab.html",
+      "t": "bruteforce",
+      "g": "Repositories",
+      "d": "Cryptographic research, hashing, validation, benchmarks and isolated test workflows.",
+      "x": "bruteforce Safe crypto research Cryptographic research, hashing, validation, benchmarks and isolated test workflows. GitHub repository source code"
+    },
+    {
       "p": "apps/chimera-ii-os/web/research-os.html",
       "t": "Research OS",
       "g": "Chimera II OS",
@@ -373,11 +338,25 @@
       "x": "System Control Center Control ChimeraIIOS Central control surface for system, services and settings. Chimera II OS"
     },
     {
+      "p": "apps/chimera-ii-os/web/thamudicscan.html",
+      "t": "Aurora ThamudicScan",
+      "g": "Ancient Language Research",
+      "d": "Ancient North Arabian research workspace within the Chimera II OS web desktop.",
+      "x": "ThamudicScan Thamudic Safaitic Dadanitic Hismaic Taymanitic epigraphy OCR transliteration translation"
+    },
+    {
       "p": "apps/chimera-ii-os/web/userspace-acceptance.html",
       "t": "Koronos Production Acceptance — Chimera II OS",
       "g": "Chimera II OS",
       "d": "Live, evidence-based Koronos production acceptance status for ChimeraIIOS and OctavianOS.",
       "x": "Skip to content KORONOS · PRODUCTION GATE Production Acceptance ChimeraIIOS · OctavianOS · Live / Installer / Recovery · BIOS / UEFI Architecture 3D Desktop Desktop Profiles Build & Release Status LIVE STATUS · 2026-10-19 · CI REFRESH Production release remains blocked. The latest full-ISO workflow built and validated the ISO, ran target probes and six-case BIOS/UEFI checks, and uploaded diagnostic artifacts. The final fail-closed acceptance step failed, and release publication was skipped. A successful build or completed probe step is not a passing userspace acceptance result. Latest evidence: OctavianOS Native Koronos run #39209603140 completed the kernel/ISO build, full-ISO kernel readiness, six independent target/firmware boot attempts, and trace/artifact uploads. The unchanged userspace verifier then failed all six cases: every Live/Installer/Recovery × BIOS/UEFI trace lacked the ac"
+    },
+    {
+      "p": "apps/chimera-ii-os/web/wallet-center.html",
+      "t": "Aurora Wallet & Ecosystem Center",
+      "g": "Wallet & Ecosystem",
+      "d": "Unified non-custodial wallet UI for watch-only research, transaction intents, policy approvals, AI assistance, game economy, P2P and safe cryptographic research.",
+      "x": "Aurora Wallet & Ecosystem Center Wallet · Crypto · AI BizXtreme + bruteforce + ChimeraIIOS Unified non-custodial wallet UI for watch-only research, transaction intents, policy approvals, AI assistance, game economy, P2P and safe cryptographic research. Wallet & Ecosystem"
     },
     {
       "p": "apps/chimera-ii-os/web/wallpapers.html",
@@ -394,32 +373,32 @@
       "x": "Linux Command Console Terminal ChimeraIIOS webui Sandboxed Linux/POSIX command console UI. Chimera II OS"
     },
     {
-      "p": "https://chimera-iios-120143.onhercules.app/",
-      "t": "Chimera II OS — Hosted Aurora Desktop SPA",
-      "g": "Chimera II OS",
-      "d": "Hosted React desktop SPA for Aurora, Koronos, kernel and terminal exploration. Web UI availability is not proof of native kernel execution or ISO boot.",
-      "x": "chimera-iios-120143.onhercules.app React Chimera II OS Aurora Koronos kernel terminal desktop SPA"
+      "p": "apps/chimera-pages/index.html",
+      "t": "Chimera Pages",
+      "g": "Published Pages",
+      "d": "Existing published Chimera landing page.",
+      "x": "Chimera Pages Site amerhwitat.github.io Existing published Chimera landing page. Published Pages"
     },
     {
-      "p": "https://chimeraiios-kukp34.public.builtwithrocket.new/chimera-ii-os-simulator",
-      "t": "Chimera II OS Rocket Simulator",
-      "g": "Chimera II OS",
-      "d": "External Chimera II OS simulator surface supplied by the project owner.",
-      "x": "Chimera II OS Rocket Simulator External simulator Built with Rocket External Chimera II OS simulator surface supplied by the project owner. Chimera II OS"
+      "p": "apps/chimera-test-suite/aurora_3d_desktop.html",
+      "t": "Aurora 3D Desktop — Chimera II",
+      "g": "More",
+      "d": "",
+      "x": "✦ CHIMERA II Aurora / Linux ◈ Aurora Desktop — □ × SPITFIRE → KORONOS → JASPER → AURORA Chimera II Unified Linux and Windows desktop presentation layer. Open Terminal Man / Help CII ⌘ Terminal × Chimera II Terminal\\nLinux/POSIX + Bash/Zsh + Windows CMD + PowerShell\\nType: help, man ls, man powershell:Get-Process, desktop windows chimera@aurora:$ Run ▤ Unified Man / Help × ▣ Files × Virtualized Chimera workspace 📁 projects 📁 docs 📁 source 📄 README.md ✦ ⌘ ▤ ▣ ◫ Desktop Profiles Aurora / Linux GNOME / Linux KDE Plasma / Linux Xfce / Linux Cinnamon / Linux MATE / Linux LXQt / Linux Windows 11 Windows 10 Classic Windows"
     },
     {
-      "p": "https://github.com/amerhwitat/CPU4096#readme",
-      "t": "CPU4096 — Multi-language Simulator",
-      "g": "CPU & ISA Research",
-      "d": "Configurable wide-register CPU simulator and research workloads with several language-specific implementations.",
-      "x": "CPU4096 — Multi-language Simulator C++ · Java · Node.js · Python · .NET · Apple CPU4096 Configurable wide-register CPU simulator and research workloads with several language-specific implementations."
+      "p": "apps/chimera-test-suite/index.html",
+      "t": "test",
+      "g": "Repositories",
+      "d": "Development and test projects.",
+      "x": "test Test suite Development and test projects. GitHub repository source code"
     },
     {
-      "p": "https://github.com/amerhwitat/CPU4096Simulator#readme",
-      "t": "CPU4096Simulator — Web & Runtime",
-      "g": "CPU & ISA Research",
-      "d": "Browser/runtime research for wide arithmetic, ISA inventory, memory/MMIO, kernel models, networking and dashboard components.",
-      "x": "CPU4096Simulator — Web & Runtime JavaScript · Node.js · C++ · Java · Python CPU4096Simulator Browser/runtime research for wide arithmetic, ISA inventory, memory/MMIO, kernel models, networking and dashboard components."
+      "p": "apps/chimera-test-suite/javascript/index.html",
+      "t": "Web Test Harness",
+      "g": "More",
+      "d": "",
+      "x": "Web Test Harness Browser Test Harness Run smoke test"
     },
     {
       "p": "apps/cpu4096-aurora/chimera_code_ide.html",
@@ -464,11 +443,11 @@
       "x": "Chimera System Control Center CPU4096 simulation observability and preferences. Processes Services"
     },
     {
-      "p": "https://github.com/amerhwitat/CPU4096/tree/main/web/javascript",
-      "t": "CPU4096 Web JavaScript Entry",
-      "g": "CPU4096",
-      "d": "Repository web/javascript entry point; hosted CPU4096 Visualizer is the portfolio runtime.",
-      "x": "CPU4096 Web JavaScript Entry JavaScript · source entry CPU4096 Repository web/javascript entry point; hosted CPU4096 Visualizer is the portfolio runtime."
+      "p": "apps/cpu4096-simulator/index.html",
+      "t": "CPU4096Simulator Java Runtime Guide",
+      "g": "Developer Tools",
+      "d": "Java assembler, execution semantics, memory bus, and cross-language contract guide.",
+      "x": "CPU4096 Simulator Java assembler opcode runtime contracts Maven tests machine code"
     },
     {
       "p": "apps/cpu4096-simulator/public/chimera_code_ide.html",
@@ -483,6 +462,13 @@
       "g": "CPU4096 Simulator",
       "d": "",
       "x": "AURORA SESSION MANAGER Desktop Switcher Choose an Aurora, Linux, Windows-style or retro desktop profile."
+    },
+    {
+      "p": "apps/cpu4096-simulator/public/index.html",
+      "t": "CPU4096Simulator",
+      "g": "Repositories",
+      "d": "4096/8192-bit CPU simulator, ISA catalog and runtime.",
+      "x": "CPU4096Simulator Simulator 4096/8192-bit CPU simulator, ISA catalog and runtime. GitHub repository source code"
     },
     {
       "p": "apps/cpu4096-simulator/public/installer_manager.html",
@@ -506,186 +492,32 @@
       "x": "Chimera System Control Center CPU4096 simulation observability and preferences. Processes Services"
     },
     {
-      "p": "https://github.com/amerhwitat/general#readme",
-      "t": "General Integration & Application Index",
-      "g": "Cross-language Applications",
-      "d": "Integration workspace with AgentResearchForge, SEO-Tool, WebContactCrawler, email workflow tools, WorkflowStudio and mobile/Apple implementation trees. Source discovery is not a build/runtime claim.",
-      "x": "General Integration & Application Index Python · Kotlin · Apple · Web · Automation general Integration workspace with AgentResearchForge, SEO-Tool, WebContactCrawler, email workflow tools, WorkflowStudio and mobile/Apple implementation trees. Source discovery is not a build/runtime claim."
+      "p": "apps/cpu4096/web/javascript/index.html",
+      "t": "CPU4096",
+      "g": "Repositories",
+      "d": "4096-bit CPU research and register model.",
+      "x": "CPU4096 CPU research 4096-bit CPU research and register model. GitHub repository source code"
     },
     {
-      "p": "https://github.com/amerhwitat/bruteforce#readme",
-      "t": "Safe Crypto Research & Benchmarks",
-      "g": "Cryptography Research",
-      "d": "Historical crypto experiments with a documented safe research boundary, verification and synthetic benchmarking. No wallet-cracking or private-key recovery UI is exposed here.",
-      "x": "Safe Crypto Research & Benchmarks Cross-language · Verification · Synthetic tests bruteforce Historical crypto experiments with a documented safe research boundary, verification and synthetic benchmarking. No wallet-cracking or private-key recovery UI is exposed here."
+      "p": "apps/desktop-evolution/index.html",
+      "t": "Desktop Evolution Lab — Chimera II / OctavianOS",
+      "g": "Apps",
+      "d": "",
+      "x": "Chimera II OS · OctavianOS · Portfolio GUI Desktop Evolution Lab Explore classic-to-modern desktop interaction patterns and choose a direction for Aurora Wayland Glass Desktop or Marine Desktop. This is a web prototype and feature planner, not a Windows emulator or a claim that native desktop services are implemented. Aurora · glass workspace Marine · task workspace Aurora Wayland Glass Desktop A spatial, translucent workspace with overview navigation, widgets, touch-friendly surfaces and keyboard-first controls. Glass surfaces Workspaces Wayland target Windows-era feature map Choose feature families inspired by desktop history from Windows 3.1/3.11 through Windows 12-era concepts. Availability in this prototype means selected for planning only. 0 feature groups selected Select all feature groups Clear Feature families Classic productivity Program Manager-style app groups and file-manage"
     },
     {
-      "p": "https://github.com/amerhwitat/eth-key-check#readme",
-      "t": "Ethereum Key/Address Verification",
-      "g": "Cryptography Research",
-      "d": "Cross-language Ethereum key/address verification and research utilities. Use documented verification flows; never submit private keys or seed phrases to a web UI.",
-      "x": "Ethereum Key/Address Verification Python · Node.js · Java · C++ · Apple eth-key-check Cross-language Ethereum key/address verification and research utilities. Use documented verification flows; never submit private keys or seed phrases to a web UI."
+      "p": "apps/index.html",
+      "t": "Apps — Amer Hwitat",
+      "g": "Apps",
+      "d": "",
+      "x": "App directory Redirecting to the portfolio & app hub … 28 apps. Chimera II OS — Home Chimera II OS Aurora 3D Desktop Chimera II OS Chimera Code IDE Chimera II OS Aurora Terminal Chimera II OS System Control Center Chimera II OS Desktop Profiles Chimera II OS Retro Emulators Chimera II OS Installer Manager Chimera II OS Network Monitor Chimera II OS Crash Center Chimera II OS Health Chimera II OS Research OS Chimera II OS Linux Command Console Chimera II OS CPU4096 Simulator — Aurora Web Desktop CPU4096 CPU4096 Visualizer CPU4096 BizX Asset Browser BizX & BizXtreme BizXtreme 3D BizX & BizXtreme Thamudic Scanner Research (nlp) Thamudic Epi Platform Research (nlp) Amiga Emulator Research (nlp) Chimera 3D/4D Studio Studio & Tools SEO Tool Studio & Tools Aurora Mobile Studio & Tools Agent Research Forge Studio & Tools Chimera Test Suite More PDF Reader More Chimera Pages Published Pages Thamu"
     },
     {
-      "p": "apps/cpu4096-simulator/index.html",
-      "t": "CPU4096Simulator Java Runtime Guide",
-      "g": "Developer Tools",
-      "d": "Java assembler, execution semantics, memory bus, and cross-language contract guide.",
-      "x": "CPU4096 Simulator Java assembler opcode runtime contracts Maven tests machine code"
-    },
-    {
-      "p": "apps/python-workbench/index.html",
-      "t": "Python Web Workbench",
-      "g": "Developer Tools",
-      "d": "Search and inspect the Python inventory across public repositories; preview source and use an explicitly configured local bridge for runnable entrypoints.",
-      "x": "Python GUI workbench Python catalog source preview runnable entrypoints modules libraries tests BizX BizXtreme ChimeraIIOS nlp build run local bridge"
-    },
-    {
-      "p": "apps/repository-app-explorer/index.html",
-      "t": "Repository App Explorer",
-      "g": "Developer Tools",
-      "d": "Searches public repository trees for app entry points, package manifests and language signals; links directly to source and labels partial scans.",
-      "x": "Repository App Explorer Recursive discovery · All languages amerhwitat.github.io Searches public repository trees for app entry points, package manifests and language signals; links directly to source and labels partial scans."
-    },
-    {
-      "p": "https://github.com/amerhwitat/test",
-      "t": "Repository Test & Prototype Workspace",
-      "g": "Developer Tools",
-      "d": "Additional prototype and test workspace; individual source entry points are discoverable in Repository App Explorer.",
-      "x": "Repository Test & Prototype Workspace Experiments · Source · Tests test Additional prototype and test workspace; individual source entry points are discoverable in Repository App Explorer."
-    },
-    {
-      "p": "https://github.com/amerhwitat/nlp#readme",
-      "t": "NLP & Ancient North Arabian Toolkit",
-      "g": "Document & Language Research",
-      "d": "Thamudic and Ancient North Arabian research with OCR, script detection, tokenization, transliteration and provenance-oriented tooling.",
-      "x": "NLP & Ancient North Arabian Toolkit Python · C++ · .NET · Visual C++ · Web nlp Thamudic and Ancient North Arabian research with OCR, script detection, tokenization, transliteration and provenance-oriented tooling."
-    },
-    {
-      "p": "https://github.com/amerhwitat/PDFreaderPY#readme",
-      "t": "PDFreaderPY — Document Ingestion",
-      "g": "Document & Language Research",
-      "d": "PDF/document-ingestion utilities and ancient-object catalog adapters with source trees and protocol contracts.",
-      "x": "PDFreaderPY — Document Ingestion Python · PDF · OCR/data adapters PDFreaderPY PDF/document-ingestion utilities and ancient-object catalog adapters with source trees and protocol contracts."
-    },
-    {
-      "p": "https://github.com/amerhwitat/eth-key-check/tree/main/web/javascript",
-      "t": "Ethereum Key Check — Web Entry",
-      "g": "eth-key-check",
-      "d": "Source entry point; never submit private keys or seed phrases to a public portfolio.",
-      "x": "Ethereum Key Check — Web Entry Security tool · source entry eth-key-check Source entry point; never submit private keys or seed phrases to a public portfolio."
-    },
-    {
-      "p": "https://github.com/amerhwitat/BizX#readme",
-      "t": "BizX — Cross-platform Game Framework",
-      "g": "Games & Business Platforms",
-      "d": "Business simulation and game framework research, including RPG/strategy, networking, asset browsing and multiple build-system entry points.",
-      "x": "BizX — Cross-platform Game Framework Python · Node.js · Java · C# · C++ · TypeScript BizX Business simulation and game framework research, including RPG/strategy, networking, asset browsing and multiple build-system entry points."
-    },
-    {
-      "p": "https://github.com/amerhwitat/BizXtreme#readme",
-      "t": "BizXtreme — Extended Game Platform",
-      "g": "Games & Business Platforms",
-      "d": "Extended game/platform source including WebGL, Unity/C#, wallet and game systems, networking, AI and mobile implementation material.",
-      "x": "BizXtreme — Extended Game Platform WebGL · Three.js · Unity · Kotlin · Flutter BizXtreme Extended game/platform source including WebGL, Unity/C#, wallet and game systems, networking, AI and mobile implementation material."
-    },
-    {
-      "p": "https://github.com/amerhwitat/general/tree/master/applications/WebContactCrawler/web",
-      "t": "WebContactCrawler Web UI",
-      "g": "General",
-      "d": "Browser UI source for WebContactCrawler; not a deployed runtime.",
-      "x": "WebContactCrawler Web UI Web UI · source entry general Browser UI source for WebContactCrawler; not a deployed runtime."
-    },
-    {
-      "p": "https://github.com/amerhwitat/general/tree/master/email_extractor/ui_js",
-      "t": "Email Extractor Web UI",
-      "g": "General",
-      "d": "JavaScript web UI source; hosted runtime and dependencies remain to be validated.",
-      "x": "Email Extractor Web UI Web UI · source entry general JavaScript web UI source; hosted runtime and dependencies remain to be validated."
-    },
-    {
-      "p": "https://github.com/amerhwitat/general/tree/master/EmailKeywordCrawler/web",
-      "t": "Email Keyword Crawler Web UI",
-      "g": "General",
-      "d": "Web entry point; runtime and network permissions remain to be reviewed.",
-      "x": "Email Keyword Crawler Web UI Web UI · source entry general Web entry point; runtime and network permissions remain to be reviewed."
-    },
-    {
-      "p": "https://github.com/amerhwitat/general/tree/master/EmailListManager/web",
-      "t": "Email List Manager Web UI",
-      "g": "General",
-      "d": "Web interface source; backend, storage and privacy behavior require review.",
-      "x": "Email List Manager Web UI Web UI · source entry general Web interface source; backend, storage and privacy behavior require review."
-    },
-    {
-      "p": "https://github.com/amerhwitat/general/tree/master/AgentResearchForge/",
-      "t": "AgentResearchForge",
-      "g": "General Applications",
-      "d": "Agent research and orchestration project listed in the General repository source index.",
-      "x": "AgentResearchForge Research agents · Python / cross-language general Agent research and orchestration project listed in the General repository source index."
-    },
-    {
-      "p": "https://github.com/amerhwitat/general/tree/master/Apple-Implementations/",
-      "t": "Apple Implementations",
-      "g": "General Applications",
-      "d": "Apple-oriented implementation source collection in the General repository.",
-      "x": "Apple Implementations Apple platform source collection general Apple-oriented implementation source collection in the General repository."
-    },
-    {
-      "p": "https://github.com/amerhwitat/general/tree/master/applications/WebContactCrawler/",
-      "t": "WebContactCrawler",
-      "g": "General Applications",
-      "d": "Web contact crawling application source in the General repository.",
-      "x": "WebContactCrawler Web crawling · Application tooling general Web contact crawling application source in the General repository."
-    },
-    {
-      "p": "https://github.com/amerhwitat/general/tree/master/email_extractor/",
-      "t": "Email Extractor",
-      "g": "General Applications",
-      "d": "Email extraction utility source in the General repository.",
-      "x": "Email Extractor Email parsing · Python / automation general Email extraction utility source in the General repository."
-    },
-    {
-      "p": "https://github.com/amerhwitat/general/tree/master/EmailKeywordCrawler/",
-      "t": "EmailKeywordCrawler",
-      "g": "General Applications",
-      "d": "Email and keyword crawling project source in the General repository.",
-      "x": "EmailKeywordCrawler Keyword search · Crawling general Email and keyword crawling project source in the General repository."
-    },
-    {
-      "p": "https://github.com/amerhwitat/general/tree/master/EmailListManager/",
-      "t": "EmailListManager",
-      "g": "General Applications",
-      "d": "Email list management project source in the General repository.",
-      "x": "EmailListManager List management · Automation general Email list management project source in the General repository."
-    },
-    {
-      "p": "https://github.com/amerhwitat/general/tree/master/mobile/",
-      "t": "General Mobile Sources",
-      "g": "General Applications",
-      "d": "Mobile, Kotlin and Apple source trees catalogued by the General repository README.",
-      "x": "General Mobile Sources Mobile · Kotlin · Apple general Mobile, Kotlin and Apple source trees catalogued by the General repository README."
-    },
-    {
-      "p": "https://github.com/amerhwitat/general/tree/master/SEO-Tool/",
-      "t": "SEO-Tool",
-      "g": "General Applications",
-      "d": "SEO tooling project listed in the General repository source index.",
-      "x": "SEO-Tool SEO analysis · Web / automation general SEO tooling project listed in the General repository source index."
-    },
-    {
-      "p": "https://github.com/amerhwitat/general/tree/master/WorkflowStudio/",
-      "t": "WorkflowStudio",
-      "g": "General Applications",
-      "d": "WorkflowStudio source tree listed in the General repository index.",
-      "x": "WorkflowStudio Workflow design · Automation general WorkflowStudio source tree listed in the General repository index."
-    },
-    {
-      "p": "index.html",
-      "t": "Amer Hwitat — Chimera II OS ecosystem hub",
-      "g": "Hub",
-      "d": "Static hub hero, APPS application catalogue, REPOS repository index, search-index.json full-text page search, five Thamudic / Ancient North Arabian script families, 154 web files under apps/chimera-ii-os/web/, desktop, terminal, ISA explorer, emulators, OCR, wallet and installer.",
-      "x": "hero app catalog APPS repo index REPOS search-index.json full-text search ChimeraIIOS 154 files desktop terminal ISA explorer emulators OCR wallet installer ThamudicScan upload camera five-stage pipeline import quality check script-family review glyph transliteration review export Thamudic Safaitic Dadanitic Hismaic Taymanitic sample inscriptions field tips Static hub APPS REPOS search-index.json full text page search ThamudicScan v2.4.1 upload camera five stage pipeline five script families sample inscriptions field tips export Chimera II OS React desktop SPA Aurora Koronos kernel terminal 154 files 680 files ChimeraIIOS 3123 files 2.1 GB"
+      "p": "apps/iso-tool/index.html",
+      "t": "ISO-Tool Browser Planner",
+      "g": "Apps",
+      "d": "Browser-native public repository inventory and multi-language build-plan generator inspired by ISO-Tool",
+      "x": "NLP · ISO-Tool browser port Repository → Build Plan Inspect a public GitHub repository, discover build manifests and language families, and generate a reviewable build plan without executing any commands. Portfolio Repository hub Python Workbench ISO-Tool Python source ↗ Execution boundary: this browser port reads public GitHub tree metadata only. It does not clone repositories, install dependencies, execute build commands, create ISOs, or access local files. Run actual builds through the local ISO-Tool Python application after reviewing the plan. Source discovery Inspect repository Public GitHub repository Branch / tag Scan repository tree Load sample report Export report JSON Export build plan CSV Enter a public repository and scan to begin. Files in tree — Language families — Build manifests — Recommended phases — Build intelligence Detected languages No scan No inventory yet. Plan Re"
     },
     {
       "p": "apps/java-app-hub/apps.json",
@@ -702,46 +534,32 @@
       "x": "Java JavaFX Swing Maven JVM repository application catalog migration conversion GUI build CI"
     },
     {
-      "p": "https://github.com/amerhwitat/keygen/tree/main/web/javascript",
-      "t": "Keygen Repository — Web Entry",
-      "g": "keygen",
-      "d": "Source-only web entry. Do not store secrets in a public browser session.",
-      "x": "Keygen Repository — Web Entry Research · source entry keygen Source-only web entry. Do not store secrets in a public browser session."
+      "p": "apps/multi-language-repository-studio/index.html",
+      "t": "Multi-Language Repository Studio — Amer Hwitat",
+      "g": "Developer Tools",
+      "d": "Explore public repository language metadata, open source files as text, and prototype JavaScript or HTML/CSS in an isolated browser sandbox. Compiled languages are clearly marked as requiring their own runtime.",
+      "x": "Multi-Language Repository Studio GitHub repository source explorer language statistics JavaScript TypeScript Python Java C C++ C# Rust Go PHP Ruby Kotlin Swift SQL Shell PowerShell Assembly JSON Lua R Dart Objective-C Fortran Haskell Julia Perl MATLAB Zig browser sandboxed code workbench public repositories no code automatically executed"
     },
     {
-      "p": "apps/chimera-test-suite/aurora_3d_desktop.html",
-      "t": "Aurora 3D Desktop — Chimera II",
-      "g": "More",
-      "d": "",
-      "x": "✦ CHIMERA II Aurora / Linux ◈ Aurora Desktop — □ × SPITFIRE → KORONOS → JASPER → AURORA Chimera II Unified Linux and Windows desktop presentation layer. Open Terminal Man / Help CII ⌘ Terminal × Chimera II Terminal\\nLinux/POSIX + Bash/Zsh + Windows CMD + PowerShell\\nType: help, man ls, man powershell:Get-Process, desktop windows chimera@aurora:$ Run ▤ Unified Man / Help × ▣ Files × Virtualized Chimera workspace 📁 projects 📁 docs 📁 source 📄 README.md ✦ ⌘ ▤ ▣ ◫ Desktop Profiles Aurora / Linux GNOME / Linux KDE Plasma / Linux Xfce / Linux Cinnamon / Linux MATE / Linux LXQt / Linux Windows 11 Windows 10 Classic Windows"
+      "p": "apps/nlp-amiga/index.html",
+      "t": "Amiga Emulator",
+      "g": "Research (nlp)",
+      "d": "Browser adapter/UI for the Amiga emulator integration.",
+      "x": "Amiga Emulator Emulation nlp Browser adapter/UI for the Amiga emulator integration. Research (nlp)"
     },
     {
-      "p": "apps/chimera-test-suite/javascript/index.html",
-      "t": "Web Test Harness",
-      "g": "More",
-      "d": "",
-      "x": "Web Test Harness Browser Test Harness Run smoke test"
+      "p": "apps/nlp-artifacts/index.html",
+      "t": "NLP Artifacts",
+      "g": "Research Platform",
+      "d": "Artifact viewer for generated NLP research outputs.",
+      "x": "NLP Artifacts Registry nlp Artifact viewer for generated NLP research outputs. Research Platform"
     },
     {
-      "p": "https://github.com/amerhwitat/nlp/tree/main/nlp-studio/web",
-      "t": "NLP Studio — Repository Web UI",
-      "g": "NLP",
-      "d": "Source web UI; hosted preview and model/backend availability are tracked separately.",
-      "x": "NLP Studio — Repository Web UI NLP · source entry nlp Source web UI; hosted preview and model/backend availability are tracked separately."
-    },
-    {
-      "p": "https://github.com/amerhwitat/nlp/tree/main/ThamudicEpiPlatform/web",
-      "t": "Thamudic Epi Platform — Web UI",
-      "g": "NLP",
-      "d": "Web UI source; hosted Thamudic Epi card is the portfolio entry.",
-      "x": "Thamudic Epi Platform — Web UI NLP · source entry nlp Web UI source; hosted Thamudic Epi card is the portfolio entry."
-    },
-    {
-      "p": "https://github.com/amerhwitat/nlp/tree/main/ThamudicScan/web_ui",
-      "t": "ThamudicScan — Repository Web UI",
-      "g": "NLP",
-      "d": "Source UI; hosted scanner is linked separately and model capability needs independent verification.",
-      "x": "ThamudicScan — Repository Web UI OCR · source entry nlp Source UI; hosted scanner is linked separately and model capability needs independent verification."
+      "p": "apps/nlp-studio/index.html",
+      "t": "NLP Studio",
+      "g": "Research Platform",
+      "d": "NLP studio workspace for corpus loading, annotation and model runs.",
+      "x": "NLP Studio NLP nlp NLP studio workspace for corpus loading, annotation and model runs. Research Platform"
     },
     {
       "p": "apps/octavianos/application-center.html",
@@ -814,6 +632,20 @@
       "x": "◈ OCTAVIANOS OCEANIC COMPUTING · PREVIEW WEB DESKTOP + MOBILE COMPANION A new ocean for your computing world. Explore OctavianOS desktop concepts and mobile companion UI. This responsive web application is a preview of the user experience—not a substitute for the native Koronos kernel, installer, or microkernel. ✦ Aurora Wayland Glass Glass desktop concept with global menu, desktop shortcuts and dock. Open Aurora preview 🌊 Marine Desktop Ocean-inspired workspace with Start menu, taskbar and pinned apps. Open Marine preview 📱 Mobile edition Responsive companion interface; ARM64 native boot support remains a separate engineering milestone. Open mobile preview 🧰 Application Center Search a cross-platform catalog of paint tools, media players, games, office apps and developer utilities. Browse applications 🎨 Paint Studio Working browser canvas editor with pen, shapes, eraser, undo, image"
     },
     {
+      "p": "apps/optional-app-center/index.html",
+      "t": "Cross-platform Optional Application Center",
+      "g": "ChimeraIIOS + OctavianOS",
+      "d": "Search optional desktop applications for Windows, Linux, and macOS; links point to official publishers and do not imply installation.",
+      "x": "optional applications Windows Linux macOS app catalog browser productivity media creative development communication package manager"
+    },
+    {
+      "p": "apps/pdf-reader/index.html",
+      "t": "PDFreaderPY",
+      "g": "Repositories",
+      "d": "PDF research and local document tooling.",
+      "x": "PDFreaderPY Utility PDF research and local document tooling. GitHub repository source code"
+    },
+    {
       "p": "apps/pdf-reader/java-tools.html",
       "t": "PDFreaderPY Java Tools Guide",
       "g": "PDF and Documents",
@@ -821,67 +653,11 @@
       "x": "PDFreaderPY Java PDF text search extraction Java CLI JSONL page line column OCR"
     },
     {
-      "p": "https://github.com/amerhwitat/PDFreaderPY/tree/main/web/javascript",
-      "t": "PDFreaderPY Web JavaScript Entry",
-      "g": "PDFreaderPY",
-      "d": "Repository JavaScript web entry; hosted PDF Reader is the browser-facing portfolio implementation.",
-      "x": "PDFreaderPY Web JavaScript Entry Web · source entry PDFreaderPY Repository JavaScript web entry; hosted PDF Reader is the browser-facing portfolio implementation."
-    },
-    {
-      "p": "404.html",
-      "t": "Not found — Amer Hwitat Web UI",
-      "g": "Portfolio",
-      "d": "",
-      "x": "404 That app or page was not found. ← Back to the app hub"
-    },
-    {
-      "p": "java-apps.html",
-      "t": "Java Desktop Portfolio — Amer Hwitat",
-      "g": "Portfolio",
-      "d": "",
-      "x": "JAVA · DESKTOP · RESEARCH Java Application Portfolio Native JVM desktop applications and shared Java components for the project repositories. ← Main portfolio Java desktop applications run on a local JVM. GitHub Pages is a static website, so this page links to their source and build workflows; it does not pretend to execute desktop bytecode inside the browser. GUI PR opened PDF Reader — Java Swing Native desktop PDF viewer with file selection, page selection, asynchronous PDFBox rendering, and the existing ingestion/provenance adapter. OCR remains a separate pipeline until its algorithms are ported and parity-tested. Review GUI pull request Java source Java model + contract tests CPU4096 Unsigned fixed-width register model, arithmetic/bitwise operations, shifts, and little-endian snapshots validated against shared contract fixtures. A Java GUI is not yet claimed. Java source Build checks"
-    },
-    {
-      "p": "java-migration-observatory.html",
-      "t": "Java Migration Observatory · Amer Hwitat",
-      "g": "Portfolio",
-      "d": "Java migration audit for public Amer Hwitat repositories",
-      "x": "Aurora · Java migration program Java Migration Observatory Repository-by-repository audit of Java coverage, remaining languages, and next parity work. This is not a claim that every program has already been translated. ← Repository App Studio GitHub profile ↗ Website CI ↗ Parity rule: Java file counts are not conversion-completion percentages. Each port must preserve behavior, dependencies, error handling, security boundaries, and tests. Kernels, boot code, native drivers, browser UI, and hardware interfaces require platform-specific implementations or explicit native adapters. All statuses Java exists · parity incomplete Native / kernel boundary Web-first / Java companion needed Counts are observed .java file counts from completed public Git tree audits; they may include tests or vendored code. No exact count is fabricated for the two largest OS repositories. Public repositories only. P"
-    },
-    {
-      "p": "repository-hub.html",
-      "t": "All Repositories & Web Apps",
-      "g": "Portfolio",
-      "d": "Searchable directory of public GitHub repositories, published browser apps, and Java desktop tools.",
-      "x": "repository hub all projects ChimeraIIOS OctavianOS BizX BizXtreme general nlp CPU4096 CPU4096Simulator PDFreaderPY keygen bruteforce eth-key-check test JavaFX Aurora Glass emulator artifact library OctavianOS Aurora Marine React mobile preview CPU4096Simulator Code IDE BizX Network Asset Browser BizXtreme Network 3D Wallet Center Thamudic Studio Thamudic Epi Platform NLP Studio NLP Artifacts Amiga Emulator SEO Tool Agent Research Forge Email List Manager CPU4096 web entry Aurora shell"
-    },
-    {
-      "p": "project-updates.html",
-      "t": "ChimeraIIOS & OctavianOS — Build and Release Status",
-      "g": "Projects & Releases",
-      "d": "Current enhancement inventory, source pull requests, CI evidence, review artifacts, and native ISO acceptance blockers for ChimeraIIOS and OctavianOS.",
-      "x": "ChimeraIIOS OctavianOS Koronos Aurora ISO QEMU CI CD release acceptance PR userspace artwork Octopus"
-    },
-    {
-      "p": "repository-enhancements.json",
-      "t": "Repository Enhancement Status (JSON)",
-      "g": "Projects & Releases",
-      "d": "Machine-readable repository commits, pull request states, validation results, artifacts, and release gates.",
-      "x": "enhancement manifest build validation workflow artifact draft pull request kernel boot release"
-    },
-    {
-      "p": "apps/chimera-pages/index.html",
-      "t": "Chimera Pages",
-      "g": "Published Pages",
-      "d": "Existing published Chimera landing page.",
-      "x": "Chimera Pages Site amerhwitat.github.io Existing published Chimera landing page. Published Pages"
-    },
-    {
-      "p": "apps/thamudic-pages/index.html",
-      "t": "Thamudic Pages",
-      "g": "Published Pages",
-      "d": "Existing published Thamudic landing page.",
-      "x": "Thamudic Pages Site amerhwitat.github.io Existing published Thamudic landing page. Published Pages"
+      "p": "apps/portfolio-migration/index.html",
+      "t": "Portfolio GUI Migration Dashboard",
+      "g": "Apps",
+      "d": "Cross-repository GUI migration inventory for Aurora, Marine, and the Amer Hwitat project portfolio.",
+      "x": "Aurora · Marine · Cross-language portfolio Portfolio GUI Migration Dashboard One visible inventory for the public project portfolio. This dashboard tracks candidate browser interfaces and migration paths; it does not assert that every source file has already been converted, tested, or deployed. Desktop Evolution Lab Repository App Explorer Migration architecture and acceptance guide Migration rules Aurora Wayland Glass Desktop remains the glass/workspace-oriented desktop; Marine Desktop remains the task-oriented desktop. Shared apps should use reusable web components while each desktop owns its shell, window behavior, permissions and theme. Angular + TypeScript and Next.js + TypeScript are alternative web application targets, not a requirement to duplicate every app in both frameworks. Spring Boot requires a separately hosted JVM service; GitHub Pages serves static assets only. JavaFX/Sw"
     },
     {
       "p": "apps/python-app-hub/index.html",
@@ -898,60 +674,81 @@
       "x": "ISO IMG BIN ROM USB flash disk image writer SHA256 verify PyInstaller Windows mobile fastboot adb"
     },
     {
-      "p": "apps/bizx-asset-browser/index.html",
-      "t": "BizX / BizXtreme",
-      "g": "Repositories",
-      "d": "BizX components are maintained inside the BizXtreme repository; includes game, network, crypto, asset and multilingual adapters.",
-      "x": "BizX / BizXtreme Platform BizX components are maintained inside the BizXtreme repository; includes game, network, crypto, asset and multilingual adapters. GitHub repository source code"
+      "p": "apps/python-workbench/index.html",
+      "t": "Python Web Workbench",
+      "g": "Developer Tools",
+      "d": "Search and inspect the Python inventory across public repositories; preview source and use an explicitly configured local bridge for runnable entrypoints.",
+      "x": "Python GUI workbench Python catalog source preview runnable entrypoints modules libraries tests BizX BizXtreme ChimeraIIOS nlp build run local bridge"
     },
     {
-      "p": "apps/bizxtreme-3d/index.html",
-      "t": "BizXtreme",
-      "g": "Repositories",
-      "d": "Extended game, graphics, networking and crypto application platform.",
-      "x": "BizXtreme Platform Extended game, graphics, networking and crypto application platform. GitHub repository source code"
+      "p": "apps/repository-app-explorer/index.html",
+      "t": "Repository App Explorer",
+      "g": "Developer Tools",
+      "d": "Searches public repository trees for app entry points, package manifests and language signals; links directly to source and labels partial scans.",
+      "x": "Repository App Explorer Recursive discovery · All languages amerhwitat.github.io Searches public repository trees for app entry points, package manifests and language signals; links directly to source and labels partial scans."
     },
     {
-      "p": "apps/chimera-3d4d/index.html",
-      "t": "general",
-      "g": "Repositories",
-      "d": "Portfolio-wide applications, tools and integrations.",
-      "x": "general Portfolio Portfolio-wide applications, tools and integrations. GitHub repository source code"
+      "p": "apps/seo-tool/index.html",
+      "t": "SEO Tool",
+      "g": "Studio & Tools",
+      "d": "Technical SEO scanner + authorized deep-web research UI.",
+      "x": "SEO Tool Web tool general Technical SEO scanner + authorized deep-web research UI. Studio & Tools"
     },
     {
-      "p": "apps/chimera-ii-os/web/research-lab.html",
-      "t": "bruteforce",
-      "g": "Repositories",
-      "d": "Cryptographic research, hashing, validation, benchmarks and isolated test workflows.",
-      "x": "bruteforce Safe crypto research Cryptographic research, hashing, validation, benchmarks and isolated test workflows. GitHub repository source code"
+      "p": "apps/thamudic-epi/index.html",
+      "t": "Thamudic Epi Platform",
+      "g": "Research (nlp)",
+      "d": "React/TS platform UI for Thamudic epigraphic research.",
+      "x": "Thamudic Epi Platform Research nlp React/TS platform UI for Thamudic epigraphic research. Research (nlp)"
     },
     {
-      "p": "apps/chimera-test-suite/index.html",
-      "t": "test",
-      "g": "Repositories",
-      "d": "Development and test projects.",
-      "x": "test Test suite Development and test projects. GitHub repository source code"
+      "p": "apps/thamudic-pages/index.html",
+      "t": "Thamudic Pages",
+      "g": "Published Pages",
+      "d": "Existing published Thamudic landing page.",
+      "x": "Thamudic Pages Site amerhwitat.github.io Existing published Thamudic landing page. Published Pages"
     },
     {
-      "p": "apps/cpu4096-simulator/public/index.html",
-      "t": "CPU4096Simulator",
-      "g": "Repositories",
-      "d": "4096/8192-bit CPU simulator, ISA catalog and runtime.",
-      "x": "CPU4096Simulator Simulator 4096/8192-bit CPU simulator, ISA catalog and runtime. GitHub repository source code"
+      "p": "apps/thamudic-scanner/index.html",
+      "t": "ThamudicScan v2.4.1 — Ancient North Arabian Scanner",
+      "g": "Thamudic",
+      "d": "Scanner feature reference: upload/camera, five-stage pipeline, five script families, sample inscriptions, field tips and export. The abbreviated BuiltWithRocket deployment URL is not verified; this published scanner is the fallback.",
+      "x": "ThamudicScan Thamudic Safaitic Dadanitic Hismaic Taymanitic Ancient North Arabian upload camera OCR five-stage pipeline sample inscriptions field tips export v2.4.1"
     },
     {
-      "p": "apps/cpu4096/web/javascript/index.html",
-      "t": "CPU4096",
-      "g": "Repositories",
-      "d": "4096-bit CPU research and register model.",
-      "x": "CPU4096 CPU research 4096-bit CPU research and register model. GitHub repository source code"
+      "p": "apps/thamudic-studio/index.html",
+      "t": "Thamudic Studio",
+      "g": "Research (nlp)",
+      "d": "ThamudicScan reference workspace: inscription scanner, 18-script registry, translation-history audit log, research dashboard and field methodology.",
+      "x": "Thamudic Studio Scripts · Registry · History amerhwitat/nlp ThamudicScan reference workspace: inscription scanner, 18-script registry, translation-history audit log, research dashboard and field methodology."
     },
     {
-      "p": "apps/pdf-reader/index.html",
-      "t": "PDFreaderPY",
-      "g": "Repositories",
-      "d": "PDF research and local document tooling.",
-      "x": "PDFreaderPY Utility PDF research and local document tooling. GitHub repository source code"
+      "p": "apps/workflow-studio/index.html",
+      "t": "WorkflowStudio",
+      "g": "Apps",
+      "d": "Browser GUI for the self-hosted WorkflowStudio Python API: projects, backlog items and advisory sequence scoring.",
+      "x": "general · WorkflowStudio Python API WorkflowStudio A browser GUI for the reference workflow service: projects, backlog work items, and advisory sequence scoring. Portfolio Repository hub Python Workbench Source ↗ Data and model boundary: This static page connects only to the API endpoint you configure. The reference Python service uses an in-memory store, so its records may be lost on restart. Sequence scoring is explicitly a reference contract, not a trained RNN guarantee. Configure API CORS for this page origin before use. Connection API settings Check service Python API base URL Not connected. Refresh projects Portfolio Create project Project ID Project name Owner Methodology Scrum Kanban Scrumban XP Lean Hybrid Create project Backlog Create work item Project Load or create a project first Item ID Title Type task epic story bug incident change problem Status backlog ready in_progress "
+    },
+    {
+      "p": "chimera/index.html",
+      "t": "Chimera II OS — Public Research Index",
+      "g": "Chimera",
+      "d": "Chimera II OS public research index by Amer Hwitat — open research operating system, Koronos kernel, Spit Fire bootloader, Jasper boot manager, C8192/R8192 ISA research, CPU4096, Aurora desktop, mobil",
+      "x": "Chimera II OS Open research operating-system and virtual-processor ecosystem by Amer Hwitat. Canonical source repository · Complete portfolio summary ChimeraIIOS Koronos C8192 R8192 CPU4096 Aurora 128D Framework RISC CISC Neural Simulation Core ChimeraIIOS CPU4096 CPU4096Simulator general / mobile test / Python integration keygen / Java track Research & tools NLP/data research PDFreaderPY eth-key-check bruteforce / crypto reference BizX BizXtreme / WebGL Documentation Amer Hwitat bibliography Library research archive CI/CD plan Crypto provenance Visuals & web Aurora Web UI Mobile Edition visual Public web repository Media publication Current Library media candidates are catalogued in the Chimera publication registry. Video publication links are recorded only after an authenticated upload succeeds. Publication & media registry Publication policy GitHub is the current canonical public forg"
+    },
+    {
+      "p": "https://chimera-iios-120143.onhercules.app/",
+      "t": "Chimera II OS — Hosted Aurora Desktop SPA",
+      "g": "Chimera II OS",
+      "d": "Hosted React desktop SPA for Aurora, Koronos, kernel and terminal exploration. Web UI availability is not proof of native kernel execution or ISO boot.",
+      "x": "chimera-iios-120143.onhercules.app React Chimera II OS Aurora Koronos kernel terminal desktop SPA"
+    },
+    {
+      "p": "https://chimeraiios-kukp34.public.builtwithrocket.new/chimera-ii-os-simulator",
+      "t": "Chimera II OS Rocket Simulator",
+      "g": "Chimera II OS",
+      "d": "External Chimera II OS simulator surface supplied by the project owner.",
+      "x": "Chimera II OS Rocket Simulator External simulator Built with Rocket External Chimera II OS simulator surface supplied by the project owner. Chimera II OS"
     },
     {
       "p": "https://chimeraiios-ruw578.app.builtwithrocket.new",
@@ -968,11 +765,95 @@
       "x": "static hub APPS REPOS search-index.json app catalog full-text page search"
     },
     {
+      "p": "https://github.com/amerhwitat/BizX/tree/main/emailsender/web",
+      "t": "BizX Email Sender Web UI",
+      "g": "BizX",
+      "d": "Browser interface source; sending features need backend, consent and anti-abuse review.",
+      "x": "BizX Email Sender Web UI Web UI · source entry BizX Browser interface source; sending features need backend, consent and anti-abuse review."
+    },
+    {
+      "p": "https://github.com/amerhwitat/BizX/tree/main/InternetScanner/gui/web",
+      "t": "BizX Internet Scanner — GUI Web UI",
+      "g": "BizX",
+      "d": "GUI web entry point; source-backed, not hosted or production-ready.",
+      "x": "BizX Internet Scanner — GUI Web UI Web UI · source entry BizX GUI web entry point; source-backed, not hosted or production-ready."
+    },
+    {
+      "p": "https://github.com/amerhwitat/BizX/tree/main/InternetScanner/web",
+      "t": "BizX Internet Scanner — Web UI",
+      "g": "BizX",
+      "d": "Standalone InternetScanner web interface; build and backend requirements remain to be validated.",
+      "x": "BizX Internet Scanner — Web UI Web UI · source entry BizX Standalone InternetScanner web interface; build and backend requirements remain to be validated."
+    },
+    {
+      "p": "https://github.com/amerhwitat/BizX#readme",
+      "t": "BizX — Cross-platform Game Framework",
+      "g": "Games & Business Platforms",
+      "d": "Business simulation and game framework research, including RPG/strategy, networking, asset browsing and multiple build-system entry points.",
+      "x": "BizX — Cross-platform Game Framework Python · Node.js · Java · C# · C++ · TypeScript BizX Business simulation and game framework research, including RPG/strategy, networking, asset browsing and multiple build-system entry points."
+    },
+    {
+      "p": "https://github.com/amerhwitat/BizXtreme",
+      "t": "BizXtreme Unified Platform",
+      "g": "BizX & BizXtreme",
+      "d": "Unified BizXtreme surface for NetworkUnified, P2P/multiplayer, game engine, business simulation, assets, crypto interfaces, AI, rendering and mobile adapters.",
+      "x": "BizXtreme Unified Platform Game · Network · AI BizXtreme Unified BizXtreme surface for NetworkUnified, P2P/multiplayer, game engine, business simulation, assets, crypto interfaces, AI, rendering and mobile adapters. BizX & BizXtreme"
+    },
+    {
+      "p": "https://github.com/amerhwitat/BizXtreme/tree/main/web/javascript/standalone",
+      "t": "BizXtreme Three.js Standalone Web",
+      "g": "BizXtreme",
+      "d": "Standalone Three.js source; hosted BizXtreme 3D card remains the runnable portfolio surface.",
+      "x": "BizXtreme Three.js Standalone Web Three.js · source entry BizXtreme Standalone Three.js source; hosted BizXtreme 3D card remains the runnable portfolio surface."
+    },
+    {
+      "p": "https://github.com/amerhwitat/BizXtreme#readme",
+      "t": "BizXtreme — Extended Game Platform",
+      "g": "Games & Business Platforms",
+      "d": "Extended game/platform source including WebGL, Unity/C#, wallet and game systems, networking, AI and mobile implementation material.",
+      "x": "BizXtreme — Extended Game Platform WebGL · Three.js · Unity · Kotlin · Flutter BizXtreme Extended game/platform source including WebGL, Unity/C#, wallet and game systems, networking, AI and mobile implementation material."
+    },
+    {
+      "p": "https://github.com/amerhwitat/bruteforce/tree/main/web/javascript",
+      "t": "Bruteforce Repository — Web Entry",
+      "g": "bruteforce",
+      "d": "Source entry point, not hosted execution. Security testing must be authorized and bounded.",
+      "x": "Bruteforce Repository — Web Entry Research · source entry bruteforce Source entry point, not hosted execution. Security testing must be authorized and bounded."
+    },
+    {
+      "p": "https://github.com/amerhwitat/bruteforce#readme",
+      "t": "Safe Crypto Research & Benchmarks",
+      "g": "Cryptography Research",
+      "d": "Historical crypto experiments with a documented safe research boundary, verification and synthetic benchmarking. No wallet-cracking or private-key recovery UI is exposed here.",
+      "x": "Safe Crypto Research & Benchmarks Cross-language · Verification · Synthetic tests bruteforce Historical crypto experiments with a documented safe research boundary, verification and synthetic benchmarking. No wallet-cracking or private-key recovery UI is exposed here."
+    },
+    {
       "p": "https://github.com/amerhwitat/ChimeraIIOS",
       "t": "ChimeraIIOS repository",
       "g": "Repositories",
       "d": "Canonical Chimera II OS source repository.",
       "x": "ChimeraIIOS operating system Aurora Koronos kernel terminal boot ISO source"
+    },
+    {
+      "p": "https://github.com/amerhwitat/CPU4096/tree/main/web/javascript",
+      "t": "CPU4096 Web JavaScript Entry",
+      "g": "CPU4096",
+      "d": "Repository web/javascript entry point; hosted CPU4096 Visualizer is the portfolio runtime.",
+      "x": "CPU4096 Web JavaScript Entry JavaScript · source entry CPU4096 Repository web/javascript entry point; hosted CPU4096 Visualizer is the portfolio runtime."
+    },
+    {
+      "p": "https://github.com/amerhwitat/CPU4096#readme",
+      "t": "CPU4096 — Multi-language Simulator",
+      "g": "CPU & ISA Research",
+      "d": "Configurable wide-register CPU simulator and research workloads with several language-specific implementations.",
+      "x": "CPU4096 — Multi-language Simulator C++ · Java · Node.js · Python · .NET · Apple CPU4096 Configurable wide-register CPU simulator and research workloads with several language-specific implementations."
+    },
+    {
+      "p": "https://github.com/amerhwitat/CPU4096Simulator#readme",
+      "t": "CPU4096Simulator — Web & Runtime",
+      "g": "CPU & ISA Research",
+      "d": "Browser/runtime research for wide arithmetic, ISA inventory, memory/MMIO, kernel models, networking and dashboard components.",
+      "x": "CPU4096Simulator — Web & Runtime JavaScript · Node.js · C++ · Java · Python CPU4096Simulator Browser/runtime research for wide arithmetic, ISA inventory, memory/MMIO, kernel models, networking and dashboard components."
     },
     {
       "p": "https://github.com/amerhwitat/eth-key-check",
@@ -982,6 +863,118 @@
       "x": "eth-key-check Crypto research Ethereum key-check research scripts. GitHub repository source code"
     },
     {
+      "p": "https://github.com/amerhwitat/eth-key-check/tree/main/web/javascript",
+      "t": "Ethereum Key Check — Web Entry",
+      "g": "eth-key-check",
+      "d": "Source entry point; never submit private keys or seed phrases to a public portfolio.",
+      "x": "Ethereum Key Check — Web Entry Security tool · source entry eth-key-check Source entry point; never submit private keys or seed phrases to a public portfolio."
+    },
+    {
+      "p": "https://github.com/amerhwitat/eth-key-check#readme",
+      "t": "Ethereum Key/Address Verification",
+      "g": "Cryptography Research",
+      "d": "Cross-language Ethereum key/address verification and research utilities. Use documented verification flows; never submit private keys or seed phrases to a web UI.",
+      "x": "Ethereum Key/Address Verification Python · Node.js · Java · C++ · Apple eth-key-check Cross-language Ethereum key/address verification and research utilities. Use documented verification flows; never submit private keys or seed phrases to a web UI."
+    },
+    {
+      "p": "https://github.com/amerhwitat/general/tree/master/AgentResearchForge/",
+      "t": "AgentResearchForge",
+      "g": "General Applications",
+      "d": "Agent research and orchestration project listed in the General repository source index.",
+      "x": "AgentResearchForge Research agents · Python / cross-language general Agent research and orchestration project listed in the General repository source index."
+    },
+    {
+      "p": "https://github.com/amerhwitat/general/tree/master/Apple-Implementations/",
+      "t": "Apple Implementations",
+      "g": "General Applications",
+      "d": "Apple-oriented implementation source collection in the General repository.",
+      "x": "Apple Implementations Apple platform source collection general Apple-oriented implementation source collection in the General repository."
+    },
+    {
+      "p": "https://github.com/amerhwitat/general/tree/master/applications/WebContactCrawler/",
+      "t": "WebContactCrawler",
+      "g": "General Applications",
+      "d": "Web contact crawling application source in the General repository.",
+      "x": "WebContactCrawler Web crawling · Application tooling general Web contact crawling application source in the General repository."
+    },
+    {
+      "p": "https://github.com/amerhwitat/general/tree/master/applications/WebContactCrawler/web",
+      "t": "WebContactCrawler Web UI",
+      "g": "General",
+      "d": "Browser UI source for WebContactCrawler; not a deployed runtime.",
+      "x": "WebContactCrawler Web UI Web UI · source entry general Browser UI source for WebContactCrawler; not a deployed runtime."
+    },
+    {
+      "p": "https://github.com/amerhwitat/general/tree/master/email_extractor/",
+      "t": "Email Extractor",
+      "g": "General Applications",
+      "d": "Email extraction utility source in the General repository.",
+      "x": "Email Extractor Email parsing · Python / automation general Email extraction utility source in the General repository."
+    },
+    {
+      "p": "https://github.com/amerhwitat/general/tree/master/email_extractor/ui_js",
+      "t": "Email Extractor Web UI",
+      "g": "General",
+      "d": "JavaScript web UI source; hosted runtime and dependencies remain to be validated.",
+      "x": "Email Extractor Web UI Web UI · source entry general JavaScript web UI source; hosted runtime and dependencies remain to be validated."
+    },
+    {
+      "p": "https://github.com/amerhwitat/general/tree/master/EmailKeywordCrawler/",
+      "t": "EmailKeywordCrawler",
+      "g": "General Applications",
+      "d": "Email and keyword crawling project source in the General repository.",
+      "x": "EmailKeywordCrawler Keyword search · Crawling general Email and keyword crawling project source in the General repository."
+    },
+    {
+      "p": "https://github.com/amerhwitat/general/tree/master/EmailKeywordCrawler/web",
+      "t": "Email Keyword Crawler Web UI",
+      "g": "General",
+      "d": "Web entry point; runtime and network permissions remain to be reviewed.",
+      "x": "Email Keyword Crawler Web UI Web UI · source entry general Web entry point; runtime and network permissions remain to be reviewed."
+    },
+    {
+      "p": "https://github.com/amerhwitat/general/tree/master/EmailListManager/",
+      "t": "EmailListManager",
+      "g": "General Applications",
+      "d": "Email list management project source in the General repository.",
+      "x": "EmailListManager List management · Automation general Email list management project source in the General repository."
+    },
+    {
+      "p": "https://github.com/amerhwitat/general/tree/master/EmailListManager/web",
+      "t": "Email List Manager Web UI",
+      "g": "General",
+      "d": "Web interface source; backend, storage and privacy behavior require review.",
+      "x": "Email List Manager Web UI Web UI · source entry general Web interface source; backend, storage and privacy behavior require review."
+    },
+    {
+      "p": "https://github.com/amerhwitat/general/tree/master/mobile/",
+      "t": "General Mobile Sources",
+      "g": "General Applications",
+      "d": "Mobile, Kotlin and Apple source trees catalogued by the General repository README.",
+      "x": "General Mobile Sources Mobile · Kotlin · Apple general Mobile, Kotlin and Apple source trees catalogued by the General repository README."
+    },
+    {
+      "p": "https://github.com/amerhwitat/general/tree/master/SEO-Tool/",
+      "t": "SEO-Tool",
+      "g": "General Applications",
+      "d": "SEO tooling project listed in the General repository source index.",
+      "x": "SEO-Tool SEO analysis · Web / automation general SEO tooling project listed in the General repository source index."
+    },
+    {
+      "p": "https://github.com/amerhwitat/general/tree/master/WorkflowStudio/",
+      "t": "WorkflowStudio",
+      "g": "General Applications",
+      "d": "WorkflowStudio source tree listed in the General repository index.",
+      "x": "WorkflowStudio Workflow design · Automation general WorkflowStudio source tree listed in the General repository index."
+    },
+    {
+      "p": "https://github.com/amerhwitat/general#readme",
+      "t": "General Integration & Application Index",
+      "g": "Cross-language Applications",
+      "d": "Integration workspace with AgentResearchForge, SEO-Tool, WebContactCrawler, email workflow tools, WorkflowStudio and mobile/Apple implementation trees. Source discovery is not a build/runtime claim.",
+      "x": "General Integration & Application Index Python · Kotlin · Apple · Web · Automation general Integration workspace with AgentResearchForge, SEO-Tool, WebContactCrawler, email workflow tools, WorkflowStudio and mobile/Apple implementation trees. Source discovery is not a build/runtime claim."
+    },
+    {
       "p": "https://github.com/amerhwitat/keygen",
       "t": "keygen",
       "g": "Repositories",
@@ -989,39 +982,11 @@
       "x": "keygen Crypto research Key-generation research scripts. GitHub repository source code"
     },
     {
-      "p": "apps/nlp-amiga/index.html",
-      "t": "Amiga Emulator",
-      "g": "Research (nlp)",
-      "d": "Browser adapter/UI for the Amiga emulator integration.",
-      "x": "Amiga Emulator Emulation nlp Browser adapter/UI for the Amiga emulator integration. Research (nlp)"
-    },
-    {
-      "p": "apps/thamudic-epi/index.html",
-      "t": "Thamudic Epi Platform",
-      "g": "Research (nlp)",
-      "d": "React/TS platform UI for Thamudic epigraphic research.",
-      "x": "Thamudic Epi Platform Research nlp React/TS platform UI for Thamudic epigraphic research. Research (nlp)"
-    },
-    {
-      "p": "apps/thamudic-studio/index.html",
-      "t": "Thamudic Studio",
-      "g": "Research (nlp)",
-      "d": "ThamudicScan reference workspace: inscription scanner, 18-script registry, translation-history audit log, research dashboard and field methodology.",
-      "x": "Thamudic Studio Scripts · Registry · History amerhwitat/nlp ThamudicScan reference workspace: inscription scanner, 18-script registry, translation-history audit log, research dashboard and field methodology."
-    },
-    {
-      "p": "apps/nlp-artifacts/index.html",
-      "t": "NLP Artifacts",
-      "g": "Research Platform",
-      "d": "Artifact viewer for generated NLP research outputs.",
-      "x": "NLP Artifacts Registry nlp Artifact viewer for generated NLP research outputs. Research Platform"
-    },
-    {
-      "p": "apps/nlp-studio/index.html",
-      "t": "NLP Studio",
-      "g": "Research Platform",
-      "d": "NLP studio workspace for corpus loading, annotation and model runs.",
-      "x": "NLP Studio NLP nlp NLP studio workspace for corpus loading, annotation and model runs. Research Platform"
+      "p": "https://github.com/amerhwitat/keygen/tree/main/web/javascript",
+      "t": "Keygen Repository — Web Entry",
+      "g": "keygen",
+      "d": "Source-only web entry. Do not store secrets in a public browser session.",
+      "x": "Keygen Repository — Web Entry Research · source entry keygen Source-only web entry. Do not store secrets in a public browser session."
     },
     {
       "p": "https://github.com/amerhwitat/keygen#readme",
@@ -1031,39 +996,53 @@
       "x": "Java / Koronos Research Runtime Java 25 · Maven · Apple · Runtime models keygen Isolated Java implementation track for Koronos processor/kernel concepts, runtime/service integration and concurrency research."
     },
     {
-      "p": "https://github.com/amerhwitat/test#readme",
-      "t": "Chimera II Python Research Platform",
-      "g": "Runtime & Conformance",
-      "d": "Host-side consolidation, adapters, tests and conformance work; distinct from the native kernel source of record.",
-      "x": "Chimera II Python Research Platform Python · Web adapters · Desktop lifecycle test Host-side consolidation, adapters, tests and conformance work; distinct from the native kernel source of record."
+      "p": "https://github.com/amerhwitat/nlp/tree/main/nlp-studio/web",
+      "t": "NLP Studio — Repository Web UI",
+      "g": "NLP",
+      "d": "Source web UI; hosted preview and model/backend availability are tracked separately.",
+      "x": "NLP Studio — Repository Web UI NLP · source entry nlp Source web UI; hosted preview and model/backend availability are tracked separately."
     },
     {
-      "p": "apps/agent-research-forge/index.html",
-      "t": "Agent Research Forge",
-      "g": "Studio & Tools",
-      "d": "UI for researching public sources and generating reviewed project artifacts.",
-      "x": "Agent Research Forge AI general UI for researching public sources and generating reviewed project artifacts. Studio & Tools"
+      "p": "https://github.com/amerhwitat/nlp/tree/main/ThamudicEpiPlatform/web",
+      "t": "Thamudic Epi Platform — Web UI",
+      "g": "NLP",
+      "d": "Web UI source; hosted Thamudic Epi card is the portfolio entry.",
+      "x": "Thamudic Epi Platform — Web UI NLP · source entry nlp Web UI source; hosted Thamudic Epi card is the portfolio entry."
     },
     {
-      "p": "apps/aurora-mobile/index.html",
-      "t": "Aurora Mobile",
-      "g": "Studio & Tools",
-      "d": "Aurora Wayland Glass mobile shell UI.",
-      "x": "Aurora Mobile Mobile general Aurora Wayland Glass mobile shell UI. Studio & Tools"
+      "p": "https://github.com/amerhwitat/nlp/tree/main/ThamudicScan/web_ui",
+      "t": "ThamudicScan — Repository Web UI",
+      "g": "NLP",
+      "d": "Source UI; hosted scanner is linked separately and model capability needs independent verification.",
+      "x": "ThamudicScan — Repository Web UI OCR · source entry nlp Source UI; hosted scanner is linked separately and model capability needs independent verification."
     },
     {
-      "p": "apps/aurora-mobile/store/index.html",
-      "t": "Chimera Store",
-      "g": "Studio & Tools",
-      "d": "",
-      "x": "Chimera II Mobile Store One store · many ecosystems · one security policy ARM64 Android Swift .deb RPM pacman Debian apt · apt-get · dpkg Install Arch pacman · AUR-compatible source workflow Install Android APK · isolated Android runtime Install Swift SwiftPM · Foundation · SwiftNIO Install Universal Flatpak · Snap · AppImage Install Developer Git · GitHub · source builds Install"
+      "p": "https://github.com/amerhwitat/nlp#readme",
+      "t": "NLP & Ancient North Arabian Toolkit",
+      "g": "Document & Language Research",
+      "d": "Thamudic and Ancient North Arabian research with OCR, script detection, tokenization, transliteration and provenance-oriented tooling.",
+      "x": "NLP & Ancient North Arabian Toolkit Python · C++ · .NET · Visual C++ · Web nlp Thamudic and Ancient North Arabian research with OCR, script detection, tokenization, transliteration and provenance-oriented tooling."
     },
     {
-      "p": "apps/seo-tool/index.html",
-      "t": "SEO Tool",
-      "g": "Studio & Tools",
-      "d": "Technical SEO scanner + authorized deep-web research UI.",
-      "x": "SEO Tool Web tool general Technical SEO scanner + authorized deep-web research UI. Studio & Tools"
+      "p": "https://github.com/amerhwitat/PDFreaderPY/tree/main/web/javascript",
+      "t": "PDFreaderPY Web JavaScript Entry",
+      "g": "PDFreaderPY",
+      "d": "Repository JavaScript web entry; hosted PDF Reader is the browser-facing portfolio implementation.",
+      "x": "PDFreaderPY Web JavaScript Entry Web · source entry PDFreaderPY Repository JavaScript web entry; hosted PDF Reader is the browser-facing portfolio implementation."
+    },
+    {
+      "p": "https://github.com/amerhwitat/PDFreaderPY#readme",
+      "t": "PDFreaderPY — Document Ingestion",
+      "g": "Document & Language Research",
+      "d": "PDF/document-ingestion utilities and ancient-object catalog adapters with source trees and protocol contracts.",
+      "x": "PDFreaderPY — Document Ingestion Python · PDF · OCR/data adapters PDFreaderPY PDF/document-ingestion utilities and ancient-object catalog adapters with source trees and protocol contracts."
+    },
+    {
+      "p": "https://github.com/amerhwitat/test",
+      "t": "Repository Test & Prototype Workspace",
+      "g": "Developer Tools",
+      "d": "Additional prototype and test workspace; individual source entry points are discoverable in Repository App Explorer.",
+      "x": "Repository Test & Prototype Workspace Experiments · Source · Tests test Additional prototype and test workspace; individual source entry points are discoverable in Repository App Explorer."
     },
     {
       "p": "https://github.com/amerhwitat/test/tree/main/web/aurora_3d_desktop.html",
@@ -1073,11 +1052,53 @@
       "x": "Test Repository — Aurora 3D Desktop Web Desktop · source entry test Aurora 3D desktop HTML source; hosted Chimera/Aurora implementation is linked separately."
     },
     {
-      "p": "apps/thamudic-scanner/index.html",
-      "t": "ThamudicScan v2.4.1 — Ancient North Arabian Scanner",
-      "g": "Thamudic",
-      "d": "Scanner feature reference: upload/camera, five-stage pipeline, five script families, sample inscriptions, field tips and export. The abbreviated BuiltWithRocket deployment URL is not verified; this published scanner is the fallback.",
-      "x": "ThamudicScan Thamudic Safaitic Dadanitic Hismaic Taymanitic Ancient North Arabian upload camera OCR five-stage pipeline sample inscriptions field tips export v2.4.1"
+      "p": "https://github.com/amerhwitat/test#readme",
+      "t": "Chimera II Python Research Platform",
+      "g": "Runtime & Conformance",
+      "d": "Host-side consolidation, adapters, tests and conformance work; distinct from the native kernel source of record.",
+      "x": "Chimera II Python Research Platform Python · Web adapters · Desktop lifecycle test Host-side consolidation, adapters, tests and conformance work; distinct from the native kernel source of record."
+    },
+    {
+      "p": "index.html",
+      "t": "Amer Hwitat — Chimera II OS ecosystem hub",
+      "g": "Hub",
+      "d": "Static hub hero, APPS application catalogue, REPOS repository index, search-index.json full-text page search, five Thamudic / Ancient North Arabian script families, 154 web files under apps/chimera-ii-os/web/, desktop, terminal, ISA explorer, emulators, OCR, wallet and installer.",
+      "x": "hero app catalog APPS repo index REPOS search-index.json full-text search ChimeraIIOS 154 files desktop terminal ISA explorer emulators OCR wallet installer ThamudicScan upload camera five-stage pipeline import quality check script-family review glyph transliteration review export Thamudic Safaitic Dadanitic Hismaic Taymanitic sample inscriptions field tips Static hub APPS REPOS search-index.json full text page search ThamudicScan v2.4.1 upload camera five stage pipeline five script families sample inscriptions field tips export Chimera II OS React desktop SPA Aurora Koronos kernel terminal 154 files 680 files ChimeraIIOS 3123 files 2.1 GB"
+    },
+    {
+      "p": "java-apps.html",
+      "t": "Java Desktop Portfolio — Amer Hwitat",
+      "g": "Portfolio",
+      "d": "",
+      "x": "JAVA · DESKTOP · RESEARCH Java Application Portfolio Native JVM desktop applications and shared Java components for the project repositories. ← Main portfolio Java desktop applications run on a local JVM. GitHub Pages is a static website, so this page links to their source and build workflows; it does not pretend to execute desktop bytecode inside the browser. GUI PR opened PDF Reader — Java Swing Native desktop PDF viewer with file selection, page selection, asynchronous PDFBox rendering, and the existing ingestion/provenance adapter. OCR remains a separate pipeline until its algorithms are ported and parity-tested. Review GUI pull request Java source Java model + contract tests CPU4096 Unsigned fixed-width register model, arithmetic/bitwise operations, shifts, and little-endian snapshots validated against shared contract fixtures. A Java GUI is not yet claimed. Java source Build checks"
+    },
+    {
+      "p": "java-migration-observatory.html",
+      "t": "Java Migration Observatory · Amer Hwitat",
+      "g": "Portfolio",
+      "d": "Java migration audit for public Amer Hwitat repositories",
+      "x": "Aurora · Java migration program Java Migration Observatory Repository-by-repository audit of Java coverage, remaining languages, and next parity work. This is not a claim that every program has already been translated. ← Repository App Studio GitHub profile ↗ Website CI ↗ Parity rule: Java file counts are not conversion-completion percentages. Each port must preserve behavior, dependencies, error handling, security boundaries, and tests. Kernels, boot code, native drivers, browser UI, and hardware interfaces require platform-specific implementations or explicit native adapters. All statuses Java exists · parity incomplete Native / kernel boundary Web-first / Java companion needed Counts are observed .java file counts from completed public Git tree audits; they may include tests or vendored code. No exact count is fabricated for the two largest OS repositories. Public repositories only. P"
+    },
+    {
+      "p": "project-updates.html",
+      "t": "ChimeraIIOS & OctavianOS — Build and Release Status",
+      "g": "Projects & Releases",
+      "d": "Current enhancement inventory, source pull requests, CI evidence, review artifacts, and native ISO acceptance blockers for ChimeraIIOS and OctavianOS.",
+      "x": "ChimeraIIOS OctavianOS Koronos Aurora ISO QEMU CI CD release acceptance PR userspace artwork Octopus"
+    },
+    {
+      "p": "repository-enhancements.json",
+      "t": "Repository Enhancement Status (JSON)",
+      "g": "Projects & Releases",
+      "d": "Machine-readable repository commits, pull request states, validation results, artifacts, and release gates.",
+      "x": "enhancement manifest build validation workflow artifact draft pull request kernel boot release"
+    },
+    {
+      "p": "repository-hub.html",
+      "t": "All Repositories & Web Apps",
+      "g": "Portfolio",
+      "d": "Searchable directory of public GitHub repositories, published browser apps, and Java desktop tools.",
+      "x": "repository hub all projects ChimeraIIOS OctavianOS BizX BizXtreme general nlp CPU4096 CPU4096Simulator PDFreaderPY keygen bruteforce eth-key-check test JavaFX Aurora Glass emulator artifact library OctavianOS Aurora Marine React mobile preview CPU4096Simulator Code IDE BizX Network Asset Browser BizXtreme Network 3D Wallet Center Thamudic Studio Thamudic Epi Platform NLP Studio NLP Artifacts Amiga Emulator SEO Tool Agent Research Forge Email List Manager CPU4096 web entry Aurora shell"
     },
     {
       "p": "thamudic/index.html",
@@ -1087,25 +1108,11 @@
       "x": "Thamudic / Ancient North Arabian Scanner Research portal for photographing, segmenting, cataloguing and studying Ancient North Arabian inscriptions, including material historically grouped as Thamudic. Architecture Image → normalization → segmentation → glyph candidates → evidence record → optional classifier → scholarly verification → transliteration/translation The baseline implementation is maintained in amerhwitat/nlp as thamudic_scanner.py . It does not require Tesseract or camel_tools. Scholarly sources OCIANA — Thamudic overview Unicode — Old North Arabian Unicode Core Specification Writing Systems Technical Resources Recent external demo references Bubble Thamudic Scan Thamudic Translator UI Historical Artifacts Database UI These are external references; their source code is not assumed to be open-source. Open-source engineering references DigitalPasts/CuReD Coptic Scriptorium OC"
     },
     {
-      "p": "apps/chimera-ii-os/web/wallet-center.html",
-      "t": "Aurora Wallet & Ecosystem Center",
-      "g": "Wallet & Ecosystem",
-      "d": "Unified non-custodial wallet UI for watch-only research, transaction intents, policy approvals, AI assistance, game economy, P2P and safe cryptographic research.",
-      "x": "Aurora Wallet & Ecosystem Center Wallet · Crypto · AI BizXtreme + bruteforce + ChimeraIIOS Unified non-custodial wallet UI for watch-only research, transaction intents, policy approvals, AI assistance, game economy, P2P and safe cryptographic research. Wallet & Ecosystem"
-    },
-    {
       "p": "web/javascript/index.html",
       "t": "Amer Hwitat Web Hub",
       "g": "Web",
       "d": "",
       "x": "Amer Hwitat Web Hub Project Web Hub Entry point for browser demonstrations and documentation."
-    },
-    {
-      "p": "apps/optional-app-center/index.html",
-      "t": "Cross-platform Optional Application Center",
-      "g": "ChimeraIIOS + OctavianOS",
-      "d": "Search optional desktop applications for Windows, Linux, and macOS; links point to official publishers and do not imply installation.",
-      "x": "optional applications Windows Linux macOS app catalog browser productivity media creative development communication package manager"
     }
   ]
 }
