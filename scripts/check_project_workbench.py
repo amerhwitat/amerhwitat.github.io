@@ -10,7 +10,7 @@ html = PAGE.read_text(encoding="utf-8")
 required = [
     'lang="en"', 'name="viewport"', 'id="q"', 'id="stack"',
     'id="coverage"', 'aria-live="polite"', 'aria-label="Project repositories"',
-    'rel="noopener noreferrer"', 'textContent = p.name',
+    'rel="noopener noreferrer"', 'textContent=p.name',
     'https://github.com/amerhwitat/ChimeraIIOS',
     'https://github.com/amerhwitat/OctavianOS',
     'https://github.com/amerhwitat/PDFreaderPY',
