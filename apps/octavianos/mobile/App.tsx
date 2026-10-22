@@ -9,6 +9,8 @@ const APPS = [
   { icon: "⚙️", name: "Settings", note: "System settings APIs are not connected." },
   { icon: "🧩", name: "App Library", note: "Signed package manifests are required." },
   { icon: "🌊", name: "Marine", note: "Marine is a separate desktop session." },
+  { icon: "💾", name: "ISO & Flash", note: "Native bridge required. Flashing is destructive and requires a matching SHA-256, explicit target, typed ERASE confirmation, and native safety checks." },
+  { icon: "🛟", name: "Recovery", note: "Recovery/rollback availability depends on a verified device profile; no generic phone firmware flashing is enabled." },
 ];
 
 export default function App() {
@@ -24,7 +26,7 @@ export default function App() {
       <TextInput value={search} onChangeText={setSearch} placeholder="Search applications…" placeholderTextColor="#7fa4ba" style={styles.search} accessibilityLabel="Search applications" />
       <View style={styles.grid}>{visible.map(app => <TouchableOpacity key={app.name} accessibilityRole="button" style={styles.app} onPress={() => setNotice(app.note)}><Text style={styles.appIcon}>{app.icon}</Text><Text style={styles.appName}>{app.name}</Text></TouchableOpacity>)}</View>
       <View accessibilityLiveRegion="polite" style={styles.notice}><Text style={styles.noticeText}>{notice}</Text></View>
-      <Text style={styles.footer}>Responsive companion · native service integration pending</Text>
+      <Text style={styles.footer}>Responsive companion · mobile kernel/device validation and native service integration are separate release gates</Text>
     </ScrollView>
   </SafeAreaView>;
 }
