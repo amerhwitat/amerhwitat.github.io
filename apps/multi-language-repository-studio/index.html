@@ -200,8 +200,8 @@ function run(){
  if(d[0]==="JavaScript"){
   const frame=document.createElement("iframe");frame.setAttribute("sandbox","allow-scripts");frame.title="Isolated JavaScript output";
   const policy="<meta http-equiv=\"Content-Security-Policy\" content=\"default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src data: blob:; font-src data:; connect-src 'none'; form-action 'none'; base-uri 'none'; frame-src 'none'\">";
-  const safeConsole="<script>const send=(type,args)=>parent.postMessage({repositoryStudio:true,type,args:args.map(v=>{try{return typeof v==='string'?v:JSON.stringify(v)}catch(e){return String(v)}})},'*');console.log=(...a)=>send('log',a);console.error=(...a)=>send('error',a);console.warn=(...a)=>send('warn',a);window.onerror=(m)=>send('error',[m]);<\\/script>";
-  frame.srcdoc="<!doctype html><meta charset='utf-8'>"+policy+safeConsole+"<script>\n"+code.replace(/<\\/script/gi,"<\\\\/script")+" \n<\\/script>";
+  const safeConsole="<script>const send=(type,args)=>parent.postMessage({repositoryStudio:true,type,args:args.map(v=>{try{return typeof v==='string'?v:JSON.stringify(v)}catch(e){return String(v)}})},'*');console.log=(...a)=>send('log',a);console.error=(...a)=>send('error',a);console.warn=(...a)=>send('warn',a);window.onerror=(m)=>send('error',[m]);<\/script>";
+  frame.srcdoc="<!doctype html><meta charset='utf-8'>"+policy+safeConsole+"<script>\n"+code.replace(/<\/script/gi,"<\\/script")+" \n<\/script>";
   out.replaceChildren(frame);$("runStatus").textContent="JavaScript is running in a sandboxed iframe without same-origin access.";
  }else if(d[0]==="HTML"||d[0]==="CSS"){
   const frame=document.createElement("iframe");frame.setAttribute("sandbox","allow-scripts");frame.title="Isolated HTML preview";
