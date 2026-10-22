@@ -29,11 +29,25 @@
   $("isoInfo").onclick = () => call("/iso/info", {iso:$("isoPath").value.trim()});
   $("isoVerify").onclick = () => call("/iso/verify", {iso:$("isoPath").value.trim()});
   $("detect").onclick = () => call("/flash/detect", {});
-  $("hash").onclick = () => call("/flash/verify-image", {image:$("imagePath").value.trim(),sha256:$("sha256").value.trim()});
+  $("hash").onclick = async () => {
+    const image=$("imagePath").value.trim(), expected=$("sha256").value.trim();
+    if (!image) { log("Provide an image path first."); return; }
+    const result=await call("/flash/verify-image", {image,sha256:expected});
+    if (result && result.sha256) {
+      $("sha256").value=result.sha256;
+      log({...result, hint:result.matches ? "SHA-256 matches the expected digest." : "Computed digest filled in. Review it, then press Calculate / Verify again to confirm a match before flashing."});
+    }
+  };
   $("flash").onclick = async () => {
-    const image=$("imagePath").value.trim(), device=$("devicePath").value.trim(), expected=$("sha256").value.trim();
-    if (!image || !device || !device.startsWith("/dev/")) { log("Refusing flash: provide an image and a /dev/... removable target."); return; }
-    if (!confirm("FLASH WARNING\n\nThis can permanently erase the selected device.\n\nImage: "+image+"\nTarget: "+device+"\n\nContinue to the native safety gate?")) return;
+    const image=$("imagePath").value.trim(), device=$("devicePath").value.trim(), expected=$("sha256").value.trim().toLowerCase();
+    if (!image || !device || !device.startsWith("/dev/")) { log("Refusing flash: provide an image and an explicit /dev/... target."); return; }
+    if (!/^[0-9a-f]{64}$/.test(expected)) { log("Refusing flash: calculate and confirm a valid 64-character SHA-256 first."); return; }
+    const verification=await call("/flash/verify-image", {image,sha256:expected});
+    if (!verification || verification.status!=="match" || verification.matches!==true) {
+      log("Refusing flash: image SHA-256 did not match. No write was attempted.");
+      return;
+    }
+    if (!confirm("FLASH WARNING\n\nThis can permanently erase the selected device. Verify it is the intended removable device.\n\nImage: "+image+"\nSHA-256: "+expected+"\nTarget: "+device+"\n\nContinue to the native safety gate?")) return;
     await call("/flash/execute", {image,device,sha256:expected});
   };
   health();
