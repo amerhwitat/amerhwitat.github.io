@@ -31,6 +31,12 @@ This plan coordinates the public application hub, ChimeraIIOS, and OctavianOS. I
 - Read actual capability and provider state before enabling actions. A UI control without a functioning backend must be disabled with a reason.
 - Driver assistance must remain sandboxed and advisory; require signed manifests, ABI checks, bounded probes, rollback, and acceptance tests. Model output must never be loaded as kernel code.
 
+## Catalog validation implemented in this branch
+
+- `scripts/check_optional_apps_catalog.py` validates catalog schema, unique IDs, ISO update date, HTTPS upstream URLs, platform values, required license metadata, and fail-closed installation/launchability defaults.
+- `tests/test_optional_apps_catalog.py` covers valid data and regression cases for duplicate IDs, unsafe default-installed flags, non-HTTPS URLs, and unsupported/malformed platform metadata.
+- `.github/workflows/app-catalog-validation.yml` runs the validator and unit tests on relevant pull requests, main-branch changes, and manual dispatch. This workflow validates catalog metadata; it does not certify native app compatibility or OS readiness.
+
 ## Cross-platform catalog policy
 
 Windows, Linux, and macOS applications are upstream discovery targets, not blanket compatibility guarantees. For each entry, record the actual native package provider, compatibility runtime, remote/web alternative, emulation route, or unsupported state. Respect upstream licenses, platform restrictions, hardware requirements, and proprietary redistribution terms.
