@@ -1099,6 +1099,13 @@
       "g": "Web",
       "d": "",
       "x": "Amer Hwitat Web Hub Project Web Hub Entry point for browser demonstrations and documentation."
+    },
+    {
+      "p": "apps/optional-app-center/index.html",
+      "t": "Cross-platform Optional Application Center",
+      "g": "ChimeraIIOS + OctavianOS",
+      "d": "Search optional desktop applications for Windows, Linux, and macOS; links point to official publishers and do not imply installation.",
+      "x": "optional applications Windows Linux macOS app catalog browser productivity media creative development communication package manager"
     }
   ]
 }
