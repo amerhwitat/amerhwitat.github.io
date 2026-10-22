@@ -43,7 +43,7 @@ def validate(data: object) -> list[str]:
     platforms = data.get("platforms")
     if not isinstance(platforms, list) or not platforms:
         errors.append("platforms must be a non-empty array")
-    elif len(platforms) != len(set(platforms)) or not set(platforms) <= ALLOWED_PLATFORMS:
+    elif (any(not isinstance(p, str) for p in platforms)\n          or len(platforms) != len(set(platforms))\n          or not set(platforms) <= ALLOWED_PLATFORMS):
         errors.append("platforms contains duplicates or unsupported platform names")
 
     contract = data.get("integration_contract")
