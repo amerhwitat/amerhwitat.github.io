@@ -103,4 +103,4 @@ The portfolio homepage now includes a responsive Aurora-inspired glass hero, dir
 - Page entry: [index.html](index.html)
 - Pages workflow and link/catalog checks: [.github/workflows/pages.yml](.github/workflows/pages.yml)
 
-The source and workflow checks are committed; treat live deployment and browser-level acceptance as pending until the Pages run and deployed site are independently verified.
+The source and workflow checks are committed. The command palette now restores focus on close, supports keyboard focus cycling, and exposes visible keyboard-selection states. The Pages workflow runs `node --check landing-studio.js` in both PR validation and the deployment build. Treat live deployment and browser-level acceptance as pending until the Pages run and deployed site are independently verified.
