@@ -40,6 +40,7 @@
   $('#open-command')?.addEventListener('click',openCommands);
   document.addEventListener('keydown',e => {
     if ((e.ctrlKey||e.metaKey) && e.key.toLowerCase()==='k') { e.preventDefault(); openCommands(); }
+    if (e.key==='/' && !e.ctrlKey && !e.metaKey && !e.altKey && !/^(INPUT|TEXTAREA|SELECT)$/.test(e.target.tagName) && !e.target.isContentEditable) { const search=$('#q'); if(search){e.preventDefault();search.focus();search.scrollIntoView({block:'nearest',behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});} }
     if (!backdrop.classList.contains('open')) return;
     const items = [...list.querySelectorAll('a')];
     if (e.key==='Escape') { closeCommands(); $('#open-command')?.focus(); }
