@@ -151,6 +151,7 @@ footer{border-top:1px solid var(--stroke);margin-top:46px;padding:26px 0 44px;co
 .wthumb span{position:absolute;left:0;right:0;bottom:0;padding:8px 10px;font-size:11px;background:linear-gradient(180deg,transparent,rgba(4,10,20,.92));color:var(--fg)}
 </style>
   <link rel="stylesheet" href="/site-interactions.css?v=1">
+  <link rel="stylesheet" href="/landing-studio.css?v=1">
 </head>
 <body>
 <div class="pagebg" aria-hidden="true"></div>
@@ -176,6 +177,42 @@ footer{border-top:1px solid var(--stroke);margin-top:46px;padding:26px 0 44px;co
 </div></div>
 
 <div class="wrap">
+
+  <section class="landing-hero" id="home" aria-labelledby="landing-title">
+    <div class="landing-copy">
+      <div class="eyebrow"><span class="live-dot"></span> INDEPENDENT RESEARCH · OPEN SOFTWARE · INTERACTIVE WEB</div>
+      <h1 id="landing-title">Ideas become <span class="hero-gradient">living systems.</span></h1>
+      <p class="landing-lede">Explore an interconnected portfolio of operating-system research, immersive desktops, developer tools, emulation and ancient-language research — one carefully curated launchpad.</p>
+      <div class="landing-actions">
+        <a class="landing-primary" href="#apps">Explore the app universe <span aria-hidden="true">↗</span></a>
+        <a class="landing-secondary" href="apps/aurora-glass-desktop/index.html">Enter Aurora Desktop <span aria-hidden="true">→</span></a>
+        <button class="landing-secondary" type="button" id="open-command" aria-keyshortcuts="Control+K Meta+K">⌘ Quick launch <kbd>Ctrl K</kbd></button>
+      </div>
+      <div class="landing-metrics" aria-label="Portfolio highlights">
+        <div><strong id="metric-apps">—</strong><span>catalogued apps</span></div>
+        <div><strong>03</strong><span>research tracks</span></div>
+        <div><strong>EN / AR</strong><span>bilingual interface</span></div>
+      </div>
+    </div>
+    <div class="landing-visual" aria-label="Aurora glass interface preview">
+      <div class="visual-orbit orbit-a"></div><div class="visual-orbit orbit-b"></div>
+      <div class="visual-core"><span class="core-glyph">✳</span><span class="core-label">AURORA</span><span class="core-sub">WAYLAND GLASS</span></div>
+      <div class="float-panel panel-system"><span class="panel-icon">◈</span><div><b>Chimera II OS</b><small>Kernel & runtime research</small></div><span class="panel-arrow">↗</span></div>
+      <div class="float-panel panel-lab"><span class="panel-icon violet">⌁</span><div><b>Research Lab</b><small>Scripts · NLP · OCR</small></div><span class="panel-arrow">↗</span></div>
+      <div class="float-panel panel-tools"><span class="panel-icon mint">⌘</span><div><b>Developer Studio</b><small>Build · inspect · create</small></div><span class="panel-arrow">↗</span></div>
+      <div class="visual-caption"><span class="live-dot"></span> ONE PORTAL · MANY PROJECTS <span class="caption-line"></span> <span>SCROLL TO EXPLORE ↓</span></div>
+    </div>
+    <div class="landing-bottom">
+      <span class="landing-bottom-label">JUMP INTO A WORKSPACE</span>
+      <div class="launch-chips">
+        <a href="apps/chimera-ii-os/web/aurora_3d_desktop.html"><span>◇</span> 3D desktop</a>
+        <a href="apps/thamudic-scanner/index.html"><span>𐪀</span> ThamudicScan</a>
+        <a href="apps/optional-app-center/index.html"><span>▦</span> App Center</a>
+        <a href="repository-hub.html"><span>⌘</span> Repository hub</a>
+        <a href="project-updates.html"><span>◷</span> Build & release status</a>
+      </div>
+    </div>
+  </section>
 
   <section class="glass hero" id="desktop">
     <div class="hero-head">
@@ -1821,5 +1858,6 @@ q.addEventListener('input', () => render(q.value));
 render('');
 </script>
   <script src="/site-interactions.js?v=1" defer></script>
+  <script src="/landing-studio.js?v=1" defer></script>
 </body>
 </html>
