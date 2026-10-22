@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark light">
+<meta name="description" content="A private, browser-based PDF viewer for local files. Documents stay in your browser and are not uploaded.">
+<title>PDF Reader — Amer Hwitat Apps</title>
+<style>
+:root{font:16px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif;color-scheme:dark;background:#081426;color:#eef5ff}
+*{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(ellipse at top right,#17445b,#081426 65%)}
+main{max-width:1200px;margin:auto;padding:clamp(16px,3vw,32px)}header{display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between}
+h1{font-size:clamp(1.7rem,4vw,2.6rem);margin:0}p{color:#bed0e1}.sub{margin:.25rem 0 0}
+.panel{margin:22px 0;padding:18px;border:1px solid #ffffff25;border-radius:16px;background:#ffffff09}
+.controls{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+button,.file-label{border:1px solid #6fd6d0;border-radius:10px;padding:10px 14px;background:#14384a;color:#fff;font:inherit;cursor:pointer}
+button:disabled{opacity:.45;cursor:not-allowed}input[type=file]{max-width:100%;padding:8px}
+.viewer{height:min(72vh,900px);min-height:380px;width:100%;border:1px solid #ffffff25;border-radius:12px;background:#fff}
+.status{min-height:1.5em;color:#9de7d9}a{color:#9de7d9}.small{font-size:.9rem}
+:focus-visible{outline:3px solid #ffd166;outline-offset:3px}
+@media(max-width:600px){.viewer{height:65vh;min-height:320px}.controls{align-items:stretch;flex-direction:column}.controls>*{width:100%}}
+</style>
+</head>
+<body><main>
+<header><div><h1>PDF Reader</h1><p class="sub">A lightweight, local-first PDF viewing workspace</p></div><a href="./index.html">Application Center</a></header>
+<section class="panel" aria-labelledby="open-title">
+<h2 id="open-title">Open a document</h2>
+<p>Select a PDF from this device. The file is previewed locally in your browser; this page does not upload it to a server.</p>
+<div class="controls">
+<input id="file" type="file" accept="application/pdf,.pdf" aria-label="Choose a PDF document">
+<button id="open" type="button" disabled>Open selected PDF</button>
+<button id="download" type="button" disabled>Download original</button>
+<button id="clear" type="button" disabled>Close document</button>
+</div>
+<p id="status" class="status" role="status" aria-live="polite">No document selected.</p>
+<p class="small">Scope: viewing only. Text extraction, OCR, annotation, and historical-script analysis are not implemented in this browser front end. Use the separate PDFreaderPY and NLP processing tools for those workflows.</p>
+</section>
+<section class="panel" aria-labelledby="preview-title">
+<h2 id="preview-title">Document preview</h2>
+<iframe id="preview" class="viewer" title="Selected PDF preview" hidden></iframe>
+<p id="empty">Choose a PDF and select “Open selected PDF” to preview it here. Browser PDF support is required.</p>
+</section>
+</main>
+<script>
+(()=>{"use strict";
+const fileInput=document.querySelector("#file"),openButton=document.querySelector("#open"),downloadButton=document.querySelector("#download"),clearButton=document.querySelector("#clear"),preview=document.querySelector("#preview"),empty=document.querySelector("#empty"),status=document.querySelector("#status");
+let selectedFile=null,objectUrl=null;
+function releaseDocument(){if(objectUrl){URL.revokeObjectURL(objectUrl);objectUrl=null;}preview.removeAttribute("src");preview.hidden=true;empty.hidden=false;downloadButton.disabled=true;clearButton.disabled=true;}
+fileInput.addEventListener("change",()=>{selectedFile=fileInput.files&&fileInput.files[0]||null;openButton.disabled=!selectedFile;if(!selectedFile){status.textContent="No document selected.";return;}if(selectedFile.type!=="application/pdf"&&!selectedFile.name.toLowerCase().endsWith(".pdf")){status.textContent="Please select a PDF file.";openButton.disabled=true;return;}status.textContent="Selected "+selectedFile.name+" ("+Math.max(1,Math.round(selectedFile.size/1024))+" KB). Nothing has been uploaded.";});
+openButton.addEventListener("click",()=>{if(!selectedFile)return;if(selectedFile.size===0){status.textContent="The selected file is empty.";return;}releaseDocument();objectUrl=URL.createObjectURL(selectedFile);preview.src=objectUrl;preview.hidden=false;empty.hidden=true;downloadButton.disabled=false;clearButton.disabled=false;status.textContent="Opened "+selectedFile.name+" locally. If the preview is blank, use your browser’s built-in PDF support or download the original.";});
+downloadButton.addEventListener("click",()=>{if(!selectedFile||!objectUrl)return;const a=document.createElement("a");a.href=objectUrl;a.download=selectedFile.name;a.click();});
+clearButton.addEventListener("click",()=>{releaseDocument();selectedFile=null;fileInput.value="";openButton.disabled=true;status.textContent="Document closed; local preview URL released.";});
+window.addEventListener("pagehide",()=>{if(objectUrl)URL.revokeObjectURL(objectUrl);});
+})();
+</script>
+</body></html>
