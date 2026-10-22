@@ -48,7 +48,10 @@
       ],
       "license_signal": "LICENSE",
       "audit_status": "root-signals-captured",
-      "next_step": "Enumerate nested Python/Java/Node/.NET projects; identify entrypoints, dependency pins, tests, API auth/data flows, and existing web app boundaries."
+      "next_step": "Enumerate nested Python/Java/Node/.NET projects; identify entrypoints, dependency pins, tests, API auth/data flows, and existing web app boundaries.",
+      "ci_signals": [
+        ".github directory present; workflow contents not audited in this pass"
+      ]
     },
     {
       "id": "bizx",
@@ -89,7 +92,7 @@
         "install-deps.cmd"
       ],
       "test_signals": [
-        ".github"
+        "test directory not seen at repository root"
       ],
       "api_signals": [
         "run-network-api.sh",
@@ -105,7 +108,10 @@
       ],
       "license_signal": "LICENSE",
       "audit_status": "root-signals-captured",
-      "next_step": "Inventory each language subproject and API contract separately; locate actual test commands and auth/secret boundaries before GUI adapters."
+      "next_step": "Inventory each language subproject and API contract separately; locate actual test commands and auth/secret boundaries before GUI adapters.",
+      "ci_signals": [
+        ".github directory present; workflow contents not audited in this pass"
+      ]
     },
     {
       "id": "BizXtreme",
@@ -141,7 +147,7 @@
         "install-deps.cmd"
       ],
       "test_signals": [
-        ".github"
+        "test directory not seen at repository root"
       ],
       "api_signals": [
         "network/",
@@ -154,7 +160,10 @@
       ],
       "license_signal": "not-seen-at-root",
       "audit_status": "root-signals-captured",
-      "next_step": "Confirm licensing and subproject boundaries; enumerate tests, API contracts, framework manifests, and security requirements."
+      "next_step": "Confirm licensing and subproject boundaries; enumerate tests, API contracts, framework manifests, and security requirements.",
+      "ci_signals": [
+        ".github directory present; workflow contents not audited in this pass"
+      ]
     },
     {
       "id": "PDFreaderPY",
@@ -194,7 +203,10 @@
       ],
       "license_signal": "LICENSE",
       "audit_status": "root-signals-captured",
-      "next_step": "Inspect requirements and tests; map Python PDF capabilities against the browser preview and keep unsupported OCR/extraction/annotation features explicitly unavailable."
+      "next_step": "Inspect requirements and tests; map Python PDF capabilities against the browser preview and keep unsupported OCR/extraction/annotation features explicitly unavailable.",
+      "ci_signals": [
+        ".github directory present; workflow contents not audited in this pass"
+      ]
     },
     {
       "id": "CPU4096Simulator",
@@ -235,7 +247,10 @@
       ],
       "license_signal": "LICENSE",
       "audit_status": "root-signals-captured",
-      "next_step": "Read package scripts and lockfile, run JS tests/build, map simulator state/API contracts, and test deterministic CPU examples in the browser UI."
+      "next_step": "Read package scripts and lockfile, run JS tests/build, map simulator state/API contracts, and test deterministic CPU examples in the browser UI.",
+      "ci_signals": [
+        ".github directory present; workflow contents not audited in this pass"
+      ]
     },
     {
       "id": "CPU4096",
@@ -260,7 +275,7 @@
         "registerN.cbp"
       ],
       "test_signals": [
-        ".github"
+        "test directory not seen at repository root"
       ],
       "api_signals": [
         "not-seen-at-root"
@@ -270,7 +285,10 @@
       ],
       "license_signal": "LICENSE",
       "audit_status": "root-signals-captured",
-      "next_step": "Inspect native project metadata, compiler standards, sample inputs, tests, and existing web assets before selecting a shared simulator API."
+      "next_step": "Inspect native project metadata, compiler standards, sample inputs, tests, and existing web assets before selecting a shared simulator API.",
+      "ci_signals": [
+        ".github directory present; workflow contents not audited in this pass"
+      ]
     },
     {
       "id": "eth-key-check",
@@ -314,7 +332,10 @@
       ],
       "license_signal": "not-seen-at-root",
       "audit_status": "root-signals-captured",
-      "next_step": "Review cryptographic scope and tests; keep private keys local, avoid telemetry/logging of secrets, and verify entropy/security-sensitive operations before exposing UI."
+      "next_step": "Review cryptographic scope and tests; keep private keys local, avoid telemetry/logging of secrets, and verify entropy/security-sensitive operations before exposing UI.",
+      "ci_signals": [
+        ".github directory present; workflow contents not audited in this pass"
+      ]
     },
     {
       "id": "bruteforce",
@@ -340,7 +361,7 @@
         "requirements.txt"
       ],
       "test_signals": [
-        ".github"
+        "test directory not seen at repository root"
       ],
       "api_signals": [
         "not-seen-at-root"
@@ -351,7 +372,10 @@
       ],
       "license_signal": "not-seen-at-root",
       "audit_status": "root-signals-captured",
-      "next_step": "Determine documented purpose and safeguards, inspect existing tests and dependencies, and only expose bounded authorized workflows through any GUI."
+      "next_step": "Determine documented purpose and safeguards, inspect existing tests and dependencies, and only expose bounded authorized workflows through any GUI.",
+      "ci_signals": [
+        ".github directory present; workflow contents not audited in this pass"
+      ]
     },
     {
       "id": "keygen",
@@ -376,7 +400,7 @@
         "pom.xml"
       ],
       "test_signals": [
-        ".github"
+        "test directory not seen at repository root"
       ],
       "api_signals": [
         "not-seen-at-root"
@@ -386,7 +410,10 @@
       ],
       "license_signal": "not-seen-at-root",
       "audit_status": "root-signals-captured",
-      "next_step": "Inspect Maven dependencies and tests; audit entropy and cryptographic implementation, and never substitute frontend pseudo-randomness for secure key generation."
+      "next_step": "Inspect Maven dependencies and tests; audit entropy and cryptographic implementation, and never substitute frontend pseudo-randomness for secure key generation.",
+      "ci_signals": [
+        ".github directory present; workflow contents not audited in this pass"
+      ]
     },
     {
       "id": "general",
@@ -415,7 +442,7 @@
         "docker-compose.yml"
       ],
       "test_signals": [
-        ".github"
+        "test directory not seen at repository root"
       ],
       "api_signals": [
         "not-seen-at-root"
@@ -427,7 +454,10 @@
       ],
       "license_signal": "LICENSE",
       "audit_status": "root-signals-captured",
-      "next_step": "Split the monorepo by deployable application; capture each package manifest, API schema, tests, licensing, and security boundary before porting."
+      "next_step": "Split the monorepo by deployable application; capture each package manifest, API schema, tests, licensing, and security boundary before porting.",
+      "ci_signals": [
+        ".github directory present; workflow contents not audited in this pass"
+      ]
     },
     {
       "id": "test",
@@ -464,7 +494,10 @@
       ],
       "license_signal": "not-seen-at-root",
       "audit_status": "root-signals-captured",
-      "next_step": "Determine which directories are applications versus fixtures; inspect Python version constraints, test commands, native build requirements, and web entrypoints."
+      "next_step": "Determine which directories are applications versus fixtures; inspect Python version constraints, test commands, native build requirements, and web entrypoints.",
+      "ci_signals": [
+        ".github directory present; workflow contents not audited in this pass"
+      ]
     }
   ]
 }
