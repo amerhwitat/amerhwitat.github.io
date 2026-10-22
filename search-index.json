@@ -16,11 +16,39 @@
       "x": "ThamudicScan Thamudic Safaitic Dadanitic Hismaic Taymanitic epigraphy OCR transliteration translation"
     },
     {
+      "p": "apps/desktop-evolution/index.html",
+      "t": "Desktop Evolution Lab — Chimera II / OctavianOS",
+      "g": "Apps",
+      "d": "",
+      "x": "Chimera II OS · OctavianOS · Portfolio GUI Desktop Evolution Lab Explore classic-to-modern desktop interaction patterns and choose a direction for Aurora Wayland Glass Desktop or Marine Desktop. This is a web prototype and feature planner, not a Windows emulator or a claim that native desktop services are implemented. Aurora · glass workspace Marine · task workspace Aurora Wayland Glass Desktop A spatial, translucent workspace with overview navigation, widgets, touch-friendly surfaces and keyboard-first controls. Glass surfaces Workspaces Wayland target Windows-era feature map Choose feature families inspired by desktop history from Windows 3.1/3.11 through Windows 12-era concepts. Availability in this prototype means selected for planning only. 0 feature groups selected Select all feature groups Clear Feature families Classic productivity Program Manager-style app groups and file-manage"
+    },
+    {
       "p": "apps/index.html",
       "t": "Apps — Amer Hwitat",
       "g": "Apps",
       "d": "",
       "x": "App directory Redirecting to the portfolio & app hub … 28 apps. Chimera II OS — Home Chimera II OS Aurora 3D Desktop Chimera II OS Chimera Code IDE Chimera II OS Aurora Terminal Chimera II OS System Control Center Chimera II OS Desktop Profiles Chimera II OS Retro Emulators Chimera II OS Installer Manager Chimera II OS Network Monitor Chimera II OS Crash Center Chimera II OS Health Chimera II OS Research OS Chimera II OS Linux Command Console Chimera II OS CPU4096 Simulator — Aurora Web Desktop CPU4096 CPU4096 Visualizer CPU4096 BizX Asset Browser BizX & BizXtreme BizXtreme 3D BizX & BizXtreme Thamudic Scanner Research (nlp) Thamudic Epi Platform Research (nlp) Amiga Emulator Research (nlp) Chimera 3D/4D Studio Studio & Tools SEO Tool Studio & Tools Aurora Mobile Studio & Tools Agent Research Forge Studio & Tools Chimera Test Suite More PDF Reader More Chimera Pages Published Pages Thamu"
+    },
+    {
+      "p": "apps/iso-tool/index.html",
+      "t": "ISO-Tool Browser Planner",
+      "g": "Apps",
+      "d": "Browser-native public repository inventory and multi-language build-plan generator inspired by ISO-Tool",
+      "x": "NLP · ISO-Tool browser port Repository → Build Plan Inspect a public GitHub repository, discover build manifests and language families, and generate a reviewable build plan without executing any commands. Portfolio Repository hub Python Workbench ISO-Tool Python source ↗ Execution boundary: this browser port reads public GitHub tree metadata only. It does not clone repositories, install dependencies, execute build commands, create ISOs, or access local files. Run actual builds through the local ISO-Tool Python application after reviewing the plan. Source discovery Inspect repository Public GitHub repository Branch / tag Scan repository tree Load sample report Export report JSON Export build plan CSV Enter a public repository and scan to begin. Files in tree — Language families — Build manifests — Recommended phases — Build intelligence Detected languages No scan No inventory yet. Plan Re"
+    },
+    {
+      "p": "apps/portfolio-migration/index.html",
+      "t": "Portfolio GUI Migration Dashboard",
+      "g": "Apps",
+      "d": "Cross-repository GUI migration inventory for Aurora, Marine, and the Amer Hwitat project portfolio.",
+      "x": "Aurora · Marine · Cross-language portfolio Portfolio GUI Migration Dashboard One visible inventory for the public project portfolio. This dashboard tracks candidate browser interfaces and migration paths; it does not assert that every source file has already been converted, tested, or deployed. Desktop Evolution Lab Repository App Explorer Migration architecture and acceptance guide Migration rules Aurora Wayland Glass Desktop remains the glass/workspace-oriented desktop; Marine Desktop remains the task-oriented desktop. Shared apps should use reusable web components while each desktop owns its shell, window behavior, permissions and theme. Angular + TypeScript and Next.js + TypeScript are alternative web application targets, not a requirement to duplicate every app in both frameworks. Spring Boot requires a separately hosted JVM service; GitHub Pages serves static assets only. JavaFX/Sw"
+    },
+    {
+      "p": "apps/workflow-studio/index.html",
+      "t": "WorkflowStudio",
+      "g": "Apps",
+      "d": "Browser GUI for the self-hosted WorkflowStudio Python API: projects, backlog items and advisory sequence scoring.",
+      "x": "general · WorkflowStudio Python API WorkflowStudio A browser GUI for the reference workflow service: projects, backlog work items, and advisory sequence scoring. Portfolio Repository hub Python Workbench Source ↗ Data and model boundary: This static page connects only to the API endpoint you configure. The reference Python service uses an in-memory store, so its records may be lost on restart. Sequence scoring is explicitly a reference contract, not a trained RNN guarantee. Configure API CORS for this page origin before use. Connection API settings Check service Python API base URL Not connected. Refresh projects Portfolio Create project Project ID Project name Owner Methodology Scrum Kanban Scrumban XP Lean Hybrid Create project Backlog Create work item Project Load or create a project first Item ID Title Type task epic story bug incident change problem Status backlog ready in_progress "
     },
     {
       "p": "apps/bizx-network/index.html",
@@ -254,6 +282,13 @@
       "x": "MAME Arcade Center MAME · WebAssembly · Controls MAME + Aurora Dynamic MAME frontend with local ROM selection, control mapping, save-state adapter, game database and fullscreen runtime. Chimera II OS"
     },
     {
+      "p": "apps/chimera-ii-os/web/marine_desktop.html",
+      "t": "Marine Desktop — Chimera II OS",
+      "g": "Chimera II OS",
+      "d": "Marine Desktop, the ocean-glass Windows-inspired desktop profile for Chimera II OS.",
+      "x": "M MARINE CHIMERA II DESKTOP ⌕ ◉ Connected Backgrounds Switch desktop --:-- ⌂ Home ▤ Files ›_ Terminal ⚙ Settings ✧ Aurora Glass OCEAN GLASS · DESKTOP PROFILE Find your flow. Marine Desktop brings a calm, deep-water palette, translucent windows and the Chimera II application workspace together. Open Chimera workspace Choose background Web desktop shell · native OS services require a running system integration. PERSONALIZATION Desktop backgrounds × Marine Ocean Glass Original marine artwork Infinite Research Horizon Cosmic aurora and fractured glass Celestial Octopus Aurora Deep space and luminous tentacles M Marine Desktop Applications All Chimera applications ↗ Desktop profiles ↗ Wallpaper gallery ↗ Production acceptance status ↗ M Start ⌂ Workspace ✧ Aurora Marine Desktop · Web shell"
+    },
+    {
       "p": "apps/chimera-ii-os/web/network_monitor.html",
       "t": "Network Monitor",
       "g": "Chimera II OS",
@@ -336,6 +371,20 @@
       "g": "Chimera II OS",
       "d": "Central control surface for system, services and settings.",
       "x": "System Control Center Control ChimeraIIOS Central control surface for system, services and settings. Chimera II OS"
+    },
+    {
+      "p": "apps/chimera-ii-os/web/userspace-acceptance.html",
+      "t": "Koronos Production Acceptance — Chimera II OS",
+      "g": "Chimera II OS",
+      "d": "Live, evidence-based Koronos production acceptance status for ChimeraIIOS and OctavianOS.",
+      "x": "Skip to content KORONOS · PRODUCTION GATE Production Acceptance ChimeraIIOS · OctavianOS · Live / Installer / Recovery · BIOS / UEFI Architecture 3D Desktop Desktop Profiles Build & Release Status LIVE STATUS · 2026-10-19 · CI REFRESH Production release remains blocked. The latest full-ISO workflow built and validated the ISO, ran target probes and six-case BIOS/UEFI checks, and uploaded diagnostic artifacts. The final fail-closed acceptance step failed, and release publication was skipped. A successful build or completed probe step is not a passing userspace acceptance result. Latest evidence: OctavianOS Native Koronos run #39209603140 completed the kernel/ISO build, full-ISO kernel readiness, six independent target/firmware boot attempts, and trace/artifact uploads. The unchanged userspace verifier then failed all six cases: every Live/Installer/Recovery × BIOS/UEFI trace lacked the ac"
+    },
+    {
+      "p": "apps/chimera-ii-os/web/wallpapers.html",
+      "t": "Aurora Wallpapers — Chimera II OS",
+      "g": "Chimera II OS",
+      "d": "High-resolution Chimera II OS and OctavianOS desktop wallpapers. Preview, apply as page background, or download original 4K SVG artwork.",
+      "x": "Skip to wallpapers AURORA ARTWORK LIBRARY DESKTOP WALLPAPERS Original 4K scalable artwork for desktop previews and web UI backgrounds Chimera II OS 3D Desktop Userspace Acceptance 3840 × 2160 · 16:9 · SVG Choose your horizon Preview each wallpaper on this page or download the original vector artwork. Applying a preview changes only this page’s background; it does not alter your operating-system wallpaper. Clear preview background Infinite Research Horizon Chimera II OS · cosmic aurora, fractured glass and mountain lake Preview background Download SVG Infinite Research Horizon — 4K Chimera II OS · original 3840 × 2160 desktop wallpaper Preview background Download SVG Celestial Octopus Aurora — 4K OctavianOS · celestial octopus motifs, glassy aurora and deep space Preview background Download SVG Artwork source: original project SVGs. SVG files scale cleanly to different screen sizes. Firmw"
     },
     {
       "p": "apps/chimera-ii-os/webui/linux-command-console.html",
@@ -476,6 +525,20 @@
       "g": "Cryptography Research",
       "d": "Cross-language Ethereum key/address verification and research utilities. Use documented verification flows; never submit private keys or seed phrases to a web UI.",
       "x": "Ethereum Key/Address Verification Python · Node.js · Java · C++ · Apple eth-key-check Cross-language Ethereum key/address verification and research utilities. Use documented verification flows; never submit private keys or seed phrases to a web UI."
+    },
+    {
+      "p": "apps/cpu4096-simulator/index.html",
+      "t": "CPU4096Simulator Java Runtime Guide",
+      "g": "Developer Tools",
+      "d": "Java assembler, execution semantics, memory bus, and cross-language contract guide.",
+      "x": "CPU4096 Simulator Java assembler opcode runtime contracts Maven tests machine code"
+    },
+    {
+      "p": "apps/python-workbench/index.html",
+      "t": "Python Web Workbench",
+      "g": "Developer Tools",
+      "d": "Search and inspect the Python inventory across public repositories; preview source and use an explicitly configured local bridge for runnable entrypoints.",
+      "x": "Python GUI workbench Python catalog source preview runnable entrypoints modules libraries tests BizX BizXtreme ChimeraIIOS nlp build run local bridge"
     },
     {
       "p": "apps/repository-app-explorer/index.html",
@@ -625,6 +688,20 @@
       "x": "hero app catalog APPS repo index REPOS search-index.json full-text search ChimeraIIOS 154 files desktop terminal ISA explorer emulators OCR wallet installer ThamudicScan upload camera five-stage pipeline import quality check script-family review glyph transliteration review export Thamudic Safaitic Dadanitic Hismaic Taymanitic sample inscriptions field tips Static hub APPS REPOS search-index.json full text page search ThamudicScan v2.4.1 upload camera five stage pipeline five script families sample inscriptions field tips export Chimera II OS React desktop SPA Aurora Koronos kernel terminal 154 files 680 files ChimeraIIOS 3123 files 2.1 GB"
     },
     {
+      "p": "apps/java-app-hub/apps.json",
+      "t": "Java Application Hub Inventory (JSON)",
+      "g": "Java & Cross-Repository Tools",
+      "d": "Machine-readable snapshot of repositories, languages, application areas and Java port status.",
+      "x": "repository tree inventory source code languages Java conversion applications"
+    },
+    {
+      "p": "apps/java-app-hub/index.html",
+      "t": "Java Application Hub",
+      "g": "Java & Cross-Repository Tools",
+      "d": "Searchable inventory of 15 accessible repositories and 62 application areas, with Java migration status and source links. Includes a separate Java Swing desktop companion.",
+      "x": "Java JavaFX Swing Maven JVM repository application catalog migration conversion GUI build CI"
+    },
+    {
       "p": "https://github.com/amerhwitat/keygen/tree/main/web/javascript",
       "t": "Keygen Repository — Web Entry",
       "g": "keygen",
@@ -667,11 +744,25 @@
       "x": "ThamudicScan — Repository Web UI OCR · source entry nlp Source UI; hosted scanner is linked separately and model capability needs independent verification."
     },
     {
+      "p": "apps/octavianos/application-center.html",
+      "t": "OctavianOS Application Center",
+      "g": "OctavianOS",
+      "d": "",
+      "x": "◈ OCTAVIANOS Back to desktop preview DESKTOP SOFTWARE DISCOVERY Application Center Paint Studio Media Deck Document Desk Snake Arcade Browse applications for common Windows, Linux and macOS desktop workflows. The catalog is a discovery index; it does not install software or imply that an application has been ported to the native Koronos runtime. Safety and compatibility: listings are catalog-only until a target-specific package and actual launch tests are verified. Official websites open in a new tab. Never download or run untrusted scripts from catalog entries. All categories Loading catalog… OctavianOS research preview · Source and license terms belong to each upstream project. Proprietary applications must use authorized vendor distribution routes."
+    },
+    {
       "p": "apps/octavianos/aurora/index.html",
       "t": "OctavianOS Aurora Wayland Glass — Web Preview",
       "g": "OctavianOS",
       "d": "Hosted interactive desktop concept with working links to portfolio web apps; not the native OS session.",
       "x": "OctavianOS Aurora Wayland Glass — Web Preview Desktop · hosted preview OctavianOS Hosted interactive desktop concept with working links to portfolio web apps; not the native OS session."
+    },
+    {
+      "p": "apps/octavianos/document-desk.html",
+      "t": "Document Desk — OctavianOS",
+      "g": "OctavianOS",
+      "d": "",
+      "x": "◈ DOCUMENT DESK Text workspace · Local PDF preview Application Center Document Desk Edit plain text or Markdown locally, open a PDF in the browser viewer, and export your text. No files are uploaded. This does not claim Word/LibreOffice document fidelity or native OS file integration. Open text/Markdown Download text Open PDF Clear editor Editor PDF preview Choose a PDF to preview it using your browser's built-in PDF support. Ready"
     },
     {
       "p": "apps/octavianos/index.html",
@@ -686,6 +777,48 @@
       "g": "OctavianOS",
       "d": "Hosted Marine desktop concept with links to portfolio app implementations; not the native OS session.",
       "x": "OctavianOS Marine Desktop — Web Preview Desktop · hosted preview OctavianOS Hosted Marine desktop concept with links to portfolio app implementations; not the native OS session."
+    },
+    {
+      "p": "apps/octavianos/media-deck.html",
+      "t": "Media Deck — OctavianOS",
+      "g": "OctavianOS",
+      "d": "",
+      "x": "◈ MEDIA DECK Local audio and video player Application Center Media Deck Select audio or video files from your device. Playback is local to this browser tab; no file is uploaded to a server. Choose media files to begin playback. ＋ Add media Play / Pause Stop Previous Next Volume Speed 0.5 0.75 1 1.25 1.5 2 Ready Supported formats depend on your browser's codecs. DRM-protected media and unsupported codecs may not play. Queue 0 files Clear queue"
+    },
+    {
+      "p": "apps/octavianos/paint-studio.html",
+      "t": "Paint Studio — ChimeraIIOS",
+      "g": "OctavianOS",
+      "d": "",
+      "x": "◈ PAINT STUDIO Local-first raster sketchpad Application Center ✎ Pen ╱ Line ▱ Rectangle ◯ Ellipse ⌫ Eraser Color Size 5 px ↶ Undo Clear Open image Save PNG Ready · drawings stay in this browser tab until you save them. Prototype scope: local browser canvas only. This is a working web app, not evidence of a native Koronos graphics stack or OS-level file integration."
+    },
+    {
+      "p": "apps/octavianos/snake-arcade.html",
+      "t": "Snake Arcade — OctavianOS",
+      "g": "OctavianOS",
+      "d": "",
+      "x": "◈ SNAKE ARCADE Application Center Snake Arcade Collect food, grow longer and avoid collisions. Use arrow keys or WASD; on touch screens use the directional buttons. Score: 0 · Ready Start / Restart ↑ ← ↓ →"
+    },
+    {
+      "p": "apps/octavianos/src/index.html",
+      "t": "OctavianOS · React Desktop",
+      "g": "OctavianOS",
+      "d": "OctavianOS React desktop and mobile preview",
+      "x": "Loading OctavianOS preview…"
+    },
+    {
+      "p": "apps/octavianos/web/index.html",
+      "t": "OctavianOS — Desktop Preview",
+      "g": "OctavianOS",
+      "d": "",
+      "x": "◈ OCTAVIANOS OCEANIC COMPUTING · PREVIEW WEB DESKTOP + MOBILE COMPANION A new ocean for your computing world. Explore OctavianOS desktop concepts and mobile companion UI. This responsive web application is a preview of the user experience—not a substitute for the native Koronos kernel, installer, or microkernel. ✦ Aurora Wayland Glass Glass desktop concept with global menu, desktop shortcuts and dock. Open Aurora preview 🌊 Marine Desktop Ocean-inspired workspace with Start menu, taskbar and pinned apps. Open Marine preview 📱 Mobile edition Responsive companion interface; ARM64 native boot support remains a separate engineering milestone. Open mobile preview 🧰 Application Center Search a cross-platform catalog of paint tools, media players, games, office apps and developer utilities. Browse applications 🎨 Paint Studio Working browser canvas editor with pen, shapes, eraser, undo, image"
+    },
+    {
+      "p": "apps/pdf-reader/java-tools.html",
+      "t": "PDFreaderPY Java Tools Guide",
+      "g": "PDF and Documents",
+      "d": "Java PDF extraction, selectable-text search, JSONL matches, and provenance tooling; OCR is not included.",
+      "x": "PDFreaderPY Java PDF text search extraction Java CLI JSONL page line column OCR"
     },
     {
       "p": "https://github.com/amerhwitat/PDFreaderPY/tree/main/web/javascript",
@@ -709,6 +842,34 @@
       "x": "JAVA · DESKTOP · RESEARCH Java Application Portfolio Native JVM desktop applications and shared Java components for the project repositories. ← Main portfolio Java desktop applications run on a local JVM. GitHub Pages is a static website, so this page links to their source and build workflows; it does not pretend to execute desktop bytecode inside the browser. GUI PR opened PDF Reader — Java Swing Native desktop PDF viewer with file selection, page selection, asynchronous PDFBox rendering, and the existing ingestion/provenance adapter. OCR remains a separate pipeline until its algorithms are ported and parity-tested. Review GUI pull request Java source Java model + contract tests CPU4096 Unsigned fixed-width register model, arithmetic/bitwise operations, shifts, and little-endian snapshots validated against shared contract fixtures. A Java GUI is not yet claimed. Java source Build checks"
     },
     {
+      "p": "java-migration-observatory.html",
+      "t": "Java Migration Observatory · Amer Hwitat",
+      "g": "Portfolio",
+      "d": "Java migration audit for public Amer Hwitat repositories",
+      "x": "Aurora · Java migration program Java Migration Observatory Repository-by-repository audit of Java coverage, remaining languages, and next parity work. This is not a claim that every program has already been translated. ← Repository App Studio GitHub profile ↗ Website CI ↗ Parity rule: Java file counts are not conversion-completion percentages. Each port must preserve behavior, dependencies, error handling, security boundaries, and tests. Kernels, boot code, native drivers, browser UI, and hardware interfaces require platform-specific implementations or explicit native adapters. All statuses Java exists · parity incomplete Native / kernel boundary Web-first / Java companion needed Counts are observed .java file counts from completed public Git tree audits; they may include tests or vendored code. No exact count is fabricated for the two largest OS repositories. Public repositories only. P"
+    },
+    {
+      "p": "repository-hub.html",
+      "t": "All Repositories & Web Apps",
+      "g": "Portfolio",
+      "d": "Searchable directory of public GitHub repositories, published browser apps, and Java desktop tools.",
+      "x": "repository hub all projects ChimeraIIOS OctavianOS BizX BizXtreme general nlp CPU4096 CPU4096Simulator PDFreaderPY keygen bruteforce eth-key-check test JavaFX Aurora Glass emulator artifact library OctavianOS Aurora Marine React mobile preview CPU4096Simulator Code IDE BizX Network Asset Browser BizXtreme Network 3D Wallet Center Thamudic Studio Thamudic Epi Platform NLP Studio NLP Artifacts Amiga Emulator SEO Tool Agent Research Forge Email List Manager CPU4096 web entry Aurora shell"
+    },
+    {
+      "p": "project-updates.html",
+      "t": "ChimeraIIOS & OctavianOS — Build and Release Status",
+      "g": "Projects & Releases",
+      "d": "Current enhancement inventory, source pull requests, CI evidence, review artifacts, and native ISO acceptance blockers for ChimeraIIOS and OctavianOS.",
+      "x": "ChimeraIIOS OctavianOS Koronos Aurora ISO QEMU CI CD release acceptance PR userspace artwork Octopus"
+    },
+    {
+      "p": "repository-enhancements.json",
+      "t": "Repository Enhancement Status (JSON)",
+      "g": "Projects & Releases",
+      "d": "Machine-readable repository commits, pull request states, validation results, artifacts, and release gates.",
+      "x": "enhancement manifest build validation workflow artifact draft pull request kernel boot release"
+    },
+    {
       "p": "apps/chimera-pages/index.html",
       "t": "Chimera Pages",
       "g": "Published Pages",
@@ -721,6 +882,20 @@
       "g": "Published Pages",
       "d": "Existing published Thamudic landing page.",
       "x": "Thamudic Pages Site amerhwitat.github.io Existing published Thamudic landing page. Published Pages"
+    },
+    {
+      "p": "apps/python-app-hub/index.html",
+      "t": "Python Application Hub",
+      "g": "Python & Desktop Tools",
+      "d": "Searchable cross-repository inventory, Python migration status, GUI tool links, and Windows PyInstaller build artifacts.",
+      "x": "Python 3 Python GUI Tkinter PyInstaller Windows EXE application catalog conversion"
+    },
+    {
+      "p": "apps/python-app-hub/super-flash-iso/index.html",
+      "t": "Super Flash & ISO Tool",
+      "g": "Python & Desktop Tools",
+      "d": "Windows desktop image inspection, SHA-256, guarded removable USB imaging, read-back verification, and Android ADB/Fastboot diagnostics.",
+      "x": "ISO IMG BIN ROM USB flash disk image writer SHA256 verify PyInstaller Windows mobile fastboot adb"
     },
     {
       "p": "apps/bizx-asset-browser/index.html",
@@ -924,76 +1099,6 @@
       "g": "Web",
       "d": "",
       "x": "Amer Hwitat Web Hub Project Web Hub Entry point for browser demonstrations and documentation."
-    },
-    {
-      "p": "apps/cpu4096-simulator/index.html",
-      "t": "CPU4096Simulator Java Runtime Guide",
-      "g": "Developer Tools",
-      "d": "Java assembler, execution semantics, memory bus, and cross-language contract guide.",
-      "x": "CPU4096 Simulator Java assembler opcode runtime contracts Maven tests machine code"
-    },
-    {
-      "p": "apps/pdf-reader/java-tools.html",
-      "t": "PDFreaderPY Java Tools Guide",
-      "g": "PDF and Documents",
-      "d": "Java PDF extraction, selectable-text search, JSONL matches, and provenance tooling; OCR is not included.",
-      "x": "PDFreaderPY Java PDF text search extraction Java CLI JSONL page line column OCR"
-    },
-    {
-      "p": "repository-hub.html",
-      "t": "All Repositories & Web Apps",
-      "g": "Portfolio",
-      "d": "Searchable directory of public GitHub repositories, published browser apps, and Java desktop tools.",
-      "x": "repository hub all projects ChimeraIIOS OctavianOS BizX BizXtreme general nlp CPU4096 CPU4096Simulator PDFreaderPY keygen bruteforce eth-key-check test JavaFX Aurora Glass emulator artifact library OctavianOS Aurora Marine React mobile preview CPU4096Simulator Code IDE BizX Network Asset Browser BizXtreme Network 3D Wallet Center Thamudic Studio Thamudic Epi Platform NLP Studio NLP Artifacts Amiga Emulator SEO Tool Agent Research Forge Email List Manager CPU4096 web entry Aurora shell"
-    },
-    {
-      "p": "apps/python-workbench/index.html",
-      "t": "Python Web Workbench",
-      "g": "Developer Tools",
-      "d": "Search and inspect the Python inventory across public repositories; preview source and use an explicitly configured local bridge for runnable entrypoints.",
-      "x": "Python GUI workbench Python catalog source preview runnable entrypoints modules libraries tests BizX BizXtreme ChimeraIIOS nlp build run local bridge"
-    },
-    {
-      "p": "project-updates.html",
-      "t": "ChimeraIIOS & OctavianOS — Build and Release Status",
-      "g": "Projects & Releases",
-      "d": "Current enhancement inventory, source pull requests, CI evidence, review artifacts, and native ISO acceptance blockers for ChimeraIIOS and OctavianOS.",
-      "x": "ChimeraIIOS OctavianOS Koronos Aurora ISO QEMU CI CD release acceptance PR userspace artwork Octopus"
-    },
-    {
-      "p": "repository-enhancements.json",
-      "t": "Repository Enhancement Status (JSON)",
-      "g": "Projects & Releases",
-      "d": "Machine-readable repository commits, pull request states, validation results, artifacts, and release gates.",
-      "x": "enhancement manifest build validation workflow artifact draft pull request kernel boot release"
-    },
-    {
-      "p": "apps/java-app-hub/index.html",
-      "t": "Java Application Hub",
-      "g": "Java & Cross-Repository Tools",
-      "d": "Searchable inventory of 15 accessible repositories and 62 application areas, with Java migration status and source links. Includes a separate Java Swing desktop companion.",
-      "x": "Java JavaFX Swing Maven JVM repository application catalog migration conversion GUI build CI"
-    },
-    {
-      "p": "apps/java-app-hub/apps.json",
-      "t": "Java Application Hub Inventory (JSON)",
-      "g": "Java & Cross-Repository Tools",
-      "d": "Machine-readable snapshot of repositories, languages, application areas and Java port status.",
-      "x": "repository tree inventory source code languages Java conversion applications"
-    },
-    {
-      "p": "apps/python-app-hub/index.html",
-      "t": "Python Application Hub",
-      "g": "Python & Desktop Tools",
-      "d": "Searchable cross-repository inventory, Python migration status, GUI tool links, and Windows PyInstaller build artifacts.",
-      "x": "Python 3 Python GUI Tkinter PyInstaller Windows EXE application catalog conversion"
-    },
-    {
-      "p": "apps/python-app-hub/super-flash-iso/index.html",
-      "t": "Super Flash & ISO Tool",
-      "g": "Python & Desktop Tools",
-      "d": "Windows desktop image inspection, SHA-256, guarded removable USB imaging, read-back verification, and Android ADB/Fastboot diagnostics.",
-      "x": "ISO IMG BIN ROM USB flash disk image writer SHA256 verify PyInstaller Windows mobile fastboot adb"
     }
   ]
 }
