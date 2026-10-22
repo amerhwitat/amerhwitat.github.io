@@ -199,8 +199,9 @@ function run(){
  $("outputType").textContent=d[2];
  if(d[0]==="JavaScript"){
   const frame=document.createElement("iframe");frame.setAttribute("sandbox","allow-scripts");frame.title="Isolated JavaScript output";
-  const safeConsole="<script>const send=(type,args)=>parent.postMessage({repositoryStudio:true,type,args:args.map(v=>{try{return typeof v==='string'?v:JSON.stringify(v)}catch(e){return String(v)}})},'*');console.log=(...a)=>send('log',a);console.error=(...a)=>send('error',a);console.warn=(...a)=>send('warn',a);window.onerror=(m)=>send('error',[m]);<\/script>";
-  frame.srcdoc="<!doctype html><meta charset='utf-8'>"+safeConsole+"<script>\n"+code.replace(/<\/script/gi,"<\\/script")+" \n<\/script>";
+  const policy="<meta http-equiv=\"Content-Security-Policy\" content=\"default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src data: blob:; font-src data:; connect-src 'none'; form-action 'none'; base-uri 'none'; frame-src 'none'\">";
+  const safeConsole="<script>const send=(type,args)=>parent.postMessage({repositoryStudio:true,type,args:args.map(v=>{try{return typeof v==='string'?v:JSON.stringify(v)}catch(e){return String(v)}})},'*');console.log=(...a)=>send('log',a);console.error=(...a)=>send('error',a);console.warn=(...a)=>send('warn',a);window.onerror=(m)=>send('error',[m]);<\\/script>";
+  frame.srcdoc="<!doctype html><meta charset='utf-8'>"+policy+safeConsole+"<script>\n"+code.replace(/<\\/script/gi,"<\\\\/script")+" \n<\\/script>";
   out.replaceChildren(frame);$("runStatus").textContent="JavaScript is running in a sandboxed iframe without same-origin access.";
  }else if(d[0]==="HTML"||d[0]==="CSS"){
   const frame=document.createElement("iframe");frame.setAttribute("sandbox","allow-scripts");frame.title="Isolated HTML preview";
@@ -216,9 +217,8 @@ function run(){
 }
 window.addEventListener("message",e=>{
  if(!e.data||e.data.repositoryStudio!==true)return;
- const out=$("output");if(out.querySelector("iframe")){const pre=document.createElement("pre");pre.textContent="";out.replaceChildren(pre)}
- const line=(e.data.type==="error"?"[error] ":e.data.type==="warn"?"[warn] ":"")+((e.data.args||[]).join(" "));
- out.textContent=(out.textContent==="Choose a language and select Run / preview."?"":out.textContent+"\n")+line;
+ const out=$("output");let pre=out.querySelector(".console-log");if(!pre){pre=document.createElement("pre");pre.className="console-log";pre.style.cssText="position:relative;z-index:1;background:#0c1b2c;border:1px solid #29425f;border-radius:7px;padding:8px;white-space:pre-wrap;overflow-wrap:anywhere";out.appendChild(pre)}
+ const line=(e.data.type==="error"?"[error] ":e.data.type==="warn"?"[warn] ":"")+((e.data.args||[]).join(" "));pre.textContent+=line+"\n";
 });
 $("repoFilter").addEventListener("input",drawRepos);
 $("refresh").addEventListener("click",refreshAll);
