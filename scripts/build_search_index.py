@@ -12,7 +12,7 @@ GROUPS=[("apps/chimera-ii-os","Chimera II OS"),("apps/cpu4096-simulator","CPU409
         ("apps/seo-tool","Studio & Tools"),("apps/aurora-mobile","Studio & Tools"),
         ("apps/agent-research-forge","Studio & Tools"),("apps/chimera-test-suite","More"),
         ("apps/pdf-reader","More"),("apps/chimera-pages","Published pages"),
-        ("apps/thamudic-pages","Published pages"),("apps/","Apps"),
+        ("apps/thamudic-pages","Published pages"),("apps/octavianos","OctavianOS"),("apps/","Apps"),
         ("docs/web-ui","Documentation"),("docs","Documentation"),("web","Web"),("chimera","Chimera"),("thamudic","Thamudic")]
 def group_of(p):
     for pre,name in GROUPS:
