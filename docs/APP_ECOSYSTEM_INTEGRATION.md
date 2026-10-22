@@ -64,3 +64,11 @@ Windows, Linux, and macOS applications are upstream discovery targets, not blank
 ## Current known blockers to retain
 
 The OctavianOS PR #112 userspace verifier previously failed for Live, Installer, and Recovery because CPL3 user-originated init syscall acknowledgement and actual init PID readiness markers were missing. The native build/ISO smoke path did not prove userspace readiness. ChimeraIIOS full ISO and command/build metadata checks also had failures in the inspected workflow set. Do not weaken acceptance gates to turn these failures green; fix the underlying implementation and rerun the unchanged tests.
+
+
+## Latest change evidence (2026-10-22)
+
+- Added the PDFreaderPY upstream record to the website, ChimeraIIOS, and OctavianOS catalogs, with a separate HTTPS browser-preview URL and explicit view-only scope.
+- The website Optional Application Center renders the browser-preview link separately from the official upstream link and only accepts HTTPS preview destinations.
+- Catalog validators now reject unsafe/non-HTTPS browser-preview URLs, with regression coverage.
+- The new local PDF viewer is linked from the homepage application catalog and the app directory. Pull-request CI is rerunning after these changes; the PR remains a draft and Pages deployment is not claimed until CI and merge/release conditions are met.
