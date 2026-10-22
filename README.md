@@ -82,3 +82,12 @@ The public site, ChimeraIIOS, and OctavianOS share a release-evidence contract, 
 - **Current engineering records:** [OctavianOS production handoff status](https://github.com/amerhwitat/OctavianOS/blob/feat/cross-os-settings-driver-compat-20261022/docs/PRODUCTION_USERSPACE_HANDOFF.md) · [ChimeraIIOS native-init integration status](https://github.com/amerhwitat/ChimeraIIOS/blob/feat/cross-os-settings-driver-compat-20261022/docs/NATIVE_INIT_INTEGRATION_STATUS.md).
 
 These are tracked acceptance requirements, not a declaration that the gates have passed. Keep release/publishing gates closed until matching runtime evidence is attached.
+
+
+### Latest flash safety changes — 2026-10-22
+
+- ChimeraIIOS native writer: [c70f7d82](https://github.com/amerhwitat/ChimeraIIOS/commit/c70f7d82c7bfae232a9067636f7f8088d843f1dd) now requires a verified expected digest, whole-disk block device, no mounted filesystems, explicit confirmation, and post-write read-back verification.
+- OctavianOS vendored native writer: [f5bc18bd](https://github.com/amerhwitat/OctavianOS/commit/f5bc18bdd24e1ae7ab76b0b26182c7ba37307170) applies the mounted/non-disk target guard; its earlier writer/bridge changes are recorded in the cross-edition PR discussion.
+- Flash Center UI checksum preflight: [85c7550e](https://github.com/amerhwitat/amerhwitat.github.io/commit/85c7550ee2795c29d2afa77fe3c96e74b069dbcf) and follow-up Mobile evidence link fix [0f6b0478](https://github.com/amerhwitat/amerhwitat.github.io/commit/0f6b04787e3af0e2358f70449b3fc5d15e9689d4).
+
+These are source changes, not proof of a successful real-device flash. The previous Mobile and production matrix runs were cancelled, so reruns and runtime evidence remain required before publication is treated as verified.
