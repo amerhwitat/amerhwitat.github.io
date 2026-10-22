@@ -16,6 +16,7 @@ on:
       - "apps/thamudic-scanner/**"
       - "apps/repository-app-explorer/**"
       - "scripts/test_repository_app_explorer.py"
+      - "scripts/test_octavian_provider_checks.py"
       - "site-interactions.css"
       - "site-interactions.js"
       - ".github/workflows/pages.yml"
