@@ -16,6 +16,7 @@ on:
       - "apps/thamudic-scanner/**"
       - "apps/repository-app-explorer/**"
       - "scripts/test_repository_app_explorer.py"
+      - "scripts/test_octavian_provider_checks.py"
       - "site-interactions.css"
       - "site-interactions.js"
       - ".github/workflows/pages.yml"
@@ -139,6 +140,8 @@ jobs:
           rm -rf node_modules
       - name: Test repository explorer contract
         run: python3 -m unittest scripts/test_repository_app_explorer.py
+      - name: Test OctavianOS provider availability and launch states
+        run: python3 -m unittest scripts/test_octavian_provider_checks.py
       - name: Test site-local link resolution
         run: python3 -m unittest scripts/test_check_site_links.py
       - name: Check local site links

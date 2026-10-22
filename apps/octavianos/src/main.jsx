@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { createRoot } from "react-dom/client";
 import "./style.css";
 
@@ -24,6 +24,24 @@ function App() {
   const [notice, setNotice] = useState("Browser preview only · Native kernel and services are not bundled.");
   const [mobileMenu, setMobileMenu] = useState(false);
   const visibleApps = useMemo(() => apps.filter(a => (a.name + " " + a.description).toLowerCase().includes(query.toLowerCase())), [query]);
+  const [providerStates, setProviderStates] = useState({});
+  useEffect(() => {
+    let cancelled = false;
+    const checkProvider = async app => {
+      try {
+        const url = new URL(app.href, window.location.href);
+        if (url.origin !== window.location.origin) return [app.name, "external"];
+        const response = await fetch(url.href, { method: "HEAD", cache: "no-store", credentials: "same-origin" });
+        return [app.name, response.ok ? "available" : "unavailable"];
+      } catch {
+        return [app.name, "unavailable"];
+      }
+    };
+    Promise.all(apps.map(checkProvider)).then(results => {
+      if (!cancelled) setProviderStates(Object.fromEntries(results));
+    });
+    return () => { cancelled = true; };
+  }, []);
   return <div className="shell">
     <header className="menubar"><button className="brand" onClick={() => {setActive("Overview");setNotice("Welcome to the OctavianOS React preview.");}}>◈ OCTAVIANOS</button><nav className={mobileMenu ? "menu-links open" : "menu-links"}>{["Overview","Applications","Architecture","Mobile"].map(item=><button key={item} className={active===item?"selected":""} onClick={()=>{setActive(item);setMobileMenu(false);}}>{item}</button>)}</nav><button className="menu-toggle" onClick={()=>setMobileMenu(!mobileMenu)} aria-label="Toggle menu">☰</button><span className="clock">{new Date().toLocaleTimeString([], {hour:"2-digit",minute:"2-digit"})}</span></header>
     <main className="workspace">
@@ -34,7 +52,7 @@ function App() {
           <p className="eyebrow">OCEANIC COMPUTING · RESEARCH PREVIEW</p>
           <h1>{active === "Mobile" ? "OctavianOS, in your hand." : active === "Architecture" ? "From boot chain to desktop." : active === "Applications" ? "Your application space." : "A new ocean for computing."}</h1>
           <p className="intro">{active === "Mobile" ? "The React Native companion UI shares the OctavianOS visual language. It does not claim to boot the ARM64 mobile OS." : "A responsive React interface for exploring the OctavianOS experience. This is the presentation layer—not a substitute for Koronos, the microkernel, or native services."}</p>
-          {active === "Architecture" ? <div className="flow">{["Spit Fire","Jasper / GRUB 2","Koronos ELF","Drivers + scheduler","Live / Installer / Recovery","Aurora or Marine"].map((x,i)=><div className="flow-step" key={x}><b>{String(i+1).padStart(2,"0")}</b>{x}</div>)}</div> : active === "Mobile" ? <div className="mobile-preview"><div className="phone"><div className="phone-notch"/><div className="phone-title">OCTAVIANOS</div><div className="phone-orb">🌊</div><h2>Oceanic computing</h2><p>Mobile companion preview</p><div className="phone-grid">{[{name:"Apps",href:"https://amerhwitat.github.io/apps/repository-app-explorer/"},{name:"Files",href:apps.find(a=>a.name==="Files").href},{name:"Terminal",href:apps.find(a=>a.name==="Terminal").href},{name:"Settings",href:apps.find(a=>a.name==="Settings").href}].map(item=><a key={item.name} href={item.href}>{item.name}</a>)}</div></div><p>For the React Native app source, see <code>mobile/App.tsx</code> in this project.</p></div> : <><div className="app-search"><span>⌕</span><input value={query} onChange={e=>setQuery(e.target.value)} placeholder="Search apps and features…" aria-label="Search applications"/></div><div className="app-grid">{visibleApps.map(app=><a className="app-card" key={app.name} href={app.href}><span className="app-icon">{app.icon}</span><strong>{app.name}</strong><small>Open implementation</small></a>)}</div></>}
+          {active === "Architecture" ? <div className="flow">{["Spit Fire","Jasper / GRUB 2","Koronos ELF","Drivers + scheduler","Live / Installer / Recovery","Aurora or Marine"].map((x,i)=><div className="flow-step" key={x}><b>{String(i+1).padStart(2,"0")}</b>{x}</div>)}</div> : active === "Mobile" ? <div className="mobile-preview"><div className="phone"><div className="phone-notch"/><div className="phone-title">OCTAVIANOS</div><div className="phone-orb">🌊</div><h2>Oceanic computing</h2><p>Mobile companion preview</p><div className="phone-grid">{[{name:"Apps",href:"https://amerhwitat.github.io/apps/repository-app-explorer/"},{name:"Files",href:apps.find(a=>a.name==="Files").href},{name:"Terminal",href:apps.find(a=>a.name==="Terminal").href},{name:"Settings",href:apps.find(a=>a.name==="Settings").href}].map(item=><a key={item.name} href={item.href}>{item.name}</a>)}</div></div><p>For the React Native app source, see <code>mobile/App.tsx</code> in this project.</p></div> : <><div className="app-search"><span>⌕</span><input value={query} onChange={e=>setQuery(e.target.value)} placeholder="Search apps and features…" aria-label="Search applications"/></div><div className="app-grid">{visibleApps.map(app=>{const state=providerStates[app.name]||"checking";return <a className={"app-card"+(state==="available"?"":" app-card-pending")} key={app.name} href={app.href} aria-disabled={state!=="available"} onClick={event=>{if(state!=="available"){event.preventDefault();setNotice(state==="checking"?app.name+": checking the web preview provider. Please retry shortly.":app.name+": web preview provider is unavailable. Native Koronos launch is not connected to this browser companion.");}}}><span className="app-icon">{app.icon}</span><strong>{app.name}</strong><small>{state==="available"?"Web preview ready · native provider not connected":state==="checking"?"Checking web provider…":state==="external"?"External provider · not probed":"Web preview unavailable"}</small></a>})}</div></>}
           <div className="notice" role="status" aria-live="polite">{notice}</div>
         </div>
       </section>
