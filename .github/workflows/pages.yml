@@ -149,6 +149,8 @@ jobs:
               assert target in js, f"Quick Launch destination not wired: {target}"
           assert "prefers-reduced-motion" in css, "reduced-motion support missing"
           assert "aria-modal" in js and "Escape" in js and "ArrowDown" in js, "keyboard dialog controls missing"
+          assert 'id="studio-command-close"' in js and "const first = focusable[0]" in js, "dialog close control/focus loop missing"
+          assert 'id="studio-command-close"' in js and "const first = focusable[0]" in js, "dialog close control/focus loop missing"
           print(f"Landing studio contract: PASS ({len(targets)} destinations)")
           PY
       - name: Validate Aurora Ecosystem Center
