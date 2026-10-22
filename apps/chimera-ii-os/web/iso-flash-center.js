@@ -48,7 +48,9 @@
       return;
     }
     if (!confirm("FLASH WARNING\n\nThis can permanently erase the selected device. Verify it is the intended removable device.\n\nImage: "+image+"\nSHA-256: "+expected+"\nTarget: "+device+"\n\nContinue to the native safety gate?")) return;
-    await call("/flash/execute", {image,device,sha256:expected});
+    const typed=prompt("Final safety check: type ERASE to authorize the native flash request. No write occurs if this is cancelled or mismatched.");
+    if (typed !== "ERASE") { log("Flash cancelled: typed confirmation was not exactly ERASE. No write request was sent."); return; }
+    await call("/flash/execute", {image,device,sha256:expected,confirmation:"ERASE"});
   };
   health();
 })();
