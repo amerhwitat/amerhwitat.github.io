@@ -37,6 +37,11 @@ class OptionalAppCatalogTests(unittest.TestCase):
         data["apps"][0]["upstream"] = "http://example.com"
         self.assertTrue(any("must be an HTTPS URL" in e for e in MODULE.validate(data)))
 
+    def test_malformed_platform_shape_is_rejected_without_crashing(self):
+        data = dict(self.catalog)
+        data["platforms"] = [["nested"]]
+        self.assertTrue(any("unsupported platform" in e for e in MODULE.validate(data)))
+
     def test_unknown_platform_is_rejected(self):
         data = dict(self.catalog)
         data["apps"] = [dict(app) for app in self.catalog["apps"]]
