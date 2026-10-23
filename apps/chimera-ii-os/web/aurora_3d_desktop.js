@@ -81,7 +81,7 @@
     if ($('profileName')) $('profileName').textContent = title;
     if ($('railProfile')) $('railProfile').textContent = title;
     if ($('modeLabel')) $('modeLabel').textContent = p ? p.family + ' · ' + p.mode : 'Aurora Web desktop';
-    const allowedBackgrounds = new Set(['chimera-hero-3840x2160.svg','octavian-celestial-octopus-3840x2160.svg','marine-desktop.svg']);
+    const allowedBackgrounds = new Set(['chimera-hero-3840x2160.svg','octavian-celestial-octopus-3840x2160.svg','marine-desktop.svg','https://images.unsplash.com/photo-1786335091902-eb0166246cbe?auto=format&fit=crop&w=3840&q=90','https://images.unsplash.com/photo-1717293520171-b1d8b5d5e3f2?auto=format&fit=crop&w=3840&q=90','https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&w=3840&q=90']);
     const desktop = document.querySelector('.aurora3d');
     if (desktop && p && allowedBackgrounds.has(p.background)) {
       desktop.style.backgroundImage = 'linear-gradient(180deg,rgba(3,9,20,.42),rgba(2,7,15,.3)),url("' + p.background + '")';

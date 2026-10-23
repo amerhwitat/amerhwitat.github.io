@@ -4,7 +4,7 @@
   const panel = document.getElementById('backgroundPanel');
   const start = document.getElementById('startMenu');
   const startButton = document.getElementById('startButton');
-  const allowed = new Set(['marine-desktop.svg','chimera-hero-3840x2160.svg','octavian-celestial-octopus-3840x2160.svg']);
+  const allowed = new Set(['marine-desktop.svg','chimera-hero-3840x2160.svg','octavian-celestial-octopus-3840x2160.svg','https://images.unsplash.com/photo-1717293520171-b1d8b5d5e3f2?auto=format&fit=crop&w=3840&q=90','https://images.unsplash.com/photo-1786335091902-eb0166246cbe?auto=format&fit=crop&w=3840&q=90','https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&w=3840&q=90']);
   function applyBackground(asset) {
     if (!allowed.has(asset)) return;
     root.style.backgroundImage = 'linear-gradient(180deg,rgba(1,17,31,.22),rgba(1,17,31,.2)),url("' + asset + '")';
@@ -38,5 +38,5 @@
   });
   function tick() { const now = new Date(); document.getElementById('clock').textContent = now.toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'}); }
   tick(); setInterval(tick, 15000);
-  applyBackground(localStorage.getItem('chimera.desktop.background') || 'marine-desktop.svg');
+  applyBackground(localStorage.getItem('chimera.desktop.background') || 'https://images.unsplash.com/photo-1717293520171-b1d8b5d5e3f2?auto=format&fit=crop&w=3840&q=90');
 })();
