@@ -21,7 +21,7 @@ Queried GitHub recursive Git trees on the default branches. Counts are tracked b
 | test | 126 | 4 | 16 | Distinguish maintained demos from fixtures |
 | VanG (private) | 22 | 0 | 6 | Metadata-only inventory; no public redistribution without permission |
 
-The tree scan returned 10,851 entries across these 15 repositories, including vendor and generated files. A complete dependency/license audit still requires reading the manifests and license files per subproject and tracing nested dependencies.
+The tree scan returned 8,837 entries across these 15 repositories, including vendor and generated files. A complete dependency/license audit still requires reading the manifests and license files per subproject and tracing nested dependencies.
 
 ## Project-by-project parity contract
 The live interactive matrix is at `/apps/repository-feature-parity/`. It includes a searchable filter and CSV export. Treat its rows as backlog classification, not completed port evidence.
