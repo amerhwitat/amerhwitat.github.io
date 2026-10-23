@@ -1120,6 +1120,20 @@
       "g": "Apps",
       "d": "Launch wrapper and asset readiness checks for the supplied unity3d-blockchain-wallet Unity WebGL build.",
       "x": "Unity WebGL WebAssembly wasm gzip launcher fullscreen deployment Content-Encoding application/wasm"
+    },
+    {
+      "p": "apps/repository-feature-parity/index.html",
+      "t": "Repository Feature-Parity Matrix",
+      "g": "Apps",
+      "d": "Searchable feature parity and recursive inventory for 15 owner repositories, with CSV export and native OS acceptance gates.",
+      "x": "repository source files dependencies licenses React Vue Angular Vite Next.js feature parity audit CPU4096 NLP PDFreader ChimeraIIOS OctavianOS"
+    },
+    {
+      "p": "docs/RECURSIVE_REPOSITORY_AUDIT_2026-10-23.md",
+      "t": "Recursive Repository Audit 2026-10-23",
+      "g": "Docs",
+      "d": "Tracked file counts, project-by-project parity backlog, Unity WebGL upload requirements and native OS acceptance gates.",
+      "x": "source tree recursive inventory license dependencies kernel userspace services targets desktops BIOS UEFI SMP"
     }
   ]
 }
