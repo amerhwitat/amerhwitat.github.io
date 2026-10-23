@@ -1134,6 +1134,13 @@
       "g": "Docs",
       "d": "Tracked file counts, project-by-project parity backlog, Unity WebGL upload requirements and native OS acceptance gates.",
       "x": "source tree recursive inventory license dependencies kernel userspace services targets desktops BIOS UEFI SMP"
+    },
+    {
+      "p": "apps/chimera-octavian-terminal-studio/",
+      "t": "Chimera II OS × OctavianOS Terminal Studio",
+      "g": "Apps",
+      "d": "Reference-inspired dual operating-system desktop and terminal preview with WebGL aurora, shell selector and local demo commands.",
+      "x": "ChimeraIIOS OctavianOS Aurora Terminal Marine Terminal Wayland WebGL shell bash zsh desktop mockup"
     }
   ]
 }
