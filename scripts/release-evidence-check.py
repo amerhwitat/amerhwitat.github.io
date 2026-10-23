@@ -6,6 +6,7 @@ source inspection, compile success, and simulated terminal output are not eviden
 Exit 0 only when every mandatory gate is explicitly PASS.
 """
 import json
+import re
 import sys
 from pathlib import Path
 
@@ -34,8 +35,8 @@ def main():
     errors = []
     if data.get("schema_version") != 1:
         errors.append("schema_version must be 1")
-    if not data.get("commit"):
-        errors.append("commit SHA is required")
+    if not isinstance(data.get("commit"), str) or not re.fullmatch(r"[0-9a-fA-F]{40}", data["commit"]):
+        errors.append("commit must be a full 40-character Git SHA")
     cases = data.get("acceptance", {})
     for target in TARGETS:
         for firmware in FIRMWARE:
@@ -43,10 +44,12 @@ def main():
             case = cases.get(key, {})
             if case.get("status") != "PASS":
                 errors.append(f"{key} must be PASS")
-            if not case.get("artifact_sha256"):
-                errors.append(f"{key}: artifact_sha256 missing")
-            if not case.get("log"):
+            if not isinstance(case.get("artifact_sha256"), str) or not re.fullmatch(r"[0-9a-fA-F]{64}", case["artifact_sha256"]):
+                errors.append(f"{key}: artifact_sha256 must be a 64-character SHA-256 digest")
+            if not isinstance(case.get("log"), str) or not case["log"].strip():
                 errors.append(f"{key}: log reference missing")
+            elif not (case["log"].startswith("https://") or case["log"].startswith("artifacts/")):
+                errors.append(f"{key}: log must be an https URL or artifacts/ relative path")
             if case.get("userspace_ready") is not True:
                 errors.append(f"{key}: userspace_ready must be true")
     for gate in BOOL_GATES:
