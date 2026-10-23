@@ -1106,6 +1106,20 @@
       "g": "ChimeraIIOS + OctavianOS",
       "d": "Search optional desktop applications for Windows, Linux, and macOS; links point to official publishers and do not imply installation.",
       "x": "optional applications Windows Linux macOS app catalog browser productivity media creative development communication package manager"
+    },
+    {
+      "p": "apps/portfolio-integration/index.html",
+      "t": "Portfolio Integration Control Center",
+      "g": "Apps",
+      "d": "Unified repository inventory, cross-project integration navigation, WebGL desktop background and port acceptance gates.",
+      "x": "ChimeraIIOS OctavianOS repositories portfolio integration WebGL React TypeScript Vite Next.js Angular Vue plan do check act"
+    },
+    {
+      "p": "apps/webgl-unity/index.html",
+      "t": "Unity WebGL Launchpad",
+      "g": "Apps",
+      "d": "Launch wrapper and asset readiness checks for the supplied unity3d-blockchain-wallet Unity WebGL build.",
+      "x": "Unity WebGL WebAssembly wasm gzip launcher fullscreen deployment Content-Encoding application/wasm"
     }
   ]
 }
