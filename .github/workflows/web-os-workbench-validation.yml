@@ -1,0 +1,25 @@
+name: Web OS Workbench Validation
+on:
+  pull_request:
+    paths:
+      - 'apps/chimera-ii-os/web/web-os-workbench.html'
+      - 'apps/chimera-ii-os/web/web-os-workbench.css'
+      - 'apps/chimera-ii-os/web/web-os-workbench.js'
+      - 'apps/chimera-ii-os/web/index.html'
+      - 'apps/octavianos/index.html'
+      - 'apps/octavianos/web/index.html'
+      - 'tests/web-os-workbench-smoke.mjs'
+      - '.github/workflows/web-os-workbench-validation.yml'
+  workflow_dispatch:
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Check workbench JavaScript syntax
+        run: node --check apps/chimera-ii-os/web/web-os-workbench.js
+      - name: Validate workbench DOM, assets, history and safety contracts
+        run: node tests/web-os-workbench-smoke.mjs
