@@ -1,0 +1,28 @@
+name: Unity WebGL launcher validation
+on:
+  pull_request:
+    paths:
+      - 'apps/webgl-unity/**'
+      - 'tests/webgl_launcher_smoke.py'
+      - '.github/workflows/webgl-launcher-validation.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'apps/webgl-unity/**'
+      - 'tests/webgl_launcher_smoke.py'
+      - '.github/workflows/webgl-launcher-validation.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  launcher-contract:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Check launcher JavaScript syntax
+        run: node --check apps/webgl-unity/launcher.js
+      - name: Run launcher source-contract tests
+        run: python3 tests/webgl_launcher_smoke.py

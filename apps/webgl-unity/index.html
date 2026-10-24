@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark light">
+  <meta name="description" content="Run the unity3d-blockchain-wallet Unity WebGL build locally in your browser from the original webgl.zip archive.">
+  <title>Unity WebGL Launcher · Chimera / Octavian Web UI</title>
+  <link rel="stylesheet" href="./launcher.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <a class="brand" href="../../index.html" aria-label="Home"><span class="brand-mark">W</span><span>WebGL App Center</span></a>
+      <span class="pill">Unity WebGL · Local archive</span>
+    </header>
+    <section class="intro">
+      <p class="eyebrow">BROWSER APPLICATION</p>
+      <h1>unity3d-blockchain-wallet</h1>
+      <p class="lede">Load the original Unity WebGL archive and run it in this page. The ZIP is unpacked in your browser; the game files are not uploaded to a server.</p>
+    </section>
+    <section id="loader-panel" class="panel">
+      <div id="drop-zone" class="drop-zone" tabindex="0" role="button" aria-label="Choose or drop webgl.zip">
+        <div class="upload-icon" aria-hidden="true">↥</div>
+        <h2>Choose <code>webgl.zip</code></h2>
+        <p>Drop the archive here or browse for it. The launcher checks the ZIP structure and Unity build files before starting.</p>
+        <label class="file-button" for="archive-input">Choose ZIP archive</label>
+        <input id="archive-input" type="file" accept=".zip,application/zip">
+        <p class="hint">Recommended: the original 7.8 MB <code>webgl.zip</code> attachment. Maximum archive size: 256 MB.</p>
+      </div>
+      <div id="status" class="status" role="status" aria-live="polite">Waiting for archive.</div>
+      <div id="progress-wrap" class="progress-wrap" hidden><div id="progress" class="progress"></div></div>
+      <details class="requirements">
+        <summary>Runtime requirements and privacy</summary>
+        <ul>
+          <li>A modern browser with WebAssembly, WebGL 2 (or the build's supported WebGL mode), and the Compression Streams API.</li>
+          <li>The launcher reads only the ZIP you select and processes it locally in this tab.</li>
+          <li>No wallet credentials, seed phrases, or private keys should be entered unless you have independently audited the application.</li>
+          <li>The archive's identity is validated; this is not a security audit of the Unity application itself.</li>
+        </ul>
+      </details>
+    </section>
+    <section id="player-panel" class="player-panel" hidden>
+      <div class="player-toolbar">
+        <div><strong>unity3d-blockchain-wallet</strong><span id="player-state">Preparing WebAssembly…</span></div>
+        <button id="fullscreen" type="button" disabled>Fullscreen</button>
+        <button id="reset" type="button">Load another build</button>
+      </div>
+      <div id="unity-container">
+        <canvas id="unity-canvas" width="960" height="600" aria-label="Unity WebGL application"></canvas>
+        <div id="unity-loading"><span>Starting Unity runtime</span><div class="meter"><div id="unity-progress"></div></div><span id="unity-progress-label">0%</span></div>
+      </div>
+      <p id="runtime-error" class="error" hidden></p>
+    </section>
+    <footer><span>Web UI · Browser-side ZIP extraction</span><span>Build version 1.0 · Company metadata: polats</span></footer>
+  </main>
+  <script src="./launcher.js" defer></script>
+</body>
+</html>
