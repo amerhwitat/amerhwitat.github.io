@@ -169,10 +169,10 @@ function rnnGenerate(model,prompt,maxChars=180,temperature=0.8) {
   for(let i=0;i<probs.length;i++){draw-=probs[i];if(draw<=0)return i;}
   return probs.length-1;
  };
- let last=seed[0];
- for(const ix of seed) last=step(ix);
+ let next=seed[0];
+ for(const ix of seed) next=step(ix);
  let out='';
- for(let n=0;n<maxChars;n++){const ix=step(last);last=ix;const ch=vocab[ix]??' ';out+=ch;if(ch==='\n'&&out.length>24)break;}
+ for(let n=0;n<maxChars;n++){const ch=vocab[next]??' ';out+=ch;if(ch==='\n'&&out.length>24)break;next=step(next);}
  return out.trim()||'(the RNN produced an empty continuation)';
 }
 function offlineReply(text) {
