@@ -1296,7 +1296,7 @@
       "platforms": [
         "Web"
       ],
-      "integration": "browser-webgl-preview",
+      "integration": "external-package-or-provider",
       "default_installed": false,
       "launchability": "not-guaranteed",
       "panel": "WebGL",
