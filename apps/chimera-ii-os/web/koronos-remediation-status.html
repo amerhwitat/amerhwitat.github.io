@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Evidence-based Koronos remediation dashboard for ChimeraIIOS and OctavianOS: process lifecycle, target services, desktops, SMP, ISO and DAPS acceptance.">
+<meta name="theme-color" content="#07111f">
+<title>Koronos Remediation Dashboard — ChimeraIIOS &amp; OctavianOS</title>
+<style>
+:root{color-scheme:dark;--bg:#07111f;--panel:#102139;--line:#294763;--fg:#eaf4ff;--muted:#abc0d8;--cyan:#7adfff;--green:#77e6be;--amber:#ffd27a;--red:#ff9c9c}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(850px 450px at 8% 0%,#15395a,transparent 65%),linear-gradient(180deg,var(--bg),#091827);color:var(--fg);font:16px/1.6 system-ui,-apple-system,Segoe UI,sans-serif}a{color:var(--cyan);overflow-wrap:anywhere}a:hover{text-decoration:none}.wrap{max-width:1120px;margin:auto;padding:28px 20px 64px}.top{display:flex;gap:16px;align-items:center;justify-content:space-between;flex-wrap:wrap}.eyebrow{font-size:.78rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--green)}h1{font-size:clamp(2rem,5vw,3.6rem);line-height:1.1;margin:.25em 0}h2{font-size:1.35rem;margin:0 0 .6rem}h3{font-size:1rem;margin:.1rem 0 .4rem}p{color:var(--muted)}.card{border:1px solid var(--line);background:linear-gradient(145deg,#122943eF,#0b1828f5);border-radius:16px;padding:20px;margin:16px 0;box-shadow:0 18px 45px #0003}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(235px,1fr));gap:14px}.pill{display:inline-block;padding:3px 10px;border:1px solid var(--line);border-radius:99px;font-size:.78rem;margin:3px}.blocked{color:var(--red);font-weight:800}.pending{color:var(--amber);font-weight:800}.pass{color:var(--green);font-weight:800}.small{font-size:.88rem}.links{display:flex;flex-wrap:wrap;gap:10px}.btn{display:inline-block;border:1px solid #416787;border-radius:9px;padding:8px 12px;background:#132a43}.table-wrap{overflow-x:auto}table{width:100%;border-collapse:collapse;min-width:660px}th,td{text-align:left;vertical-align:top;padding:10px;border-bottom:1px solid var(--line)}th{color:var(--cyan)}code{overflow-wrap:anywhere;color:#d6e7ff}.callout{border-left:3px solid var(--amber);padding:10px 14px;background:#332a1933}footer{border-top:1px solid var(--line);margin-top:24px;padding-top:14px;color:var(--muted);font-size:.88rem}
+</style>
+</head>
+<body><main class="wrap">
+<header class="top"><div><div class="eyebrow">Plan · Do · Act · Check · 24 October 2026</div><h1>Koronos Remediation Dashboard</h1><p>Evidence-led status for ChimeraIIOS and OctavianOS: kernel, process execution, services, target payloads, desktops, SMP and release closeout.</p></div><span class="pill blocked">PRODUCTION RELEASE BLOCKED</span></header>
+<section class="card"><h2>Current disposition</h2><p>The review has identified concrete source and CI gaps. A passing source/build regression or candidate probe is limited evidence; it does not establish a production userspace boot. No production release should be published until all acceptance gates below pass against one immutable ISO SHA-256.</p><div class="links"><a class="btn" href="https://github.com/amerhwitat/ChimeraIIOS/pull/191">ChimeraIIOS PR #191</a><a class="btn" href="https://github.com/amerhwitat/OctavianOS/pull/121">OctavianOS PR #121</a><a class="btn" href="https://github.com/amerhwitat/ChimeraIIOS/actions">ChimeraIIOS Actions</a><a class="btn" href="https://github.com/amerhwitat/OctavianOS/actions">OctavianOS Actions</a><a class="btn" href="userspace-acceptance.html">Detailed acceptance matrix</a><a class="btn" href="../../../project-updates.html">Build &amp; release status</a></div></section>
+<section class="grid">
+<article class="card"><h3>ChimeraIIOS full ISO</h3><div class="pending">PENDING / NO JOBS</div><p>Run <a href="https://github.com/amerhwitat/ChimeraIIOS/actions/runs/40048554182">#40048554182</a> was observed pending while its jobs endpoint returned zero jobs and no artifacts. This is orchestration status, not a successful ISO build.</p></article>
+<article class="card"><h3>OctavianOS candidate probes</h3><div class="pass">6/6 CANDIDATE JOBS PASSED</div><p><a href="https://github.com/amerhwitat/OctavianOS/actions/runs/40047345764">Run #40047345764</a> passed six probe-only target/firmware jobs. The images do not include production payloads, so they do not pass production acceptance.</p></article>
+<article class="card"><h3>Process execution</h3><div class="blocked">INCOMPLETE</div><p>ELF admission and process records are not a complete process context, scheduler switch, syscall lifecycle, or spawn/wait/exit/reap implementation.</p></article>
+<article class="card"><h3>Release closeout</h3><div class="blocked">BLOCKED</div><p>No verified final ISO SHA-256 with six matching production traces is available. Keep strict DAPS fail-closed and do not publish a production release.</p></article>
+</section>
+<section class="card"><h2>Acceptance matrix</h2><div class="table-wrap"><table><thead><tr><th>Subsystem / target</th><th>State</th><th>Closure evidence required</th></tr></thead><tbody>
+<tr><td>Process contexts and scheduler</td><td class="blocked">INCOMPLETE</td><td>Owned contexts and address spaces, saved registers, context switch/restore, kernel-owned PID identity, safe syscall return, fault handling, exit/wait/reap, and teardown tests.</td></tr>
+<tr><td>Service manager / PID 1</td><td class="blocked">NOT ACCEPTED</td><td>Real process-backed service launch, dependency order, health checks, restart/backoff, stop, reap, and recovery after child failure.</td></tr>
+<tr><td>Live target</td><td class="blocked">NOT ACCEPTED</td><td>Production Live initramfs and native init ELF selected and executed; root filesystem and required services healthy; Aurora session handshake recorded.</td></tr>
+<tr><td>Installer target</td><td class="blocked">NOT ACCEPTED</td><td>Production installer payload; storage discovery and install transaction; cold reboot; readback and boot from installed system.</td></tr>
+<tr><td>Recovery target</td><td class="blocked">NOT ACCEPTED</td><td>Production recovery initramfs and init ELF; real repair/recovery operation; captured and checked before/after postconditions.</td></tr>
+<tr><td>Aurora / Marine desktops</td><td class="blocked">NOT VERIFIED</td><td>Actual target boot reaches the respective session protocol/handshake and verifies compositor readiness, not just a browser demo or menu entry.</td></tr>
+<tr><td>Physical SMP</td><td class="blocked">NOT VERIFIED</td><td>AP startup and evidence of overlapping execution on distinct physical CPU IDs; sequential simulation does not qualify.</td></tr>
+<tr><td>BIOS + UEFI production matrix</td><td class="blocked">MISSING</td><td>Six retained traces: Live, Installer, Recovery × BIOS, UEFI, each from the same final ISO hash and passing the unchanged verifier.</td></tr>
+<tr><td>Strict DAPS / publication</td><td class="blocked">BLOCKED</td><td>Unmodified DAPS succeeds on the required evidence; final ISO checksum, artifacts and six traces are retained and hash-bound.</td></tr>
+</tbody></table></div></section>
+<section class="card"><h2>Plan / Do / Act / Check loop</h2><ol>
+<li><strong>Plan:</strong> implement the process lifecycle before depending services on it. Define invariants for address-space ownership, context lifetime, PID identity, syscall ABI and cleanup.</li>
+<li><strong>Do:</strong> implement process context creation/switch/return/exit/reap; add targeted unit and fault-injection tests. Keep unsupported paths fail-closed.</li>
+<li><strong>Act:</strong> wire the actual production init ELF and payload for each target into PID 1/service supervision; then integrate desktop session launch and recovery/installer operations.</li>
+<li><strong>Check:</strong> compile and run regression tests; execute real target/firmware boots; test installer cold reboot, recovery postconditions, desktop handshakes and physical AP concurrency. Fix failures and repeat.</li>
+<li><strong>Release:</strong> rerun full ISO workflow, capture all six production traces for the exact final ISO SHA-256, and run the unchanged strict DAPS gate. Publish only after every mandatory gate passes.</li>
+</ol><p class="callout"><strong>Integrity rule:</strong> never synthesize readiness markers, replace production init with a probe ELF, weaken the verifier, or treat source inspection as runtime proof. A gate is PASS only when its required evidence exists and is tied to the tested build.</p></section>
+<section class="card"><h2>Evidence links</h2><ul>
+<li><a href="https://github.com/amerhwitat/ChimeraIIOS/pull/191#issuecomment-6378251908">ChimeraIIOS audit note</a> — process lifecycle and full-ISO workflow blockers.</li>
+<li><a href="https://github.com/amerhwitat/OctavianOS/pull/121#issuecomment-6378252170">OctavianOS audit note</a> — candidate probes are not production acceptance.</li>
+<li><a href="https://github.com/amerhwitat/ChimeraIIOS/actions/runs/40048554182">ChimeraIIOS full-ISO workflow run #40048554182</a>.</li>
+<li><a href="https://github.com/amerhwitat/OctavianOS/actions/runs/40047345764">OctavianOS candidate smoke run #40047345764</a>.</li>
+</ul></section>
+<footer>Last reviewed 24 October 2026 · This dashboard reports verified evidence and known gaps. It does not claim unperformed builds, boots, merges, or releases.</footer>
+</main></body></html>
