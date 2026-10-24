@@ -1111,8 +1111,8 @@
       "p": "apps/installer-center/index.html",
       "t": "Installer Center — ChimeraIIOS & OctavianOS",
       "g": "System Installers",
-      "d": "Shared nine-stage installer workflow, accessible GUI review previews, and explicit native acceptance status.",
-      "x": "Anaconda CentOS Linux Mint Ubuntu Debian Installer SUSE YaST keyboard text installer GUI Aurora storage guided custom encryption preservation locale timezone BIOS UEFI DAPS fail closed transactional backend"
+      "d": "Shared nine-stage installer workflow and interactive review previews; latest native trace lacks a supported production init ELF/runtime and fails real CPL3/PID acceptance.",
+      "x": "Anaconda CentOS Linux Mint Ubuntu Debian Installer SUSE YaST keyboard text installer GUI Aurora storage guided custom encryption preservation locale timezone BIOS UEFI DAPS fail closed transactional backend missing native init ELF runtime handoff CPL3 syscall PID fail-closed DAPS"
     },
     {
       "p": "apps/installer-center/chimera/index.html",
