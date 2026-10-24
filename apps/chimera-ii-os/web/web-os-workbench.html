@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#07111f">
+<meta name="description" content="Browser-based ChimeraIIOS Aurora and OctavianOS Marine workbench with desktop tools, installation guidance, upgrades and AI chat.">
+<title>Dual OS Workbench — Aurora & Marine</title>
+<link rel="stylesheet" href="web-os-workbench.css">
+<script src="web-os-workbench.js" defer></script>
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="index.html"><span class="mark">◈</span><span><b>DUAL OS WORKBENCH</b><small>CHIMERA II OS · OCTAVIANOS</small></span></a>
+  <div class="top-actions"><label for="osSelect">Desktop</label><select id="osSelect"><option value="chimera">ChimeraIIOS · Aurora</option><option value="octavian">OctavianOS · Marine</option></select><span id="browserStatus" class="status">Browser sandbox</span></div>
+</header>
+<div class="layout">
+<aside class="sidebar" aria-label="Workbench navigation">
+  <button class="nav active" data-view="desktop">▦ <span>Desktop</span></button>
+  <button class="nav" data-view="install">⇩ <span>Install & Upgrade</span></button>
+  <button class="nav" data-view="assistant">✧ <span>AI Assistant</span></button>
+  <button class="nav" data-view="files">▤ <span>Workspace files</span></button>
+  <div class="side-foot"><span class="dot"></span> Browser session active<br><small>Not a native kernel session</small></div>
+</aside>
+<main>
+<section class="view visible" id="view-desktop">
+  <div class="hero"><div><p class="eyebrow">INTERACTIVE WEB COMPANION</p><h1 id="desktopHeading">Aurora Wayland Glass</h1><p id="desktopSub">A browser workspace inspired by ChimeraIIOS. Apps below operate in this browser sandbox.</p><div class="hero-actions"><button class="primary" data-open="terminal">Open Terminal</button><button data-view-jump="install">Install or upgrade OS ↗</button></div></div><div class="orb" aria-hidden="true">◈</div></div>
+  <div class="stats"><article><small>Environment</small><strong>Web sandbox</strong><span>Browser APIs only</span></article><article><small>Active profile</small><strong id="profileStat">Aurora</strong><span>Switch desktop above</span></article><article><small>Chat archive</small><strong id="chatCount">0 messages</strong><span>Stored on this device</span></article><article><small>Model runtime</small><strong id="modelStat">Not loaded</strong><span>Opt-in local inference</span></article></div>
+  <div class="section-head"><div><p class="eyebrow">APPLICATION LAUNCHER</p><h2>Workspace</h2></div><input id="appFilter" type="search" placeholder="Filter apps…" aria-label="Filter apps"></div>
+  <div class="app-grid" id="appGrid">
+    <button class="app-card" data-open="terminal"><span class="app-icon">›_</span><b>Terminal</b><small>Sandboxed command palette</small></button>
+    <button class="app-card" data-open="settings"><span class="app-icon">⚙</span><b>Settings</b><small>Appearance and preferences</small></button>
+    <button class="app-card" data-open="files"><span class="app-icon">▤</span><b>Files</b><small>Local workspace notes</small></button>
+    <button class="app-card" data-open="assistant"><span class="app-icon">✧</span><b>AI Assistant</b><small>Chat and JSON history</small></button>
+    <button class="app-card" data-open="install"><span class="app-icon">⇩</span><b>Installer Center</b><small>Install and upgrade guide</small></button>
+    <button class="app-card" data-open="status"><span class="app-icon">◉</span><b>System Status</b><small>Release gates and evidence</small></button>
+  </div>
+  <section class="window hidden" id="appWindow" aria-live="polite"><div class="window-bar"><strong id="windowTitle">Application</strong><button id="closeWindow" aria-label="Close window">×</button></div><div id="windowBody" class="window-body"></div></section>
+</section>
+<section class="view" id="view-install">
+  <p class="eyebrow">INSTALLATION & LIFECYCLE</p><h1>Install or upgrade</h1>
+  <p class="lead">This assistant prepares the workflow and opens the official project release pages. A static website cannot silently install an operating system, write a USB device, repartition disks, or upgrade a running native OS. Those steps require a downloaded, verified image and explicit action in a trusted installer.</p>
+  <div class="install-grid">
+    <article class="panel"><div class="step">01 · CHOOSE</div><h2 id="installOsTitle">ChimeraIIOS · Aurora</h2><p id="installOsDesc">Live, installer and recovery artifacts are published only when the release gates pass.</p><a id="releaseLink" class="primary link-button" href="https://github.com/amerhwitat/ChimeraIIOS/releases/latest" target="_blank" rel="noopener noreferrer">Open official releases ↗</a><a id="actionsLink" class="sub-link" href="https://github.com/amerhwitat/ChimeraIIOS/actions" target="_blank" rel="noopener noreferrer">Inspect build evidence</a></article>
+    <article class="panel"><div class="step">02 · VERIFY</div><h2>Verify before install</h2><ul><li>Choose a release marked stable/accepted by the project.</li><li>Compare the published SHA-256 with the downloaded image.</li><li>Reject missing checksums, mismatched hashes, or candidate/probe-only images.</li><li>Back up data before changing disks.</li></ul><label for="expectedHash">Published SHA-256</label><input id="expectedHash" class="full" placeholder="64 hexadecimal characters"><label for="isoFile">Downloaded ISO</label><input id="isoFile" class="full" type="file" accept=".iso,application/octet-stream"><button id="verifyIso">Verify local ISO SHA-256</button><p id="verifyResult" class="notice" role="status">No image selected. File hashing happens locally in your browser.</p></article>
+    <article class="panel"><div class="step">03 · INSTALL</div><h2>Write installation media</h2><ol><li>Use the project's documented installer or a trusted USB-writing utility.</li><li>Boot the machine using BIOS or UEFI as supported by that release.</li><li>Select Live/Installer and follow the on-screen storage confirmation.</li><li>Reboot, then verify the installed system and retain the release checksum.</li></ol><p class="notice">No raw disk write is attempted by this page. This avoids accidental data loss and browser permission bypasses.</p></article>
+    <article class="panel"><div class="step">04 · UPGRADE / RECOVER</div><h2>Upgrade safely</h2><ol><li>Back up personal data and export settings.</li><li>Read release notes and migration warnings for your current version.</li><li>Use the native updater/recovery media provided by an accepted release.</li><li>After reboot, check system health and keep a rollback/recovery path.</li></ol><a id="repoLink" class="sub-link" href="https://github.com/amerhwitat/ChimeraIIOS" target="_blank" rel="noopener noreferrer">Review source and upgrade notes ↗</a></article>
+  </div>
+</section>
+<section class="view" id="view-assistant">
+  <p class="eyebrow">RNN · CNN · LLM RESEARCH BRIDGE</p><h1>AI Assistant</h1>
+  <p class="lead">Chat runs in the browser. Use the optional WebLLM local model when WebGPU and network access are available, or connect a trusted OpenAI-compatible endpoint. The offline helper is a transparent fallback, not a trained neural network. RNN/CNN models need actual model weights and an inference runtime before they can be claimed as active.</p>
+  <div class="model-bar panel">
+    <div class="model-controls"><label for="engineSelect">Inference engine</label><select id="engineSelect"><option value="offline">Offline helper (no neural inference)</option><option value="webllm">WebLLM · local browser model</option><option value="endpoint">OpenAI-compatible endpoint</option></select></div>
+    <div class="model-controls"><label for="endpointUrl">Endpoint URL (HTTPS recommended)</label><input id="endpointUrl" placeholder="https://your-trusted-host/v1/chat/completions" autocomplete="url"></div>
+    <div class="model-controls"><label for="modelName">Model ID / endpoint model</label><input id="modelName" value="Qwen2.5-0.5B-Instruct-q4f16_1-MLC"></div>
+    <div class="model-actions"><button id="loadModel" class="primary">Load selected engine</button><button id="clearModel">Unload</button><span id="engineStatus" class="status" role="status">Offline helper ready</span></div>
+    <p class="small">WebLLM downloads model weights from its configured model source and may use substantial memory. Endpoint requests send your message history to that host. Do not enter secrets into a public/static page; no API key is stored here.</p>
+  </div>
+  <div class="chat-layout">
+    <section class="panel chat-panel"><div class="chat-head"><div><h2>Conversation</h2><small id="chatMeta">History stored locally in this browser</small></div><button id="newChat">New chat</button></div><div id="chatMessages" class="chat-messages" aria-live="polite"></div><form id="chatForm"><label class="sr-only" for="chatInput">Message</label><textarea id="chatInput" rows="3" maxlength="12000" placeholder="Ask about the OS, services, installation, code, or model research…" required></textarea><div class="chat-actions"><span class="small">Enter to send · Shift+Enter for newline</span><button class="primary" id="sendChat" type="submit">Send ↗</button></div></form></section>
+    <aside class="panel history-panel"><h2>Chat archive</h2><p class="small">Chats are saved as versioned JSON in browser storage. Export a portable JSON file to keep a backup or reference earlier conversations.</p><button id="exportHistory" class="primary">Export JSON history</button><button id="importHistory">Import JSON history</button><input id="importFile" type="file" accept="application/json,.json" hidden><button id="clearHistory" class="danger">Clear local history</button><div id="historyList" class="history-list"></div></aside>
+  </div>
+</section>
+<section class="view" id="view-files">
+  <p class="eyebrow">LOCAL BROWSER DATA</p><h1>Workspace files</h1><p class="lead">Notes are stored in this browser profile, not on an OS disk. Export them before clearing browser data.</p>
+  <div class="panel"><label for="notes">Workspace notes</label><textarea id="notes" rows="10" placeholder="Project notes, release references, TODOs…"></textarea><div class="row"><button id="saveNotes" class="primary">Save notes locally</button><button id="exportNotes">Export notes.json</button><span id="notesStatus" class="status" role="status"></span></div></div>
+</section>
+</main>
+</div>
+<footer><span>Dual OS Workbench · browser-only companion</span><span><a href="koronos-remediation-status.html">Koronos acceptance status</a> · <a href="userspace-acceptance.html">Production acceptance matrix</a></span></footer>
+<dialog id="confirmDialog"><form method="dialog"><h2 id="dialogTitle">Confirm action</h2><p id="dialogText"></p><div class="row"><button value="cancel">Cancel</button><button value="confirm" class="danger">Continue</button></div></form></dialog>
+</body>
+</html>
