@@ -21,6 +21,7 @@
     ['ThamudicScan','apps/thamudic-scanner/index.html','Ancient-language research workspace'],
     ['Optional Application Center','apps/optional-app-center/index.html','Cross-platform application catalogue'],
     ['Repository Hub','repository-hub.html','Explore source repositories'],
+    ['Installer Center','apps/installer-center/index.html','Preview both OS installer workflows and native acceptance status'],
     ['Build & Release Status','project-updates.html','Review project-reported acceptance status'],
     ['Flash Center','apps/chimera-ii-os/web/iso-flash-center.html','ISO verification and flash workflow']
   ];
