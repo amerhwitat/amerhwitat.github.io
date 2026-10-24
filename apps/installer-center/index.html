@@ -52,6 +52,7 @@
 <article class="card"><h2>Filesystem &amp; locale</h2><p class="muted">NTFS/FAT16/FAT32 capability tests and installed locale/time/keyboard persistence verified after cold reboot.</p></article>
 <article class="card"><h2>DAPS release gate</h2><p class="muted">All six Live/Installer/Recovery × BIOS/UEFI traces bound to one exact ISO SHA-256, real ring-3/PID evidence and AP-backed concurrent SMP.</p></article>
 </div>
+<div class="notice" style="margin-top:1rem"><strong>Latest native trace diagnosis · OctavianOS run #40051348444:</strong> the kernel reaches <code>[KRN ] KORONOS READY</code>, but full-ISO boot logs explicitly withhold userspace handoff because no supported native init ELF/runtime is wired to the production payload. The verifier reports missing CPL3-originated syscall acknowledgement and matching userspace PID for Live, Installer and Recovery. <a href="https://github.com/amerhwitat/OctavianOS/actions/runs/40051348444">View failed acceptance run</a>. This is an open runtime integration failure, not a passing boot result.</div>
 <p><strong>Release rule:</strong> a web UI, passing contract test or candidate probe is not production acceptance. Missing evidence must keep publication blocked.</p>
 </section>
 </main>
