@@ -20,6 +20,8 @@ assert.match(html, /id="chatMessages"/, 'chat transcript surface exists');
 assert.match(html, /id="exportHistory"/, 'history export control exists');
 assert.match(html, /id="importHistory"/, 'history import control exists');
 assert.match(html, /id="verifyIso"/, 'ISO verification control exists');
+assert.match(html, /id="rnnModelFile"/, 'trained RNN model loader exists');
+assert.match(html, /value="rnn"/, 'local RNN engine option exists');
 assert.match(html, /name="viewport"/, 'responsive viewport is configured');
 assert.match(html, /browser-based/i, 'browser/native boundary is disclosed');
 assert.ok(css.includes('@media(max-width:650px)'), 'mobile layout rules exist');
@@ -38,6 +40,8 @@ assert.match(js, /dual-os-chat-history\.json/, 'chat archive can be exported as 
 assert.match(js, /addEventListener\('change'/, 'controls have change handlers');
 assert.match(js, /crypto\.subtle\.digest\('SHA-256'/, 'ISO bytes can be hashed with Web Crypto');
 assert.match(js, /CreateMLCEngine/, 'WebLLM browser inference adapter exists');
+assert.match(js, /function rnnGenerate/, 'local RNN inference function exists');
+assert.match(js, /CHIMERA-CHAR-RNN-LM-1/, 'trained RNN model schema is validated');
 assert.match(js, /mode==='endpoint'/, 'remote endpoint adapter exists');
 assert.match(js, /offline helper/i, 'non-neural fallback is explicitly named');
 assert.match(js, /RNN\/CNN inference requires compatible weights/, 'unavailable model weights are not misrepresented');
