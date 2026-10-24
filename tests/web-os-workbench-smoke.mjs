@@ -32,7 +32,7 @@ for (const match of js.matchAll(/\$\('([^']+)'\)/g)) {
 for (const asset of ['web-os-workbench.css', 'web-os-workbench.js']) {
   assert.ok(existsSync(resolve(dirname(htmlPath), asset)), `local asset exists: ${asset}`);
 }
-assert.match(js, /dual-os-chat-history\.v1/, 'chat archive uses a versioned storage key');
+assert.match(js, /dual-os-workbench\.chat-history\.v1/, 'chat archive uses a versioned storage key');
 assert.match(js, /schema:'dual-os-chat-history',version:1/, 'chat archive has a versioned JSON schema');
 assert.match(js, /dual-os-chat-history\.json/, 'chat archive can be exported as JSON');
 assert.match(js, /addEventListener\('change'/, 'controls have change handlers');
