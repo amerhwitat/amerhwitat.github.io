@@ -1106,6 +1106,27 @@
       "g": "ChimeraIIOS + OctavianOS",
       "d": "Search optional desktop applications for Windows, Linux, and macOS; links point to official publishers and do not imply installation.",
       "x": "optional applications Windows Linux macOS app catalog browser productivity media creative development communication package manager"
+    },
+    {
+      "p": "apps/installer-center/index.html",
+      "t": "Installer Center — ChimeraIIOS & OctavianOS",
+      "g": "System Installers",
+      "d": "Shared nine-stage installer workflow and interactive review previews; latest native trace lacks a supported production init ELF/runtime and fails real CPL3/PID acceptance.",
+      "x": "Anaconda CentOS Linux Mint Ubuntu Debian Installer SUSE YaST keyboard text installer GUI Aurora storage guided custom encryption preservation locale timezone BIOS UEFI DAPS fail closed transactional backend missing native init ELF runtime handoff CPL3 syscall PID fail-closed DAPS"
+    },
+    {
+      "p": "apps/installer-center/chimera/index.html",
+      "t": "ChimeraIIOS Aurora Installer Preview",
+      "g": "System Installers",
+      "d": "Hosted review-only copy of the ChimeraIIOS Aurora graphical installer; no disk writes.",
+      "x": "ChimeraIIOS Aurora Setup installer GUI locale keyboard hardware firmware network source storage filesystem accounts security bootloader review status 78"
+    },
+    {
+      "p": "apps/installer-center/octavian/index.html",
+      "t": "OctavianOS Aurora Installer Preview",
+      "g": "System Installers",
+      "d": "Hosted review-only copy of the OctavianOS Aurora graphical installer; no disk writes.",
+      "x": "OctavianOS Aurora Setup installer GUI locale keyboard hardware firmware network source storage filesystem accounts security bootloader review status 78"
     }
   ]
 }
