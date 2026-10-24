@@ -12,6 +12,7 @@ let selectedOS = 'chimera';
 let messages = [];
 let conversations = [];
 let llmEngine = null;
+let rnnModel = null;
 let busy = false;
 let selectedConversationId = null;
 const uid = () => (globalThis.crypto && crypto.randomUUID) ? crypto.randomUUID() : 'c'+Date.now().toString(36)+Math.random().toString(36).slice(2);
@@ -119,6 +120,10 @@ async function loadEngine() {
   const mode=$('engineSelect').value; $('loadModel').disabled=true;
   try {
     if(mode==='offline'){llmEngine=null;updateEngineStatus('Offline helper ready; no neural inference');return;}
+    if(mode==='rnn'){
+      if(!rnnModel) throw new Error('Choose trained-command-isa-rnn.json from the OctavianOS RNN workflow artifact first.');
+      llmEngine={mode:'rnn',model:rnnModel}; updateEngineStatus('Trained catalog RNN loaded locally · advisory text continuation'); return;
+    }
     if(mode==='webllm') {
       if(!('gpu' in navigator)){throw new Error('WebGPU is unavailable in this browser. Choose an endpoint or offline helper.');}
       updateEngineStatus('Downloading WebLLM runtime/model; first load may be large…');
@@ -136,6 +141,40 @@ async function loadEngine() {
   } catch(e) {llmEngine=null;updateEngineStatus('Engine unavailable: '+e.message);appendMessage('system','Engine unavailable: '+e.message);}
   finally {$('loadModel').disabled=false;}
 }
+function validateRnnModel(d) {
+ if(!d||d.schema!=='CHIMERA-CHAR-RNN-LM-1'||d.model_type!=='trained-character-level-vanilla-RNN') throw new Error('Unsupported RNN model schema.');
+ const v=d.vocabulary,h=d.hidden_size;
+ if(!Array.isArray(v)||v.length<2||v.length>512||v.some(c=>typeof c!=='string'||c.length!==1)||new Set(v).size!==v.length||!Number.isInteger(h)||h<2||h>64) throw new Error('Invalid RNN vocabulary or hidden size.');
+ const shapes={Wxh:[h,v.length],Whh:[h,h],Why:[v.length,h],bh:[h],by:[v.length]};
+ for(const [key,shape] of Object.entries(shapes)){
+  const value=d[key];
+  if(!Array.isArray(value)||value.length!==shape[0]) throw new Error('Invalid RNN tensor '+key);
+  if(shape.length===2){if(value.some(row=>!Array.isArray(row)||row.length!==shape[1]||row.some(x=>typeof x!=='number'||!Number.isFinite(x))))throw new Error('Invalid RNN tensor '+key);}
+  else if(value.some(x=>typeof x!=='number'||!Number.isFinite(x)))throw new Error('Invalid RNN tensor '+key);
+ }
+ return d;
+}
+function rnnGenerate(model,prompt,maxChars=180,temperature=0.8) {
+ const vocab=model.vocabulary,index=new Map(vocab.map((c,i)=>[c,i])),h=model.hidden_size;
+ const seed=Array.from((prompt||'').slice(-160),c=>index.has(c)?index.get(c):(index.get(' ')??0));
+ if(seed.length<1) seed.push(index.get(' ')??0);
+ let state=Array(h).fill(0);
+ const step=(ix)=>{
+  const next=Array(h);
+  for(let j=0;j<h;j++){let z=model.Wxh[j][ix]+model.bh[j];for(let k=0;k<h;k++)z+=model.Whh[j][k]*state[k];next[j]=Math.tanh(z);}
+  const logits=Array(vocab.length);let peak=-Infinity;
+  for(let i=0;i<vocab.length;i++){let z=model.by[i];for(let j=0;j<h;j++)z+=model.Why[i][j]*next[j];logits[i]=z/temperature;peak=Math.max(peak,logits[i]);}
+  let total=0;const probs=logits.map(z=>{const p=Math.exp(Math.max(-60,z-peak));total+=p;return p;});
+  state=next;let draw=Math.random()*total;
+  for(let i=0;i<probs.length;i++){draw-=probs[i];if(draw<=0)return i;}
+  return probs.length-1;
+ };
+ let last=seed[0];
+ for(const ix of seed) last=step(ix);
+ let out='';
+ for(let n=0;n<maxChars;n++){const ix=step(last);last=ix;const ch=vocab[ix]??' ';out+=ch;if(ch==='\n'&&out.length>24)break;}
+ return out.trim()||'(the RNN produced an empty continuation)';
+}
 function offlineReply(text) {
  const t=text.toLowerCase();
  if(/install|upgrade|iso|usb/.test(t))return 'Install/upgrade guidance: open Install & Upgrade, use the official release page for '+OS[selectedOS].name+', verify the published SHA-256, back up data, and use the project-supported native installer. This browser cannot safely write raw disks or perform a native OS upgrade.';
@@ -146,6 +185,7 @@ function offlineReply(text) {
 async function getReply() {
  const user=messages[messages.length-1]?.content||'';
  if(!llmEngine)return offlineReply(user);
+ if(llmEngine.mode==='rnn') return 'Catalog-trained character RNN continuation (advisory; not instruction-tuned):\n'+rnnGenerate(llmEngine.model,user);
  if(llmEngine.mode==='webllm'){
   const hist=messages.filter(m=>m.role==='user'||m.role==='assistant').slice(-24).map(m=>({role:m.role,content:m.content}));
   const res=await llmEngine.engine.chat.completions.create({messages:[{role:'system',content:'You are a helpful assistant for ChimeraIIOS and OctavianOS. Be honest about evidence and never claim the browser UI is a native OS.'},...hist],temperature:.5,max_tokens:700});
@@ -182,6 +222,7 @@ function bind() {
  $('appFilter').addEventListener('input',e=>{const q=e.target.value.toLowerCase();document.querySelectorAll('.app-card').forEach(c=>c.hidden=!c.textContent.toLowerCase().includes(q));});
  $('engineSelect').addEventListener('change',()=>{llmEngine=null;updateEngineStatus($('engineSelect').value==='offline'?'Offline helper ready':'Load the selected engine to activate it');});
  $('loadModel').addEventListener('click',loadEngine);
+ $('rnnModelFile').addEventListener('change',async e=>{const file=e.target.files?.[0];if(!file)return;try{if(file.size>5*1024*1024)throw new Error('Model file exceeds the 5 MiB safety limit.');rnnModel=validateRnnModel(JSON.parse(await file.text()));updateEngineStatus('RNN model loaded; choose the RNN engine and click Load selected engine');if($('engineSelect').value==='rnn')$('loadModel').click();}catch(err){rnnModel=null;updateEngineStatus('RNN model rejected: '+err.message);}finally{e.target.value='';}});
  $('clearModel').addEventListener('click',async()=>{if(llmEngine?.mode==='webllm'){try{await llmEngine.engine.unload();}catch(e){console.warn(e);}}llmEngine=null;updateEngineStatus('Unloaded');});
  $('chatForm').addEventListener('submit',e=>{e.preventDefault();const v=$('chatInput').value;$('chatInput').value='';sendMessage(v);});
  $('chatInput').addEventListener('keydown',e=>{if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();$('chatForm').requestSubmit();}});
