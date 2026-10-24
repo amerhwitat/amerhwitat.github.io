@@ -49,9 +49,9 @@
 </section>
 <section class="view" id="view-assistant">
   <p class="eyebrow">RNN · CNN · LLM RESEARCH BRIDGE</p><h1>AI Assistant</h1>
-  <p class="lead">Chat runs in the browser. Use the optional WebLLM local model when WebGPU and network access are available, or connect a trusted OpenAI-compatible endpoint. The offline helper is a transparent fallback, not a trained neural network. RNN/CNN models need actual model weights and an inference runtime before they can be claimed as active.</p>
+  <p class="lead">Chat runs in the browser. Use the optional WebLLM local model when WebGPU and network access are available, or connect a trusted OpenAI-compatible model server. The endpoint adapter can call an RNN/CNN/LLM service when that service exposes the chat-completions contract. The offline helper is a transparent fallback, not a trained neural network; no trained RNN/CNN weights are bundled in this static site.</p>
   <div class="model-bar panel">
-    <div class="model-controls"><label for="engineSelect">Inference engine</label><select id="engineSelect"><option value="offline">Offline helper (no neural inference)</option><option value="webllm">WebLLM · local browser model</option><option value="endpoint">OpenAI-compatible endpoint</option></select></div>
+    <div class="model-controls"><label for="engineSelect">Inference engine</label><select id="engineSelect"><option value="offline">Offline helper (no neural inference)</option><option value="webllm">WebLLM · local browser model</option><option value="endpoint">Hosted RNN/CNN/LLM model · OpenAI-compatible endpoint</option></select></div>
     <div class="model-controls"><label for="endpointUrl">Endpoint URL (HTTPS recommended)</label><input id="endpointUrl" placeholder="https://your-trusted-host/v1/chat/completions" autocomplete="url"></div>
     <div class="model-controls"><label for="modelName">Model ID / endpoint model</label><input id="modelName" value="Qwen2.5-0.5B-Instruct-q4f16_1-MLC"></div>
     <div class="model-actions"><button id="loadModel" class="primary">Load selected engine</button><button id="clearModel">Unload</button><span id="engineStatus" class="status" role="status">Offline helper ready</span></div>
