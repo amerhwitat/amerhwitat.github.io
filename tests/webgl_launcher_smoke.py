@@ -37,7 +37,7 @@ class WebGLLauncherSmokeTests(unittest.TestCase):
     def test_privacy_and_safety_disclosure_present(self):
         self.assertIn("not uploaded to a server", self.html)
         self.assertIn("not a security audit", self.html)
-        self.assertIn("not been audited", self.readme_text())
+        self.assertIn("does not audit the Unity application", self.readme_text())
 
     def readme_text(self):
         return (APP / "README.md").read_text(encoding="utf-8")
