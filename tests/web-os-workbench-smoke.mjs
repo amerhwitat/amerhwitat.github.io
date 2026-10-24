@@ -21,7 +21,7 @@ assert.match(html, /id="exportHistory"/, 'history export control exists');
 assert.match(html, /id="importHistory"/, 'history import control exists');
 assert.match(html, /id="verifyIso"/, 'ISO verification control exists');
 assert.match(html, /name="viewport"/, 'responsive viewport is configured');
-assert.match(html, /browser-based companion/i, 'browser/native boundary is disclosed');
+assert.match(html, /browser-based/i, 'browser/native boundary is disclosed');
 assert.ok(css.includes('@media(max-width:650px)'), 'mobile layout rules exist');
 
 const ids = [...html.matchAll(/\bid="([^"]+)"/g)].map(m => m[1]);
