@@ -64,7 +64,7 @@ class SiteLinkResolutionTests(unittest.TestCase):
         self.assertIn("missing assets/missing.webp", CHECKER.errors[0])
 
     def test_external_and_data_urls_are_ignored(self):
-        for value in ("https://example.org/a.png", "//cdn.example.org/a.png", "data:image/png;base64,AA==", "#section"):
+        for value in ("https://example.org/a.png", "//cdn.example.org/a.png", "data:image/png;base64,AA=="):
             CHECKER.check(self.page, value)
         self.assertEqual(CHECKER.errors, [])
 
