@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#07111f">
+<title>Publication & Release Status — Chimera II OS / OctavianOS</title>
+<meta name="description" content="Transparent publication status, CI workflow links, and production release gates for Chimera II OS and OctavianOS.">
+<style>
+:root{color-scheme:dark;--bg:#06101e;--panel:#0c1b2c;--line:#25445c;--fg:#e8f5ff;--muted:#a1b8ca;--a:#6be6dc;--warn:#ffd27a;--bad:#ff9a9a}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 15% 0%,#123a53 0,transparent 48%),#06101e;color:var(--fg);font:16px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif}header,main,footer{max-width:1100px;margin:auto;padding:24px}header{padding-top:48px}h1{font-size:clamp(2rem,5vw,3.5rem);line-height:1.12;margin:.2em 0}h2{line-height:1.2}.eyebrow{color:var(--a);letter-spacing:.14em;text-transform:uppercase;font-size:.8rem;font-weight:700}p,.muted{color:var(--muted)}a{color:var(--a)}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:16px}.card{background:linear-gradient(160deg,#10283aee,#091523f5);border:1px solid var(--line);border-radius:16px;padding:18px;overflow-wrap:anywhere}.pill{display:inline-block;border:1px solid #8a6634;border-radius:999px;padding:3px 10px;color:var(--warn);font-size:.8rem;font-weight:700}.ok{border-color:#2c756c;color:var(--a)}.links{display:flex;flex-wrap:wrap;gap:12px}.btn{display:inline-block;padding:8px 12px;border:1px solid #38627c;border-radius:10px;text-decoration:none;background:#10283a}.notice{border-left:3px solid var(--warn);padding:12px 16px;background:#211d17;border-radius:0 12px 12px 0}.small{font-size:.88rem}li{margin:.45em 0}footer{border-top:1px solid var(--line);margin-top:28px}
+</style>
+</head>
+<body>
+<header>
+<div class="eyebrow">Release engineering · evidence first</div>
+<h1>Publication & release status</h1>
+<p>This page is a transparent snapshot of the repository workflow state observed on 2026-10-26. Workflow links below open GitHub Actions for the latest evidence. This static page does not poll GitHub or update itself.</p>
+<div class="links"><a class="btn" href="./">Back to desktop gallery</a><a class="btn" href="https://github.com/amerhwitat/amerhwitat.github.io/pull/82">Website PR #82</a></div>
+</header>
+<main>
+<section><h2>Publication overview</h2><div class="grid">
+<article class="card"><span class="pill">Not verified</span><h3>Website gallery</h3><p>PR #82 is open, draft, and unmerged. The PR-triggered Pages workflow's deploy job was skipped; that is not a live deployment. Public URL verification is still outstanding.</p><div class="links"><a href="https://github.com/amerhwitat/amerhwitat.github.io/pull/82">PR #82</a><a href="https://github.com/amerhwitat/amerhwitat.github.io/actions/runs/40294163951">Pages workflow</a><a href="https://github.com/amerhwitat/amerhwitat.github.io/actions/runs/40294163915">Catalog validation</a><a href="https://github.com/amerhwitat/amerhwitat.github.io/actions/runs/40294163902">Website native CI</a></div></article>
+<article class="card"><span class="pill">Release blocked</span><h3>OctavianOS</h3><p>PR #131 is open, draft, and unmerged. The six-case userspace acceptance matrix is queued; the native kernel build is pending.</p><div class="links"><a href="https://github.com/amerhwitat/OctavianOS/pull/131">PR #131</a><a href="https://github.com/amerhwitat/OctavianOS/actions/runs/40295290217">Six-case acceptance</a><a href="https://github.com/amerhwitat/OctavianOS/actions/runs/40295290463">Native kernel build</a><a href="https://github.com/amerhwitat/OctavianOS/actions/runs/40295290256">Native desktop suite</a></div></article>
+<article class="card"><span class="pill">Release blocked</span><h3>ChimeraIIOS</h3><p>PR #204 is open, draft, and unmerged. ISO, boot matrix, runtime, and desktop checks remain queued or pending.</p><div class="links"><a href="https://github.com/amerhwitat/ChimeraIIOS/pull/204">PR #204</a><a href="https://github.com/amerhwitat/ChimeraIIOS/actions/runs/40293883349">Full ISO build</a><a href="https://github.com/amerhwitat/ChimeraIIOS/actions/runs/40293883209">QEMU/VMware boot matrix</a><a href="https://github.com/amerhwitat/ChimeraIIOS/actions/runs/40293883285">Aurora runtime</a></div></article>
+</div></section>
+<section><h2>Production acceptance gates</h2><div class="card"><p>These gates are intentionally independent of static checks, browser artwork, kernel probes, and workflow queue state.</p><ul>
+<li>All six real boot cases: Live, Installer, Recovery × BIOS and UEFI.</li>
+<li>Each production trace proves kernel readiness, a user-originated syscall acknowledgement, and target readiness from the real production init/session path.</li>
+<li>Native desktop/session and application launch with observable display/runtime health.</li>
+<li>Installer writes to the target disk and the installed system retains state after a cold reboot.</li>
+<li>Recovery repair verifies its actual postcondition, not just a successful command return.</li>
+<li>Measured overlapping execution on at least two CPUs; CPU-online messages or sequential traces are not SMP proof.</li>
+</ul><p><strong>Release rule:</strong> any missing, stale, synthetic, or failed evidence keeps the corresponding OS release blocked.</p></div></section>
+<section><h2>How to read this page</h2><div class="notice"><strong>Not a live status feed.</strong><p class="small">The status labels are the latest snapshot observed when this file was prepared. Use the linked Actions pages for current run state. Publishing this page itself does not publish the OSes, validate the six boot cases, or confirm the gallery URL is deployed.</p></div></section>
+</main>
+<footer><p class="small">Source of truth: repository PRs, workflow logs, artifacts, and production acceptance traces. Last snapshot: 2026-10-26.</p></footer>
+</body></html>
