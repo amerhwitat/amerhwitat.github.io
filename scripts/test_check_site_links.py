@@ -68,6 +68,39 @@ class SiteLinkResolutionTests(unittest.TestCase):
             CHECKER.check(self.page, value)
         self.assertEqual(CHECKER.errors, [])
 
+    def test_missing_in_page_fragment_is_reported(self):
+        self.page.write_text('<html><body id="home"></body></html>', encoding="utf-8")
+        CHECKER.check(self.page, "#missing")
+        self.assertEqual(len(CHECKER.errors), 1)
+        self.assertIn("missing fragment #missing", CHECKER.errors[0])
+
+    def test_existing_in_page_fragment_resolves(self):
+        self.page.write_text('<html><body id="home"></body></html>', encoding="utf-8")
+        CHECKER.check(self.page, "#home")
+        self.assertEqual(CHECKER.errors, [])
+
+    def test_missing_fragment_in_local_html_target_is_reported(self):
+        target = self.root / "apps" / "child.html"
+        target.write_text('<html><h1 id="known">ok</h1></html>', encoding="utf-8")
+        CHECKER.check(self.page, "/apps/child.html#missing")
+        self.assertEqual(len(CHECKER.errors), 1)
+        self.assertIn("missing fragment #missing", CHECKER.errors[0])
+
+    def test_existing_fragment_in_local_html_target_resolves(self):
+        target = self.root / "apps" / "child.html"
+        target.write_text('<html><h1 id="known">ok</h1></html>', encoding="utf-8")
+        CHECKER.check(self.page, "/apps/child.html#known")
+        self.assertEqual(CHECKER.errors, [])
+
+    def test_location_assign_call_checks_static_destination(self):
+        (self.root / "apps" / "present.html").write_text("ok", encoding="utf-8")
+        source = 'window.location.assign("/apps/present.html"); window.location.replace("/apps/missing.html")'
+        matches = CHECKER.LOCATION_CALL_PATTERN.findall(source)
+        for value in matches:
+            CHECKER.check(self.page, value)
+        self.assertEqual(len(CHECKER.errors), 1)
+        self.assertIn("missing apps/missing.html", CHECKER.errors[0])
+
 
 if __name__ == "__main__":
     unittest.main()
