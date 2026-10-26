@@ -29,25 +29,48 @@ CSS_URL_PATTERN = re.compile(r"""url\(\s*["']?([^)'"]+)["']?\s*\)""", re.I)
 CSS_IMPORT_PATTERN = re.compile(r"""@import\s+(?:url\(\s*)?["']([^"']+)["']""", re.I)
 
 
+def has_fragment(path, fragment):
+    """Return whether an HTML document declares an id/name target."""
+    if not fragment or path.suffix.lower() != ".html" or not path.is_file():
+        return False
+    try:
+        source = path.read_text(encoding="utf-8", errors="ignore")
+    except OSError:
+        return False
+    return any(unquote(value) == fragment for value in FRAGMENT_PATTERN.findall(source))
+
+
 def check(base, raw):
-    """Record a missing local target relative to the publishing root or source file."""
+    """Record missing local files and broken HTML fragment destinations."""
     global checked
     raw = raw.strip()
     if (
         not raw
         or raw.startswith((
-            "#", "\u0024{", "javascript:", "mailto:", "tel:", "data:", "blob:",
+            "\u0024{", "javascript:", "mailto:", "tel:", "data:", "blob:",
             "http://", "https://", "//", "fs-uae:", "chimera:", "about:"
         ))
         or "\u0024{" in raw
         or raw.startswith((chr(96), "+"))
     ):
         return
-    raw = unquote(raw.split("#", 1)[0].split("?", 1)[0])
-    if not raw:
+
+    # Validate in-page anchors only in HTML sources. Hashes in JS/CSS are often
+    # selectors or asset identifiers, not navigational fragments.
+    if raw.startswith("#"):
+        if base.suffix.lower() == ".html":
+            fragment = unquote(raw[1:].split("?", 1)[0])
+            checked += 1
+            if not has_fragment(base, fragment):
+                errors.append(f"{base.relative_to(ROOT)} -> {raw} -> missing fragment #{fragment}")
+        return
+
+    before_fragment, separator, fragment = raw.partition("#")
+    raw_path = unquote(before_fragment.split("?", 1)[0])
+    if not raw_path:
         return
     # Leading slash is rooted at the published site, not the runner filesystem.
-    target = (ROOT / raw.lstrip("/")) if raw.startswith("/") else (base.parent / raw)
+    target = (ROOT / raw_path.lstrip("/")) if raw_path.startswith("/") else (base.parent / raw_path)
     target = target.resolve()
     try:
         relative = target.relative_to(ROOT.resolve()).as_posix()
@@ -55,9 +78,16 @@ def check(base, raw):
         return
     checked += 1
     if target.is_file() or (target.is_dir() and (target / "index.html").is_file()):
+        fragment_target = target / "index.html" if target.is_dir() else target
+        if separator and fragment and fragment_target.suffix.lower() == ".html":
+            decoded_fragment = unquote(fragment.split("?", 1)[0])
+            if not has_fragment(fragment_target, decoded_fragment):
+                errors.append(
+                    f"{base.relative_to(ROOT)} -> {raw} -> missing fragment "
+                    f"#{decoded_fragment} in {fragment_target.relative_to(ROOT)}"
+                )
         return
     errors.append(f"{base.relative_to(ROOT)} -> {raw} -> missing {relative}")
-
 
 def check_srcset(base, value):
     # srcset is a comma-separated list of URL + optional descriptor pairs.
@@ -86,6 +116,8 @@ def main():
         for match in SRCSET_PATTERN.finditer(source):
             check_srcset(path, match.group(1))
         for match in LOCATION_PATTERN.finditer(source):
+            check(path, match.group(1))
+        for match in LOCATION_CALL_PATTERN.finditer(source):
             check(path, match.group(1))
         # CSS image/font assets and stylesheet imports are not HTML href/src attributes.
         if path.suffix.lower() == ".css":
