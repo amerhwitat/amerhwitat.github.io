@@ -1,0 +1,96 @@
+{
+  "schema": "OS-DESKTOP-HUB-ARTWORK-1",
+  "bundle": "apps/os-desktop-hub/embedded-wallpapers.js",
+  "delivery": "Base64 data URIs embedded in the checked-in JavaScript; browser only",
+  "assets": [
+    [
+      "chimeraAurora",
+      "image/svg+xml",
+      "apps/chimera-ii-os/web/chimera-infinite-research-horizon-3840x2160.svg",
+      "embedded-bundle-only"
+    ],
+    [
+      "octavianAurora",
+      "image/svg+xml",
+      "apps/octavianos/aurora/assets/octavian-octopus-aurora.svg",
+      "apps/os-desktop-hub/index.html: Aurora card"
+    ],
+    [
+      "marine",
+      "image/svg+xml",
+      "apps/octavianos/marine/assets/marine-desktop.svg",
+      "apps/os-desktop-hub/index.html: Marine card"
+    ],
+    [
+      "auroraGlassJpeg",
+      "image/jpeg",
+      "apps/chimera-ii-os/boot/visual/aurora-wayland-glass.jpg.b64",
+      "embedded-bundle-only; low-resolution boot JPEG; not used for showcase image"
+    ],
+    [
+      "siteDiagnostics",
+      "image/svg+xml",
+      "apps/chimera-ii-os/web/assets/aurora-diagnostics-backdrop.svg",
+      "embedded-bundle-only"
+    ],
+    [
+      "siteJasperGates",
+      "image/svg+xml",
+      "apps/chimera-ii-os/web/assets/jasper-gates-boot.svg",
+      "apps/os-desktop-hub/index.html: Jasper Boot Gate card"
+    ],
+    [
+      "siteOctavianBoot",
+      "image/svg+xml",
+      "apps/chimera-ii-os/web/assets/octavian-boot-nebula.svg",
+      "embedded-bundle-only"
+    ],
+    [
+      "siteAuroraDesktop",
+      "image/svg+xml",
+      "apps/chimera-ii-os/web/aurora-desktop-background.svg",
+      "embedded-bundle-only"
+    ],
+    [
+      "siteChimeraHero",
+      "image/svg+xml",
+      "apps/chimera-ii-os/web/chimera-hero-3840x2160.svg",
+      "embedded-bundle-only"
+    ],
+    [
+      "siteChimeraHorizon",
+      "image/svg+xml",
+      "apps/chimera-ii-os/web/chimera-infinite-research-horizon-3840x2160.svg",
+      "embedded-bundle-only"
+    ],
+    [
+      "siteMarine",
+      "image/svg+xml",
+      "apps/chimera-ii-os/web/marine-desktop.svg",
+      "embedded-bundle-only"
+    ],
+    [
+      "siteMobile",
+      "image/svg+xml",
+      "apps/chimera-ii-os/web/mobile-landing.svg",
+      "apps/os-desktop-hub/index.html: Mobile edition card"
+    ],
+    [
+      "siteCelestialOctopus",
+      "image/svg+xml",
+      "apps/chimera-ii-os/web/octavian-celestial-octopus-3840x2160.svg",
+      "apps/os-desktop-hub/index.html: shared artwork card"
+    ],
+    [
+      "siteChimeraBackground",
+      "image/svg+xml",
+      "assets/chimera-aurora-background.svg",
+      "embedded-bundle-only"
+    ]
+  ],
+  "limitations": [
+    "The offline bundle is wired to the browser gallery only; it does not wire GRUB, firmware, native compositors, or the ISO builder.",
+    "The high-resolution Aurora showcase JPEG remains a checked-in local file rather than a Base64 data URI, avoiding replacement with the smaller 480x268 boot JPEG.",
+    "Boot-stage SVGs require the documented rasterization/staging pipeline; this manifest does not assert runtime boot verification."
+  ]
+}
