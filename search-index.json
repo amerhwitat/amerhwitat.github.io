@@ -1127,6 +1127,13 @@
       "g": "System Installers",
       "d": "Hosted review-only copy of the OctavianOS Aurora graphical installer; no disk writes.",
       "x": "OctavianOS Aurora Setup installer GUI locale keyboard hardware firmware network source storage filesystem accounts security bootloader review status 78"
+    },
+    {
+      "p": "desktop-ecosystem.html",
+      "t": "Desktop Ecosystem — ChimeraIIOS & OctavianOS",
+      "g": "Desktop Environments",
+      "d": "Six desktop profiles, existing wallpaper artwork, and links to available browser-based system applications.",
+      "x": "ChimeraIIOS OctavianOS Aurora Marine Koronos Nova Mobile OS desktop backgrounds wallpaper gallery screensaver application launcher WebGL 3D desktop switcher terminal code IDE system health recovery"
     }
   ]
 }
