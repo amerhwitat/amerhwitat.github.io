@@ -25,6 +25,10 @@ SRCSET_PATTERN = re.compile(r"""\bsrcset\s*=\s*["']([^"']+)["']""", re.I)
 LOCATION_PATTERN = re.compile(
     r"""location\.(?:href|assign|replace)\s*=\s*["']([^"']+)["']""", re.I
 )
+LOCATION_CALL_PATTERN = re.compile(
+    r"""(?:window\.)?location\.(?:assign|replace)\s*\(\s*["']([^"']+)["']""", re.I
+)
+FRAGMENT_PATTERN = re.compile(r"""\b(?:id|name)\s*=\s*["']([^"']+)["']""", re.I)
 CSS_URL_PATTERN = re.compile(r"""url\(\s*["']?([^)'"]+)["']?\s*\)""", re.I)
 CSS_IMPORT_PATTERN = re.compile(r"""@import\s+(?:url\(\s*)?["']([^"']+)["']""", re.I)
 
