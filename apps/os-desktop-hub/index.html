@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#07111f">
+<title>Chimera II OS & OctavianOS — Desktop Gallery</title>
+<meta name="description" content="A shared launchpad for the Aurora and Marine desktop showcases, artwork, and application catalogs for Chimera II OS and OctavianOS.">
+<style>
+:root{color-scheme:dark;--bg:#06101e;--panel:#0c1b2c;--line:#25445c;--fg:#e8f5ff;--muted:#a1b8ca;--a:#6be6dc;--b:#b9a0ff}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 15% 0%,#123a53 0,transparent 48%),radial-gradient(ellipse at 95% 15%,#29204e 0,transparent 42%),var(--bg);color:var(--fg);font:16px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif}
+header,main,footer{max-width:1180px;margin:auto;padding:24px}header{padding-top:54px}h1,h2,h3{line-height:1.15}h1{font-size:clamp(2rem,5vw,4rem);max-width:900px;margin:.2em 0}p{color:var(--muted)}a{color:var(--a)}.eyebrow{text-transform:uppercase;letter-spacing:.16em;color:var(--a);font-size:.8rem;font-weight:700}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:18px}.card{overflow:hidden;border:1px solid var(--line);border-radius:20px;background:linear-gradient(160deg,#10283aee,#091523f5);box-shadow:0 18px 55px #0005}.art{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;background:#07101d}.body{padding:20px}.links{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}.link{display:inline-block;border:1px solid #38627c;border-radius:11px;padding:9px 13px;text-decoration:none;background:#10283a}.link:hover{border-color:var(--a)}.tag{display:inline-block;font-size:.78rem;border:1px solid #34516a;border-radius:999px;padding:3px 9px;color:#c8d8e7}.notice{border-left:3px solid var(--b);padding:12px 16px;background:#16172b;border-radius:0 12px 12px 0}.small{font-size:.88rem}footer{border-top:1px solid var(--line);margin-top:30px}
+</style>
+</head>
+<body>
+<header>
+<div class="eyebrow">Operating systems · desktops · applications</div>
+<h1>One launchpad. Two operating systems. Six desktop profiles.</h1>
+<p>Explore Aurora’s glass-and-aurora visual language, Marine’s ocean-glass workspace, mobile previews, and the shared application catalog. This page links to the checked-in web showcases; a browser preview is not proof of a native OS session.</p>
+<div class="links"><a class="link" href="../chimera-ii-os/">Chimera II OS hub</a><a class="link" href="../octavianos/">OctavianOS hub</a><a class="link" href="../aurora-glass-desktop/">Aurora web desktop</a></div>
+</header>
+<main>
+<section><h2>Desktop profiles</h2><div class="grid">
+<article class="card"><img class="art" src="../octavianos/aurora/assets/octavian-octopus-aurora.svg" alt="OctavianOS Aurora octopus and aurora artwork"><div class="body"><span class="tag">OctavianOS · Aurora</span><h3>Aurora Wayland Glass Desktop</h3><p>Deep-ocean science-fiction artwork, aurora ribbons, translucent surfaces, and the Aurora desktop preview.</p><div class="links"><a class="link" href="../octavianos/aurora/">Open Aurora preview</a><a class="link" href="../octavianos/aurora/assets/octavian-artwork-manifest.json">Artwork manifest</a></div></div></article>
+<article class="card"><img class="art" src="../octavianos/marine/assets/marine-desktop.svg" alt="Marine desktop ocean glass horizon artwork"><div class="body"><span class="tag">OctavianOS · Marine</span><h3>Marine Desktop</h3><p>Ocean-glass horizon, turquoise ribbons, layered waves, and a Windows-inspired workspace preview.</p><div class="links"><a class="link" href="../octavianos/marine/">Open Marine preview</a><a class="link" href="../octavianos/desktop-application-catalog.json">Application catalog</a></div></div></article>
+<article class="card"><img class="art" src="../aurora-glass-desktop/wallpapers/aurora-glass-desktop.jpg" alt="Aurora glass desktop wallpaper"><div class="body"><span class="tag">Chimera II OS · Aurora</span><h3>Aurora Glass Showcase</h3><p>Explore the existing Aurora glass desktop preview and its checked-in wallpaper collection.</p><div class="links"><a class="link" href="../aurora-glass-desktop/">Open desktop showcase</a><a class="link" href="../aurora-mobile/">Open mobile preview</a></div></div></article>
+<article class="card"><img class="art" src="../chimera-ii-os/web/octavian-celestial-octopus-3840x2160.svg" alt="Celestial octopus wallpaper shared by the OS web showcase"><div class="body"><span class="tag">Shared artwork</span><h3>Chimera + Octavian visual library</h3><p>Existing SVG artwork and browser assets remain linked to their checked-in source paths for reuse and offline packaging.</p><div class="links"><a class="link" href="../chimera-ii-os/web/marine_desktop.html">Marine web desktop</a><a class="link" href="../chimera-ii-os/web/">Chimera web assets</a></div></div></article>
+</div></section>
+<section style="margin-top:34px"><h2>Applications and catalogs</h2><div class="grid">
+<article class="card"><div class="body"><h3>OctavianOS Application Center</h3><p>Open the existing application center and curated desktop catalog.</p><div class="links"><a class="link" href="../octavianos/application-center.html">Application Center</a><a class="link" href="../octavianos/desktop-application-catalog.json">Catalog JSON</a><a class="link" href="../octavianos/">OctavianOS apps</a></div></div></article>
+<article class="card"><div class="body"><h3>Chimera II OS applications</h3><p>Browse the existing web edition, documentation, and app hub without implying every listed application is native-executable.</p><div class="links"><a class="link" href="../chimera-ii-os/">OS web hub</a><a class="link" href="../chimera-ii-os/docs/APPLICATION_ECOSYSTEM.md">Application ecosystem</a><a class="link" href="../desktop-evolution/">Desktop evolution</a></div></div></article>
+</div></section>
+<section style="margin-top:30px" class="notice"><strong>Release transparency</strong><p class="small">Web artwork and showcase links are available independently. Native desktop builds, production userspace readiness, all six Live/Installer/Recovery × BIOS/UEFI cases, installer cold-reboot persistence, recovery repair, and measured SMP remain separate release gates. Do not interpret this gallery as production acceptance.</p><p class="small">Source repositories: <a href="https://github.com/amerhwitat/ChimeraIIOS">ChimeraIIOS</a> · <a href="https://github.com/amerhwitat/OctavianOS">OctavianOS</a> · <a href="https://github.com/amerhwitat/amerhwitat.github.io">website source</a>.</p></section>
+</main><footer><p class="small">Built from checked-in showcase assets. Browser rendering is illustrative; native capabilities require independent verification.</p></footer>
+</body></html>
