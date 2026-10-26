@@ -3,90 +3,118 @@
   "bundle": "apps/os-desktop-hub/embedded-wallpapers.js",
   "delivery": "Base64 data URIs embedded in the checked-in JavaScript; browser only",
   "assets": [
-    [
-      "chimeraAurora",
-      "image/svg+xml",
-      "apps/chimera-ii-os/web/chimera-infinite-research-horizon-3840x2160.svg",
-      "embedded-bundle-only"
-    ],
-    [
-      "octavianAurora",
-      "image/svg+xml",
-      "apps/octavianos/aurora/assets/octavian-octopus-aurora.svg",
-      "apps/os-desktop-hub/index.html: Aurora card"
-    ],
-    [
-      "marine",
-      "image/svg+xml",
-      "apps/octavianos/marine/assets/marine-desktop.svg",
-      "apps/os-desktop-hub/index.html: Marine card"
-    ],
-    [
-      "auroraGlassJpeg",
-      "image/jpeg",
-      "apps/chimera-ii-os/boot/visual/aurora-wayland-glass.jpg.b64",
-      "embedded-bundle-only; low-resolution boot JPEG; not used for showcase image"
-    ],
-    [
-      "siteDiagnostics",
-      "image/svg+xml",
-      "apps/chimera-ii-os/web/assets/aurora-diagnostics-backdrop.svg",
-      "embedded-bundle-only"
-    ],
-    [
-      "siteJasperGates",
-      "image/svg+xml",
-      "apps/chimera-ii-os/web/assets/jasper-gates-boot.svg",
-      "apps/os-desktop-hub/index.html: Jasper Boot Gate card"
-    ],
-    [
-      "siteOctavianBoot",
-      "image/svg+xml",
-      "apps/chimera-ii-os/web/assets/octavian-boot-nebula.svg",
-      "embedded-bundle-only"
-    ],
-    [
-      "siteAuroraDesktop",
-      "image/svg+xml",
-      "apps/chimera-ii-os/web/aurora-desktop-background.svg",
-      "embedded-bundle-only"
-    ],
-    [
-      "siteChimeraHero",
-      "image/svg+xml",
-      "apps/chimera-ii-os/web/chimera-hero-3840x2160.svg",
-      "embedded-bundle-only"
-    ],
-    [
-      "siteChimeraHorizon",
-      "image/svg+xml",
-      "apps/chimera-ii-os/web/chimera-infinite-research-horizon-3840x2160.svg",
-      "embedded-bundle-only"
-    ],
-    [
-      "siteMarine",
-      "image/svg+xml",
-      "apps/chimera-ii-os/web/marine-desktop.svg",
-      "embedded-bundle-only"
-    ],
-    [
-      "siteMobile",
-      "image/svg+xml",
-      "apps/chimera-ii-os/web/mobile-landing.svg",
-      "apps/os-desktop-hub/index.html: Mobile edition card"
-    ],
-    [
-      "siteCelestialOctopus",
-      "image/svg+xml",
-      "apps/chimera-ii-os/web/octavian-celestial-octopus-3840x2160.svg",
-      "apps/os-desktop-hub/index.html: shared artwork card"
-    ],
-    [
-      "siteChimeraBackground",
-      "image/svg+xml",
-      "assets/chimera-aurora-background.svg",
-      "embedded-bundle-only"
-    ]
+    {
+      "id": "chimeraAurora",
+      "mime": "image/svg+xml",
+      "source_repository": "amerhwitat/ChimeraIIOS",
+      "source_path": "desktop/aurora/assets/chimera-infinite-research-horizon-3840x2160.svg",
+      "consumer": "embedded-bundle-only",
+      "integration_status": "embedded-bundle-only"
+    },
+    {
+      "id": "octavianAurora",
+      "mime": "image/svg+xml",
+      "source_repository": "amerhwitat/OctavianOS",
+      "source_path": "desktop/aurora/assets/octavian-octopus-aurora.svg",
+      "consumer": "apps/os-desktop-hub/index.html: Aurora card",
+      "integration_status": "browser-consumer-wired"
+    },
+    {
+      "id": "marine",
+      "mime": "image/svg+xml",
+      "source_repository": "amerhwitat/OctavianOS",
+      "source_path": "desktop/marine/assets/marine-desktop.svg",
+      "consumer": "apps/os-desktop-hub/index.html: Marine card",
+      "integration_status": "browser-consumer-wired"
+    },
+    {
+      "id": "auroraGlassJpeg",
+      "mime": "image/jpeg",
+      "source_repository": "amerhwitat/ChimeraIIOS",
+      "source_path": "boot/visual/aurora-wayland-glass.jpg.b64",
+      "consumer": "embedded-bundle-only; low-resolution boot JPEG, not used for showcase image",
+      "integration_status": "embedded-bundle-only"
+    },
+    {
+      "id": "siteDiagnostics",
+      "mime": "image/svg+xml",
+      "source_repository": "amerhwitat/amerhwitat.github.io",
+      "source_path": "apps/chimera-ii-os/web/assets/aurora-diagnostics-backdrop.svg",
+      "consumer": "embedded-bundle-only",
+      "integration_status": "embedded-bundle-only"
+    },
+    {
+      "id": "siteJasperGates",
+      "mime": "image/svg+xml",
+      "source_repository": "amerhwitat/amerhwitat.github.io",
+      "source_path": "apps/chimera-ii-os/web/assets/jasper-gates-boot.svg",
+      "consumer": "apps/os-desktop-hub/index.html: Jasper Boot Gate card",
+      "integration_status": "browser-consumer-wired"
+    },
+    {
+      "id": "siteOctavianBoot",
+      "mime": "image/svg+xml",
+      "source_repository": "amerhwitat/amerhwitat.github.io",
+      "source_path": "apps/chimera-ii-os/web/assets/octavian-boot-nebula.svg",
+      "consumer": "embedded-bundle-only",
+      "integration_status": "embedded-bundle-only"
+    },
+    {
+      "id": "siteAuroraDesktop",
+      "mime": "image/svg+xml",
+      "source_repository": "amerhwitat/amerhwitat.github.io",
+      "source_path": "apps/chimera-ii-os/web/aurora-desktop-background.svg",
+      "consumer": "embedded-bundle-only",
+      "integration_status": "embedded-bundle-only"
+    },
+    {
+      "id": "siteChimeraHero",
+      "mime": "image/svg+xml",
+      "source_repository": "amerhwitat/amerhwitat.github.io",
+      "source_path": "apps/chimera-ii-os/web/chimera-hero-3840x2160.svg",
+      "consumer": "embedded-bundle-only",
+      "integration_status": "embedded-bundle-only"
+    },
+    {
+      "id": "siteChimeraHorizon",
+      "mime": "image/svg+xml",
+      "source_repository": "amerhwitat/amerhwitat.github.io",
+      "source_path": "apps/chimera-ii-os/web/chimera-infinite-research-horizon-3840x2160.svg",
+      "consumer": "embedded-bundle-only",
+      "integration_status": "embedded-bundle-only"
+    },
+    {
+      "id": "siteMarine",
+      "mime": "image/svg+xml",
+      "source_repository": "amerhwitat/amerhwitat.github.io",
+      "source_path": "apps/chimera-ii-os/web/marine-desktop.svg",
+      "consumer": "embedded-bundle-only",
+      "integration_status": "embedded-bundle-only"
+    },
+    {
+      "id": "siteMobile",
+      "mime": "image/svg+xml",
+      "source_repository": "amerhwitat/amerhwitat.github.io",
+      "source_path": "apps/chimera-ii-os/web/mobile-landing.svg",
+      "consumer": "apps/os-desktop-hub/index.html: Mobile edition card",
+      "integration_status": "browser-consumer-wired"
+    },
+    {
+      "id": "siteCelestialOctopus",
+      "mime": "image/svg+xml",
+      "source_repository": "amerhwitat/amerhwitat.github.io",
+      "source_path": "apps/chimera-ii-os/web/octavian-celestial-octopus-3840x2160.svg",
+      "consumer": "apps/os-desktop-hub/index.html: shared artwork card",
+      "integration_status": "browser-consumer-wired"
+    },
+    {
+      "id": "siteChimeraBackground",
+      "mime": "image/svg+xml",
+      "source_repository": "amerhwitat/amerhwitat.github.io",
+      "source_path": "assets/chimera-aurora-background.svg",
+      "consumer": "embedded-bundle-only",
+      "integration_status": "embedded-bundle-only"
+    }
   ],
   "limitations": [
     "The offline bundle is wired to the browser gallery only; it does not wire GRUB, firmware, native compositors, or the ISO builder.",
