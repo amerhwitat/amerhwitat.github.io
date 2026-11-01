@@ -4,6 +4,14 @@
 
 This repository hosts the public web surface for Amer Hwitat's open research projects, including the Chimera II OS ecosystem.
 
+## Public downloads and wallpapers
+
+- **[Downloads & Wallpapers](https://amerhwitat.github.io/downloads/):** current verified CI artifact links, workflow evidence, SHA-256 digests, expiry notes and the Aurora/Marine wallpaper gallery.
+- New 3840×2160 SVG wallpapers: [Chimera Aurora Infinite](assets/wallpapers/chimera-aurora-infinite.svg), [Aurora Glass Fractal](assets/wallpapers/aurora-glass-fractal.svg), and [Marine Deep Space](assets/wallpapers/marine-deep-space.svg).
+- Existing Aurora collection: [wallpapers directory](assets/wallpapers/).
+
+CI artifacts are temporary outputs and may require GitHub sign-in. They are not automatically signed or production-approved releases. The downloads page explicitly distinguishes diagnostic artifacts from installable packages and links to each project's live Actions history.
+
 ## Desktop evolution and GUI migration
 
 - **[Desktop Evolution Lab](apps/desktop-evolution/index.html):** interactive Aurora/Marine desktop feature planner covering broad desktop interaction patterns from Windows 3.1/3.11 through current and future-era concepts. It exports a local JSON planning file and does not claim to enable native OS features.
