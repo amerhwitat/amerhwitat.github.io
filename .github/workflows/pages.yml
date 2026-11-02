@@ -36,6 +36,10 @@ jobs:
         run: node --check apps/os-desktop-hub/embedded-wallpapers.js
       - name: Validate landing studio JavaScript in PR validation
         run: node --check landing-studio.js
+      - name: Test shared asset cache-busting and injection
+        run: python3 -m unittest scripts/test_version_shared_assets.py
+      - name: Check shared asset helper syntax
+        run: python3 -m py_compile scripts/version_shared_assets.py
       - name: Test browser IP classification parity vectors
         run: node --test apps/network-console/ip-classifier.test.js
       - name: Build generated app output before validating local links
@@ -247,34 +251,10 @@ jobs:
       - name: Validate landing studio JavaScript on deployment build
         run: node --check landing-studio.js
       - uses: actions/configure-pages@v5
+      - name: Test shared asset cache-busting and injection
+        run: python3 -m unittest scripts/test_version_shared_assets.py
       - name: Apply shared 3D icons and interaction sounds to all published HTML pages
-        run: |
-          python3 - <<'PY'
-          from pathlib import Path
-          import re
-          skipped = {".git", "node_modules", ".venv"}
-          changed = 0
-          for page in Path(".").rglob("*.html"):
-              if any(part in skipped for part in page.parts):
-                  continue
-              try:
-                  source = page.read_text(encoding="utf-8")
-              except (UnicodeDecodeError, OSError):
-                  continue
-              updated = source
-              # Refresh already-injected assets as well as new pages to avoid stale browser caches.
-              updated = re.sub(r"""((?:href|src)=["'][^"']*site-interactions\\.(?:css|js))(?:\\?v=[^"']*)?(["'])""", r"\\1?v=3\\2", updated, flags=re.I)
-              if "site-interactions.css" not in updated and re.search(r"</head\s*>", updated, re.I):
-                  updated = re.sub(r"</head\s*>", '  <link rel="stylesheet" href="/site-interactions.css?v=3">\n</head>', updated, count=1, flags=re.I)
-              if "site-interactions.js" not in updated and re.search(r"</body\s*>", updated, re.I):
-                  updated = re.sub(r"</body\s*>", '  <script src="/site-interactions.js?v=3" defer></script>\n</body>', updated, count=1, flags=re.I)
-              if updated != source:
-                  page.write_text(updated, encoding="utf-8")
-                  changed += 1
-          print(f"Injected shared icon/sound layer into {changed} HTML pages")
-          if changed == 0:
-              print("Existing includes may already cover all pages.")
-          PY
+        run: python3 scripts/version_shared_assets.py
       - uses: actions/upload-pages-artifact@v3
         with:
           path: .
