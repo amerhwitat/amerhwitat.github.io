@@ -36,6 +36,10 @@ jobs:
         run: node --check apps/os-desktop-hub/embedded-wallpapers.js
       - name: Validate landing studio JavaScript in PR validation
         run: node --check landing-studio.js
+      - name: Test shared asset cache-busting and injection
+        run: python3 -m unittest scripts/test_version_shared_assets.py
+      - name: Check shared asset helper syntax
+        run: python3 -m py_compile scripts/version_shared_assets.py
       - name: Test browser IP classification parity vectors
         run: node --test apps/network-console/ip-classifier.test.js
       - name: Build generated app output before validating local links
