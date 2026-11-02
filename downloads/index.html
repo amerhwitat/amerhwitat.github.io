@@ -19,6 +19,87 @@ header,main,footer{max-width:1180px;margin:auto;padding:24px}header{padding-top:
 <p><a href="/">← Portfolio home</a> · <a href="https://github.com/amerhwitat">GitHub repositories</a> · <a href="https://github.com/amerhwitat/test/pull/10">VoiceConnect PR #10</a></p>
 </header>
 <main>
+<section id="live-isos">
+<h2>Chimera II OS &amp; OctavianOS — live ISO downloads</h2>
+<p class="lede">Two bootable amd64 live images, built on 2 November 2026 from each repository's
+<code>live-image/build.sh</code>. Both boot BIOS and UEFI (GRUB 2.12), run a Debian 6.12.107 kernel with
+<code>live-boot</code> over an xz squashfs, auto-login as <code>live</code> (password <code>live</code>,
+passwordless sudo) into the project's own Aurora desktop rendered fullscreen by WebKit, and carry the
+26 offline wallpapers below plus a verbatim snapshot of the source tree at <code>/opt/aurora/repo</code>.
+Each ISO was booted under QEMU to the login prompt and its release digest verified server-side by GitHub.</p>
+<div class="grid">
+<article class="card">
+<div class="status">Verified &middot; live ISO &middot; GitHub release asset</div>
+<h3>Chimera II OS 2026.11.02</h3>
+<p class="muted"><code>chimera-ii-os-live-amd64.iso</code><br>489,715,712 bytes (467 MiB) &middot; amd64 &middot; BIOS + UEFI &middot; Linux 6.12.107+deb13-amd64<br>Aurora WebKit kiosk &middot; Chimera II desktop</p>
+<p class="meta">SHA-256 e599df3c6b82bc7e98f152edf1d4ee26b988c842c4eace65df6b0138f4007de8</p>
+<a class="download" href="https://github.com/amerhwitat/ChimeraIIOS/releases/download/chimera-ii-os-2026.11.02/chimera-ii-os-live-amd64.iso">Download ISO</a>
+<a class="download" href="https://github.com/amerhwitat/ChimeraIIOS/releases/tag/chimera-ii-os-2026.11.02">Release + checksums</a>
+<a class="download" href="https://github.com/amerhwitat/ChimeraIIOS/blob/main/docs/releases/chimera-ii-os-2026.11.02/RELEASE.md">Build evidence</a>
+</article>
+<article class="card">
+<div class="status">Verified &middot; live ISO &middot; GitHub release asset</div>
+<h3>OctavianOS 2026.11.02</h3>
+<p class="muted"><code>octavian-os-live-amd64.iso</code><br>488,302,592 bytes (466 MiB) &middot; amd64 &middot; BIOS + UEFI &middot; Linux 6.12.107+deb13-amd64<br>Aurora Wayland Glass desktop &middot; openbox fallback</p>
+<p class="meta">SHA-256 41bba4d3b3b4a6cb46e025792b36458ec82ea78936fb52157fcc32d3050785ea</p>
+<a class="download" href="https://github.com/amerhwitat/OctavianOS/releases/download/octavian-os-2026.11.02/octavian-os-live-amd64.iso">Download ISO</a>
+<a class="download" href="https://github.com/amerhwitat/OctavianOS/releases/tag/octavian-os-2026.11.02">Release + checksums</a>
+<a class="download" href="https://github.com/amerhwitat/OctavianOS/blob/main/docs/releases/octavian-os-2026.11.02/RELEASE.md">Build evidence</a>
+</article>
+</div>
+<p class="notice"><strong>Honest scope:</strong> these images run the Debian Linux kernel with the project's desktop,
+applications and userspace payload. They are not builds of the native Spit Fire/Koronos kernel and do not discharge the
+native userspace-handoff acceptance gates tracked in each repository's <code>docs/</code> — read the release note before
+quoting them as proof of kernel readiness.</p>
+<p class="muted">Verify before booting: <code>sha256sum -c</code> against the released checksum, write with
+<code>dd bs=4M if=… of=/dev/sdX status=progress oflag=sync</code> (or any ISO-to-USB tool), then boot from it. GRUB offers
+&ldquo;Live desktop&rdquo;, &ldquo;Classic X session (openbox)&rdquo;, &ldquo;Safe graphics (nomodeset)&rdquo; and &ldquo;Verbose boot&rdquo;.</p>
+</section>
+
+<section id="live-iso-wallpapers">
+<h2>Desktop backgrounds shipped inside the ISOs</h2>
+<p class="muted">All 26 images are installed as offline wallpapers in both live images
+(<code>/opt/aurora/wallpapers</code> and <code>/usr/share/backgrounds/</code>) and are selectable from the in-image
+background picker. The first image of each edition is its default desktop; Chimera II opens on
+&ldquo;Chimera II Futuristic Desktop&rdquo;, OctavianOS on &ldquo;Chimera Meets Octavian&rdquo;.</p>
+<div class="grid">
+<article class="card wall"><a href="/assets/wallpapers/live-isos/wp01.jpg"><img loading="lazy" src="/assets/wallpapers/live-isos/wp01.jpg" alt="Chimera II Futuristic Desktop desktop wallpaper"></a><div class="body"><h3>Chimera II Futuristic Desktop</h3><p class="meta">wp01.jpg &middot; 2560 px JPEG &middot; ships inside both ISOs</p><a href="/assets/wallpapers/live-isos/wp01.jpg">Open full size</a></div></article>
+<article class="card wall"><a href="/assets/wallpapers/live-isos/wp02.jpg"><img loading="lazy" src="/assets/wallpapers/live-isos/wp02.jpg" alt="Chimera Meets Octavian desktop wallpaper"></a><div class="body"><h3>Chimera Meets Octavian</h3><p class="meta">wp02.jpg &middot; 2560 px JPEG &middot; ships inside both ISOs</p><a href="/assets/wallpapers/live-isos/wp02.jpg">Open full size</a></div></article>
+<article class="card wall"><a href="/assets/wallpapers/live-isos/wp03.jpg"><img loading="lazy" src="/assets/wallpapers/live-isos/wp03.jpg" alt="Futuristic OS Ecosystem desktop wallpaper"></a><div class="body"><h3>Futuristic OS Ecosystem</h3><p class="meta">wp03.jpg &middot; 2560 px JPEG &middot; ships inside both ISOs</p><a href="/assets/wallpapers/live-isos/wp03.jpg">Open full size</a></div></article>
+<article class="card wall"><a href="/assets/wallpapers/live-isos/wp04.jpg"><img loading="lazy" src="/assets/wallpapers/live-isos/wp04.jpg" alt="Meridian Command Deck desktop wallpaper"></a><div class="body"><h3>Meridian Command Deck</h3><p class="meta">wp04.jpg &middot; 2560 px JPEG &middot; ships inside both ISOs</p><a href="/assets/wallpapers/live-isos/wp04.jpg">Open full size</a></div></article>
+<article class="card wall"><a href="/assets/wallpapers/live-isos/wp05.jpg"><img loading="lazy" src="/assets/wallpapers/live-isos/wp05.jpg" alt="Aurora Gateway desktop wallpaper"></a><div class="body"><h3>Aurora Gateway</h3><p class="meta">wp05.jpg &middot; 2560 px JPEG &middot; ships inside both ISOs</p><a href="/assets/wallpapers/live-isos/wp05.jpg">Open full size</a></div></article>
+<article class="card wall"><a href="/assets/wallpapers/live-isos/wp06.jpg"><img loading="lazy" src="/assets/wallpapers/live-isos/wp06.jpg" alt="Glass Citadel desktop wallpaper"></a><div class="body"><h3>Glass Citadel</h3><p class="meta">wp06.jpg &middot; 2560 px JPEG &middot; ships inside both ISOs</p><a href="/assets/wallpapers/live-isos/wp06.jpg">Open full size</a></div></article>
+<article class="card wall"><a href="/assets/wallpapers/live-isos/wp07.jpg"><img loading="lazy" src="/assets/wallpapers/live-isos/wp07.jpg" alt="Octavian Deep Field desktop wallpaper"></a><div class="body"><h3>Octavian Deep Field</h3><p class="meta">wp07.jpg &middot; 2560 px JPEG &middot; ships inside both ISOs</p><a href="/assets/wallpapers/live-isos/wp07.jpg">Open full size</a></div></article>
+<article class="card wall"><a href="/assets/wallpapers/live-isos/wp08.jpg"><img loading="lazy" src="/assets/wallpapers/live-isos/wp08.jpg" alt="Ring Station Nine desktop wallpaper"></a><div class="body"><h3>Ring Station Nine</h3><p class="meta">wp08.jpg &middot; 2560 px JPEG &middot; ships inside both ISOs</p><a href="/assets/wallpapers/live-isos/wp08.jpg">Open full size</a></div></article>
+<article class="card wall"><a href="/assets/wallpapers/live-isos/wp09.jpg"><img loading="lazy" src="/assets/wallpapers/live-isos/wp09.jpg" alt="Aurora Terminal Bloom desktop wallpaper"></a><div class="body"><h3>Aurora Terminal Bloom</h3><p class="meta">wp09.jpg &middot; 2560 px JPEG &middot; ships inside both ISOs</p><a href="/assets/wallpapers/live-isos/wp09.jpg">Open full size</a></div></article>
+<article class="card wall"><a href="/assets/wallpapers/live-isos/wp10.jpg"><img loading="lazy" src="/assets/wallpapers/live-isos/wp10.jpg" alt="Nebula Harbour desktop wallpaper"></a><div class="body"><h3>Nebula Harbour</h3><p class="meta">wp10.jpg &middot; 2560 px JPEG &middot; ships inside both ISOs</p><a href="/assets/wallpapers/live-isos/wp10.jpg">Open full size</a></div></article>
+<article class="card wall"><a href="/assets/wallpapers/live-isos/wp11.jpg"><img loading="lazy" src="/assets/wallpapers/live-isos/wp11.jpg" alt="Quantum Atrium desktop wallpaper"></a><div class="body"><h3>Quantum Atrium</h3><p class="meta">wp11.jpg &middot; 2560 px JPEG &middot; ships inside both ISOs</p><a href="/assets/wallpapers/live-isos/wp11.jpg">Open full size</a></div></article>
+<article class="card wall"><a href="/assets/wallpapers/live-isos/wp12.jpg"><img loading="lazy" src="/assets/wallpapers/live-isos/wp12.jpg" alt="Orbital Skyline desktop wallpaper"></a><div class="body"><h3>Orbital Skyline</h3><p class="meta">wp12.jpg &middot; 2560 px JPEG &middot; ships inside both ISOs</p><a href="/assets/wallpapers/live-isos/wp12.jpg">Open full size</a></div></article>
+<article class="card wall"><a href="/assets/wallpapers/live-isos/wp13.jpg"><img loading="lazy" src="/assets/wallpapers/live-isos/wp13.jpg" alt="Aurora Glass Vista desktop wallpaper"></a><div class="body"><h3>Aurora Glass Vista</h3><p class="meta">wp13.jpg &middot; 2560 px JPEG &middot; ships inside both ISOs</p><a href="/assets/wallpapers/live-isos/wp13.jpg">Open full size</a></div></article>
+<article class="card wall"><a href="/assets/wallpapers/live-isos/wp14.jpg"><img loading="lazy" src="/assets/wallpapers/live-isos/wp14.jpg" alt="Chimera Foundry desktop wallpaper"></a><div class="body"><h3>Chimera Foundry</h3><p class="meta">wp14.jpg &middot; 2560 px JPEG &middot; ships inside both ISOs</p><a href="/assets/wallpapers/live-isos/wp14.jpg">Open full size</a></div></article>
+<article class="card wall"><a href="/assets/wallpapers/live-isos/wp15.jpg"><img loading="lazy" src="/assets/wallpapers/live-isos/wp15.jpg" alt="Octavian Observatory desktop wallpaper"></a><div class="body"><h3>Octavian Observatory</h3><p class="meta">wp15.jpg &middot; 2560 px JPEG &middot; ships inside both ISOs</p><a href="/assets/wallpapers/live-isos/wp15.jpg">Open full size</a></div></article>
+<article class="card wall"><a href="/assets/wallpapers/live-isos/wp16.jpg"><img loading="lazy" src="/assets/wallpapers/live-isos/wp16.jpg" alt="Starlit Concourse desktop wallpaper"></a><div class="body"><h3>Starlit Concourse</h3><p class="meta">wp16.jpg &middot; 2560 px JPEG &middot; ships inside both ISOs</p><a href="/assets/wallpapers/live-isos/wp16.jpg">Open full size</a></div></article>
+<article class="card wall"><a href="/assets/wallpapers/live-isos/wp17.jpg"><img loading="lazy" src="/assets/wallpapers/live-isos/wp17.jpg" alt="Neural Lattice desktop wallpaper"></a><div class="body"><h3>Neural Lattice</h3><p class="meta">wp17.jpg &middot; 2560 px JPEG &middot; ships inside both ISOs</p><a href="/assets/wallpapers/live-isos/wp17.jpg">Open full size</a></div></article>
+<article class="card wall"><a href="/assets/wallpapers/live-isos/wp18.jpg"><img loading="lazy" src="/assets/wallpapers/live-isos/wp18.jpg" alt="Horizon Array desktop wallpaper"></a><div class="body"><h3>Horizon Array</h3><p class="meta">wp18.jpg &middot; 2560 px JPEG &middot; ships inside both ISOs</p><a href="/assets/wallpapers/live-isos/wp18.jpg">Open full size</a></div></article>
+<article class="card wall"><a href="/assets/wallpapers/live-isos/wp19.jpg"><img loading="lazy" src="/assets/wallpapers/live-isos/wp19.jpg" alt="Solaris Dock desktop wallpaper"></a><div class="body"><h3>Solaris Dock</h3><p class="meta">wp19.jpg &middot; 2560 px JPEG &middot; ships inside both ISOs</p><a href="/assets/wallpapers/live-isos/wp19.jpg">Open full size</a></div></article>
+<article class="card wall"><a href="/assets/wallpapers/live-isos/wp20.jpg"><img loading="lazy" src="/assets/wallpapers/live-isos/wp20.jpg" alt="Crystal Reactor desktop wallpaper"></a><div class="body"><h3>Crystal Reactor</h3><p class="meta">wp20.jpg &middot; 2560 px JPEG &middot; ships inside both ISOs</p><a href="/assets/wallpapers/live-isos/wp20.jpg">Open full size</a></div></article>
+<article class="card wall"><a href="/assets/wallpapers/live-isos/wp21.jpg"><img loading="lazy" src="/assets/wallpapers/live-isos/wp21.jpg" alt="Aurora Drift desktop wallpaper"></a><div class="body"><h3>Aurora Drift</h3><p class="meta">wp21.jpg &middot; 2560 px JPEG &middot; ships inside both ISOs</p><a href="/assets/wallpapers/live-isos/wp21.jpg">Open full size</a></div></article>
+<article class="card wall"><a href="/assets/wallpapers/live-isos/wp22.jpg"><img loading="lazy" src="/assets/wallpapers/live-isos/wp22.jpg" alt="Deep Space Atelier desktop wallpaper"></a><div class="body"><h3>Deep Space Atelier</h3><p class="meta">wp22.jpg &middot; 2560 px JPEG &middot; ships inside both ISOs</p><a href="/assets/wallpapers/live-isos/wp22.jpg">Open full size</a></div></article>
+<article class="card wall"><a href="/assets/wallpapers/live-isos/wp23.jpg"><img loading="lazy" src="/assets/wallpapers/live-isos/wp23.jpg" alt="Chimera Skyline desktop wallpaper"></a><div class="body"><h3>Chimera Skyline</h3><p class="meta">wp23.jpg &middot; 2560 px JPEG &middot; ships inside both ISOs</p><a href="/assets/wallpapers/live-isos/wp23.jpg">Open full size</a></div></article>
+<article class="card wall"><a href="/assets/wallpapers/live-isos/wp24.jpg"><img loading="lazy" src="/assets/wallpapers/live-isos/wp24.jpg" alt="Octavian Skyline desktop wallpaper"></a><div class="body"><h3>Octavian Skyline</h3><p class="meta">wp24.jpg &middot; 2560 px JPEG &middot; ships inside both ISOs</p><a href="/assets/wallpapers/live-isos/wp24.jpg">Open full size</a></div></article>
+<article class="card wall"><a href="/assets/wallpapers/live-isos/wp25.jpg"><img loading="lazy" src="/assets/wallpapers/live-isos/wp25.jpg" alt="Aurora Study desktop wallpaper"></a><div class="body"><h3>Aurora Study</h3><p class="meta">wp25.jpg &middot; 2560 px JPEG &middot; ships inside both ISOs</p><a href="/assets/wallpapers/live-isos/wp25.jpg">Open full size</a></div></article>
+<article class="card wall"><a href="/assets/wallpapers/live-isos/wp26.jpg"><img loading="lazy" src="/assets/wallpapers/live-isos/wp26.jpg" alt="Aurora Study 26 desktop wallpaper"></a><div class="body"><h3>Aurora Study 26</h3><p class="meta">wp26.jpg &middot; 2560 px JPEG &middot; ships inside both ISOs</p><a href="/assets/wallpapers/live-isos/wp26.jpg">Open full size</a></div></article>
+</div>
+</section>
+
+<p class="notice"><strong>VoiceConnect.</strong> The cross-platform voice/chat client lives in
+<a href="https://github.com/amerhwitat/test">amerhwitat/test</a> &mdash; project notes:
+<a href="/articles/voiceconnect/">VoiceConnect articles</a>,
+<a href="/articles/voiceconnect/windows-desktop.html">Windows desktop write-up</a>,
+<a href="/articles/voiceconnect/privacy-security.html">privacy &amp; security review</a>; code:
+<a href="https://github.com/amerhwitat/test/tree/main">source</a>,
+<a href="https://github.com/amerhwitat/test/pull/10">PR #10</a>. The voice stack sources also ship inside both
+ISOs at <code>/opt/aurora/repo/voice</code>.</p>
 <section>
 <h2>VoiceConnect build artifacts</h2>
 <p class="muted">Workflow <a href="https://github.com/amerhwitat/test/actions/runs/41320620223">#259</a> · source commit <code>7077e0b56b10</code> · generated 1 Nov 2026. The workflow was still in progress when this index was prepared; the available Linux/macOS outputs below are real CI artifacts. Recheck the run for final status and later Windows output.</p>
