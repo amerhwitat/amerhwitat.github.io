@@ -21,39 +21,41 @@ header,main,footer{max-width:1180px;margin:auto;padding:24px}header{padding-top:
 <main>
 <section id="live-isos">
 <h2>Chimera II OS &amp; OctavianOS — live ISO downloads</h2>
-<p class="lede">Two bootable amd64 live images, built on 2 November 2026 from each repository's
-<code>live-image/build.sh</code>. Both boot BIOS and UEFI (GRUB 2.12), run a Debian 6.12.107 kernel with
-<code>live-boot</code> over an xz squashfs, auto-login as <code>live</code> (password <code>live</code>,
-passwordless sudo) into the project's own Aurora desktop rendered fullscreen by WebKit, and carry the
-26 offline wallpapers below plus a verbatim snapshot of the source tree at <code>/opt/aurora/repo</code>.
-Each ISO was booted under QEMU to the login prompt and its release digest verified server-side by GitHub.</p>
+<p class="lede">Two bootable amd64 live images, built from each repository's <code>live-image/build.sh</code>.
+Both boot BIOS and UEFI (GRUB 2.12), run a Debian 6.12.107 kernel with <code>live-boot</code> over an xz squashfs,
+auto-login as <code>live</code> (password <code>live</code>, passwordless sudo) into the project's own Aurora desktop
+rendered fullscreen by WebKit, and carry the 26 offline wallpapers below plus a verbatim source snapshot and offline
+app catalogs at <code>/opt/aurora/repo</code> and <code>/opt/aurora/desktop</code>. The latest rebuild fixes fullscreen
+sizing under Openbox at 1280&times;720 and 1920&times;1080; published checksums were re-verified against the assets on
+3 November 2026.</p>
 <div class="grid">
 <article class="card">
-<div class="status">Verified &middot; live ISO &middot; GitHub release asset</div>
+<div class="status">Verified &middot; live ISO &middot; fullscreen desktop fix</div>
 <h3>Chimera II OS 2026.11.02</h3>
-<p class="muted"><code>chimera-ii-os-live-amd64.iso</code><br>489,715,712 bytes (467 MiB) &middot; amd64 &middot; BIOS + UEFI &middot; Linux 6.12.107+deb13-amd64<br>Aurora WebKit kiosk &middot; Chimera II desktop</p>
-<p class="meta">SHA-256 e599df3c6b82bc7e98f152edf1d4ee26b988c842c4eace65df6b0138f4007de8</p>
-<a class="download" href="https://github.com/amerhwitat/ChimeraIIOS/releases/download/chimera-ii-os-2026.11.02/chimera-ii-os-live-amd64.iso">Download ISO</a>
-<a class="download" href="https://github.com/amerhwitat/ChimeraIIOS/releases/tag/chimera-ii-os-2026.11.02">Release + checksums</a>
-<a class="download" href="https://github.com/amerhwitat/ChimeraIIOS/blob/main/docs/releases/chimera-ii-os-2026.11.02/RELEASE.md">Build evidence</a>
+<p class="muted"><code>chimera-ii-os-live-amd64.iso</code><br>486,725,632 bytes (464 MiB) &middot; amd64 &middot; BIOS + UEFI &middot; Linux 6.12.107<br>Aurora WebKit kiosk fullscreen &middot; Chimera II desktop</p>
+<p class="meta">SHA-256 c37615113953348cbf9c18bfd1fc021db838b37b09be7abdd673b491d07b5bfc</p>
+<a class="download" href="https://github.com/amerhwitat/ChimeraIIOS/releases/download/chimera-ii-os-live-2026.11.02-desktop-64ca6a598f13/chimera-ii-os-live-amd64.iso">Download ISO</a>
+<a class="download" href="https://github.com/amerhwitat/ChimeraIIOS/releases/tag/chimera-ii-os-live-2026.11.02-desktop-64ca6a598f13">Release + checksums</a>
+<a class="download" href="https://github.com/amerhwitat/ChimeraIIOS/blob/main/docs/releases/chimera-ii-os-live-2026.11.02-desktop-64ca6a598f13/RELEASE.md">Build evidence</a>
 </article>
 <article class="card">
-<div class="status">Verified &middot; live ISO &middot; GitHub release asset</div>
+<div class="status">Verified &middot; live ISO &middot; fullscreen desktop fix</div>
 <h3>OctavianOS 2026.11.02</h3>
-<p class="muted"><code>octavian-os-live-amd64.iso</code><br>488,302,592 bytes (466 MiB) &middot; amd64 &middot; BIOS + UEFI &middot; Linux 6.12.107+deb13-amd64<br>Aurora Wayland Glass desktop &middot; openbox fallback</p>
-<p class="meta">SHA-256 41bba4d3b3b4a6cb46e025792b36458ec82ea78936fb52157fcc32d3050785ea</p>
-<a class="download" href="https://github.com/amerhwitat/OctavianOS/releases/download/octavian-os-2026.11.02/octavian-os-live-amd64.iso">Download ISO</a>
-<a class="download" href="https://github.com/amerhwitat/OctavianOS/releases/tag/octavian-os-2026.11.02">Release + checksums</a>
-<a class="download" href="https://github.com/amerhwitat/OctavianOS/blob/main/docs/releases/octavian-os-2026.11.02/RELEASE.md">Build evidence</a>
+<p class="muted"><code>octavian-os-live-amd64.iso</code><br>485,312,512 bytes (463 MiB) &middot; amd64 &middot; BIOS + UEFI &middot; Linux 6.12.107<br>Aurora Wayland Glass desktop fullscreen &middot; openbox fallback</p>
+<p class="meta">SHA-256 1904f9c055321122cabfad5e6d13a89a21243c0a56c7cf9bdfca8efb9dd90eed</p>
+<a class="download" href="https://github.com/amerhwitat/OctavianOS/releases/download/octavian-os-live-2026.11.02-desktop-4f9f4c89a2cb/octavian-os-live-amd64.iso">Download ISO</a>
+<a class="download" href="https://github.com/amerhwitat/OctavianOS/releases/tag/octavian-os-live-2026.11.02-desktop-4f9f4c89a2cb">Release + checksums</a>
+<a class="download" href="https://github.com/amerhwitat/OctavianOS/blob/main/docs/releases/octavian-os-live-2026.11.02-desktop-4f9f4c89a2cb/RELEASE.md">Build evidence</a>
 </article>
 </div>
 <p class="notice"><strong>Honest scope:</strong> these images run the Debian Linux kernel with the project's desktop,
 applications and userspace payload. They are not builds of the native Spit Fire/Koronos kernel and do not discharge the
 native userspace-handoff acceptance gates tracked in each repository's <code>docs/</code> — read the release note before
-quoting them as proof of kernel readiness.</p>
+quoting them as proof of kernel readiness. Third-party catalog entries are not installed or certified applications.</p>
 <p class="muted">Verify before booting: <code>sha256sum -c</code> against the released checksum, write with
 <code>dd bs=4M if=… of=/dev/sdX status=progress oflag=sync</code> (or any ISO-to-USB tool), then boot from it. GRUB offers
-&ldquo;Live desktop&rdquo;, &ldquo;Classic X session (openbox)&rdquo;, &ldquo;Safe graphics (nomodeset)&rdquo; and &ldquo;Verbose boot&rdquo;.</p>
+&ldquo;Live desktop&rdquo;, &ldquo;Classic X session (openbox)&rdquo;, &ldquo;Safe graphics (nomodeset)&rdquo; and &ldquo;Verbose boot&rdquo;.
+Earlier 2026.11.02 builds remain available under the repositories' previous release tags.</p>
 </section>
 
 <section id="live-iso-wallpapers">
