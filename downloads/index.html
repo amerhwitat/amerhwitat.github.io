@@ -29,24 +29,24 @@ verified boot cases. Each PASS requires the kernel-ready marker, a CPL-3-origina
 <article class="card">
 <div class="status">Verified 6/6 · native kernel</div>
 <h3>Chimera II OS — native Koronos</h3>
-<p class="muted"><code>chimera-ii-native-amd64.iso</code><br>159,342,592 bytes (152 MiB) · amd64 · BIOS + UEFI · Multiboot2 · GRUB 2.12</p>
-<p class="meta">SHA-256 cba147b488a2176a7bb92734901551f2866897af758eabc5a028e8d3dd5d2a24</p>
-<a class="download" href="https://github.com/amerhwitat/ChimeraIIOS/releases/download/chimera-ii-native-2026.11.05/chimera-ii-native-amd64.iso">Download native ISO</a>
-<a class="download" href="https://github.com/amerhwitat/ChimeraIIOS/releases/download/chimera-ii-native-2026.11.05/chimera-native-traces.zip">Boot traces</a>
-<a class="download" href="https://github.com/amerhwitat/ChimeraIIOS/blob/main/docs/releases/chimera-ii-native-2026.11.05/RELEASE.md">Release note</a>
+<p class="muted"><code>chimera-ii-native-amd64.iso</code><br>193,198,080 bytes (184 MiB) · amd64 · BIOS + UEFI · Multiboot2 · GRUB 2.12</p>
+<p class="meta">SHA-256 c1ca781eb092f8ec6221be44de6cf0ed5331690c4c2a8f2f693995c15fdf2312</p>
+<a class="download" href="https://github.com/amerhwitat/ChimeraIIOS/releases/download/chimera-ii-native-2026.11.06/chimera-ii-native-amd64.iso">Download native ISO</a>
+<a class="download" href="https://github.com/amerhwitat/ChimeraIIOS/releases/download/chimera-ii-native-2026.11.06/chimera-native-traces.zip">Boot traces</a>
+<a class="download" href="https://github.com/amerhwitat/ChimeraIIOS/blob/main/docs/releases/chimera-ii-native-2026.11.06/RELEASE.md">Release note</a>
 </article>
 <article class="card">
 <div class="status">Verified 6/6 · native kernel</div>
 <h3>OctavianOS — native Koronos</h3>
-<p class="muted"><code>octavian-native-amd64.iso</code><br>27,322,368 bytes (26 MiB) · amd64 · BIOS + UEFI · Multiboot2 · GRUB 2.12</p>
-<p class="meta">SHA-256 2f694c56ed21b74ae2306cea64c0c16e7d2bd756f9004ebdbc433c3560a41bab</p>
-<a class="download" href="https://github.com/amerhwitat/OctavianOS/releases/download/octavian-native-2026.11.05/octavian-native-amd64.iso">Download native ISO</a>
-<a class="download" href="https://github.com/amerhwitat/OctavianOS/releases/download/octavian-native-2026.11.05/octavian-native-traces.zip">Boot traces</a>
-<a class="download" href="https://github.com/amerhwitat/OctavianOS/blob/main/docs/releases/octavian-native-2026.11.05/RELEASE.md">Release note</a>
+<p class="muted"><code>octavian-native-amd64.iso</code><br>41,308,160 bytes (39 MiB) · amd64 · BIOS + UEFI · Multiboot2 · GRUB 2.12</p>
+<p class="meta">SHA-256 e477c8dbfe0dfa6b70ea38cd5901ff19234fcd2e6ce3fc667938fcaced71b86a</p>
+<a class="download" href="https://github.com/amerhwitat/OctavianOS/releases/download/octavian-native-2026.11.06/octavian-native-amd64.iso">Download native ISO</a>
+<a class="download" href="https://github.com/amerhwitat/OctavianOS/releases/download/octavian-native-2026.11.06/octavian-native-traces.zip">Boot traces</a>
+<a class="download" href="https://github.com/amerhwitat/OctavianOS/blob/main/docs/releases/octavian-native-2026.11.06/RELEASE.md">Release note</a>
 </article>
 </div>
 <p class="muted">Menu: <em>Live</em> = ring-3 text console session · <em>Installer</em> = storage/plan dry-run report (no block backend, writes nothing) ·
-<em>Recovery</em> = diagnostics report. Every entry also stages the embedded knowledge database (<code>/boot/ai/knowledge-db.json</code>, 269 entries) and the kernel reports <code>[AI  ] Knowledge database staged: 269 entries</code> on the boot trace. The Aurora HTML desktop ships in the Linux live ISO below, not in the native image.</p>
+<em>Recovery</em> = diagnostics report. Every entry also stages the embedded knowledge database (<code>/boot/ai/knowledge-db.json</code>, 373 entries) Menus hold <strong>300 s</strong> for input (120 s in sub-menus) with a live countdown. Payload also carries the full catalogue (ISA database, command sources) plus every wallpaper, icon, video, app catalogue, doc and CI workflow under <code>/payload</code>. The kernel reports <code>[AI  ] Knowledge database staged: 373 entries</code> on the boot trace. The Aurora HTML desktop ships in the Linux live ISO below, not in the native image.</p>
 <table style="width:100%;border-collapse:collapse;text-align:left;margin-top:10px">
 <thead><tr><th style="padding:6px">Case</th><th style="padding:6px">Result</th></tr></thead><tbody>
 <tr><td>Live / BIOS · UEFI</td><td>PASS · PASS</td></tr>
