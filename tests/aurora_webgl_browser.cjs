@@ -51,6 +51,8 @@ const { chromium } = require('playwright');
     assert.equal(await page.locator('#soundToggle').getAttribute('aria-pressed'), 'false');
     await page.locator('#soundToggle').click();
     assert.equal(await page.locator('#soundToggle').getAttribute('aria-pressed'), 'true');
+    await page.keyboard.press('Control+Shift+A');
+    assert.equal(await page.locator('#auroraControlPanel').evaluate(el => !el.classList.contains('hidden')), true);
     await page.locator('#toggle3D').click();
     assert.equal(await page.locator('#renderState').innerText(), '2D');
     await page.locator('#toggle3D').click();
