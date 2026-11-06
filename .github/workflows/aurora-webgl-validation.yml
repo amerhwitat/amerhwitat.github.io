@@ -1,0 +1,39 @@
+name: Aurora WebGL renderer validation
+on:
+  pull_request:
+    paths:
+      - 'apps/chimera-ii-os/web/aurora_webgl_desktops.*'
+      - 'apps/chimera-ii-os/web/desktop_profiles.json'
+      - 'apps/chimera-ii-os/web/index.html'
+      - 'apps/chimera-ii-os/docs/AURORA_WEB_GRAPHICS.md'
+      - 'tests/aurora_webgl_browser.cjs'
+      - '.github/workflows/aurora-webgl-validation.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'apps/chimera-ii-os/web/aurora_webgl_desktops.*'
+      - 'apps/chimera-ii-os/web/desktop_profiles.json'
+      - 'apps/chimera-ii-os/web/index.html'
+      - 'apps/chimera-ii-os/docs/AURORA_WEB_GRAPHICS.md'
+      - 'tests/aurora_webgl_browser.cjs'
+      - '.github/workflows/aurora-webgl-validation.yml'
+permissions:
+  contents: read
+jobs:
+  webgl-browser:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install headless Chromium
+        run: |
+          npm install --prefix "$RUNNER_TEMP/aurora-webgl-test" playwright@1.56.1
+          "$RUNNER_TEMP/aurora-webgl-test/node_modules/.bin/playwright" install --with-deps chromium
+      - name: Validate renderer syntax and browser runtime
+        env:
+          NODE_PATH: ${{ runner.temp }}/aurora-webgl-test/node_modules
+        run: |
+          node --check apps/chimera-ii-os/web/aurora_webgl_desktops.js
+          node tests/aurora_webgl_browser.cjs
