@@ -44,7 +44,7 @@ const { chromium } = require('playwright');
     // Exercise the existing full Aurora desktop as well: it must use the local
     // shader renderer rather than silently depending on a remote Three.js CDN.
     await page.goto('http://127.0.0.1:8765/apps/chimera-ii-os/web/aurora_3d_desktop.html');
-    await page.waitForFunction(() => ['WEBGL','CSS'].includes(document.querySelector('#gpuState')?.textContent || ''), null, {timeout:15000});
+    await page.waitForFunction(() => window.AuroraWebGLActive === true && document.querySelector('#gpuState')?.textContent === 'WEBGL', null, {timeout:15000});
     const desktopRenderer = await page.locator('#gpuState').innerText();
     assert.equal(desktopRenderer, 'WEBGL', 'Aurora 3D desktop should initialize WebGL in the headless test');
     await page.locator('#soundToggle').click();
