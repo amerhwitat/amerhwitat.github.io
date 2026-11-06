@@ -39,8 +39,24 @@ const { chromium } = require('playwright');
     await page.locator('#launcher').click();
     await page.locator('#profiles button').first().click();
     assert.ok((await page.locator('#desktopTitle').innerText()).length > 0);
-    assert.deepEqual(errors, [], 'page should not emit uncaught JavaScript errors');
-    console.log('Aurora WebGL browser smoke: PASS (' + renderer + ')');
+    assert.deepEqual(errors, [], 'WebGL gallery should not emit uncaught JavaScript errors');
+
+    // Exercise the existing full Aurora desktop as well: it must use the local
+    // shader renderer rather than silently depending on a remote Three.js CDN.
+    await page.goto('http://127.0.0.1:8765/apps/chimera-ii-os/web/aurora_3d_desktop.html');
+    await page.waitForFunction(() => ['WEBGL','CSS'].includes(document.querySelector('#gpuState')?.textContent || ''), null, {timeout:15000});
+    const desktopRenderer = await page.locator('#gpuState').innerText();
+    assert.equal(desktopRenderer, 'WEBGL', 'Aurora 3D desktop should initialize WebGL in the headless test');
+    await page.locator('#soundToggle').click();
+    assert.equal(await page.locator('#soundToggle').getAttribute('aria-pressed'), 'false');
+    await page.locator('#soundToggle').click();
+    assert.equal(await page.locator('#soundToggle').getAttribute('aria-pressed'), 'true');
+    await page.locator('#toggle3D').click();
+    assert.equal(await page.locator('#renderState').innerText(), '2D');
+    await page.locator('#toggle3D').click();
+    assert.equal(await page.locator('#renderState').innerText(), '3D');
+    assert.deepEqual(errors, [], 'Aurora desktop should not emit uncaught JavaScript errors');
+    console.log('Aurora WebGL browser smoke: PASS (' + renderer + '); existing desktop: ' + desktopRenderer);
   } finally {
     if (browser) await browser.close();
     server.kill('SIGTERM');
