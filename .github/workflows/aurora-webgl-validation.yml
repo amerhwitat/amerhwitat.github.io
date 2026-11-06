@@ -4,6 +4,7 @@ on:
     paths:
       - 'apps/chimera-ii-os/web/aurora_webgl_desktops.*'
       - 'apps/chimera-ii-os/web/aurora_3d_desktop.*'
+      - 'apps/chimera-test-suite/aurora_3d_desktop.*'
       - 'apps/chimera-ii-os/web/desktop_profiles.json'
       - 'apps/chimera-ii-os/web/index.html'
       - 'apps/chimera-ii-os/docs/AURORA_WEB_GRAPHICS.md'
@@ -14,6 +15,7 @@ on:
     paths:
       - 'apps/chimera-ii-os/web/aurora_webgl_desktops.*'
       - 'apps/chimera-ii-os/web/aurora_3d_desktop.*'
+      - 'apps/chimera-test-suite/aurora_3d_desktop.*'
       - 'apps/chimera-ii-os/web/desktop_profiles.json'
       - 'apps/chimera-ii-os/web/index.html'
       - 'apps/chimera-ii-os/docs/AURORA_WEB_GRAPHICS.md'
@@ -39,4 +41,5 @@ jobs:
         run: |
           node --check apps/chimera-ii-os/web/aurora_webgl_desktops.js
           node --check apps/chimera-ii-os/web/aurora_3d_desktop.js
+          node --check apps/chimera-test-suite/aurora_3d_desktop.js
           node tests/aurora_webgl_browser.cjs
