@@ -1,31 +1,28 @@
-import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js';
-
 const $ = s => document.querySelector(s);
 const esc = value => String(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-
-// Presentation-only WebGL scene. Host execution remains outside the browser boundary.
+// Self-contained WebGL 2 / WebGL 1 scene: no CDN or third-party renderer required.
 const canvas = $('#aurora3d');
-const renderer = new THREE.WebGLRenderer({canvas, antialias:true, alpha:true});
-renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
-const scene = new THREE.Scene();
-scene.fog = new THREE.FogExp2(0x07111f, .025);
-const camera = new THREE.PerspectiveCamera(55, innerWidth/innerHeight, .1, 200);
-camera.position.set(0,5,18);
-scene.add(new THREE.AmbientLight(0x8abfff,1.8));
-const lake = new THREE.Mesh(new THREE.PlaneGeometry(100,80), new THREE.MeshStandardMaterial({color:0x071b31,metalness:.7,roughness:.18,transparent:true,opacity:.9}));
-lake.rotation.x=-Math.PI/2; lake.position.y=-2; scene.add(lake);
-function ridge(z,h){const pts=[]; for(let i=0;i<=60;i++){const x=i-30; pts.push(new THREE.Vector3(x,(Math.sin(i*.62)*.7+Math.sin(i*.19)*1.8+Math.random()*.7)*h*.35-1,z));} const g=new THREE.BufferGeometry().setFromPoints(pts); scene.add(new THREE.Line(g,new THREE.LineBasicMaterial({color:0x41688c,transparent:true,opacity:.5})));}
-ridge(-5,2.2); ridge(-9,3.1); ridge(-14,4);
-const stars = new THREE.BufferGeometry(), positions=[];
-for(let i=0;i<900;i++) positions.push((Math.random()-.5)*80,Math.random()*40-2,(Math.random()-.5)*70-15);
-stars.setAttribute('position',new THREE.Float32BufferAttribute(positions,3));
-scene.add(new THREE.Points(stars,new THREE.PointsMaterial({color:0xbbe8ff,size:.045,transparent:true,opacity:.8})));
-const rings=[];
-for(let i=0;i<5;i++){const r=new THREE.Mesh(new THREE.TorusGeometry(5+i*.7,.025,8,160),new THREE.MeshBasicMaterial({color:i%2?0x8f8cff:0x55d8ff,transparent:true,opacity:.2})); r.rotation.x=1.18; r.position.y=3+i*.18; r.position.z=-8; rings.push(r); scene.add(r);}
-function resize(){camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix();renderer.setSize(innerWidth,innerHeight);}
-addEventListener('resize',resize); resize();
-function animate(t){requestAnimationFrame(animate);rings.forEach((r,i)=>{r.rotation.z=t*.00008*(i+1);r.position.x=Math.sin(t*.00025+i)*.7});renderer.render(scene,camera)} animate(0);
-
+const gl = canvas && (canvas.getContext('webgl2',{alpha:true,antialias:true}) || canvas.getContext('webgl',{alpha:true,antialias:true}));
+window.AuroraWebGLActive = Boolean(gl);
+if (gl) {
+  const webgl2 = typeof WebGL2RenderingContext !== 'undefined' && gl instanceof WebGL2RenderingContext;
+  const vs1='attribute vec2 p; varying vec2 uv; void main(){uv=p*.5+.5;gl_Position=vec4(p,0.,1.);}';
+  const fs1='precision highp float; varying vec2 uv; uniform float t; uniform vec2 res; void main(){vec2 p=(uv-.5)*vec2(res.x/max(res.y,1.),1.);float time=t*.12;float ridge=.28+.08*sin(p.x*1.8+time)+.03*sin(p.x*5.);float glow=exp(-pow(p.y-ridge,2.)*25.)*(.4+.6*(.5+.5*sin(p.x*3.+time)));float stars=step(.997,fract(sin(dot(floor(uv*res*.08),vec2(12.9,78.2)))*43758.5));vec3 c=mix(vec3(.006,.014,.04),vec3(.02,.1,.17),uv.y)+vec3(.1,.7,.98)*glow+vec3(.5,.7,1.)*stars*.7;gl_FragColor=vec4(c,.9);}';
+  const vs2='#version 300 es\nin vec2 p; out vec2 uv; void main(){uv=p*.5+.5;gl_Position=vec4(p,0.,1.);}';
+  const fs2='#version 300 es\nprecision highp float; in vec2 uv; uniform float t; uniform vec2 res; out vec4 color; void main(){vec2 p=(uv-.5)*vec2(res.x/max(res.y,1.),1.);float time=t*.12;float ridge=.28+.08*sin(p.x*1.8+time)+.03*sin(p.x*5.);float glow=exp(-pow(p.y-ridge,2.)*25.)*(.4+.6*(.5+.5*sin(p.x*3.+time)));float stars=step(.997,fract(sin(dot(floor(uv*res*.08),vec2(12.9,78.2)))*43758.5));vec3 c=mix(vec3(.006,.014,.04),vec3(.02,.1,.17),uv.y)+vec3(.1,.7,.98)*glow+vec3(.5,.7,1.)*stars*.7;color=vec4(c,.9);}';
+  function compile(type,source){const sh=gl.createShader(type);gl.shaderSource(sh,source);gl.compileShader(sh);if(!gl.getShaderParameter(sh,gl.COMPILE_STATUS))throw Error(gl.getShaderInfoLog(sh)||'shader compile failed');return sh;}
+  try {
+    const program=gl.createProgram(),v=compile(gl.VERTEX_SHADER,webgl2?vs2:vs1),f=compile(gl.FRAGMENT_SHADER,webgl2?fs2:fs1);
+    gl.attachShader(program,v);gl.attachShader(program,f);gl.linkProgram(program);
+    if(!gl.getProgramParameter(program,gl.LINK_STATUS))throw Error(gl.getProgramInfoLog(program)||'shader link failed');
+    const pos=gl.getAttribLocation(program,'p'),time=gl.getUniformLocation(program,'t'),res=gl.getUniformLocation(program,'res'),buffer=gl.createBuffer();
+    gl.bindBuffer(gl.ARRAY_BUFFER,buffer);gl.bufferData(gl.ARRAY_BUFFER,new Float32Array([-1,-1,3,-1,-1,3]),gl.STATIC_DRAW);
+    function resize(){const d=Math.min(devicePixelRatio||1,2);canvas.width=Math.max(1,Math.floor(innerWidth*d));canvas.height=Math.max(1,Math.floor(innerHeight*d));gl.viewport(0,0,canvas.width,canvas.height);}
+    function draw(now){gl.useProgram(program);gl.bindBuffer(gl.ARRAY_BUFFER,buffer);gl.enableVertexAttribArray(pos);gl.vertexAttribPointer(pos,2,gl.FLOAT,false,0,0);gl.uniform1f(time,now/1000);gl.uniform2f(res,canvas.width,canvas.height);gl.drawArrays(gl.TRIANGLES,0,3);requestAnimationFrame(draw);}
+    addEventListener('resize',resize);resize();requestAnimationFrame(draw);
+    document.documentElement.dataset.webgl=webgl2?'2':'1';
+  } catch(error){window.AuroraWebGLActive=false;canvas.style.display='none';console.warn('WebGL unavailable; using CSS fallback',error);}
+} else if(canvas) { canvas.style.display='none'; }
 let profiles=[];
 const fallbackProfiles=[
  ['aurora','Aurora Wayland Glass','linux'],['gnome','GNOME','linux'],['kde-plasma','KDE Plasma','linux'],['xfce','Xfce','linux'],['cinnamon','Cinnamon','linux'],['mate','MATE','linux'],['lxqt','LXQt','linux'],['lxde','LXDE','linux'],['budgie','Budgie','linux'],['pantheon','Pantheon','linux'],['deepin','Deepin','linux'],['enlightenment','Enlightenment','linux'],['cosmic','COSMIC','linux'],['windows-11','Windows 11','windows'],['windows-10','Windows 10','windows'],['windows-classic','Classic Windows','windows']
