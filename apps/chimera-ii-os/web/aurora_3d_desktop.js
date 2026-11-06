@@ -224,41 +224,83 @@
 
   // Three.js is an enhancement only. The desktop remains fully clickable if CDN/WebGL is unavailable.
   function initScene() {
-    if (!window.THREE) {
-      $('modeLabel') && ($('modeLabel').textContent = 'Aurora Web desktop · 2D fallback');
+    const canvas = $('aurora3dCanvas');
+    if (!canvas) return;
+    const attributes = { alpha:true, antialias:true, depth:false, stencil:false, powerPreference:'high-performance' };
+    const gl = canvas.getContext('webgl2', attributes) || canvas.getContext('webgl', attributes) || canvas.getContext('experimental-webgl', attributes);
+    if (!gl) {
+      window.AuroraWebGLActive = false;
+      $('modeLabel') && ($('modeLabel').textContent = 'Aurora Web desktop · CSS fallback (WebGL unavailable)');
+      canvas.style.display = 'none';
       return;
     }
+    const webgl2 = typeof WebGL2RenderingContext !== 'undefined' && gl instanceof WebGL2RenderingContext;
+    const vertex1 = 'attribute vec2 aPosition; varying vec2 vUv; void main(){vUv=aPosition*.5+.5;gl_Position=vec4(aPosition,0.,1.);}';
+    const fragment1 = 'precision highp float; varying vec2 vUv; uniform float uTime; uniform vec2 uResolution; uniform vec2 uPointer; void main(){vec2 uv=vUv;vec2 p=(uv-.5)*vec2(uResolution.x/max(uResolution.y,1.),1.);p.x+=uPointer.x*.025;p.y+=uPointer.y*.02;float t=uTime*.12;float ridge=.30+.07*sin(p.x*1.8+t*.55)+.035*sin(p.x*5.2-t);float band=exp(-pow((p.y-ridge),2.)*28.);float veil=sin(p.x*3.1+t+sin(p.y*5.0)*.8)*.5+.5;float aurora=band*(.35+.65*veil);float horizon=exp(-abs(p.y+.23)*3.2);float stars=step(.997,fract(sin(dot(floor(uv*uResolution*.08),vec2(12.9898,78.233)))*43758.5453));vec3 base=mix(vec3(.006,.015,.04),vec3(.025,.105,.17),uv.y);vec3 color=base+vec3(.12,.76,.98)*aurora*.72+vec3(.30,.24,.82)*aurora*.22+vec3(.06,.22,.34)*horizon*.25;color+=vec3(.65,.84,1.)*stars*.75;float vignette=1.-smoothstep(.18,1.12,length((uv-.5)*vec2(1.,.82)));gl_FragColor=vec4(color*vignette,.88);}';
+    const vertex2 = '#version 300 es\nin vec2 aPosition; out vec2 vUv; void main(){vUv=aPosition*.5+.5;gl_Position=vec4(aPosition,0.,1.);}';
+    const fragment2 = '#version 300 es\nprecision highp float; in vec2 vUv; uniform float uTime; uniform vec2 uResolution; uniform vec2 uPointer; out vec4 outColor; void main(){vec2 uv=vUv;vec2 p=(uv-.5)*vec2(uResolution.x/max(uResolution.y,1.),1.);p.x+=uPointer.x*.025;p.y+=uPointer.y*.02;float t=uTime*.12;float ridge=.30+.07*sin(p.x*1.8+t*.55)+.035*sin(p.x*5.2-t);float band=exp(-pow((p.y-ridge),2.)*28.);float veil=sin(p.x*3.1+t+sin(p.y*5.0)*.8)*.5+.5;float aurora=band*(.35+.65*veil);float horizon=exp(-abs(p.y+.23)*3.2);float stars=step(.997,fract(sin(dot(floor(uv*uResolution*.08),vec2(12.9898,78.233)))*43758.5453));vec3 base=mix(vec3(.006,.015,.04),vec3(.025,.105,.17),uv.y);vec3 color=base+vec3(.12,.76,.98)*aurora*.72+vec3(.30,.24,.82)*aurora*.22+vec3(.06,.22,.34)*horizon*.25;color+=vec3(.65,.84,1.)*stars*.75;float vignette=1.-smoothstep(.18,1.12,length((uv-.5)*vec2(1.,.82)));outColor=vec4(color*vignette,.88);}';
+    function compile(type, source) {
+      const shader = gl.createShader(type);
+      gl.shaderSource(shader, source);
+      gl.compileShader(shader);
+      if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
+        const message = gl.getShaderInfoLog(shader) || 'Aurora shader compile failed';
+        gl.deleteShader(shader);
+        throw new Error(message);
+      }
+      return shader;
+    }
     try {
-      const canvas = $('aurora3dCanvas');
-      const scene = new THREE.Scene();
-      scene.fog = new THREE.FogExp2(0x071426,0.018);
-      const camera = new THREE.PerspectiveCamera(55,innerWidth/innerHeight,0.1,500);
-      camera.position.set(0,5,22);
-      const renderer = new THREE.WebGLRenderer({canvas,antialias:true,alpha:true});
-      renderer.setPixelRatio(Math.min(devicePixelRatio,2));
-      renderer.setSize(innerWidth,innerHeight);
-      const world = new THREE.Group(); scene.add(world);
-      world.add(new THREE.HemisphereLight(0xb9ddff,0x07101d,2.1));
-      const sun = new THREE.DirectionalLight(0x9acfff,2.5); sun.position.set(8,12,6); world.add(sun);
-      const lake = new THREE.Mesh(new THREE.PlaneGeometry(180,90),new THREE.MeshStandardMaterial({color:0x0a2038,roughness:.2,metalness:.25,transparent:true,opacity:.82}));
-      lake.rotation.x=-Math.PI/2; lake.position.y=-3; world.add(lake);
-      const mountains = new THREE.Group();
-      for(let i=0;i<16;i++){const h=3+Math.random()*8,w=5+Math.random()*8,m=new THREE.Mesh(new THREE.ConeGeometry(w,h,5),new THREE.MeshStandardMaterial({color:0x183a58,roughness:1}));m.position.set((i-8)*7+Math.random()*3,h/2-3,-8-Math.random()*10);m.rotation.y=Math.random()*Math.PI;mountains.add(m);}
-      world.add(mountains);
-      const aurora = new THREE.Group();
-      for(let i=0;i<9;i++){const g=new THREE.TorusGeometry(5+i*.65,.025+i*.008,8,160,Math.PI*1.35),m=new THREE.MeshBasicMaterial({color:i%2?0x8d7cff:0x67dfff,transparent:true,opacity:.16}),r=new THREE.Mesh(g,m);r.position.y=3+i*.35;r.rotation.x=Math.PI/2.5;r.rotation.z=i*.08;aurora.add(r);}
-      world.add(aurora);
-      const stars = new THREE.Points(new THREE.BufferGeometry(),new THREE.PointsMaterial({color:0xdaf3ff,size:.07,transparent:true,opacity:.7}));
-      const pos=[]; for(let i=0;i<1200;i++)pos.push((Math.random()-.5)*180,Math.random()*55-5,-Math.random()*100);
-      stars.geometry.setAttribute('position',new THREE.Float32BufferAttribute(pos,3)); world.add(stars);
-      function resize(){camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix();renderer.setSize(innerWidth,innerHeight);}
+      const vs = compile(gl.VERTEX_SHADER, webgl2 ? vertex2 : vertex1);
+      const fs = compile(gl.FRAGMENT_SHADER, webgl2 ? fragment2 : fragment1);
+      const program = gl.createProgram();
+      gl.attachShader(program, vs); gl.attachShader(program, fs); gl.linkProgram(program);
+      gl.deleteShader(vs); gl.deleteShader(fs);
+      if (!gl.getProgramParameter(program, gl.LINK_STATUS)) throw new Error(gl.getProgramInfoLog(program) || 'Aurora shader link failed');
+      const position = gl.getAttribLocation(program, 'aPosition');
+      const time = gl.getUniformLocation(program, 'uTime');
+      const resolution = gl.getUniformLocation(program, 'uResolution');
+      const pointer = gl.getUniformLocation(program, 'uPointer');
+      const buffer = gl.createBuffer();
+      gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
+      gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1,3,-1,-1,3]), gl.STATIC_DRAW);
+      let px=0, py=0, frame=0, running=true;
+      function resize() {
+        const ratio=Math.min(devicePixelRatio||1,2);
+        const width=Math.max(1,Math.floor(innerWidth*ratio));
+        const height=Math.max(1,Math.floor(innerHeight*ratio));
+        if(canvas.width!==width||canvas.height!==height){canvas.width=width;canvas.height=height;}
+        gl.viewport(0,0,width,height);
+      }
       addEventListener('resize',resize);
-      addEventListener('pointermove',e=>{world.rotation.y=((e.clientX/innerWidth)-.5)*.02;world.rotation.x=((e.clientY/innerHeight)-.5)*-.025;});
-      function animate(t){requestAnimationFrame(animate);aurora.rotation.y=t*.00005;stars.rotation.y=t*.000003;renderer.render(scene,camera);}
-      animate(0);
-    } catch (err) {
-      console.warn('Aurora 3D renderer unavailable; keeping HTML desktop active.',err);
-      $('modeLabel') && ($('modeLabel').textContent='Aurora Web desktop · 2D fallback');
+      addEventListener('pointermove',event=>{px=event.clientX/Math.max(1,innerWidth)-.5;py=event.clientY/Math.max(1,innerHeight)-.5;},{passive:true});
+      canvas.addEventListener('webglcontextlost',event=>{
+        event.preventDefault(); running=false; window.AuroraWebGLActive=false;
+        $('modeLabel') && ($('modeLabel').textContent='Aurora Web desktop · WebGL context lost');
+      });
+      function draw(now) {
+        if(!running)return;
+        gl.useProgram(program);
+        gl.bindBuffer(gl.ARRAY_BUFFER,buffer);
+        gl.enableVertexAttribArray(position);
+        gl.vertexAttribPointer(position,2,gl.FLOAT,false,0,0);
+        gl.uniform1f(time,now/1000);
+        gl.uniform2f(resolution,canvas.width,canvas.height);
+        gl.uniform2f(pointer,px,py);
+        gl.drawArrays(gl.TRIANGLES,0,3);
+        frame=requestAnimationFrame(draw);
+      }
+      resize();
+      window.AuroraWebGLActive=true;
+      window.AuroraWebGLVersion=webgl2?'WebGL 2':'WebGL 1 fallback';
+      $('modeLabel') && ($('modeLabel').textContent='Aurora Web desktop · '+window.AuroraWebGLVersion);
+      canvas.style.display='block';
+      frame=requestAnimationFrame(draw);
+    } catch (error) {
+      window.AuroraWebGLActive=false;
+      console.warn('Aurora WebGL initialization failed; retaining the interactive desktop UI.',error);
+      $('modeLabel') && ($('modeLabel').textContent='Aurora Web desktop · CSS fallback');
+      canvas.style.display='none';
     }
   }
   loadAuroraApplicationRegistry();
@@ -335,7 +377,7 @@
       telemetry.fps=Math.round((telemetry.frames*1000)/Math.max(1,elapsed));
       telemetry.frames=0; telemetry.last=now;
       if($('fpsState')) $('fpsState').textContent=telemetry.fps+' FPS';
-      if($('gpuState')) $('gpuState').textContent=window.THREE?'WEBGL':'2D';
+      if($('gpuState')) $('gpuState').textContent=window.AuroraWebGLActive?'WEBGL':'CSS';
     },1000);
     const oldOpenRoute=openRoute;
     openRoute=(title,path)=>{say('Opening '+title,'busy');oldOpenRoute(title,path);setTimeout(()=>say(title+' ready'),500);};
