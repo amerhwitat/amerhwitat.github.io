@@ -58,7 +58,13 @@ const { chromium } = require('playwright');
     await page.locator('#toggle3D').click();
     assert.equal(await page.locator('#renderState').innerText(), '3D');
     assert.deepEqual(errors, [], 'Aurora desktop should not emit uncaught JavaScript errors');
-    console.log('Aurora WebGL browser smoke: PASS (' + renderer + '); existing desktop: ' + desktopRenderer);
+
+    await page.goto('http://127.0.0.1:8765/apps/chimera-test-suite/aurora_3d_desktop.html');
+    await page.waitForFunction(() => window.AuroraWebGLActive === true, null, {timeout:15000});
+    await page.locator('#openTerminal').click();
+    assert.equal(await page.locator('#terminalWindow').evaluate(el => !el.classList.contains('hidden')), true);
+    assert.deepEqual(errors, [], 'Aurora test desktop should not emit uncaught JavaScript errors');
+    console.log('Aurora WebGL browser smoke: PASS (' + renderer + '); existing desktop: ' + desktopRenderer + '; test desktop: WebGL');
   } finally {
     if (browser) await browser.close();
     server.kill('SIGTERM');
