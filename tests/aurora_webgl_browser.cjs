@@ -29,7 +29,7 @@ const { chromium } = require('playwright');
     await page.locator('#renderScale').evaluate(el => {el.value='120';el.dispatchEvent(new Event('input',{bubbles:true}));});
     assert.equal(await page.locator('#scaleValue').innerText(), '120%');
     await page.locator('#motionToggle').uncheck();
-    await page.locator('#settingsDialog button[value=close]').click();
+    await page.getByRole('button', { name: 'Close settings', exact: true }).click();
     await page.locator('#runtime').click();
     const runtime = await page.locator('#runtimeContent').innerText();
     assert.match(runtime, /Native OpenGL \/ EGL/);
