@@ -17,6 +17,7 @@ const apps = [
   { icon: "🖥️", name: "Amiga Emulator", description: "Amiga browser interface with user-supplied disks and firmware; native PUAE core remains local-only.", href: "https://amerhwitat.github.io/apps/nlp-amiga/index.html" },
   { icon: "🌊", name: "Marine", description: "Open the Marine desktop web preview.", href: "https://amerhwitat.github.io/apps/octavianos/marine/index.html" },
   { icon: "✨", name: "Aurora", description: "Open the Aurora Wayland Glass desktop web preview.", href: "https://amerhwitat.github.io/apps/octavianos/aurora/index.html" },
+  { icon: "🎮", name: "GPU Desktop / WebGL", description: "Launch Aurora's WebGL 2 renderer with WebGL 1 fallback; native OpenGL remains an OS userspace backend.", href: "https://amerhwitat.github.io/apps/chimera-ii-os/web/aurora_webgl_desktops.html" },
   { icon: "📊", name: "System Monitor", description: "Open the hosted system health dashboard.", href: "https://amerhwitat.github.io/apps/chimera-ii-os/web/health.html" },
 ];
 

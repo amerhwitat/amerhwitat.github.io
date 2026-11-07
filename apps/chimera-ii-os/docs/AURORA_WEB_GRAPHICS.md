@@ -1,37 +1,22 @@
 # Aurora Web Graphics Architecture
 
-Aurora's browser interface uses Three.js as a high-level 3D scene layer over WebGL 2. The native Aurora compositor remains conceptually separate: native Linux uses Wayland/EGL/OpenGL, while the browser uses WebGL, whose API is based on OpenGL ES. This preserves an explicit native-vs-web boundary.
+Aurora has two deliberately separate graphics paths:
 
-## Performance strategy
+- **Native desktop:** OpenGL/EGL (and, where available, Vulkan) in the Aurora userspace compositor. These libraries and development headers belong in the Linux/hosted desktop image; a freestanding Koronos kernel does not link desktop GL libraries.
+- **Browser desktop:** WebGL 2, with a WebGL 1 fallback, using a local GLSL shader pipeline on an HTML canvas. GitHub Pages cannot access the host's native OpenGL context or a running Koronos kernel.
 
-- WebGL 2 backend through Three.js `WebGLRenderer`.
-- `powerPreference: high-performance` where supported.
-- Antialiasing disabled by default for lower GPU bandwidth.
-- Device-pixel-ratio capped at 2 to avoid pathological 4K/retina fill-rate costs.
-- `setAnimationLoop()` is used for the render loop.
-- `BufferGeometry` keeps vertex data in GPU-friendly buffers.
-- `InstancedMesh` batches repeated objects into fewer draw calls.
-- Resize events update the camera only when the drawing surface changes.
-- Avoid per-frame allocation in the hot render path.
-- Explicit disposal prevents GPU resource leaks.
+## Browser runtime
 
-## Native graphics correspondence
+The Aurora WebGL Desktop Gallery is self-contained and does not require a third-party JavaScript renderer CDN. It requests WebGL 2 first and falls back to WebGL 1, compiles/links GLSL shaders, renders an animated Aurora scene, handles resize, capped pixel ratio, reduced motion, render scaling, fullscreen and context loss/restoration. Runtime telemetry reports actual browser state and does not claim that a native Koronos service is running on the static site.
 
-| Aurora native | Aurora web |
-|---|---|
-| Wayland surface | Canvas/WebGL surface |
-| EGL context | WebGL2 context |
-| OpenGL/GLSL | WebGL2/GLSL ES |
-| DMA-BUF / zero-copy | Browser-managed GPU resources |
-| compositor frame | Three.js render loop |
-| GPU buffers | BufferGeometry / InstancedMesh |
+Open: https://amerhwitat.github.io/apps/chimera-ii-os/web/aurora_webgl_desktops.html
 
-The web layer does **not** claim to expose DMA-BUF or native OpenGL directly. Those are native compositor capabilities. The web implementation provides a performance-oriented visualization and architecture-control surface.
+## Native runtime packages
 
-## Sources
+The Chimera/Octavian Linux desktop image should include Mesa runtime and development components: \`libgl1\`, \`libglx-mesa0\`, \`libegl1\`, \`libgles2\`, \`libgl-dev\`, \`libegl-dev\`, \`libgles-dev\`, \`libgbm1\`, \`libgl1-mesa-dri\`, and \`mesa-utils\`.
 
-- Three.js WebGLRenderer: https://threejs.org/docs/pages/WebGLRenderer.html
-- Three.js BufferGeometry: https://threejs.org/docs/pages/BufferGeometry.html
-- Three.js InstancedMesh: https://threejs.org/docs/pages/InstancedMesh.html
-- Khronos WebGL: https://www.khronos.org/webgl/
-- Khronos OpenGL Registry: https://registry.khronos.org/OpenGL/
+These provide OpenGL/GLX/EGL/GLES userspace libraries and diagnostics for a hosted Linux desktop. They do not create a hardware driver for every GPU; kernel DRM/KMS drivers and firmware remain hardware-specific.
+
+## Validation
+
+The browser workflow checks JavaScript syntax and source contracts, then runs the page in headless Chromium with SwiftShader. That proves a software WebGL path in CI; physical GPU acceleration still needs testing on actual hardware.
