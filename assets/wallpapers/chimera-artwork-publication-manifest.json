@@ -1,0 +1,58 @@
+{
+  "schema": "PROJECT-ARTWORK-PUBLICATION-1",
+  "generated_at": "2026-11-08",
+  "source_repository": "https://github.com/amerhwitat/ChimeraIIOS",
+  "source_branch": "main",
+  "note": "Source SVGs copied unchanged. Publication is a visual asset mirror, not ISO/runtime acceptance evidence. Licensing for each source file remains governed by its source repository; the original research-horizon wallpaper is marked CC0-1.0 in the Chimera artwork manifest.",
+  "assets": [
+    {
+      "file": "chimera-aurora-desktop.svg",
+      "source": "desktop/aurora/assets/aurora-desktop.svg",
+      "source_blob": "2fbd8595c6ea065803c837093b40878945d2ed67",
+      "role": "desktop"
+    },
+    {
+      "file": "chimera-aurora-library.svg",
+      "source": "desktop/aurora/assets/aurora-library.svg",
+      "source_blob": "4ebaa295415d07923972deb3ef2d093c6a6af54",
+      "role": "library"
+    },
+    {
+      "file": "chimera-aurora-installer.svg",
+      "source": "desktop/aurora/assets/aurora-installer.svg",
+      "source_blob": "bcb2684f143be370c1115f8b11e3941c3d96d350",
+      "role": "installer"
+    },
+    {
+      "file": "chimera-aurora-wayland-glass.svg",
+      "source": "desktop/aurora/assets/aurora-wayland-glass.svg",
+      "source_blob": "7353b59fda9ab965cae1ee622d1fec7054d747e5",
+      "role": "desktop-wallpaper"
+    },
+    {
+      "file": "chimera-infinite-research-horizon-4k.svg",
+      "source": "desktop/aurora/assets/chimera-infinite-research-horizon-3840x2160.svg",
+      "source_blob": "f2e64453edd7929326a6eab66e417de0bc1da644",
+      "role": "desktop-wallpaper",
+      "license": "CC0-1.0"
+    },
+    {
+      "file": "chimera-aurora-boot-splash-4k.svg",
+      "source": "boot/splash/aurora_boot_splash.svg",
+      "source_blob": "b2cd57f9fdea18f02b16b507cbd341819473ec44",
+      "role": "boot-splash"
+    },
+    {
+      "file": "chimera-jasper-boot.svg",
+      "source": "boot/splash/jasper_background.svg",
+      "source_blob": "d029b2b434b30b05c48d68cf7df365f7e0ff0cfa",
+      "role": "boot-manager"
+    },
+    {
+      "file": "chimera-spitfire-boot.svg",
+      "source": "boot/splash/spitfire_background.svg",
+      "source_blob": "dc96b34d1ea97c32941d86feaea2732d87ae9741",
+      "role": "boot-manager"
+    }
+  ]
+}
