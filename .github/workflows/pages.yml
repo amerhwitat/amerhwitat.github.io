@@ -37,6 +37,13 @@ jobs:
           python3 -m py_compile scripts/build_amiga_desktop_adfs.py
           python3 scripts/build_amiga_desktop_adfs.py
           test "$(find downloads/amiga -maxdepth 1 -name '*.adf' | wc -l)" -eq 4
+      - name: Upload generated Amiga floppy images for review
+        uses: actions/upload-artifact@v4
+        with:
+          name: chimera-octavian-amiga-adf-disks
+          path: downloads/amiga/
+          if-no-files-found: error
+          retention-days: 14
       - name: Validate browser network console JavaScript
         run: node --check apps/network-console/app.js
       - name: Validate embedded desktop artwork JavaScript
