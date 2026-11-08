@@ -30,6 +30,13 @@ jobs:
         run: python3 scripts/check_wallet_python_catalog.py
       - name: Check Python catalog generator syntax
         run: python3 -m py_compile scripts/refresh_wallet_python_catalog.py
+      - name: Build and inspect Amiga desktop ADF images for PR validation
+        run: |
+          python3 -m pip install --user --disable-pip-version-check amitools
+          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+          python3 -m py_compile scripts/build_amiga_desktop_adfs.py
+          python3 scripts/build_amiga_desktop_adfs.py
+          test "$(find downloads/amiga -maxdepth 1 -name '*.adf' | wc -l)" -eq 4
       - name: Validate browser network console JavaScript
         run: node --check apps/network-console/app.js
       - name: Validate embedded desktop artwork JavaScript
@@ -103,6 +110,13 @@ jobs:
         run: python3 scripts/sync_ancient_language_registry.py
       - name: Apply Aurora runtime to all pages
         run: python3 scripts/apply_aurora_runtime.py
+      - name: Build and inspect Amiga desktop ADF images for publication
+        run: |
+          python3 -m pip install --user --disable-pip-version-check amitools
+          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+          python3 -m py_compile scripts/build_amiga_desktop_adfs.py
+          python3 scripts/build_amiga_desktop_adfs.py
+          test "$(find downloads/amiga -maxdepth 1 -name '*.adf' | wc -l)" -eq 4
       - name: Test site-local link resolution
         run: python3 -m unittest scripts/test_check_site_links.py
       - name: Check local site links
