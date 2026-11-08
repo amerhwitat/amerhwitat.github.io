@@ -13,6 +13,7 @@ import json
 import os
 from pathlib import Path
 import shutil
+import struct
 import subprocess
 import sys
 
@@ -160,6 +161,18 @@ def main() -> None:
             boot = stream.read(1024)
         if boot[:4] != b"DOS\\0":
             raise SystemExit(f"{image.name}: missing AmigaDOS boot signature")
+        words = list(struct.unpack(">256I", boot))
+        stored_checksum = words[1]
+        words[1] = 0
+        checksum_sum = 0
+        for word in words:
+            previous = checksum_sum
+            checksum_sum = (checksum_sum + word) & 0xFFFFFFFF
+            if checksum_sum < previous:
+                checksum_sum = (checksum_sum + 1) & 0xFFFFFFFF
+        expected_checksum = (~checksum_sum) & 0xFFFFFFFF
+        if stored_checksum != expected_checksum:
+            raise SystemExit(f"{image.name}: invalid Amiga boot-block checksum")
         listing = run(str(image), "list")
         if "Startup-Sequence" not in listing or "README.TXT" not in listing:
             raise SystemExit(f"{image.name}: required boot/menu files are missing")
