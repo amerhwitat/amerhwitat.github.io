@@ -159,7 +159,7 @@ def main() -> None:
             raise SystemExit(f"{image.name}: expected {ADF_BYTES} bytes, got {image.stat().st_size}")
         with image.open("rb") as stream:
             boot = stream.read(1024)
-        if boot[:4] != b"DOS\\0":
+        if boot[:4] != b"DOS\0":
             raise SystemExit(f"{image.name}: missing AmigaDOS boot signature")
         words = list(struct.unpack(">256I", boot))
         stored_checksum = words[1]
