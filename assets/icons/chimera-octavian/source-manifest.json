@@ -25,7 +25,7 @@
   "native_core_fallback": {
     "source_repository": "amerhwitat/ChimeraIIOS",
     "source_path": "desktop/aurora/icons/chimera_icons.cpp",
-    "source_blob": "fetched-from-main-during-publication",
+    "source_blob": "1576d756e31767131aeb16f59afa6e1354b39022",
     "icons": [
       "settings",
       "terminal",
