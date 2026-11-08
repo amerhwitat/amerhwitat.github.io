@@ -18,6 +18,7 @@ CI artifacts are temporary outputs and may require GitHub sign-in. They are not 
 - **[Portfolio GUI Migration Dashboard](apps/portfolio-migration/index.html):** filterable cross-repository inventory of application migration candidates, target technologies and explicit verification states.
 - **[Portfolio GUI migration plan](docs/PORTFOLIO_GUI_MIGRATION.md):** architecture and acceptance guidance for Angular/TypeScript, Next.js/TypeScript, Spring Boot APIs, JavaFX/Swing, Python GUI ports, and native-code web bridges.
 - **Desktop identities:** retain **Aurora Wayland Glass Desktop** and **Marine Desktop** across ChimeraIIOS and OctavianOS.
+- **[Shared 133-symbol desktop icon library](artwork/chimera-aurora/):** original application and launcher SVGs imported from both OS repositories, with source provenance and searchable previews.
 
 ## Complete source-code citation index
 
