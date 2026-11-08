@@ -17,6 +17,12 @@ This page describes the boot pipeline and desktop server boundaries. It follows 
 
 The Jasper/Gates/GRUB menus use a visible 300-second timeout before selecting the default entry.
 
+## Windows startup comparison
+
+Microsoft documents Windows startup as PreBoot/UEFI → Windows Boot Manager/BCD → OS Loader (winload.exe/winload.efi) → NT kernel → Session Manager (Smss.exe) → services and user session. Koronos maps these roles conceptually to firmware/Spit Fire → Jasper/Gates/GRUB2 → Koronos kernel and driver bootstrap → Kore and the selected ring-3 target → Aurora session. These are architectural analogies only: Koronos does not implement the Windows kernel ABI, BCD, PE loader or Windows driver model.
+
+Reference: [Microsoft Windows startup phases](https://learn.microsoft.com/windows/client-management/advanced-troubleshooting-boot-problems) and [Windows 11 Secure Boot / Trusted Boot](https://learn.microsoft.com/en-us/windows/security/operating-system-security/system-security/trusted-boot).
+
 ## Koronos status and boundaries
 
 The x86-64 boot path validates its Multiboot2 boot context, scans modules, initializes memory/address-space subsystems, registers drivers and bootstrap services, and can launch an explicit ring-3 target ELF after initramfs validation.
