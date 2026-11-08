@@ -37,7 +37,7 @@ def make_code(title: str, subtitle: str) -> bytes:
                "NOT THE FULL KORONOS GUI\r\r\0").encode("ascii")
     # LD HL, message; loop: LD A,(HL); OR A; JR Z,done; RST 10h;
     # INC HL; JR loop; done: RET. Relative branches are calculated below.
-    code = bytearray([0x21, 0, 0, 0x7E, 0xB7, 0x28, 0x06,
+    code = bytearray([0x21, 0, 0, 0x7E, 0xB7, 0x28, 0x04,
                       0xD7, 0x23, 0x18, 0xF8, 0xC9])
     message_addr = BASE + len(code)
     code[1:3] = message_addr.to_bytes(2, "little")
