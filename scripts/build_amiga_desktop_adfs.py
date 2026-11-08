@@ -10,12 +10,10 @@ from __future__ import annotations
 
 import hashlib
 import json
-import os
 from pathlib import Path
 import shutil
 import struct
 import subprocess
-import sys
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "downloads" / "amiga"
@@ -187,7 +185,7 @@ def main() -> None:
             "sha256": hashlib.sha256(image.read_bytes()).hexdigest(),
             "boot_signature": boot[:4].decode("ascii", errors="replace"),
             "startup_sequence": "S/Startup-Sequence",
-            "validation": "ADF size, DOS signature, filesystem listing and startup text verified",
+            "validation": "ADF size, DOS signature, boot-block checksum, filesystem listing and startup text verified",
         })
         startup.unlink()
         about.unlink()
