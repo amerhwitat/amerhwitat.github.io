@@ -34,6 +34,7 @@ jobs:
         run: |
           python3 -m pip install --user --disable-pip-version-check amitools
           echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+          export PATH="$HOME/.local/bin:$PATH"
           python3 -m py_compile scripts/build_amiga_desktop_adfs.py
           python3 scripts/build_amiga_desktop_adfs.py
           test "$(find downloads/amiga -maxdepth 1 -name '*.adf' | wc -l)" -eq 4
