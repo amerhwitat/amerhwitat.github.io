@@ -9,7 +9,7 @@
 </style>
 </head>
 <body><main class="wrap">
-<p><a href="../desktops/">← Desktop gallery</a> · <a href="/">Main website</a></p>
+<p><a href="../desktops/">← Desktop gallery</a> · <a href="/">Main website</a> · <a href="../apps/nlp-amiga/">Open browser Amiga emulator ↗</a></p>
 <h1>Amiga Floppy Editions</h1>
 <p class="muted">Four profile-specific, bootable AmigaDOS floppy launch menus for classic Amiga emulators. Built as standard 880 KiB ADF images with an OFS filesystem and a 1.x-compatible boot block.</p>
 <div class="warn"><strong>Compatibility scope:</strong> these are lightweight CLI desktop launch-menu editions for an Amiga 500-class 68000 with a legally obtained Kickstart 1.3 ROM. They are not full ports of the modern Aurora/Marine GUI desktops, and no Kickstart or Workbench ROM/software is bundled.</div>
@@ -19,6 +19,6 @@
 <article class="card"><h2>OctavianOS · Aurora</h2><p class="muted">Creative glass theme and Amiga CLI boot menu.</p><a class="download" href="../downloads/amiga/octavian-aurora.adf" download>Download ADF</a><p class="meta">880 KiB · OFS · Amiga 500 baseline</p></article>
 <article class="card"><h2>OctavianOS · Marine</h2><p class="muted">Navy/aqua productivity theme and Amiga CLI boot menu.</p><a class="download" href="../downloads/amiga/octavian-marine.adf" download>Download ADF</a><p class="meta">880 KiB · OFS · Amiga 500 baseline</p></article>
 </section>
-<section class="card"><h2>Build manifest and reproducibility</h2><p class="muted">The deployment workflow builds each disk from its checked-in startup-sequence source using the open-source amitools <code>xdftool</code>, verifies the ADF size, AmigaDOS boot signature, filesystem contents and startup text, and writes SHA-256 hashes to the manifest.</p><a class="download" href="../downloads/amiga/manifest.json">Open build manifest</a><p class="meta">The images become available after the website deployment workflow completes successfully.</p></section>
+<section class="card"><h2>Try the disks in the browser emulator</h2><p class="muted">Open the existing Aurora Amiga Emulator, provide your legally obtained Kickstart ROM, and load one of the ADF files into DF0. The emulator page also links to vAmigaWeb as a browser fallback.</p><a class="download" href="../apps/nlp-amiga/">Open Aurora Amiga Emulator ↗</a></section><section class="card"><h2>Build manifest and reproducibility</h2><p class="muted">The deployment workflow builds each disk from its checked-in startup-sequence source using the open-source amitools <code>xdftool</code>, verifies the ADF size, AmigaDOS boot signature, filesystem contents and startup text, and writes SHA-256 hashes to the manifest.</p><a class="download" href="../downloads/amiga/manifest.json">Open build manifest</a><p class="meta">The images become available after the website deployment workflow completes successfully.</p></section>
 <section class="card"><h2>What the floppy contains</h2><p class="muted">A bootable OFS volume, startup sequence, profile text, and emulator setup instructions. The boot sequence presents a text menu and leaves the Amiga CLI available for commands. It does not contain a native Koronos kernel, modern X server, browser engine, full Workbench, DOS application collection, or full modern desktop GUI.</p></section>
 </main></body></html>
