@@ -29,5 +29,57 @@ article img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;backgrou
 <article><img src="../assets/wallpapers/chimera-jasper-boot.svg" alt="Jasper boot manager visual"><div><h2>Jasper Boot Manager</h2><small>Boot artwork · 1920 × 1080</small><p><a href="../assets/wallpapers/chimera-jasper-boot.svg">Open SVG source</a></p></div></article>
 <article><img src="../assets/wallpapers/chimera-spitfire-boot.svg" alt="Spit Fire boot visual"><div><h2>Spit Fire Boot</h2><small>Boot artwork · 1920 × 1080</small><p><a href="../assets/wallpapers/chimera-spitfire-boot.svg">Open SVG source</a></p></div></article>
 </section>
+
+<section class="icon-library" aria-labelledby="icons-title">
+  <p class="tag">133 ORIGINAL SVG SYMBOLS · TWO REPOSITORIES</p>
+  <h2 id="icons-title">Aurora & Marine application icon library</h2>
+  <p>The same shared, original SVG sprite and manifest are maintained in ChimeraIIOS and OctavianOS. This site publishes one deduplicated copy and records both source revisions. Icon presence is visual catalogue coverage only; it does not claim that an application is installed, licensed for redistribution, ported or launchable.</p>
+  <label class="icon-search">Filter icons <input id="icon-filter" type="search" placeholder="Search by app name, ID or category" autocomplete="off"></label>
+  <p id="icon-count" aria-live="polite">Loading icon manifest…</p>
+  <div id="icon-grid" class="icon-grid"></div>
+  <noscript><p>Enable JavaScript to browse the searchable 133-symbol catalogue. <a href="../../assets/icons/chimera-octavian/catalog.svg">Open the SVG sprite</a> or <a href="../../assets/icons/chimera-octavian/manifest.json">read the manifest</a>.</p></noscript>
+  <p><a href="../../assets/icons/chimera-octavian/catalog.svg">Open complete SVG sprite</a> · <a href="../../assets/icons/chimera-octavian/manifest.json">Open icon manifest</a> · <a href="../../assets/icons/chimera-octavian/source-manifest.json">Source provenance</a></p>
+</section>
+<style>
+.icon-library{margin-top:48px;padding:26px;border:1px solid var(--line);border-radius:20px;background:linear-gradient(145deg,#142943bb,#091629dd)}
+.icon-library h2{font-size:clamp(1.5rem,3vw,2.1rem);margin:.3em 0}
+.icon-search{display:grid;gap:7px;max-width:520px;color:var(--muted);font-size:.9rem}
+.icon-search input{width:100%;padding:12px 14px;border-radius:12px;border:1px solid #42617d;background:#071326;color:var(--fg);font:inherit}
+.icon-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(112px,1fr));gap:10px;margin-top:18px}
+.icon-card{min-width:0;padding:12px 8px;border:1px solid #29445f;border-radius:13px;background:#0b192b;text-align:center}
+.icon-card svg{display:block;width:48px;height:48px;margin:0 auto 8px}
+.icon-card strong{display:block;font-size:.78rem;line-height:1.3;overflow-wrap:anywhere}
+.icon-card small{display:block;margin-top:4px;font-size:.66rem;overflow-wrap:anywhere}
+.icon-card[hidden]{display:none}
+</style>
+<script>
+(async()=>{
+ const grid=document.getElementById('icon-grid'),filter=document.getElementById('icon-filter'),count=document.getElementById('icon-count');
+ try{
+  const res=await fetch('../../assets/icons/chimera-octavian/manifest.json');
+  if(!res.ok)throw new Error('HTTP '+res.status);
+  const data=await res.json();
+  const apps=data.apps||[];
+  const sprite='../../assets/icons/chimera-octavian/catalog.svg';
+  const frag=document.createDocumentFragment();
+  for(const app of apps){
+   if(!/^[a-z0-9-]+$/.test(app.id))continue;
+   const card=document.createElement('article');card.className='icon-card';
+   card.dataset.search=[app.id,app.name,app.category].join(' ').toLowerCase();
+   const icon=document.createElementNS('http://www.w3.org/2000/svg','svg');
+   icon.setAttribute('viewBox','0 0 64 64');icon.setAttribute('role','img');icon.setAttribute('aria-label',app.name+' icon');
+   const use=document.createElementNS('http://www.w3.org/2000/svg','use');use.setAttribute('href',sprite+'#app-'+app.id);icon.appendChild(use);
+   const title=document.createElement('strong');title.textContent=app.name;
+   const meta=document.createElement('small');meta.textContent=app.category+' · '+(app.installation_status||'status unknown');
+   card.append(icon,title,meta);frag.appendChild(card);
+  }
+  grid.appendChild(frag);
+  const cards=[...grid.children];
+  const update=()=>{const q=filter.value.trim().toLowerCase();let n=0;for(const c of cards){const show=!q||c.dataset.search.includes(q);c.hidden=!show;if(show)n++;}count.textContent=n+' of '+cards.length+' icons shown';};
+  filter.addEventListener('input',update);update();
+ }catch(e){count.textContent='Icon catalogue could not be loaded. Use the direct sprite and manifest links below.';}
+})();
+</script>
+
 <p style="margin-top:32px"><a href="../README.md">Artwork source inventory and project links</a> · <a href="https://github.com/amerhwitat/ChimeraIIOS/tree/main/desktop/aurora/assets">ChimeraIIOS source assets</a></p>
 </main></body></html>
