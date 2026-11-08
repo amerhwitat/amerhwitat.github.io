@@ -14,7 +14,25 @@ document.addEventListener('DOMContentLoaded',async()=>{
   $('df0').onchange=e=>e.target.files[0]&&window.ChimeraAmiga.file('DF0',e.target.files[0]);
   $('df1').onchange=e=>e.target.files[0]&&window.ChimeraAmiga.file('DF1',e.target.files[0]);
   $('hdf').onchange=e=>e.target.files[0]&&window.ChimeraAmiga.file('HDF',e.target.files[0]);
-  $('insert0').onclick=()=>log($('df0').files[0]?`DF0 inserted: ${$('df0').files[0].name}`:'Select a DF0 image first.');
+  document.querySelectorAll('[data-amiga-disk]').forEach(button=>button.addEventListener('click',async()=>{
+    const status=$('diskLoadState');
+    button.disabled=true;
+    try {
+      const response=await fetch(button.dataset.amigaDisk,{cache:'no-store'});
+      if(!response.ok) throw new Error('Disk image not published yet (HTTP '+response.status+').');
+      const blob=await response.blob();
+      const name=button.dataset.amigaDisk.split('/').pop();
+      const disk=new File([blob],name,{type:'application/octet-stream'});
+      await window.ChimeraAmiga.file('DF0',disk);
+      $('df0').dataset.publishedDisk=name;
+      status.textContent=name+' fetched and attached to DF0. Select your licensed Kickstart ROM, then press Start.';
+      log('Published disk attached to local SAE DF0: '+name);
+    } catch(error) {
+      status.textContent=error.message+' You can still download it from the Amiga editions page when publication completes.';
+      log('ADF load failed: '+error.message);
+    } finally { button.disabled=false; }
+  }));
+    $('insert0').onclick=()=>log($('df0').files[0]?`DF0 inserted: ${$('df0').files[0].name}`:'Select a DF0 image first.');
   $('eject0').onclick=()=>log('DF0 ejected.');
   $('joystick').onclick=()=>log(navigator.getGamepads?'Gamepad API available. Press a controller button to activate it.':'Gamepad API unavailable.');
   $('screenHost').addEventListener('click',()=>log('Display focused; keyboard/mouse capture is available to a compatible emulator core.'));
