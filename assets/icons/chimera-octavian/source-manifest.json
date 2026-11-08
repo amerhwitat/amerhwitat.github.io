@@ -1,0 +1,25 @@
+{
+  "schema": "amerhwitat-icon-publication-provenance/v1",
+  "published_sprite": "catalog.svg",
+  "published_manifest": "manifest.json",
+  "symbol_count": 133,
+  "deduplication": "Both OS repositories contain byte-identical sprite and manifest blobs; one copy is published.",
+  "sources": [
+    {
+      "repository": "amerhwitat/ChimeraIIOS",
+      "branch": "artwork/unified-app-icons-20261106",
+      "sprite_blob": "3f748166d83cdf7afaa280820f12cafa12c394f4",
+      "manifest_blob": "953437a6cd5d27d9ef5e55eb370f0bd37ef96a0a",
+      "pull_request": "https://github.com/amerhwitat/ChimeraIIOS/pull/261"
+    },
+    {
+      "repository": "amerhwitat/OctavianOS",
+      "branch": "artwork/unified-app-icons-20261106",
+      "sprite_blob": "3f748166d83cdf7afaa280820f12cafa12c394f4",
+      "manifest_blob": "953437a6cd5d27d9ef5e55eb370f0bd37ef96a0a",
+      "pull_request": "https://github.com/amerhwitat/OctavianOS/pull/170"
+    }
+  ],
+  "license_note": "Source README describes these as original generic artwork rather than upstream logos. Retain source repository notices; confirm repository-level licensing before redistribution beyond this project website.",
+  "runtime_note": "Icon existence does not imply application installation, provider verification, OS porting or launchability."
+}
