@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Amiga Floppy Editions · ChimeraIIOS & OctavianOS</title>
+<meta name="description" content="Bootable 880 KiB ADF desktop launch-menu disks for Amiga emulators, built reproducibly from source.">
+<style>
+:root{color-scheme:dark;--bg:#081326;--panel:#10253e;--line:#6abbe044;--text:#eff8ff;--muted:#bad0e4;--accent:#73dcff}*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 10% 0%,#1d5274 0,transparent 44%),var(--bg);color:var(--text);font:15px/1.55 system-ui,sans-serif}.wrap{max-width:1050px;margin:auto;padding:24px}h1{font-size:clamp(28px,4vw,44px);margin-bottom:8px}.muted{color:var(--muted)}a{color:var(--accent)}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:20px 0}.card{background:var(--panel);border:1px solid var(--line);border-radius:15px;padding:17px}.card h2{margin:0 0 5px}.download{display:inline-block;padding:9px 13px;border:1px solid var(--line);border-radius:9px;text-decoration:none;background:#153c59;margin:6px 5px 0 0}.warn{border-left:3px solid #e6b75d;padding:10px 14px;background:#332b1b;border-radius:8px}.meta{font-size:12px;color:var(--muted)}@media(max-width:650px){.wrap{padding:13px}.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body><main class="wrap">
+<p><a href="../desktops/">← Desktop gallery</a> · <a href="/">Main website</a></p>
+<h1>Amiga Floppy Editions</h1>
+<p class="muted">Four profile-specific, bootable AmigaDOS floppy launch menus for classic Amiga emulators. Built as standard 880 KiB ADF images with an OFS filesystem and a 1.x-compatible boot block.</p>
+<div class="warn"><strong>Compatibility scope:</strong> these are lightweight CLI desktop launch-menu editions for an Amiga 500-class 68000 with a legally obtained Kickstart 1.3 ROM. They are not full ports of the modern Aurora/Marine GUI desktops, and no Kickstart or Workbench ROM/software is bundled.</div>
+<section class="grid">
+<article class="card"><h2>ChimeraIIOS · Aurora</h2><p class="muted">Glass/research theme and Amiga CLI boot menu.</p><a class="download" href="../downloads/amiga/chimera-aurora.adf" download>Download ADF</a><p class="meta">880 KiB · OFS · Amiga 500 baseline</p></article>
+<article class="card"><h2>ChimeraIIOS · Marine</h2><p class="muted">Ocean-blue productivity theme and Amiga CLI boot menu.</p><a class="download" href="../downloads/amiga/chimera-marine.adf" download>Download ADF</a><p class="meta">880 KiB · OFS · Amiga 500 baseline</p></article>
+<article class="card"><h2>OctavianOS · Aurora</h2><p class="muted">Creative glass theme and Amiga CLI boot menu.</p><a class="download" href="../downloads/amiga/octavian-aurora.adf" download>Download ADF</a><p class="meta">880 KiB · OFS · Amiga 500 baseline</p></article>
+<article class="card"><h2>OctavianOS · Marine</h2><p class="muted">Navy/aqua productivity theme and Amiga CLI boot menu.</p><a class="download" href="../downloads/amiga/octavian-marine.adf" download>Download ADF</a><p class="meta">880 KiB · OFS · Amiga 500 baseline</p></article>
+</section>
+<section class="card"><h2>Build manifest and reproducibility</h2><p class="muted">The deployment workflow builds each disk from its checked-in startup-sequence source using the open-source amitools <code>xdftool</code>, verifies the ADF size, AmigaDOS boot signature, filesystem contents and startup text, and writes SHA-256 hashes to the manifest.</p><a class="download" href="../downloads/amiga/manifest.json">Open build manifest</a><p class="meta">The images become available after the website deployment workflow completes successfully.</p></section>
+<section class="card"><h2>What the floppy contains</h2><p class="muted">A bootable OFS volume, startup sequence, profile text, and emulator setup instructions. The boot sequence presents a text menu and leaves the Amiga CLI available for commands. It does not contain a native Koronos kernel, modern X server, browser engine, full Workbench, DOS application collection, or full modern desktop GUI.</p></section>
+</main></body></html>
