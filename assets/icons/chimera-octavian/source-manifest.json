@@ -21,5 +21,17 @@
     }
   ],
   "license_note": "Source README describes these as original generic artwork rather than upstream logos. Retain source repository notices; confirm repository-level licensing before redistribution beyond this project website.",
-  "runtime_note": "Icon existence does not imply application installation, provider verification, OS porting or launchability."
+  "runtime_note": "Icon existence does not imply application installation, provider verification, OS porting or launchability.",
+  "native_core_fallback": {
+    "source_repository": "amerhwitat/ChimeraIIOS",
+    "source_path": "desktop/aurora/icons/chimera_icons.cpp",
+    "source_blob": "fetched-from-main-during-publication",
+    "icons": [
+      "settings",
+      "terminal",
+      "globe",
+      "language"
+    ],
+    "note": "These are the four built-in native fallback SVG glyphs. OctavianOS shares the 133-symbol catalogue sprite and manifest; its checked repository path did not contain this separate native fallback provider."
+  }
 }
