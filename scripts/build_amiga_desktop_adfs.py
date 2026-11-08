@@ -146,7 +146,7 @@ def main() -> None:
 
         if image.exists():
             image.unlink()
-        run(str(image), "format", profile["volume"], "ofs")
+        run(str(image), "format", profile["volume"])
         run(str(image), "boot", "install", "boot1x")
         run(str(image), "makedir", "S")
         run(str(image), "write", str(startup), "S/Startup-Sequence")
