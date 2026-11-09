@@ -25,7 +25,7 @@ async function execute(raw){
  const parts=split(raw),command=parts.shift()||'',args=parts;
  if(!command)return '';
  const [cmd,a]=normalize(command,args),arg=a[0],path=resolve(arg);
- if(cmd==='help')return 'Shell: '+shellName()+'\nBuilt-ins: '+builtins.join(' ')+'\nUse man COMMAND, apropos KEYWORD, or which COMMAND.\nWeb sandbox: virtual files only; host execution and host-drive access are not available.';
+ if(cmd==='help')return 'Shell: '+shellName()+'\nBuilt-ins: '+builtins.join(' ')+'\nUse man COMMAND, apropos KEYWORD, or which COMMAND.\nBrowser Enter uses a virtual filesystem. Use Run on host to send a command to the connected local bridge.';
  if(cmd==='clear'){screen.querySelectorAll(':scope > div:not(.inputline)').forEach(x=>x.remove());return '';}
  if(cmd==='pwd')return cwd;
  if(cmd==='cd'){if(!dirs.has(path))return 'cd: no such directory: '+(arg||'');cwd=path;updatePrompt();return '';}
@@ -52,7 +52,7 @@ async function execute(raw){
  if(cmd==='free')return '              total        used        free\nMemory:       virtual      n/a         n/a';
  if(cmd==='df')return 'Filesystem      Size  Used  Avail  Use%  Mounted on\nweb-sandbox     n/a   n/a   n/a    n/a   /';
  if(cmd==='ip'||cmd==='ss')return 'Network namespace is not connected in the browser sandbox.';
- if(['gcc','g++','clang','cmake','ninja','git','python','python3','node'].includes(cmd))return cmd+': native execution service is not connected. Use the installed host toolchain or configure a trusted build runner.';
+ if(['gcc','g++','clang','cmake','ninja','git','python','python3','node'].includes(cmd))return cmd+': local execution is not connected. Connect the local bridge, then select Run on host to use the installed host toolchain.';
  if(cmd==='exit'){cwd=home;updatePrompt();return 'Closed the virtual '+shellName()+' session (browser remains open).';}
  return command+': command not found. Type help.';
 }
@@ -67,6 +67,29 @@ input.addEventListener('keydown',async e=>{
  const result=await execute(raw);if(result)output(result);
  input.value='';updatePrompt();
 });
-mode.addEventListener('change',()=>{env.SHELL='/bin/'+shellName();updatePrompt();output('Shell profile changed to '+shellName()+'. Commands execute in the browser virtual filesystem only.','muted');});
+mode.addEventListener('change',()=>{env.SHELL='/bin/'+shellName();updatePrompt();output('Shell profile changed to '+shellName()+'. Enter runs in the browser virtual filesystem; Run on host uses the connected local bridge.','muted');});
+const bridgeUrl=document.querySelector('#bridgeUrl'),bridgeToken=document.querySelector('#bridgeToken'),bridgeConnect=document.querySelector('#bridgeConnect'),runLocal=document.querySelector('#runLocal'),bridgeStatus=document.querySelector('#bridgeStatus');
+if(window.ChimeraPortal&&bridgeUrl&&bridgeToken&&bridgeConnect&&runLocal&&bridgeStatus){
+ bridgeUrl.value=window.ChimeraPortal.config.base||'http://127.0.0.1:8767';
+ bridgeToken.value=window.ChimeraPortal.config.token||'';
+ bridgeConnect.addEventListener('click',async()=>{
+  window.ChimeraPortal.config.base=bridgeUrl.value;
+  window.ChimeraPortal.config.token=bridgeToken.value;
+  bridgeStatus.textContent='Checking local bridge…';
+  try{const caps=await window.ChimeraPortal.connect();bridgeStatus.textContent='Connected: '+(caps.unsafe_shell?'full local shell':'safe workspace')+' · '+caps.workspace;output('Local bridge connected ('+caps.mode+').','muted');}
+  catch(e){bridgeStatus.textContent='Not connected: '+e.message;output('Local bridge connection failed: '+e.message,'muted');}
+ });
+ runLocal.addEventListener('click',async()=>{
+  const raw=input.value.trim();if(!raw)return;
+  history.push(raw);historyIndex=history.length;output(prompt()+' '+raw,'prompt');
+  runLocal.disabled=true;
+  try{
+   const result=await window.ChimeraPortal.command(raw,'Linux',shellName());
+   if(result&&result.ok!==false)output((result.output||'(no output)')+'\n[mode: '+(result.mode||'local')+', exit: '+(result.exit_code??0)+']');
+   else output('Local bridge error: '+(result?.error||'unavailable'),'muted');
+  }catch(e){output('Local bridge error: '+e.message,'muted');}
+  finally{runLocal.disabled=false;input.value='';updatePrompt();input.focus();}
+ });
+}
 updatePrompt();output('Interactive shell ready. Type help.','muted');
 })();
