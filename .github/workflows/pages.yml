@@ -172,6 +172,7 @@ jobs:
           node --check desktops/gallery.js
           python3 - <<'PY'
           import json
+          import re
           from pathlib import Path
           gallery = Path("desktops/gallery.js").read_text(encoding="utf-8")
           sprite = Path("assets/icons/chimera-octavian/catalog.svg").read_text(encoding="utf-8")
@@ -199,7 +200,7 @@ jobs:
           assert "catalog.svg#app-" in chimera_marine
           freexp = Path("desktops/freexp.html").read_text(encoding="utf-8")
           for page in (aurora, marine, chimera_marine, freexp):
-              for icon_id in re.findall(r"catalog\\.svg#app-([a-z0-9-]+)", page):
+              for icon_id in re.findall(r"catalog\.svg#app-([a-z0-9-]+)", page):
                   assert icon_id in ids, f"unregistered icon {icon_id}"
           scripts = re.findall(r"<script>(.*?)</script>", freexp, flags=re.S)
           assert len(scripts) == 1, "FreeXP preview must have exactly one inline script"
@@ -207,7 +208,6 @@ jobs:
           print("Desktop gallery/icon contract: PASS (133 icon manifest entries; Aurora/Marine/FreeXP wired)")
           PY
           node --check /tmp/freexp-preview.js
-          PY
       - name: Validate landing studio assets and Quick Launch destinations
         run: |
           python3 - <<'PY'
