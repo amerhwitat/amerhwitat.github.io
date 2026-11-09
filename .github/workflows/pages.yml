@@ -175,7 +175,7 @@ jobs:
           assert manifest["schema"] == "chimera-octavian-app-icons/v1"
           assert manifest["count"] == 133
           ids = {item["id"] for item in manifest["apps"]}
-          required = {"aurora-files", "chromium", "terminal", "settings", "network", "voiceconnect", "chimera-boot-manager", "archive-manager"}
+          required = {"aurora-files", "chromium", "terminal", "settings", "network", "voiceconnect", "chimera-boot-manager", "archive-manager", "photos", "aurora-media-player", "system-monitor", "docs", "store"}
           assert required <= ids, f"missing semantic icons: {sorted(required - ids)}"
           for icon_id in required:
               assert f'id="app-{icon_id}"' in sprite, f"missing sprite symbol app-{icon_id}"
@@ -186,7 +186,14 @@ jobs:
           assert Path("desktops/index.html").is_file()
           assert Path("desktops/freexp.html").is_file()
           assert Path("assets/wallpapers/freexp-hills.svg").is_file()
-          print("Desktop gallery/icon contract: PASS (133 icon manifest entries)")
+          aurora = Path("apps/octavianos/aurora/index.html").read_text(encoding="utf-8")
+          marine = Path("apps/octavianos/marine/index.html").read_text(encoding="utf-8")
+          chimera_marine = Path("apps/chimera-ii-os/web/marine_desktop.html").read_text(encoding="utf-8")
+          for page in (aurora, marine, chimera_marine):
+              assert "../../../assets/icons/chimera-octavian/catalog.svg#app-" in page
+          assert ".app-icon{" in marine and ".dock a svg" in aurora
+          assert "catalog.svg#app-" in chimera_marine
+          print("Desktop gallery/icon contract: PASS (133 icon manifest entries; Aurora/Marine/FreeXP wired)")
           PY
       - name: Validate landing studio assets and Quick Launch destinations
         run: |
