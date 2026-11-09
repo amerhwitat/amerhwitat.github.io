@@ -28,6 +28,7 @@ jobs:
           node --test apps/chimera-ii-os/web/aurora-terminal.test.mjs
           node --check apps/chimera-ii-os/web/portal-backend.js
           node --test apps/chimera-ii-os/web/portal-backend.test.mjs
+          python3 scripts/check_aurora_terminal_inline.py
       - name: Validate Aurora and Marine semantic icon bindings
         run: |
           node --check apps/chimera-ii-os/web/desktop_experiences.js
