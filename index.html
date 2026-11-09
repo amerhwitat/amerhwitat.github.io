@@ -155,6 +155,9 @@ footer{border-top:1px solid var(--stroke);margin-top:46px;padding:26px 0 44px;co
 .wthumb{position:relative;aspect-ratio:16/10;border-radius:14px;overflow:hidden;border:1px solid var(--stroke2);background-size:cover;background-position:center;transition:transform .18s ease,border-color .18s ease}
 .wthumb:hover{transform:translateY(-4px) scale(1.02);border-color:var(--accent)}
 .wthumb span{position:absolute;left:0;right:0;bottom:0;padding:8px 10px;font-size:11px;background:linear-gradient(180deg,transparent,rgba(4,10,20,.92));color:var(--fg)}
+
+/* Curated desktop showcase */
+.desktop-showcase{max-width:1380px;margin:44px auto 36px;padding:clamp(22px,4vw,48px);border:1px solid rgba(130,190,255,.2);border-radius:28px;background:linear-gradient(135deg,rgba(13,30,53,.88),rgba(13,19,42,.78));box-shadow:0 30px 90px #0005}.showcase-heading{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:22px}.showcase-heading h2{font:700 clamp(30px,4vw,48px)/1.08 var(--font-d);letter-spacing:-.03em;margin:8px 0}.showcase-heading p{max-width:660px;color:var(--muted);margin:0}.showcase-all,.showcase-launch{display:inline-flex;align-items:center;gap:12px;border:1px solid var(--stroke2);border-radius:999px;padding:10px 15px;font-size:13px;font-weight:650;white-space:nowrap}.showcase-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.showcase-card{overflow:hidden;border:1px solid var(--stroke);border-radius:22px;background:rgba(5,13,27,.72)}.showcase-art{height:clamp(190px,24vw,310px);display:block;position:relative;overflow:hidden;background:#071a37}.showcase-art img{width:100%;height:100%;display:block;object-fit:cover;transition:transform .55s ease}.showcase-art:hover img{transform:scale(1.035)}.showcase-chip{position:absolute;left:17px;top:16px;border:1px solid #ffffff50;background:#06162caa;color:#eff8ff;border-radius:999px;padding:7px 11px;font-size:10px;letter-spacing:.1em;backdrop-filter:blur(14px)}.showcase-info{padding:21px}.showcase-title{display:flex;align-items:center;gap:13px}.showcase-icon{width:48px;height:48px;display:grid;place-items:center;border-radius:15px;background:#ffffff12;border:1px solid #ffffff24}.showcase-icon svg{width:34px;height:34px}.showcase-title h3{margin:0;font:700 23px var(--font-d)}.showcase-title small{color:var(--muted);font-size:11px}.showcase-info p{color:#b6c7dc;min-height:48px}.showcase-tags{display:flex;gap:7px;flex-wrap:wrap;margin:15px 0 19px}.showcase-tags span{border:1px solid var(--stroke);background:#ffffff08;color:#c6d9ed;border-radius:999px;padding:5px 9px;font-size:11px}.showcase-launch{background:linear-gradient(100deg,#174d70,#45366d);color:#fff}.showcase-note{color:#8fa6c1;font-size:12px;margin:16px 2px 0}@media(max-width:760px){.showcase-heading{align-items:start;flex-direction:column}.showcase-grid{grid-template-columns:1fr}.showcase-art{height:220px}.showcase-info p{min-height:0}}
 </style>
   <link rel="stylesheet" href="/site-interactions.css?v=1">
   <link rel="stylesheet" href="/landing-studio.css?v=1">
@@ -168,7 +171,7 @@ footer{border-top:1px solid var(--stroke);margin-top:46px;padding:26px 0 44px;co
     <a href="#apps" class="lang" data-en="Portfolio" data-ar="الأعمال">Portfolio</a>
     <a href="#research" class="lang" data-en="Research Platform" data-ar="منصة البحث">Research Platform</a>
     <a href="#research" class="lang" data-en="NLP Translator" data-ar="مترجم اللغة">NLP Translator</a>
-    <a href="#desktop" class="lang" data-en="OS Simulator" data-ar="محاكي النظام">OS Simulator</a>
+    <a href="#desktops">Desktops</a><a href="#desktop" class="lang" data-en="OS Simulator" data-ar="محاكي النظام">OS Simulator</a>
     <a href="#registry" class="lang" data-en="Script &amp; ISA Registry" data-ar="سجل النصوص">Script &amp; ISA Registry</a>
     <a href="#repos" class="lang" data-en="Repositories" data-ar="المستودعات">Repositories</a>
     <a href="/repository-hub.html" class="lang" data-en="All Projects" data-ar="كل المشاريع">All Projects</a>
@@ -223,6 +226,20 @@ footer{border-top:1px solid var(--stroke);margin-top:46px;padding:26px 0 44px;co
     </div>
   </section>
 
+  <section class="desktop-showcase" id="desktops" aria-labelledby="desktop-showcase-title">
+    <div class="showcase-heading"><div><span class="eyebrow">CHIMERA II OS · OCTAVIANOS</span><h2 id="desktop-showcase-title">Choose your workspace.</h2><p>Two signature desktop environments, one coherent design system. Explore the live browser experiences or inspect their source and runtime status.</p></div><a class="showcase-all" href="/desktops/">Explore every desktop ↗</a></div>
+    <div class="showcase-grid">
+      <article class="showcase-card aurora-card">
+        <a class="showcase-art" href="/apps/chimera-ii-os/web/desktop_experiences.html#aurora" aria-label="Open Aurora Glass desktop"><img src="/apps/chimera-ii-os/web/aurora-desktop-background.svg" alt="Aurora Glass desktop artwork" loading="lazy"><span class="showcase-chip">MAC-INSPIRED · GLASS UI</span></a>
+        <div class="showcase-info"><div class="showcase-title"><span class="showcase-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="/assets/icons/chimera-octavian/catalog.svg#app-aurora-files"/></svg></span><div><h3>Aurora Glass</h3><small>Chimera II OS · OctavianOS</small></div></div><p>Translucent menu bar, Finder-style file manager, Spotlight, widgets, control center and a responsive dock.</p><div class="showcase-tags"><span>Finder</span><span>Spotlight</span><span>Widgets</span><span>Glass surfaces</span></div><a class="showcase-launch" href="/apps/chimera-ii-os/web/desktop_experiences.html#aurora">Launch Aurora preview <b>↗</b></a></div>
+      </article>
+      <article class="showcase-card marine-card">
+        <a class="showcase-art" href="/apps/chimera-ii-os/web/desktop_experiences.html#marine" aria-label="Open Marine Blue desktop"><img src="/apps/chimera-ii-os/web/marine-desktop.svg" alt="Marine Blue desktop artwork" loading="lazy"><span class="showcase-chip">WINDOWS-INSPIRED · OCEAN BLUE</span></a>
+        <div class="showcase-info"><div class="showcase-title"><span class="showcase-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="/assets/icons/chimera-octavian/catalog.svg#app-settings"/></svg></span><div><h3>Marine Blue</h3><small>Chimera II OS · OctavianOS</small></div></div><p>Blue taskbar and launcher, Start menu, desktop gadgets, network and system meters, and contextual customization menus.</p><div class="showcase-tags"><span>Start menu</span><span>Gadgets</span><span>System meters</span><span>Right-click</span></div><a class="showcase-launch" href="/apps/chimera-ii-os/web/desktop_experiences.html#marine">Launch Marine preview <b>↗</b></a></div>
+      </article>
+    </div>
+    <p class="showcase-note">Interactive browser previews use demo widget values; native desktop, hardware and ISO runtime support is tracked separately in the release dashboard.</p>
+  </section>
   <section class="glass hero" id="desktop">
     <div class="hero-head">
       <h1><span class="grad lang" data-en="Chimera II OS — Aurora Wayland Glass" data-ar="كيميرا II — سطح مكتب أورورا الزجاجي">Chimera II OS — Aurora Wayland Glass</span></h1>
