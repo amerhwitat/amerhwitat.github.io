@@ -287,6 +287,75 @@
     const status = $('statusMessage');
     const dot = document.querySelector('.status-dot');
     const canvas = $('aurora3dCanvas');
+    // Local WebGL1 shader renderer: the desktop must not depend on a remote
+    // Three.js CDN to provide an actual GPU context in offline deployments.
+    function initLocalAuroraWebGL() {
+      if (!canvas) return false;
+      try {
+        const gl = canvas.getContext('webgl', { alpha: true, antialias: true, powerPreference: 'high-performance' })
+          || canvas.getContext('experimental-webgl');
+        if (!gl) throw new Error('WebGL context unavailable');
+        const compile = (type, source) => {
+          const shader = gl.createShader(type);
+          gl.shaderSource(shader, source);
+          gl.compileShader(shader);
+          if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
+            const message = gl.getShaderInfoLog(shader) || 'shader compilation failed';
+            gl.deleteShader(shader);
+            throw new Error(message);
+          }
+          return shader;
+        };
+        const vertex = compile(gl.VERTEX_SHADER,
+          'attribute vec2 a_position; varying vec2 v_uv; void main(){v_uv=a_position*0.5+0.5;gl_Position=vec4(a_position,0.0,1.0);}');
+        const fragment = compile(gl.FRAGMENT_SHADER,
+          'precision mediump float; varying vec2 v_uv; uniform float u_time; uniform vec2 u_resolution; void main(){vec2 p=(v_uv-0.5)*vec2(u_resolution.x/max(1.0,u_resolution.y),1.0);float wave=sin(p.x*8.0+u_time*0.22)*cos(p.y*6.0-u_time*0.14);float halo=exp(-length(p-vec2(0.0,0.05))*3.4);float glow=smoothstep(-0.65,0.85,wave*0.42+halo*0.68);vec3 deep=vec3(0.008,0.018,0.052);vec3 aurora=vec3(0.035,0.28,0.43);vec3 color=mix(deep,aurora,glow);float lattice=0.5+0.5*sin((p.x+p.y)*24.0+u_time*0.08);color+=vec3(0.025,0.08,0.12)*lattice*glow;gl_FragColor=vec4(color,1.0);}');
+        const program = gl.createProgram();
+        gl.attachShader(program, vertex);
+        gl.attachShader(program, fragment);
+        gl.linkProgram(program);
+        if (!gl.getProgramParameter(program, gl.LINK_STATUS)) throw new Error(gl.getProgramInfoLog(program) || 'program link failed');
+        const buffer = gl.createBuffer();
+        gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
+        gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 1,-1, -1,1, -1,1, 1,-1, 1,1]), gl.STATIC_DRAW);
+        const position = gl.getAttribLocation(program, 'a_position');
+        const timeUniform = gl.getUniformLocation(program, 'u_time');
+        const resolutionUniform = gl.getUniformLocation(program, 'u_resolution');
+        const resize = () => {
+          const ratio = Math.min(window.devicePixelRatio || 1, 2);
+          const width = Math.max(1, Math.floor(canvas.clientWidth * ratio));
+          const height = Math.max(1, Math.floor(canvas.clientHeight * ratio));
+          if (canvas.width !== width || canvas.height !== height) {
+            canvas.width = width;
+            canvas.height = height;
+          }
+          gl.viewport(0, 0, width, height);
+        };
+        const started = performance.now();
+        const draw = now => {
+          resize();
+          gl.useProgram(program);
+          gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
+          gl.enableVertexAttribArray(position);
+          gl.vertexAttribPointer(position, 2, gl.FLOAT, false, 0, 0);
+          gl.uniform1f(timeUniform, (now - started) / 1000);
+          gl.uniform2f(resolutionUniform, canvas.width, canvas.height);
+          gl.drawArrays(gl.TRIANGLES, 0, 6);
+          window.requestAnimationFrame(draw);
+        };
+        window.addEventListener('resize', resize);
+        resize();
+        window.AuroraWebGLActive = true;
+        window.AuroraWebGLRenderer = 'local-webgl1-shader';
+        window.requestAnimationFrame(draw);
+        return true;
+      } catch (error) {
+        window.AuroraWebGLActive = false;
+        window.AuroraWebGLError = error.message;
+        return false;
+      }
+    }
+    initLocalAuroraWebGL();
     const telemetry = { frames: 0, last: performance.now(), fps: 0, enabled: true };
     const settings = {
       intensity: Number(localStorage.getItem('chimera.aurora.intensity') || 72),
@@ -335,7 +404,7 @@
       telemetry.fps=Math.round((telemetry.frames*1000)/Math.max(1,elapsed));
       telemetry.frames=0; telemetry.last=now;
       if($('fpsState')) $('fpsState').textContent=telemetry.fps+' FPS';
-      if($('gpuState')) $('gpuState').textContent=window.THREE?'WEBGL':'2D';
+      if($('gpuState')) $('gpuState').textContent=window.AuroraWebGLActive?'WEBGL':'2D';
     },1000);
     const oldOpenRoute=openRoute;
     openRoute=(title,path)=>{say('Opening '+title,'busy');oldOpenRoute(title,path);setTimeout(()=>say(title+' ready'),500);};
