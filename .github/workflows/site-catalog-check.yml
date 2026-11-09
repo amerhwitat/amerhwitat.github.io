@@ -9,12 +9,15 @@ on:
       - "search-index.json"
       - "scripts/build_search_index.py"
       - "scripts/check_site_links.py"
+      - "scripts/build_amiga_desktop_adfs.py"
+      - "scripts/build_zx_spectrum_tapes.py"
+      - "amiga-desktops/**"
+      - "downloads/amiga/**"
+      - "downloads/retro-tapes/**"
       - "scripts/check_app_catalog.py"
       - "apps/chimera-ii-os/web/**"
       - "apps/cpu4096-simulator/public/**"
       - "apps/octavianos/**"
-      - "desktops/**"
-      - "scripts/check_desktop_gallery.py"
       - "apps/thamudic-scanner/**"
       - "apps/repository-app-explorer/**"
       - "scripts/test_repository_app_explorer.py"
@@ -32,6 +35,11 @@ on:
       - "search-index.json"
       - "scripts/build_search_index.py"
       - "scripts/check_site_links.py"
+      - "scripts/build_amiga_desktop_adfs.py"
+      - "scripts/build_zx_spectrum_tapes.py"
+      - "amiga-desktops/**"
+      - "downloads/amiga/**"
+      - "downloads/retro-tapes/**"
       - "apps/chimera-ii-os/web/**"
       - "apps/cpu4096-simulator/public/**"
       - "apps/octavianos/**"
@@ -144,8 +152,19 @@ jobs:
         run: python3 -m unittest scripts/test_repository_app_explorer.py
       - name: Test OctavianOS provider availability and launch states
         run: python3 -m unittest scripts/test_octavian_provider_checks.py
-      - name: Validate desktop profile coverage and local gallery routes
-        run: python3 scripts/check_desktop_gallery.py
+      - name: Build generated retro media before checking published links
+        run: |
+          set -euo pipefail
+          python3 -m pip install --user --disable-pip-version-check amitools
+          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+          export PATH="$HOME/.local/bin:$PATH"
+          python3 -m py_compile scripts/build_amiga_desktop_adfs.py scripts/build_zx_spectrum_tapes.py
+          python3 scripts/build_amiga_desktop_adfs.py
+          python3 scripts/build_zx_spectrum_tapes.py
+          test "$(find downloads/amiga -maxdepth 1 -name '*.adf' | wc -l)" -eq 4
+          test "$(find downloads/retro-tapes -maxdepth 1 -name '*.tap' | wc -l)" -eq 4
+          test -s downloads/amiga/manifest.json
+          test -s downloads/retro-tapes/manifest.json
       - name: Test site-local link resolution
         run: python3 -m unittest scripts/test_check_site_links.py
       - name: Check local site links
