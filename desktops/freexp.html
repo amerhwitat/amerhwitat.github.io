@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#1767ad">
+<title>FreeXP Desktop Preview · Q4OS / Trinity-inspired profile</title>
+<meta name="description" content="A clean-room, interactive browser preview of the FreeXP desktop profile for Chimera II OS and OctavianOS.">
+<style>
+:root{color-scheme:light;--blue:#1676c8;--deep:#104d91;--line:#8bbbe2;--glass:#eaf6ffdc;--ink:#17334e;--muted:#526d86}
+*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;font:14px/1.45 "Segoe UI",Tahoma,Arial,sans-serif;color:var(--ink)}
+body{background:linear-gradient(180deg,#68c8f3 0%,#b9e9fb 47%,#e4f8ff 58%,#6ebc55 59%,#398b3d 100%)}
+.wallpaper{position:fixed;inset:0;overflow:hidden;background:radial-gradient(ellipse at 75% 19%,#fff9 0 7%,transparent 22%),linear-gradient(180deg,#6ac8f2 0%,#c4f0ff 55%,#8bd06b 56%,#3b9a47 100%)}
+.wallpaper:before,.wallpaper:after{content:"";position:absolute;left:-10%;width:120%;height:48%;bottom:7%;border-radius:50% 50% 0 0;filter:drop-shadow(0 -12px 22px #ffffff28)}
+.wallpaper:before{background:linear-gradient(170deg,#8bdc62,#398c42 70%);transform:rotate(-5deg);bottom:-4%}
+.wallpaper:after{background:linear-gradient(170deg,#b0e878,#579d43 75%);transform:rotate(7deg);bottom:-18%;left:25%}
+.topline{position:fixed;top:12px;left:50%;transform:translateX(-50%);z-index:20;display:flex;gap:10px;align-items:center;padding:7px 12px;border:1px solid #ffffff8a;border-radius:999px;background:#f5fbffcf;backdrop-filter:blur(12px);box-shadow:0 6px 24px #16446a22;font-size:11px;color:#234866}
+.topline b{letter-spacing:.12em}.topline a{color:#0c5eaa;text-decoration:none;font-weight:700}
+.desktop-icons{position:fixed;z-index:2;top:64px;left:18px;display:grid;gap:12px}
+.desk-icon{width:92px;border:1px solid transparent;border-radius:9px;padding:8px 5px;background:transparent;color:white;text-shadow:0 2px 5px #102b49;text-align:center;cursor:pointer;font:12px "Segoe UI",sans-serif}
+.desk-icon:hover,.desk-icon:focus-visible{background:#dff5ff44;border-color:#fff9;outline:0}
+.desk-icon svg{display:block;width:42px;height:42px;margin:0 auto 5px;filter:drop-shadow(0 2px 4px #143f5e66)}
+.taskbar{position:fixed;z-index:15;left:0;right:0;bottom:0;height:48px;display:flex;align-items:center;gap:6px;padding:5px 9px;background:linear-gradient(180deg,#459ee8,#1768bb 46%,#10529f);border-top:1px solid #c7ecff;box-shadow:0 -3px 18px #123f6b55}
+.start{height:38px;min-width:118px;display:flex;align-items:center;justify-content:center;gap:8px;border:1px solid #b8e5ff;border-radius:7px;background:linear-gradient(180deg,#73d75d,#299b35 55%,#18762b);color:white;text-shadow:0 1px 2px #125b24;font-weight:700;cursor:pointer;box-shadow:inset 0 1px #ffffff8c}
+.start svg{width:24px;height:24px}.task-app{height:36px;min-width:42px;padding:4px 12px;border:1px solid #a8d9ff66;border-radius:5px;background:#ffffff24;color:white;cursor:pointer}.task-app:hover{background:#ffffff44}.task-app svg{width:25px;height:25px;display:block}
+.task-spacer{flex:1}.tray{height:36px;display:flex;align-items:center;gap:8px;padding:0 12px;border:1px solid #b6dcff66;border-radius:5px;background:#0a4d9366;color:white;font-size:11px}
+.start-menu{display:none;position:fixed;z-index:30;left:8px;bottom:54px;width:min(390px,calc(100vw - 16px));border:1px solid #9bc9f1;border-radius:10px 10px 4px 4px;overflow:hidden;background:#f2f8ff;box-shadow:0 18px 55px #0b315a66}
+.start-menu.open{display:block}.menu-head{padding:17px 18px;background:linear-gradient(120deg,#247bc2,#164c8d);color:white}.menu-head b{font-size:18px}.menu-head small{display:block;opacity:.8}.menu-body{display:grid;grid-template-columns:1fr 132px;min-height:245px}.menu-apps{padding:10px}.menu-app{display:flex;align-items:center;gap:10px;width:100%;padding:9px;border:0;border-radius:6px;background:transparent;text-align:left;color:#17334e;cursor:pointer}.menu-app:hover{background:#d8edff}.menu-app svg{width:28px;height:28px}.menu-side{padding:12px;background:#e2effb;border-left:1px solid #c2d9ed}.menu-side button{display:block;width:100%;padding:9px 5px;border:0;background:transparent;text-align:left;color:#285274;cursor:pointer}.menu-side button:hover{background:#cde5fa;border-radius:5px}
+.window{display:none;position:fixed;z-index:8;left:20%;top:18%;width:min(620px,calc(100vw - 28px));height:min(390px,calc(100vh - 100px));border:1px solid #6ca5d8;border-radius:9px 9px 5px 5px;background:#f8fbff;box-shadow:0 18px 60px #0c315c66;overflow:hidden}
+.window.open{display:flex;flex-direction:column}.window.active{z-index:12}.titlebar{display:flex;align-items:center;gap:9px;padding:7px 9px;background:linear-gradient(180deg,#5ca9e9,#1c68b6);color:white;cursor:move;user-select:none}.titlebar svg{width:22px;height:22px}.titlebar b{flex:1;font-size:13px}.window-controls{display:flex;gap:4px}.window-controls button{width:24px;height:22px;border:1px solid #ffffff8a;border-radius:4px;background:#ffffff22;color:white;cursor:pointer}.window-controls button:last-child{background:#d74a45}.window-body{padding:16px;overflow:auto;flex:1;background:#fbfdff}.toolbar{display:flex;gap:7px;padding:8px;background:#eaf3fc;border-bottom:1px solid #c8dced}.toolbar span{padding:4px 8px;border:1px solid #c5d9ea;border-radius:4px;background:white}.file-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(115px,1fr));gap:12px}.file-item{padding:14px 9px;border:1px solid #d5e3ef;border-radius:7px;text-align:center;background:white}.file-item svg{display:block;width:36px;height:36px;margin:0 auto 7px}.note{font-size:12px;color:var(--muted)}.preview-badge{display:inline-block;padding:4px 8px;border:1px solid #c9dff0;border-radius:999px;background:#eef7ff;color:#2e5e87;font-size:10px;letter-spacing:.08em;text-transform:uppercase}
+@media(max-width:620px){.desktop-icons{left:6px;top:55px;gap:4px}.desk-icon{width:72px;font-size:10px}.desk-icon svg{width:34px;height:34px}.taskbar{gap:3px;padding:4px}.start{min-width:88px}.task-app{min-width:34px;padding:4px 7px}.tray{padding:0 7px}.window{left:8px!important;top:12%!important}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wallpaper" aria-hidden="true"></div>
+<div class="topline"><b>F R E E X P</b><span>·</span><span>Q4OS / Trinity-inspired clean-room preview</span><a href="/desktops/index.html">Desktop gallery ↗</a></div>
+<div class="desktop-icons" aria-label="Desktop shortcuts">
+  <button class="desk-icon" data-open="files"><svg viewBox="0 0 64 64"><use href="../assets/icons/chimera-octavian/catalog.svg#app-aurora-files"/></svg>My Documents</button>
+  <button class="desk-icon" data-open="browser"><svg viewBox="0 0 64 64"><use href="../assets/icons/chimera-octavian/catalog.svg#app-chromium"/></svg>Web Browser</button>
+  <button class="desk-icon" data-open="terminal"><svg viewBox="0 0 64 64"><use href="../assets/icons/chimera-octavian/catalog.svg#app-terminal"/></svg>Terminal</button>
+  <button class="desk-icon" data-open="settings"><svg viewBox="0 0 64 64"><use href="../assets/icons/chimera-octavian/catalog.svg#app-settings"/></svg>Control Center</button>
+  <button class="desk-icon" data-open="help"><svg viewBox="0 0 64 64"><use href="../assets/icons/chimera-octavian/catalog.svg#app-docs"/></svg>Help & Support</button>
+</div>
+<div class="start-menu" id="startMenu">
+  <div class="menu-head"><b>FreeXP</b><small>Classic desktop · Personal workspace</small></div>
+  <div class="menu-body"><div class="menu-apps">
+    <button class="menu-app" data-open="browser"><svg viewBox="0 0 64 64"><use href="../assets/icons/chimera-octavian/catalog.svg#app-chromium"/></svg>Internet Browser</button>
+    <button class="menu-app" data-open="files"><svg viewBox="0 0 64 64"><use href="../assets/icons/chimera-octavian/catalog.svg#app-aurora-files"/></svg>File Manager</button>
+    <button class="menu-app" data-open="terminal"><svg viewBox="0 0 64 64"><use href="../assets/icons/chimera-octavian/catalog.svg#app-terminal"/></svg>Terminal</button>
+    <button class="menu-app" data-open="settings"><svg viewBox="0 0 64 64"><use href="../assets/icons/chimera-octavian/catalog.svg#app-settings"/></svg>Control Center</button>
+    <button class="menu-app" data-open="help"><svg viewBox="0 0 64 64"><use href="../assets/icons/chimera-octavian/catalog.svg#app-docs"/></svg>Documentation</button>
+  </div><aside class="menu-side"><button data-open="files">Documents</button><button data-open="settings">Settings</button><button data-open="help">Help</button><button id="closeMenu">Close menu</button></aside></div>
+</div>
+<nav class="taskbar" aria-label="FreeXP taskbar">
+  <button class="start" id="startButton" aria-expanded="false"><svg viewBox="0 0 64 64"><use href="../assets/icons/chimera-octavian/catalog.svg#app-chimera-boot-manager"/></svg>Start</button>
+  <button class="task-app" data-open="files" aria-label="File manager"><svg viewBox="0 0 64 64"><use href="../assets/icons/chimera-octavian/catalog.svg#app-aurora-files"/></svg></button>
+  <button class="task-app" data-open="browser" aria-label="Browser"><svg viewBox="0 0 64 64"><use href="../assets/icons/chimera-octavian/catalog.svg#app-chromium"/></svg></button>
+  <button class="task-app" data-open="terminal" aria-label="Terminal"><svg viewBox="0 0 64 64"><use href="../assets/icons/chimera-octavian/catalog.svg#app-terminal"/></svg></button>
+  <span class="task-spacer"></span><div class="tray"><span>● Connected</span><time id="clock">--:--</time></div>
+</nav>
+<section class="window" id="window-files" aria-label="File Manager">
+  <header class="titlebar"><svg viewBox="0 0 64 64"><use href="../assets/icons/chimera-octavian/catalog.svg#app-aurora-files"/></svg><b>File Manager</b><div class="window-controls"><button data-minimize="files" aria-label="Minimize">−</button><button data-close="files" aria-label="Close">×</button></div></header>
+  <div class="toolbar"><span>Back</span><span>Forward</span><span>Home</span><span>/home/user</span></div>
+  <div class="window-body"><div class="file-list"><div class="file-item"><svg viewBox="0 0 64 64"><use href="../assets/icons/chimera-octavian/catalog.svg#app-aurora-files"/></svg>Documents</div><div class="file-item"><svg viewBox="0 0 64 64"><use href="../assets/icons/chimera-octavian/catalog.svg#app-archive-manager"/></svg>Downloads</div><div class="file-item"><svg viewBox="0 0 64 64"><use href="../assets/icons/chimera-octavian/catalog.svg#app-docs"/></svg>Readme.txt</div></div><p class="note">Browser preview surface. Files shown here are illustrative and are not connected to the host file system.</p></div>
+</section>
+<section class="window" id="window-browser" aria-label="Browser">
+  <header class="titlebar"><svg viewBox="0 0 64 64"><use href="../assets/icons/chimera-octavian/catalog.svg#app-chromium"/></svg><b>Internet Browser</b><div class="window-controls"><button data-minimize="browser" aria-label="Minimize">−</button><button data-close="browser" aria-label="Close">×</button></div></header>
+  <div class="toolbar"><span>←</span><span>→</span><span>↻</span><span>https://amerhwitat.github.io/</span></div>
+  <div class="window-body"><h2>Welcome to FreeXP</h2><p>A classic, taskbar-first desktop with a modern web workspace underneath.</p><p class="note">This is a local browser mock window; no external page is loaded inside it.</p></div>
+</section>
+<section class="window" id="window-terminal" aria-label="Terminal">
+  <header class="titlebar"><svg viewBox="0 0 64 64"><use href="../assets/icons/chimera-octavian/catalog.svg#app-terminal"/></svg><b>Terminal</b><div class="window-controls"><button data-minimize="terminal" aria-label="Minimize">−</button><button data-close="terminal" aria-label="Close">×</button></div></header>
+  <div class="window-body" style="background:#10243b;color:#d8f2ff;font:13px ui-monospace,monospace"><p>FreeXP preview shell</p><p>user@freexp:~$ <span style="color:#83dfad">ready</span></p><p class="note" style="color:#a8c5d8">Illustrative console only — no host commands are executed.</p></div>
+</section>
+<section class="window" id="window-settings" aria-label="Control Center">
+  <header class="titlebar"><svg viewBox="0 0 64 64"><use href="../assets/icons/chimera-octavian/catalog.svg#app-settings"/></svg><b>Control Center</b><div class="window-controls"><button data-minimize="settings" aria-label="Minimize">−</button><button data-close="settings" aria-label="Close">×</button></div></header>
+  <div class="window-body"><h2>Personalize your desktop</h2><p>Appearance · Display · Keyboard · Network · Users</p><span class="preview-badge">Interface preview</span></div>
+</section>
+<section class="window" id="window-help" aria-label="Help">
+  <header class="titlebar"><svg viewBox="0 0 64 64"><use href="../assets/icons/chimera-octavian/catalog.svg#app-docs"/></svg><b>Help & Support</b><div class="window-controls"><button data-minimize="help" aria-label="Minimize">−</button><button data-close="help" aria-label="Close">×</button></div></header>
+  <div class="window-body"><h2>FreeXP desktop profile</h2><p>Clean-room design profile inspired by classic X11 desktops. Native session support depends on the Q4OS/Trinity provider, X.Org, packaging and runtime validation.</p><p><a href="https://github.com/amerhwitat/ChimeraIIOS/pull/278">Implementation tracking: PR #278</a></p></div>
+</section>
+<script>
+(() => {
+  const start=document.getElementById("startButton"), menu=document.getElementById("startMenu");
+  const openMenu=()=>{const open=!menu.classList.contains("open");menu.classList.toggle("open",open);start.setAttribute("aria-expanded",String(open));};
+  start.addEventListener("click",openMenu);
+  document.getElementById("closeMenu").addEventListener("click",openMenu);
+  document.querySelectorAll("[data-open]").forEach(button=>button.addEventListener("click",()=>{
+    menu.classList.remove("open");start.setAttribute("aria-expanded","false");
+    const id=button.dataset.open,win=document.getElementById("window-"+id);
+    if(win){win.classList.add("open","active");document.querySelectorAll(".window").forEach(w=>{if(w!==win)w.classList.remove("active");});}
+  }));
+  document.querySelectorAll("[data-close]").forEach(button=>button.addEventListener("click",()=>document.getElementById("window-"+button.dataset.close).classList.remove("open","active")));
+  document.querySelectorAll("[data-minimize]").forEach(button=>button.addEventListener("click",()=>document.getElementById("window-"+button.dataset.minimize).classList.remove("open","active")));
+  document.querySelectorAll(".window").forEach(win=>{
+    win.addEventListener("pointerdown",()=>{document.querySelectorAll(".window").forEach(w=>w.classList.remove("active"));win.classList.add("active");});
+    const bar=win.querySelector(".titlebar");let drag=null;
+    bar.addEventListener("pointerdown",event=>{if(event.target.closest("button"))return;const r=win.getBoundingClientRect();drag={x:event.clientX-r.left,y:event.clientY-r.top};bar.setPointerCapture(event.pointerId);});
+    bar.addEventListener("pointermove",event=>{if(!drag)return;win.style.left=Math.max(6,Math.min(innerWidth-win.offsetWidth-6,event.clientX-drag.x))+"px";win.style.top=Math.max(6,Math.min(innerHeight-win.offsetHeight-54,event.clientY-drag.y))+"px";});
+    bar.addEventListener("pointerup",()=>drag=null);bar.addEventListener("pointercancel",()=>drag=null);
+  });
+  const clock=document.getElementById("clock");function tick(){clock.textContent=new Date().toLocaleTimeString([],{hour:"2-digit",minute:"2-digit"});}tick();setInterval(tick,20000);
+  document.addEventListener("keydown",event=>{if(event.key==="Escape"){menu.classList.remove("open");start.setAttribute("aria-expanded","false");}});
+})();
+</script>
+</body>
+</html>
