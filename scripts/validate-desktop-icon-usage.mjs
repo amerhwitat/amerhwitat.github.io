@@ -16,6 +16,6 @@ for (const id of references) {
 assert.match(html, /class="desktop-app-icon"/, "Desktop launchers must render SVG app icons");
 assert.match(html, /id="marineStart"/, "Marine taskbar must expose its Start launcher");
 assert.match(html, /id="startMenu"/, "Marine Start menu must exist");
-assert.match(js, /#app-file-manager/, "Finder volumes must use the archive-manager icon");
+assert.match(js, /#app-file-manager/, "Finder volumes must use the file-manager icon");
 assert.doesNotMatch(js, /[\u{1F300}-\u{1FAFF}]/u, "Desktop app iconography must use the shared SVG set, not emoji");
 console.log(`Validated ${references.length} semantic icon references against ${known.size} manifest entries and ${symbols.size} sprite symbols.`);
