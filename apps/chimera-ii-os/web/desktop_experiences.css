@@ -12,3 +12,12 @@
 
 /* Shared application icon sprite: the same semantic IDs are used by both desktop themes. */
 .desktop-app-icon{width:42px;height:42px;display:block;filter:drop-shadow(0 5px 9px #02081766)}.desk-icon{align-items:center;gap:7px}.desk-icon .desktop-app-icon{padding:0;background:transparent;border:0;border-radius:0;backdrop-filter:none}.marine .desk-icon .desktop-app-icon{filter:drop-shadow(0 4px 8px #001a3b88)}.app-window-icon{width:30px;height:30px;vertical-align:middle;display:inline-block;margin:3px}
+
+/* Shared semantic application icon treatment for desktop, Start menu and dock. */
+.desktop-app-icon,.app-window-icon{display:inline-block;width:32px;height:32px;flex:0 0 auto;vertical-align:middle;overflow:visible;filter:drop-shadow(0 2px 5px #00152b66)}
+.desk-icon .desktop-app-icon{width:54px;height:54px;padding:7px;border-radius:15px;background:#ffffff20;border:1px solid #ffffff42;backdrop-filter:blur(12px)}
+.dock .desktop-app-icon{width:29px;height:29px}
+.start-columns .desktop-app-icon{width:25px;height:25px;margin-right:8px}
+.dock button{display:flex;align-items:center;justify-content:center;gap:5px}
+.dock #marineStart .desktop-app-icon{width:22px;height:22px}
+.desk-icon{min-height:82px}
