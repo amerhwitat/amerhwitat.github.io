@@ -22,6 +22,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Validate interactive Aurora shell lab
+        run: |
+          node --check apps/chimera-ii-os/web/aurora_terminal.js
+          node --test apps/chimera-ii-os/web/aurora-terminal.test.mjs
       - name: Validate Aurora and Marine semantic icon bindings
         run: |
           node --check apps/chimera-ii-os/web/desktop_experiences.js
