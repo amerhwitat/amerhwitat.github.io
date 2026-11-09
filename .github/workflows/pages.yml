@@ -197,7 +197,16 @@ jobs:
               assert "../../../assets/icons/chimera-octavian/catalog.svg#app-" in page
           assert ".app-icon{" in marine and ".dock a svg" in aurora
           assert "catalog.svg#app-" in chimera_marine
+          freexp = Path("desktops/freexp.html").read_text(encoding="utf-8")
+          for page in (aurora, marine, chimera_marine, freexp):
+              for icon_id in re.findall(r"catalog\\.svg#app-([a-z0-9-]+)", page):
+                  assert icon_id in ids, f"unregistered icon {icon_id}"
+          scripts = re.findall(r"<script>(.*?)</script>", freexp, flags=re.S)
+          assert len(scripts) == 1, "FreeXP preview must have exactly one inline script"
+          Path("/tmp/freexp-preview.js").write_text(scripts[0], encoding="utf-8")
           print("Desktop gallery/icon contract: PASS (133 icon manifest entries; Aurora/Marine/FreeXP wired)")
+          PY
+          node --check /tmp/freexp-preview.js
           PY
       - name: Validate landing studio assets and Quick Launch destinations
         run: |
