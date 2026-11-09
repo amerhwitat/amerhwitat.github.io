@@ -171,6 +171,10 @@ jobs:
         run: node --check apps/chimera-ii-os/web/aurora-interaction-hub.js
       - name: Validate landing studio JavaScript
         run: node --check landing-studio.js
+      - name: Validate interactive Aurora shell lab on deployment build
+        run: |
+          node --check apps/chimera-ii-os/web/aurora_terminal.js
+          node --test apps/chimera-ii-os/web/aurora-terminal.test.mjs
       - name: Validate desktop gallery and shared icon library
         run: |
           node --check desktops/gallery.js
