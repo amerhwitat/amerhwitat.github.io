@@ -17,6 +17,7 @@
   const links = [
     ['Explore application catalogue','#apps','Browse and filter the portfolio'],
     ['Aurora Wayland Glass Desktop','apps/aurora-glass-desktop/index.html','Launch the interactive desktop preview'],
+    ['All OS Desktops','desktops/','Browse Aurora Glass, Marine Blue, FreeXP and session profiles'],
     ['Aurora 3D Desktop','apps/chimera-ii-os/web/aurora_3d_desktop.html','Immersive desktop experiment'],
     ['ThamudicScan','apps/thamudic-scanner/index.html','Ancient-language research workspace'],
     ['Optional Application Center','apps/optional-app-center/index.html','Cross-platform application catalogue'],
