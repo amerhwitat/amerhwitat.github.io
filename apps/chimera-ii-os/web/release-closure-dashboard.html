@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Evidence-based release gate status for Chimera II OS and OctavianOS.">
+<meta name="theme-color" content="#07111f">
+<title>Chimera II · Native Release Closure</title>
+<style>
+:root{color-scheme:dark;--bg:#07111f;--panel:#101e31;--line:#28445d;--ink:#e8f3ff;--muted:#a9c0d5;--cyan:#79dfff;--amber:#ffd18b;--red:#ff9d9d}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 12% 0%,#12304b 0,transparent 42%),var(--bg);color:var(--ink);font:16px/1.55 system-ui,-apple-system,Segoe UI,sans-serif}
+main{width:min(1120px,calc(100% - 32px));margin:0 auto;padding:42px 0 64px}
+a{color:var(--cyan)}.eyebrow{letter-spacing:.16em;text-transform:uppercase;color:var(--cyan);font-size:.76rem;font-weight:700}
+h1{font-size:clamp(2rem,5vw,3.5rem);line-height:1.05;margin:.4rem 0 1rem}
+h2{font-size:1.25rem;margin:0 0 12px}
+p{color:var(--muted);max-width:78ch}
+.notice{border:1px solid #765b36;background:#241d15;border-radius:14px;padding:16px 18px;margin:24px 0}
+.notice strong{color:var(--amber)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin:24px 0}
+.card{background:linear-gradient(145deg,#13253a,#0d1929);border:1px solid var(--line);border-radius:14px;padding:18px}
+.card b{display:block;font-size:1.5rem;color:var(--cyan)}
+.card span{color:var(--muted);font-size:.9rem}
+.table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:14px;background:#0c1828}
+table{width:100%;border-collapse:collapse;min-width:760px}
+th,td{text-align:left;padding:13px 15px;border-bottom:1px solid var(--line);vertical-align:top}
+th{color:#bfeaff;background:#12243a;font-size:.84rem;text-transform:uppercase;letter-spacing:.08em}
+td{color:var(--muted)}td:first-child{color:var(--ink);font-weight:650}
+.status{display:inline-block;border:1px solid #765b36;border-radius:999px;padding:2px 9px;color:var(--amber);font-size:.78rem;white-space:nowrap}
+.status.blocked{border-color:#75434a;color:var(--red)}
+.links{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+.links a{border:1px solid var(--line);border-radius:999px;padding:9px 13px;text-decoration:none;background:#102137}
+footer{margin-top:34px;border-top:1px solid var(--line);padding-top:18px;color:var(--muted);font-size:.85rem}
+</style>
+</head>
+<body>
+<main>
+<p class="eyebrow">Release evidence · 2026-11-09</p>
+<h1>Native release closure</h1>
+<p>This page tracks evidence required before a production Chimera II / Koronos or OctavianOS release. A catalogue entry, successful compile, browser preview, or kernel-ready marker is not equivalent to a working operating-system feature.</p>
+<div class="notice"><strong>Release status: NOT ACCEPTED.</strong> The same immutable ISO has not yet passed all six Live/Installer/Recovery × BIOS/UEFI runtime cases with verified userspace readiness and persistence/recovery postconditions.</div>
+<div class="grid">
+<section class="card"><b>6</b><span>Required firmware/target combinations</span></section>
+<section class="card"><b>892</b><span>Unique command names in the canonical catalogue</span></section>
+<section class="card"><b>104</b><span>ISA architecture records</span></section>
+<section class="card"><b>75</b><span>Architectures still marked catalog-only</span></section>
+</div>
+<h2>Acceptance gates</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>Gate</th><th>Current evidence</th><th>Status</th></tr></thead>
+<tbody>
+<tr><td>Live · BIOS / UEFI</td><td>Target-specific init ELF and module handoff are being integrated; both firmware paths still require the same-ISO userspace acceptance.</td><td><span class="status blocked">Not accepted</span></td></tr>
+<tr><td>Installer · BIOS / UEFI</td><td>Native init and installer payload must prove CPL3 entry, matching nonzero PID, and real persistent installation.</td><td><span class="status blocked">Not accepted</span></td></tr>
+<tr><td>Recovery · BIOS / UEFI</td><td>Native recovery init must prove userspace readiness and a verified recovery postcondition.</td><td><span class="status blocked">Not accepted</span></td></tr>
+<tr><td>Process and syscall path</td><td>Acceptance requires ordered kernel-ready, user-originated CPL3 syscall acknowledgement, and userspace-ready markers with the same PID.</td><td><span class="status">In validation</span></td></tr>
+<tr><td>VFS and storage</td><td>Native block devices, partition discovery, mounted writable filesystems, persistence, and repair remain separate gates.</td><td><span class="status blocked">Incomplete</span></td></tr>
+<tr><td>Windows drive interoperability</td><td>WSL host aliases under <code>/mnt/drive/C</code> are proposed separately; this is not a native Koronos NTFS/DrvFs driver.</td><td><span class="status">Host integration only</span></td></tr>
+<tr><td>Aurora / Marine native desktops</td><td>Browser WebGL previews and hosted Linux sessions do not prove native Koronos X11/Wayland sessions.</td><td><span class="status blocked">Not accepted</span></td></tr>
+<tr><td>Command providers</td><td>Per-command provider paths, hashes, architectures, and package outcomes are being recorded; presence is not semantic conformance.</td><td><span class="status">In progress</span></td></tr>
+<tr><td>ISA backends</td><td>Cross-target compile smokes are evidence of object emission only; instruction coverage, ABI, loader, and runtime tests remain required.</td><td><span class="status">In progress</span></td></tr>
+<tr><td>SMP and additional architectures</td><td>AP startup, real parallel execution, and architecture-specific boot/runtime certification remain unverified.</td><td><span class="status blocked">Not accepted</span></td></tr>
+</tbody></table></div>
+<div class="links">
+<a href="https://github.com/amerhwitat/ChimeraIIOS/pull/275">Chimera build/provider work</a>
+<a href="https://github.com/amerhwitat/ChimeraIIOS/pull/276">WSL drive aliases</a>
+<a href="https://github.com/amerhwitat/OctavianOS/pull/187">Octavian catalog and native boot work</a>
+<a href="https://github.com/amerhwitat/amerhwitat.github.io/pull/96">Desktop gallery publication</a>
+<a href="aurora_webgl_desktops.html">Aurora WebGL gallery</a>
+<a href="marine_desktop.html">Marine desktop</a>
+</div>
+<footer>Evidence is intentionally conservative. This dashboard changes only when a corresponding build artifact, test trace, or release gate provides verifiable proof.</footer>
+</main>
+</body>
+</html>
