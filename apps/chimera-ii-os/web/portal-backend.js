@@ -2,7 +2,7 @@
 (()=>{'use strict';
 const storage=(key,value)=>{try{if(value===undefined)return localStorage.getItem(key)||'';if(value)localStorage.setItem(key,value);else localStorage.removeItem(key)}catch{}};
 const cfg={
- get base(){return (document.querySelector('meta[name="chimera-backend"]')?.content||storage('chimera.backend.url')).replace(/\/+$/,'')},
+ get base(){return (storage('chimera.backend.url')||document.querySelector('meta[name="chimera-backend"]')?.content||'').replace(/\/+$/,'')},
  set base(v){storage('chimera.backend.url',String(v||'').trim().replace(/\/+$/,''))},
  get token(){return storage('chimera.backend.token')},
  set token(v){storage('chimera.backend.token',String(v||'').trim())},
