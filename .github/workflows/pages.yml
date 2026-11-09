@@ -182,7 +182,10 @@ jobs:
           for label in ("Aurora Glass", "Marine Blue", "FreeXP / Q4OS Trinity", "OctavianOS"):
               assert label in gallery, f"desktop profile missing: {label}"
           assert "catalog.svg#app-" in gallery and "iconRow" in gallery
+          assert 'preview:"/desktops/freexp.html"' in gallery
           assert Path("desktops/index.html").is_file()
+          assert Path("desktops/freexp.html").is_file()
+          assert Path("assets/wallpapers/freexp-hills.svg").is_file()
           print("Desktop gallery/icon contract: PASS (133 icon manifest entries)")
           PY
       - name: Validate landing studio assets and Quick Launch destinations
@@ -203,6 +206,7 @@ jobs:
               "#apps",
               "apps/aurora-glass-desktop/index.html",
               "desktops/index.html",
+              "desktops/freexp.html",
               "apps/chimera-ii-os/web/aurora_3d_desktop.html",
               "apps/thamudic-scanner/index.html",
               "apps/optional-app-center/index.html",
