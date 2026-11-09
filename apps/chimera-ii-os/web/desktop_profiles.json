@@ -163,6 +163,16 @@
       "mode": "emulator-shell",
       "description": "Launcher shell optimized for retro-computer emulators.",
       "background": "https://images.unsplash.com/photo-1717293520171-b1d8b5d5e3f2?auto=format&fit=crop&w=3840&q=90"
+    },
+    {
+      "id": "freexp-trinity",
+      "title": "FreeXP · Q4OS / Trinity",
+      "family": "Linux",
+      "mode": "session-adapter",
+      "background": "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&w=3840&q=90",
+      "description": "Windows XP-inspired Q4OS desktop profile using the Trinity Desktop Environment and the optional XPQ4 free theme set. Web preview only; native session requires the Linux/X11 package and display stack.",
+      "source": "https://xpq4.sourceforge.io/",
+      "upstream": "https://github.com/q4os-trinity/q4os-desktop"
     }
   ]
 }
