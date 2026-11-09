@@ -36,6 +36,8 @@ jobs:
         run: node --check apps/os-desktop-hub/embedded-wallpapers.js
       - name: Validate unified desktop gallery JavaScript
         run: node --check desktops/gallery.js
+      - name: Validate desktop profile coverage and local gallery routes
+        run: python3 scripts/check_desktop_gallery.py
       - name: Validate landing studio JavaScript in PR validation
         run: node --check landing-studio.js
       - name: Test shared asset cache-busting and injection
