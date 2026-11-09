@@ -19,7 +19,7 @@ const { chromium } = require('playwright');
     await page.goto('http://127.0.0.1:8765/apps/chimera-ii-os/web/aurora_webgl_desktops.html');
     await page.waitForFunction(() => {
       const value = document.querySelector('#renderer')?.textContent || '';
-      return value.includes('active') || value === 'Unavailable' || value === 'Shader error';
+      return value.toLowerCase().includes('live') || value.toLowerCase().includes('unavailable') || value.toLowerCase().includes('error');
     }, null, {timeout:15000});
     const renderer = await page.locator('#renderer').innerText();
     assert.match(renderer, /WebGL 2|WebGL 1 fallback/, 'headless browser should expose a WebGL context');

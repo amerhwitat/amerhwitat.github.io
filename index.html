@@ -169,17 +169,15 @@ footer{border-top:1px solid var(--stroke);margin-top:46px;padding:26px 0 44px;co
     <a href="#research" class="lang" data-en="Research Platform" data-ar="منصة البحث">Research Platform</a>
     <a href="#research" class="lang" data-en="NLP Translator" data-ar="مترجم اللغة">NLP Translator</a>
     <a href="#desktop" class="lang" data-en="OS Simulator" data-ar="محاكي النظام">OS Simulator</a>
-    <a href="/desktop-ecosystem.html" class="lang" data-en="Desktop Ecosystem" data-ar="بيئات سطح المكتب">Desktop Ecosystem</a>
-    <a href="/desktops/" class="lang" data-en="All OS Desktops" data-ar="جميع أسطح المكتب">All OS Desktops</a>
-    <a href="/apps/desktop-showcase/index.html" class="lang" data-en="Desktop Showcase" data-ar="عرض أسطح المكتب">Desktop Showcase</a>
     <a href="#registry" class="lang" data-en="Script &amp; ISA Registry" data-ar="سجل النصوص">Script &amp; ISA Registry</a>
     <a href="#repos" class="lang" data-en="Repositories" data-ar="المستودعات">Repositories</a>
     <a href="/repository-hub.html" class="lang" data-en="All Projects" data-ar="كل المشاريع">All Projects</a>
     <a href="/apps/java-app-hub/index.html" class="lang" data-en="Java App Hub" data-ar="مركز تطبيقات جافا">Java App Hub</a>
     <a href="/apps/python-app-hub/index.html" class="lang" data-en="Python App Hub" data-ar="مركز تطبيقات بايثون">Python App Hub</a>
-    <a href="/apps/installer-center/index.html" class="lang" data-en="Installer Center" data-ar="مركز التثبيت">Installer Center</a>
+    <a href="/apps/portfolio-integration/" class="lang" data-en="Integration Center" data-ar="مركز التكامل">Integration Center</a>
+    <a href="/apps/repository-feature-parity/" class="lang" data-en="Feature Parity Matrix" data-ar="مصفوفة تكافؤ الميزات">Feature Parity Matrix</a>
+    <a href="/apps/chimera-octavian-terminal-studio/" class="lang" data-en="Chimera × Octavian Terminal Studio" data-ar="استوديو الطرفيات">Chimera × Octavian Terminal Studio</a>
     <a href="project-updates.html" class="lang" data-en="OS Build & Release Status" data-ar="حالة بناء وإصدار النظام">OS Build &amp; Release Status</a>
-    <a href="/downloads/" class="lang" data-en="Downloads & Wallpapers" data-ar="التنزيلات والخلفيات">Downloads &amp; Wallpapers</a>
   </nav>
   <div class="tools">
     <input id="q" type="search" placeholder="Search apps, pages, repositories…" aria-label="Search">
@@ -197,8 +195,6 @@ footer{border-top:1px solid var(--stroke);margin-top:46px;padding:26px 0 44px;co
       <div class="landing-actions">
         <a class="landing-primary" href="#apps">Explore the app universe <span aria-hidden="true">↗</span></a>
         <a class="landing-secondary" href="apps/aurora-glass-desktop/index.html">Enter Aurora Desktop <span aria-hidden="true">→</span></a>
-        <a class="landing-secondary" href="apps/desktop-showcase/index.html">Explore named desktops <span aria-hidden="true">✦</span></a>
-        <a class="landing-secondary" href="/downloads/#live-isos" data-en="Download live ISOs" data-ar="تنزيل صور النظام">Download live ISOs <span aria-hidden="true">↓</span></a>
         <button class="landing-secondary" type="button" id="open-command" aria-keyshortcuts="Control+K Meta+K">⌘ Quick launch <kbd>Ctrl K</kbd></button>
       </div>
       <div class="landing-metrics" aria-label="Portfolio highlights">
@@ -1533,14 +1529,6 @@ const APPS = [
     "path": "apps/desktop-evolution/index.html"
   },
   {
-    "group": "Desktop",
-    "title": "Named Desktop Showcase",
-    "tag": "Aurora · Marine · Koronos · Mobile",
-    "repo": "ChimeraIIOS + OctavianOS",
-    "desc": "Image-inspired, labeled desktop previews for Aurora, Marine, Seelen UI, Koronos Workbench, Nova, and Mobile OS, with links to their source projects.",
-    "path": "apps/desktop-showcase/index.html"
-  },
-  {
     "group": "Developer Tools",
     "title": "Java Application Hub",
     "tag": "Java · App Inventory",
@@ -1595,14 +1583,6 @@ const APPS = [
     "repo": "ChimeraIIOS",
     "desc": "Directory of published browser apps and project surfaces in the Chimera II OS ecosystem.",
     "path": "apps/index.html"
-  },
-  {
-    "group": "ChimeraIIOS + OctavianOS",
-    "title": "Installer Center — ChimeraIIOS & OctavianOS",
-    "tag": "Aurora · Text + GUI · Review Preview",
-    "repo": "ChimeraIIOS + OctavianOS",
-    "desc": "Shared nine-stage installer workflow and interactive review previews for both OS projects. Native disk-writing backend and production acceptance remain blocked.",
-    "path": "apps/installer-center/index.html"
   }
 ];
 const REPOS = [

@@ -2,27 +2,167 @@
   "schema": "chimera-desktop-profiles/v1",
   "default": "aurora-native",
   "backgrounds": [
-    {"id":"aurora-horizon","title":"Infinite Research Horizon","asset":"chimera-hero-3840x2160.svg","family":"Aurora"},
-    {"id":"celestial-octopus","title":"Celestial Octopus Aurora","asset":"octavian-celestial-octopus-3840x2160.svg","family":"Aurora"},
-    {"id":"marine-ocean","title":"Marine Ocean Glass","asset":"marine-desktop.svg","family":"Marine"}
+    {
+      "id": "aurora-horizon",
+      "title": "Aurora Horizon · Unsplash",
+      "url": "https://images.unsplash.com/photo-1786335091902-eb0166246cbe?auto=format&fit=crop&w=3840&q=90",
+      "family": "Aurora",
+      "source": "Unsplash",
+      "license": "Unsplash License"
+    },
+    {
+      "id": "celestial-cosmos",
+      "title": "Deep Space · Unsplash",
+      "url": "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&w=3840&q=90",
+      "family": "Aurora",
+      "source": "Unsplash",
+      "license": "Unsplash License"
+    },
+    {
+      "id": "marine-ocean",
+      "title": "Ocean Glass · Unsplash",
+      "url": "https://images.unsplash.com/photo-1717293520171-b1d8b5d5e3f2?auto=format&fit=crop&w=3840&q=90",
+      "family": "Marine",
+      "source": "Unsplash",
+      "license": "Unsplash License"
+    }
   ],
   "profiles": [
-    {"id":"aurora-native","title":"Aurora Wayland Glass","family":"Aurora","mode":"native-or-web","background":"chimera-hero-3840x2160.svg","description":"Chimera II native glass desktop and browser-compatible shell with the Infinite Research Horizon artwork."},
-    {"id":"marine-desktop","title":"Marine Desktop","family":"Marine","mode":"web-shell","background":"marine-desktop.svg","description":"A Windows-inspired desktop shell with ocean-glass panels and coordinated marine artwork."},
-    {"id":"linux-gnome","title":"Ubuntu / GNOME","family":"Linux","mode":"session-adapter","description":"GNOME Shell profile for Ubuntu and GNOME-based distributions."},
-    {"id":"linux-kde-plasma","title":"KDE Plasma","family":"Linux","mode":"session-adapter","description":"KDE Plasma profile for Plasma-based Linux installations."},
-    {"id":"linux-xfce","title":"Xfce","family":"Linux","mode":"session-adapter","description":"Lightweight Xfce desktop profile."},
-    {"id":"linux-cinnamon","title":"Cinnamon","family":"Linux","mode":"session-adapter","description":"Cinnamon desktop profile."},
-    {"id":"linux-mate","title":"MATE","family":"Linux","mode":"session-adapter","description":"Traditional MATE desktop profile."},
-    {"id":"linux-lxqt","title":"LXQt / LXDE","family":"Linux","mode":"session-adapter","description":"Lightweight LXQt/LXDE-compatible profile."},
-    {"id":"linux-budgie","title":"Budgie","family":"Linux","mode":"session-adapter","description":"Budgie desktop profile."},
-    {"id":"linux-pantheon","title":"Pantheon","family":"Linux","mode":"session-adapter","description":"elementary/Pantheon-style profile."},
-    {"id":"linux-deepin","title":"Deepin","family":"Linux","mode":"session-adapter","description":"Deepin Desktop Environment profile."},
-    {"id":"linux-enlightenment","title":"Enlightenment","family":"Linux","mode":"session-adapter","description":"Enlightenment desktop profile."},
-    {"id":"linux-cosmic","title":"COSMIC","family":"Linux","mode":"session-adapter","description":"COSMIC desktop profile."},
-    {"id":"windows-11","title":"Windows 11 UI","family":"Windows","mode":"web-profile-or-vm","description":"Windows 11-style shell; real Windows requires an authorized VM/RDP backend."},
-    {"id":"windows-10","title":"Windows 10 UI","family":"Windows","mode":"web-profile-or-vm","description":"Windows 10-style shell; real Windows requires an authorized VM/RDP backend."},
-    {"id":"windows-classic","title":"Classic Windows UI","family":"Windows","mode":"web-profile-or-vm","description":"Classic Windows-style desktop profile."},
-    {"id":"retro-desktop","title":"Retro Computer Desktop","family":"Retro","mode":"emulator-shell","description":"Launcher shell optimized for retro-computer emulators."}
+    {
+      "id": "aurora-native",
+      "title": "Aurora Wayland Glass",
+      "family": "Aurora",
+      "mode": "native-or-web",
+      "background": "https://images.unsplash.com/photo-1786335091902-eb0166246cbe?auto=format&fit=crop&w=3840&q=90",
+      "description": "Chimera II native glass desktop and browser-compatible shell with the Infinite Research Horizon artwork."
+    },
+    {
+      "id": "marine-desktop",
+      "title": "Marine Desktop",
+      "family": "Marine",
+      "mode": "web-shell",
+      "background": "https://images.unsplash.com/photo-1717293520171-b1d8b5d5e3f2?auto=format&fit=crop&w=3840&q=90",
+      "description": "A Windows-inspired desktop shell with ocean-glass panels and coordinated marine artwork."
+    },
+    {
+      "id": "linux-gnome",
+      "title": "Ubuntu / GNOME",
+      "family": "Linux",
+      "mode": "session-adapter",
+      "description": "GNOME Shell profile for Ubuntu and GNOME-based distributions.",
+      "background": "https://images.unsplash.com/photo-1717293520171-b1d8b5d5e3f2?auto=format&fit=crop&w=3840&q=90"
+    },
+    {
+      "id": "linux-kde-plasma",
+      "title": "KDE Plasma",
+      "family": "Linux",
+      "mode": "session-adapter",
+      "description": "KDE Plasma profile for Plasma-based Linux installations.",
+      "background": "https://images.unsplash.com/photo-1717293520171-b1d8b5d5e3f2?auto=format&fit=crop&w=3840&q=90"
+    },
+    {
+      "id": "linux-xfce",
+      "title": "Xfce",
+      "family": "Linux",
+      "mode": "session-adapter",
+      "description": "Lightweight Xfce desktop profile.",
+      "background": "https://images.unsplash.com/photo-1717293520171-b1d8b5d5e3f2?auto=format&fit=crop&w=3840&q=90"
+    },
+    {
+      "id": "linux-cinnamon",
+      "title": "Cinnamon",
+      "family": "Linux",
+      "mode": "session-adapter",
+      "description": "Cinnamon desktop profile.",
+      "background": "https://images.unsplash.com/photo-1717293520171-b1d8b5d5e3f2?auto=format&fit=crop&w=3840&q=90"
+    },
+    {
+      "id": "linux-mate",
+      "title": "MATE",
+      "family": "Linux",
+      "mode": "session-adapter",
+      "description": "Traditional MATE desktop profile.",
+      "background": "https://images.unsplash.com/photo-1717293520171-b1d8b5d5e3f2?auto=format&fit=crop&w=3840&q=90"
+    },
+    {
+      "id": "linux-lxqt",
+      "title": "LXQt / LXDE",
+      "family": "Linux",
+      "mode": "session-adapter",
+      "description": "Lightweight LXQt/LXDE-compatible profile.",
+      "background": "https://images.unsplash.com/photo-1717293520171-b1d8b5d5e3f2?auto=format&fit=crop&w=3840&q=90"
+    },
+    {
+      "id": "linux-budgie",
+      "title": "Budgie",
+      "family": "Linux",
+      "mode": "session-adapter",
+      "description": "Budgie desktop profile.",
+      "background": "https://images.unsplash.com/photo-1717293520171-b1d8b5d5e3f2?auto=format&fit=crop&w=3840&q=90"
+    },
+    {
+      "id": "linux-pantheon",
+      "title": "Pantheon",
+      "family": "Linux",
+      "mode": "session-adapter",
+      "description": "elementary/Pantheon-style profile.",
+      "background": "https://images.unsplash.com/photo-1717293520171-b1d8b5d5e3f2?auto=format&fit=crop&w=3840&q=90"
+    },
+    {
+      "id": "linux-deepin",
+      "title": "Deepin",
+      "family": "Linux",
+      "mode": "session-adapter",
+      "description": "Deepin Desktop Environment profile.",
+      "background": "https://images.unsplash.com/photo-1717293520171-b1d8b5d5e3f2?auto=format&fit=crop&w=3840&q=90"
+    },
+    {
+      "id": "linux-enlightenment",
+      "title": "Enlightenment",
+      "family": "Linux",
+      "mode": "session-adapter",
+      "description": "Enlightenment desktop profile.",
+      "background": "https://images.unsplash.com/photo-1717293520171-b1d8b5d5e3f2?auto=format&fit=crop&w=3840&q=90"
+    },
+    {
+      "id": "linux-cosmic",
+      "title": "COSMIC",
+      "family": "Linux",
+      "mode": "session-adapter",
+      "description": "COSMIC desktop profile.",
+      "background": "https://images.unsplash.com/photo-1717293520171-b1d8b5d5e3f2?auto=format&fit=crop&w=3840&q=90"
+    },
+    {
+      "id": "windows-11",
+      "title": "Windows 11 UI",
+      "family": "Windows",
+      "mode": "web-profile-or-vm",
+      "description": "Windows 11-style shell; real Windows requires an authorized VM/RDP backend.",
+      "background": "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&w=3840&q=90"
+    },
+    {
+      "id": "windows-10",
+      "title": "Windows 10 UI",
+      "family": "Windows",
+      "mode": "web-profile-or-vm",
+      "description": "Windows 10-style shell; real Windows requires an authorized VM/RDP backend.",
+      "background": "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&w=3840&q=90"
+    },
+    {
+      "id": "windows-classic",
+      "title": "Classic Windows UI",
+      "family": "Windows",
+      "mode": "web-profile-or-vm",
+      "description": "Classic Windows-style desktop profile.",
+      "background": "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&w=3840&q=90"
+    },
+    {
+      "id": "retro-desktop",
+      "title": "Retro Computer Desktop",
+      "family": "Retro",
+      "mode": "emulator-shell",
+      "description": "Launcher shell optimized for retro-computer emulators.",
+      "background": "https://images.unsplash.com/photo-1717293520171-b1d8b5d5e3f2?auto=format&fit=crop&w=3840&q=90"
+    }
   ]
 }
