@@ -1141,6 +1141,13 @@
       "g": "Apps",
       "d": "Reference-inspired dual operating-system desktop and terminal preview with WebGL aurora, shell selector and local demo commands.",
       "x": "ChimeraIIOS OctavianOS Aurora Terminal Marine Terminal Wayland WebGL shell bash zsh desktop mockup"
+    },
+    {
+      "p": "apps/chimera-ii-os/web/release-closure-dashboard.html",
+      "t": "Chimera II Native Release Closure",
+      "g": "Projects & Releases",
+      "d": "Evidence-based BIOS/UEFI, Live/Installer/Recovery, userspace, filesystem, desktop, command and ISA acceptance gates.",
+      "x": "Koronos native release acceptance BIOS UEFI Live Installer Recovery CPL3 syscall USERSPACE READY VFS NTFS DrvFs X11 Wayland SMP command providers ISA smoke"
     }
   ]
 }
