@@ -163,6 +163,28 @@ jobs:
         run: node --check apps/chimera-ii-os/web/aurora-interaction-hub.js
       - name: Validate landing studio JavaScript
         run: node --check landing-studio.js
+      - name: Validate desktop gallery and shared icon library
+        run: |
+          node --check desktops/gallery.js
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          gallery = Path("desktops/gallery.js").read_text(encoding="utf-8")
+          sprite = Path("assets/icons/chimera-octavian/catalog.svg").read_text(encoding="utf-8")
+          manifest = json.loads(Path("assets/icons/chimera-octavian/manifest.json").read_text(encoding="utf-8"))
+          assert manifest["schema"] == "chimera-octavian-app-icons/v1"
+          assert manifest["count"] == 133
+          ids = {item["id"] for item in manifest["apps"]}
+          required = {"aurora-files", "chromium", "terminal", "settings", "network", "voiceconnect", "chimera-boot-manager", "archive-manager"}
+          assert required <= ids, f"missing semantic icons: {sorted(required - ids)}"
+          for icon_id in required:
+              assert f'id="app-{icon_id}"' in sprite, f"missing sprite symbol app-{icon_id}"
+          for label in ("Aurora Glass", "Marine Blue", "FreeXP / Q4OS Trinity", "OctavianOS"):
+              assert label in gallery, f"desktop profile missing: {label}"
+          assert "catalog.svg#app-" in gallery and "iconRow" in gallery
+          assert Path("desktops/index.html").is_file()
+          print("Desktop gallery/icon contract: PASS (133 icon manifest entries)")
+          PY
       - name: Validate landing studio assets and Quick Launch destinations
         run: |
           python3 - <<'PY'
@@ -180,6 +202,7 @@ jobs:
           targets = [
               "#apps",
               "apps/aurora-glass-desktop/index.html",
+              "desktops/index.html",
               "apps/chimera-ii-os/web/aurora_3d_desktop.html",
               "apps/thamudic-scanner/index.html",
               "apps/optional-app-center/index.html",
