@@ -7,6 +7,7 @@
 <meta name="description" content="Marine Desktop, the ocean-glass Windows-inspired desktop profile for Chimera II OS.">
 <title>Marine Desktop — Chimera II OS</title>
 <link rel="stylesheet" href="marine_desktop.css">
+<style>.app-symbol{display:inline-block;width:1.8em;height:1.8em;vertical-align:middle;overflow:visible}.icon .app-symbol{width:100%;height:100%}.taskbar-app .app-symbol{width:1.35em;height:1.35em}</style>
 </head>
 <body>
 <main class="marine" id="marineDesktop">
@@ -17,11 +18,11 @@
   </header>
   <section class="desktop-area" aria-label="Marine desktop">
     <div class="desktop-icons">
-      <a class="desktop-icon" href="index.html"><span class="icon tile-home">⌂</span><span>Home</span></a>
-      <a class="desktop-icon" href="artifact-library.html"><span class="icon tile-files">▤</span><span>Files</span></a>
-      <a class="desktop-icon" href="aurora_terminal.html"><span class="icon tile-terminal">›_</span><span>Terminal</span></a>
-      <a class="desktop-icon" href="system_control_center.html"><span class="icon tile-settings">⚙</span><span>Settings</span></a>
-      <a class="desktop-icon" href="aurora_3d_desktop.html"><span class="icon tile-aurora">✧</span><span>Aurora Glass</span></a>
+      <a class="desktop-icon" href="index.html"><span class="icon tile-home"><svg class="app-symbol" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><use href="../../../assets/icons/chimera-octavian/catalog.svg#app-aurora-files"></use></svg></span><span>Home</span></a>
+      <a class="desktop-icon" href="artifact-library.html"><span class="icon tile-files"><svg class="app-symbol" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><use href="../../../assets/icons/chimera-octavian/catalog.svg#app-aurora-files"></use></svg></span><span>Files</span></a>
+      <a class="desktop-icon" href="aurora_terminal.html"><span class="icon tile-terminal"><svg class="app-symbol" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><use href="../../../assets/icons/chimera-octavian/catalog.svg#app-terminal"></use></svg></span><span>Terminal</span></a>
+      <a class="desktop-icon" href="system_control_center.html"><span class="icon tile-settings"><svg class="app-symbol" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><use href="../../../assets/icons/chimera-octavian/catalog.svg#app-settings"></use></svg></span><span>Settings</span></a>
+      <a class="desktop-icon" href="aurora_3d_desktop.html"><span class="icon tile-aurora"><svg class="app-symbol" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><use href="../../../assets/icons/chimera-octavian/catalog.svg#app-about"></use></svg></span><span>Aurora Glass</span></a>
     </div>
     <section class="welcome glass">
       <p class="eyebrow">OCEAN GLASS · DESKTOP PROFILE</p>
@@ -46,8 +47,8 @@
   </section>
   <footer class="taskbar">
     <button id="startButton" class="start-button" aria-expanded="false" aria-controls="startMenu"><span class="brand-mark">M</span><b>Start</b></button>
-    <a class="taskbar-app active" href="index.html">⌂ <span>Workspace</span></a>
-    <a class="taskbar-app" href="aurora_3d_desktop.html">✧ <span>Aurora</span></a>
+    <a class="taskbar-app active" href="index.html"><svg class="app-symbol" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><use href="../../../assets/icons/chimera-octavian/catalog.svg#app-aurora-files"></use></svg> <span>Workspace</span></a>
+    <a class="taskbar-app" href="aurora_3d_desktop.html"><svg class="app-symbol" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><use href="../../../assets/icons/chimera-octavian/catalog.svg#app-about"></use></svg> <span>Aurora</span></a>
     <span class="taskbar-spacer"></span><span class="taskbar-label">Marine Desktop · Web shell</span>
   </footer>
 </main>

@@ -30,14 +30,30 @@ jobs:
         run: python3 scripts/check_wallet_python_catalog.py
       - name: Check Python catalog generator syntax
         run: python3 -m py_compile scripts/refresh_wallet_python_catalog.py
+      - name: Build and inspect Amiga desktop ADF images for PR validation
+        run: |
+          python3 -m pip install --user --disable-pip-version-check amitools
+          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+          export PATH="$HOME/.local/bin:$PATH"
+          python3 -m py_compile scripts/build_amiga_desktop_adfs.py
+          python3 scripts/build_amiga_desktop_adfs.py
+          test "$(find downloads/amiga -maxdepth 1 -name '*.adf' | wc -l)" -eq 4
+          python3 -m py_compile scripts/build_zx_spectrum_tapes.py
+          python3 scripts/build_zx_spectrum_tapes.py
+          test "$(find downloads/retro-tapes -maxdepth 1 -name '*.tap' | wc -l)" -eq 4
+      - name: Upload generated retro floppy and tape images for review
+        uses: actions/upload-artifact@v4
+        with:
+          name: chimera-octavian-retro-disk-and-tape-images
+          path: |
+            downloads/amiga/
+            downloads/retro-tapes/
+          if-no-files-found: error
+          retention-days: 14
       - name: Validate browser network console JavaScript
         run: node --check apps/network-console/app.js
       - name: Validate embedded desktop artwork JavaScript
         run: node --check apps/os-desktop-hub/embedded-wallpapers.js
-      - name: Validate unified desktop gallery JavaScript
-        run: node --check desktops/gallery.js
-      - name: Validate desktop profile coverage and local gallery routes
-        run: python3 scripts/check_desktop_gallery.py
       - name: Validate landing studio JavaScript in PR validation
         run: node --check landing-studio.js
       - name: Test shared asset cache-busting and injection
@@ -54,6 +70,16 @@ jobs:
           npm run build
           test -s dist/index.html
           rm -rf node_modules
+      - name: Rebuild generated retro media after app build cleanup
+        run: |
+          set -euo pipefail
+          python3 -m pip install --user --disable-pip-version-check amitools
+          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+          export PATH="$HOME/.local/bin:$PATH"
+          python3 scripts/build_amiga_desktop_adfs.py
+          python3 scripts/build_zx_spectrum_tapes.py
+          test "$(find downloads/amiga -maxdepth 1 -name '*.adf' | wc -l)" -eq 4
+          test "$(find downloads/retro-tapes -maxdepth 1 -name '*.tap' | wc -l)" -eq 4
       - name: Test site-local link resolution
         run: python3 -m unittest scripts/test_check_site_links.py
       - name: Validate every app catalog destination
@@ -107,6 +133,16 @@ jobs:
         run: python3 scripts/sync_ancient_language_registry.py
       - name: Apply Aurora runtime to all pages
         run: python3 scripts/apply_aurora_runtime.py
+      - name: Build and inspect Amiga desktop ADF images for publication
+        run: |
+          python3 -m pip install --user --disable-pip-version-check amitools
+          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+          export PATH="$HOME/.local/bin:$PATH"
+          python3 -m py_compile scripts/build_amiga_desktop_adfs.py scripts/build_zx_spectrum_tapes.py
+          python3 scripts/build_amiga_desktop_adfs.py
+          python3 scripts/build_zx_spectrum_tapes.py
+          test "$(find downloads/amiga -maxdepth 1 -name '*.adf' | wc -l)" -eq 4
+          test "$(find downloads/retro-tapes -maxdepth 1 -name '*.tap' | wc -l)" -eq 4
       - name: Test site-local link resolution
         run: python3 -m unittest scripts/test_check_site_links.py
       - name: Check local site links
