@@ -22,6 +22,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Validate Aurora and Marine semantic icon bindings
+        run: |
+          node --check apps/chimera-ii-os/web/desktop_experiences.js
+          node scripts/validate-desktop-icon-usage.mjs
       - name: Refresh Python catalog for PR validation
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
