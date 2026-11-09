@@ -7,12 +7,18 @@ machine, start the local bridge on that machine.
 ## Start the bridge
 
 Chimera II OS:
-python3 tools/runtime/chimera-terminal-backend.py
+
+    git clone https://github.com/amerhwitat/ChimeraIIOS.git
+    cd ChimeraIIOS
+    python3 tools/runtime/chimera-terminal-backend.py
 
 OctavianOS:
-python3 vendor/chimera-ii-os/source/tools/runtime/chimera-terminal-backend.py
 
-The server prints a one-time bearer token. In Aurora Terminal, enter
+    git clone https://github.com/amerhwitat/OctavianOS.git
+    cd OctavianOS
+    python3 vendor/chimera-ii-os/source/tools/runtime/chimera-terminal-backend.py
+
+The server uses only Python's standard library and prints a one-time bearer token. In Aurora Terminal, enter
 http://127.0.0.1:8767 and paste that token into the Local shell connection panel, then
 select Connect Local Shell.
 
