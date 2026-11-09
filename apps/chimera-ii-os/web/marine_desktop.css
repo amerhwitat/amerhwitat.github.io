@@ -21,3 +21,7 @@
 @keyframes marineDepthDrift{from{transform:translate3d(-1.2%,1%,-100px) rotate(-2deg) scale(1.02)}to{transform:translate3d(1.2%,-1%,-100px) rotate(2deg) scale(1.08)}}
 @media (prefers-reduced-motion:reduce){.marine:after{animation:none}.desktop-icon,.icon,.actions a,.actions button,.tray button,.panel-heading button,.start-button,.taskbar-app,.background-choice{transition:none!important}.desktop-icon:hover,.actions a:hover,.actions button:hover,.tray button:hover,.panel-heading button:hover,.start-button:hover,.taskbar-app:hover,.background-choice:hover{transform:none}}
 @media (hover:none){.desktop-icon:hover{transform:none}.marine:after{opacity:.55}}
+
+/* Shared semantic SVG app icons for the Marine desktop shortcuts and taskbar. */
+.desktop-icon .icon svg{display:block;width:100%;height:100%;overflow:visible;pointer-events:none}
+.taskbar-app svg{display:inline-block;width:22px;height:22px;vertical-align:middle;overflow:visible}
