@@ -9,6 +9,11 @@ on:
       - 'apps/octavianos/index.html'
       - 'apps/octavianos/web/index.html'
       - 'tests/web-os-workbench-smoke.mjs'
+      - 'index.html'
+      - 'apps/chimera-ii-os/web/aurora-terminal-shell.html'
+      - 'apps/chimera-ii-os/web/aurora_terminal.js'
+      - 'apps/chimera-ii-os/web/portal-backend.js'
+      - 'apps/chimera-ii-os/web/aurora-terminal.test.mjs'
       - '.github/workflows/web-os-workbench-validation.yml'
   workflow_dispatch:
 jobs:
@@ -21,5 +26,7 @@ jobs:
           node-version: 22
       - name: Check workbench JavaScript syntax
         run: node --check apps/chimera-ii-os/web/web-os-workbench.js
+      - name: Validate interactive terminal shell profiles and local bridge
+        run: node --test apps/chimera-ii-os/web/aurora-terminal.test.mjs
       - name: Validate workbench DOM, assets, history and safety contracts
         run: node tests/web-os-workbench-smoke.mjs

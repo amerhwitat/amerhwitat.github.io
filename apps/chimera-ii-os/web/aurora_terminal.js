@@ -76,7 +76,7 @@ if(window.ChimeraPortal&&bridgeUrl&&bridgeToken&&bridgeConnect&&runLocal&&bridge
   window.ChimeraPortal.config.base=bridgeUrl.value;
   window.ChimeraPortal.config.token=bridgeToken.value;
   bridgeStatus.textContent='Checking local bridge…';
-  try{const caps=await window.ChimeraPortal.connect();bridgeStatus.textContent='Connected: '+(caps.unsafe_shell?'full local shell':'safe workspace')+' · '+caps.workspace;output('Local bridge connected ('+caps.mode+').','muted');}
+  try{const caps=await window.ChimeraPortal.connect();bridgeStatus.textContent='Connected: '+(caps.profile||'local host')+' · '+(caps.unsafe_shell?'full local shell':'safe workspace')+' · '+caps.workspace;output('Local bridge connected ('+caps.mode+').','muted');}
   catch(e){bridgeStatus.textContent='Not connected: '+e.message;output('Local bridge connection failed: '+e.message,'muted');}
  });
  runLocal.addEventListener('click',async()=>{
