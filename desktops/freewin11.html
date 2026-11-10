@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#eaf0f8">
+<title>FreeWin11 Desktop Preview · Chimera II OS & OctavianOS</title>
+<meta name="description" content="An original, interactive Windows 11/12-inspired desktop preview built from the FreeXP desktop foundation for Chimera II OS and OctavianOS.">
+<style>
+:root{color-scheme:light;--ink:#172b45;--muted:#526982;--blue:#2864bd;--line:#cbd8e8;--glass:#f5f8fddd;--shadow:0 22px 70px #10274435}
+*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;font:14px/1.45 "Segoe UI",system-ui,sans-serif;color:var(--ink)}
+body{background:linear-gradient(135deg,#9dc7ee 0%,#dce9f8 43%,#b5c9e2 100%)}
+.wallpaper{position:fixed;inset:0;background:radial-gradient(ellipse at 72% 18%,#fff9 0 7%,transparent 25%),linear-gradient(145deg,#c4dcf4 0%,#e8eff8 45%,#b6c9df 100%);z-index:-2}
+.wallpaper:after{content:"";position:absolute;inset:0;background:linear-gradient(135deg,transparent 42%,#ffffff55 42.2%,transparent 42.8%),radial-gradient(ellipse at 25% 90%,#7ea6d055,transparent 45%)}
+.topline{position:fixed;top:12px;left:50%;transform:translateX(-50%);z-index:25;display:flex;align-items:center;gap:12px;padding:8px 14px;border:1px solid #ffffffb0;border-radius:999px;background:#f7faffc9;backdrop-filter:blur(18px);box-shadow:0 5px 22px #1b426322;font-size:11px;color:#34516e;white-space:nowrap}
+.topline b{letter-spacing:.13em}.topline a{color:#1f5ea9;font-weight:700;text-decoration:none}
+.desktop{position:fixed;inset:60px 0 82px;padding:22px;display:grid;grid-template-columns:repeat(auto-fit,92px);grid-auto-rows:100px;align-content:start;gap:12px}
+.shortcut{border:1px solid transparent;border-radius:12px;background:transparent;color:#17385c;text-shadow:0 1px 1px #fff;text-align:center;padding:8px 4px;cursor:pointer}
+.shortcut:hover,.shortcut:focus-visible{background:#ffffff70;border-color:#ffffffbd;outline:0}
+.shortcut .glyph{display:grid;place-items:center;width:48px;height:48px;margin:0 auto 6px;border:1px solid #ffffffb5;border-radius:14px;background:linear-gradient(145deg,#ffffffef,#dce9f7d9);box-shadow:0 5px 16px #2d527322;font-size:23px;color:#2864bd}
+.shortcut small{font-size:11px}
+.widgets{position:fixed;right:24px;top:90px;width:min(300px,calc(100vw - 40px));display:grid;gap:10px}
+.widget{border:1px solid #ffffffc9;border-radius:18px;background:#f7faffbd;backdrop-filter:blur(18px);box-shadow:0 10px 28px #1a42651c;padding:14px}
+.widget h3{margin:0 0 7px;font-size:12px;color:#47617d;letter-spacing:.08em;text-transform:uppercase}
+.widget .big{font-size:25px;font-weight:700;color:#1d3d62}.widget p{margin:4px 0 0;font-size:12px;color:var(--muted)}
+.taskbar{position:fixed;z-index:20;left:50%;bottom:13px;transform:translateX(-50%);display:flex;align-items:center;gap:7px;max-width:calc(100vw - 20px);padding:8px 11px;border:1px solid #ffffffd9;border-radius:20px;background:#f6f9f2e8;backdrop-filter:blur(24px);box-shadow:0 10px 36px #102a4b38}
+.taskbtn{width:43px;height:42px;border:1px solid transparent;border-radius:12px;background:transparent;color:#21466f;font-size:19px;cursor:pointer}
+.taskbtn:hover,.taskbtn:focus-visible{background:#dce9f8;border-color:#c3d6ed;outline:0}
+.taskbtn.start{background:#e2edfb;color:#1e59a4;border-color:#c5d8ee;font-weight:800}
+.tasksearch{width:min(240px,25vw);height:40px;border:1px solid #d0dceb;border-radius:12px;background:#ffffffc9;padding:0 12px;color:#274664;outline:0}
+.tasksearch:focus{border-color:#6d9bd4;box-shadow:0 0 0 3px #78a7e533}
+.tray{display:flex;align-items:center;gap:8px;padding:0 9px;color:#294967;font-size:11px;white-space:nowrap}
+.panel{display:none;position:fixed;z-index:30;left:50%;bottom:75px;transform:translateX(-50%);width:min(440px,calc(100vw - 22px));border:1px solid #c8d7e9;border-radius:20px;background:#f6f9fff2;backdrop-filter:blur(24px);box-shadow:var(--shadow);padding:16px}
+.panel.open{display:block}.panel-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}.panel-head strong{font-size:17px}.panel-head button{border:0;background:transparent;font-size:19px;cursor:pointer;color:#47617d}
+.app-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:9px}.app{border:1px solid #d6e1ee;border-radius:12px;background:#ffffffc9;padding:12px 6px;text-align:center;color:#274765;cursor:pointer}.app:hover{background:#e6f0fc}.app span{display:block;font-size:21px;margin-bottom:4px}.app small{font-size:10px}
+.start-panel{width:min(520px,calc(100vw - 22px))}.start-search{width:100%;height:40px;border:1px solid #d2deeb;border-radius:11px;background:white;padding:0 12px;margin-bottom:12px}.start-title{font-weight:700;margin:4px 0 9px}.pinned{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}.recommended{margin-top:15px;padding-top:12px;border-top:1px solid #dbe4ef}.recommended p{margin:6px 0;color:#526982;font-size:12px}
+.window{display:none;position:fixed;z-index:12;left:18%;top:16%;width:min(650px,calc(100vw - 26px));height:min(430px,calc(100vh - 125px));border:1px solid #c4d3e5;border-radius:15px;background:#fbfdff;box-shadow:var(--shadow);overflow:hidden}
+.window.open{display:flex;flex-direction:column}.window.active{z-index:16}.titlebar{height:44px;display:flex;align-items:center;gap:9px;padding:0 12px;background:#f0f5fb;border-bottom:1px solid #d8e2ed;user-select:none}.titlebar strong{flex:1;font-size:12px}.titlebar button{border:0;border-radius:7px;background:transparent;padding:5px 9px;cursor:pointer;color:#435c77}.titlebar button:hover{background:#dfe9f5}.window-body{padding:18px;overflow:auto;flex:1}.toolbar{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:16px}.toolbar span{border:1px solid #d5e1ee;border-radius:8px;background:#f6f9fd;padding:6px 10px;font-size:12px}.files{display:grid;grid-template-columns:repeat(auto-fill,minmax(105px,1fr));gap:12px}.file{border:1px solid #e0e8f1;border-radius:11px;background:#fff;padding:14px 8px;text-align:center}.file b{display:block;font-size:25px;margin-bottom:5px}.file small{font-size:11px;color:#536c85}
+.control-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}.control{border:1px solid #d5e0ed;border-radius:12px;background:#fff;padding:12px;color:#35516f}.control strong{display:block;margin-bottom:3px}.hint{font-size:11px;color:#647c94;margin-top:12px}
+@media(max-width:760px){.widgets{right:12px;top:68px;width:190px}.widget{padding:10px}.widget p{font-size:10px}.taskbar{gap:3px;padding:6px}.taskbtn{width:36px;height:38px}.tasksearch{width:115px}.tray{display:none}.desktop{padding:12px;grid-template-columns:repeat(3,76px);gap:5px}.shortcut{width:76px}.window{left:10px!important;top:12%!important}.topline{max-width:calc(100vw - 20px);overflow:hidden}}
+@media(max-width:430px){.widgets{display:none}.tasksearch{width:100px}.taskbar{left:8px;right:8px;transform:none;justify-content:center}.taskbtn{width:32px}.topline{font-size:9px}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wallpaper" aria-hidden="true"></div>
+<div class="topline"><b>FREEWIN11</b><span>·</span><span>Windows 11/12-inspired clean-room desktop</span><a href="/desktops/">Desktop gallery ↗</a></div>
+<main class="desktop" aria-label="FreeWin11 desktop">
+ <button class="shortcut" data-window="files"><span class="glyph">▣</span><small>This PC</small></button>
+ <button class="shortcut" data-window="terminal"><span class="glyph">⌘</span><small>Terminal</small></button>
+ <button class="shortcut" data-window="browser"><span class="glyph">◎</span><small>Browser</small></button>
+ <button class="shortcut" data-panel="control"><span class="glyph">⚙</span><small>Settings</small></button>
+</main>
+<aside class="widgets" aria-label="Desktop widgets">
+ <section class="widget"><h3>Focus</h3><div class="big">Good afternoon</div><p>Workspace ready · Your apps and files in one place</p></section>
+ <section class="widget"><h3>System</h3><div class="big">Chimera II</div><p>Prototype session · Native boot handoff not yet enabled</p></section>
+ <section class="widget"><h3>Network</h3><div class="big">Status panel</div><p>Live network telemetry appears when the system provider is connected</p></section>
+</aside>
+<nav class="taskbar" aria-label="Taskbar">
+ <button class="taskbtn start" id="startButton" aria-label="Open Start menu">⊞</button>
+ <input class="tasksearch" id="taskSearch" type="search" placeholder="Search" aria-label="Search apps">
+ <button class="taskbtn" data-window="files" aria-label="File Explorer">▣</button>
+ <button class="taskbtn" data-window="terminal" aria-label="Terminal">⌘</button>
+ <button class="taskbtn" data-window="browser" aria-label="Browser">◎</button>
+ <span class="tray"><span>◉</span><span>◌</span><span id="clock">--:--</span></span>
+ <button class="taskbtn" id="controlButton" aria-label="Quick settings">☷</button>
+</nav>
+<section class="panel start-panel" id="startPanel" aria-label="Start menu">
+ <div class="panel-head"><strong>Start</strong><button data-close="startPanel" aria-label="Close">×</button></div>
+ <input class="start-search" id="startSearch" type="search" placeholder="Search apps, files and settings">
+ <div class="start-title">Pinned</div>
+ <div class="pinned">
+  <button class="app" data-window="files"><span>▣</span><small>File Explorer</small></button>
+  <button class="app" data-window="terminal"><span>⌘</span><small>Terminal</small></button>
+  <button class="app" data-window="browser"><span>◎</span><small>Browser</small></button>
+  <button class="app" data-panel="control"><span>⚙</span><small>Settings</small></button>
+ </div>
+ <div class="recommended"><div class="start-title">Recommended</div><p>Recent files and installed applications will appear here when a native session provider is connected.</p></div>
+</section>
+<section class="panel" id="controlPanel" aria-label="Quick settings">
+ <div class="panel-head"><strong>Quick settings</strong><button data-close="controlPanel" aria-label="Close">×</button></div>
+ <div class="control-grid">
+  <div class="control"><strong>Network</strong><small>Provider not connected</small></div>
+  <div class="control"><strong>Bluetooth</strong><small>Provider not connected</small></div>
+  <div class="control"><strong>Accessibility</strong><small>Open system settings</small></div>
+  <div class="control"><strong>Power</strong><small>System power service</small></div>
+ </div>
+ <div class="hint">Controls are preview surfaces until the Koronos service backends are wired.</div>
+</section>
+<section class="window" id="filesWindow" aria-label="File Explorer preview">
+ <header class="titlebar"><strong>File Explorer · This PC</strong><button data-minimize="filesWindow">—</button><button data-close-window="filesWindow">×</button></header>
+ <div class="window-body"><div class="toolbar"><span>Home</span><span>This PC</span><span>Documents</span></div><div class="files">
+  <div class="file"><b>▣</b><small>Documents</small></div><div class="file"><b>▧</b><small>Downloads</small></div><div class="file"><b>▤</b><small>Pictures</small></div><div class="file"><b>▥</b><small>Music</small></div><div class="file"><b>▦</b><small>Videos</small></div><div class="file"><b>💾</b><small>Drives</small></div>
+ </div><p class="hint">Browser preview only; it does not expose the host filesystem.</p></div>
+</section>
+<section class="window" id="browserWindow" aria-label="Browser preview">
+ <header class="titlebar"><strong>Browser</strong><button data-minimize="browserWindow">—</button><button data-close-window="browserWindow">×</button></header>
+ <div class="window-body"><h2>Explore the web</h2><p>Launch the connected desktop terminal or explore the Chimera II Web UI.</p><p><a href="/apps/chimera-ii-os/web/desktop_experiences.html">Desktop experiences</a> · <a href="/apps/chimera-ii-os/web/aurora-terminal-shell.html">Interactive terminal</a></p></div>
+</section>
+<section class="window" id="terminalWindow" aria-label="Terminal link">
+ <header class="titlebar"><strong>Terminal</strong><button data-minimize="terminalWindow">—</button><button data-close-window="terminalWindow">×</button></header>
+ <div class="window-body"><h2>Chimera Terminal Studio</h2><p>Open the interactive browser terminal experience.</p><p><a class="action" href="/apps/chimera-ii-os/web/aurora-terminal-shell.html">Open Terminal Studio ↗</a></p><p class="hint">This desktop preview does not execute host shell commands.</p></div>
+</section>
+<script>
+(() => {
+ const panels={startPanel:document.getElementById("startPanel"),controlPanel:document.getElementById("controlPanel")};
+ const windows={files:document.getElementById("filesWindow"),browser:document.getElementById("browserWindow"),terminal:document.getElementById("terminalWindow")};
+ const closeAll=()=>{Object.values(panels).forEach(x=>x.classList.remove("open"));Object.values(windows).forEach(x=>x.classList.remove("open"));};
+ const showPanel=id=>{closeAll();panels[id].classList.add("open");};
+ const showWindow=id=>{closeAll();windows[id].classList.add("open");};
+ document.getElementById("startButton").addEventListener("click",()=>panels.startPanel.classList.toggle("open"));
+ document.getElementById("controlButton").addEventListener("click",()=>showPanel("controlPanel"));
+ document.querySelectorAll("[data-panel]").forEach(b=>b.addEventListener("click",()=>showPanel("controlPanel")));
+ document.querySelectorAll("[data-window]").forEach(b=>b.addEventListener("click",()=>showWindow(b.dataset.window)));
+ document.querySelectorAll("[data-close]").forEach(b=>b.addEventListener("click",()=>panels[b.dataset.close].classList.remove("open")));
+ document.querySelectorAll("[data-close-window]").forEach(b=>b.addEventListener("click",()=>windows[b.dataset.closeWindow].classList.remove("open")));
+ document.querySelectorAll("[data-minimize]").forEach(b=>b.addEventListener("click",()=>windows[b.dataset.minimize].classList.remove("open")));
+ const search=document.getElementById("taskSearch"), startSearch=document.getElementById("startSearch");
+ const filter=q=>{const v=q.trim().toLowerCase();document.querySelectorAll(".shortcut,.app").forEach(x=>{x.hidden=!!v&&!x.textContent.toLowerCase().includes(v);});};
+ search.addEventListener("input",()=>filter(search.value));
+ startSearch.addEventListener("input",()=>filter(startSearch.value));
+ const clock=document.getElementById("clock");
+ const tick=()=>clock.textContent=new Intl.DateTimeFormat([], {hour:"2-digit",minute:"2-digit"}).format(new Date());
+ tick();setInterval(tick,30000);
+ document.addEventListener("keydown",e=>{if(e.key==="Escape")closeAll();if((e.metaKey||e.ctrlKey)&&e.key.toLowerCase()==="s"){e.preventDefault();showPanel("startPanel");}});
+})();
+</script>
+</body>
+</html>
