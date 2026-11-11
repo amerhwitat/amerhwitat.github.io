@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#07101f">
+<meta name="description" content="A browser-based multi-language code studio and source explorer for public Amer Hwitat repositories.">
+<title>Multi-Language Repository Studio — Amer Hwitat</title>
+<style>
+:root{color-scheme:dark;--bg:#07101f;--panel:#101e33;--panel2:#0b1728;--line:#29425f;--fg:#e9f3ff;--muted:#9eb2cc;--cyan:#69d8ff;--violet:#b39aff;--mint:#6ce9c4;--danger:#ff9b9b}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(900px 500px at 10% -10%,#17375b,transparent 65%),radial-gradient(800px 500px at 100% 0,#2a1e51,transparent 60%),var(--bg);color:var(--fg);font:15px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif;min-height:100vh}a{color:var(--cyan);text-decoration:none}a:hover{text-decoration:underline}button,input,select,textarea{font:inherit}button{cursor:pointer;border:1px solid var(--line);background:#172943;color:var(--fg);padding:9px 13px;border-radius:10px}button:hover{border-color:var(--cyan)}button.primary{background:linear-gradient(120deg,#12678a,#55428c);border-color:#4b9fca}button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,a:focus-visible{outline:2px solid var(--cyan);outline-offset:2px}.wrap{max-width:1440px;margin:auto;padding:24px 20px 64px}.top{display:flex;gap:16px;align-items:center;justify-content:space-between;flex-wrap:wrap}.brand{display:flex;gap:12px;align-items:center}.logo{width:44px;height:44px;border-radius:14px;background:linear-gradient(135deg,#5fd8ff,#a78bfa 65%,#5de8c0);display:grid;place-items:center;color:#06101f;font-weight:900;font-size:19px}.eyebrow{text-transform:uppercase;letter-spacing:.16em;color:var(--mint);font-size:11px;font-weight:800}.muted{color:var(--muted)}h1,h2,h3,p{margin-top:0}h1{font-size:clamp(27px,4vw,42px);line-height:1.08;margin:5px 0 10px}h2{font-size:19px;margin-bottom:12px}h3{font-size:15px;margin-bottom:8px}.hero{padding:28px 0 22px;max-width:940px}.hero p{color:var(--muted);max-width:830px}.pills{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0}.pill{font-size:12px;border:1px solid var(--line);padding:5px 9px;border-radius:99px;color:#c7dcf5;background:#0b192b}.layout{display:grid;grid-template-columns:minmax(250px,320px) minmax(0,1fr);gap:16px;align-items:start}.panel{border:1px solid var(--line);border-radius:16px;background:linear-gradient(160deg,rgba(17,33,55,.96),rgba(8,20,35,.96));box-shadow:0 20px 55px #0003;overflow:hidden}.pad{padding:16px}.field{display:grid;gap:6px;margin:10px 0}.field label{font-size:12px;color:var(--muted);font-weight:700}.field input,.field select,.field textarea{width:100%;border:1px solid var(--line);background:#071322;color:var(--fg);border-radius:9px;padding:10px}.repo-list{display:grid;gap:7px;margin-top:12px;max-height:470px;overflow:auto}.repo{padding:10px;border:1px solid #203752;border-radius:11px;background:#0a1727}.repo strong{display:block;font-size:13px}.repo small{color:var(--muted)}.repo.active{border-color:var(--cyan);background:#10283d}.repo button{width:100%;text-align:left;border:0;background:transparent;padding:0}.statgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin-bottom:14px}.stat{padding:12px;border:1px solid var(--line);border-radius:12px;background:#0a1728}.stat b{display:block;font-size:23px}.stat span{font-size:11px;color:var(--muted)}.toolbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center}.toolbar select{border:1px solid var(--line);background:#081526;color:var(--fg);padding:9px;border-radius:9px;max-width:100%}.workspace{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(260px,.8fr);gap:12px}.editor{border:1px solid var(--line);border-radius:13px;overflow:hidden;background:#06101d}.editorhead{padding:9px 11px;display:flex;align-items:center;justify-content:space-between;gap:8px;background:#0e1b2d;border-bottom:1px solid var(--line)}.editorhead span{font:12px ui-monospace,monospace;color:var(--muted)}textarea#code{display:block;width:100%;height:420px;resize:vertical;border:0;border-radius:0;background:#06101d;color:#d6eaff;padding:14px;font:13px/1.65 ui-monospace,SFMono-Regular,Consolas,monospace;tab-size:2;white-space:pre;overflow:auto}.output{height:420px;overflow:auto;background:#06101d;padding:12px;font:13px/1.6 ui-monospace,monospace;white-space:pre-wrap;overflow-wrap:anywhere}.output iframe{width:100%;height:100%;min-height:360px;background:white;border:0;border-radius:7px}.status{font-size:12px;color:var(--muted);min-height:22px;padding:7px 0}.language-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(125px,1fr));gap:7px}.lang{border:1px solid var(--line);border-radius:10px;padding:9px;background:#0a1728;text-align:left}.lang strong{display:block;font-size:12px}.lang small{color:var(--muted);font-size:10px}.section{margin-top:16px}.notice{border-left:3px solid var(--violet);padding:10px 12px;background:#17162c;color:#d8d2ff;border-radius:0 9px 9px 0;font-size:12px}.foot{margin-top:22px;color:var(--muted);font-size:12px}.hidden{display:none!important}.inline-links{display:flex;gap:12px;flex-wrap:wrap;font-size:12px}@media(max-width:950px){.layout{grid-template-columns:1fr}.workspace{grid-template-columns:1fr}.output{height:260px}textarea#code{height:340px}.repo-list{max-height:280px}}@media(prefers-reduced-motion:no-preference){.panel{animation:rise .25s ease-out}@keyframes rise{from{opacity:.6;transform:translateY(4px)}to{opacity:1;transform:translateY(0)}}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+ <div class="brand"><div class="logo" aria-hidden="true">{};</div><div><div class="eyebrow">Aurora Developer Tools</div><strong>Repository Studio</strong></div></div>
+ <nav class="inline-links" aria-label="Main navigation"><a href="../../">Portfolio home</a><a href="../../repository-hub.html">Repository hub</a><a href="../">Apps directory</a></nav>
+</header>
+<section class="hero">
+ <div class="eyebrow">Cross-repository · multi-language</div>
+ <h1>One workspace for your source universe.</h1>
+ <p>Explore public repositories, inspect GitHub language statistics, open source files, and prototype code in a guarded browser workspace. The catalog is a discovery layer—not a claim that every repository has been compiled, ported, or deployed as a native app.</p>
+ <div class="pills"><span class="pill">Source discovery</span><span class="pill">Language-aware editor</span><span class="pill">Sandboxed preview</span><span class="pill">Build-status honesty</span></div>
+</section>
+<div class="layout">
+ <aside class="panel pad">
+  <h2>Repository explorer</h2>
+  <div class="field"><label for="repoFilter">Filter public repositories</label><input id="repoFilter" type="search" placeholder="Search name or purpose…"></div>
+  <div class="repo-list" id="repoList" aria-live="polite"></div>
+  <div class="status" id="repoStatus">Loading repository language metadata…</div>
+  <div class="notice">Only public repository metadata is requested. This page does not access private repositories, local files, secrets, or CI credentials.</div>
+ </aside>
+ <main>
+  <div class="statgrid">
+   <div class="stat"><b id="repoCount">14</b><span>catalogued public repos</span></div>
+   <div class="stat"><b id="langCount">—</b><span>languages reported by GitHub</span></div>
+   <div class="stat"><b id="fileCount">—</b><span>source files opened this session</span></div>
+  </div>
+  <section class="panel pad">
+   <div class="toolbar" style="justify-content:space-between">
+    <div><div class="eyebrow">Selected project</div><h2 id="selectedName" style="margin:4px 0">Choose a repository</h2></div>
+    <div class="toolbar"><a id="repoLink" href="https://github.com/amerhwitat" target="_blank" rel="noopener">Open on GitHub ↗</a><button id="refresh" type="button">Refresh metadata</button></div>
+   </div>
+   <p class="muted" id="selectedInfo">Select a repository on the left to inspect its language profile and source tree.</p>
+   <div id="languageGrid" class="language-grid"></div>
+   <div class="field"><label for="filePath">Repository-relative source path</label><input id="filePath" placeholder="src/main.py or README.md"><div class="toolbar"><button id="openFile" class="primary" type="button">Load source file</button><a id="searchSource" target="_blank" rel="noopener">Search source on GitHub ↗</a></div></div>
+   <div class="status" id="sourceStatus">No source file loaded yet.</div>
+  </section>
+  <section class="panel pad section">
+   <div class="toolbar" style="justify-content:space-between"><div><div class="eyebrow">Browser playground</div><h2 style="margin:4px 0">Code workbench</h2></div><div class="toolbar"><select id="language" aria-label="Programming language"></select><button id="resetCode" type="button">Reset sample</button><button id="runCode" class="primary" type="button">Run / preview</button></div></div>
+   <p class="muted" style="font-size:12px;margin:8px 0 13px">JavaScript and HTML/CSS preview run in an isolated sandbox. Other languages have editable examples and source links; they are not falsely presented as executed without a matching runtime.</p>
+   <div class="workspace">
+    <div class="editor"><div class="editorhead"><strong>Editor</strong><span id="fileType">script.js</span></div><textarea id="code" spellcheck="false" aria-label="Code editor"></textarea></div>
+    <div class="editor"><div class="editorhead"><strong>Output / preview</strong><span id="outputType">sandbox</span></div><div id="output" class="output" aria-live="polite">Choose a language and select Run / preview.</div></div>
+   </div>
+   <div class="status" id="runStatus" role="status">Ready.</div>
+   <div class="inline-links"><a href="https://github.com/amerhwitat" target="_blank" rel="noopener">Public repositories ↗</a><a href="https://github.com/amerhwitat/amerhwitat.github.io/issues" target="_blank" rel="noopener">Report a catalog issue ↗</a></div>
+  </section>
+  <section class="panel pad section">
+   <h2>Existing language-specific workbenches</h2>
+   <p class="muted">These published GUIs are linked as existing tools, not inferred from language names. Their own capabilities and runtime requirements still need independent validation.</p>
+   <div class="language-grid">
+    <a class="lang" href="../python-app-hub/index.html"><strong>Python App Hub</strong><small>Python app inventory</small></a>
+    <a class="lang" href="../java-app-hub/index.html"><strong>Java App Hub</strong><small>Java desktop / JVM migration</small></a>
+    <a class="lang" href="https://github.com/amerhwitat/ChimeraIIOS/tree/feat/perl-5.44-runtime-20261022/tools/perl-runtime"><strong>Perl 5.44.0 Runtime</strong><small>Stable 5.44.0 + latest development 5.45.3 · host runtime only</small></a>
+    <a class="lang" href="https://github.com/amerhwitat/OctavianOS/tree/feat/perl-5.44-runtime-20261022/tools/perl-runtime"><strong>OctavianOS Perl Runtime</strong><small>Stable and development channels · native execution gated</small></a>
+    <a class="lang" href="../chimera-ii-os/web/chimera-language-runtime.html"><strong>Chimera Language Runtime</strong><small>C, C++, Java, Python, Kotlin, Assembly catalog</small></a>
+    <a class="lang" href="../repository-app-explorer/index.html"><strong>Repository App Explorer</strong><small>Source repository discovery</small></a>
+    <a class="lang" href="../project-workbench.html"><strong>Project Workbench</strong><small>GUI migration planning</small></a>
+    <a class="lang" href="../chimera-ii-os/web/chimera_code_ide.html"><strong>Chimera Code IDE</strong><small>Existing OS code IDE surface</small></a>
+   </div>
+  </section>
+  <section class="panel pad section">
+   <h2>Language coverage & execution contract</h2>
+   <div class="language-grid" id="allLanguages"></div>
+   <p class="foot">Language presence is based on GitHub repository metadata when available. A language entry is not proof that every file builds or runs. Native, compiled, GPU, OS-kernel, and dependency-heavy programs need their own toolchain, test suite, and security review. This browser page never executes repository code automatically.</p>
+  </section>
+ </main>
+</div>
+<footer class="foot">Multi-Language Repository Studio · static GitHub Pages UI · no repository code is executed on load.</footer>
+</div>
+<script src="./app.js" defer></script>
+</body>
+</html>
