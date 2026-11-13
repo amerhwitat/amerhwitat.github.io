@@ -21,7 +21,7 @@ header,main,footer{max-width:1180px;margin:auto;padding:24px}header{padding-top:
 <main>
 <section id="native-isos">
 <h2>Native Koronos ISOs — Live / Installer / Recovery</h2>
-<p class="lede">Historical hybrid <strong>BIOS+UEFI</strong> native Koronos ISO releases (Multiboot2, no Linux kernel). The November 6 release notes record six target/firmware boot cases at publication time. This historical evidence is not a claim that the current production userspace gate still passes: the latest OctavianOS run on November 13 failed the persistent PID 1 acceptance check. Each current PASS requires a kernel-owned persistent PID 1, a CPL-3-originated init syscall, and a matching target readiness marker.</p>
+<p class="lede">Native Koronos hybrid <strong>BIOS+UEFI</strong> images (Multiboot2, no Linux kernel). Historical November 6 releases are retained below. A new OctavianOS candidate built on November 13 now passes the full-ISO QEMU boot check and all six persistent PID 1 target/firmware cases. It is a CI-verified candidate, not a production release: Live is still a text console, Installer is a no-write dry run, and Recovery is diagnostic-only.</p>
 <div class="grid">
 <article class="card">
 <div class="status">Historical release · 6/6 at 2026-11-06 publication</div>
@@ -44,13 +44,24 @@ header,main,footer{max-width:1180px;margin:auto;padding:24px}header{padding-top:
 <a class="download" href="https://github.com/amerhwitat/OctavianOS/blob/main/docs/releases/octavian-native-2026.11.06/RELEASE.md">Release note</a>
 </article>
 </div>
+<article class="card">
+<div class="status">CI verified · 2026-11-13 · candidate, not release</div>
+<h3>OctavianOS — native Koronos candidate</h3>
+<p class="muted"><code>output.iso</code><br>145,303,552 bytes (138.6 MiB) · amd64 · BIOS + UEFI · Multiboot2</p>
+<p class="meta">SHA-256 ac5d11e895ea0b8d70e2127b276099e509b7ca51996c7efe09e8368405dde745</p>
+<p class="muted">Full ISO QEMU boot passed; Live, Installer and Recovery each passed persistent PID 1 acceptance under BIOS and UEFI. This candidate is not yet a production desktop/installer/recovery system.</p>
+<a class="download" href="https://github.com/amerhwitat/OctavianOS/actions/runs/43412390877/artifacts/14029314589">Download ISO candidate (.zip)</a>
+<a class="download" href="https://github.com/amerhwitat/OctavianOS/actions/runs/43412390877">Build + boot evidence</a>
+<a class="download" href="https://github.com/amerhwitat/OctavianOS/actions/runs/43412390841">Six-case userspace traces</a>
+</article>
+</div>
 <p class="muted">Menu: <em>Live</em> = ring-3 text console session · <em>Installer</em> = storage/plan dry-run report (no block backend, writes nothing) · <em>Recovery</em> = diagnostics report. These are target-entry demonstrations, not a finished desktop, disk installer or filesystem-repair environment. Every entry stages the embedded knowledge database (<code>/boot/ai/knowledge-db.json</code>, 373 entries). Menus hold <strong>300 s</strong> for input (120 s in sub-menus). Payload includes catalogues, artwork, videos, app metadata and documentation under <code>/payload</code>; staged content does not mean every listed app is installed or executable. The Aurora HTML desktop ships in the Linux live ISO below, not in the native image.</p>
-<p class="notice"><strong>Current OctavianOS native gate:</strong> the 13 November 2026 run <a href="https://github.com/amerhwitat/OctavianOS/actions/runs/43409174831">#43409174831</a> built a candidate but failed the Recovery routing smoke test because the kernel-verified persistent PID 1 active marker was missing. The six-case <a href="https://github.com/amerhwitat/OctavianOS/actions/runs/43409174786">userspace acceptance run #43409174786</a> also failed all six target/firmware cases. Prerelease publication was skipped. Do not treat the 6 November ISO as a current production Koronos release.</p>
+<p class="notice"><strong>Current OctavianOS native candidate:</strong> commit <code>a1fe44078b99ec3e0fea8a714e51087883d67ed7</code> passed the full native ISO build/boot and persistent userspace acceptance. The six-case <a href="https://github.com/amerhwitat/OctavianOS/actions/runs/43412390841">Live/Installer/Recovery BIOS+UEFI run #43412390841</a> passed, and <a href="https://github.com/amerhwitat/OctavianOS/actions/runs/43412390877">native ISO run #43412390877</a> passed its full ISO boot and target-trace verification. The prerelease step was skipped because this was a pull-request candidate. The historical November 6 release links below are not replaced by this temporary CI artifact.</p>
 <table style="width:100%;border-collapse:collapse;text-align:left;margin-top:10px">
 <thead><tr><th style="padding:6px">Case</th><th style="padding:6px">Result</th></tr></thead><tbody>
-<tr><td>Live / BIOS · UEFI</td><td>Historical release trace: PASS · PASS (2026-11-06)</td></tr>
-<tr><td>Installer / BIOS · UEFI</td><td>Historical release trace: PASS · PASS (2026-11-06)</td></tr>
-<tr><td>Recovery / BIOS · UEFI</td><td>Historical release trace: PASS · PASS (2026-11-06); current Nov 13 OctavianOS gate failed</td></tr>
+<tr><td>Live / BIOS · UEFI</td><td>PASS · PASS (candidate 2026-11-13)</td></tr>
+<tr><td>Installer / BIOS · UEFI</td><td>PASS · PASS (candidate 2026-11-13; dry run only)</td></tr>
+<tr><td>Recovery / BIOS · UEFI</td><td>PASS · PASS (candidate 2026-11-13; diagnostics only)</td></tr>
 </tbody></table>
 <p class="muted">Comparison and non-goals: <code>docs/KORONOS_VS_LINUX_7X.md</code> in both repositories — subsystem-by-subsystem mapping
 against Linux 7.x (build via Kbuild/Kconfig, init as a userspace ELF, TSS/RSP0 + GDT user descriptors, CPL-3 syscall gate)
