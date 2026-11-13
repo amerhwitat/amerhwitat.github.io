@@ -15,43 +15,42 @@ header,main,footer{max-width:1180px;margin:auto;padding:24px}header{padding-top:
 <header>
 <div class="eyebrow">PUBLIC PORTFOLIO · DOWNLOADS · ARTWORK</div>
 <h1>Downloads & <span style="color:var(--cyan)">Wallpapers</span></h1>
-<p class="lede">A central index of downloadable CI outputs and desktop backgrounds for Chimera II, Aurora, Marine and VoiceConnect. Every binary link below points to a real GitHub Actions artifact; artifacts are temporary CI outputs, not necessarily signed production releases.</p>
+<p class="lede">A central index of published GitHub release assets, temporary CI artifacts and desktop backgrounds for Chimera II, OctavianOS, Aurora, Marine and VoiceConnect. Release downloads and expiring workflow artifacts are labelled separately; verify the linked checksum and acceptance status before use.</p>
 <p><a href="/">← Portfolio home</a> · <a href="https://github.com/amerhwitat">GitHub repositories</a> · <a href="https://github.com/amerhwitat/test/pull/10">VoiceConnect PR #10</a></p>
 </header>
 <main>
 <section id="native-isos">
 <h2>Native Koronos ISOs — Live / Installer / Recovery</h2>
-<p class="lede">Two hybrid <strong>BIOS+UEFI</strong> images that boot the in-tree <em>Koronos</strong> microkernel
-(Multiboot2, no Linux kernel) and hand each target its own ring-3 init payload. One ISO, three targets, six
-verified boot cases. Each PASS requires the kernel-ready marker, a CPL-3-originated init syscall, and a
-<code>USERSPACE READY: target=&lt;t&gt; init_pid=&lt;n&gt;</code> line emitted by the user payload itself with the same PID.</p>
+<p class="lede">Historical hybrid <strong>BIOS+UEFI</strong> native Koronos ISO releases (Multiboot2, no Linux kernel). The November 6 release notes record six target/firmware boot cases at publication time. This historical evidence is not a claim that the current production userspace gate still passes: the latest OctavianOS run on November 13 failed the persistent PID 1 acceptance check. Each current PASS requires a kernel-owned persistent PID 1, a CPL-3-originated init syscall, and a matching target readiness marker.</p>
 <div class="grid">
 <article class="card">
-<div class="status">Verified 6/6 · native kernel</div>
+<div class="status">Historical release · 6/6 at 2026-11-06 publication</div>
 <h3>Chimera II OS — native Koronos</h3>
 <p class="muted"><code>chimera-ii-native-amd64.iso</code><br>193,198,080 bytes (184 MiB) · amd64 · BIOS + UEFI · Multiboot2 · GRUB 2.12</p>
 <p class="meta">SHA-256 c1ca781eb092f8ec6221be44de6cf0ed5331690c4c2a8f2f693995c15fdf2312</p>
 <a class="download" href="https://github.com/amerhwitat/ChimeraIIOS/releases/download/chimera-ii-native-2026.11.06/chimera-ii-native-amd64.iso">Download native ISO</a>
+<a class="download" href="https://github.com/amerhwitat/ChimeraIIOS/releases/download/chimera-ii-native-2026.11.06/chimera-ii-native-amd64.iso.sha256">SHA-256 file</a>
 <a class="download" href="https://github.com/amerhwitat/ChimeraIIOS/releases/download/chimera-ii-native-2026.11.06/chimera-native-traces.zip">Boot traces</a>
 <a class="download" href="https://github.com/amerhwitat/ChimeraIIOS/blob/main/docs/releases/chimera-ii-native-2026.11.06/RELEASE.md">Release note</a>
 </article>
 <article class="card">
-<div class="status">Verified 6/6 · native kernel</div>
+<div class="status warn">Historical ISO · current gate failing</div>
 <h3>OctavianOS — native Koronos</h3>
 <p class="muted"><code>octavian-native-amd64.iso</code><br>41,308,160 bytes (39 MiB) · amd64 · BIOS + UEFI · Multiboot2 · GRUB 2.12</p>
 <p class="meta">SHA-256 e477c8dbfe0dfa6b70ea38cd5901ff19234fcd2e6ce3fc667938fcaced71b86a</p>
-<a class="download" href="https://github.com/amerhwitat/OctavianOS/releases/download/octavian-native-2026.11.06/octavian-native-amd64.iso">Download native ISO</a>
-<a class="download" href="https://github.com/amerhwitat/OctavianOS/releases/download/octavian-native-2026.11.06/octavian-native-traces.zip">Boot traces</a>
+<a class="download" href="https://github.com/amerhwitat/OctavianOS/releases/download/octavian-native-2026.11.06/octavian-native-amd64.iso">Download historical native ISO</a>
+<a class="download" href="https://github.com/amerhwitat/OctavianOS/releases/download/octavian-native-2026.11.06/octavian-native-amd64.iso.sha256">SHA-256 file</a>
+<a class="download" href="https://github.com/amerhwitat/OctavianOS/releases/download/octavian-native-2026.11.06/octavian-native-traces.zip">Historical boot traces</a>
 <a class="download" href="https://github.com/amerhwitat/OctavianOS/blob/main/docs/releases/octavian-native-2026.11.06/RELEASE.md">Release note</a>
 </article>
 </div>
-<p class="muted">Menu: <em>Live</em> = ring-3 text console session · <em>Installer</em> = storage/plan dry-run report (no block backend, writes nothing) ·
-<em>Recovery</em> = diagnostics report. Every entry also stages the embedded knowledge database (<code>/boot/ai/knowledge-db.json</code>, 373 entries) Menus hold <strong>300 s</strong> for input (120 s in sub-menus) with a live countdown. Payload also carries the full catalogue (ISA database, command sources) plus every wallpaper, icon, video, app catalogue, doc and CI workflow under <code>/payload</code>. The kernel reports <code>[AI  ] Knowledge database staged: 373 entries</code> on the boot trace. The Aurora HTML desktop ships in the Linux live ISO below, not in the native image.</p>
+<p class="muted">Menu: <em>Live</em> = ring-3 text console session · <em>Installer</em> = storage/plan dry-run report (no block backend, writes nothing) · <em>Recovery</em> = diagnostics report. These are target-entry demonstrations, not a finished desktop, disk installer or filesystem-repair environment. Every entry stages the embedded knowledge database (<code>/boot/ai/knowledge-db.json</code>, 373 entries). Menus hold <strong>300 s</strong> for input (120 s in sub-menus). Payload includes catalogues, artwork, videos, app metadata and documentation under <code>/payload</code>; staged content does not mean every listed app is installed or executable. The Aurora HTML desktop ships in the Linux live ISO below, not in the native image.</p>
+<p class="notice"><strong>Current OctavianOS native gate:</strong> the 13 November 2026 run <a href="https://github.com/amerhwitat/OctavianOS/actions/runs/43409174831">#43409174831</a> built a candidate but failed the Recovery routing smoke test because the kernel-verified persistent PID 1 active marker was missing. The six-case <a href="https://github.com/amerhwitat/OctavianOS/actions/runs/43409174786">userspace acceptance run #43409174786</a> also failed all six target/firmware cases. Prerelease publication was skipped. Do not treat the 6 November ISO as a current production Koronos release.</p>
 <table style="width:100%;border-collapse:collapse;text-align:left;margin-top:10px">
 <thead><tr><th style="padding:6px">Case</th><th style="padding:6px">Result</th></tr></thead><tbody>
-<tr><td>Live / BIOS · UEFI</td><td>PASS · PASS</td></tr>
-<tr><td>Installer / BIOS · UEFI</td><td>PASS · PASS</td></tr>
-<tr><td>Recovery / BIOS · UEFI</td><td>PASS · PASS</td></tr>
+<tr><td>Live / BIOS · UEFI</td><td>Historical release trace: PASS · PASS (2026-11-06)</td></tr>
+<tr><td>Installer / BIOS · UEFI</td><td>Historical release trace: PASS · PASS (2026-11-06)</td></tr>
+<tr><td>Recovery / BIOS · UEFI</td><td>Historical release trace: PASS · PASS (2026-11-06); current Nov 13 OctavianOS gate failed</td></tr>
 </tbody></table>
 <p class="muted">Comparison and non-goals: <code>docs/KORONOS_VS_LINUX_7X.md</code> in both repositories — subsystem-by-subsystem mapping
 against Linux 7.x (build via Kbuild/Kconfig, init as a userspace ELF, TSS/RSP0 + GDT user descriptors, CPL-3 syscall gate)
@@ -65,8 +64,7 @@ Both boot BIOS and UEFI (GRUB 2.12), run a Debian 6.12.107 kernel with <code>liv
 auto-login as <code>live</code> (password <code>live</code>, passwordless sudo) into the project's own Aurora desktop
 rendered fullscreen by WebKit, and carry the 26 offline wallpapers below plus a verbatim source snapshot and offline
 app catalogs at <code>/opt/aurora/repo</code> and <code>/opt/aurora/desktop</code>. The latest rebuild fixes fullscreen
-sizing under Openbox at 1280&times;720 and 1920&times;1080; published checksums were re-verified against the assets on
-3 November 2026. Both 2026.11.03 releases include the named desktop showcase. These remain Linux live images, not native Koronos builds.</p>
+sizing under Openbox at 1280&times;720 and 1920&times;1080; the release asset checksums and sizes are taken from the published 6 November 2026 GitHub releases. Both images are Linux live systems, not native Koronos production releases. These remain Linux live images, not native Koronos builds.</p>
 <div class="grid">
 <div class="card" style="border-color:#4b7699;background:linear-gradient(150deg,rgba(23,52,84,.98),rgba(10,20,36,.98))">
 <div class="status">Previous bundle · both images · 927 MiB</div>
@@ -82,7 +80,8 @@ sizing under Openbox at 1280&times;720 and 1920&times;1080; published checksums 
 <p class="muted"><code>chimera-ii-os-live-amd64.iso</code><br>491,644,928 bytes (469 MiB) · amd64 · BIOS + UEFI · Linux kernel<br>Aurora shell (Jasper/Gates/Aurora profiles) · 28 wallpapers · 300 s GRUB menu</p>
 <p class="meta">SHA-256 b5eefa6f959643f5f2321ea994dc8e576723f5339fa08abd8093bb128abb88c1</p>
 <a class="download" href="https://github.com/amerhwitat/ChimeraIIOS/releases/download/chimera-ii-os-live-2026.11.06-desktop-6182685/chimera-ii-os-live-amd64.iso">Download ISO</a>
-<a class="download" href="https://github.com/amerhwitat/ChimeraIIOS/releases/tag/chimera-ii-os-live-2026.11.06-desktop-6182685">Release + checksums</a>
+<a class="download" href="https://github.com/amerhwitat/ChimeraIIOS/releases/download/chimera-ii-os-live-2026.11.06-desktop-6182685/chimera-ii-os-live-amd64.iso.sha256">SHA-256 file</a>
+<a class="download" href="https://github.com/amerhwitat/ChimeraIIOS/releases/tag/chimera-ii-os-live-2026.11.06-desktop-6182685">Release details</a>
 <a class="download" href="https://github.com/amerhwitat/ChimeraIIOS/blob/main/docs/releases/chimera-ii-os-live-2026.11.06-desktop-6182685/RELEASE.md">Build evidence</a>
 </article>
 <article class="card">
@@ -91,7 +90,8 @@ sizing under Openbox at 1280&times;720 and 1920&times;1080; published checksums 
 <p class="muted"><code>octavian-os-live-amd64.iso</code><br>514,764,800 bytes (491 MiB) · amd64 · BIOS + UEFI · Linux kernel<br>Aurora shell (Jasper/Gates/Aurora profiles) · 28 wallpapers · 300 s GRUB menu</p>
 <p class="meta">SHA-256 eb8b201116763702ca58e203a3493f52a5e9e56ba9f7bb5f312db4d00e2b41f1</p>
 <a class="download" href="https://github.com/amerhwitat/OctavianOS/releases/download/octavian-os-live-2026.11.06-desktop-61649d9/octavian-os-live-amd64.iso">Download ISO</a>
-<a class="download" href="https://github.com/amerhwitat/OctavianOS/releases/tag/octavian-os-live-2026.11.06-desktop-61649d9">Release + checksums</a>
+<a class="download" href="https://github.com/amerhwitat/OctavianOS/releases/download/octavian-os-live-2026.11.06-desktop-61649d9/octavian-os-live-amd64.iso.sha256">SHA-256 file</a>
+<a class="download" href="https://github.com/amerhwitat/OctavianOS/releases/tag/octavian-os-live-2026.11.06-desktop-61649d9">Release details</a>
 <a class="download" href="https://github.com/amerhwitat/OctavianOS/blob/main/docs/releases/octavian-os-live-2026.11.06-desktop-61649d9/RELEASE.md">Build evidence</a>
 </article>
 </div>
