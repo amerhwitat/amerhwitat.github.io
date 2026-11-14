@@ -243,6 +243,7 @@ jobs:
               "apps/optional-app-center/index.html",
               "repository-hub.html",
               "project-updates.html",
+              "downloads/index.html",
               "apps/chimera-ii-os/web/iso-flash-center.html",
           ]
           for target in targets:
