@@ -114,11 +114,60 @@
       "source_path": "assets/chimera-aurora-background.svg",
       "consumer": "embedded-bundle-only",
       "integration_status": "embedded-bundle-only"
+    },
+    {
+      "id": "chimeraAurora4k",
+      "mime": "image/svg+xml",
+      "source_repository": "amerhwitat/amerhwitat.github.io",
+      "source_path": "assets/wallpapers/aurora-glass-3840x2160.svg",
+      "consumer": "homepage, desktops gallery, desktop wallpaper",
+      "integration_status": "website-consumer-wired",
+      "title": "Aurora Glass 4K",
+      "dimensions": "3840x2160 viewBox",
+      "license": "CC0-1.0",
+      "origin": "original project artwork"
+    },
+    {
+      "id": "marineBlue4k",
+      "mime": "image/svg+xml",
+      "source_repository": "amerhwitat/amerhwitat.github.io",
+      "source_path": "assets/wallpapers/marine-blue-3840x2160.svg",
+      "consumer": "homepage, desktops gallery, desktop wallpaper",
+      "integration_status": "website-consumer-wired",
+      "title": "Marine Blue 4K",
+      "dimensions": "3840x2160 viewBox",
+      "license": "CC0-1.0",
+      "origin": "original project artwork"
+    },
+    {
+      "id": "freeXP4k",
+      "mime": "image/svg+xml",
+      "source_repository": "amerhwitat/amerhwitat.github.io",
+      "source_path": "assets/wallpapers/freexp-hills-3840x2160.svg",
+      "consumer": "FreeXP desktop preview, homepage and gallery",
+      "integration_status": "website-consumer-wired",
+      "title": "FreeXP Hills 4K",
+      "dimensions": "3840x2160 viewBox",
+      "license": "CC0-1.0",
+      "origin": "original project artwork"
+    },
+    {
+      "id": "freeWin114k",
+      "mime": "image/svg+xml",
+      "source_repository": "amerhwitat/amerhwitat.github.io",
+      "source_path": "assets/wallpapers/freewin11-fluent-3840x2160.svg",
+      "consumer": "FreeWin11 desktop preview, homepage and gallery",
+      "integration_status": "website-consumer-wired",
+      "title": "FreeWin11 Fluent 4K",
+      "dimensions": "3840x2160 viewBox",
+      "license": "CC0-1.0",
+      "origin": "original project artwork"
     }
   ],
   "limitations": [
     "The offline bundle is wired to the browser gallery only; it does not wire GRUB, firmware, native compositors, or the ISO builder.",
     "The high-resolution Aurora showcase JPEG remains a checked-in local file rather than a Base64 data URI, avoiding replacement with the smaller 480x268 boot JPEG.",
-    "Boot-stage SVGs require the documented rasterization/staging pipeline; this manifest does not assert runtime boot verification."
+    "Boot-stage SVGs require the documented rasterization/staging pipeline; this manifest does not assert runtime boot verification.",
+    "The four 4K wallpapers are wired to website previews and galleries; ISO/native desktop packaging still requires its own asset-staging and runtime verification."
   ]
 }
