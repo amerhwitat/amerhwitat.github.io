@@ -2,72 +2,82 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Evidence-based release gate status for Chimera II OS and OctavianOS.">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#07111f">
-<title>Chimera II · Native Release Closure</title>
+<meta name="description" content="Live evidence-based engineering and production release status for ChimeraIIOS, Koronos, OctavianOS and LinuxKoronos.">
+<title>Koronos · Engineering & Release Status</title>
 <style>
-:root{color-scheme:dark;--bg:#07111f;--panel:#101e31;--line:#28445d;--ink:#e8f3ff;--muted:#a9c0d5;--cyan:#79dfff;--amber:#ffd18b;--red:#ff9d9d}
-*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 12% 0%,#12304b 0,transparent 42%),var(--bg);color:var(--ink);font:16px/1.55 system-ui,-apple-system,Segoe UI,sans-serif}
-main{width:min(1120px,calc(100% - 32px));margin:0 auto;padding:42px 0 64px}
-a{color:var(--cyan)}.eyebrow{letter-spacing:.16em;text-transform:uppercase;color:var(--cyan);font-size:.76rem;font-weight:700}
-h1{font-size:clamp(2rem,5vw,3.5rem);line-height:1.05;margin:.4rem 0 1rem}
-h2{font-size:1.25rem;margin:0 0 12px}
-p{color:var(--muted);max-width:78ch}
-.notice{border:1px solid #765b36;background:#241d15;border-radius:14px;padding:16px 18px;margin:24px 0}
-.notice strong{color:var(--amber)}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin:24px 0}
-.card{background:linear-gradient(145deg,#13253a,#0d1929);border:1px solid var(--line);border-radius:14px;padding:18px}
-.card b{display:block;font-size:1.5rem;color:var(--cyan)}
-.card span{color:var(--muted);font-size:.9rem}
-.table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:14px;background:#0c1828}
-table{width:100%;border-collapse:collapse;min-width:760px}
-th,td{text-align:left;padding:13px 15px;border-bottom:1px solid var(--line);vertical-align:top}
-th{color:#bfeaff;background:#12243a;font-size:.84rem;text-transform:uppercase;letter-spacing:.08em}
-td{color:var(--muted)}td:first-child{color:var(--ink);font-weight:650}
-.status{display:inline-block;border:1px solid #765b36;border-radius:999px;padding:2px 9px;color:var(--amber);font-size:.78rem;white-space:nowrap}
-.status.blocked{border-color:#75434a;color:var(--red)}
-.links{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
-.links a{border:1px solid var(--line);border-radius:999px;padding:9px 13px;text-decoration:none;background:#102137}
-footer{margin-top:34px;border-top:1px solid var(--line);padding-top:18px;color:var(--muted);font-size:.85rem}
+:root{color-scheme:dark;--bg:#07111f;--panel:#102137;--line:#29465e;--ink:#e8f3ff;--muted:#aec4d8;--cyan:#8be6ff;--amber:#ffd18b;--red:#ff9b9b;--green:#9be3b1}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 15% 0%,#173b59 0,transparent 42%),var(--bg);color:var(--ink);font:16px/1.6 system-ui,-apple-system,Segoe UI,sans-serif}
+main{width:min(1160px,calc(100% - 32px));margin:auto;padding:clamp(24px,5vw,56px) 0}a{color:var(--cyan)}a:focus-visible{outline:2px solid var(--cyan);outline-offset:3px}
+.eyebrow{color:var(--cyan);font-size:.76rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase}h1{font-size:clamp(2rem,5vw,3.4rem);line-height:1.08;margin:.3rem 0 1rem}h2{font-size:1.25rem;margin:0 0 .7rem}p{color:var(--muted);max-width:86ch}
+.decision{border:1px solid #815052;background:#291b27;border-radius:16px;padding:18px;margin:24px 0}.decision strong{color:var(--red);font-size:1.15rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:14px;margin:20px 0}.card{background:linear-gradient(145deg,#132941,#0c1929);border:1px solid var(--line);border-radius:14px;padding:18px}.card p{margin:.4rem 0}.tag{display:inline-block;border:1px solid #805051;color:var(--red);border-radius:999px;padding:2px 9px;font-size:.78rem;font-weight:700}.tag.good{border-color:#416c55;color:var(--green)}.tag.warn{border-color:#80643a;color:var(--amber)}
+.wrap{overflow-x:auto;border:1px solid var(--line);border-radius:14px;margin:14px 0 26px}table{border-collapse:collapse;width:100%;min-width:760px;background:#0c1929}th,td{text-align:left;vertical-align:top;padding:12px 14px;border-bottom:1px solid var(--line)}th{color:var(--cyan);background:#132941;font-size:.82rem;letter-spacing:.06em;text-transform:uppercase}td{color:var(--muted)}td:first-child{color:var(--ink);font-weight:650}
+.links{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0}.links a{border:1px solid var(--line);background:#10243a;border-radius:999px;padding:8px 13px;text-decoration:none}.links a:hover{background:#193651}
+.note{border-left:3px solid var(--amber);padding:8px 14px;background:#171f2a}.small{font-size:.9rem}footer{border-top:1px solid var(--line);margin-top:30px;padding-top:18px;color:var(--muted);font-size:.9rem}
 </style>
 </head>
-<body>
-<main>
-<p class="eyebrow">Release evidence · 2026-11-09</p>
-<h1>Native release closure</h1>
-<p>This page tracks evidence required before a production Chimera II / Koronos or OctavianOS release. A catalogue entry, successful compile, browser preview, or kernel-ready marker is not equivalent to a working operating-system feature.</p>
-<div class="notice"><strong>Release status: NOT ACCEPTED.</strong> The same immutable ISO has not yet passed all six Live/Installer/Recovery × BIOS/UEFI runtime cases with verified userspace readiness and persistence/recovery postconditions.</div>
-<div class="grid">
-<section class="card"><b>6</b><span>Required firmware/target combinations</span></section>
-<section class="card"><b>892</b><span>Unique command names in the canonical catalogue</span></section>
-<section class="card"><b>104</b><span>ISA architecture records</span></section>
-<section class="card"><b>75</b><span>Architectures still marked catalog-only</span></section>
-</div>
-<h2>Acceptance gates</h2>
-<div class="table-wrap"><table>
-<thead><tr><th>Gate</th><th>Current evidence</th><th>Status</th></tr></thead>
-<tbody>
-<tr><td>Live · BIOS / UEFI</td><td>Target-specific init ELF and module handoff are being integrated; both firmware paths still require the same-ISO userspace acceptance.</td><td><span class="status blocked">Not accepted</span></td></tr>
-<tr><td>Installer · BIOS / UEFI</td><td>Native init and installer payload must prove CPL3 entry, matching nonzero PID, and real persistent installation.</td><td><span class="status blocked">Not accepted</span></td></tr>
-<tr><td>Recovery · BIOS / UEFI</td><td>Native recovery init must prove userspace readiness and a verified recovery postcondition.</td><td><span class="status blocked">Not accepted</span></td></tr>
-<tr><td>Process and syscall path</td><td>Acceptance requires ordered kernel-ready, user-originated CPL3 syscall acknowledgement, and userspace-ready markers with the same PID.</td><td><span class="status">In validation</span></td></tr>
-<tr><td>VFS and storage</td><td>Native block devices, partition discovery, mounted writable filesystems, persistence, and repair remain separate gates.</td><td><span class="status blocked">Incomplete</span></td></tr>
-<tr><td>Windows drive interoperability</td><td>WSL host aliases under <code>/mnt/drive/C</code> are proposed separately; this is not a native Koronos NTFS/DrvFs driver.</td><td><span class="status">Host integration only</span></td></tr>
-<tr><td>Aurora / Marine native desktops</td><td>Browser WebGL previews and hosted Linux sessions do not prove native Koronos X11/Wayland sessions.</td><td><span class="status blocked">Not accepted</span></td></tr>
-<tr><td>Command providers</td><td>Per-command provider paths, hashes, architectures, and package outcomes are being recorded; presence is not semantic conformance.</td><td><span class="status">In progress</span></td></tr>
-<tr><td>ISA backends</td><td>Cross-target compile smokes are evidence of object emission only; instruction coverage, ABI, loader, and runtime tests remain required.</td><td><span class="status">In progress</span></td></tr>
-<tr><td>SMP and additional architectures</td><td>AP startup, real parallel execution, and architecture-specific boot/runtime certification remain unverified.</td><td><span class="status blocked">Not accepted</span></td></tr>
-</tbody></table></div>
+<body><main>
+<header>
+<p class="eyebrow">ChimeraIIOS · Koronos · OctavianOS · LinuxKoronos</p>
+<h1>Engineering & production release status</h1>
+<p>Evidence snapshot: 23 November 2026. This dashboard separates successful builds and diagnostic probes from actual operating-system runtime acceptance. Status is deliberately fail-closed.</p>
 <div class="links">
-<a href="https://github.com/amerhwitat/ChimeraIIOS/pull/275">Chimera build/provider work</a>
-<a href="https://github.com/amerhwitat/ChimeraIIOS/pull/276">WSL drive aliases</a>
-<a href="https://github.com/amerhwitat/OctavianOS/pull/187">Octavian catalog and native boot work</a>
-<a href="https://github.com/amerhwitat/amerhwitat.github.io/pull/96">Desktop gallery publication</a>
-<a href="aurora_webgl_desktops.html">Aurora WebGL gallery</a>
-<a href="marine_desktop.html">Marine desktop</a>
+<a href="index.html">Chimera Web UI</a><a href="aurora_webgl_desktops.html">WebGL desktop gallery</a><a href="desktop_experiences.html">Aurora & Marine experiences</a><a href="marine_desktop.html">Marine desktop</a><a href="wallpapers.html">Wallpapers & artwork</a><a href="userspace-acceptance.html">Userspace acceptance</a><a href="koronos-remediation-status.html">Koronos remediation</a>
 </div>
-<footer>Evidence is intentionally conservative. This dashboard changes only when a corresponding build artifact, test trace, or release gate provides verifiable proof.</footer>
-</main>
-</body>
-</html>
+</header>
+<section class="decision" aria-live="polite">
+<strong>PRODUCTION RELEASE: BLOCKED — NOT CERTIFIED</strong>
+<p>No production release or production-ready claim is authorized. The six Live/Installer/Recovery × BIOS/UEFI cases have not been proven with independent real firmware traces tied to one immutable ISO, persistent process and storage postconditions, installer persistence, recovery repair, and measured multicore execution.</p>
+</section>
+<h2>Repository snapshot</h2>
+<div class="grid">
+<article class="card"><h2>ChimeraIIOS · PR #320</h2><span class="tag warn">Open · unmerged</span><p>Head <code>ad15e5ed3fc03236afa39f328019b8f31d8ff223</code>. Current PR-triggered workflow set: 36/36 completed successfully. This is hosted CI evidence, not production acceptance.</p><p><a href="https://github.com/amerhwitat/ChimeraIIOS/pull/320">Review implementation PR #320</a> · <a href="https://github.com/amerhwitat/ChimeraIIOS/actions">Actions</a></p></article>
+<article class="card"><h2>OctavianOS · PR #234</h2><span class="tag good">Merged</span><p>Selectable Chimera upstream workflow merged as <code>c93070723bb04259a6de44a7e8e66c222935e8df</code>. It enables manual ref selection; the sync against Chimera PR #320 has not been dispatched and source parity is not yet claimed.</p><p><a href="https://github.com/amerhwitat/OctavianOS/pull/234">Merged workflow change</a> · <a href="https://github.com/amerhwitat/OctavianOS/actions">Actions</a></p></article>
+<article class="card"><h2>LinuxKoronos · PR #7</h2><span class="tag warn">Open · ISO build failed</span><p>Hosted CMake, CTest and runtime smoke passed. Live ISO preparation failed at Syslinux because <code>binary/isolinux/bootlogo</code> was absent. No ISO artifact or ISO digest was produced by that run.</p><p><a href="https://github.com/amerhwitat/LinuxKoronos/pull/7">Review PR #7</a> · <a href="https://github.com/amerhwitat/LinuxKoronos/actions/runs/45124649674">Failed live ISO run</a></p></article>
+</div>
+<h2>Required implementation and acceptance gates</h2>
+<div class="wrap"><table>
+<thead><tr><th>Subsystem</th><th>Current disposition</th><th>Required production proof</th></tr></thead>
+<tbody>
+<tr><td>x86-64 context switching</td><td><span class="tag">Incomplete</span> Cooperative callback scheduler only</td><td>Assembly save/restore, independent guarded stacks, first-run trampoline, task resume/return regression and timer-driven preemption under QEMU</td></tr>
+<tr><td>AP / SMP</td><td><span class="tag">Incomplete</span> Bootstrap CPU only; AP startup absent</td><td>AP trampoline, per-CPU initialization, independent task execution and measured overlapping intervals on at least two CPUs</td></tr>
+<tr><td>Persistent storage / VFS</td><td><span class="tag">Incomplete</span> Bounded RAM initramfs namespace is not general VFS</td><td>Real block I/O, partition discovery, mounted filesystem, file operations and data surviving a cold reboot</td></tr>
+<tr><td>PID 1 / process supervision</td><td><span class="tag">Incomplete</span> Resident bootstrap loop is not a supervisor</td><td>Persistent native PID 1, independent process contexts, child start/exit/wait/reap and supervised service restart policy</td></tr>
+<tr><td>Installed-root handoff</td><td><span class="tag">Incomplete</span></td><td>Validate and mount installed root, transfer execution and prove installed userspace on cold boot</td></tr>
+<tr><td>Installer</td><td><span class="tag">Incomplete</span></td><td>Durable disk writes, flush/sync, transaction journal, rollback, independent readback and second-boot persistence</td></tr>
+<tr><td>Recovery</td><td><span class="tag">Incomplete</span></td><td>Repair a defined filesystem fault and independently verify the postcondition on the target disk</td></tr>
+<tr><td>Four native desktops</td><td><span class="tag">Incomplete</span> SVG/WebGL artwork and browser previews are not native sessions</td><td>Independent native Aurora, Marine, FreeXP and FreeWin11 sessions with graphics, input, compositor and session health evidence</td></tr>
+<tr><td>Commands / ISA</td><td><span class="tag">Incomplete</span> Catalogue/CI is not full provider coverage</td><td>Genuine provider binaries or native implementations, provenance and per-command/per-ISA semantic conformance tests</td></tr>
+<tr><td>Six-case acceptance</td><td><span class="tag">Not demonstrated</span></td><td>Six real firmware traces, one immutable ISO SHA-256, authenticated trace provenance, same-PID CPL3 syscall/readiness, storage, installer, recovery, Aurora and SMP postconditions</td></tr>
+</tbody></table></div>
+<h2>Test policy: smoke probes are not production tests</h2>
+<div class="grid">
+<article class="card"><h2>Diagnostic / smoke suite</h2><span class="tag good">Keep and run</span><p>Existing target readiness probes, cooperative scheduler tests, QEMU boot smoke, parser tests, ABI contract tests and verifier unit fixtures remain useful for fast regression diagnosis. Report them under their actual scope.</p></article>
+<article class="card"><h2>Production acceptance suite</h2><span class="tag">Separate suite required</span><p>Add a distinct suite that boots the production init/runtime from the final ISO, verifies real CPL3 syscalls and persistent PID 1, exercises disk persistence, installer rollback and recovery repair, captures six real BIOS/UEFI traces, and validates authenticated evidence provenance.</p></article>
+</div>
+<p class="note">Do not rename, relabel or promote a probe to production acceptance. Synthetic traces belong only in verifier unit tests. A passing boot smoke, compile, ISO package or uploaded ZIP digest is not a certified ISO SHA-256 or release gate.</p>
+<h2>Latest CI evidence</h2>
+<div class="wrap"><table>
+<thead><tr><th>Repository / run</th><th>Result</th><th>Interpretation</th></tr></thead>
+<tbody>
+<tr><td><a href="https://github.com/amerhwitat/ChimeraIIOS/actions/runs/45098194298">Chimera full ISO · 45098194298</a></td><td><span class="tag good">Success</span></td><td>ISO build and CI artifact upload succeeded. Production target manifests remain probe-only/not production-ready; certification manifest absent; publication step skipped.</td></tr>
+<tr><td><a href="https://github.com/amerhwitat/ChimeraIIOS/actions/runs/45098194401">Chimera QEMU boot smoke · 45098194401</a></td><td><span class="tag good">Success</span></td><td>Kernel reaches cooperative scheduler loop; log reports zero Multiboot modules, idle Live/Installer/Recovery targets and one online scheduler CPU. Not userspace, SMP or six-case acceptance.</td></tr>
+<tr><td><a href="https://github.com/amerhwitat/LinuxKoronos/actions/runs/45124649675">LinuxKoronos Linux builder · 45124649675</a></td><td><span class="tag good">Success</span></td><td>Hosted Linux build validation only.</td></tr>
+<tr><td><a href="https://github.com/amerhwitat/LinuxKoronos/actions/runs/45124649674">LinuxKoronos hosted live ISO · 45124649674</a></td><td><span class="tag">Failed</span></td><td>Syslinux stage requires a genuine bootlogo at <code>binary/isolinux/bootlogo</code>; checksum and upload steps skipped.</td></tr>
+<tr><td><a href="https://github.com/amerhwitat/OctavianOS/commit/c93070723bb04259a6de44a7e8e66c222935e8df">Octavian selectable upstream workflow merge</a></td><td><span class="tag good">Merged</span></td><td>Workflow configuration only; no upstream PR #320 snapshot/parity build has run.</td></tr>
+</tbody></table></div>
+<h2>Artwork and desktop showcase</h2>
+<p>The website should publish the existing desktop artwork and browser experiences as design/showcase assets, while labelling them accurately as artwork or WebGL previews rather than proof of native Koronos desktop sessions.</p>
+<div class="links">
+<a href="aurora_webgl_desktops.html">Aurora / Marine / FreeXP / FreeWin11 WebGL gallery</a>
+<a href="desktop_experiences.html">Aurora & Marine interactive experiences</a>
+<a href="wallpapers.html">Wallpaper and artwork library</a>
+<a href="aurora_3d_desktop.html">Aurora 3D desktop</a>
+<a href="https://github.com/amerhwitat/ChimeraIIOS/tree/feat/koronos-newc-initramfs-parser-20261119">Chimera source and artwork assets</a>
+<a href="https://github.com/amerhwitat/OctavianOS">OctavianOS repository</a>
+<a href="https://github.com/amerhwitat/LinuxKoronos">LinuxKoronos repository</a>
+</div>
+<footer>Snapshot refreshed 23 November 2026 from the referenced GitHub PRs and workflow logs. CI status can change; follow the run links for later results. Hosted Linux validation, browser artwork, QEMU smoke and native Koronos production acceptance are distinct claims.</footer>
+</main></body></html>
