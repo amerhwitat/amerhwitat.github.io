@@ -4,7 +4,7 @@
     {
       "path": "desktop/aurora/assets/chimera-infinite-research-horizon.svg",
       "role": "desktop-wallpaper",
-      "title": "ChimeraIIOS — Infinite Research Horizon",
+      "title": "ChimeraIIOS \u2014 Infinite Research Horizon",
       "motifs": [
         "translucent fractured cubes",
         "aurora ribbons",
@@ -20,7 +20,7 @@
     {
       "path": "desktop/aurora/assets/chimera-infinite-research-horizon-3840x2160.svg",
       "role": "desktop-wallpaper",
-      "title": "ChimeraIIOS — Infinite Research Horizon (4K)",
+      "title": "ChimeraIIOS \u2014 Infinite Research Horizon (4K)",
       "motifs": [
         "translucent fractured cubes",
         "aurora ribbons",
@@ -34,5 +34,20 @@
       "boot_rasterization_required": true
     }
   ],
-  "runtime_note": "The SVG is an original desktop source asset. GRUB firmware-stage display requires a PNG/JPEG raster derivative to be generated and embedded by the ISO builder; this manifest does not claim that derivative is present."
+  "runtime_note": "The SVG is an original desktop source asset. GRUB firmware-stage display requires a PNG/JPEG raster derivative to be generated and embedded by the ISO builder; this manifest does not claim that derivative is present.",
+  "publication_status": {
+    "updated_utc": "2026-11-23T20:45:00Z",
+    "site": "https://amerhwitat.github.io/",
+    "native_desktop_self_tests": {
+      "result": "pass",
+      "run": "https://github.com/amerhwitat/ChimeraIIOS/actions/runs/45259231449",
+      "profiles": [
+        "aurora",
+        "marine",
+        "freexp",
+        "freewin11"
+      ]
+    },
+    "claim_boundary": "Artwork is published as design/showcase assets. Headless GTK self-tests do not prove native compositor, graphics, input or session-health acceptance."
+  }
 }

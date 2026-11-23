@@ -168,6 +168,21 @@
     "The offline bundle is wired to the browser gallery only; it does not wire GRUB, firmware, native compositors, or the ISO builder.",
     "The high-resolution Aurora showcase JPEG remains a checked-in local file rather than a Base64 data URI, avoiding replacement with the smaller 480x268 boot JPEG.",
     "Boot-stage SVGs require the documented rasterization/staging pipeline; this manifest does not assert runtime boot verification.",
-    "The four 4K wallpapers are wired to website previews and galleries; ISO/native desktop packaging still requires its own asset-staging and runtime verification."
-  ]
+    "The four 4K wallpapers are wired to website previews and galleries; ISO/native desktop packaging still requires its own asset-staging and runtime verification.",
+    "23 Nov 2026: profile manifests and headless GTK self-tests passed for all four profiles. This does not establish native Koronos desktop sessions with graphics, input and compositor evidence."
+  ],
+  "verification_2026_11_23": {
+    "desktop_profile_self_tests": {
+      "result": "pass",
+      "run": "https://github.com/amerhwitat/ChimeraIIOS/actions/runs/45259231449",
+      "profiles": [
+        "aurora",
+        "marine",
+        "freexp",
+        "freewin11"
+      ]
+    },
+    "browser_gallery_only": true,
+    "native_session_evidence": false
+  }
 }
