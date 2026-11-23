@@ -1,0 +1,135 @@
+{
+  "schema": "koronos-six-case-evidence/v1",
+  "captured_utc": "2026-11-23T20:45:00Z",
+  "source": "https://github.com/amerhwitat/ChimeraIIOS/actions/runs/45261895228",
+  "iso_sha256": "9e193ab55b0e37c0969fe5fd86ca38a92246eb8c9c3035e22f6b9d61a9c939d6",
+  "screenshot": "not-applicable: QEMU headless serial/debugcon capture",
+  "disk_images_excluded": "64 MiB fixture disks retained locally; hashes recorded in each result.json",
+  "files": [
+    {
+      "path": "installer-bios/debugcon.log",
+      "bytes": 8618,
+      "sha256": "34e8115afd754bcc09fbc7a811754e4d78aaed75c8793d18b869c173abdbfe56"
+    },
+    {
+      "path": "installer-bios/qmp.log",
+      "bytes": 530,
+      "sha256": "e3e2a80aa388bcb1e1fc74087feb4ea01bf44cbda7f1c4b5ad313be0a0e09331"
+    },
+    {
+      "path": "installer-bios/result.json",
+      "bytes": 1499,
+      "sha256": "89da0f2270d479d7db80c8bde7420b86f358aaeab660c11f683b27a20902cfec"
+    },
+    {
+      "path": "installer-bios/serial.log",
+      "bytes": 7438,
+      "sha256": "260a661b301db5695b3c15c98fe9a07f8b09429fce3e295016a9f81c9f52c5a8"
+    },
+    {
+      "path": "installer-uefi/debugcon.log",
+      "bytes": 8834,
+      "sha256": "eb1252fc69842069c9ef973cd212ed4c9ac819f4c6a9d6e74317a8a653845947"
+    },
+    {
+      "path": "installer-uefi/qmp.log",
+      "bytes": 600,
+      "sha256": "ac771c06911ce0b3c7f4c9e0408654d97a5ea0c3fec69051a34886928804ecd7"
+    },
+    {
+      "path": "installer-uefi/result.json",
+      "bytes": 1642,
+      "sha256": "d9bb820ac770f045c60d62443ad7813310dc2cdb3496361339179958f4a05e55"
+    },
+    {
+      "path": "installer-uefi/serial.log",
+      "bytes": 17351,
+      "sha256": "a88d0abf4cf0c094cc175665baf3e69752bca3cb3efd39e82636761ac36b3a4e"
+    },
+    {
+      "path": "live-bios/debugcon.log",
+      "bytes": 7626,
+      "sha256": "063c3b6c4d00bb5ce0f7737dda51fdca5169400296fe6e08e4496c60cb47446a"
+    },
+    {
+      "path": "live-bios/qmp.log",
+      "bytes": 510,
+      "sha256": "f202fa0a141182ebb4298a947f29c0dfe5a9ac94ba50d49df9d95cf47e664041"
+    },
+    {
+      "path": "live-bios/result.json",
+      "bytes": 1454,
+      "sha256": "9f495833a3d2c62fee0ec40d70ee8a2c26227ab19bfa228df2dcb1cf5238d775"
+    },
+    {
+      "path": "live-bios/serial.log",
+      "bytes": 6722,
+      "sha256": "b6bd27923bfa48ae5e0e93b07086492e1ad26d4ee5a0a040227a44a56bf18ebc"
+    },
+    {
+      "path": "live-uefi/debugcon.log",
+      "bytes": 7842,
+      "sha256": "e1554f29d3df28d58af2e7dc8228fed6ef253b23cb992a084dfa6780e8c8e8e4"
+    },
+    {
+      "path": "live-uefi/qmp.log",
+      "bytes": 580,
+      "sha256": "65b76a44ddb8a56da8ca91fdf9ace5ef79a6ca121d038fdeee641d7188b2d314"
+    },
+    {
+      "path": "live-uefi/result.json",
+      "bytes": 1597,
+      "sha256": "d973b9ab8634b72eda3f2d9ef5b4ffc081e204fb4ca0337779feab92eaf00cd5"
+    },
+    {
+      "path": "live-uefi/serial.log",
+      "bytes": 15988,
+      "sha256": "4f90e23360e9e5d1cb819dbd4c457a82b71bf4aca7018a267c6c8e11fda45e1b"
+    },
+    {
+      "path": "recovery-bios/debugcon.log",
+      "bytes": 7510,
+      "sha256": "5ba8af3b54defae822e387057dac4348cea5687fb505a6f5d53574ba3a157e06"
+    },
+    {
+      "path": "recovery-bios/qmp.log",
+      "bytes": 526,
+      "sha256": "d89793a6da41c3e488def0ae1fd846640a35558d33917f311dfe2dcf3c54a198"
+    },
+    {
+      "path": "recovery-bios/result.json",
+      "bytes": 1490,
+      "sha256": "0cbae006f562c8d459c0c836fa344541761d9bce0e18aff4592cec9dc92717d7"
+    },
+    {
+      "path": "recovery-bios/serial.log",
+      "bytes": 7413,
+      "sha256": "7872ca293f72b905e6e6f24300bf527b4fb95279e032f1ea229981dbd2dc217f"
+    },
+    {
+      "path": "recovery-uefi/debugcon.log",
+      "bytes": 7726,
+      "sha256": "7d04d57efc72a24517bd256f8bd73e7653ae6e127c10499d204ed1d1234ef581"
+    },
+    {
+      "path": "recovery-uefi/qmp.log",
+      "bytes": 596,
+      "sha256": "d6dec570608bd88c08e62754b0fdf408c85aefe0baf02231a7a5024d25e0d710"
+    },
+    {
+      "path": "recovery-uefi/result.json",
+      "bytes": 1633,
+      "sha256": "b496b72cf58802f42ad54f92520e95c6c29e169c2c78ad3015f1eb099b621074"
+    },
+    {
+      "path": "recovery-uefi/serial.log",
+      "bytes": 18357,
+      "sha256": "c78a213299ab8ec027ad9d26d6f261da0a0a0a27a8d4960be20b317f1e5d0d47"
+    },
+    {
+      "path": "summary.json",
+      "bytes": 10381,
+      "sha256": "02721fa1e4476ba756c6150436b93d691760d680007a697d156143eb3c8766f1"
+    }
+  ]
+}

@@ -1,257 +1,129 @@
 {
-  "schema": "repository-enhancements-status/v1",
-  "updated_utc": "2026-10-18T06:20:00Z",
-  "publication_note": "Status links and review artifacts are published here. Open/draft PRs are not represented as merged releases; CI success is not equivalent to native userspace readiness.",
+  "schema": "repository-enhancements-status/v2",
+  "updated_utc": "2026-11-23T20:45:00Z",
+  "publication_note": "Verified engineering status only. Native runtime gates and six-case firmware acceptance passed; production release remains fail-closed because official ISA conformance is not-run and native desktop session evidence is limited.",
+  "production_ready": false,
   "repositories": [
     {
       "name": "ChimeraIIOS",
       "url": "https://github.com/amerhwitat/ChimeraIIOS",
-      "main_commit": "ae5978595c4220090252137b097d4c930ad7655a",
-      "main_commit_url": "https://github.com/amerhwitat/ChimeraIIOS/commit/ae5978595c4220090252137b097d4c930ad7655a",
-      "enhancements": [
+      "native_gate_head": "0a97132f90246b1208405a554180207dbfe60055",
+      "matrix_head": "ca9190f9d2f02a87ca59d8ed928cbc0bb345b70a",
+      "native_gates": [
         {
-          "name": "ISO target routing and offline Aurora artwork",
-          "status": "draft_pr_all_observed_checks_passed",
-          "pr": 129,
-          "url": "https://github.com/amerhwitat/ChimeraIIOS/pull/129",
-          "head": "5651f3c521dad2744b4f9866fa9616b5d4c10972",
-          "checks": [
-            {
-              "name": "Chimera Boot Artifact Validation",
-              "result": "success",
-              "url": "https://github.com/amerhwitat/ChimeraIIOS/actions/runs/39102575928"
-            },
-            {
-              "name": "Arabic desktop compatibility",
-              "result": "success",
-              "url": "https://github.com/amerhwitat/ChimeraIIOS/actions/runs/39102575866"
-            },
-            {
-              "name": "Desktop Compatibility CI",
-              "result": "success",
-              "url": "https://github.com/amerhwitat/ChimeraIIOS/actions/runs/39102575835"
-            },
-            {
-              "name": "UI Control Contract",
-              "result": "success",
-              "url": "https://github.com/amerhwitat/ChimeraIIOS/actions/runs/39102575792"
-            },
-            {
-              "name": "Aurora Desktop Power and Interaction Validation",
-              "result": "success",
-              "url": "https://github.com/amerhwitat/ChimeraIIOS/actions/runs/39102575786"
-            },
-            {
-              "name": "Chimera II CI/CD",
-              "result": "success",
-              "url": "https://github.com/amerhwitat/ChimeraIIOS/actions/runs/39102575766"
-            },
-            {
-              "name": "ISA, installer and command conformance",
-              "result": "success",
-              "url": "https://github.com/amerhwitat/ChimeraIIOS/actions/runs/39102575749"
-            },
-            {
-              "name": "Boot and ISO validation",
-              "result": "success",
-              "url": "https://github.com/amerhwitat/ChimeraIIOS/actions/runs/39102575715"
-            },
-            {
-              "name": "Koronos VMware/QEMU Boot Matrix",
-              "result": "success",
-              "url": "https://github.com/amerhwitat/ChimeraIIOS/actions/runs/39102575725"
-            },
-            {
-              "name": "Structured ISO",
-              "result": "success",
-              "url": "https://github.com/amerhwitat/ChimeraIIOS/actions/runs/39102575714"
-            }
-          ],
-          "limits": [
-            "Draft PR; all listed workflow checks passed on head 5651f3c521dad2744b4f9866fa9616b5d4c10972.",
-            "QEMU coverage does not prove production userspace-ready or interactive GRUB acceptance.",
-            "Installer disk operations remain disabled until an installation backend is configured."
-          ]
+          "name": "x86_64-preemption",
+          "result": "pass",
+          "run": "https://github.com/amerhwitat/ChimeraIIOS/actions/runs/45245082720"
         },
         {
-          "name": "Live userspace handoff diagnostics",
-          "status": "draft_pr",
-          "pr": 128,
-          "url": "https://github.com/amerhwitat/ChimeraIIOS/pull/128",
-          "head": "ff4d1572b7e4f1b631eb075a63e483b6f29f3565",
-          "limits": [
-            "Reports that production userspace launch adapter is not wired rather than claiming a queued handoff is running."
-          ]
+          "name": "x86_64-smp",
+          "result": "pass",
+          "run": "https://github.com/amerhwitat/ChimeraIIOS/actions/runs/45245082720"
         },
         {
-          "name": "Production boot acceptance gate",
-          "status": "open_not_mergeable",
-          "pr": 127,
-          "url": "https://github.com/amerhwitat/ChimeraIIOS/pull/127",
-          "head": "0c4d9b87cbdfff4e5b4670b4a316cd606896ba34",
-          "limits": [
-            "GitHub currently reports mergeable=false; resolve conflict/merge state and rerun checks before merge.",
-            "Acceptance must verify userspace-originated init, userspace I/O, and target-ready markers."
-          ]
+          "name": "x86_64-native-stack",
+          "result": "pass",
+          "run": "https://github.com/amerhwitat/ChimeraIIOS/actions/runs/45245082720"
         },
         {
-          "name": "Self-healing / ISA-aware learning context",
-          "status": "draft_pr",
-          "pr": 126,
-          "url": "https://github.com/amerhwitat/ChimeraIIOS/pull/126",
-          "head": "9190f6f101275a5f1aa5664fe71cffd715f2c473",
-          "limits": [
-            "Deterministic triage/context baseline only; no trained model or production kernel hook is claimed."
-          ]
-        },
-        {
-          "name": "Native process memory / ring-3 work",
-          "status": "open_draft_work",
-          "url": "https://github.com/amerhwitat/ChimeraIIOS/pulls",
-          "limits": [
-            "Address-space, physical-frame, TSS/syscall, timer timeout, and user launch work remains subject to native kernel and QEMU acceptance."
-          ]
+          "name": "x86_64-install-recovery",
+          "result": "pass",
+          "run": "https://github.com/amerhwitat/ChimeraIIOS/actions/runs/45245082720"
         }
       ],
-      "existing_artifacts": [
+      "immutable_iso": {
+        "sha256": "9e193ab55b0e37c0969fe5fd86ca38a92246eb8c9c3035e22f6b9d61a9c939d6",
+        "six_case_all_pass": true,
+        "evidence": "/evidence/koronos-immutable-iso-six-case-2026-11-23/MANIFEST.json",
+        "ci_run": "https://github.com/amerhwitat/ChimeraIIOS/actions/runs/45261895228"
+      },
+      "pull_requests": [
         {
-          "name": "Koronos build artifacts",
-          "url": "https://api.github.com/repos/amerhwitat/ChimeraIIOS/actions/artifacts/12097850006/zip",
-          "run": "https://github.com/amerhwitat/ChimeraIIOS/actions/runs/39023060523"
+          "number": 320,
+          "state": "open",
+          "head": "38ac7907cfdfceddaccea4263d4ff5ef8bed2169",
+          "url": "https://github.com/amerhwitat/ChimeraIIOS/pull/320"
         },
         {
-          "name": "Koronos boot diagnostics",
-          "url": "https://api.github.com/repos/amerhwitat/ChimeraIIOS/actions/artifacts/12097840539/zip",
-          "run": "https://github.com/amerhwitat/ChimeraIIOS/actions/runs/39023060502"
+          "number": 321,
+          "state": "open",
+          "head": "ca9190f9d2f02a87ca59d8ed928cbc0bb345b70a",
+          "url": "https://github.com/amerhwitat/ChimeraIIOS/pull/321"
         }
       ]
     },
     {
       "name": "OctavianOS",
       "url": "https://github.com/amerhwitat/OctavianOS",
-      "main_commit": "1e8719397a05efbe39dc3e8aa30f5c5b39170e01",
-      "main_commit_url": "https://github.com/amerhwitat/OctavianOS/commit/1e8719397a05efbe39dc3e8aa30f5c5b39170e01",
-      "enhancements": [
-        {
-          "name": "Local Octopus Aurora wallpaper and desktop artwork",
-          "status": "main_ci_passed",
-          "url": "https://github.com/amerhwitat/OctavianOS/commit/1e8719397a05efbe39dc3e8aa30f5c5b39170e01",
-          "check": {
-            "name": "Desktop artwork and layout contracts",
-            "result": "success",
-            "url": "https://github.com/amerhwitat/OctavianOS/actions/runs/39102538432"
-          }
-        },
-        {
-          "name": "Self-healing and ISA-aware learning context",
-          "status": "draft_pr",
-          "pr": 50,
-          "url": "https://github.com/amerhwitat/OctavianOS/pull/50",
-          "head": "13759cb17ab923aa7272e64d145ecb81c5b404c0",
-          "limits": [
-            "Deterministic recovery baseline and context extraction only; QEMU fault injection and real service-manager integration remain outstanding."
-          ]
-        },
-        {
-          "name": "Port Koronos target-specific userspace launch",
-          "status": "draft_pr_not_mergeable",
-          "pr": 49,
-          "url": "https://github.com/amerhwitat/OctavianOS/pull/49",
-          "head": "cf1385d908ff107f5e060cb31c0adcae694e7b33",
-          "limits": [
-            "GitHub currently reports mergeable=false.",
-            "Full-ISO QEMU acceptance must produce the expected debug-console readiness marker before release."
-          ]
-        },
-        {
-          "name": "Vendored Chimera source snapshot",
-          "status": "open_pr_not_mergeable_native_iso_smoke_fails",
-          "pr": 42,
-          "url": "https://github.com/amerhwitat/OctavianOS/pull/42",
-          "head": "c5d150970fa7ee02c3d2eaac28160509cbf3ba6e",
-          "limits": [
-            "GitHub currently reports mergeable=false.",
-            "Native kernel build workflow fails at full-ISO QEMU smoke: no debugcon output after 25 seconds (QEMU exit 124).",
-            "Candidate ISO is review-only until root cause is fixed and the full ISO reaches KORONOS READY."
-          ]
-        }
-      ],
-      "existing_artifacts": [
-        {
-          "name": "Latest native ISO candidate (review only)",
-          "url": "https://github.com/amerhwitat/OctavianOS/actions/runs/39098325212/artifacts/12125209217",
-          "run": "https://github.com/amerhwitat/OctavianOS/actions/runs/39098325212"
-        },
-        {
-          "name": "Latest full-ISO QEMU trace (no debugcon output)",
-          "url": "https://github.com/amerhwitat/OctavianOS/actions/runs/39098325212/artifacts/12125398502",
-          "run": "https://github.com/amerhwitat/OctavianOS/actions/runs/39098325212"
-        }
-      ],
-      "release_gate": "The previously observed full-ISO QEMU check timed out without the expected KORONOS READY debug-console trace; keep ISO as a review candidate until the full-ISO boot test passes."
-    },
-    {
-      "name": "amerhwitat.github.io",
-      "url": "https://github.com/amerhwitat/amerhwitat.github.io",
-      "main_commit": "5f41d062eeb1b525f83de234c19dda0a8a268bdc",
-      "main_commit_url": "https://github.com/amerhwitat/amerhwitat.github.io/commit/5f41d062eeb1b525f83de234c19dda0a8a268bdc",
-      "site": "https://amerhwitat.github.io/",
-      "latest_pages_run": {
-        "name": "Deploy site to GitHub Pages",
-        "result": "in_progress_at_last_check",
-        "url": "https://github.com/amerhwitat/amerhwitat.github.io/actions/runs/39102772999"
+      "upstream_sync": {
+        "run": "https://github.com/amerhwitat/OctavianOS/actions/runs/45242689966",
+        "upstream_revision": "ad15e5ed3fc03236afa39f328019b8f31d8ff223",
+        "upstream_file_count": 2963,
+        "vendored_file_count": 2963,
+        "path_and_content_hashes_compared": true,
+        "missing_from_vendor": [],
+        "extra_in_vendor": [],
+        "different_content": []
       },
       "pull_request": {
-        "number": 13,
-        "url": "https://github.com/amerhwitat/amerhwitat.github.io/pull/13",
-        "name": "Syntax-check all published app scripts",
-        "status": "open_review"
+        "number": 42,
+        "state": "open",
+        "head": "7b9a63a56bd97c6ad345e76474f94f3197425914",
+        "url": "https://github.com/amerhwitat/OctavianOS/pull/42"
       },
-      "notes": [
-        "Portfolio main branch Pages deployment passed.",
-        "PR #13 adds a JavaScript/Python syntax gate; keep it separate until mergeability is resolved.",
-        "Java Application Hub catalogs 15 accessible repositories and 62 application areas; the inventory distinguishes existing Java from partial coverage and port candidates.",
-        "Java Swing desktop companion compiled and packaged successfully in GitHub Actions; browser UI is published as static HTML/JS and does not execute JVM bytecode directly.",
-        "Python Application Hub indexes 15 repositories and 62 application areas as migration inventory, not completed ports.",
-        "Super Flash & ISO Tool implements image hashing and guarded USB raw writing with boot/system disk exclusion, typed confirmation, capacity checks and optional read-back verification; generic phone ROM flashing is not supported."
-      ],
-      "latest_native_ci_run": {
-        "name": "Chimera II Native CI",
-        "result": "success",
-        "url": "https://github.com/amerhwitat/amerhwitat.github.io/actions/runs/39102772993"
+      "limits": [
+        "Hosted runtime smoke tests passed on PR head; native userspace verification was skipped."
+      ]
+    },
+    {
+      "name": "LinuxKoronos",
+      "url": "https://github.com/amerhwitat/LinuxKoronos",
+      "hosted_iso": {
+        "run": "https://github.com/amerhwitat/LinuxKoronos/actions/runs/45231941788",
+        "iso_sha256": "a947699b5c29c3cf6191b8c4140a7494c1f53cd7dbe77fc493fdf4d2687ecc9e",
+        "artifact_zip_sha256": "59e45b5bc2e6ebfae26d7108b272d0b74315d6b06cf7b663367e1c8d5af5f0f3",
+        "artifact_id": 14846464693,
+        "classification": "debian-hosted-koronos-runtime-adapter"
       },
-      "java_application_hub": {
-        "web": "https://amerhwitat.github.io/apps/java-app-hub/",
-        "source": "https://github.com/amerhwitat/amerhwitat.github.io/tree/main/apps/java-app-hub",
-        "inventory": "https://github.com/amerhwitat/amerhwitat.github.io/blob/main/apps/java-app-hub/apps.json",
-        "java_build": "https://github.com/amerhwitat/amerhwitat.github.io/actions/runs/39103099809",
-        "status": "web GUI and Java Swing source committed; Java 17 Maven compile/package workflow passed; latest Pages deployment pending at last check"
-      },
-      "python_application_hub": {
-        "web": "https://amerhwitat.github.io/apps/python-app-hub/",
-        "flash_tool": "https://amerhwitat.github.io/apps/python-app-hub/super-flash-iso/",
-        "source": "https://github.com/amerhwitat/amerhwitat.github.io/tree/main/apps/python-app-hub",
-        "windows_build": "https://github.com/amerhwitat/amerhwitat.github.io/actions/workflows/python-app-hub.yml",
-        "status": "Windows PyInstaller build and ISO tests verified successful on CI",
-        "iso_creation": "Implemented in source; ISO tests and PyInstaller build are running in CI",
-        "migration_plan": "15 repository trees scanned; 51 source candidates cataloged in apps/python-app-hub/migration-plan.json",
-        "versioning": "Windows artifact contains VERSION.txt and SHA256SUMS.txt when latest workflow passes",
-        "latest_verified_build": {
-          "workflow_run": 39104028277,
-          "commit": "2b7a9d0b66152536a699c3dd0b1500aa33eb534c",
-          "workflow_url": "https://github.com/amerhwitat/amerhwitat.github.io/actions/runs/39104028277",
-          "artifact_id": 12127871027,
-          "artifact_name": "PythonDesktopTools-Windows-x64",
-          "artifact_url": "https://api.github.com/repos/amerhwitat/amerhwitat.github.io/actions/artifacts/12127871027/zip",
-          "includes": [
-            "PythonAppHub.exe",
-            "SuperFlashISO.exe",
-            "VERSION.txt",
-            "SHA256SUMS.txt"
-          ],
-          "verification": "Linux and Windows ISO tests passed; both PyInstaller GUI builds and artifact packaging/upload passed."
-        }
+      "pull_request": {
+        "number": 7,
+        "state": "open",
+        "head": "26676691e6b49c8428099f7093fd9c0c13a748be",
+        "url": "https://github.com/amerhwitat/LinuxKoronos/pull/7"
       }
     }
-  ]
+  ],
+  "supporting_gates": {
+    "integration_suites": {
+      "result": "pass",
+      "detail": "6 tests passed; 20 provenance records; 10 language bindings"
+    },
+    "native_desktops": {
+      "result": "pass-limited",
+      "run": "https://github.com/amerhwitat/ChimeraIIOS/actions/runs/45259231449",
+      "profiles": [
+        "aurora",
+        "marine",
+        "freexp",
+        "freewin11"
+      ],
+      "limit": "headless GTK self-tests only"
+    },
+    "commands": {
+      "result": "pass-limited",
+      "run": "https://github.com/amerhwitat/ChimeraIIOS/actions/runs/45259009424",
+      "command_count": 4144,
+      "native": 15,
+      "shell_builtin": 53
+    },
+    "isa": {
+      "result": "pass-limited",
+      "run": "https://github.com/amerhwitat/ChimeraIIOS/actions/runs/45259225846",
+      "catalog_forms": 1613,
+      "architectures": 15,
+      "official_conformance": "not-run",
+      "conformance_tested": 0,
+      "not_implemented": 1613
+    }
+  }
 }

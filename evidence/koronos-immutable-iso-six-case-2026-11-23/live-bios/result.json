@@ -1,0 +1,27 @@
+{
+  "case": "live-bios",
+  "target": "live",
+  "firmware": "bios",
+  "grub_index": 0,
+  "status": "PASS",
+  "failure": "",
+  "iso_sha256": "9e193ab55b0e37c0969fe5fd86ca38a92246eb8c9c3035e22f6b9d61a9c939d6",
+  "disk_sha256": "3b6a07d0d404fab4e23b6d34bc6696a6a312dd92821332385e5af7c01c421351",
+  "firmware_image_sha256": null,
+  "firmware_label": "SeaBIOS (QEMU default)",
+  "qemu_version": "QEMU emulator version 10.2.1 (Debian 1:10.2.1+ds-1ubuntu3.3)",
+  "qemu_command": "qemu-system-x86_64 -m 512 -smp 1 -cdrom /home/moeal/ChimeraIIOS/build/iso/chimera-release-matrix.iso -hda /home/moeal/ChimeraIIOS/build/release-matrix/live-bios/disk.img -serial file:/home/moeal/ChimeraIIOS/build/release-matrix/live-bios/serial.log -debugcon file:/home/moeal/ChimeraIIOS/build/release-matrix/live-bios/debugcon.log -global isa-debugcon.iobase=0xe9 -display none -monitor none -qmp unix:/home/moeal/ChimeraIIOS/build/release-matrix/live-bios/qmp.sock,server=on,wait=off -no-reboot -no-shutdown",
+  "qemu_exit_code": 0,
+  "handoff": {
+    "kernel_ready": true,
+    "init_syscall": true,
+    "userspace_ready": true
+  },
+  "handoff_verifier": {
+    "returncode": 0,
+    "stdout": "PASS: target=live init entered user mode and reported readiness with a consistent PID",
+    "stderr": ""
+  },
+  "serial_trace": "/home/moeal/ChimeraIIOS/build/release-matrix/live-bios/serial.log",
+  "kernel_trace": "/home/moeal/ChimeraIIOS/build/release-matrix/live-bios/debugcon.log"
+}

@@ -1,0 +1,27 @@
+{
+  "case": "recovery-uefi",
+  "target": "recovery",
+  "firmware": "uefi",
+  "grub_index": 5,
+  "status": "PASS",
+  "failure": "",
+  "iso_sha256": "9e193ab55b0e37c0969fe5fd86ca38a92246eb8c9c3035e22f6b9d61a9c939d6",
+  "disk_sha256": "3b6a07d0d404fab4e23b6d34bc6696a6a312dd92821332385e5af7c01c421351",
+  "firmware_image_sha256": "7f4fffc5098b51743dd242b7618de0b53ab98305e48eb254f63c7712af73c3e1",
+  "firmware_label": "OVMF 2025.11-3ubuntu7.3 (OVMF.fd)",
+  "qemu_version": "QEMU emulator version 10.2.1 (Debian 1:10.2.1+ds-1ubuntu3.3)",
+  "qemu_command": "qemu-system-x86_64 -m 512 -smp 1 -cdrom /home/moeal/ChimeraIIOS/build/iso/chimera-release-matrix.iso -hda /home/moeal/ChimeraIIOS/build/release-matrix/recovery-uefi/disk.img -serial file:/home/moeal/ChimeraIIOS/build/release-matrix/recovery-uefi/serial.log -debugcon file:/home/moeal/ChimeraIIOS/build/release-matrix/recovery-uefi/debugcon.log -global isa-debugcon.iobase=0xe9 -display none -monitor none -qmp unix:/home/moeal/ChimeraIIOS/build/release-matrix/recovery-uefi/qmp.sock,server=on,wait=off -no-reboot -no-shutdown -bios /home/moeal/ovmf-local/extracted-generic/usr/share/ovmf/OVMF.fd",
+  "qemu_exit_code": 0,
+  "handoff": {
+    "kernel_ready": true,
+    "init_syscall": true,
+    "userspace_ready": true
+  },
+  "handoff_verifier": {
+    "returncode": 0,
+    "stdout": "PASS: target=recovery init entered user mode and reported readiness with a consistent PID",
+    "stderr": ""
+  },
+  "serial_trace": "/home/moeal/ChimeraIIOS/build/release-matrix/recovery-uefi/serial.log",
+  "kernel_trace": "/home/moeal/ChimeraIIOS/build/release-matrix/recovery-uefi/debugcon.log"
+}
