@@ -1,0 +1,146 @@
+{
+  "schema": "koronos-six-case-evidence/v1",
+  "captured_utc": "2026-11-24T06:08:33Z",
+  "source": "https://github.com/amerhwitat/ChimeraIIOS/actions/runs/45337677324",
+  "workflow": "Koronos Immutable ISO Firmware Acceptance",
+  "head_sha": "6353595685b411aa5879990f3e0fba26d5cdfee5",
+  "artifact_id": 14895665160,
+  "iso_sha256": "ebed1a1ef52c8ef2930b6e8f139e07ce1fa2f294dc3a09b09fb9336aefce3254",
+  "qemu_version": "QEMU emulator version 8.2.2 (Debian 1:8.2.2+ds-0ubuntu1.18)",
+  "ovmf_package_version": "2024.02-2ubuntu0.10",
+  "ovmf_sha256": "7104ea759145e347d036a48045c38a7c24fb8885b314a9366f61e5b682429186",
+  "screenshot": "not-applicable: QEMU headless serial/debugcon capture",
+  "disk_images_excluded": "64 MiB fixture disks retained in CI artifact; hashes recorded in summary.json and each result.json",
+  "files": [
+    {
+      "path": "summary.json",
+      "bytes": 11138,
+      "sha256": "cd56b1975f6f6103c7698da3d2d5f8a727c85565db8137597f04eae77d9a7422"
+    },
+    {
+      "path": "chimera-release-matrix.iso.sha256",
+      "bytes": 156,
+      "sha256": "607c6f7b939825de009547a36c77505c4dc0945b08f7f857a105cb09b0cecb06"
+    },
+    {
+      "path": "live-bios/serial.log",
+      "bytes": 6722,
+      "sha256": "dcf48ba6c963c1af5b9f30b5a3621738b6de931920354f02ce17aa0b0c473ced"
+    },
+    {
+      "path": "live-bios/debugcon.log",
+      "bytes": 7626,
+      "sha256": "94addfd5eccbf35ac60680b2efba48fcf75fc55c355bcb57042fe5783d5e65fc"
+    },
+    {
+      "path": "live-bios/qmp.log",
+      "bytes": 611,
+      "sha256": "68ae4d1688a119b0aecc685749313c83961ee7fbef0bb45bd5284114f65fe0d3"
+    },
+    {
+      "path": "live-bios/result.json",
+      "bytes": 1590,
+      "sha256": "2bbe5005e21bf1157896f58d061e8546b6b6767658a77a0994206e6b0648a973"
+    },
+    {
+      "path": "installer-bios/serial.log",
+      "bytes": 7438,
+      "sha256": "9186731880df846167d0a9cd597d76a4ce27fd91a4857e78bfdd9317fd175dbf"
+    },
+    {
+      "path": "installer-bios/debugcon.log",
+      "bytes": 8618,
+      "sha256": "e3c48bc081cf24885d148060fd3573f9a42b54df2778610aa228137342fa4264"
+    },
+    {
+      "path": "installer-bios/qmp.log",
+      "bytes": 631,
+      "sha256": "fce2bd24df61a005f1b081b09c3cba881f78ecea3eab6c65713dd16862e10e1d"
+    },
+    {
+      "path": "installer-bios/result.json",
+      "bytes": 1635,
+      "sha256": "34cc5319a20f77ea051f8da1c9753ca534aa24ce1a6febcd04fee7ff061b0b12"
+    },
+    {
+      "path": "recovery-bios/serial.log",
+      "bytes": 7413,
+      "sha256": "d4d15125d706ed32418b3362801e13bf402424f8948852edc98e357807ff0fd5"
+    },
+    {
+      "path": "recovery-bios/debugcon.log",
+      "bytes": 7510,
+      "sha256": "89af50f1b98cc3842c42af3ced15cdb372e1ac3e03d273149d460b324ed91876"
+    },
+    {
+      "path": "recovery-bios/qmp.log",
+      "bytes": 627,
+      "sha256": "b2f22710af75d36911fe922072b10380090e200ca3099dc860d61ca5cde8189d"
+    },
+    {
+      "path": "recovery-bios/result.json",
+      "bytes": 1626,
+      "sha256": "d3f6449b495addf9f52bbd40855f441fc87bc7bf87491709b311a6ad84dfc96d"
+    },
+    {
+      "path": "live-uefi/serial.log",
+      "bytes": 11613,
+      "sha256": "2f6002fdc858081ac3a0d9f4dafc050d86acb745c1c5c9d8d64a67b21a42dd64"
+    },
+    {
+      "path": "live-uefi/debugcon.log",
+      "bytes": 7842,
+      "sha256": "fca31f4e2a0beb7d08b4381f2480ae2c5069f5231af14073fe9604f08531b61e"
+    },
+    {
+      "path": "live-uefi/qmp.log",
+      "bytes": 641,
+      "sha256": "a4953fd1bce124e48aa52d77549ac98fb9fb25b3f8066b4bfc61b1e407a102c6"
+    },
+    {
+      "path": "live-uefi/result.json",
+      "bytes": 1694,
+      "sha256": "1509460ae91a1ac982ba400f934f3bae5e379a09bc7357c4116b48da92ea8236"
+    },
+    {
+      "path": "installer-uefi/serial.log",
+      "bytes": 12720,
+      "sha256": "14b3a2b476b25648fded5e15cbe33b95e29edfbb2cdfa930accd6c7750acd697"
+    },
+    {
+      "path": "installer-uefi/debugcon.log",
+      "bytes": 8834,
+      "sha256": "9dca8f3429b74b20925944583ef2490cc05df381a1cccd1d9144df6d6a65c65b"
+    },
+    {
+      "path": "installer-uefi/qmp.log",
+      "bytes": 661,
+      "sha256": "fed8fc9fb48e77dd43a1816af90988677a7d380c208ea52ffe1b5b68967f47e3"
+    },
+    {
+      "path": "installer-uefi/result.json",
+      "bytes": 1739,
+      "sha256": "83303199bd0916bffc6537be00d08e1d0e508167c0794ac446679c2c6311b785"
+    },
+    {
+      "path": "recovery-uefi/serial.log",
+      "bytes": 13340,
+      "sha256": "3319b602747bfefa7374953534184d7a45cde6bc392d08e45304e70c85ff21f3"
+    },
+    {
+      "path": "recovery-uefi/debugcon.log",
+      "bytes": 7726,
+      "sha256": "40e344ded732780b387a248428e7e3d18f2732d156db3868dee7bb79806ac931"
+    },
+    {
+      "path": "recovery-uefi/qmp.log",
+      "bytes": 657,
+      "sha256": "cb88b3db6c4d78aa72113c7dc16496cb770d09e7db4b81b089c32c5de58e3c10"
+    },
+    {
+      "path": "recovery-uefi/result.json",
+      "bytes": 1730,
+      "sha256": "bcd32a272d135d47461416d64329ccd102c70b47e04d09f7c77002f2a6649454"
+    }
+  ]
+}

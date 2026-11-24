@@ -1,0 +1,27 @@
+{
+  "case": "installer-bios",
+  "target": "installer",
+  "firmware": "bios",
+  "grub_index": 2,
+  "status": "PASS",
+  "failure": "",
+  "iso_sha256": "ebed1a1ef52c8ef2930b6e8f139e07ce1fa2f294dc3a09b09fb9336aefce3254",
+  "disk_sha256": "3b6a07d0d404fab4e23b6d34bc6696a6a312dd92821332385e5af7c01c421351",
+  "firmware_image_sha256": null,
+  "firmware_label": "SeaBIOS (QEMU default)",
+  "qemu_version": "QEMU emulator version 8.2.2 (Debian 1:8.2.2+ds-0ubuntu1.18)",
+  "qemu_command": "qemu-system-x86_64 -m 512 -smp 1 -cdrom /home/runner/work/ChimeraIIOS/ChimeraIIOS/build/release-matrix/chimera-release-matrix.iso -hda /home/runner/work/ChimeraIIOS/ChimeraIIOS/build/release-matrix/installer-bios/disk.img -serial file:/home/runner/work/ChimeraIIOS/ChimeraIIOS/build/release-matrix/installer-bios/serial.log -debugcon file:/home/runner/work/ChimeraIIOS/ChimeraIIOS/build/release-matrix/installer-bios/debugcon.log -global isa-debugcon.iobase=0xe9 -display none -monitor none -qmp unix:/home/runner/work/ChimeraIIOS/ChimeraIIOS/build/release-matrix/installer-bios/qmp.sock,server=on,wait=off -no-reboot -no-shutdown",
+  "qemu_exit_code": 0,
+  "handoff": {
+    "kernel_ready": true,
+    "init_syscall": true,
+    "userspace_ready": true
+  },
+  "handoff_verifier": {
+    "returncode": 0,
+    "stdout": "PASS: target=installer init entered user mode and reported readiness with a consistent PID",
+    "stderr": ""
+  },
+  "serial_trace": "/home/runner/work/ChimeraIIOS/ChimeraIIOS/build/release-matrix/installer-bios/serial.log",
+  "kernel_trace": "/home/runner/work/ChimeraIIOS/ChimeraIIOS/build/release-matrix/installer-bios/debugcon.log"
+}
