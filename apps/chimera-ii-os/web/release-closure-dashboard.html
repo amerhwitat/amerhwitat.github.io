@@ -78,4 +78,17 @@ code{overflow-wrap:anywhere;color:#d9f3ff}.note{border-left:3px solid var(--ambe
 <p><strong>Authoritative references:</strong> <a href="https://www.intel.com/content/www/us/en/developer/articles/technical/intel-sdm.html">Intel SDM</a>, <a href="https://www.amd.com/en/search/documentation/hub.html">AMD architecture manuals</a>, <a href="https://support.arm.com/documentation/ddi0487/maa/-Part-C-The-AArch64-Instruction-Set/-Chapter-C3-A64-Instruction-Set-Overview">Arm A-profile reference</a>, <a href="https://docs.riscv.org/reference/isa/">RISC-V ISA specifications</a>, <a href="https://llvm.org/docs/TableGen/ProgRef.html">LLVM TableGen instruction records</a>, <a href="https://www.gnu.org/software/coreutils/manual/coreutils.html">GNU Coreutils manual</a> and <a href="https://busybox.net/FAQ.html">BusyBox applet/build documentation</a>. Source licenses, target ABI/sysroot availability and runtime tests must be checked before packaging upstream binaries.</p>
 </section>
 </footer>
+
+<section class="card" aria-labelledby="refresh-2026-11-24">
+  <h2 id="refresh-2026-11-24">Verification refresh · 24 November 2026, 17:00 +03</h2>
+  <p><strong>Release disposition: blocked.</strong> No production release, production ISO certification, or PR merge is authorized by these results.</p>
+  <ul>
+    <li><strong>ChimeraIIOS #320:</strong> 36 PR-triggered workflow runs on the previously audited head completed successfully, including kernel build, QEMU boot smoke, full/structured/Docker ISO builds, command/ISA CI, and scheduler regression. These are hosted CI results, not proof of context switching, AP/SMP overlap, persistent VFS, installer/recovery transactions, or production userspace.</li>
+    <li><strong>OctavianOS #236:</strong> the separate six-case Live/Installer/Recovery × BIOS/UEFI userspace probe run <code>45342348615</code> passed 6/6. The native build run <code>45342348550</code> still failed its complete-ISO boot check: QEMU produced no debugcon trace within 25 seconds, while the production GRUB menu intentionally waits for selection. The dedicated Installer and Recovery routing checks passed. A follow-up workflow change at <code>b9bee0a</code> now sends an explicit Enter key through the QEMU monitor instead of weakening the product menu timeout; its CI result is pending.</li>
+    <li><strong>LinuxKoronos #7:</strong> hosted builder and live-ISO workflow runs <code>45231941800</code> and <code>45231941788</code> passed. This remains a Linux-hosted adapter, not a freestanding Koronos OS.</li>
+    <li><strong>Website #107:</strong> this dashboard refresh is part of the open PR; the previous dashboard head had no attached status checks. This update must pass Pages validation before it is treated as validated or published.</li>
+  </ul>
+  <p><strong>Still unqualified:</strong> architecture context switching and timer preemption; AP startup and measured multi-CPU overlap; persistent block I/O/general VFS; persistent PID 1 and child supervision; installed-root handoff; durable installer writes/rollback; recovery repair; native Aurora/Marine/FreeXP/FreeWin11 sessions; complete command and ISA providers; independently captured six-case production evidence tied to one immutable ISO SHA.</p>
+  <p>Do not promote probe ELFs, synthetic verifier fixtures, browser previews, host Linux tools, or build artifacts into production-readiness evidence. Keep all related PRs open and unmerged until the corresponding runtime postconditions are independently demonstrated.</p>
+</section>
 </main></body></html>
