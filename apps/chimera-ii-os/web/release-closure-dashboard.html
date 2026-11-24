@@ -104,4 +104,16 @@ code{overflow-wrap:anywhere;color:#d9f3ff}.note{border-left:3px solid var(--ambe
 </ul>
 <p><strong>Next required actions:</strong> rerun Octavian build/acceptance after the verifier addition; manually dispatch and verify the complete Chimera source snapshot; then address the actual runtime blockers with implementation-level tests. Keep all PRs open and unmerged until the production postconditions are demonstrated.</p>
 </section>
+
+<section class="card" aria-labelledby="acceptance-2026-11-24-latest">
+<h2 id="acceptance-2026-11-24-latest">Latest production-userspace acceptance · 24 November 2026</h2>
+<p><strong>Production release remains blocked.</strong> The corrected Octavian verifier now runs and identifies the real failure: Live, Installer and Recovery each lack a kernel-verified persistent PID 1 ACTIVE marker. The QEMU traces show the target init enters ring 3, emits USERSPACE READY and then exits cleanly; the kernel logs that the target init exited. A one-shot probe is not a resident PID 1. No verifier relaxation or synthetic ACTIVE marker was introduced.</p>
+<ul>
+<li><a href="https://github.com/amerhwitat/OctavianOS/actions/runs/45427928919">Octavian native kernel/ISO + acceptance run 45427928919</a>: kernel/ISO build job succeeded; independent userspace acceptance failed for all three targets on the missing persistent-PID1 marker.</li>
+<li><a href="https://github.com/amerhwitat/OctavianOS/actions/runs/45427928968">Six-case target/firmware probes 45427928968</a>: 6/6 jobs passed; these are handoff/timeout probes, not persistent PID1 acceptance.</li>
+<li><a href="https://github.com/amerhwitat/OctavianOS/actions/runs/45427928943">Native desktop component suite 45427928943</a>: component build/headless smoke passed; complete graphical desktop sessions remain unverified.</li>
+</ul>
+<p>Trace evidence: Live launches a native text-console probe and explicitly reports no graphical session; Installer reports dry-run/no block-device backend/no disk writes; Recovery module recognition does not demonstrate persistent repair. The QEMU trace reports one logical CPU. Required next implementation is a resident kernel-managed PID 1 supervisor, child lifecycle/wait/reap and service supervision, followed by genuine persistent ACTIVE evidence. Keep the fail-closed verifier unchanged.</p>
+<p>Octavian's vendored Chimera snapshot is still stale and requires manual workflow dispatch with <code>source_ref=feat/koronos-newc-initramfs-parser-20261119</code> and <code>include_media=true</code>. No production ISO certification or publication is claimed.</p>
+</section>
 </main></body></html>
