@@ -17,20 +17,34 @@ code{overflow-wrap:anywhere;color:#d9f3ff}.note{border-left:3px solid var(--ambe
 <p>Evidence snapshot: 23 November 2026. Builds, smoke probes, native runtime gates and production certification are reported separately. All links point to exact commits, runs and archived traces.</p>
 
 <section class="decision">
-<strong>NATIVE RUNTIME GATES ACCEPTED — PRODUCTION RELEASE STILL FAIL-CLOSED</strong>
-<p>The ordered native Koronos gates and the immutable-ISO six-case matrix now have passing evidence. This authorizes publication of a verified engineering status, not a production-certified release. Official ISA conformance remains <code>not-run</code> (0/1613 catalog forms), only 15 commands are native-backed, and native desktop evidence is limited to profile validation plus headless GTK self-tests. PRs <a href="https://github.com/amerhwitat/ChimeraIIOS/pull/320">#320</a> and <a href="https://github.com/amerhwitat/ChimeraIIOS/pull/321">#321</a> remain open and unmerged.</p>
+<strong>FINAL RELEASE DISPOSITION — PRODUCTION BLOCKED</strong>
+<p>Production remains blocked and no production ISO has been certified or published. Probe, component-build, hosted and harness results are engineering evidence only and are not promoted into production acceptance. The <a href="apps/chimera-ii-os/web/final-release-disposition.html">final release disposition</a> is authoritative. PRs #320 and #321, all related OctavianOS PRs and LinuxKoronos #7 remain open and unmerged.</p>
 </section>
 
-<h2>Ordered native gates</h2>
+<h2>Final release disposition</h2>
+<div class="wrap"><table><thead><tr><th>Production requirement</th><th>Status</th></tr></thead><tbody>
+<tr><td>Real context switching and timer preemption</td><td>Incomplete</td></tr>
+<tr><td>AP startup and measured SMP overlap</td><td>Incomplete</td></tr>
+<tr><td>Persistent VFS and storage</td><td>Incomplete</td></tr>
+<tr><td>Persistent PID 1 and process supervision</td><td>Incomplete</td></tr>
+<tr><td>Installed-root handoff</td><td>Incomplete</td></tr>
+<tr><td>Durable installer and recovery</td><td>Incomplete</td></tr>
+<tr><td>Complete native desktop sessions</td><td>Unverified</td></tr>
+<tr><td>Full command and ISA conformance</td><td>Incomplete</td></tr>
+<tr><td>Six-case production certification on one immutable ISO</td><td>Not achieved</td></tr>
+</tbody></table></div>
+<p class="note">These statuses are authoritative. Passing probes, component builds, hosted checks and harness runs do not change any row. See the <a href="apps/chimera-ii-os/web/final-release-disposition.html">final release disposition</a> page for the full record.</p>
+
+<h2>Ordered native gates (probe / harness evidence only)</h2>
 <div class="wrap"><table><thead><tr><th>Gate</th><th>Result</th><th>Measured evidence</th></tr></thead><tbody>
 <tr><td>1 · Context switch / timer preemption</td><td><span class="tag">PASS</span></td><td>Assembly save/restore through <code>koronos_preempt_current_ctx</code>; PIT divisor 11932; <code>task_A_iterations=8</code>, <code>task_B_iterations=8</code>, <code>timer_preemptions=396</code>, <code>context_switches=399</code>, <code>interleavings=15</code>, <code>guard_failures=0</code>, order <code>BABABABABABABABA</code>. <a href="https://github.com/amerhwitat/ChimeraIIOS/actions/runs/45245082720">CI run 45245082720</a>.</td></tr>
 <tr><td>2 · AP / SMP</td><td><span class="tag">PASS</span></td><td>Real x2APIC INIT/SIPI; copied SIPI trampoline at physical <code>0x7000</code>; per-AP stack; <code>bsp_apic_id=0</code>, <code>ap_apic_id=1</code>, <code>ap_online=1</code>, <code>overlap_samples=256</code>, <code>ap_saw_bsp_rounds=256</code>, <code>tsc_overlap=1</code>, <code>[SMP ] SELFTEST PASS</code>.</td></tr>
 <tr><td>3 · Block I/O / VFS / PID 1</td><td><span class="tag">PASS</span></td><td><code>devid=0x1001</code>, <code>bar0=0xC001</code>, <code>queue_size=256</code>, <code>block_sectors=16384</code>, <code>mounted=1</code>, <code>child_progress=1000</code>, <code>child_exit_status=7</code>, <code>reaped_pid=2</code>, <code>reaped_status=7</code>, <code>zombies_after_reap=0</code>, <code>[NST ] SELFTEST PASS</code>.</td></tr>
 <tr><td>4 · Installed root / installer / recovery</td><td><span class="tag">PASS</span></td><td><code>JOURNAL WRITE PASS</code>, <code>JOURNAL COMMIT PASS</code>, <code>INSTALLED ROOT WRITTEN</code>, <code>INSTALLED ROOT HANDOFF PASS</code>, <code>CRASH SIMULATION PASS</code>, <code>JOURNAL ROLLBACK PASS</code>, <code>SUPERBLOCK REPAIR PASS</code>, <code>FILESYSTEM REPAIR PASS</code>, <code>ROOT VERIFY PASS</code>, <code>ROLLBACK VERIFY PASS</code>, <code>REPAIR VERIFY PASS</code>.</td></tr>
 </tbody></table></div>
-<p class="note">The gates were executed in order on exact branch head <code>0a97132f90246b1208405a554180207dbfe60055</code>. Productionized runners are <code>tools/runtime/check-koronos-preemption.sh</code>, <code>check-koronos-smp.sh</code>, <code>check-koronos-native-stack.sh</code> and <code>check-koronos-install-recovery.sh</code>.</p>
+<p class="note">These results are probe/harness evidence, not production acceptance. The gates were executed in order on exact branch head <code>0a97132f90246b1208405a554180207dbfe60055</code>. Productionized runners are <code>tools/runtime/check-koronos-preemption.sh</code>, <code>check-koronos-smp.sh</code>, <code>check-koronos-native-stack.sh</code> and <code>check-koronos-install-recovery.sh</code>.</p>
 
-<h2>Six-case immutable ISO acceptance</h2>
+<h2>Six-case probe matrix (not production certification)</h2>
 <p>One GRUB-hybrid ISO, SHA-256 <code>9e193ab55b0e37c0969fe5fd86ca38a92246eb8c9c3035e22f6b9d61a9c939d6</code>, was booted for all six cases. Each case records the exact QEMU command line, firmware identity, serial and kernel debugcon traces, disk fixture hash, ISO hash and exit code. The unchanged fail-closed verifier required a CPL-3-origin init syscall followed by a matching non-zero PID readiness marker after <code>[KRN ] KORONOS READY</code>.</p>
 <div class="wrap"><table><thead><tr><th>Case</th><th>Firmware</th><th>GRUB index</th><th>Exit</th><th>Handoff</th></tr></thead><tbody>
 <tr><td>Live</td><td>SeaBIOS (QEMU default)</td><td>0</td><td>0</td><td>PASS</td></tr>
