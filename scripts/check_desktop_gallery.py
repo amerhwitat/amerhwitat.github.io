@@ -59,7 +59,7 @@ for asset in (
 ):
     if asset not in html:
         raise SystemExit(f"artwork-led desktop showcase is missing {asset}")
-if html.count('class="desktop-card"') != 7:
+if html.count('class="desktop-card') != 7:
     raise SystemExit("expected six visual desktop showcases and one LinuxKoronos host adapter card")
 print(
     f"PASS: {len(ids)} profiles ({counts['chimera']} Chimera II OS, "
