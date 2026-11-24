@@ -44,5 +44,11 @@ code{overflow-wrap:anywhere;color:#d9f3ff}.note{border-left:3px solid var(--ambe
 <tr><td>Six-case production certification</td><td>Blocked (0/6 latest Octavian matrix)</td><td>One immutable ISO, six independently captured BIOS/UEFI traces, authenticated provenance, CPL3/PID1, storage, installer, recovery, desktop and SMP postconditions.</td></tr>
 </tbody></table></div>
 <p class="note">The service-init/KSO PRs define contracts and compatibility requirements; they are not a functioning service supervisor or persistent PID 1. No synthetic readiness markers, placeholder providers, fabricated acceptance manifest, or production release are authorized.</p>
-<footer>Updated 24 November 2026, 20:00 UTC. Open PRs remain unmerged. CI links are authoritative for live status; successful build and test jobs must not be interpreted as production certification.</footer>
+
+<section class="card"><h2>CI refresh — 24 November 2026 (dashboard commit d028285)</h2>
+<p>Static catalog validation <a href="https://github.com/amerhwitat/amerhwitat.github.io/actions/runs/45333036996">45333036996</a> completed successfully. Hosted Linux and Windows MSVC builds/tests <a href="https://github.com/amerhwitat/amerhwitat.github.io/actions/runs/45333037012">45333037012</a> both completed successfully.</p>
+<p>Pages deployment <a href="https://github.com/amerhwitat/amerhwitat.github.io/actions/runs/45333037125">45333037125</a> remains in progress at this refresh. React build, SS64 catalog build, Amiga/MAME packaging, catalog destination checks and site-local link checks have passed; Wallet catalog refresh and downstream asset/JavaScript checks, Pages artifact upload and deploy have not yet completed. Do not report the site as deployed until the workflow concludes successfully.</p>
+<p>The website checks do not change native Koronos disposition: OctavianOS kernel/QEMU run <a href="https://github.com/amerhwitat/OctavianOS/actions/runs/45329551165">45329551165</a> failed before kernel-ready and the six-case matrix <a href="https://github.com/amerhwitat/OctavianOS/actions/runs/45329551109">45329551109</a> remains 0/6. The source snapshot workflow still requires manual dispatch and exact manifest/path/SHA parity.</p></section>
+
+<footer>Updated 24 November 2026, 08:25 UTC. Open PRs remain unmerged. CI links are authoritative for live status; successful build and test jobs must not be interpreted as production certification.</footer>
 </main></body></html>
