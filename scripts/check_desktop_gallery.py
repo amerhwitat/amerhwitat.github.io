@@ -8,6 +8,10 @@ SOURCE = ROOT / "desktops/gallery.js"
 PAGE = ROOT / "desktops/index.html"
 text = SOURCE.read_text(encoding="utf-8")
 html = PAGE.read_text(encoding="utf-8")
+hub = (ROOT / "apps/os-desktop-hub/index.html").read_text(encoding="utf-8")
+ecosystem = (ROOT / "desktop-ecosystem.html").read_text(encoding="utf-8")
+showcase = (ROOT / "apps/desktop-showcase/index.html").read_text(encoding="utf-8")
+dashboard = (ROOT / "apps/chimera-ii-os/web/release-closure-dashboard.html").read_text(encoding="utf-8")
 ids = re.findall(r'\{id:"([^"]+)"', text)
 if len(ids) < 48:
     raise SystemExit(f"desktop gallery is incomplete: expected at least 48 profiles, found {len(ids)}")
@@ -49,6 +53,12 @@ if 'data-os="linuxkoronos"' not in html or "Three project editions" not in html:
     raise SystemExit("desktop gallery is missing the LinuxKoronos host filter or three-edition heading")
 if "Host-managed desktop" not in html or "existing Linux desktop session remains in control" not in html:
     raise SystemExit("LinuxKoronos host boundary must be explicit; do not claim a bundled shell")
+if "LinuxKoronos · Hosted runtime" not in hub or "LinuxKoronos Host Runtime" not in ecosystem:
+    raise SystemExit("secondary desktop launchpads are missing the LinuxKoronos host-runtime boundary")
+if "id:'linuxkoronos'" not in showcase or "Hosted runtime adapter" not in showcase:
+    raise SystemExit("interactive desktop showcase is missing its LinuxKoronos host profile")
+if "Website desktop gallery expansion" not in dashboard or "Octavian QEMU ISA-baseline diagnosis" not in dashboard:
+    raise SystemExit("release dashboard is missing the current desktop and QEMU diagnostic updates")
 for asset in (
     "aurora-glass-3840x2160.svg",
     "marine-blue-3840x2160.svg",
