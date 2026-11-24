@@ -47,7 +47,7 @@ if counts["chimera"] < 1 or counts["octavian"] < 1 or counts["linuxkoronos"] != 
     raise SystemExit(f"unexpected project edition profile counts: {counts}")
 if 'data-os="linuxkoronos"' not in html or "Three project editions" not in html:
     raise SystemExit("desktop gallery is missing the LinuxKoronos host filter or three-edition heading")
-if "Host-managed desktop" not in html or "Linux continues to own" not in html:
+if "Host-managed desktop" not in html or "existing Linux desktop session remains in control" not in html:
     raise SystemExit("LinuxKoronos host boundary must be explicit; do not claim a bundled shell")
 for asset in (
     "aurora-glass-3840x2160.svg",
@@ -59,7 +59,7 @@ for asset in (
 ):
     if asset not in html:
         raise SystemExit(f"artwork-led desktop showcase is missing {asset}")
-if html.count('class="desktop-card') != 7:
+if len(re.findall(r'class="desktop-card(?:\s+[^\"]*)?"', html)) != 7:
     raise SystemExit("expected six visual desktop showcases and one LinuxKoronos host adapter card")
 print(
     f"PASS: {len(ids)} profiles ({counts['chimera']} Chimera II OS, "
