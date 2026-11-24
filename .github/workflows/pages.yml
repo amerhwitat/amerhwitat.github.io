@@ -33,6 +33,7 @@ jobs:
         run: |
           node --check apps/chimera-ii-os/web/desktop_experiences.js
           node scripts/validate-desktop-icon-usage.mjs
+          python3 scripts/check_desktop_gallery.py
       - name: Refresh Python catalog for PR validation
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
