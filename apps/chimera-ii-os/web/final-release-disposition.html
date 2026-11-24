@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Authoritative Final release disposition for ChimeraIIOS, Koronos, OctavianOS and LinuxKoronos: production blocked; no production ISO certified or published.">
+<meta name="theme-color" content="#07111f"><title>Koronos · Final release disposition</title>
+<style>
+:root{color-scheme:dark;--bg:#07111f;--line:#29465e;--ink:#e8f3ff;--muted:#aec4d8;--cyan:#8be6ff;--red:#ff9b9b;--amber:#ffd18b}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 15% 0%,#173b59 0,transparent 42%),var(--bg);color:var(--ink);font:16px/1.6 system-ui,-apple-system,Segoe UI,sans-serif}
+main{width:min(1100px,calc(100% - 32px));margin:auto;padding:clamp(24px,5vw,56px) 0}a{color:var(--cyan)}h1{font-size:clamp(2rem,5vw,3.3rem);line-height:1.08;margin:.3rem 0 1rem}h2{font-size:1.25rem;margin:1.6rem 0 .7rem}
+.eyebrow{color:var(--cyan);font-size:.76rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase}
+.decision{border:1px solid #815052;background:#2b1b22;border-radius:16px;padding:18px;margin:24px 0}.decision strong{color:var(--red);font-size:1.15rem}
+.wrap{overflow-x:auto;border:1px solid var(--line);border-radius:14px;margin:14px 0 26px}table{border-collapse:collapse;width:100%;min-width:560px;background:#0c1929}th,td{text-align:left;vertical-align:top;padding:12px 14px;border-bottom:1px solid var(--line)}th{color:var(--cyan);background:#132941;font-size:.82rem;letter-spacing:.06em;text-transform:uppercase}td{color:var(--muted)}td:first-child{color:var(--ink);font-weight:650}
+.incomplete,.unverified,.not-achieved{color:var(--red);font-weight:800}
+code{overflow-wrap:anywhere;color:#d9f3ff}.note{border-left:3px solid var(--amber);padding:8px 14px;background:#171f2a}footer{border-top:1px solid var(--line);margin-top:30px;padding-top:18px;color:var(--muted);font-size:.9rem}
+ol li{margin:.5em 0}ul li{margin:.35em 0}
+</style></head><body><main>
+<p class="eyebrow">ChimeraIIOS · Koronos · OctavianOS · LinuxKoronos</p>
+<h1>Final release disposition</h1>
+<p>Disposition date: 24 November 2026. This page is the authoritative release-status record. It supersedes any earlier "gates accepted", "matrix passed", "seven-check passed", or "production port" framing elsewhere on this site.</p>
+<section class="decision"><strong>PRODUCTION RELEASE BLOCKED</strong>
+<p>Production remains blocked. No production ISO has been certified or published. Passing probes, component builds, hosted checks, source-byte parity and harness/CI runs are engineering evidence only. They are not promoted into production acceptance.</p></section>
+<h2>Production requirement disposition</h2>
+<div class="wrap"><table><thead><tr><th>Production requirement</th><th>Status</th></tr></thead><tbody>
+<tr><td>Real context switching and timer preemption</td><td class="incomplete">Incomplete</td></tr>
+<tr><td>AP startup and measured SMP overlap</td><td class="incomplete">Incomplete</td></tr>
+<tr><td>Persistent VFS and storage</td><td class="incomplete">Incomplete</td></tr>
+<tr><td>Persistent PID 1 and process supervision</td><td class="incomplete">Incomplete</td></tr>
+<tr><td>Installed-root handoff</td><td class="incomplete">Incomplete</td></tr>
+<tr><td>Durable installer and recovery</td><td class="incomplete">Incomplete</td></tr>
+<tr><td>Complete native desktop sessions</td><td class="unverified">Unverified</td></tr>
+<tr><td>Full command and ISA conformance</td><td class="incomplete">Incomplete</td></tr>
+<tr><td>Six-case production certification on one immutable ISO</td><td class="not-achieved">Not achieved</td></tr>
+</tbody></table></div>
+<p class="note">The statuses above are the final disposition. A passing probe, selftest, component build, or harness run does not change any row. Official command/ISA conformance is <code>not-run</code> (<code>0/1613</code> catalog forms); only 15 commands are native-backed.</p>
+
+<h2>Pull request disposition</h2>
+<p>All four headline pull requests remain open and unmerged: ChimeraIIOS <a href="https://github.com/amerhwitat/ChimeraIIOS/pull/320">#320</a> and <a href="https://github.com/amerhwitat/ChimeraIIOS/pull/321">#321</a>; OctavianOS <a href="https://github.com/amerhwitat/OctavianOS/pull/241">#241</a>; LinuxKoronos <a href="https://github.com/amerhwitat/LinuxKoronos/pull/7">#7</a>. Every related follow-up — OctavianOS <a href="https://github.com/amerhwitat/OctavianOS/pull/42">#42</a>, <a href="https://github.com/amerhwitat/OctavianOS/pull/236">#236</a>, <a href="https://github.com/amerhwitat/OctavianOS/pull/238">#238</a>, <a href="https://github.com/amerhwitat/OctavianOS/pull/239">#239</a>, <a href="https://github.com/amerhwitat/OctavianOS/pull/240">#240</a> and <a href="https://github.com/amerhwitat/OctavianOS/pull/242">#242</a> — is also open and unmerged. No PR is merged and no production ISO is published.</p>
+
+<h2>Next critical work</h2>
+<ol>
+<li><strong>Complete the snapshot synchronization.</strong> Finish the exact-inputs source snapshot and verify manifest, path and SHA-256 parity before any integration work.</li>
+<li><strong>Finish the corrected Octavian CI runs.</strong> Rerun the seven integration/native checks at the exact final head; record run IDs, artifacts and hashes. Passing harness results are evidence, not production acceptance.</li>
+<li><strong>Implement the actual kernel and userspace runtime requirements.</strong> Build real context save/restore and timer preemption, AP startup with measured CPU overlap, persistent block storage/VFS and PID 1 supervision, installed-root handoff, durable installer/recovery, four complete native desktop sessions, and full command/ISA conformance — then certify six production cases on one immutable ISO.</li>
+</ol>
+
+<h2>Evidence boundary</h2>
+<p>The archived evidence pages remain useful as engineering records, with these limits:</p>
+<ul>
+<li><a href="release-closure-dashboard.html">Release closure evidence</a> — probe, harness and component results reconciled; no row is production-accepted.</li>
+<li><a href="/evidence/koronos-immutable-iso-ci-2026-11-24/MANIFEST.json">CI six-case manifest</a> — one probe ISO and six matrix traces; not production certification.</li>
+<li><a href="koronos-remediation-status.html">Koronos remediation status</a> and <a href="userspace-acceptance.html">production acceptance matrix</a> — outstanding runtime gaps.</li>
+</ul>
+<p>No synthetic readiness markers, placeholder providers, fabricated acceptance manifest, or production release are authorized.</p>
+<footer>Updated 24 November 2026. CI links are authoritative for run state; passing build and runtime checks must not be interpreted as production certification.</footer>
+</main></body></html>
