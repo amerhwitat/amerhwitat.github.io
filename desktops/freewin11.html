@@ -1,11 +1,12 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-webui-desktop="freewin11">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#eaf0f8">
 <title>FreeWin11 Desktop Preview · Chimera II OS & OctavianOS</title>
 <meta name="description" content="An original, interactive Windows 11/12-inspired desktop preview built from the FreeXP desktop foundation for Chimera II OS and OctavianOS.">
+<link rel="stylesheet" href="/assets/desktop-reference-previews/web-ui-wallpaper-picker.css">
 <style>
 :root{color-scheme:light;--ink:#172b45;--muted:#526982;--blue:#2864bd;--line:#cbd8e8;--glass:#f5f8fddd;--shadow:0 22px 70px #10274435}
 *{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;font:14px/1.45 "Segoe UI",system-ui,sans-serif;color:var(--ink)}
@@ -43,7 +44,12 @@ body{background:linear-gradient(135deg,#9dc7ee 0%,#dce9f8 43%,#b5c9e2 100%)}
 </style>
 </head>
 <body>
-<div class="wallpaper" aria-hidden="true"></div>
+<div class="wallpaper" data-wallpaper-target aria-hidden="true"></div>
+ <div class="webui-wallpaper-picker" data-webui-picker>
+   <button type="button" data-wallpaper-button title="Choose a concept background" aria-expanded="false">▧ Wallpaper</button>
+   <div class="webui-wallpaper-options" data-wallpaper-options hidden aria-label="Concept background choices"></div>
+ </div>
+ <div class="webui-wallpaper-toast" data-wallpaper-toast role="status" aria-live="polite"></div>
 <div class="topline"><b>FREEWIN11</b><span>·</span><span>Windows 11/12-inspired clean-room desktop</span><a href="/desktops/">Desktop gallery ↗</a></div>
 <main class="desktop" aria-label="FreeWin11 desktop">
  <button class="shortcut" data-window="files"><span class="glyph"><svg viewBox="0 0 64 64" aria-hidden="true"><use href="../assets/icons/chimera-octavian/catalog.svg#app-aurora-files"/></svg></span><small>This PC</small></button>
@@ -131,5 +137,7 @@ body{background:linear-gradient(135deg,#9dc7ee 0%,#dce9f8 43%,#b5c9e2 100%)}
  document.addEventListener("keydown",e=>{if(e.key==="Escape")closeAll();if((e.metaKey||e.ctrlKey)&&e.key.toLowerCase()==="s"){e.preventDefault();showPanel("startPanel");}});
 })();
 </script>
+<script src="/assets/desktop-reference-previews/WEB_UI_BACKGROUNDS.js"></script>
+<script src="/assets/desktop-reference-previews/web-ui-wallpaper-picker.js"></script>
 </body>
 </html>

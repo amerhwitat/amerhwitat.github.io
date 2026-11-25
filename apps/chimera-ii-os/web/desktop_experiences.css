@@ -27,12 +27,13 @@
 .desk-icon{min-height:82px}
 /* Beveled concept icon artwork: /assets/desktop-icons/beveled/ derived from /assets/desktop-icons/slices/ provenance; see /assets/desktop-icons/ICON_MAP.json and /assets/desktop-icons/beveled/BEVELED_MANIFEST.json */
 
-/* Supplied Web UI wallpaper picker: concept artwork only. */
+/* Supplied concept background picker: 25 backgrounds grouped by primary edition. */
 .wallpaper-picker{position:absolute;right:18px;bottom:58px;z-index:12;display:flex;flex-direction:column;align-items:flex-end;gap:7px}
 .wallpaper-picker>button{font-size:11px;background:#101d3b99;border:1px solid #ffffff38;border-radius:20px;padding:7px 10px;color:#fff}
-.wallpaper-options{display:grid;grid-template-columns:repeat(3,96px);gap:6px;padding:7px;background:#07152be8;border:1px solid #ffffff55;border-radius:12px;backdrop-filter:blur(16px)}
+.wallpaper-options{display:grid;grid-template-columns:repeat(3,96px);gap:6px;padding:7px;max-height:min(64vh,520px);overflow:auto;background:#07152be8;border:1px solid #ffffff55;border-radius:12px;backdrop-filter:blur(16px)}
 .wallpaper-options.hidden{display:none}
+.wallpaper-group{grid-column:1/-1;padding:5px 2px 0;border-top:1px solid #ffffff24;color:#9deaff;font-size:9px;letter-spacing:.14em;text-transform:uppercase}
 .wallpaper-options button{border:1px solid transparent;border-radius:8px;background:transparent;padding:3px;color:#fff;font-size:9px;text-align:left}
-.wallpaper-options button[aria-pressed=true]{border-color:#65ddf4}
+.wallpaper-options button[aria-pressed=true]{border-color:#65ddf4;background:#65ddf41a}
 .wallpaper-options img{display:block;width:100%;height:48px;object-fit:cover;border-radius:5px;margin-bottom:3px}
 @media(max-width:700px){.wallpaper-picker{right:8px;bottom:104px}.wallpaper-options{grid-template-columns:repeat(2,86px)}}

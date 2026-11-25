@@ -181,6 +181,32 @@ for rel_usage in webui_usage:
     usage_text = (ROOT / rel_usage).read_text(encoding="utf-8")
     if "/assets/webui-desktop-wallpapers/" not in usage_text:
         raise SystemExit(f"Web UI wallpapers are not used in {rel_usage}")
+webui_map_path = ROOT / "assets/desktop-reference-previews/WEB_UI_BACKGROUNDS.js"
+if not webui_map_path.is_file():
+    raise SystemExit("Web UI background mapping is missing")
+webui_map = webui_map_path.read_text(encoding="utf-8")
+if "PRODUCTION RELEASE BLOCKED" not in webui_map or "concept_only" not in webui_map:
+    raise SystemExit("Web UI background mapping lost its concept/release boundary")
+for record in bg_manifest["images"]:
+    if '"' + record["id"] + '"' not in webui_map:
+        raise SystemExit(f"Web UI background mapping is missing record: {record['id']}")
+for rel_surface, desktop_id in (
+    ("apps/chimera-ii-os/web/desktop_experiences.html", "aurora"),
+    ("desktops/freewin11.html", "freewin11"),
+    ("desktops/freexp.html", "freexp"),
+    ("apps/octavianos/aurora/index.html", "octavian-aurora"),
+    ("apps/octavianos/marine/index.html", "octavian-marine"),
+):
+    surface_text = (ROOT / rel_surface).read_text(encoding="utf-8")
+    if 'data-webui-desktop="' + desktop_id + '"' not in surface_text:
+        raise SystemExit(f"Web UI desktop mapping attribute is missing: {rel_surface}")
+    if "/assets/desktop-reference-previews/WEB_UI_BACKGROUNDS.js" not in surface_text:
+        raise SystemExit(f"Web UI background mapping script is missing: {rel_surface}")
+    if rel_surface != "apps/chimera-ii-os/web/desktop_experiences.html" and (
+        "/assets/desktop-reference-previews/web-ui-wallpaper-picker.js" not in surface_text
+        or "/assets/desktop-reference-previews/web-ui-wallpaper-picker.css" not in surface_text
+    ):
+        raise SystemExit(f"Web UI background picker is missing: {rel_surface}")
 if "PRODUCTION RELEASE BLOCKED" not in disposition:
     raise SystemExit("authoritative release disposition changed while adding background references")
 icon_assets = (

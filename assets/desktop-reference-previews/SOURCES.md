@@ -19,8 +19,8 @@ All five supplied reference files were consulted for composition, palette, panel
 These images are **concept artwork**, not boot traces, compositor evidence, input-stack evidence, installed-wallpaper evidence or production certification. No production ISO or native desktop session claim is made by publishing them.
 
 
-## Supplied background images (19)
+## Supplied background images (25)
 
-The additional 19 supplied images are published as web-sized 16:9 background assets under `backgrounds/`. Every image is available behind all three edition concepts; `primary_edition` in `BACKGROUNDS.json` only records the first visual family it was associated with. Original filenames, source dimensions, byte sizes and SHA-256 digests are preserved in the manifest.
+The 25 supplied images are published as web-sized 16:9 background assets under `backgrounds/` and `../webui-desktop-wallpapers/previews/`. Every image is available behind all three edition concepts; `primary_edition` in `BACKGROUNDS.json` records the first visual family it was associated with. Original filenames, source dimensions, byte sizes and SHA-256 digests are preserved in the manifest.
 
-Open `/desktops/background-references.html` for the three-edition background picker. These images remain concept artwork; they do not change installed wallpapers or prove a native desktop session.
+Open `/desktops/background-references.html` for the three-edition background picker. The same records are generated into `WEB_UI_BACKGROUNDS.js` and offered in the interactive Web UI pickers: Chimera-primary images on Aurora Glass and FreeWin11/FreeXP, Octavian-primary images on the Octavian shells, shared images on every surface, and all 25 on the LinuxKoronos concept because every record lists `linuxkoronos` in `used_by`. Generated defaults preserve the already-published Web UI wallpaper assignments. These images remain concept artwork; they do not change installed wallpapers or prove a native desktop session.
