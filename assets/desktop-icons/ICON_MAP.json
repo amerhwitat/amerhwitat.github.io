@@ -1,0 +1,686 @@
+{
+  "schema": "chimera-octavian-sliced-icon-map/v1",
+  "concept_only": true,
+  "source_sheets": [
+    {
+      "asset": "/assets/desktop-icons/sources/e96b2253-fb69-4f33-a675-aa245fa5a9f5.png",
+      "sha256": "28d0203ccdbbcfddb52c5272d96a5ecad124cbe81f060edd7af2ab97e296f415",
+      "grid": "10 columns x 5 rows",
+      "cell": "96x96"
+    },
+    {
+      "asset": "/assets/desktop-icons/sources/4308a40a-64aa-403e-8eba-b586d1e911bf.png",
+      "sha256": "a223d2e34fb83e2edc6f3e39421d334d0a115d9a72f8b370ff0b7eb6b4429c50",
+      "grid": "10 columns x 5 rows",
+      "cell": "96x96"
+    }
+  ],
+  "mapped_icon_count": 133,
+  "icons": {
+    "7zip": {
+      "name": "7-Zip",
+      "asset": "/assets/desktop-icons/slices/sheet-b/b-r5c04-backup-restore.png",
+      "source_cell": "b-r5c04-backup-restore"
+    },
+    "algorand": {
+      "name": "go-algorand",
+      "asset": "/assets/desktop-icons/slices/sheet-b/b-r5c10-advanced-tools.png",
+      "source_cell": "b-r5c10-advanced-tools"
+    },
+    "appcleaner": {
+      "name": "AppCleaner",
+      "asset": "/assets/desktop-icons/slices/sheet-b/b-r5c10-advanced-tools.png",
+      "source_cell": "b-r5c10-advanced-tools"
+    },
+    "appimage": {
+      "name": "AppImage ecosystem",
+      "asset": "/assets/desktop-icons/slices/sheet-b/b-r1c08-photos.png",
+      "source_cell": "b-r1c08-photos"
+    },
+    "aptos-core": {
+      "name": "Aptos Core",
+      "asset": "/assets/desktop-icons/slices/sheet-b/b-r5c10-advanced-tools.png",
+      "source_cell": "b-r5c10-advanced-tools"
+    },
+    "archive-manager": {
+      "name": "archive-manager",
+      "asset": "/assets/desktop-icons/slices/sheet-b/b-r5c04-backup-restore.png",
+      "source_cell": "b-r5c04-backup-restore"
+    },
+    "ardour": {
+      "name": "ardour",
+      "asset": "/assets/desktop-icons/slices/sheet-a/a-r1c10-music.png",
+      "source_cell": "a-r1c10-music"
+    },
+    "audacity": {
+      "name": "audacity",
+      "asset": "/assets/desktop-icons/slices/sheet-a/a-r1c10-music.png",
+      "source_cell": "a-r1c10-music"
+    },
+    "aurora-files": {
+      "name": "aurora-files",
+      "asset": "/assets/desktop-icons/slices/sheet-b/b-r1c04-files.png",
+      "source_cell": "b-r1c04-files"
+    },
+    "aurora-flash-tool": {
+      "name": "Aurora Flash Tool",
+      "asset": "/assets/desktop-icons/slices/sheet-b/b-r5c10-advanced-tools.png",
+      "source_cell": "b-r5c10-advanced-tools"
+    },
+    "aurora-media-player": {
+      "name": "aurora-media-player",
+      "asset": "/assets/desktop-icons/slices/sheet-a/a-r1c09-media-player.png",
+      "source_cell": "a-r1c09-media-player"
+    },
+    "aurora-video-player": {
+      "name": "aurora-video-player",
+      "asset": "/assets/desktop-icons/slices/sheet-b/b-r1c10-videos.png",
+      "source_cell": "b-r1c10-videos"
+    },
+    "avalanchego": {
+      "name": "AvalancheGo",
+      "asset": "/assets/desktop-icons/slices/sheet-b/b-r5c10-advanced-tools.png",
+      "source_cell": "b-r5c10-advanced-tools"
+    },
+    "bitcoin-core": {
+      "name": "Bitcoin Core",
+      "asset": "/assets/desktop-icons/slices/sheet-b/b-r5c10-advanced-tools.png",
+      "source_cell": "b-r5c10-advanced-tools"
+    },
+    "bizx": {
+      "name": "BizX",
+      "asset": "/assets/desktop-icons/slices/sheet-b/b-r2c07-games.png",
+      "source_cell": "b-r2c07-games"
+    },
+    "bizxtreme": {
+      "name": "BizXtreme",
+      "asset": "/assets/desktop-icons/slices/sheet-b/b-r2c06-chess.png",
+      "source_cell": "b-r2c06-chess"
+    },
+    "blender": {
+      "name": "blender",
+      "asset": "/assets/desktop-icons/slices/sheet-a/a-r5c07-3d-viewer.png",
+      "source_cell": "a-r5c07-3d-viewer"
+    },
+    "bottles": {
+      "name": "Bottles",
+      "asset": "/assets/desktop-icons/slices/sheet-b/b-r2c07-games.png",
+      "source_cell": "b-r2c07-games"
+    },
+    "brave": {
+      "name": "Brave Browser",
+      "asset": "/assets/desktop-icons/slices/sheet-b/b-r1c05-web-browser.png",
+      "source_cell": "b-r1c05-web-browser"
+    },
+    "bruteforce": {
+      "name": "bruteforce",
+      "asset": "/assets/desktop-icons/slices/sheet-a/a-r3c01-security.png",
+      "source_cell": "a-r3c01-security"
+    },
+    "calibre": {
+      "name": "calibre",
+      "asset": "/assets/desktop-icons/slices/sheet-b/b-r5c10-advanced-tools.png",
+      "source_cell": "b-r5c10-advanced-tools"
+    },
+    "cardano-node": {
+      "name": "Cardano Node",
+      "asset": "/assets/desktop-icons/slices/sheet-b/b-r5c10-advanced-tools.png",
+      "source_cell": "b-r5c10-advanced-tools"
+    },
+    "chimera-boot-manager": {
+      "name": "Jasper Boot Manager",
+      "asset": "/assets/desktop-icons/slices/sheet-b/b-r5c09-power-management.png",
+      "source_cell": "b-r5c09-power-management"
+    },
+    "chimera-installer": {
+      "name": "Chimera II Installer",
+      "asset": "/assets/desktop-icons/slices/sheet-b/b-r5c09-power-management.png",
+      "source_cell": "b-r5c09-power-management"
+    },
+    "chromium": {
+      "name": "Chromium",
+      "asset": "/assets/desktop-icons/slices/sheet-b/b-r1c05-web-browser.png",
+      "source_cell": "b-r1c05-web-browser"
+    },
+    "cpu4096": {
+      "name": "CPU4096",
+      "asset": "/assets/desktop-icons/slices/sheet-b/b-r5c10-advanced-tools.png",
+      "source_cell": "b-r5c10-advanced-tools"
+    },
+    "cpu4096simulator": {
+      "name": "CPU4096Simulator",
+      "asset": "/assets/desktop-icons/slices/sheet-b/b-r5c10-advanced-tools.png",
+      "source_cell": "b-r5c10-advanced-tools"
+    },
+    "curl": {
+      "name": "curl",
+      "asset": "/assets/desktop-icons/slices/sheet-b/b-r1c03-terminal.png",
+      "source_cell": "b-r1c03-terminal"
+    },
+    "darktable": {
+      "name": "darktable",
+      "asset": "/assets/desktop-icons/slices/sheet-b/b-r1c08-photos.png",
+      "source_cell": "b-r1c08-photos"
+    },
+    "dash-core": {
+      "name": "Dash Core",
+      "asset": "/assets/desktop-icons/slices/sheet-b/b-r5c10-advanced-tools.png",
+      "source_cell": "b-r5c10-advanced-tools"
+    },
+    "dbeaver": {
+      "name": "DBeaver Community",
+      "asset": "/assets/desktop-icons/slices/sheet-b/b-r5c10-advanced-tools.png",
+      "source_cell": "b-r5c10-advanced-tools"
+    },
+    "discover": {
+      "name": "KDE Discover",
+      "asset": "/assets/desktop-icons/slices/sheet-b/b-r5c05-package-manager.png",
+      "source_cell": "b-r5c05-package-manager"
+    },
+    "docker-desktop": {
+      "name": "Docker Desktop",
+      "asset": "/assets/desktop-icons/slices/sheet-b/b-r5c10-advanced-tools.png",
+      "source_cell": "b-r5c10-advanced-tools"
+    },
+    "dogecoin-core": {
+      "name": "Dogecoin Core",
+      "asset": "/assets/desktop-icons/slices/sheet-b/b-r5c10-advanced-tools.png",
+      "source_cell": "b-r5c10-advanced-tools"
+    },
+    "dolphin-file-manager": {
+      "name": "Dolphin File Manager",
+      "asset": "/assets/desktop-icons/slices/sheet-b/b-r1c04-files.png",
+      "source_cell": "b-r1c04-files"
+    },
+    "element": {
+      "name": "Element",
+      "asset": "/assets/desktop-icons/slices/sheet-b/b-r5c10-advanced-tools.png",
+      "source_cell": "b-r5c10-advanced-tools"
+    },
+    "eth-key-check": {
+      "name": "eth-key-check",
+      "asset": "/assets/desktop-icons/slices/sheet-a/a-r3c01-security.png",
+      "source_cell": "a-r3c01-security"
+    },
+    "everything-search": {
+      "name": "Everything Search",
+      "asset": "/assets/desktop-icons/slices/sheet-a/a-r2c10-search.png",
+      "source_cell": "a-r2c10-search"
+    },
+    "file-manager": {
+      "name": "file-manager",
+      "asset": "/assets/desktop-icons/slices/sheet-a/a-r1c04-file-manager.png",
+      "source_cell": "a-r1c04-file-manager"
+    },
+    "filezilla": {
+      "name": "FileZilla",
+      "asset": "/assets/desktop-icons/slices/sheet-b/b-r1c04-files.png",
+      "source_cell": "b-r1c04-files"
+    },
+    "firefox": {
+      "name": "Firefox",
+      "asset": "/assets/desktop-icons/slices/sheet-b/b-r1c05-web-browser.png",
+      "source_cell": "b-r1c05-web-browser"
+    },
+    "flatpak": {
+      "name": "Flatpak",
+      "asset": "/assets/desktop-icons/slices/sheet-b/b-r5c05-package-manager.png",
+      "source_cell": "b-r5c05-package-manager"
+    },
+    "garageband": {
+      "name": "GarageBand",
+      "asset": "/assets/desktop-icons/slices/sheet-a/a-r1c10-music.png",
+      "source_cell": "a-r1c10-music"
+    },
+    "gates": {
+      "name": "Gates System Control Center",
+      "asset": "/assets/desktop-icons/slices/sheet-b/b-r5c10-advanced-tools.png",
+      "source_cell": "b-r5c10-advanced-tools"
+    },
+    "general": {
+      "name": "general",
+      "asset": "/assets/desktop-icons/slices/sheet-b/b-r5c10-advanced-tools.png",
+      "source_cell": "b-r5c10-advanced-tools"
+    },
+    "geth": {
+      "name": "Go Ethereum (Geth)",
+      "asset": "/assets/desktop-icons/slices/sheet-b/b-r5c10-advanced-tools.png",
+      "source_cell": "b-r5c10-advanced-tools"
+    },
+    "gimp": {
+      "name": "gimp",
+      "asset": "/assets/desktop-icons/slices/sheet-b/b-r1c08-photos.png",
+      "source_cell": "b-r1c08-photos"
+    },
+    "git": {
+      "name": "git",
+      "asset": "/assets/desktop-icons/slices/sheet-b/b-r1c03-terminal.png",
+      "source_cell": "b-r1c03-terminal"
+    },
+    "gnome-files": {
+      "name": "GNOME Files (Nautilus)",
+      "asset": "/assets/desktop-icons/slices/sheet-b/b-r1c04-files.png",
+      "source_cell": "b-r1c04-files"
+    },
+    "gnome-software": {
+      "name": "GNOME Software",
+      "asset": "/assets/desktop-icons/slices/sheet-b/b-r5c05-package-manager.png",
+      "source_cell": "b-r5c05-package-manager"
+    },
+    "gparted": {
+      "name": "GParted",
+      "asset": "/assets/desktop-icons/slices/sheet-b/b-r5c03-partition-manager.png",
+      "source_cell": "b-r5c03-partition-manager"
+    },
+    "handbrake": {
+      "name": "HandBrake",
+      "asset": "/assets/desktop-icons/slices/sheet-b/b-r1c10-videos.png",
+      "source_cell": "b-r1c10-videos"
+    },
+    "homebrew": {
+      "name": "Homebrew",
+      "asset": "/assets/desktop-icons/slices/sheet-b/b-r5c05-package-manager.png",
+      "source_cell": "b-r5c05-package-manager"
+    },
+    "inkscape": {
+      "name": "Inkscape",
+      "asset": "/assets/desktop-icons/slices/sheet-b/b-r5c10-advanced-tools.png",
+      "source_cell": "b-r5c10-advanced-tools"
+    },
+    "irfanview": {
+      "name": "IrfanView",
+      "asset": "/assets/desktop-icons/slices/sheet-b/b-r1c08-photos.png",
+      "source_cell": "b-r1c08-photos"
+    },
+    "iterm2": {
+      "name": "iTerm2",
+      "asset": "/assets/desktop-icons/slices/sheet-b/b-r1c03-terminal.png",
+      "source_cell": "b-r1c03-terminal"
+    },
+    "joplin": {
+      "name": "Joplin",
+      "asset": "/assets/desktop-icons/slices/sheet-b/b-r5c10-advanced-tools.png",
+      "source_cell": "b-r5c10-advanced-tools"
+    },
+    "kaspa": {
+      "name": "Rusty Kaspa",
+      "asset": "/assets/desktop-icons/slices/sheet-b/b-r5c10-advanced-tools.png",
+      "source_cell": "b-r5c10-advanced-tools"
+    },
+    "kde-connect": {
+      "name": "KDE Connect",
+      "asset": "/assets/desktop-icons/slices/sheet-b/b-r5c06-network-manager.png",
+      "source_cell": "b-r5c06-network-manager"
+    },
+    "kdenlive": {
+      "name": "kdenlive",
+      "asset": "/assets/desktop-icons/slices/sheet-b/b-r1c10-videos.png",
+      "source_cell": "b-r1c10-videos"
+    },
+    "keepassxc": {
+      "name": "KeePassXC",
+      "asset": "/assets/desktop-icons/slices/sheet-a/a-r3c01-security.png",
+      "source_cell": "a-r3c01-security"
+    },
+    "keygen": {
+      "name": "keygen",
+      "asset": "/assets/desktop-icons/slices/sheet-a/a-r3c01-security.png",
+      "source_cell": "a-r3c01-security"
+    },
+    "keynote": {
+      "name": "Keynote",
+      "asset": "/assets/desktop-icons/slices/sheet-b/b-r2c02-text-editor.png",
+      "source_cell": "b-r2c02-text-editor"
+    },
+    "krita": {
+      "name": "Krita",
+      "asset": "/assets/desktop-icons/slices/sheet-b/b-r1c08-photos.png",
+      "source_cell": "b-r1c08-photos"
+    },
+    "libreoffice": {
+      "name": "libreoffice",
+      "asset": "/assets/desktop-icons/slices/sheet-b/b-r2c02-text-editor.png",
+      "source_cell": "b-r2c02-text-editor"
+    },
+    "litecoin-core": {
+      "name": "Litecoin Core",
+      "asset": "/assets/desktop-icons/slices/sheet-b/b-r5c10-advanced-tools.png",
+      "source_cell": "b-r5c10-advanced-tools"
+    },
+    "lutris": {
+      "name": "Lutris",
+      "asset": "/assets/desktop-icons/slices/sheet-b/b-r2c07-games.png",
+      "source_cell": "b-r2c07-games"
+    },
+    "macports": {
+      "name": "MacPorts",
+      "asset": "/assets/desktop-icons/slices/sheet-b/b-r5c05-package-manager.png",
+      "source_cell": "b-r5c05-package-manager"
+    },
+    "microsoft-365": {
+      "name": "Microsoft 365 apps",
+      "asset": "/assets/desktop-icons/slices/sheet-b/b-r5c10-advanced-tools.png",
+      "source_cell": "b-r5c10-advanced-tools"
+    },
+    "microsoft-edge": {
+      "name": "Microsoft Edge",
+      "asset": "/assets/desktop-icons/slices/sheet-b/b-r1c05-web-browser.png",
+      "source_cell": "b-r1c05-web-browser"
+    },
+    "microsoft-powertoys": {
+      "name": "Microsoft PowerToys",
+      "asset": "/assets/desktop-icons/slices/sheet-b/b-r5c09-power-management.png",
+      "source_cell": "b-r5c09-power-management"
+    },
+    "monero": {
+      "name": "Monero",
+      "asset": "/assets/desktop-icons/slices/sheet-b/b-r5c10-advanced-tools.png",
+      "source_cell": "b-r5c10-advanced-tools"
+    },
+    "mpv": {
+      "name": "mpv",
+      "asset": "/assets/desktop-icons/slices/sheet-a/a-r1c10-music.png",
+      "source_cell": "a-r1c10-music"
+    },
+    "natron": {
+      "name": "natron",
+      "asset": "/assets/desktop-icons/slices/sheet-a/a-r5c07-3d-viewer.png",
+      "source_cell": "a-r5c07-3d-viewer"
+    },
+    "nearcore": {
+      "name": "NEAR Core",
+      "asset": "/assets/desktop-icons/slices/sheet-b/b-r5c10-advanced-tools.png",
+      "source_cell": "b-r5c10-advanced-tools"
+    },
+    "nextcloud": {
+      "name": "Nextcloud Desktop",
+      "asset": "/assets/desktop-icons/slices/sheet-b/b-r5c10-advanced-tools.png",
+      "source_cell": "b-r5c10-advanced-tools"
+    },
+    "nlp": {
+      "name": "nlp",
+      "asset": "/assets/desktop-icons/slices/sheet-b/b-r5c10-advanced-tools.png",
+      "source_cell": "b-r5c10-advanced-tools"
+    },
+    "notepad": {
+      "name": "Windows Notepad",
+      "asset": "/assets/desktop-icons/slices/sheet-a/a-r2c05-code-editor.png",
+      "source_cell": "a-r2c05-code-editor"
+    },
+    "notepad-plus-plus": {
+      "name": "Notepad++",
+      "asset": "/assets/desktop-icons/slices/sheet-a/a-r2c05-code-editor.png",
+      "source_cell": "a-r2c05-code-editor"
+    },
+    "numbers": {
+      "name": "Numbers",
+      "asset": "/assets/desktop-icons/slices/sheet-b/b-r2c02-text-editor.png",
+      "source_cell": "b-r2c02-text-editor"
+    },
+    "obs-studio": {
+      "name": "obs-studio",
+      "asset": "/assets/desktop-icons/slices/sheet-b/b-r1c10-videos.png",
+      "source_cell": "b-r1c10-videos"
+    },
+    "obsidian": {
+      "name": "Obsidian",
+      "asset": "/assets/desktop-icons/slices/sheet-b/b-r1c10-videos.png",
+      "source_cell": "b-r1c10-videos"
+    },
+    "onenote": {
+      "name": "Microsoft OneNote",
+      "asset": "/assets/desktop-icons/slices/sheet-b/b-r2c02-text-editor.png",
+      "source_cell": "b-r2c02-text-editor"
+    },
+    "onlyoffice": {
+      "name": "ONLYOFFICE Desktop Editors",
+      "asset": "/assets/desktop-icons/slices/sheet-b/b-r2c02-text-editor.png",
+      "source_cell": "b-r2c02-text-editor"
+    },
+    "openshot": {
+      "name": "OpenShot",
+      "asset": "/assets/desktop-icons/slices/sheet-b/b-r1c10-videos.png",
+      "source_cell": "b-r1c10-videos"
+    },
+    "pages": {
+      "name": "Pages",
+      "asset": "/assets/desktop-icons/slices/sheet-b/b-r2c02-text-editor.png",
+      "source_cell": "b-r2c02-text-editor"
+    },
+    "paint": {
+      "name": "Microsoft Paint",
+      "asset": "/assets/desktop-icons/slices/sheet-b/b-r2c01-paint.png",
+      "source_cell": "b-r2c01-paint"
+    },
+    "pdfreaderpy": {
+      "name": "PDFreaderPY",
+      "asset": "/assets/desktop-icons/slices/sheet-b/b-r2c02-text-editor.png",
+      "source_cell": "b-r2c02-text-editor"
+    },
+    "photos": {
+      "name": "Microsoft Photos",
+      "asset": "/assets/desktop-icons/slices/sheet-b/b-r1c08-photos.png",
+      "source_cell": "b-r1c08-photos"
+    },
+    "podman": {
+      "name": "Podman",
+      "asset": "/assets/desktop-icons/slices/sheet-b/b-r5c10-advanced-tools.png",
+      "source_cell": "b-r5c10-advanced-tools"
+    },
+    "postman": {
+      "name": "Postman",
+      "asset": "/assets/desktop-icons/slices/sheet-b/b-r5c10-advanced-tools.png",
+      "source_cell": "b-r5c10-advanced-tools"
+    },
+    "proton-vpn": {
+      "name": "Proton VPN",
+      "asset": "/assets/desktop-icons/slices/sheet-a/a-r3c01-security.png",
+      "source_cell": "a-r3c01-security"
+    },
+    "putty": {
+      "name": "PuTTY",
+      "asset": "/assets/desktop-icons/slices/sheet-b/b-r1c03-terminal.png",
+      "source_cell": "b-r1c03-terminal"
+    },
+    "python": {
+      "name": "Python",
+      "asset": "/assets/desktop-icons/slices/sheet-a/a-r2c05-code-editor.png",
+      "source_cell": "a-r2c05-code-editor"
+    },
+    "qbittorrent": {
+      "name": "qBittorrent",
+      "asset": "/assets/desktop-icons/slices/sheet-b/b-r5c06-network-manager.png",
+      "source_cell": "b-r5c06-network-manager"
+    },
+    "quicktime": {
+      "name": "QuickTime / AVFoundation tools",
+      "asset": "/assets/desktop-icons/slices/sheet-a/a-r1c10-music.png",
+      "source_cell": "a-r1c10-music"
+    },
+    "raycast": {
+      "name": "Raycast",
+      "asset": "/assets/desktop-icons/slices/sheet-a/a-r2c10-search.png",
+      "source_cell": "a-r2c10-search"
+    },
+    "rectangle": {
+      "name": "Rectangle Window Manager",
+      "asset": "/assets/desktop-icons/slices/sheet-b/b-r5c10-advanced-tools.png",
+      "source_cell": "b-r5c10-advanced-tools"
+    },
+    "repository-portfolio": {
+      "name": "Repository Application Center",
+      "asset": "/assets/desktop-icons/slices/sheet-b/b-r5c10-advanced-tools.png",
+      "source_cell": "b-r5c10-advanced-tools"
+    },
+    "safari": {
+      "name": "Safari",
+      "asset": "/assets/desktop-icons/slices/sheet-b/b-r1c05-web-browser.png",
+      "source_cell": "b-r1c05-web-browser"
+    },
+    "sharex": {
+      "name": "ShareX",
+      "asset": "/assets/desktop-icons/slices/sheet-a/a-r5c02-screenshot.png",
+      "source_cell": "a-r5c02-screenshot"
+    },
+    "shotcut": {
+      "name": "Shotcut",
+      "asset": "/assets/desktop-icons/slices/sheet-b/b-r1c10-videos.png",
+      "source_cell": "b-r1c10-videos"
+    },
+    "signal": {
+      "name": "Signal Desktop",
+      "asset": "/assets/desktop-icons/slices/sheet-b/b-r5c06-network-manager.png",
+      "source_cell": "b-r5c06-network-manager"
+    },
+    "solana-agave": {
+      "name": "Solana Agave",
+      "asset": "/assets/desktop-icons/slices/sheet-b/b-r5c10-advanced-tools.png",
+      "source_cell": "b-r5c10-advanced-tools"
+    },
+    "steam": {
+      "name": "Steam",
+      "asset": "/assets/desktop-icons/slices/sheet-b/b-r2c07-games.png",
+      "source_cell": "b-r2c07-games"
+    },
+    "stellar-core": {
+      "name": "Stellar Core",
+      "asset": "/assets/desktop-icons/slices/sheet-b/b-r5c10-advanced-tools.png",
+      "source_cell": "b-r5c10-advanced-tools"
+    },
+    "sui": {
+      "name": "Sui",
+      "asset": "/assets/desktop-icons/slices/sheet-b/b-r5c10-advanced-tools.png",
+      "source_cell": "b-r5c10-advanced-tools"
+    },
+    "syncthing": {
+      "name": "Syncthing",
+      "asset": "/assets/desktop-icons/slices/sheet-b/b-r5c06-network-manager.png",
+      "source_cell": "b-r5c06-network-manager"
+    },
+    "system-monitor": {
+      "name": "system-monitor",
+      "asset": "/assets/desktop-icons/slices/sheet-b/b-r5c01-system-monitor.png",
+      "source_cell": "b-r5c01-system-monitor"
+    },
+    "teams": {
+      "name": "Microsoft Teams",
+      "asset": "/assets/desktop-icons/slices/sheet-b/b-r5c06-network-manager.png",
+      "source_cell": "b-r5c06-network-manager"
+    },
+    "terminal": {
+      "name": "terminal",
+      "asset": "/assets/desktop-icons/slices/sheet-b/b-r1c03-terminal.png",
+      "source_cell": "b-r1c03-terminal"
+    },
+    "test": {
+      "name": "test",
+      "asset": "/assets/desktop-icons/slices/sheet-b/b-r5c10-advanced-tools.png",
+      "source_cell": "b-r5c10-advanced-tools"
+    },
+    "thunar": {
+      "name": "Thunar File Manager",
+      "asset": "/assets/desktop-icons/slices/sheet-b/b-r1c04-files.png",
+      "source_cell": "b-r1c04-files"
+    },
+    "thunderbird": {
+      "name": "Thunderbird",
+      "asset": "/assets/desktop-icons/slices/sheet-b/b-r1c06-mail.png",
+      "source_cell": "b-r1c06-mail"
+    },
+    "timeshift": {
+      "name": "Timeshift",
+      "asset": "/assets/desktop-icons/slices/sheet-b/b-r5c04-backup-restore.png",
+      "source_cell": "b-r5c04-backup-restore"
+    },
+    "transmission": {
+      "name": "Transmission",
+      "asset": "/assets/desktop-icons/slices/sheet-b/b-r5c06-network-manager.png",
+      "source_cell": "b-r5c06-network-manager"
+    },
+    "vlc": {
+      "name": "vlc",
+      "asset": "/assets/desktop-icons/slices/sheet-a/a-r1c10-music.png",
+      "source_cell": "a-r1c10-music"
+    },
+    "vscode": {
+      "name": "Visual Studio Code",
+      "asset": "/assets/desktop-icons/slices/sheet-a/a-r2c05-code-editor.png",
+      "source_cell": "a-r2c05-code-editor"
+    },
+    "vscodium": {
+      "name": "VSCodium",
+      "asset": "/assets/desktop-icons/slices/sheet-a/a-r2c05-code-editor.png",
+      "source_cell": "a-r2c05-code-editor"
+    },
+    "web-portal": {
+      "name": "amerhwitat.github.io",
+      "asset": "/assets/desktop-icons/slices/sheet-b/b-r1c05-web-browser.png",
+      "source_cell": "b-r1c05-web-browser"
+    },
+    "webkit-shell": {
+      "name": "webkit-shell",
+      "asset": "/assets/desktop-icons/slices/sheet-b/b-r1c05-web-browser.png",
+      "source_cell": "b-r1c05-web-browser"
+    },
+    "wine": {
+      "name": "Wine",
+      "asset": "/assets/desktop-icons/slices/sheet-b/b-r2c07-games.png",
+      "source_cell": "b-r2c07-games"
+    },
+    "winscp": {
+      "name": "WinSCP",
+      "asset": "/assets/desktop-icons/slices/sheet-b/b-r1c03-terminal.png",
+      "source_cell": "b-r1c03-terminal"
+    },
+    "xcode": {
+      "name": "Xcode",
+      "asset": "/assets/desktop-icons/slices/sheet-a/a-r2c05-code-editor.png",
+      "source_cell": "a-r2c05-code-editor"
+    },
+    "xrpl-rippled": {
+      "name": "XRPL rippled",
+      "asset": "/assets/desktop-icons/slices/sheet-b/b-r5c10-advanced-tools.png",
+      "source_cell": "b-r5c10-advanced-tools"
+    },
+    "zcash": {
+      "name": "Zcash",
+      "asset": "/assets/desktop-icons/slices/sheet-b/b-r5c10-advanced-tools.png",
+      "source_cell": "b-r5c10-advanced-tools"
+    },
+    "zoom": {
+      "name": "Zoom Workplace",
+      "asset": "/assets/desktop-icons/slices/sheet-b/b-r5c06-network-manager.png",
+      "source_cell": "b-r5c06-network-manager"
+    },
+    "voiceconnect": {
+      "name": "VoiceConnect",
+      "asset": "/assets/desktop-icons/slices/sheet-b/b-r5c07-bluetooth.png",
+      "source_cell": "b-r5c07-bluetooth"
+    },
+    "network": {
+      "name": "Network Applications",
+      "asset": "/assets/desktop-icons/slices/sheet-b/b-r5c06-network-manager.png",
+      "source_cell": "b-r5c06-network-manager"
+    },
+    "settings": {
+      "name": "Settings",
+      "asset": "/assets/desktop-icons/slices/sheet-b/b-r2c08-settings.png",
+      "source_cell": "b-r2c08-settings"
+    },
+    "store": {
+      "name": "App Center",
+      "asset": "/assets/desktop-icons/slices/sheet-b/b-r5c05-package-manager.png",
+      "source_cell": "b-r5c05-package-manager"
+    },
+    "about": {
+      "name": "About",
+      "asset": "/assets/desktop-icons/slices/sheet-b/b-r3c01-gates-desktop.png",
+      "source_cell": "b-r3c01-gates-desktop"
+    },
+    "docs": {
+      "name": "Documentation",
+      "asset": "/assets/desktop-icons/slices/sheet-a/a-r4c01-help.png",
+      "source_cell": "a-r4c01-help"
+    }
+  }
+}
