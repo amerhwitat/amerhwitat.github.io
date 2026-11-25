@@ -63,26 +63,26 @@ if "id:'linuxkoronos'" not in showcase or "Hosted runtime adapter" not in showca
 disposition = (ROOT / "apps/chimera-ii-os/web/final-release-disposition.html").read_text(encoding="utf-8")
 if "Reference-led desktop concept artwork" not in html:
     raise SystemExit("desktop gallery is missing the reference-led concept artwork section")
-ledger_rows = (
-    "Latest four-repository status refresh", "Completed",
-    "Four existing repository comments", "Updated",
-    "ChimeraIIOS hosted CI", "36/36 successful",
-    "OctavianOS native build", "Build job successful; userspace verifier failed",
-    "LinuxKoronos hosted ISO", "Successful",
-    "Website Pages deployment", "Failed on main; fix PR validation passed",
-    "New kernel/runtime source implementation", "Not performed",
-    "Local architecture build and QEMU", "Not run",
+remaining_rows = (
+    "Real architecture context switching", "Outstanding",
+    "Timer-driven preemption", "Outstanding",
+    "AP startup and SMP", "Outstanding",
+    "Resident, kernel-owned PID 1", "Outstanding",
+    "Persistent VFS and storage", "Outstanding",
+    "Installer/recovery transactions", "Outstanding",
+    "Windows-compatible runtime", "Outstanding",
+    "Full tested source parity", "Outstanding",
     "Six-case production acceptance", "Not passed",
-    "Full Octavian source parity", "Not verified",
-    "Production ISO release", "Not published",
-    "Production website deployment", "Not verified",
+    "Production-certified Chimera ISO", "Not published",
 )
-if "Final execution ledger" not in dashboard or any(row not in dashboard for row in ledger_rows):
-    raise SystemExit("release dashboard is missing the supplied final execution ledger")
-if "Important distinction" not in dashboard or "resolve the Octavian snapshot provenance" not in dashboard:
-    raise SystemExit("final execution ledger is missing the release distinction or next blocker")
-if "PRODUCTION RELEASE BLOCKED" not in disposition or "Final execution ledger" not in disposition:
-    raise SystemExit("authoritative final disposition must remain blocked and linked to the final ledger")
+if "Remaining implementation and release gates" not in dashboard or any(row not in dashboard for row in remaining_rows):
+    raise SystemExit("release dashboard is missing the supplied remaining implementation and release gates")
+if "Repository status updates are published" not in dashboard or "Successful hosted CI and firmware probes are not substitutes" not in dashboard:
+    raise SystemExit("remaining-gates status is missing the final disposition")
+if "PRODUCTION RELEASE BLOCKED" not in disposition or "Remaining implementation and release gates" not in disposition:
+    raise SystemExit("authoritative final disposition must remain blocked and linked to the remaining gates")
+if "Final execution ledger" in dashboard or "Final execution ledger" in disposition:
+    raise SystemExit("stale final execution ledger must not remain")
 for asset in (
     "aurora-glass-3840x2160.svg",
     "marine-blue-3840x2160.svg",

@@ -50,25 +50,22 @@ code{overflow-wrap:anywhere;color:#d9f3ff}.note{border-left:3px solid var(--ambe
 <tr><td>Command / ISA conformance</td><td><code>official conformance status=not-run</code>, <code>{"conformance_tested": 0, "implemented_unverified": 0, "not_implemented": 1613, "sourced_encoding_masks": 1613}</code>; 3905 commands need compatibility providers, 171 need native providers, only 15 are native-backed.</td><td>Unresolved. No complete provider binary/hash/license or per-command semantic conformance evidence; do not claim full command/ISA conformance.</td></tr>
 <tr><td>Website publication</td><td>Site PRs <a href="https://github.com/amerhwitat/amerhwitat.github.io/pull/106">#106</a>, <a href="https://github.com/amerhwitat/amerhwitat.github.io/pull/108">#108</a>, <a href="https://github.com/amerhwitat/amerhwitat.github.io/pull/109">#109</a> and <a href="https://github.com/amerhwitat/amerhwitat.github.io/pull/110">#110</a> merged. The initial <a href="https://github.com/amerhwitat/amerhwitat.github.io/actions/runs/45342267708">45342267708</a> deploy hit a transient missing-artifact error; its rerun succeeded, and the live dashboard and CI evidence manifest URLs were verified.</td><td>Status publication is live. A successful static check alone is not a deploy claim; re-fetch live URLs after each deployment.</td></tr>
 </tbody></table></div>
-<section class="card" aria-labelledby="final-execution-ledger-2026-11-25">
-<h2 id="final-execution-ledger-2026-11-25">Final execution ledger — 25 November 2026</h2>
-<p><strong>Supplied final ledger:</strong> the following is the reported result for this execution turn. It is engineering status only and does not promote any item into production acceptance.</p>
-<div class="wrap"><table><thead><tr><th>Work</th><th>Result</th></tr></thead><tbody>
-<tr><td>Latest four-repository status refresh</td><td>Completed</td></tr>
-<tr><td>Four existing repository comments</td><td>Updated</td></tr>
-<tr><td>ChimeraIIOS hosted CI</td><td>36/36 successful</td></tr>
-<tr><td>OctavianOS native build</td><td>Build job successful; userspace verifier failed</td></tr>
-<tr><td>LinuxKoronos hosted ISO</td><td>Successful</td></tr>
-<tr><td>Website Pages deployment</td><td>Failed on main; fix PR validation passed</td></tr>
-<tr><td>New kernel/runtime source implementation</td><td>Not performed</td></tr>
-<tr><td>Local architecture build and QEMU</td><td>Not run</td></tr>
+<section class="card" aria-labelledby="remaining-implementation-gates-20261125">
+<h2 id="remaining-implementation-gates-20261125">Remaining implementation and release gates — 25 November 2026</h2>
+<p><strong>Supplied status:</strong> the following is the current required-work disposition. It is engineering status only and does not promote any item into production acceptance.</p>
+<div class="wrap"><table><thead><tr><th>Required work</th><th>Status</th></tr></thead><tbody>
+<tr><td>Real architecture context switching</td><td>Outstanding</td></tr>
+<tr><td>Timer-driven preemption</td><td>Outstanding</td></tr>
+<tr><td>AP startup and SMP</td><td>Outstanding</td></tr>
+<tr><td>Resident, kernel-owned PID 1</td><td>Outstanding</td></tr>
+<tr><td>Persistent VFS and storage</td><td>Outstanding</td></tr>
+<tr><td>Installer/recovery transactions</td><td>Outstanding</td></tr>
+<tr><td>Windows-compatible runtime</td><td>Outstanding</td></tr>
+<tr><td>Full tested source parity</td><td>Outstanding</td></tr>
 <tr><td>Six-case production acceptance</td><td>Not passed</td></tr>
-<tr><td>Full Octavian source parity</td><td>Not verified</td></tr>
-<tr><td>Production ISO release</td><td>Not published</td></tr>
-<tr><td>Production website deployment</td><td>Not verified</td></tr>
+<tr><td>Production-certified Chimera ISO</td><td>Not published</td></tr>
 </tbody></table></div>
-<p class="note"><strong>Important distinction:</strong> the four status updates were published, not production releases. No source commits were created or merged, the manual snapshot workflow was not dispatched, and no release gate was bypassed. The existing PRs remain open; production readiness remains blocked.</p>
-<p>The next concrete integration blocker is to resolve the Octavian snapshot provenance and boot failure, then establish persistent PID 1 acceptance before attempting production publication.</p>
+<p class="note"><strong>Final disposition:</strong> Repository status updates are published, and the website itself is deployed. The native OS implementation and production ISO release are still blocked. Successful hosted CI and firmware probes are not substitutes for the missing runtime acceptance evidence.</p>
 <p>Website publishing is a separate authorized site action. The authoritative disposition remains <a href="final-release-disposition.html"><strong>PRODUCTION RELEASE BLOCKED</strong></a>; no production ISO was certified or published. The reference-led desktop images on this site are concept artwork, not runtime evidence. The <a href="/desktops/background-references.html">19-image three-edition background lab</a> provides the supplied images as selectable concept backgrounds only.</p>
 </section>
 <h2>Remaining native production gates (authoritative)</h2>
@@ -80,5 +77,5 @@ code{overflow-wrap:anywhere;color:#d9f3ff}.note{border-left:3px solid var(--ambe
 <tr><td>Production ISO publication</td><td>Blocked</td><td>All gates above plus one immutable ISO digest and authenticated six-case provenance; keep PRs open/unmerged until authorized.</td></tr>
 </tbody></table></div>
 <p class="note">The service-init/KSO contracts are not a production release. No synthetic readiness markers, placeholder providers, fabricated acceptance manifest, or production release are authorized. The <a href="final-release-disposition.html">final release disposition</a> is authoritative. Keep PR #320, PR #321, OctavianOS PR #42/#236/#238/#239/#240/#241/#242 and LinuxKoronos PR #7 open/unmerged unless explicitly authorized.</p>
-<footer>Updated 24 November 2026. CI links are authoritative for live status; passing build and runtime checks must not be interpreted as production certification.</footer>
+<footer>Updated 25 November 2026. CI links are authoritative for live status; passing build and runtime checks must not be interpreted as production certification.</footer>
 </main></body></html>
