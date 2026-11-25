@@ -33,6 +33,7 @@ jobs:
         run: |
           node --check apps/chimera-ii-os/web/desktop_experiences.js
           node scripts/validate-desktop-icon-usage.mjs
+          python3 scripts/check_desktop_gallery.py
       - name: Refresh Python catalog for PR validation
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -218,6 +219,7 @@ jobs:
           Path("/tmp/freexp-preview.js").write_text(scripts[0], encoding="utf-8")
           print("Desktop gallery/icon contract: PASS (133 icon manifest entries; Aurora/Marine/FreeXP wired)")
           PY
+          python3 scripts/check_desktop_gallery.py
           node --check /tmp/freexp-preview.js
       - name: Validate landing studio assets and Quick Launch destinations
         run: |

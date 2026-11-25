@@ -50,6 +50,24 @@ code{overflow-wrap:anywhere;color:#d9f3ff}.note{border-left:3px solid var(--ambe
 <tr><td>Command / ISA conformance</td><td><code>official conformance status=not-run</code>, <code>{"conformance_tested": 0, "implemented_unverified": 0, "not_implemented": 1613, "sourced_encoding_masks": 1613}</code>; 3905 commands need compatibility providers, 171 need native providers, only 15 are native-backed.</td><td>Unresolved. No complete provider binary/hash/license or per-command semantic conformance evidence; do not claim full command/ISA conformance.</td></tr>
 <tr><td>Website publication</td><td>Site PRs <a href="https://github.com/amerhwitat/amerhwitat.github.io/pull/106">#106</a>, <a href="https://github.com/amerhwitat/amerhwitat.github.io/pull/108">#108</a>, <a href="https://github.com/amerhwitat/amerhwitat.github.io/pull/109">#109</a> and <a href="https://github.com/amerhwitat/amerhwitat.github.io/pull/110">#110</a> merged. The initial <a href="https://github.com/amerhwitat/amerhwitat.github.io/actions/runs/45342267708">45342267708</a> deploy hit a transient missing-artifact error; its rerun succeeded, and the live dashboard and CI evidence manifest URLs were verified.</td><td>Status publication is live. A successful static check alone is not a deploy claim; re-fetch live URLs after each deployment.</td></tr>
 </tbody></table></div>
+<section class="card" aria-labelledby="engineering-build-status-2026-11-25">
+<h2 id="engineering-build-status-2026-11-25">Engineering and build status — execution turn, 25 November 2026</h2>
+<p><strong>Supplied status snapshot:</strong> the following is the reported result for this turn. It is engineering status only and does not promote any item into production acceptance.</p>
+<div class="wrap"><table><thead><tr><th>Required work</th><th>Actual result this turn</th></tr></thead><tbody>
+<tr><td>Context switching and timer preemption</td><td>Not implemented</td></tr>
+<tr><td>AP startup and SMP</td><td>Not implemented</td></tr>
+<tr><td>PID 1 and process lifecycle</td><td>Not implemented</td></tr>
+<tr><td>Persistent storage and VFS</td><td>Not implemented</td></tr>
+<tr><td>Installer and recovery transactions</td><td>Not implemented</td></tr>
+<tr><td>Windows PE/Win32/NT runtime</td><td>Not completed</td></tr>
+<tr><td>Architecture builds and tests</td><td>Not run</td></tr>
+<tr><td>Six-case BIOS/UEFI acceptance</td><td>Not run</td></tr>
+<tr><td>Tested parity synchronization</td><td>Not performed</td></tr>
+<tr><td>Production ISO and website publication</td><td>Not performed</td></tr>
+</tbody></table></div>
+<p class="note">The execution environment still lacks the project checkout, QEMU, NASM and x86-64 cross-compiler. I therefore did not create unverified kernel patches or claim successful builds.</p>
+<p>Website publishing is a separate authorized site action. The authoritative disposition remains <a href="final-release-disposition.html"><strong>PRODUCTION RELEASE BLOCKED</strong></a>; no production ISO was certified or published. The reference-led desktop images on this site are concept artwork, not runtime evidence. The <a href="/desktops/background-references.html">19-image three-edition background lab</a> provides the supplied images as selectable concept backgrounds only.</p>
+</section>
 <h2>Remaining native production gates (authoritative)</h2>
 <div class="wrap"><table><thead><tr><th>Subsystem</th><th>Current disposition</th><th>Required evidence</th></tr></thead><tbody>
 <tr><td>Four complete native desktop sessions</td><td>Not demonstrated</td><td>Working graphics, input, compositor, session lifecycle and per-desktop runtime traces on native Koronos.</td></tr>
