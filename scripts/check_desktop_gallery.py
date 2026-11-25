@@ -121,8 +121,8 @@ bg_manifest_path = ROOT / "assets/desktop-reference-previews/BACKGROUNDS.json"
 if not bg_manifest_path.is_file():
     raise SystemExit("desktop background manifest is missing")
 bg_manifest = json.loads(bg_manifest_path.read_text(encoding="utf-8"))
-if bg_manifest.get("asset_count") != 19 or len(bg_manifest.get("images", [])) != 19:
-    raise SystemExit("desktop background manifest must contain all 19 supplied images")
+if bg_manifest.get("asset_count") != 25 or len(bg_manifest.get("images", [])) != 25:
+    raise SystemExit("desktop background manifest must contain all 25 supplied images")
 for record in bg_manifest["images"]:
     target = ROOT / record["asset"].lstrip("/")
     if not target.is_file():
@@ -130,7 +130,7 @@ for record in bg_manifest["images"]:
     if len(record.get("source_sha256", "")) != 64:
         raise SystemExit(f"supplied background SHA-256 is missing: {record['id']}")
 for rel, needle in (
-    ("desktops/background-references.html", "19 supplied images"),
+    ("desktops/background-references.html", "25 supplied images"),
     ("desktops/index.html", "background-references.html"),
     ("apps/os-desktop-hub/index.html", "background-references.html"),
     ("apps/desktop-showcase/index.html", "background-references.html"),
@@ -140,6 +140,45 @@ for rel, needle in (
 ):
     if needle not in (ROOT / rel).read_text(encoding="utf-8"):
         raise SystemExit(f"three-edition background reference link is missing: {rel}")
+webui_manifest_path = ROOT / "assets/webui-desktop-wallpapers/MANIFEST.json"
+if not webui_manifest_path.is_file():
+    raise SystemExit("Web UI wallpaper manifest is missing")
+webui_manifest = json.loads(webui_manifest_path.read_text(encoding="utf-8"))
+if webui_manifest.get("asset_count") != 6 or len(webui_manifest.get("images", [])) != 6:
+    raise SystemExit("Web UI wallpaper manifest must contain all six supplied images")
+if not webui_manifest.get("concept_only"):
+    raise SystemExit("Web UI wallpapers must remain concept-only")
+expected_webui_digests = {
+    "webui-01": "bae117b30b119ffbb2df786c68fe47e4a475e9eebb2fe52e927d3fa772a74a35",
+    "webui-02": "24d832de2a8d190acddefbd5ece219aa7eebdd744017a1d10b50e7c5fdb50c22",
+    "webui-03": "5bd9369a99246d348685f179df7152fdead7e5e7dcc19e48650bd228ebdf9cd0",
+    "webui-04": "10e8be09c313bf4c8b4db3c9aebc1aee7c9e2ee2e19074960e2099b866303d25",
+    "webui-05": "fffdb69a93b2cbc4f1cec28b1f725e2fb39463cbbd9b9db0503a1b1f690a9c8d",
+    "webui-06": "74de519921e1c0fa32e3f63fd1afa2c57797214daa1949bd4d61c649548cf7b5",
+}
+for record in webui_manifest["images"]:
+    for key in ("asset", "source_asset"):
+        target = ROOT / record[key].lstrip("/")
+        if not target.is_file():
+            raise SystemExit(f"Web UI wallpaper asset is missing: {record[key]}")
+    if record.get("source_sha256") != expected_webui_digests.get(record["id"]):
+        raise SystemExit(f"Web UI wallpaper SHA-256 changed: {record['id']}")
+webui_usage = (
+    "desktops/background-references.html",
+    "apps/chimera-ii-os/web/desktop_experiences.html",
+    "apps/chimera-ii-os/web/desktop_experiences.css",
+    "apps/chimera-ii-os/web/desktop_experiences.js",
+    "apps/chimera-ii-os/web/desktop_switcher.html",
+    "desktops/freewin11.html",
+    "desktops/freexp.html",
+    "desktops/index.html",
+    "apps/chimera-ii-os/web/release-closure-dashboard.html",
+    "apps/chimera-ii-os/web/final-release-disposition.html",
+)
+for rel_usage in webui_usage:
+    usage_text = (ROOT / rel_usage).read_text(encoding="utf-8")
+    if "/assets/webui-desktop-wallpapers/" not in usage_text:
+        raise SystemExit(f"Web UI wallpapers are not used in {rel_usage}")
 if "PRODUCTION RELEASE BLOCKED" not in disposition:
     raise SystemExit("authoritative release disposition changed while adding background references")
 icon_assets = (
