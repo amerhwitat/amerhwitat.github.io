@@ -142,6 +142,41 @@ for rel, needle in (
         raise SystemExit(f"three-edition background reference link is missing: {rel}")
 if "PRODUCTION RELEASE BLOCKED" not in disposition:
     raise SystemExit("authoritative release disposition changed while adding background references")
+icon_assets = (
+    "assets/desktop-icons/default-desktop-icon-a.png",
+    "assets/desktop-icons/default-desktop-icon-b.png",
+    "assets/desktop-icons/sources/e96b2253-fb69-4f33-a675-aa245fa5a9f5.png",
+    "assets/desktop-icons/sources/4308a40a-64aa-403e-8eba-b586d1e911bf.png",
+    "assets/desktop-icons/SOURCES.md",
+)
+for rel_asset in icon_assets:
+    if not (ROOT / rel_asset).is_file():
+        raise SystemExit(f"attached default-desktop icon asset is missing: {rel_asset}")
+icon_sources = (ROOT / "assets/desktop-icons/SOURCES.md").read_text(encoding="utf-8")
+for digest in (
+    "28d0203ccdbbcfddb52c5272d96a5ecad124cbe81f060edd7af2ab97e296f415",
+    "a223d2e34fb83e2edc6f3e39421d334d0a115d9a72f8b370ff0b7eb6b4429c50",
+):
+    if digest not in icon_sources:
+        raise SystemExit("attached icon provenance is missing an original SHA-256")
+if "not runtime evidence" not in icon_sources:
+    raise SystemExit("attached icon provenance must state the concept-only boundary")
+icon_usage = (
+    "desktops/gallery.js",
+    "desktops/index.html",
+    "apps/chimera-ii-os/web/desktop_experiences.html",
+    "apps/chimera-ii-os/web/desktop_experiences.css",
+    "desktops/freewin11.html",
+    "desktops/freexp.html",
+    "apps/chimera-ii-os/web/release-closure-dashboard.html",
+    "apps/chimera-ii-os/web/final-release-disposition.html",
+)
+for rel_usage in icon_usage:
+    usage_text = (ROOT / rel_usage).read_text(encoding="utf-8")
+    if "default-desktop-icon-a.png" not in usage_text or "default-desktop-icon-b.png" not in usage_text:
+        raise SystemExit(f"attached icons are not both used in {rel_usage}")
+if "PRODUCTION RELEASE BLOCKED" not in disposition or "Not published" not in dashboard:
+    raise SystemExit("authoritative blocked disposition changed while adding attached icons")
 print(
     f"PASS: {len(ids)} profiles ({counts['chimera']} Chimera II OS, "
     f"{counts['octavian']} OctavianOS, {counts['linuxkoronos']} LinuxKoronos host); "
