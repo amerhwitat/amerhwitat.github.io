@@ -4,6 +4,8 @@
   "count": 133,
   "usage": "Render each icon by referencing #app-{id} from this SVG sprite. These are original generic app icons, not upstream trademarks. Icon presence does not imply installation, porting, licensing, or runtime support. The six additional shell shortcut symbols (voiceconnect, network, settings, store, about, docs) cover Aurora's default desktop launcher.",
   "sprite": "catalog.svg",
+  "source_slice_set": "/assets/desktop-icons/slices/",
+  "derived_set": "/assets/desktop-icons/beveled/",
   "apps": [
     {
       "id": "7zip",
@@ -14,7 +16,8 @@
       "symbol": "#app-7zip",
       "availability": "external-or-wrapped-catalog-entry",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-b/b-r5c04-backup-restore.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-b/b-r5c04-backup-restore.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-b/b-r5c04-backup-restore.png"
     },
     {
       "id": "algorand",
@@ -25,7 +28,8 @@
       "symbol": "#app-algorand",
       "availability": "external-or-wrapped-catalog-entry",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-b/b-r5c10-advanced-tools.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-b/b-r5c10-advanced-tools.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-b/b-r5c10-advanced-tools.png"
     },
     {
       "id": "appcleaner",
@@ -36,7 +40,8 @@
       "symbol": "#app-appcleaner",
       "availability": "external-or-wrapped-catalog-entry",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-b/b-r5c10-advanced-tools.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-b/b-r5c10-advanced-tools.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-b/b-r5c10-advanced-tools.png"
     },
     {
       "id": "appimage",
@@ -47,7 +52,8 @@
       "symbol": "#app-appimage",
       "availability": "external-or-wrapped-catalog-entry",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-b/b-r1c08-photos.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-b/b-r1c08-photos.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-b/b-r1c08-photos.png"
     },
     {
       "id": "aptos-core",
@@ -58,7 +64,8 @@
       "symbol": "#app-aptos-core",
       "availability": "external-or-wrapped-catalog-entry",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-b/b-r5c10-advanced-tools.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-b/b-r5c10-advanced-tools.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-b/b-r5c10-advanced-tools.png"
     },
     {
       "id": "archive-manager",
@@ -69,7 +76,8 @@
       "symbol": "#app-archive-manager",
       "availability": "upstream-reference-only",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-b/b-r5c04-backup-restore.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-b/b-r5c04-backup-restore.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-b/b-r5c04-backup-restore.png"
     },
     {
       "id": "ardour",
@@ -80,7 +88,8 @@
       "symbol": "#app-ardour",
       "availability": "upstream-fetch-target",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-a/a-r1c10-music.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-a/a-r1c10-music.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-a/a-r1c10-music.png"
     },
     {
       "id": "audacity",
@@ -91,7 +100,8 @@
       "symbol": "#app-audacity",
       "availability": "upstream-fetch-target",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-a/a-r1c10-music.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-a/a-r1c10-music.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-a/a-r1c10-music.png"
     },
     {
       "id": "aurora-files",
@@ -102,7 +112,8 @@
       "symbol": "#app-aurora-files",
       "availability": "native-integration-catalogued",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-b/b-r1c04-files.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-b/b-r1c04-files.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-b/b-r1c04-files.png"
     },
     {
       "id": "aurora-flash-tool",
@@ -113,7 +124,8 @@
       "symbol": "#app-aurora-flash-tool",
       "availability": "external-or-wrapped-catalog-entry",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-b/b-r5c10-advanced-tools.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-b/b-r5c10-advanced-tools.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-b/b-r5c10-advanced-tools.png"
     },
     {
       "id": "aurora-media-player",
@@ -124,7 +136,8 @@
       "symbol": "#app-aurora-media-player",
       "availability": "native-integration-catalogued",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-a/a-r1c09-media-player.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-a/a-r1c09-media-player.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-a/a-r1c09-media-player.png"
     },
     {
       "id": "aurora-video-player",
@@ -135,7 +148,8 @@
       "symbol": "#app-aurora-video-player",
       "availability": "native-integration-catalogued",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-b/b-r1c10-videos.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-b/b-r1c10-videos.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-b/b-r1c10-videos.png"
     },
     {
       "id": "avalanchego",
@@ -146,7 +160,8 @@
       "symbol": "#app-avalanchego",
       "availability": "external-or-wrapped-catalog-entry",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-b/b-r5c10-advanced-tools.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-b/b-r5c10-advanced-tools.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-b/b-r5c10-advanced-tools.png"
     },
     {
       "id": "bitcoin-core",
@@ -157,7 +172,8 @@
       "symbol": "#app-bitcoin-core",
       "availability": "external-or-wrapped-catalog-entry",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-b/b-r5c10-advanced-tools.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-b/b-r5c10-advanced-tools.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-b/b-r5c10-advanced-tools.png"
     },
     {
       "id": "bizx",
@@ -168,7 +184,8 @@
       "symbol": "#app-bizx",
       "availability": "external-or-wrapped-catalog-entry",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-b/b-r2c07-games.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-b/b-r2c07-games.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-b/b-r2c07-games.png"
     },
     {
       "id": "bizxtreme",
@@ -179,7 +196,8 @@
       "symbol": "#app-bizxtreme",
       "availability": "external-or-wrapped-catalog-entry",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-b/b-r2c06-chess.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-b/b-r2c06-chess.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-b/b-r2c06-chess.png"
     },
     {
       "id": "blender",
@@ -190,7 +208,8 @@
       "symbol": "#app-blender",
       "availability": "upstream-fetch-target",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-a/a-r5c07-3d-viewer.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-a/a-r5c07-3d-viewer.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-a/a-r5c07-3d-viewer.png"
     },
     {
       "id": "bottles",
@@ -201,7 +220,8 @@
       "symbol": "#app-bottles",
       "availability": "external-or-wrapped-catalog-entry",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-b/b-r2c07-games.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-b/b-r2c07-games.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-b/b-r2c07-games.png"
     },
     {
       "id": "brave",
@@ -212,7 +232,8 @@
       "symbol": "#app-brave",
       "availability": "external-or-wrapped-catalog-entry",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-b/b-r1c05-web-browser.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-b/b-r1c05-web-browser.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-b/b-r1c05-web-browser.png"
     },
     {
       "id": "bruteforce",
@@ -223,7 +244,8 @@
       "symbol": "#app-bruteforce",
       "availability": "external-or-wrapped-catalog-entry",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-a/a-r3c01-security.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-a/a-r3c01-security.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-a/a-r3c01-security.png"
     },
     {
       "id": "calibre",
@@ -234,7 +256,8 @@
       "symbol": "#app-calibre",
       "availability": "external-or-wrapped-catalog-entry",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-b/b-r5c10-advanced-tools.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-b/b-r5c10-advanced-tools.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-b/b-r5c10-advanced-tools.png"
     },
     {
       "id": "cardano-node",
@@ -245,7 +268,8 @@
       "symbol": "#app-cardano-node",
       "availability": "external-or-wrapped-catalog-entry",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-b/b-r5c10-advanced-tools.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-b/b-r5c10-advanced-tools.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-b/b-r5c10-advanced-tools.png"
     },
     {
       "id": "chimera-boot-manager",
@@ -256,7 +280,8 @@
       "symbol": "#app-chimera-boot-manager",
       "availability": "external-or-wrapped-catalog-entry",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-b/b-r5c09-power-management.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-b/b-r5c09-power-management.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-b/b-r5c09-power-management.png"
     },
     {
       "id": "chimera-installer",
@@ -267,7 +292,8 @@
       "symbol": "#app-chimera-installer",
       "availability": "external-or-wrapped-catalog-entry",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-b/b-r5c09-power-management.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-b/b-r5c09-power-management.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-b/b-r5c09-power-management.png"
     },
     {
       "id": "chromium",
@@ -278,7 +304,8 @@
       "symbol": "#app-chromium",
       "availability": "external-or-wrapped-catalog-entry",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-b/b-r1c05-web-browser.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-b/b-r1c05-web-browser.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-b/b-r1c05-web-browser.png"
     },
     {
       "id": "cpu4096",
@@ -289,7 +316,8 @@
       "symbol": "#app-cpu4096",
       "availability": "external-or-wrapped-catalog-entry",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-b/b-r5c10-advanced-tools.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-b/b-r5c10-advanced-tools.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-b/b-r5c10-advanced-tools.png"
     },
     {
       "id": "cpu4096simulator",
@@ -300,7 +328,8 @@
       "symbol": "#app-cpu4096simulator",
       "availability": "external-or-wrapped-catalog-entry",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-b/b-r5c10-advanced-tools.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-b/b-r5c10-advanced-tools.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-b/b-r5c10-advanced-tools.png"
     },
     {
       "id": "curl",
@@ -311,7 +340,8 @@
       "symbol": "#app-curl",
       "availability": "native-integration-catalogued",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-b/b-r1c03-terminal.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-b/b-r1c03-terminal.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-b/b-r1c03-terminal.png"
     },
     {
       "id": "darktable",
@@ -322,7 +352,8 @@
       "symbol": "#app-darktable",
       "availability": "external-or-wrapped-catalog-entry",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-b/b-r1c08-photos.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-b/b-r1c08-photos.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-b/b-r1c08-photos.png"
     },
     {
       "id": "dash-core",
@@ -333,7 +364,8 @@
       "symbol": "#app-dash-core",
       "availability": "external-or-wrapped-catalog-entry",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-b/b-r5c10-advanced-tools.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-b/b-r5c10-advanced-tools.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-b/b-r5c10-advanced-tools.png"
     },
     {
       "id": "dbeaver",
@@ -344,7 +376,8 @@
       "symbol": "#app-dbeaver",
       "availability": "external-or-wrapped-catalog-entry",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-b/b-r5c10-advanced-tools.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-b/b-r5c10-advanced-tools.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-b/b-r5c10-advanced-tools.png"
     },
     {
       "id": "discover",
@@ -355,7 +388,8 @@
       "symbol": "#app-discover",
       "availability": "external-or-wrapped-catalog-entry",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-b/b-r5c05-package-manager.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-b/b-r5c05-package-manager.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-b/b-r5c05-package-manager.png"
     },
     {
       "id": "docker-desktop",
@@ -366,7 +400,8 @@
       "symbol": "#app-docker-desktop",
       "availability": "external-or-wrapped-catalog-entry",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-b/b-r5c10-advanced-tools.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-b/b-r5c10-advanced-tools.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-b/b-r5c10-advanced-tools.png"
     },
     {
       "id": "dogecoin-core",
@@ -377,7 +412,8 @@
       "symbol": "#app-dogecoin-core",
       "availability": "external-or-wrapped-catalog-entry",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-b/b-r5c10-advanced-tools.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-b/b-r5c10-advanced-tools.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-b/b-r5c10-advanced-tools.png"
     },
     {
       "id": "dolphin-file-manager",
@@ -388,7 +424,8 @@
       "symbol": "#app-dolphin-file-manager",
       "availability": "external-or-wrapped-catalog-entry",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-b/b-r1c04-files.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-b/b-r1c04-files.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-b/b-r1c04-files.png"
     },
     {
       "id": "element",
@@ -399,7 +436,8 @@
       "symbol": "#app-element",
       "availability": "external-or-wrapped-catalog-entry",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-b/b-r5c10-advanced-tools.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-b/b-r5c10-advanced-tools.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-b/b-r5c10-advanced-tools.png"
     },
     {
       "id": "eth-key-check",
@@ -410,7 +448,8 @@
       "symbol": "#app-eth-key-check",
       "availability": "external-or-wrapped-catalog-entry",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-a/a-r3c01-security.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-a/a-r3c01-security.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-a/a-r3c01-security.png"
     },
     {
       "id": "everything-search",
@@ -421,7 +460,8 @@
       "symbol": "#app-everything-search",
       "availability": "external-or-wrapped-catalog-entry",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-a/a-r2c10-search.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-a/a-r2c10-search.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-a/a-r2c10-search.png"
     },
     {
       "id": "file-manager",
@@ -432,7 +472,8 @@
       "symbol": "#app-file-manager",
       "availability": "upstream-reference-only",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-a/a-r1c04-file-manager.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-a/a-r1c04-file-manager.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-a/a-r1c04-file-manager.png"
     },
     {
       "id": "filezilla",
@@ -443,7 +484,8 @@
       "symbol": "#app-filezilla",
       "availability": "external-or-wrapped-catalog-entry",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-b/b-r1c04-files.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-b/b-r1c04-files.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-b/b-r1c04-files.png"
     },
     {
       "id": "firefox",
@@ -454,7 +496,8 @@
       "symbol": "#app-firefox",
       "availability": "external-or-wrapped-catalog-entry",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-b/b-r1c05-web-browser.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-b/b-r1c05-web-browser.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-b/b-r1c05-web-browser.png"
     },
     {
       "id": "flatpak",
@@ -465,7 +508,8 @@
       "symbol": "#app-flatpak",
       "availability": "external-or-wrapped-catalog-entry",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-b/b-r5c05-package-manager.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-b/b-r5c05-package-manager.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-b/b-r5c05-package-manager.png"
     },
     {
       "id": "garageband",
@@ -476,7 +520,8 @@
       "symbol": "#app-garageband",
       "availability": "external-or-wrapped-catalog-entry",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-a/a-r1c10-music.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-a/a-r1c10-music.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-a/a-r1c10-music.png"
     },
     {
       "id": "gates",
@@ -487,7 +532,8 @@
       "symbol": "#app-gates",
       "availability": "external-or-wrapped-catalog-entry",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-b/b-r5c10-advanced-tools.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-b/b-r5c10-advanced-tools.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-b/b-r5c10-advanced-tools.png"
     },
     {
       "id": "general",
@@ -498,7 +544,8 @@
       "symbol": "#app-general",
       "availability": "external-or-wrapped-catalog-entry",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-b/b-r5c10-advanced-tools.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-b/b-r5c10-advanced-tools.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-b/b-r5c10-advanced-tools.png"
     },
     {
       "id": "geth",
@@ -509,7 +556,8 @@
       "symbol": "#app-geth",
       "availability": "external-or-wrapped-catalog-entry",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-b/b-r5c10-advanced-tools.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-b/b-r5c10-advanced-tools.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-b/b-r5c10-advanced-tools.png"
     },
     {
       "id": "gimp",
@@ -520,7 +568,8 @@
       "symbol": "#app-gimp",
       "availability": "upstream-fetch-target",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-b/b-r1c08-photos.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-b/b-r1c08-photos.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-b/b-r1c08-photos.png"
     },
     {
       "id": "git",
@@ -531,7 +580,8 @@
       "symbol": "#app-git",
       "availability": "native-integration-catalogued",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-b/b-r1c03-terminal.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-b/b-r1c03-terminal.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-b/b-r1c03-terminal.png"
     },
     {
       "id": "gnome-files",
@@ -542,7 +592,8 @@
       "symbol": "#app-gnome-files",
       "availability": "external-or-wrapped-catalog-entry",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-b/b-r1c04-files.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-b/b-r1c04-files.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-b/b-r1c04-files.png"
     },
     {
       "id": "gnome-software",
@@ -553,7 +604,8 @@
       "symbol": "#app-gnome-software",
       "availability": "external-or-wrapped-catalog-entry",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-b/b-r5c05-package-manager.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-b/b-r5c05-package-manager.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-b/b-r5c05-package-manager.png"
     },
     {
       "id": "gparted",
@@ -564,7 +616,8 @@
       "symbol": "#app-gparted",
       "availability": "external-or-wrapped-catalog-entry",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-b/b-r5c03-partition-manager.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-b/b-r5c03-partition-manager.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-b/b-r5c03-partition-manager.png"
     },
     {
       "id": "handbrake",
@@ -575,7 +628,8 @@
       "symbol": "#app-handbrake",
       "availability": "external-or-wrapped-catalog-entry",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-b/b-r1c10-videos.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-b/b-r1c10-videos.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-b/b-r1c10-videos.png"
     },
     {
       "id": "homebrew",
@@ -586,7 +640,8 @@
       "symbol": "#app-homebrew",
       "availability": "external-or-wrapped-catalog-entry",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-b/b-r5c05-package-manager.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-b/b-r5c05-package-manager.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-b/b-r5c05-package-manager.png"
     },
     {
       "id": "inkscape",
@@ -597,7 +652,8 @@
       "symbol": "#app-inkscape",
       "availability": "external-or-wrapped-catalog-entry",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-b/b-r5c10-advanced-tools.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-b/b-r5c10-advanced-tools.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-b/b-r5c10-advanced-tools.png"
     },
     {
       "id": "irfanview",
@@ -608,7 +664,8 @@
       "symbol": "#app-irfanview",
       "availability": "external-or-wrapped-catalog-entry",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-b/b-r1c08-photos.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-b/b-r1c08-photos.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-b/b-r1c08-photos.png"
     },
     {
       "id": "iterm2",
@@ -619,7 +676,8 @@
       "symbol": "#app-iterm2",
       "availability": "external-or-wrapped-catalog-entry",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-b/b-r1c03-terminal.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-b/b-r1c03-terminal.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-b/b-r1c03-terminal.png"
     },
     {
       "id": "joplin",
@@ -630,7 +688,8 @@
       "symbol": "#app-joplin",
       "availability": "external-or-wrapped-catalog-entry",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-b/b-r5c10-advanced-tools.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-b/b-r5c10-advanced-tools.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-b/b-r5c10-advanced-tools.png"
     },
     {
       "id": "kaspa",
@@ -641,7 +700,8 @@
       "symbol": "#app-kaspa",
       "availability": "external-or-wrapped-catalog-entry",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-b/b-r5c10-advanced-tools.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-b/b-r5c10-advanced-tools.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-b/b-r5c10-advanced-tools.png"
     },
     {
       "id": "kde-connect",
@@ -652,7 +712,8 @@
       "symbol": "#app-kde-connect",
       "availability": "external-or-wrapped-catalog-entry",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-b/b-r5c06-network-manager.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-b/b-r5c06-network-manager.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-b/b-r5c06-network-manager.png"
     },
     {
       "id": "kdenlive",
@@ -663,7 +724,8 @@
       "symbol": "#app-kdenlive",
       "availability": "upstream-fetch-target",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-b/b-r1c10-videos.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-b/b-r1c10-videos.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-b/b-r1c10-videos.png"
     },
     {
       "id": "keepassxc",
@@ -674,7 +736,8 @@
       "symbol": "#app-keepassxc",
       "availability": "external-or-wrapped-catalog-entry",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-a/a-r3c01-security.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-a/a-r3c01-security.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-a/a-r3c01-security.png"
     },
     {
       "id": "keygen",
@@ -685,7 +748,8 @@
       "symbol": "#app-keygen",
       "availability": "external-or-wrapped-catalog-entry",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-a/a-r3c01-security.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-a/a-r3c01-security.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-a/a-r3c01-security.png"
     },
     {
       "id": "keynote",
@@ -696,7 +760,8 @@
       "symbol": "#app-keynote",
       "availability": "external-or-wrapped-catalog-entry",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-b/b-r2c02-text-editor.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-b/b-r2c02-text-editor.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-b/b-r2c02-text-editor.png"
     },
     {
       "id": "krita",
@@ -707,7 +772,8 @@
       "symbol": "#app-krita",
       "availability": "external-or-wrapped-catalog-entry",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-b/b-r1c08-photos.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-b/b-r1c08-photos.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-b/b-r1c08-photos.png"
     },
     {
       "id": "libreoffice",
@@ -718,7 +784,8 @@
       "symbol": "#app-libreoffice",
       "availability": "upstream-fetch-target",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-b/b-r2c02-text-editor.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-b/b-r2c02-text-editor.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-b/b-r2c02-text-editor.png"
     },
     {
       "id": "litecoin-core",
@@ -729,7 +796,8 @@
       "symbol": "#app-litecoin-core",
       "availability": "external-or-wrapped-catalog-entry",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-b/b-r5c10-advanced-tools.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-b/b-r5c10-advanced-tools.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-b/b-r5c10-advanced-tools.png"
     },
     {
       "id": "lutris",
@@ -740,7 +808,8 @@
       "symbol": "#app-lutris",
       "availability": "external-or-wrapped-catalog-entry",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-b/b-r2c07-games.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-b/b-r2c07-games.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-b/b-r2c07-games.png"
     },
     {
       "id": "macports",
@@ -751,7 +820,8 @@
       "symbol": "#app-macports",
       "availability": "external-or-wrapped-catalog-entry",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-b/b-r5c05-package-manager.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-b/b-r5c05-package-manager.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-b/b-r5c05-package-manager.png"
     },
     {
       "id": "microsoft-365",
@@ -762,7 +832,8 @@
       "symbol": "#app-microsoft-365",
       "availability": "external-or-wrapped-catalog-entry",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-b/b-r5c10-advanced-tools.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-b/b-r5c10-advanced-tools.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-b/b-r5c10-advanced-tools.png"
     },
     {
       "id": "microsoft-edge",
@@ -773,7 +844,8 @@
       "symbol": "#app-microsoft-edge",
       "availability": "external-or-wrapped-catalog-entry",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-b/b-r1c05-web-browser.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-b/b-r1c05-web-browser.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-b/b-r1c05-web-browser.png"
     },
     {
       "id": "microsoft-powertoys",
@@ -784,7 +856,8 @@
       "symbol": "#app-microsoft-powertoys",
       "availability": "external-or-wrapped-catalog-entry",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-b/b-r5c09-power-management.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-b/b-r5c09-power-management.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-b/b-r5c09-power-management.png"
     },
     {
       "id": "monero",
@@ -795,7 +868,8 @@
       "symbol": "#app-monero",
       "availability": "external-or-wrapped-catalog-entry",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-b/b-r5c10-advanced-tools.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-b/b-r5c10-advanced-tools.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-b/b-r5c10-advanced-tools.png"
     },
     {
       "id": "mpv",
@@ -806,7 +880,8 @@
       "symbol": "#app-mpv",
       "availability": "upstream-fetch-target",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-a/a-r1c10-music.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-a/a-r1c10-music.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-a/a-r1c10-music.png"
     },
     {
       "id": "natron",
@@ -817,7 +892,8 @@
       "symbol": "#app-natron",
       "availability": "upstream-fetch-target",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-a/a-r5c07-3d-viewer.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-a/a-r5c07-3d-viewer.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-a/a-r5c07-3d-viewer.png"
     },
     {
       "id": "nearcore",
@@ -828,7 +904,8 @@
       "symbol": "#app-nearcore",
       "availability": "external-or-wrapped-catalog-entry",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-b/b-r5c10-advanced-tools.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-b/b-r5c10-advanced-tools.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-b/b-r5c10-advanced-tools.png"
     },
     {
       "id": "nextcloud",
@@ -839,7 +916,8 @@
       "symbol": "#app-nextcloud",
       "availability": "external-or-wrapped-catalog-entry",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-b/b-r5c10-advanced-tools.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-b/b-r5c10-advanced-tools.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-b/b-r5c10-advanced-tools.png"
     },
     {
       "id": "nlp",
@@ -850,7 +928,8 @@
       "symbol": "#app-nlp",
       "availability": "external-or-wrapped-catalog-entry",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-b/b-r5c10-advanced-tools.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-b/b-r5c10-advanced-tools.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-b/b-r5c10-advanced-tools.png"
     },
     {
       "id": "notepad",
@@ -861,7 +940,8 @@
       "symbol": "#app-notepad",
       "availability": "external-or-wrapped-catalog-entry",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-a/a-r2c05-code-editor.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-a/a-r2c05-code-editor.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-a/a-r2c05-code-editor.png"
     },
     {
       "id": "notepad-plus-plus",
@@ -872,7 +952,8 @@
       "symbol": "#app-notepad-plus-plus",
       "availability": "external-or-wrapped-catalog-entry",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-a/a-r2c05-code-editor.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-a/a-r2c05-code-editor.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-a/a-r2c05-code-editor.png"
     },
     {
       "id": "numbers",
@@ -883,7 +964,8 @@
       "symbol": "#app-numbers",
       "availability": "external-or-wrapped-catalog-entry",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-b/b-r2c02-text-editor.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-b/b-r2c02-text-editor.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-b/b-r2c02-text-editor.png"
     },
     {
       "id": "obs-studio",
@@ -894,7 +976,8 @@
       "symbol": "#app-obs-studio",
       "availability": "upstream-fetch-target",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-b/b-r1c10-videos.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-b/b-r1c10-videos.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-b/b-r1c10-videos.png"
     },
     {
       "id": "obsidian",
@@ -905,7 +988,8 @@
       "symbol": "#app-obsidian",
       "availability": "external-or-wrapped-catalog-entry",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-b/b-r1c10-videos.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-b/b-r1c10-videos.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-b/b-r1c10-videos.png"
     },
     {
       "id": "onenote",
@@ -916,7 +1000,8 @@
       "symbol": "#app-onenote",
       "availability": "external-or-wrapped-catalog-entry",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-b/b-r2c02-text-editor.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-b/b-r2c02-text-editor.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-b/b-r2c02-text-editor.png"
     },
     {
       "id": "onlyoffice",
@@ -927,7 +1012,8 @@
       "symbol": "#app-onlyoffice",
       "availability": "external-or-wrapped-catalog-entry",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-b/b-r2c02-text-editor.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-b/b-r2c02-text-editor.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-b/b-r2c02-text-editor.png"
     },
     {
       "id": "openshot",
@@ -938,7 +1024,8 @@
       "symbol": "#app-openshot",
       "availability": "external-or-wrapped-catalog-entry",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-b/b-r1c10-videos.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-b/b-r1c10-videos.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-b/b-r1c10-videos.png"
     },
     {
       "id": "pages",
@@ -949,7 +1036,8 @@
       "symbol": "#app-pages",
       "availability": "external-or-wrapped-catalog-entry",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-b/b-r2c02-text-editor.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-b/b-r2c02-text-editor.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-b/b-r2c02-text-editor.png"
     },
     {
       "id": "paint",
@@ -960,7 +1048,8 @@
       "symbol": "#app-paint",
       "availability": "external-or-wrapped-catalog-entry",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-b/b-r2c01-paint.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-b/b-r2c01-paint.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-b/b-r2c01-paint.png"
     },
     {
       "id": "pdfreaderpy",
@@ -971,7 +1060,8 @@
       "symbol": "#app-pdfreaderpy",
       "availability": "external-or-wrapped-catalog-entry",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-b/b-r2c02-text-editor.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-b/b-r2c02-text-editor.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-b/b-r2c02-text-editor.png"
     },
     {
       "id": "photos",
@@ -982,7 +1072,8 @@
       "symbol": "#app-photos",
       "availability": "external-or-wrapped-catalog-entry",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-b/b-r1c08-photos.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-b/b-r1c08-photos.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-b/b-r1c08-photos.png"
     },
     {
       "id": "podman",
@@ -993,7 +1084,8 @@
       "symbol": "#app-podman",
       "availability": "external-or-wrapped-catalog-entry",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-b/b-r5c10-advanced-tools.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-b/b-r5c10-advanced-tools.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-b/b-r5c10-advanced-tools.png"
     },
     {
       "id": "postman",
@@ -1004,7 +1096,8 @@
       "symbol": "#app-postman",
       "availability": "external-or-wrapped-catalog-entry",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-b/b-r5c10-advanced-tools.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-b/b-r5c10-advanced-tools.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-b/b-r5c10-advanced-tools.png"
     },
     {
       "id": "proton-vpn",
@@ -1015,7 +1108,8 @@
       "symbol": "#app-proton-vpn",
       "availability": "external-or-wrapped-catalog-entry",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-a/a-r3c01-security.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-a/a-r3c01-security.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-a/a-r3c01-security.png"
     },
     {
       "id": "putty",
@@ -1026,7 +1120,8 @@
       "symbol": "#app-putty",
       "availability": "external-or-wrapped-catalog-entry",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-b/b-r1c03-terminal.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-b/b-r1c03-terminal.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-b/b-r1c03-terminal.png"
     },
     {
       "id": "python",
@@ -1037,7 +1132,8 @@
       "symbol": "#app-python",
       "availability": "external-or-wrapped-catalog-entry",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-a/a-r2c05-code-editor.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-a/a-r2c05-code-editor.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-a/a-r2c05-code-editor.png"
     },
     {
       "id": "qbittorrent",
@@ -1048,7 +1144,8 @@
       "symbol": "#app-qbittorrent",
       "availability": "external-or-wrapped-catalog-entry",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-b/b-r5c06-network-manager.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-b/b-r5c06-network-manager.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-b/b-r5c06-network-manager.png"
     },
     {
       "id": "quicktime",
@@ -1059,7 +1156,8 @@
       "symbol": "#app-quicktime",
       "availability": "external-or-wrapped-catalog-entry",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-a/a-r1c10-music.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-a/a-r1c10-music.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-a/a-r1c10-music.png"
     },
     {
       "id": "raycast",
@@ -1070,7 +1168,8 @@
       "symbol": "#app-raycast",
       "availability": "external-or-wrapped-catalog-entry",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-a/a-r2c10-search.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-a/a-r2c10-search.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-a/a-r2c10-search.png"
     },
     {
       "id": "rectangle",
@@ -1081,7 +1180,8 @@
       "symbol": "#app-rectangle",
       "availability": "external-or-wrapped-catalog-entry",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-b/b-r5c10-advanced-tools.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-b/b-r5c10-advanced-tools.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-b/b-r5c10-advanced-tools.png"
     },
     {
       "id": "repository-portfolio",
@@ -1092,7 +1192,8 @@
       "symbol": "#app-repository-portfolio",
       "availability": "external-or-wrapped-catalog-entry",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-b/b-r5c10-advanced-tools.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-b/b-r5c10-advanced-tools.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-b/b-r5c10-advanced-tools.png"
     },
     {
       "id": "safari",
@@ -1103,7 +1204,8 @@
       "symbol": "#app-safari",
       "availability": "external-or-wrapped-catalog-entry",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-b/b-r1c05-web-browser.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-b/b-r1c05-web-browser.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-b/b-r1c05-web-browser.png"
     },
     {
       "id": "sharex",
@@ -1114,7 +1216,8 @@
       "symbol": "#app-sharex",
       "availability": "external-or-wrapped-catalog-entry",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-a/a-r5c02-screenshot.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-a/a-r5c02-screenshot.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-a/a-r5c02-screenshot.png"
     },
     {
       "id": "shotcut",
@@ -1125,7 +1228,8 @@
       "symbol": "#app-shotcut",
       "availability": "external-or-wrapped-catalog-entry",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-b/b-r1c10-videos.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-b/b-r1c10-videos.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-b/b-r1c10-videos.png"
     },
     {
       "id": "signal",
@@ -1136,7 +1240,8 @@
       "symbol": "#app-signal",
       "availability": "external-or-wrapped-catalog-entry",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-b/b-r5c06-network-manager.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-b/b-r5c06-network-manager.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-b/b-r5c06-network-manager.png"
     },
     {
       "id": "solana-agave",
@@ -1147,7 +1252,8 @@
       "symbol": "#app-solana-agave",
       "availability": "external-or-wrapped-catalog-entry",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-b/b-r5c10-advanced-tools.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-b/b-r5c10-advanced-tools.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-b/b-r5c10-advanced-tools.png"
     },
     {
       "id": "steam",
@@ -1158,7 +1264,8 @@
       "symbol": "#app-steam",
       "availability": "external-or-wrapped-catalog-entry",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-b/b-r2c07-games.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-b/b-r2c07-games.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-b/b-r2c07-games.png"
     },
     {
       "id": "stellar-core",
@@ -1169,7 +1276,8 @@
       "symbol": "#app-stellar-core",
       "availability": "external-or-wrapped-catalog-entry",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-b/b-r5c10-advanced-tools.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-b/b-r5c10-advanced-tools.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-b/b-r5c10-advanced-tools.png"
     },
     {
       "id": "sui",
@@ -1180,7 +1288,8 @@
       "symbol": "#app-sui",
       "availability": "external-or-wrapped-catalog-entry",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-b/b-r5c10-advanced-tools.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-b/b-r5c10-advanced-tools.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-b/b-r5c10-advanced-tools.png"
     },
     {
       "id": "syncthing",
@@ -1191,7 +1300,8 @@
       "symbol": "#app-syncthing",
       "availability": "external-or-wrapped-catalog-entry",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-b/b-r5c06-network-manager.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-b/b-r5c06-network-manager.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-b/b-r5c06-network-manager.png"
     },
     {
       "id": "system-monitor",
@@ -1202,7 +1312,8 @@
       "symbol": "#app-system-monitor",
       "availability": "upstream-reference-only",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-b/b-r5c01-system-monitor.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-b/b-r5c01-system-monitor.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-b/b-r5c01-system-monitor.png"
     },
     {
       "id": "teams",
@@ -1213,7 +1324,8 @@
       "symbol": "#app-teams",
       "availability": "external-or-wrapped-catalog-entry",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-b/b-r5c06-network-manager.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-b/b-r5c06-network-manager.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-b/b-r5c06-network-manager.png"
     },
     {
       "id": "terminal",
@@ -1224,7 +1336,8 @@
       "symbol": "#app-terminal",
       "availability": "external-or-wrapped-catalog-entry",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-b/b-r1c03-terminal.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-b/b-r1c03-terminal.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-b/b-r1c03-terminal.png"
     },
     {
       "id": "test",
@@ -1235,7 +1348,8 @@
       "symbol": "#app-test",
       "availability": "external-or-wrapped-catalog-entry",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-b/b-r5c10-advanced-tools.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-b/b-r5c10-advanced-tools.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-b/b-r5c10-advanced-tools.png"
     },
     {
       "id": "thunar",
@@ -1246,7 +1360,8 @@
       "symbol": "#app-thunar",
       "availability": "external-or-wrapped-catalog-entry",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-b/b-r1c04-files.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-b/b-r1c04-files.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-b/b-r1c04-files.png"
     },
     {
       "id": "thunderbird",
@@ -1257,7 +1372,8 @@
       "symbol": "#app-thunderbird",
       "availability": "external-or-wrapped-catalog-entry",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-b/b-r1c06-mail.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-b/b-r1c06-mail.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-b/b-r1c06-mail.png"
     },
     {
       "id": "timeshift",
@@ -1268,7 +1384,8 @@
       "symbol": "#app-timeshift",
       "availability": "external-or-wrapped-catalog-entry",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-b/b-r5c04-backup-restore.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-b/b-r5c04-backup-restore.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-b/b-r5c04-backup-restore.png"
     },
     {
       "id": "transmission",
@@ -1279,7 +1396,8 @@
       "symbol": "#app-transmission",
       "availability": "external-or-wrapped-catalog-entry",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-b/b-r5c06-network-manager.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-b/b-r5c06-network-manager.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-b/b-r5c06-network-manager.png"
     },
     {
       "id": "vlc",
@@ -1290,7 +1408,8 @@
       "symbol": "#app-vlc",
       "availability": "upstream-fetch-target",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-a/a-r1c10-music.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-a/a-r1c10-music.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-a/a-r1c10-music.png"
     },
     {
       "id": "vscode",
@@ -1301,7 +1420,8 @@
       "symbol": "#app-vscode",
       "availability": "external-or-wrapped-catalog-entry",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-a/a-r2c05-code-editor.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-a/a-r2c05-code-editor.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-a/a-r2c05-code-editor.png"
     },
     {
       "id": "vscodium",
@@ -1312,7 +1432,8 @@
       "symbol": "#app-vscodium",
       "availability": "external-or-wrapped-catalog-entry",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-a/a-r2c05-code-editor.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-a/a-r2c05-code-editor.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-a/a-r2c05-code-editor.png"
     },
     {
       "id": "web-portal",
@@ -1323,7 +1444,8 @@
       "symbol": "#app-web-portal",
       "availability": "external-or-wrapped-catalog-entry",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-b/b-r1c05-web-browser.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-b/b-r1c05-web-browser.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-b/b-r1c05-web-browser.png"
     },
     {
       "id": "webkit-shell",
@@ -1334,7 +1456,8 @@
       "symbol": "#app-webkit-shell",
       "availability": "external-or-wrapped-catalog-entry",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-b/b-r1c05-web-browser.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-b/b-r1c05-web-browser.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-b/b-r1c05-web-browser.png"
     },
     {
       "id": "wine",
@@ -1345,7 +1468,8 @@
       "symbol": "#app-wine",
       "availability": "external-or-wrapped-catalog-entry",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-b/b-r2c07-games.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-b/b-r2c07-games.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-b/b-r2c07-games.png"
     },
     {
       "id": "winscp",
@@ -1356,7 +1480,8 @@
       "symbol": "#app-winscp",
       "availability": "external-or-wrapped-catalog-entry",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-b/b-r1c03-terminal.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-b/b-r1c03-terminal.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-b/b-r1c03-terminal.png"
     },
     {
       "id": "xcode",
@@ -1367,7 +1492,8 @@
       "symbol": "#app-xcode",
       "availability": "external-or-wrapped-catalog-entry",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-a/a-r2c05-code-editor.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-a/a-r2c05-code-editor.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-a/a-r2c05-code-editor.png"
     },
     {
       "id": "xrpl-rippled",
@@ -1378,7 +1504,8 @@
       "symbol": "#app-xrpl-rippled",
       "availability": "external-or-wrapped-catalog-entry",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-b/b-r5c10-advanced-tools.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-b/b-r5c10-advanced-tools.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-b/b-r5c10-advanced-tools.png"
     },
     {
       "id": "zcash",
@@ -1389,7 +1516,8 @@
       "symbol": "#app-zcash",
       "availability": "external-or-wrapped-catalog-entry",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-b/b-r5c10-advanced-tools.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-b/b-r5c10-advanced-tools.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-b/b-r5c10-advanced-tools.png"
     },
     {
       "id": "zoom",
@@ -1400,7 +1528,8 @@
       "symbol": "#app-zoom",
       "availability": "external-or-wrapped-catalog-entry",
       "installation_status": "not_verified",
-      "image_source": "/assets/desktop-icons/slices/sheet-b/b-r5c06-network-manager.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-b/b-r5c06-network-manager.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-b/b-r5c06-network-manager.png"
     },
     {
       "id": "voiceconnect",
@@ -1411,7 +1540,8 @@
       "symbol": "#app-voiceconnect",
       "availability": "native-shell-shortcut",
       "installation_status": "not_applicable",
-      "image_source": "/assets/desktop-icons/slices/sheet-b/b-r5c07-bluetooth.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-b/b-r5c07-bluetooth.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-b/b-r5c07-bluetooth.png"
     },
     {
       "id": "network",
@@ -1422,7 +1552,8 @@
       "symbol": "#app-network",
       "availability": "native-shell-shortcut",
       "installation_status": "not_applicable",
-      "image_source": "/assets/desktop-icons/slices/sheet-b/b-r5c06-network-manager.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-b/b-r5c06-network-manager.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-b/b-r5c06-network-manager.png"
     },
     {
       "id": "settings",
@@ -1433,7 +1564,8 @@
       "symbol": "#app-settings",
       "availability": "native-shell-shortcut",
       "installation_status": "not_applicable",
-      "image_source": "/assets/desktop-icons/slices/sheet-b/b-r2c08-settings.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-b/b-r2c08-settings.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-b/b-r2c08-settings.png"
     },
     {
       "id": "store",
@@ -1444,7 +1576,8 @@
       "symbol": "#app-store",
       "availability": "native-shell-shortcut",
       "installation_status": "not_applicable",
-      "image_source": "/assets/desktop-icons/slices/sheet-b/b-r5c05-package-manager.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-b/b-r5c05-package-manager.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-b/b-r5c05-package-manager.png"
     },
     {
       "id": "about",
@@ -1455,7 +1588,8 @@
       "symbol": "#app-about",
       "availability": "native-shell-shortcut",
       "installation_status": "not_applicable",
-      "image_source": "/assets/desktop-icons/slices/sheet-b/b-r3c01-gates-desktop.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-b/b-r3c01-gates-desktop.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-b/b-r3c01-gates-desktop.png"
     },
     {
       "id": "docs",
@@ -1466,7 +1600,8 @@
       "symbol": "#app-docs",
       "availability": "native-shell-shortcut",
       "installation_status": "not_applicable",
-      "image_source": "/assets/desktop-icons/slices/sheet-a/a-r4c01-help.png"
+      "image_source": "/assets/desktop-icons/beveled/sheet-a/a-r4c01-help.png",
+      "source_slice": "/assets/desktop-icons/slices/sheet-a/a-r4c01-help.png"
     }
   ],
   "sprite_basis": "Attached concept icon sheets sliced into individual 96x96 PNG cells.",

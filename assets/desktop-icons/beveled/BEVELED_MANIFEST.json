@@ -1,0 +1,818 @@
+{
+  "schema": "chimera-octavian-beveled-icon-set/v1",
+  "concept_only": true,
+  "asset_count": 100,
+  "source_set": "/assets/desktop-icons/slices/",
+  "derived_set": "/assets/desktop-icons/beveled/",
+  "geometry": {
+    "size": "96x96",
+    "corner_radius_px": 20,
+    "bevel": "2px translucent dark outer ring inset 1px plus 1px translucent light inner ring inset 3px, following the same 20px rounded-corner geometry"
+  },
+  "generation": {
+    "method": "deterministic ImageMagick 7 commands; no AI or random input",
+    "command": "magick SOURCE ( -size 96x96 xc:none -fill white -draw 'roundrectangle 0,0 95,95 20,20' -alpha extract ) -alpha off -compose CopyOpacity -composite ( -size 96x96 xc:none -stroke '#0b1626cc' -strokewidth 2 -fill none -draw 'roundrectangle 1,1 94,94 19,19' ) -compose Over -composite ( -size 96x96 xc:none -stroke '#ffffffb3' -strokewidth 1 -fill none -draw 'roundrectangle 3,3 92,92 17,17' ) -compose Over -composite -define png:color-type=6 -define png:compression-level=9 -define png:compression-filter=0 -define png:compression-strategy=0 -strip DERIVED"
+  },
+  "records": [
+    {
+      "id": "a-r1c01-aurora-desktop",
+      "sheet": "sheet-a",
+      "source_asset": "/assets/desktop-icons/slices/sheet-a/a-r1c01-aurora-desktop.png",
+      "derived_asset": "/assets/desktop-icons/beveled/sheet-a/a-r1c01-aurora-desktop.png",
+      "source_sha256": "5d1e8bfae43b5a2d67c3fe660e5e882a4016025f7887030265e517732baae120",
+      "derived_sha256": "65dd9e2f46b1928a5c442e8169707565de9895bd4379fcaaee3028607b095597"
+    },
+    {
+      "id": "a-r1c02-marine-desktop",
+      "sheet": "sheet-a",
+      "source_asset": "/assets/desktop-icons/slices/sheet-a/a-r1c02-marine-desktop.png",
+      "derived_asset": "/assets/desktop-icons/beveled/sheet-a/a-r1c02-marine-desktop.png",
+      "source_sha256": "a41af01a12ad265bbfe318b6e1673b3df555bbd9f92210accfbd4683bbdbf2db",
+      "derived_sha256": "ecb0420d17d6707b848b809008aa51a57b98ad945d9a1e10420b0d89c0b8a0ca"
+    },
+    {
+      "id": "a-r1c03-settings",
+      "sheet": "sheet-a",
+      "source_asset": "/assets/desktop-icons/slices/sheet-a/a-r1c03-settings.png",
+      "derived_asset": "/assets/desktop-icons/beveled/sheet-a/a-r1c03-settings.png",
+      "source_sha256": "0bf7b3658ce29f14e973be7cc3b324031f6ea7b25d35d9eabd00be0d0846fb71",
+      "derived_sha256": "3d4e51646574b59083281f17f7c854ec1918ff13692b851b8756fa1514fd2a55"
+    },
+    {
+      "id": "a-r1c04-file-manager",
+      "sheet": "sheet-a",
+      "source_asset": "/assets/desktop-icons/slices/sheet-a/a-r1c04-file-manager.png",
+      "derived_asset": "/assets/desktop-icons/beveled/sheet-a/a-r1c04-file-manager.png",
+      "source_sha256": "f9b80908c458f8d3edca7368a9714153f2c3d10ecbabac520ca8d25dd21b2efd",
+      "derived_sha256": "415cebde3d2a26df830c0a0f90fbda66fa0dc7174320638465d2d98b0067acec"
+    },
+    {
+      "id": "a-r1c05-terminal",
+      "sheet": "sheet-a",
+      "source_asset": "/assets/desktop-icons/slices/sheet-a/a-r1c05-terminal.png",
+      "derived_asset": "/assets/desktop-icons/beveled/sheet-a/a-r1c05-terminal.png",
+      "source_sha256": "77d97095d7ce82616e68c4f82a1f8d68af1f1959c46b3246d8a0ccde4ecf0abe",
+      "derived_sha256": "955b01c87ddd99fa718f9847201b90675a418500037d81af87f31e65451d4995"
+    },
+    {
+      "id": "a-r1c06-web-browser",
+      "sheet": "sheet-a",
+      "source_asset": "/assets/desktop-icons/slices/sheet-a/a-r1c06-web-browser.png",
+      "derived_asset": "/assets/desktop-icons/beveled/sheet-a/a-r1c06-web-browser.png",
+      "source_sha256": "9b19dc5437806532d0f6b65dfd7cec0d38884904ea310f029e4a7036662da14b",
+      "derived_sha256": "31285914556ef30549646e66231ab2789bbebe6e996bdcf1e5a3b723eb970dba"
+    },
+    {
+      "id": "a-r1c07-mail",
+      "sheet": "sheet-a",
+      "source_asset": "/assets/desktop-icons/slices/sheet-a/a-r1c07-mail.png",
+      "derived_asset": "/assets/desktop-icons/beveled/sheet-a/a-r1c07-mail.png",
+      "source_sha256": "0dda10673a598504cfc06665a0756d2e425cb8ef6ee75bbab4f8e660305fd3ac",
+      "derived_sha256": "c756674ddde99df94be558d4c7dcb67384521d88b0dc7dc85f4f28c1d0629a4b"
+    },
+    {
+      "id": "a-r1c08-calendar",
+      "sheet": "sheet-a",
+      "source_asset": "/assets/desktop-icons/slices/sheet-a/a-r1c08-calendar.png",
+      "derived_asset": "/assets/desktop-icons/beveled/sheet-a/a-r1c08-calendar.png",
+      "source_sha256": "1d29495484a347e0cc9d1d2a14f6c67ea1ef9ed552e484ed4dd9b128d8ca7f3b",
+      "derived_sha256": "0546b6a14cb1ec5936f387aaeccc375a5ceebaf1d6f99267dc8f919e91c30244"
+    },
+    {
+      "id": "a-r1c09-media-player",
+      "sheet": "sheet-a",
+      "source_asset": "/assets/desktop-icons/slices/sheet-a/a-r1c09-media-player.png",
+      "derived_asset": "/assets/desktop-icons/beveled/sheet-a/a-r1c09-media-player.png",
+      "source_sha256": "ac54cad212b03978df6100a092faf77020f0f9be91535177a4f55f55a18898db",
+      "derived_sha256": "15cecc7b1acc7884e4a7e762f49fc4d2d3072493a645610f33c8ce47d408bd16"
+    },
+    {
+      "id": "a-r1c10-music",
+      "sheet": "sheet-a",
+      "source_asset": "/assets/desktop-icons/slices/sheet-a/a-r1c10-music.png",
+      "derived_asset": "/assets/desktop-icons/beveled/sheet-a/a-r1c10-music.png",
+      "source_sha256": "c9170826b73061d7f84782fdcfe5882da07266958ed5172ed247215923024690",
+      "derived_sha256": "0d8d4d9f9f74b63372fa870bf4d835859c61105316bef7543afd14ad3c4eeae0"
+    },
+    {
+      "id": "a-r2c01-photos",
+      "sheet": "sheet-a",
+      "source_asset": "/assets/desktop-icons/slices/sheet-a/a-r2c01-photos.png",
+      "derived_asset": "/assets/desktop-icons/beveled/sheet-a/a-r2c01-photos.png",
+      "source_sha256": "d88eebf6c8d4848fd2a6b2eca08c3e49aa5860703ebdd4ec7202faa89b1065f3",
+      "derived_sha256": "5c427eabb2d40d795de993f38e92cfbe5a6ab38301935e183165eb47f3d5ff5b"
+    },
+    {
+      "id": "a-r2c02-paint",
+      "sheet": "sheet-a",
+      "source_asset": "/assets/desktop-icons/slices/sheet-a/a-r2c02-paint.png",
+      "derived_asset": "/assets/desktop-icons/beveled/sheet-a/a-r2c02-paint.png",
+      "source_sha256": "024e311d09c9321f04792aabf1d2ae0b47938ed73f3d2495ec9b132ef65a8acc",
+      "derived_sha256": "33b2be2822e5cd68ff79e646fb40432c3b0317f1568352f004406b7013428ebe"
+    },
+    {
+      "id": "a-r2c03-calculator",
+      "sheet": "sheet-a",
+      "source_asset": "/assets/desktop-icons/slices/sheet-a/a-r2c03-calculator.png",
+      "derived_asset": "/assets/desktop-icons/beveled/sheet-a/a-r2c03-calculator.png",
+      "source_sha256": "0caf6df15a20f167b8971f1de32e39d46ee647ea52cc6657153a82c03f30174a",
+      "derived_sha256": "5bb596c4fdf3fbc0f6dc61e83ec5caff9e950dfe427e69a2d6a9a135cacdcc30"
+    },
+    {
+      "id": "a-r2c04-text-editor",
+      "sheet": "sheet-a",
+      "source_asset": "/assets/desktop-icons/slices/sheet-a/a-r2c04-text-editor.png",
+      "derived_asset": "/assets/desktop-icons/beveled/sheet-a/a-r2c04-text-editor.png",
+      "source_sha256": "fd0be220c17a59afac6efafe8124bce39c656231d94158c4b69ab977d4aca5fb",
+      "derived_sha256": "29e626ea79a9d1943abe5134e3c7a864d3b98efa03e07cc4285e7cb26be433b2"
+    },
+    {
+      "id": "a-r2c05-code-editor",
+      "sheet": "sheet-a",
+      "source_asset": "/assets/desktop-icons/slices/sheet-a/a-r2c05-code-editor.png",
+      "derived_asset": "/assets/desktop-icons/beveled/sheet-a/a-r2c05-code-editor.png",
+      "source_sha256": "7ff2a9eff2adf88bdf778a7e45318f7dc08f0f6c5190525208da309d1d295d2a",
+      "derived_sha256": "566824c18adc9ae2420d0ad50cfd3f5581c85eeaf217c685b66c24402780a8bc"
+    },
+    {
+      "id": "a-r2c06-disk-utility",
+      "sheet": "sheet-a",
+      "source_asset": "/assets/desktop-icons/slices/sheet-a/a-r2c06-disk-utility.png",
+      "derived_asset": "/assets/desktop-icons/beveled/sheet-a/a-r2c06-disk-utility.png",
+      "source_sha256": "88504b9266d6a8a1029656717083e33cff4946c8105f86760ecadcddd5f9e253",
+      "derived_sha256": "6776a85ca4c143533c5672aa9c7240b1301879a3f9355183edd4e9f0b53fa7e1"
+    },
+    {
+      "id": "a-r2c07-system-monitor",
+      "sheet": "sheet-a",
+      "source_asset": "/assets/desktop-icons/slices/sheet-a/a-r2c07-system-monitor.png",
+      "derived_asset": "/assets/desktop-icons/beveled/sheet-a/a-r2c07-system-monitor.png",
+      "source_sha256": "7d76e7141bd789e63211fd6efd860af77aa6d4afc80d492a5c42cf1a49906400",
+      "derived_sha256": "505b9fc29ee5a9b57822937f87bd05225aca6bdf62095d60c92d65931a322135"
+    },
+    {
+      "id": "a-r2c08-update-manager",
+      "sheet": "sheet-a",
+      "source_asset": "/assets/desktop-icons/slices/sheet-a/a-r2c08-update-manager.png",
+      "derived_asset": "/assets/desktop-icons/beveled/sheet-a/a-r2c08-update-manager.png",
+      "source_sha256": "cd4f92d85d0950a65be9c6a71932333c5bb4159e6902d183d005458914d14ddb",
+      "derived_sha256": "39afd204d247624362885c7155b970f622394d4db0fbdf7dc5669bd19ed117e0"
+    },
+    {
+      "id": "a-r2c09-package-manager",
+      "sheet": "sheet-a",
+      "source_asset": "/assets/desktop-icons/slices/sheet-a/a-r2c09-package-manager.png",
+      "derived_asset": "/assets/desktop-icons/beveled/sheet-a/a-r2c09-package-manager.png",
+      "source_sha256": "ee0aa92f11cda0f27fe36eea8c913a097df78e81342531b9839e3638d4b0fa69",
+      "derived_sha256": "79be5c969610769e7fa238d6c68f4181cfa61c76b62f6d2a261b0b2c9caffb40"
+    },
+    {
+      "id": "a-r2c10-search",
+      "sheet": "sheet-a",
+      "source_asset": "/assets/desktop-icons/slices/sheet-a/a-r2c10-search.png",
+      "derived_asset": "/assets/desktop-icons/beveled/sheet-a/a-r2c10-search.png",
+      "source_sha256": "c00478b564163a0108ae62e1c64f56bb3350d6efbed6f68f591b1f388edf5756",
+      "derived_sha256": "23766f7b829d99c2c4feaec245adefbbc1314471355592b132196871cdd5b9cd"
+    },
+    {
+      "id": "a-r3c01-security",
+      "sheet": "sheet-a",
+      "source_asset": "/assets/desktop-icons/slices/sheet-a/a-r3c01-security.png",
+      "derived_asset": "/assets/desktop-icons/beveled/sheet-a/a-r3c01-security.png",
+      "source_sha256": "3cd7c37838aef89ef711df70b6d0f17a57cd64ed4d9e1b6f0fbb634fd95bb521",
+      "derived_sha256": "a2dab957ffe9d04084abf618048731be0591aa5670cd9d76aeb90150e04a2307"
+    },
+    {
+      "id": "a-r3c02-passwords",
+      "sheet": "sheet-a",
+      "source_asset": "/assets/desktop-icons/slices/sheet-a/a-r3c02-passwords.png",
+      "derived_asset": "/assets/desktop-icons/beveled/sheet-a/a-r3c02-passwords.png",
+      "source_sha256": "f7606a2e0fe41a85a16ca2ad794c9b1b364303f8993603469fccd3affbdd4c4a",
+      "derived_sha256": "9ec1a73563bd4710cd9976b1aa53dad39f210b0c454f0a715e07c104896e0d56"
+    },
+    {
+      "id": "a-r3c03-network-manager",
+      "sheet": "sheet-a",
+      "source_asset": "/assets/desktop-icons/slices/sheet-a/a-r3c03-network-manager.png",
+      "derived_asset": "/assets/desktop-icons/beveled/sheet-a/a-r3c03-network-manager.png",
+      "source_sha256": "d635723b8b96b2f6e15964763ca393854890d4b67c6daf8b855a96cb794fb708",
+      "derived_sha256": "f62a560c34b2e60743613d0bd7849b0bf46e63e59d6f5a0a4247d7585c8fb0d8"
+    },
+    {
+      "id": "a-r3c04-bluetooth",
+      "sheet": "sheet-a",
+      "source_asset": "/assets/desktop-icons/slices/sheet-a/a-r3c04-bluetooth.png",
+      "derived_asset": "/assets/desktop-icons/beveled/sheet-a/a-r3c04-bluetooth.png",
+      "source_sha256": "d87d8177e03020831c6f6d7ea5bdc136cba7d20db48ac63cfec1181cbf8cd111",
+      "derived_sha256": "25d02a3dd08a3a9484940250c44f3375350fb6f75f49295e7bff8ba552833fe2"
+    },
+    {
+      "id": "a-r3c05-printer-setup",
+      "sheet": "sheet-a",
+      "source_asset": "/assets/desktop-icons/slices/sheet-a/a-r3c05-printer-setup.png",
+      "derived_asset": "/assets/desktop-icons/beveled/sheet-a/a-r3c05-printer-setup.png",
+      "source_sha256": "3d454b4002ef74855620b1d7d606c8c9aca0f75bb5d9d374c76b6e62a2cf9b6a",
+      "derived_sha256": "e13471c19414d5470a8a955f13dd1bc545192d160993cfc5441f31bb507f600a"
+    },
+    {
+      "id": "a-r3c06-sound-settings",
+      "sheet": "sheet-a",
+      "source_asset": "/assets/desktop-icons/slices/sheet-a/a-r3c06-sound-settings.png",
+      "derived_asset": "/assets/desktop-icons/beveled/sheet-a/a-r3c06-sound-settings.png",
+      "source_sha256": "3ed244cf05b7675b746a81b10d2e78af6cc8af6c4201dde45f69f535e2fd27ba",
+      "derived_sha256": "2439e033f1ef8384323904686e6d59c60a152a802014453db4beaf4de69c16f2"
+    },
+    {
+      "id": "a-r3c07-display-settings",
+      "sheet": "sheet-a",
+      "source_asset": "/assets/desktop-icons/slices/sheet-a/a-r3c07-display-settings.png",
+      "derived_asset": "/assets/desktop-icons/beveled/sheet-a/a-r3c07-display-settings.png",
+      "source_sha256": "e6495a41fdef114b454585d9f1e42c65bb3413792571e1dee996af7a76a13ba3",
+      "derived_sha256": "19d3abd6bee28ab237789174fa0c1ddef41aceaa0bd19faa138b13ce8cbbcb5f"
+    },
+    {
+      "id": "a-r3c08-accessibility",
+      "sheet": "sheet-a",
+      "source_asset": "/assets/desktop-icons/slices/sheet-a/a-r3c08-accessibility.png",
+      "derived_asset": "/assets/desktop-icons/beveled/sheet-a/a-r3c08-accessibility.png",
+      "source_sha256": "412fd30a5adcf8e03fbc000b3c3aecf3733c87b67869f81b9bf230244d8b6032",
+      "derived_sha256": "8a11b90af4d19ecd4d8dbcf1b9a3de25ede456e1309264d35467467b75d861f2"
+    },
+    {
+      "id": "a-r3c09-power",
+      "sheet": "sheet-a",
+      "source_asset": "/assets/desktop-icons/slices/sheet-a/a-r3c09-power.png",
+      "derived_asset": "/assets/desktop-icons/beveled/sheet-a/a-r3c09-power.png",
+      "source_sha256": "1527d7f1a4630556693c571cf6a6f1bc6a9d3192028717d563fb5797818050cb",
+      "derived_sha256": "64d27b2969503496a2cf18b7e80841ed93faa6c6741828656f9d9f2acefacdac"
+    },
+    {
+      "id": "a-r3c10-trash",
+      "sheet": "sheet-a",
+      "source_asset": "/assets/desktop-icons/slices/sheet-a/a-r3c10-trash.png",
+      "derived_asset": "/assets/desktop-icons/beveled/sheet-a/a-r3c10-trash.png",
+      "source_sha256": "69b0d90e98c8e6cb6f8ea4d4808746eba33e9f64771acc3371a17f81aa450a51",
+      "derived_sha256": "4d2820ea1281358a450b40f5a31092a975abc2f98d961144da4c053d6f7a86da"
+    },
+    {
+      "id": "a-r4c01-help",
+      "sheet": "sheet-a",
+      "source_asset": "/assets/desktop-icons/slices/sheet-a/a-r4c01-help.png",
+      "derived_asset": "/assets/desktop-icons/beveled/sheet-a/a-r4c01-help.png",
+      "source_sha256": "a538e31967564171bd814baa8ea19638f22e533579e630302168dfbe411547a6",
+      "derived_sha256": "2e742bf5c4c2ba8ac64835cd2987123c582a0434eaebd6af617e93fcd4bd739f"
+    },
+    {
+      "id": "a-r4c02-user-manual",
+      "sheet": "sheet-a",
+      "source_asset": "/assets/desktop-icons/slices/sheet-a/a-r4c02-user-manual.png",
+      "derived_asset": "/assets/desktop-icons/beveled/sheet-a/a-r4c02-user-manual.png",
+      "source_sha256": "0abd1196c19d01717578fd69b27dd8affc1ddaa65c3fdc63de511464df4e4c6a",
+      "derived_sha256": "4acf2594d09d48ce032cb6039a16c3a275a0c225a87fb689e33dc7b640d7a2f1"
+    },
+    {
+      "id": "a-r4c03-diagnostics",
+      "sheet": "sheet-a",
+      "source_asset": "/assets/desktop-icons/slices/sheet-a/a-r4c03-diagnostics.png",
+      "derived_asset": "/assets/desktop-icons/beveled/sheet-a/a-r4c03-diagnostics.png",
+      "source_sha256": "d5197a85b6f76e31f1681ba4f483b69f76cfda6f389b274e621f32aa4e13a584",
+      "derived_sha256": "02508ed08c63eb694fc052232d10891970fea1a47dd5b3e91cb012f7690f377f"
+    },
+    {
+      "id": "a-r4c04-partition-manager",
+      "sheet": "sheet-a",
+      "source_asset": "/assets/desktop-icons/slices/sheet-a/a-r4c04-partition-manager.png",
+      "derived_asset": "/assets/desktop-icons/beveled/sheet-a/a-r4c04-partition-manager.png",
+      "source_sha256": "ce6d9f9dfe33e22ac001ca1a53f75859e32e9b50321dbc5bf78869c96c3db12a",
+      "derived_sha256": "5a050e9cc68c72300c4801d8041ae3efdb31794c35c7677ab7bdbfc3c2fa08a9"
+    },
+    {
+      "id": "a-r4c05-backup-restore",
+      "sheet": "sheet-a",
+      "source_asset": "/assets/desktop-icons/slices/sheet-a/a-r4c05-backup-restore.png",
+      "derived_asset": "/assets/desktop-icons/beveled/sheet-a/a-r4c05-backup-restore.png",
+      "source_sha256": "6adbfc4a443917722fa70047e0282e6d85523f62b87fb53ad5d349dced86c30a",
+      "derived_sha256": "c2c3fa71e1fe4612efe32ebc4268977854025ce0220f4e4acb81c9922ce124da"
+    },
+    {
+      "id": "a-r4c06-date-and-time",
+      "sheet": "sheet-a",
+      "source_asset": "/assets/desktop-icons/slices/sheet-a/a-r4c06-date-and-time.png",
+      "derived_asset": "/assets/desktop-icons/beveled/sheet-a/a-r4c06-date-and-time.png",
+      "source_sha256": "7f8011ec916136135d7da4b58bfb57c072fb2cd969c56d0cd32bdefc874b4ba9",
+      "derived_sha256": "c0a2ed90da3f90952f469fe7108cd77ef6448ff8e705d8f1861915e33f2a5610"
+    },
+    {
+      "id": "a-r4c07-language-settings",
+      "sheet": "sheet-a",
+      "source_asset": "/assets/desktop-icons/slices/sheet-a/a-r4c07-language-settings.png",
+      "derived_asset": "/assets/desktop-icons/beveled/sheet-a/a-r4c07-language-settings.png",
+      "source_sha256": "2fc6176f150a06a1b6237b61bb5daa6a9b9290ccd44abbb4a79c5afa1778eeb9",
+      "derived_sha256": "d9ecdd9ca67ea6683094f4d559f3bdedc27aaaa03f1cd65b9de6975b49be8648"
+    },
+    {
+      "id": "a-r4c08-keyboard-layout",
+      "sheet": "sheet-a",
+      "source_asset": "/assets/desktop-icons/slices/sheet-a/a-r4c08-keyboard-layout.png",
+      "derived_asset": "/assets/desktop-icons/beveled/sheet-a/a-r4c08-keyboard-layout.png",
+      "source_sha256": "d66e124435a37b5778023493e767e9c0438a7d76bdb58a0c6a502d2770dd15fa",
+      "derived_sha256": "8ec8f8b2538a8be1c376bf5b7ab5bceaa889414e72c40e66d995f9164339956a"
+    },
+    {
+      "id": "a-r4c09-parental-controls",
+      "sheet": "sheet-a",
+      "source_asset": "/assets/desktop-icons/slices/sheet-a/a-r4c09-parental-controls.png",
+      "derived_asset": "/assets/desktop-icons/beveled/sheet-a/a-r4c09-parental-controls.png",
+      "source_sha256": "66bb439a1f85bf035e9f8e4c52d91b8064342b3587dde41eec3ead098a0e5e59",
+      "derived_sha256": "a96b1d77fe416aca637ec7aa282bfb011a4d039af30c6caf37ecf439f8b50b11"
+    },
+    {
+      "id": "a-r4c10-firewall",
+      "sheet": "sheet-a",
+      "source_asset": "/assets/desktop-icons/slices/sheet-a/a-r4c10-firewall.png",
+      "derived_asset": "/assets/desktop-icons/beveled/sheet-a/a-r4c10-firewall.png",
+      "source_sha256": "2ac07e02c50067468213521f1b1ec10eca6f097c698662ef23a78daca05ef653",
+      "derived_sha256": "52920a65f0c1fdb606867426cc4fdeac8d26ec56d56d185e08456bad22c86f27"
+    },
+    {
+      "id": "a-r5c01-games",
+      "sheet": "sheet-a",
+      "source_asset": "/assets/desktop-icons/slices/sheet-a/a-r5c01-games.png",
+      "derived_asset": "/assets/desktop-icons/beveled/sheet-a/a-r5c01-games.png",
+      "source_sha256": "07bbb72d156ea01fb47082e5c9a811d47afa0f86112a57a54c4d0c1a941a6a85",
+      "derived_sha256": "1e99daebca26e952838d2c8dea4378be04328787f6f9da182be83f7fee841656"
+    },
+    {
+      "id": "a-r5c02-screenshot",
+      "sheet": "sheet-a",
+      "source_asset": "/assets/desktop-icons/slices/sheet-a/a-r5c02-screenshot.png",
+      "derived_asset": "/assets/desktop-icons/beveled/sheet-a/a-r5c02-screenshot.png",
+      "source_sha256": "ee33a324b9866ca28b456c4f931ca725eb75965db69cf28821d2520721505fb2",
+      "derived_sha256": "694a382aa74899d04020eba4bd01cd718d20de269feb9ab66125ab2be022bddc"
+    },
+    {
+      "id": "a-r5c03-video-recorder",
+      "sheet": "sheet-a",
+      "source_asset": "/assets/desktop-icons/slices/sheet-a/a-r5c03-video-recorder.png",
+      "derived_asset": "/assets/desktop-icons/beveled/sheet-a/a-r5c03-video-recorder.png",
+      "source_sha256": "b3dcda61fd03b058818fff0116b82a2ff98d6047e1ea6745bbfba6d3b622ebef",
+      "derived_sha256": "f273156f951bd6df14da2547769b0951a613126eb9f7ce10e81259c1b9ebf497"
+    },
+    {
+      "id": "a-r5c04-voice-recorder",
+      "sheet": "sheet-a",
+      "source_asset": "/assets/desktop-icons/slices/sheet-a/a-r5c04-voice-recorder.png",
+      "derived_asset": "/assets/desktop-icons/beveled/sheet-a/a-r5c04-voice-recorder.png",
+      "source_sha256": "0730be9e97c043feeab373efbe828be63bb3c88f029bc243a999b4c1cebee875",
+      "derived_sha256": "c126635275b9fa2e2da911042cfa7925550e1abd8c274923949f70de700fa07e"
+    },
+    {
+      "id": "a-r5c05-notes",
+      "sheet": "sheet-a",
+      "source_asset": "/assets/desktop-icons/slices/sheet-a/a-r5c05-notes.png",
+      "derived_asset": "/assets/desktop-icons/beveled/sheet-a/a-r5c05-notes.png",
+      "source_sha256": "5baced60d91e53795c3db86e85e17a17e3dda7d32f2f96042442531e429d9fc1",
+      "derived_sha256": "b0a86f3b2cac5e79e5898eb8162e8580647851f1d95c9f08668265c8421e23e5"
+    },
+    {
+      "id": "a-r5c06-drawing",
+      "sheet": "sheet-a",
+      "source_asset": "/assets/desktop-icons/slices/sheet-a/a-r5c06-drawing.png",
+      "derived_asset": "/assets/desktop-icons/beveled/sheet-a/a-r5c06-drawing.png",
+      "source_sha256": "beabdbca55f342535b5e551cc8d1cd247e86d2e434bf45e1e03dba8f8fe1d21a",
+      "derived_sha256": "c28790b2d3b3dc55c949113343327b61f427ba42655573304e3ead434570e791"
+    },
+    {
+      "id": "a-r5c07-3d-viewer",
+      "sheet": "sheet-a",
+      "source_asset": "/assets/desktop-icons/slices/sheet-a/a-r5c07-3d-viewer.png",
+      "derived_asset": "/assets/desktop-icons/beveled/sheet-a/a-r5c07-3d-viewer.png",
+      "source_sha256": "21a5c1bd5a8c5d245efb0380ad50463708ae6a8c826b2b17b6ca07de98ae2cdd",
+      "derived_sha256": "b5c22d995f59a1e918b175ebd367a91deb4293d1dd8ef789a6fb07b628a0f973"
+    },
+    {
+      "id": "a-r5c08-maps",
+      "sheet": "sheet-a",
+      "source_asset": "/assets/desktop-icons/slices/sheet-a/a-r5c08-maps.png",
+      "derived_asset": "/assets/desktop-icons/beveled/sheet-a/a-r5c08-maps.png",
+      "source_sha256": "0bb95b351b694e0e6bb237d07aaf2b3c03b134faba6215c5976758c4fd36ae84",
+      "derived_sha256": "923d7d86c4873e9c180e1b728a94ecd2e85d777dfac65c0eab20da26fbce03b2"
+    },
+    {
+      "id": "a-r5c09-science",
+      "sheet": "sheet-a",
+      "source_asset": "/assets/desktop-icons/slices/sheet-a/a-r5c09-science.png",
+      "derived_asset": "/assets/desktop-icons/beveled/sheet-a/a-r5c09-science.png",
+      "source_sha256": "c85fbda6047fa6b90dbd4b6892bcae424a7d3ed66e7b5688b901f394e39e0008",
+      "derived_sha256": "60e73e1b19957a3c116b6903d1b18321f4153d5f5f6d1c54fa806f16930019fe"
+    },
+    {
+      "id": "a-r5c10-robotics",
+      "sheet": "sheet-a",
+      "source_asset": "/assets/desktop-icons/slices/sheet-a/a-r5c10-robotics.png",
+      "derived_asset": "/assets/desktop-icons/beveled/sheet-a/a-r5c10-robotics.png",
+      "source_sha256": "f2e850e3e3b39fcf07b4a3b31c4221a281caa4317534f9cadea1b21de0938bab",
+      "derived_sha256": "a36bdfb1c02fa8c6ebec20481f194a049d7cf289bf1af5ebcd87c2f1778f6ccc"
+    },
+    {
+      "id": "b-r1c01-aurora-desktop",
+      "sheet": "sheet-b",
+      "source_asset": "/assets/desktop-icons/slices/sheet-b/b-r1c01-aurora-desktop.png",
+      "derived_asset": "/assets/desktop-icons/beveled/sheet-b/b-r1c01-aurora-desktop.png",
+      "source_sha256": "c28192bc7ac5b3f15e69dd4386bbb4a82e931b4864167f07796d86b43b82fcc4",
+      "derived_sha256": "0c9ee0529e1311cc8581f97e712399867225f0c14734c25c49845e9e2187524e"
+    },
+    {
+      "id": "b-r1c02-marine-desktop",
+      "sheet": "sheet-b",
+      "source_asset": "/assets/desktop-icons/slices/sheet-b/b-r1c02-marine-desktop.png",
+      "derived_asset": "/assets/desktop-icons/beveled/sheet-b/b-r1c02-marine-desktop.png",
+      "source_sha256": "bcf3d9fe319d09b7f5a29df23aeca2fec4a3ba5782faff9d37c2f8d05239c85a",
+      "derived_sha256": "dfb7854075cbf58e39fe01e0983d28e5f0c3d2a1a76bf6f5edaba9b262cf2658"
+    },
+    {
+      "id": "b-r1c03-terminal",
+      "sheet": "sheet-b",
+      "source_asset": "/assets/desktop-icons/slices/sheet-b/b-r1c03-terminal.png",
+      "derived_asset": "/assets/desktop-icons/beveled/sheet-b/b-r1c03-terminal.png",
+      "source_sha256": "8a45a5f62213a3387354bfb0f1ba1280a5b652ea33ce5c1e5f0edd5eaf192e87",
+      "derived_sha256": "9664f41f2bcd4133e49ba4fb1ea92b3565134464199972220481b404a6fb4639"
+    },
+    {
+      "id": "b-r1c04-files",
+      "sheet": "sheet-b",
+      "source_asset": "/assets/desktop-icons/slices/sheet-b/b-r1c04-files.png",
+      "derived_asset": "/assets/desktop-icons/beveled/sheet-b/b-r1c04-files.png",
+      "source_sha256": "e54979eac673b2728bffac5daea74485c4ea7b294e153dd9f6168f81b27ebcf2",
+      "derived_sha256": "c3cb713f9be731197eeb154268274fb02b71f12af92ad87fc17067eda3d3214d"
+    },
+    {
+      "id": "b-r1c05-web-browser",
+      "sheet": "sheet-b",
+      "source_asset": "/assets/desktop-icons/slices/sheet-b/b-r1c05-web-browser.png",
+      "derived_asset": "/assets/desktop-icons/beveled/sheet-b/b-r1c05-web-browser.png",
+      "source_sha256": "4e1cc8ef4c2235acea8b58e2ebb44b05fecadcac4a1966fedfd7885260377138",
+      "derived_sha256": "71382d9f8876c9ca06cf4667210847851535ad18c08617d5d7d7799370e5eb11"
+    },
+    {
+      "id": "b-r1c06-mail",
+      "sheet": "sheet-b",
+      "source_asset": "/assets/desktop-icons/slices/sheet-b/b-r1c06-mail.png",
+      "derived_asset": "/assets/desktop-icons/beveled/sheet-b/b-r1c06-mail.png",
+      "source_sha256": "1b38b754114cd311dff471d9366922d90083d73d29d2b767a6a1add6e3cc2cf4",
+      "derived_sha256": "f01d1cc01f00165c71a1f9f65d71002d9ca3d552561b302a02422113549c33cd"
+    },
+    {
+      "id": "b-r1c07-calendar",
+      "sheet": "sheet-b",
+      "source_asset": "/assets/desktop-icons/slices/sheet-b/b-r1c07-calendar.png",
+      "derived_asset": "/assets/desktop-icons/beveled/sheet-b/b-r1c07-calendar.png",
+      "source_sha256": "6ec5d14f8558436cbd07a71fa7c6a3b7774363a8a2fc13295a76a0f54620d087",
+      "derived_sha256": "51d98dc724771d2ef25970e9dd791ec5f98827ff2bf7a5a76dfec13660891ba8"
+    },
+    {
+      "id": "b-r1c08-photos",
+      "sheet": "sheet-b",
+      "source_asset": "/assets/desktop-icons/slices/sheet-b/b-r1c08-photos.png",
+      "derived_asset": "/assets/desktop-icons/beveled/sheet-b/b-r1c08-photos.png",
+      "source_sha256": "d6aa61f9bdd785891c6807f4837c4647ee19672f9f68284dbd4dbb42ba9f8a48",
+      "derived_sha256": "bcfdf37dbbb8f141d15150646c616a987ead44414a1fe7b1a876258210dc2d02"
+    },
+    {
+      "id": "b-r1c09-music",
+      "sheet": "sheet-b",
+      "source_asset": "/assets/desktop-icons/slices/sheet-b/b-r1c09-music.png",
+      "derived_asset": "/assets/desktop-icons/beveled/sheet-b/b-r1c09-music.png",
+      "source_sha256": "6eb49a9f3549ea63ceb4f9094b1ef6fd9105da5f339446e74e7daf2ecf082041",
+      "derived_sha256": "de00fd2e834ecd591a83f27cbafcf9798a5ebfb94299905a195db60c9d387307"
+    },
+    {
+      "id": "b-r1c10-videos",
+      "sheet": "sheet-b",
+      "source_asset": "/assets/desktop-icons/slices/sheet-b/b-r1c10-videos.png",
+      "derived_asset": "/assets/desktop-icons/beveled/sheet-b/b-r1c10-videos.png",
+      "source_sha256": "68ed92708f0ce034bc202bb3ab588bf4d241b1f4b447cd55493ea330c44a5b38",
+      "derived_sha256": "3da3d3cd7f37a17c1cf4667c929d5c858565b419f76b6769127cec876bd63fcc"
+    },
+    {
+      "id": "b-r2c01-paint",
+      "sheet": "sheet-b",
+      "source_asset": "/assets/desktop-icons/slices/sheet-b/b-r2c01-paint.png",
+      "derived_asset": "/assets/desktop-icons/beveled/sheet-b/b-r2c01-paint.png",
+      "source_sha256": "db751d5a07248bdaa61fe2ce08be8aa69a35bac9284d6721f6e8617bc9902c89",
+      "derived_sha256": "6ede6ebb18869b57a98fdd649ecdd2acdbb8d76207996e840439452245656011"
+    },
+    {
+      "id": "b-r2c02-text-editor",
+      "sheet": "sheet-b",
+      "source_asset": "/assets/desktop-icons/slices/sheet-b/b-r2c02-text-editor.png",
+      "derived_asset": "/assets/desktop-icons/beveled/sheet-b/b-r2c02-text-editor.png",
+      "source_sha256": "654877a811ad292fefa442e25ae13bb3d440c9b65acc9855a91b18a9b1382d16",
+      "derived_sha256": "e99a8aacbf01aec8cb6c84abf576a310db8310ab4390faff67bed3fb98189943"
+    },
+    {
+      "id": "b-r2c03-spreadsheet",
+      "sheet": "sheet-b",
+      "source_asset": "/assets/desktop-icons/slices/sheet-b/b-r2c03-spreadsheet.png",
+      "derived_asset": "/assets/desktop-icons/beveled/sheet-b/b-r2c03-spreadsheet.png",
+      "source_sha256": "7d9f070eceb69739d4155f6b144d307e07d0771fdadc3292b0370932a872f98d",
+      "derived_sha256": "e045a43da9756aab6d7e1f26fa8c2783bbba0a176b087b7e0679ca49357c4fbd"
+    },
+    {
+      "id": "b-r2c04-presentations",
+      "sheet": "sheet-b",
+      "source_asset": "/assets/desktop-icons/slices/sheet-b/b-r2c04-presentations.png",
+      "derived_asset": "/assets/desktop-icons/beveled/sheet-b/b-r2c04-presentations.png",
+      "source_sha256": "0b000841bb11727289dde1ac2ecd3b9ea182953da0fa2e1a59c7f999ed80400a",
+      "derived_sha256": "5c361cbc4b358d370f28d1658f47f6d12d3870b3cc4c9a22a18b3f4901ee8921"
+    },
+    {
+      "id": "b-r2c05-calculator",
+      "sheet": "sheet-b",
+      "source_asset": "/assets/desktop-icons/slices/sheet-b/b-r2c05-calculator.png",
+      "derived_asset": "/assets/desktop-icons/beveled/sheet-b/b-r2c05-calculator.png",
+      "source_sha256": "7b1bf0a3b5098a04b07ffb5d97d42748f676c82a22d2409e42dfee58fc06f6f7",
+      "derived_sha256": "65a4d18868157234fbaf3369d896c1f5674c8efd97a828289d8aa9795e3000b1"
+    },
+    {
+      "id": "b-r2c06-chess",
+      "sheet": "sheet-b",
+      "source_asset": "/assets/desktop-icons/slices/sheet-b/b-r2c06-chess.png",
+      "derived_asset": "/assets/desktop-icons/beveled/sheet-b/b-r2c06-chess.png",
+      "source_sha256": "d39f5e364d0f74827ccaf80823482e2793250ada49e1aad1652c7c0927a062d7",
+      "derived_sha256": "14f44ea19421a28b1ff66502e88637ebaa478e80e84ae22a82be2f012b4fbef6"
+    },
+    {
+      "id": "b-r2c07-games",
+      "sheet": "sheet-b",
+      "source_asset": "/assets/desktop-icons/slices/sheet-b/b-r2c07-games.png",
+      "derived_asset": "/assets/desktop-icons/beveled/sheet-b/b-r2c07-games.png",
+      "source_sha256": "bd35a1293a17ab056bc2432f03f4624184e82c75c6d66f14896d366fe44b6916",
+      "derived_sha256": "89991a9bf23bc4c70f2cdb8576ce9573a10d55d8d2886d3e7b6e5e2509db9aa3"
+    },
+    {
+      "id": "b-r2c08-settings",
+      "sheet": "sheet-b",
+      "source_asset": "/assets/desktop-icons/slices/sheet-b/b-r2c08-settings.png",
+      "derived_asset": "/assets/desktop-icons/beveled/sheet-b/b-r2c08-settings.png",
+      "source_sha256": "3d87a743d41501eac9979343d95221914cbe428d58bbe6b2656d28c17bd684c6",
+      "derived_sha256": "442fe7fac66c83469693f356f08621bf7da0fb847675d682454169626215806e"
+    },
+    {
+      "id": "b-r2c09-security",
+      "sheet": "sheet-b",
+      "source_asset": "/assets/desktop-icons/slices/sheet-b/b-r2c09-security.png",
+      "derived_asset": "/assets/desktop-icons/beveled/sheet-b/b-r2c09-security.png",
+      "source_sha256": "6197fba2a157fbbd9114813a4a3a0b228b6cca58e39b1aef8b3a5b9698364c12",
+      "derived_sha256": "48a58ca2ca26f771c10cfc20edd753924954035af4a70d52b83a43ac449070cf"
+    },
+    {
+      "id": "b-r2c10-help",
+      "sheet": "sheet-b",
+      "source_asset": "/assets/desktop-icons/slices/sheet-b/b-r2c10-help.png",
+      "derived_asset": "/assets/desktop-icons/beveled/sheet-b/b-r2c10-help.png",
+      "source_sha256": "7d5496e6ce600d30a13cf6ed09bbfc21f214544b90b16b7e89bfdd5a228213d7",
+      "derived_sha256": "f872a49ee1af3311fbeb57c650585f54db9451ab7f3dd27b74dda11233b6ad3e"
+    },
+    {
+      "id": "b-r3c01-gates-desktop",
+      "sheet": "sheet-b",
+      "source_asset": "/assets/desktop-icons/slices/sheet-b/b-r3c01-gates-desktop.png",
+      "derived_asset": "/assets/desktop-icons/beveled/sheet-b/b-r3c01-gates-desktop.png",
+      "source_sha256": "bca87c723810d8d548f1e813f0bb28e9abc5bbbb069de8b5d4a2338864078313",
+      "derived_sha256": "8ee269692e9a0dd2ad27b20d5b927abd04af09a9cf8b23c4bee485254c80b064"
+    },
+    {
+      "id": "b-r3c02-spit-fire-desktop",
+      "sheet": "sheet-b",
+      "source_asset": "/assets/desktop-icons/slices/sheet-b/b-r3c02-spit-fire-desktop.png",
+      "derived_asset": "/assets/desktop-icons/beveled/sheet-b/b-r3c02-spit-fire-desktop.png",
+      "source_sha256": "a1219306883c32b8f42dc3406503b6618e7c9b904e07751898641302e4dffb40",
+      "derived_sha256": "28cb33294466f0c5147790b3ef7831c28c63b5e3adbe48885d56a190520d27f0"
+    },
+    {
+      "id": "b-r3c03-terminal",
+      "sheet": "sheet-b",
+      "source_asset": "/assets/desktop-icons/slices/sheet-b/b-r3c03-terminal.png",
+      "derived_asset": "/assets/desktop-icons/beveled/sheet-b/b-r3c03-terminal.png",
+      "source_sha256": "9d47b0baae2344fca735003ede00159773bab0ce982692928cc5c30c1e677bf4",
+      "derived_sha256": "b550038154f03846f071da07e84ea7400becc0b37073fb5c01b072f0a72e62be"
+    },
+    {
+      "id": "b-r3c04-files",
+      "sheet": "sheet-b",
+      "source_asset": "/assets/desktop-icons/slices/sheet-b/b-r3c04-files.png",
+      "derived_asset": "/assets/desktop-icons/beveled/sheet-b/b-r3c04-files.png",
+      "source_sha256": "db6b2ec2282c72344b6d7236c8540a2eb74564ce026880866da2a2dc4cce4400",
+      "derived_sha256": "66124e77e4fe3a89f74e431885174880149a51296803bc399ee78798c1500ff7"
+    },
+    {
+      "id": "b-r3c05-web-browser",
+      "sheet": "sheet-b",
+      "source_asset": "/assets/desktop-icons/slices/sheet-b/b-r3c05-web-browser.png",
+      "derived_asset": "/assets/desktop-icons/beveled/sheet-b/b-r3c05-web-browser.png",
+      "source_sha256": "f8b9651af370e4e483b468efc090a35680abb10d514825e23a03196337622158",
+      "derived_sha256": "4464f11a54b1813f93b7261d68c02fd1264c70736642849e620bea5dbac55601"
+    },
+    {
+      "id": "b-r3c06-mail",
+      "sheet": "sheet-b",
+      "source_asset": "/assets/desktop-icons/slices/sheet-b/b-r3c06-mail.png",
+      "derived_asset": "/assets/desktop-icons/beveled/sheet-b/b-r3c06-mail.png",
+      "source_sha256": "fa2e78f203e1acb0536756853c5c585bef6f54dbb4abbf39bbfc05a2d119eff5",
+      "derived_sha256": "59d700d19f8bd5254b3f6cf377cae22ec2cf5a15d5fe71a3328ed491c82402f1"
+    },
+    {
+      "id": "b-r3c07-calendar",
+      "sheet": "sheet-b",
+      "source_asset": "/assets/desktop-icons/slices/sheet-b/b-r3c07-calendar.png",
+      "derived_asset": "/assets/desktop-icons/beveled/sheet-b/b-r3c07-calendar.png",
+      "source_sha256": "71223d0ec1cbc315be9c13e70957de7fa364996e33e34fce554b990c1330bfa5",
+      "derived_sha256": "121a902c1b8b53859e29c58135c3ef846ac011b038200c845fe1b2c5dc3bd716"
+    },
+    {
+      "id": "b-r3c08-photos",
+      "sheet": "sheet-b",
+      "source_asset": "/assets/desktop-icons/slices/sheet-b/b-r3c08-photos.png",
+      "derived_asset": "/assets/desktop-icons/beveled/sheet-b/b-r3c08-photos.png",
+      "source_sha256": "aa368f0af20c79f62c1550f800e47f293669244e63392a3ed8946ca11440ec9d",
+      "derived_sha256": "95b64f9238f15f33085807ebe465dd1f474f09bbfa9d6a6cbd8505d1d62e16d0"
+    },
+    {
+      "id": "b-r3c09-music",
+      "sheet": "sheet-b",
+      "source_asset": "/assets/desktop-icons/slices/sheet-b/b-r3c09-music.png",
+      "derived_asset": "/assets/desktop-icons/beveled/sheet-b/b-r3c09-music.png",
+      "source_sha256": "ba804fed36e8df50ace2e65e11abf5f227394d2630e0b70bdce5b011c3e4155e",
+      "derived_sha256": "300655fdf347f1ea659021c698f5d3d73668dda696e61e3a441869440f5453f1"
+    },
+    {
+      "id": "b-r3c10-videos",
+      "sheet": "sheet-b",
+      "source_asset": "/assets/desktop-icons/slices/sheet-b/b-r3c10-videos.png",
+      "derived_asset": "/assets/desktop-icons/beveled/sheet-b/b-r3c10-videos.png",
+      "source_sha256": "05c77f0e76bcdce248f291d0bc0231c54e92773d136d234e34d2003556b322ec",
+      "derived_sha256": "f6ad38040ed6a156ac6124f79d4ed7cdc70e202fb44c7046200cbb8fe0e44f93"
+    },
+    {
+      "id": "b-r4c01-paint",
+      "sheet": "sheet-b",
+      "source_asset": "/assets/desktop-icons/slices/sheet-b/b-r4c01-paint.png",
+      "derived_asset": "/assets/desktop-icons/beveled/sheet-b/b-r4c01-paint.png",
+      "source_sha256": "7ca1eb89b4e2148c6263ceaca19f24014a33c85a150f995115b2e09054c9aa95",
+      "derived_sha256": "8deb0b13f27a7eb23fef9b966e9de2497c3c696d767bb3514abccdaf0d9a72fc"
+    },
+    {
+      "id": "b-r4c02-text-editor",
+      "sheet": "sheet-b",
+      "source_asset": "/assets/desktop-icons/slices/sheet-b/b-r4c02-text-editor.png",
+      "derived_asset": "/assets/desktop-icons/beveled/sheet-b/b-r4c02-text-editor.png",
+      "source_sha256": "62a57edcd7f61b8ad6c1444e11ae5d382acc46c0f429a8b5659618e4a984085b",
+      "derived_sha256": "04654b9846916ca4b7580bc50e58efaae6238b1dc42640373ab9cac4607eefe8"
+    },
+    {
+      "id": "b-r4c03-spreadsheet",
+      "sheet": "sheet-b",
+      "source_asset": "/assets/desktop-icons/slices/sheet-b/b-r4c03-spreadsheet.png",
+      "derived_asset": "/assets/desktop-icons/beveled/sheet-b/b-r4c03-spreadsheet.png",
+      "source_sha256": "c3ad7809e923920661e2b04477bd7cf8db063cf9fe479f61a13167890186ea7d",
+      "derived_sha256": "8a16ffa9c779acdcb1fcb14eca905ae1ca2dc49f26a46fdc8c8c8fe6461d5a5d"
+    },
+    {
+      "id": "b-r4c04-presentations",
+      "sheet": "sheet-b",
+      "source_asset": "/assets/desktop-icons/slices/sheet-b/b-r4c04-presentations.png",
+      "derived_asset": "/assets/desktop-icons/beveled/sheet-b/b-r4c04-presentations.png",
+      "source_sha256": "12a14b45568f603df475dd61dea52d64e63edfac7b1979c492bdd77a4171c344",
+      "derived_sha256": "fcc9f3cee0239c0ec059d84de365d89d13a2040d3b142af4898d424cddefc995"
+    },
+    {
+      "id": "b-r4c05-calculator",
+      "sheet": "sheet-b",
+      "source_asset": "/assets/desktop-icons/slices/sheet-b/b-r4c05-calculator.png",
+      "derived_asset": "/assets/desktop-icons/beveled/sheet-b/b-r4c05-calculator.png",
+      "source_sha256": "5998fdfce09db548853e1ebb76139dddefb605ce60ccad1d65f9c9b910f8db64",
+      "derived_sha256": "ab77ed1a32dcffc67842c34fb976ae854f9cfa20a3640a78283d984ffba632a9"
+    },
+    {
+      "id": "b-r4c06-chess",
+      "sheet": "sheet-b",
+      "source_asset": "/assets/desktop-icons/slices/sheet-b/b-r4c06-chess.png",
+      "derived_asset": "/assets/desktop-icons/beveled/sheet-b/b-r4c06-chess.png",
+      "source_sha256": "c9a11eff66ca4521182324e5219b4dd3b7408039692a93a9925b74dc162b05aa",
+      "derived_sha256": "d23e08a733ebb7909f7ed8ab19628d294d64f7772993facbc55fc751ef2760c8"
+    },
+    {
+      "id": "b-r4c07-games",
+      "sheet": "sheet-b",
+      "source_asset": "/assets/desktop-icons/slices/sheet-b/b-r4c07-games.png",
+      "derived_asset": "/assets/desktop-icons/beveled/sheet-b/b-r4c07-games.png",
+      "source_sha256": "63ff1273fdf53ec078db8ce4231127e695f381b783ec8c286457a1638a36af68",
+      "derived_sha256": "19305c7f718fe2a31644e30e1fd6c4e1dd06ecae808f2db1ce0494325392c82c"
+    },
+    {
+      "id": "b-r4c08-settings",
+      "sheet": "sheet-b",
+      "source_asset": "/assets/desktop-icons/slices/sheet-b/b-r4c08-settings.png",
+      "derived_asset": "/assets/desktop-icons/beveled/sheet-b/b-r4c08-settings.png",
+      "source_sha256": "6f241c5c41e87d8323c8d5b3d18c7441acf46b2d65b576d0516e3e8c073865ac",
+      "derived_sha256": "3a044c48a0bd95a333e0dc59152ec97d3f9db59ac94748c2b603bd5b3a367631"
+    },
+    {
+      "id": "b-r4c09-security",
+      "sheet": "sheet-b",
+      "source_asset": "/assets/desktop-icons/slices/sheet-b/b-r4c09-security.png",
+      "derived_asset": "/assets/desktop-icons/beveled/sheet-b/b-r4c09-security.png",
+      "source_sha256": "ee9714a001e52292d2531174b58e33ab93500dd8844189277ea0a6047f4313fc",
+      "derived_sha256": "899b2b22762c47f808647cca8e0a498ea68f26613a2c455c547759eae1f06b21"
+    },
+    {
+      "id": "b-r4c10-help",
+      "sheet": "sheet-b",
+      "source_asset": "/assets/desktop-icons/slices/sheet-b/b-r4c10-help.png",
+      "derived_asset": "/assets/desktop-icons/beveled/sheet-b/b-r4c10-help.png",
+      "source_sha256": "c67f913a26fc3572887d83927f9e2dc60a1c6c8290980267f2004daf8a9f65d3",
+      "derived_sha256": "dc9b3275e98f8e8c50b4c9f17887d79f23f7d4951d8a743c3d8fe28210b10fb4"
+    },
+    {
+      "id": "b-r5c01-system-monitor",
+      "sheet": "sheet-b",
+      "source_asset": "/assets/desktop-icons/slices/sheet-b/b-r5c01-system-monitor.png",
+      "derived_asset": "/assets/desktop-icons/beveled/sheet-b/b-r5c01-system-monitor.png",
+      "source_sha256": "ba19a223bf3e6b180b9dd2d9f4a4d38d3af00cb55173a0ee6a7e718b3b96b369",
+      "derived_sha256": "8fb89066c33972dc6b5e818085971e1660641294958f81ac2c832e201358a6cb"
+    },
+    {
+      "id": "b-r5c02-disk-utility",
+      "sheet": "sheet-b",
+      "source_asset": "/assets/desktop-icons/slices/sheet-b/b-r5c02-disk-utility.png",
+      "derived_asset": "/assets/desktop-icons/beveled/sheet-b/b-r5c02-disk-utility.png",
+      "source_sha256": "4fd8b34821ab24acb3033aa03f6518264d68e91b22807ae0f3f3bafb72247876",
+      "derived_sha256": "86ada63c361e577516311d385ac1e837084f0e82033bdcd79fc120149594c030"
+    },
+    {
+      "id": "b-r5c03-partition-manager",
+      "sheet": "sheet-b",
+      "source_asset": "/assets/desktop-icons/slices/sheet-b/b-r5c03-partition-manager.png",
+      "derived_asset": "/assets/desktop-icons/beveled/sheet-b/b-r5c03-partition-manager.png",
+      "source_sha256": "625f1443da94ac46b4c06d35ae13b386a30129ba3b9b31f426ca7eafaf4fb915",
+      "derived_sha256": "c33ba08c1653f733d1b6fccddc2a08fc642d1a814971211297cb5397ba0d063b"
+    },
+    {
+      "id": "b-r5c04-backup-restore",
+      "sheet": "sheet-b",
+      "source_asset": "/assets/desktop-icons/slices/sheet-b/b-r5c04-backup-restore.png",
+      "derived_asset": "/assets/desktop-icons/beveled/sheet-b/b-r5c04-backup-restore.png",
+      "source_sha256": "9cf02eab1d39b8907c572d0e426f2643c21c1d7f8db70219ec1868519736ff3b",
+      "derived_sha256": "980140130c27340dca356051b39c573d86c5da20829848aac94e18faf57d1eae"
+    },
+    {
+      "id": "b-r5c05-package-manager",
+      "sheet": "sheet-b",
+      "source_asset": "/assets/desktop-icons/slices/sheet-b/b-r5c05-package-manager.png",
+      "derived_asset": "/assets/desktop-icons/beveled/sheet-b/b-r5c05-package-manager.png",
+      "source_sha256": "5cf3ef0ffc02f641caa3f56b8bceee88a6a3eb188bb0976baf2f72d269f95df6",
+      "derived_sha256": "63e3a10e1afbf5761fa8f6c1c5853f7a9ef68af1e23eedb2fad97ca6b3be9211"
+    },
+    {
+      "id": "b-r5c06-network-manager",
+      "sheet": "sheet-b",
+      "source_asset": "/assets/desktop-icons/slices/sheet-b/b-r5c06-network-manager.png",
+      "derived_asset": "/assets/desktop-icons/beveled/sheet-b/b-r5c06-network-manager.png",
+      "source_sha256": "da878573967209121804282f8f1836fabf415c2a91f8fab7a38c94ce8e59a54b",
+      "derived_sha256": "8b1f0b63d87ddba65c48e6dc298e540aa25f58ea8b95b497204430dca80bfc6e"
+    },
+    {
+      "id": "b-r5c07-bluetooth",
+      "sheet": "sheet-b",
+      "source_asset": "/assets/desktop-icons/slices/sheet-b/b-r5c07-bluetooth.png",
+      "derived_asset": "/assets/desktop-icons/beveled/sheet-b/b-r5c07-bluetooth.png",
+      "source_sha256": "60a4ecadfc85f1f1e94599829223003780e4c28e06285d035155e9e38a1ea90b",
+      "derived_sha256": "4f0d9aa92a7017c7aa48c74022ee4dd459044649f469d4c0c2919f21265a8efe"
+    },
+    {
+      "id": "b-r5c08-print-manager",
+      "sheet": "sheet-b",
+      "source_asset": "/assets/desktop-icons/slices/sheet-b/b-r5c08-print-manager.png",
+      "derived_asset": "/assets/desktop-icons/beveled/sheet-b/b-r5c08-print-manager.png",
+      "source_sha256": "e876d36eb39ffc4e48b9340f7a98255a5a04059417fb35e27bfbb68ef7f26287",
+      "derived_sha256": "d9f8065e07cfc59a0bce13384e470e693f40a07dc2bea8a76ef7d1cf5206d1df"
+    },
+    {
+      "id": "b-r5c09-power-management",
+      "sheet": "sheet-b",
+      "source_asset": "/assets/desktop-icons/slices/sheet-b/b-r5c09-power-management.png",
+      "derived_asset": "/assets/desktop-icons/beveled/sheet-b/b-r5c09-power-management.png",
+      "source_sha256": "dc496ef9c2a1873bea4329fb5c6eca62f240e6a2a839232980990078c28f2bbe",
+      "derived_sha256": "f0ebbc062756c8c8d206b0a4f235baf93318d8620b9426386e54b46f722c9fc5"
+    },
+    {
+      "id": "b-r5c10-advanced-tools",
+      "sheet": "sheet-b",
+      "source_asset": "/assets/desktop-icons/slices/sheet-b/b-r5c10-advanced-tools.png",
+      "derived_asset": "/assets/desktop-icons/beveled/sheet-b/b-r5c10-advanced-tools.png",
+      "source_sha256": "303d28febda2589fd2042807a7c0627bd212bbb5b7c033856d5108565731c874",
+      "derived_sha256": "98fec9cfce18c1f280576d31dfffdd9910759b2f993f28642e76c77bff1b23d8"
+    }
+  ]
+}
