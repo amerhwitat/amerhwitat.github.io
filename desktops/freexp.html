@@ -1,11 +1,12 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-webui-desktop="freexp">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#1767ad">
 <title>FreeXP Desktop Preview · Q4OS / Trinity-inspired profile</title>
 <meta name="description" content="A clean-room, interactive browser preview of the FreeXP desktop profile for Chimera II OS and OctavianOS.">
+<link rel="stylesheet" href="/assets/desktop-reference-previews/web-ui-wallpaper-picker.css">
 <style>
 :root{color-scheme:light;--blue:#1676c8;--deep:#104d91;--line:#8bbbe2;--glass:#eaf6ffdc;--ink:#17334e;--muted:#526d86}
 *{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;font:14px/1.45 "Segoe UI",Tahoma,Arial,sans-serif;color:var(--ink)}
@@ -33,7 +34,12 @@ body{background:linear-gradient(180deg,#68c8f3 0%,#b9e9fb 47%,#e4f8ff 58%,#6ebc5
 </style>
 </head>
 <body>
-<div class="wallpaper" aria-hidden="true"></div>
+<div class="wallpaper" data-wallpaper-target aria-hidden="true"></div>
+ <div class="webui-wallpaper-picker" data-webui-picker>
+   <button type="button" data-wallpaper-button title="Choose a concept background" aria-expanded="false">▧ Wallpaper</button>
+   <div class="webui-wallpaper-options" data-wallpaper-options hidden aria-label="Concept background choices"></div>
+ </div>
+ <div class="webui-wallpaper-toast" data-wallpaper-toast role="status" aria-live="polite"></div>
 <div class="topline"><b>F R E E X P</b><span>·</span><span>Q4OS / Trinity-inspired clean-room preview</span><a href="/desktops/index.html">Desktop gallery ↗</a></div>
 <div class="desktop-icons" aria-label="Desktop shortcuts">
   <button class="desk-icon" data-open="files"><svg viewBox="0 0 64 64"><use href="../assets/icons/chimera-octavian/catalog.svg#app-aurora-files"/></svg>My Documents</button>
@@ -111,5 +117,7 @@ body{background:linear-gradient(180deg,#68c8f3 0%,#b9e9fb 47%,#e4f8ff 58%,#6ebc5
   document.addEventListener("keydown",event=>{if(event.key==="Escape"){menu.classList.remove("open");start.setAttribute("aria-expanded","false");}});
 })();
 </script>
+<script src="/assets/desktop-reference-previews/WEB_UI_BACKGROUNDS.js"></script>
+<script src="/assets/desktop-reference-previews/web-ui-wallpaper-picker.js"></script>
 </body>
 </html>

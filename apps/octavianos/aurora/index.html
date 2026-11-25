@@ -1,7 +1,7 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-webui-desktop="octavian-aurora">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="dark">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="dark"><link rel="stylesheet" href="/assets/desktop-reference-previews/web-ui-wallpaper-picker.css">
 <title>Aurora Wayland Glass Desktop — OctavianOS</title>
 <style>
 :root{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#f6fbff;--glass:#10233bbf;--line:#ffffff2d;--accent:#9de6e4}
@@ -11,7 +11,13 @@
 @media(max-width:600px){.menus span:nth-child(n+3){display:none}.right span:nth-child(-n+2){display:none}.desktop{padding:12px}.window{width:calc(100vw - 120px);left:auto;right:8px;transform:translateY(-50%)}.windowbody{grid-template-columns:1fr}.sidebar{display:none}.content{padding:16px}.tiles{grid-template-columns:repeat(2,1fr)}.dock button{width:39px;height:40px;font-size:20px}.dock{gap:4px;padding:6px}}
 </style>
 </head>
-<body>
+<body data-wallpaper-target>
+ <div class="webui-wallpaper-picker" data-webui-picker>
+   <button type="button" data-wallpaper-button title="Choose a concept background" aria-expanded="false">▧ Wallpaper</button>
+   <div class="webui-wallpaper-options" data-wallpaper-options hidden aria-label="Concept background choices"></div>
+ </div>
+ <div class="webui-wallpaper-toast" data-wallpaper-toast role="status" aria-live="polite"></div>
+
 <header class="menu"><div class="logo">✦ Aurora</div><nav class="menus"><span>File</span><span>Edit</span><span>View</span><span>Window</span><span>Help</span></nav><div class="right"><span>◉</span><span>Wi‑Fi</span><span>Battery 98%</span><span id="provider-status" class="provider-status" role="status" aria-live="polite">Checking web providers…</span><span id="clock">--:--</span></div></header>
 <main class="desktop" aria-label="Aurora desktop prototype">
 <section class="shortcuts"><a class="shortcut" href="https://amerhwitat.github.io/apps/chimera-ii-os/web/artifact-library.html"><b><svg viewBox="0 0 64 64" aria-hidden="true"><use href="../../../assets/icons/chimera-octavian/catalog.svg#app-aurora-files"></use></svg></b><span>Files</span></a><a class="shortcut" href="https://amerhwitat.github.io/apps/index.html"><b><svg viewBox="0 0 64 64" aria-hidden="true"><use href="../../../assets/icons/chimera-octavian/catalog.svg#app-store"></use></svg></b><span>Applications</span></a><a class="shortcut" href="https://amerhwitat.github.io/apps/chimera-ii-os/web/system_control_center.html"><b><svg viewBox="0 0 64 64" aria-hidden="true"><use href="../../../assets/icons/chimera-octavian/catalog.svg#app-settings"></use></svg></b><span>Settings</span></a><a class="shortcut" href="https://amerhwitat.github.io/apps/aurora-glass-desktop/index.html"><b><svg viewBox="0 0 64 64" aria-hidden="true"><use href="../../../assets/icons/chimera-octavian/catalog.svg#app-photos"></use></svg></b><span>Wallpapers</span></a></section>
@@ -27,4 +33,6 @@ const updateProviderStatus=()=>{providerStatus.textContent='Web previews: '+read
 localLinks.forEach(link=>{link.dataset.providerState='checking';link.addEventListener('click',event=>{if(link.dataset.providerState!=='available'){event.preventDefault();say(link.dataset.providerState==='checking'?'Checking this web preview; retry shortly.':'This web preview is unavailable. Native Koronos launch is not connected.')}});fetch(link.href,{method:'HEAD',cache:'no-store',credentials:'same-origin'}).then(response=>{link.dataset.providerState=response.ok?'available':'unavailable';if(response.ok)ready++;else{failed++;link.setAttribute('aria-disabled','true');link.title='Web preview unavailable; native Koronos provider is not connected.'}}).catch(()=>{link.dataset.providerState='unavailable';failed++;link.setAttribute('aria-disabled','true');link.title='Web preview could not be verified; native Koronos provider is not connected.'}).finally(()=>{completed++;updateProviderStatus()})});
 if(!localLinks.length)updateProviderStatus();
 const tick=()=>document.getElementById('clock').textContent=new Date().toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'});tick();setInterval(tick,30000)})();</script>
+<script src="/assets/desktop-reference-previews/WEB_UI_BACKGROUNDS.js"></script>
+<script src="/assets/desktop-reference-previews/web-ui-wallpaper-picker.js"></script>
 </body></html>
