@@ -64,5 +64,24 @@ ol li{margin:.5em 0}ul li{margin:.35em 0}
 <li><a href="koronos-remediation-status.html">Koronos remediation status</a> and <a href="userspace-acceptance.html">production acceptance matrix</a> — outstanding runtime gaps.</li>
 </ul>
 <p>No synthetic readiness markers, placeholder providers, fabricated acceptance manifest, or production release are authorized.</p>
+<h2>Current execution and publication reconciliation — 25 November 2026</h2>
+<p><strong>Disposition: PRODUCTION RELEASE BLOCKED.</strong> The website status page is published from main commit <code>b9acd6c64796d5db1c086fa0773e88abfb0cbadf</code>; Pages deployment run <a href="https://github.com/amerhwitat/amerhwitat.github.io/actions/runs/45564053484">45564053484</a> completed successfully. This update is a status publication, not an OS runtime implementation or production release.</p>
+<h3>Remaining implementation and acceptance gates</h3>
+<ol>
+<li><strong>AP startup and measured SMP:</strong> implement real AP trampoline/startup, per-CPU initialization and interrupt/IPI routing; demonstrate bounded concurrent execution on at least two CPUs. The separate Chimera #321 QEMU boot matrix failed at AP startup.</li>
+<li><strong>Architecture scheduling:</strong> implement architecture context save/restore, independent guarded stacks, first-run entry and timer-driven preemption. Targeted CI tests are not a substitute for full runtime proof.</li>
+<li><strong>Persistent storage and VFS:</strong> implement block-device discovery/I/O, a general VFS and a persistent filesystem; verify write, sync, reboot and read-back durability.</li>
+<li><strong>Kernel-owned PID 1 and process lifecycle:</strong> implement a resident supervised init, address-space/process lifecycle, child create/exec/wait/reap, service dependency startup and restart.</li>
+<li><strong>Installed-root handoff:</strong> implement and verify a durable switch from the bootstrap initramfs to the installed root.</li>
+<li><strong>Installer and recovery:</strong> implement disk-writing transactions, validation, rollback and actual filesystem repair with postcondition checks.</li>
+<li><strong>Native desktops:</strong> demonstrate complete Aurora, Marine, FreeXP and FreeWin11 sessions with real graphics, input, compositor and process lifecycle traces.</li>
+<li><strong>Command, ISA and Windows compatibility:</strong> provide genuine implementations or verified providers, provenance/licensing and semantic conformance tests; do not count catalogue entries or stubs as implementations.</li>
+<li><strong>Six-case production certification:</strong> authenticate Live, Installer and Recovery under BIOS and UEFI on the same immutable ISO, with firmware/QEMU traces, ISO and init hashes, storage/installer/recovery postconditions and measured SMP evidence.</li>
+<li><strong>Production ISO publication:</strong> publish only after every preceding gate passes and the acceptance evidence is independently reviewed.</li>
+</ol>
+<h3>Octavian source synchronization</h3>
+<p>The source-snapshot workflow still requires a manual dispatch with <code>upstream_ref=feat/koronos-newc-initramfs-parser-20261119</code>. The connected GitHub actions expose no workflow-dispatch operation in this session, so no dispatch or successful synchronization is claimed. Snapshot metadata must remain tied to the actual source revision and hashes.</p>
+<h3>Repository and release boundary</h3>
+<p>ChimeraIIOS #320 and #321, OctavianOS #236 and #241, LinuxKoronos #7, and website #107 were rechecked on 25 November: all remain open and unmerged. Their latest cross-repository status comments are recorded in the respective PR conversations. No OS source commit, OS-repository Git push, PR merge, or production ISO publication is claimed by this status update. Hosted build/probe successes remain distinct from production acceptance.</p>
 <footer>Updated 25 November 2026. CI links are authoritative for run state; passing build and runtime checks must not be interpreted as production certification.</footer>
 </main></body></html>
