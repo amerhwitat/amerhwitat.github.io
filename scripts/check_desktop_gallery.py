@@ -123,8 +123,8 @@ bg_manifest_path = ROOT / "assets/desktop-reference-previews/BACKGROUNDS.json"
 if not bg_manifest_path.is_file():
     raise SystemExit("desktop background manifest is missing")
 bg_manifest = json.loads(bg_manifest_path.read_text(encoding="utf-8"))
-if bg_manifest.get("asset_count") != 25 or len(bg_manifest.get("images", [])) != 25:
-    raise SystemExit("desktop background manifest must contain all 25 supplied images")
+if bg_manifest.get("asset_count") != 30 or len(bg_manifest.get("images", [])) != 30:
+    raise SystemExit("desktop background manifest must contain all 30 supplied images")
 for record in bg_manifest["images"]:
     target = ROOT / record["asset"].lstrip("/")
     if not target.is_file():
@@ -132,7 +132,7 @@ for record in bg_manifest["images"]:
     if len(record.get("source_sha256", "")) != 64:
         raise SystemExit(f"supplied background SHA-256 is missing: {record['id']}")
 for rel, needle in (
-    ("desktops/background-references.html", "25 supplied images"),
+    ("desktops/background-references.html", "30 supplied images"),
     ("desktops/index.html", "background-references.html"),
     ("apps/os-desktop-hub/index.html", "background-references.html"),
     ("apps/desktop-showcase/index.html", "background-references.html"),
@@ -146,8 +146,8 @@ webui_manifest_path = ROOT / "assets/webui-desktop-wallpapers/MANIFEST.json"
 if not webui_manifest_path.is_file():
     raise SystemExit("Web UI wallpaper manifest is missing")
 webui_manifest = json.loads(webui_manifest_path.read_text(encoding="utf-8"))
-if webui_manifest.get("asset_count") != 6 or len(webui_manifest.get("images", [])) != 6:
-    raise SystemExit("Web UI wallpaper manifest must contain all six supplied images")
+if webui_manifest.get("asset_count") != 11 or len(webui_manifest.get("images", [])) != 11:
+    raise SystemExit("Web UI wallpaper manifest must contain all eleven supplied images")
 if not webui_manifest.get("concept_only"):
     raise SystemExit("Web UI wallpapers must remain concept-only")
 expected_webui_digests = {
@@ -157,6 +157,11 @@ expected_webui_digests = {
     "webui-04": "10e8be09c313bf4c8b4db3c9aebc1aee7c9e2ee2e19074960e2099b866303d25",
     "webui-05": "fffdb69a93b2cbc4f1cec28b1f725e2fb39463cbbd9b9db0503a1b1f690a9c8d",
     "webui-06": "74de519921e1c0fa32e3f63fd1afa2c57797214daa1949bd4d61c649548cf7b5",
+    "webui-07": "1c7558adb9bae47b4ebdfc6bd6a759a9fc6f8225fe85b18d829d27170f7bb466",
+    "webui-08": "1145e1b30515fbb1c7272e12dc90fce37b1e761d19d7f6722fbac46dc2f05c24",
+    "webui-09": "554e95fe01cbde3b1335c69c47f47ef0e7031f9c57446dfabaf556b8068bb549",
+    "webui-10": "03199b3507ce2bce6f106cd8356123148a064211c1397fe62f9a38bc01dee01f",
+    "webui-11": "11ac569e3b1cea232c9c6fd35f33f083693eaef83b5f9020f8433fb35c01532a",
 }
 for record in webui_manifest["images"]:
     for key in ("asset", "source_asset"):
