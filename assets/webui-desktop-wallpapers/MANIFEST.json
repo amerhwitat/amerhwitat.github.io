@@ -1,0 +1,154 @@
+{
+  "schema": "web-ui-desktop-wallpaper-manifest/v1",
+  "title": "Six supplied Web UI desktop wallpapers",
+  "generated": "2026-11-25",
+  "concept_only": true,
+  "purpose": "Selectable concept wallpapers for the interactive Web UI desktops and desktop gallery. Artwork only; no native session, installed wallpaper or production claim.",
+  "asset_count": 6,
+  "images": [
+    {
+      "id": "webui-01",
+      "label": "01 · Azure halo",
+      "original_filename": "WKKTrvNuMk9JmfegNyVBzBTxky_N7so1-tpUyGdZ8ULNSgPM5bJN5Jh5B17ema6QEVMxnFXifxZg4RaXYGHE6-W7eIJYP2lUQwYMLLm3zGOpx5PqRF2tE1nRN9PpvdBPTd29GmCaVRBrH1A7srKU_lD6Du1foAUJ3E2yiY4xQ3Z1WtfoE-2sNmA9LmH36Tz8.jpg",
+      "asset": "/assets/webui-desktop-wallpapers/previews/webui-01.jpg",
+      "source_asset": "/assets/webui-desktop-wallpapers/sources/webui-01.jpg",
+      "source_sha256": "bae117b30b119ffbb2df786c68fe47e4a475e9eebb2fe52e927d3fa772a74a35",
+      "source_bytes": 72246,
+      "source_dimensions": [
+        1280,
+        720
+      ],
+      "mean_rgb": [
+        82.0,
+        131.0,
+        204.0
+      ],
+      "primary_edition": "shared",
+      "used_by": [
+        "chimera",
+        "octavian",
+        "linuxkoronos"
+      ]
+    },
+    {
+      "id": "webui-02",
+      "label": "02 · Emerald horizon",
+      "original_filename": "GEC7bMr2xed9XAoaAIWCHrjZH5CJaaPuDGiAWj1ZzWpe2N-ce4OdZBnNei8nQg1SzjOC9cc0cW0s5nnfMAKUZ_a-Muv3jopg7DGMuzvffk71mwat6M_171L9mZDkrijqlP2DRdZVBWWCubl3_oNhCA7XyD9tUHnLswMEBB5cQuu91oxrD4SK-0aHCV3ZUooK.jpg",
+      "asset": "/assets/webui-desktop-wallpapers/previews/webui-02.jpg",
+      "source_asset": "/assets/webui-desktop-wallpapers/sources/webui-02.jpg",
+      "source_sha256": "24d832de2a8d190acddefbd5ece219aa7eebdd744017a1d10b50e7c5fdb50c22",
+      "source_bytes": 97146,
+      "source_dimensions": [
+        1200,
+        619
+      ],
+      "mean_rgb": [
+        84.0,
+        146.0,
+        148.0
+      ],
+      "primary_edition": "shared",
+      "used_by": [
+        "chimera",
+        "octavian",
+        "linuxkoronos"
+      ]
+    },
+    {
+      "id": "webui-03",
+      "label": "03 · Violet nebula",
+      "original_filename": "Mg1iL7Xn0bv1n20vz_MGqqE_TLule-AianWmId75SMGhovhnIVmqDOUIS4CEG7IUYIAyZUaJAjcGPoSQdxrGoh3dDDTlrrNMdD-3vraCI2YTsAHeaZdeW4tgRzAcGI7OPixvEdlbkkDnWo_frOs4rvzjJGnlaHndPh2aq_GUp0cY3jmyB5pYTy2lVN4tCjAe.jpg",
+      "asset": "/assets/webui-desktop-wallpapers/previews/webui-03.jpg",
+      "source_asset": "/assets/webui-desktop-wallpapers/sources/webui-03.jpg",
+      "source_sha256": "5bd9369a99246d348685f179df7152fdead7e5e7dcc19e48650bd228ebdf9cd0",
+      "source_bytes": 152271,
+      "source_dimensions": [
+        1700,
+        953
+      ],
+      "mean_rgb": [
+        66.0,
+        99.0,
+        145.0
+      ],
+      "primary_edition": "shared",
+      "used_by": [
+        "chimera",
+        "octavian",
+        "linuxkoronos"
+      ]
+    },
+    {
+      "id": "webui-04",
+      "label": "04 · Midnight beam",
+      "original_filename": "Zr_UoGk7HJxNAFspGE17raknMcXosu6wLt62Hb7saoyAOftykOG1CoK5_Q4dQjt3R7xZ6Dl-8VUL7ZvbRkqOzRD6DVJSs2AF3vrGNQqh-bCwwpekJlDEGpIx6kYfyIEuDLQ6dUaBGIW0WM9e3-kWYReD4Gt1S82_Ft4nUWzfjyoK1gi0yogvag6mrHRu4KmW.jpg",
+      "asset": "/assets/webui-desktop-wallpapers/previews/webui-04.jpg",
+      "source_asset": "/assets/webui-desktop-wallpapers/sources/webui-04.jpg",
+      "source_sha256": "10e8be09c313bf4c8b4db3c9aebc1aee7c9e2ee2e19074960e2099b866303d25",
+      "source_bytes": 92603,
+      "source_dimensions": [
+        1600,
+        900
+      ],
+      "mean_rgb": [
+        21.0,
+        47.0,
+        82.0
+      ],
+      "primary_edition": "shared",
+      "used_by": [
+        "chimera",
+        "octavian",
+        "linuxkoronos"
+      ]
+    },
+    {
+      "id": "webui-05",
+      "label": "05 · Magenta flux",
+      "original_filename": "yIMqOTiPEYbX8aoCqWW2Z0YRd6XJbmIA-fxt49D2eEUSndK7ODVaw9OGS-KByDKkaoQeun62UeMU7eVlMfHih5OMdFV61mNMcSgoWYiZf4e8XmtG0TGzgKXvm6_osgRBKnWKPvHFpiv6uqp_7m82cVuZkKLY2tw6uXR4pNWVPyEK0tBvWHYTUXmhH23oezCA.jpg",
+      "asset": "/assets/webui-desktop-wallpapers/previews/webui-05.jpg",
+      "source_asset": "/assets/webui-desktop-wallpapers/sources/webui-05.jpg",
+      "source_sha256": "fffdb69a93b2cbc4f1cec28b1f725e2fb39463cbbd9b9db0503a1b1f690a9c8d",
+      "source_bytes": 1885860,
+      "source_dimensions": [
+        3456,
+        2234
+      ],
+      "mean_rgb": [
+        94.0,
+        64.0,
+        83.0
+      ],
+      "primary_edition": "shared",
+      "used_by": [
+        "chimera",
+        "octavian",
+        "linuxkoronos"
+      ]
+    },
+    {
+      "id": "webui-06",
+      "label": "06 · Cyan bloom",
+      "original_filename": "MPGYuVs8n6OM3Z1nf4Jh50UWcq10hvV_lu9O7CNetE6sG_Cpf1oyKFUhSAvz1frbDGoqJPGoKjCqB3pEofb9B3vKfH0DGfXLRVOazcjFDgNAL0nnUvaq6sqwwrqQd8djXa1Rp7OgdQhPKkwIqOEVOTkQR9U59JsTmHZTmoL6qSTTpb4dfhkriVl3CFpTrYBD.jpg",
+      "asset": "/assets/webui-desktop-wallpapers/previews/webui-06.jpg",
+      "source_asset": "/assets/webui-desktop-wallpapers/sources/webui-06.jpg",
+      "source_sha256": "74de519921e1c0fa32e3f63fd1afa2c57797214daa1949bd4d61c649548cf7b5",
+      "source_bytes": 992828,
+      "source_dimensions": [
+        3840,
+        2160
+      ],
+      "mean_rgb": [
+        51.0,
+        95.0,
+        99.0
+      ],
+      "primary_edition": "shared",
+      "used_by": [
+        "chimera",
+        "octavian",
+        "linuxkoronos"
+      ]
+    }
+  ]
+}
