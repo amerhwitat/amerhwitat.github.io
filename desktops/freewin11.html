@@ -17,7 +17,7 @@ body{background:linear-gradient(135deg,#9dc7ee 0%,#dce9f8 43%,#b5c9e2 100%)}
 .desktop{position:fixed;inset:60px 0 82px;padding:22px;display:grid;grid-template-columns:repeat(auto-fit,92px);grid-auto-rows:100px;align-content:start;gap:12px}
 .shortcut{border:1px solid transparent;border-radius:12px;background:transparent;color:#17385c;text-shadow:0 1px 1px #fff;text-align:center;padding:8px 4px;cursor:pointer}
 .shortcut:hover,.shortcut:focus-visible{background:#ffffff70;border-color:#ffffffbd;outline:0}
-.shortcut .glyph{display:grid;place-items:center;width:48px;height:48px;margin:0 auto 6px;border:1px solid #ffffffb5;border-radius:14px;background:linear-gradient(145deg,#ffffffef,#dce9f7d9);box-shadow:0 5px 16px #2d527322;color:#2864bd}.glyph svg,.glyph img{width:34px;height:34px;display:block}.glyph img{object-fit:contain;border-radius:9px}.taskbtn svg,.taskbtn img{width:25px;height:25px;display:block;margin:auto}.taskbtn img{object-fit:contain;border-radius:6px}.app span svg,.app span img{width:26px;height:26px;display:block;margin:auto}.app span img{object-fit:contain;border-radius:6px}
+.shortcut .glyph{display:grid;place-items:center;width:48px;height:48px;margin:0 auto 6px;border:1px solid #ffffffb5;border-radius:14px;background:linear-gradient(145deg,#ffffffef,#dce9f7d9);box-shadow:0 5px 16px #2d527322;color:#2864bd}.glyph svg,.glyph img{width:34px;height:34px;display:block}.glyph img{object-fit:contain;border-radius:10px;box-shadow:inset 0 1px 0 #ffffffd0,inset 0 -1px 0 #10274480,0 2px 6px #10274433}.taskbtn svg,.taskbtn img{width:25px;height:25px;display:block;margin:auto}.taskbtn img{object-fit:contain;border-radius:7px;box-shadow:inset 0 1px 0 #ffffffd0,inset 0 -1px 0 #10274480,0 1px 4px #10274433}.app span svg,.app span img{width:26px;height:26px;display:block;margin:auto}.app span img{object-fit:contain;border-radius:7px;box-shadow:inset 0 1px 0 #ffffffd0,inset 0 -1px 0 #10274480,0 1px 4px #10274433}
 .shortcut small{font-size:11px}
 .widgets{position:fixed;right:24px;top:90px;width:min(300px,calc(100vw - 40px));display:grid;gap:10px}
 .widget{border:1px solid #ffffffc9;border-radius:18px;background:#f7faffbd;backdrop-filter:blur(18px);box-shadow:0 10px 28px #1a42651c;padding:14px}
@@ -50,8 +50,8 @@ body{background:linear-gradient(135deg,#9dc7ee 0%,#dce9f8 43%,#b5c9e2 100%)}
  <button class="shortcut" data-window="terminal"><span class="glyph"><svg viewBox="0 0 64 64" aria-hidden="true"><use href="../assets/icons/chimera-octavian/catalog.svg#app-terminal"/></svg></span><small>Terminal</small></button>
  <button class="shortcut" data-window="browser"><span class="glyph"><svg viewBox="0 0 64 64" aria-hidden="true"><use href="../assets/icons/chimera-octavian/catalog.svg#app-chromium"/></svg></span><small>Browser</small></button>
  <button class="shortcut" data-panel="control"><span class="glyph"><svg viewBox="0 0 64 64" aria-hidden="true"><use href="../assets/icons/chimera-octavian/catalog.svg#app-settings"/></svg></span><small>Settings</small></button>
- <button class="shortcut" data-window="files"><span class="glyph"><img loading="lazy" src="/assets/desktop-icons/slices/sheet-b/b-r1c04-files.png" alt="Sliced concept icon: Files"></span><small>Files</small></button>
- <button class="shortcut" data-window="browser"><span class="glyph"><img loading="lazy" src="/assets/desktop-icons/slices/sheet-b/b-r1c05-web-browser.png" alt="Sliced concept icon: Web Browser"></span><small>Browser</small></button>
+ <button class="shortcut" data-window="files"><span class="glyph"><img loading="lazy" src="/assets/desktop-icons/beveled/sheet-b/b-r1c04-files.png" alt="Beveled concept icon: Files"></span><small>Files</small></button>
+ <button class="shortcut" data-window="browser"><span class="glyph"><img loading="lazy" src="/assets/desktop-icons/beveled/sheet-b/b-r1c05-web-browser.png" alt="Beveled concept icon: Web Browser"></span><small>Browser</small></button>
 </main>
 <aside class="widgets" aria-label="Desktop widgets">
  <section class="widget"><h3>Focus</h3><div class="big">Good afternoon</div><p>Workspace ready · Your apps and files in one place</p></section>
@@ -66,8 +66,8 @@ body{background:linear-gradient(135deg,#9dc7ee 0%,#dce9f8 43%,#b5c9e2 100%)}
  <button class="taskbtn" data-window="browser" aria-label="Browser"><svg viewBox="0 0 64 64" aria-hidden="true"><use href="../assets/icons/chimera-octavian/catalog.svg#app-chromium"/></svg></button>
  <span class="tray"><span>◉</span><span>◌</span><span id="clock">--:--</span></span>
  <button class="taskbtn" id="controlButton" aria-label="Quick settings"><svg viewBox="0 0 64 64" aria-hidden="true"><use href="../assets/icons/chimera-octavian/catalog.svg#app-settings"/></svg></button>
- <button class="taskbtn" data-window="files" aria-label="Sliced Files icon"><img loading="lazy" src="/assets/desktop-icons/slices/sheet-b/b-r1c04-files.png" alt="Sliced concept icon: Files"></button>
- <button class="taskbtn" data-window="browser" aria-label="Sliced Web Browser icon"><img loading="lazy" src="/assets/desktop-icons/slices/sheet-b/b-r1c05-web-browser.png" alt="Sliced concept icon: Web Browser"></button>
+ <button class="taskbtn" data-window="files" aria-label="Beveled Files icon"><img loading="lazy" src="/assets/desktop-icons/beveled/sheet-b/b-r1c04-files.png" alt="Beveled concept icon: Files"></button>
+ <button class="taskbtn" data-window="browser" aria-label="Beveled Web Browser icon"><img loading="lazy" src="/assets/desktop-icons/beveled/sheet-b/b-r1c05-web-browser.png" alt="Beveled concept icon: Web Browser"></button>
 </nav>
 <section class="panel start-panel" id="startPanel" aria-label="Start menu">
  <div class="panel-head"><strong>Start</strong><button data-close="startPanel" aria-label="Close">×</button></div>
@@ -78,8 +78,8 @@ body{background:linear-gradient(135deg,#9dc7ee 0%,#dce9f8 43%,#b5c9e2 100%)}
   <button class="app" data-window="terminal"><span><svg viewBox="0 0 64 64" aria-hidden="true"><use href="../assets/icons/chimera-octavian/catalog.svg#app-terminal"/></svg></span><small>Terminal</small></button>
   <button class="app" data-window="browser"><span><svg viewBox="0 0 64 64" aria-hidden="true"><use href="../assets/icons/chimera-octavian/catalog.svg#app-chromium"/></svg></span><small>Browser</small></button>
   <button class="app" data-panel="control"><span><svg viewBox="0 0 64 64" aria-hidden="true"><use href="../assets/icons/chimera-octavian/catalog.svg#app-settings"/></svg></span><small>Settings</small></button>
-  <button class="app" data-window="files"><span><img loading="lazy" src="/assets/desktop-icons/slices/sheet-b/b-r1c04-files.png" alt="Sliced concept icon: Files"></span><small>Files</small></button>
-  <button class="app" data-window="browser"><span><img loading="lazy" src="/assets/desktop-icons/slices/sheet-b/b-r1c05-web-browser.png" alt="Sliced concept icon: Web Browser"></span><small>Browser</small></button>
+  <button class="app" data-window="files"><span><img loading="lazy" src="/assets/desktop-icons/beveled/sheet-b/b-r1c04-files.png" alt="Beveled concept icon: Files"></span><small>Files</small></button>
+  <button class="app" data-window="browser"><span><img loading="lazy" src="/assets/desktop-icons/beveled/sheet-b/b-r1c05-web-browser.png" alt="Beveled concept icon: Web Browser"></span><small>Browser</small></button>
  </div>
  <div class="recommended"><div class="start-title">Recommended</div><p>Recent files and installed applications will appear here when a native session provider is connected.</p></div>
 </section>

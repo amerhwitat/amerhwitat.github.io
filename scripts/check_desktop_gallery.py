@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
 """Validate the three-edition desktop gallery, artwork, routes and host boundary."""
 from pathlib import Path
+import hashlib
 import json
 import re
+import struct
 
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT / "desktops/gallery.js"
@@ -183,6 +185,7 @@ if "PRODUCTION RELEASE BLOCKED" not in disposition:
     raise SystemExit("authoritative release disposition changed while adding background references")
 icon_assets = (
     "assets/desktop-icons/ICON_MAP.json",
+    "assets/desktop-icons/beveled/BEVELED_MANIFEST.json",
     "assets/desktop-icons/SOURCES.md",
     "assets/desktop-icons/default-desktop-icon-a.png",
     "assets/desktop-icons/default-desktop-icon-b.png",
@@ -192,6 +195,8 @@ icon_assets = (
 for rel_asset in icon_assets:
     if not (ROOT / rel_asset).is_file():
         raise SystemExit(f"sliced desktop icon asset is missing: {rel_asset}")
+if not (ROOT / "scripts/build_beveled_desktop_icons.sh").is_file():
+    raise SystemExit("deterministic beveled icon build script is missing")
 icon_sources = (ROOT / "assets/desktop-icons/SOURCES.md").read_text(encoding="utf-8")
 for digest in (
     "28d0203ccdbbcfddb52c5272d96a5ecad124cbe81f060edd7af2ab97e296f415",
@@ -201,25 +206,131 @@ for digest in (
         raise SystemExit("sliced icon provenance is missing an original SHA-256")
 if "not runtime evidence" not in icon_sources or "96 × 96" not in icon_sources:
     raise SystemExit("sliced icon provenance must state the concept-only boundary and crop geometry")
+if "Derived beveled cells" not in icon_sources or "concept UI artwork only" not in icon_sources:
+    raise SystemExit("sliced icon provenance must document the derived beveled set boundary")
+
+
+def sha256_file(path: Path) -> str:
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def png_dimensions(path: Path) -> tuple[int, int]:
+    header = path.read_bytes()[:24]
+    if len(header) < 24 or header[:8] != b"\x89PNG\r\n\x1a\n" or header[12:16] != b"IHDR":
+        raise SystemExit(f"invalid PNG header: {path}")
+    return struct.unpack(">II", header[16:24])
+
+
+beveled_path = ROOT / "assets/desktop-icons/beveled/BEVELED_MANIFEST.json"
+beveled_manifest = json.loads(beveled_path.read_text(encoding="utf-8"))
+if beveled_manifest.get("schema") != "chimera-octavian-beveled-icon-set/v1":
+    raise SystemExit("unexpected beveled icon manifest schema")
+if not beveled_manifest.get("concept_only"):
+    raise SystemExit("beveled icon set must remain concept-only")
+if beveled_manifest.get("asset_count") != 100 or len(beveled_manifest.get("records", [])) != 100:
+    raise SystemExit("beveled icon manifest must contain all 100 derived assets")
+if beveled_manifest.get("source_set") != "/assets/desktop-icons/slices/":
+    raise SystemExit("beveled icon manifest must name the source slice set")
+if beveled_manifest.get("derived_set") != "/assets/desktop-icons/beveled/":
+    raise SystemExit("beveled icon manifest must name the published derived set")
+geometry = beveled_manifest.get("geometry", {})
+if geometry.get("size") != "96x96" or geometry.get("corner_radius_px") != 20:
+    raise SystemExit("beveled icon geometry must be 96x96 with a 20px corner radius")
+if "dark outer ring" not in geometry.get("bevel", "") or "light inner ring" not in geometry.get("bevel", ""):
+    raise SystemExit("beveled icon manifest must describe the light/dark bevel ring")
+generation = beveled_manifest.get("generation", {})
+if "deterministic ImageMagick" not in generation.get("method", "") or "no AI or random input" not in generation.get("method", ""):
+    raise SystemExit("beveled icons must be generated deterministically without AI or random input")
+if "roundrectangle 0,0 95,95 20,20" not in generation.get("command", ""):
+    raise SystemExit("beveled icon manifest must record the 20px rounded-corner command")
+
+source_root = ROOT / "assets/desktop-icons/slices"
+derived_root = ROOT / "assets/desktop-icons/beveled"
+source_files = {path.as_posix() for path in source_root.glob("sheet-*/*.png")}
+derived_files = {path.as_posix() for path in derived_root.glob("sheet-*/*.png")}
+if len(source_files) != 100 or len(derived_files) != 100:
+    raise SystemExit("expected exactly 100 source slices and 100 derived icons on disk")
+seen_sources: set[str] = set()
+seen_derived: set[str] = set()
+by_derived: dict[str, dict] = {}
+for record in beveled_manifest["records"]:
+    for key in ("id", "source_asset", "derived_asset", "source_sha256", "derived_sha256"):
+        if not record.get(key):
+            raise SystemExit(f"beveled icon record is missing {key}")
+    source_asset = record["source_asset"]
+    derived_asset = record["derived_asset"]
+    if not source_asset.startswith("/assets/desktop-icons/slices/sheet-"):
+        raise SystemExit(f"unexpected beveled source asset: {source_asset}")
+    if not derived_asset.startswith("/assets/desktop-icons/beveled/sheet-"):
+        raise SystemExit(f"unexpected beveled derived asset: {derived_asset}")
+    expected_derived = "/assets/desktop-icons/beveled/" + source_asset[len("/assets/desktop-icons/slices/"):]
+    if derived_asset != expected_derived:
+        raise SystemExit(f"beveled asset does not mirror its source: {record['id']}")
+    source = ROOT / source_asset.lstrip("/")
+    derived = ROOT / derived_asset.lstrip("/")
+    if not source.is_file() or not derived.is_file():
+        raise SystemExit(f"beveled icon record references a missing file: {record['id']}")
+    if sha256_file(source) != record["source_sha256"]:
+        raise SystemExit(f"source slice SHA-256 changed: {record['id']}")
+    if sha256_file(derived) != record["derived_sha256"]:
+        raise SystemExit(f"derived icon SHA-256 changed: {record['id']}")
+    if png_dimensions(source) != (96, 96) or png_dimensions(derived) != (96, 96):
+        raise SystemExit(f"beveled icon record is not 96x96: {record['id']}")
+    seen_sources.add(source.as_posix())
+    seen_derived.add(derived.as_posix())
+    by_derived[derived_asset] = record
+if seen_sources != source_files or seen_derived != derived_files:
+    raise SystemExit("beveled manifest must account for every source slice and derived icon")
+if len({record["id"] for record in beveled_manifest["records"]}) != 100:
+    raise SystemExit("beveled icon record IDs must be unique")
+
 icon_map = json.loads((ROOT / "assets/desktop-icons/ICON_MAP.json").read_text(encoding="utf-8"))
 if not icon_map.get("concept_only"):
     raise SystemExit("sliced icon map must remain concept-only")
+if icon_map.get("source_slice_set") != "/assets/desktop-icons/slices/":
+    raise SystemExit("sliced icon map lost its source-slice provenance")
+if icon_map.get("derived_set") != "/assets/desktop-icons/beveled/":
+    raise SystemExit("sliced icon map must point to the beveled set")
 catalog_manifest = json.loads((ROOT / "assets/icons/chimera-octavian/manifest.json").read_text(encoding="utf-8"))
 expected_icons = len(catalog_manifest["apps"])
 if icon_map.get("mapped_icon_count") != expected_icons or len(icon_map.get("icons", {})) != expected_icons:
     raise SystemExit(f"sliced icon map must cover all {expected_icons} catalog icons")
+if catalog_manifest.get("source_slice_set") != "/assets/desktop-icons/slices/":
+    raise SystemExit("catalog manifest lost its source-slice provenance")
+if catalog_manifest.get("derived_set") != "/assets/desktop-icons/beveled/":
+    raise SystemExit("catalog manifest must point to the beveled set")
+for app in catalog_manifest["apps"]:
+    image_source = app.get("image_source", "")
+    source_slice = app.get("source_slice", "")
+    if not image_source.startswith("/assets/desktop-icons/beveled/"):
+        raise SystemExit(f"catalog manifest app uses a non-beveled image: {app.get('id')}")
+    if not source_slice.startswith("/assets/desktop-icons/slices/"):
+        raise SystemExit(f"catalog manifest app lost source provenance: {app.get('id')}")
+    mapped = icon_map["icons"].get(app["id"])
+    if not mapped or mapped.get("asset") != image_source or mapped.get("source_asset") != source_slice:
+        raise SystemExit(f"catalog manifest and icon map disagree for {app['id']}")
 for record in icon_map["icons"].values():
     asset = record.get("asset", "")
-    if not asset.startswith("/assets/desktop-icons/slices/"):
-        raise SystemExit(f"sliced icon map contains a non-slice asset: {asset}")
+    source_asset = record.get("source_asset", "")
+    if not asset.startswith("/assets/desktop-icons/beveled/"):
+        raise SystemExit(f"icon map contains a non-beveled asset: {asset}")
+    if not source_asset.startswith("/assets/desktop-icons/slices/"):
+        raise SystemExit(f"icon map is missing source-slice provenance: {source_asset}")
     if not (ROOT / asset.lstrip("/")).is_file():
-        raise SystemExit(f"sliced icon asset is missing: {asset}")
+        raise SystemExit(f"beveled icon asset is missing: {asset}")
+    beveled_record = by_derived.get(asset)
+    if not beveled_record or beveled_record["source_asset"] != source_asset:
+        raise SystemExit(f"icon map asset is not in the beveled manifest: {asset}")
 catalog_svg = (ROOT / "assets/icons/chimera-octavian/catalog.svg").read_text(encoding="utf-8")
-slice_refs = catalog_svg.count('<image href="/assets/desktop-icons/slices/')
-if slice_refs < expected_icons:
-    raise SystemExit(f"catalog sprite has only {slice_refs} sliced icon references; expected {expected_icons}")
+beveled_refs = catalog_svg.count('<image href="/assets/desktop-icons/beveled/')
+if beveled_refs < expected_icons:
+    raise SystemExit(f"catalog sprite has only {beveled_refs} beveled icon references; expected {expected_icons}")
+if '<image href="/assets/desktop-icons/slices/' in catalog_svg:
+    raise SystemExit("catalog sprite must render beveled cells, not source slices")
+if "/assets/desktop-icons/beveled/BEVELED_MANIFEST.json" not in catalog_svg:
+    raise SystemExit("catalog sprite must retain beveled provenance")
 if "default-desktop-icon-a.png" in catalog_svg or "default-desktop-icon-b.png" in catalog_svg:
-    raise SystemExit("catalog sprite must use sliced cells, not representative full-sheet aliases")
+    raise SystemExit("catalog sprite must use beveled cells, not representative full-sheet aliases")
 icon_usage = (
     "desktops/gallery.js",
     "desktops/index.html",
@@ -230,14 +341,18 @@ icon_usage = (
     "apps/chimera-ii-os/web/release-closure-dashboard.html",
     "apps/chimera-ii-os/web/final-release-disposition.html",
 )
+rendered_source = re.compile(r'(?:src|href)\s*=\s*["\']/assets/desktop-icons/slices/')
+css_source = re.compile(r'url\(\s*["\']?/assets/desktop-icons/slices/')
 for rel_usage in icon_usage:
     usage_text = (ROOT / rel_usage).read_text(encoding="utf-8")
-    if "/assets/desktop-icons/slices/" not in usage_text:
-        raise SystemExit(f"sliced icons are not used in {rel_usage}")
+    if "/assets/desktop-icons/beveled/" not in usage_text:
+        raise SystemExit(f"beveled icons are not used in {rel_usage}")
+    if rendered_source.search(usage_text) or css_source.search(usage_text):
+        raise SystemExit(f"source slices are still rendered in {rel_usage}")
     if "Attached concept desktop icon" in usage_text or "Concept A" in usage_text or "Concept B" in usage_text:
         raise SystemExit(f"stale concept placeholder remains in {rel_usage}")
 if "PRODUCTION RELEASE BLOCKED" not in disposition or "Not published" not in dashboard:
-    raise SystemExit("authoritative blocked disposition changed while slicing attached icons")
+    raise SystemExit("authoritative blocked disposition changed while beveling attached icons")
 print(
     f"PASS: {len(ids)} profiles ({counts['chimera']} Chimera II OS, "
     f"{counts['octavian']} OctavianOS, {counts['linuxkoronos']} LinuxKoronos host); "

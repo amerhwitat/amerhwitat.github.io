@@ -116,4 +116,8 @@ Representative aliases previously published as `default-desktop-icon-a.png` and 
 | `/assets/desktop-icons/slices/sheet-b/b-r5c09-power-management.png` | B | r5c9 (96x96+1272+752) | Power Management | `dc496ef9c2a1873bea4329fb5c6eca62f240e6a2a839232980990078c28f2bbe` |
 | `/assets/desktop-icons/slices/sheet-b/b-r5c10-advanced-tools.png` | B | r5c10 (96x96+1402+752) | Advanced Tools | `303d28febda2589fd2042807a7c0627bd212bbb5b7c033856d5108565731c874` |
 
+## Derived beveled cells
+
+All 100 unmodified slices above are the provenance for `/assets/desktop-icons/beveled/sheet-a/*.png` and `/assets/desktop-icons/beveled/sheet-b/*.png`. Each 96 × 96 derivative uses a 20px rounded-corner alpha mask plus a subtle 2px dark outer / 1px light inner bevel ring, generated deterministically with ImageMagick (no AI or random input) by `scripts/build_beveled_desktop_icons.sh`. Source and derived SHA-256 values for every asset are in [BEVELED_MANIFEST.json](beveled/BEVELED_MANIFEST.json). These derivatives remain concept UI artwork only; they are not runtime evidence and do not change any release row.
+
 The supplied sheets and their slices remain concept UI artwork only. They do not change any authoritative release, conformance, runtime, or ISO row.
