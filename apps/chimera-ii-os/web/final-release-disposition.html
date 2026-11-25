@@ -15,7 +15,7 @@ ol li{margin:.5em 0}ul li{margin:.35em 0}
 </style></head><body><main>
 <p class="eyebrow">ChimeraIIOS · Koronos · OctavianOS · LinuxKoronos</p>
 <h1>Final release disposition</h1>
-<p>Disposition date: 24 November 2026. This page is the authoritative release-status record. It supersedes any earlier "gates accepted", "matrix passed", "seven-check passed", or "production port" framing elsewhere on this site.</p>
+<p>Disposition date: 25 November 2026. This page is the authoritative release-status record. It supersedes any earlier "gates accepted", "matrix passed", "seven-check passed", or "production port" framing elsewhere on this site.</p>
 <section class="decision"><strong>PRODUCTION RELEASE BLOCKED</strong>
 <p>Production remains blocked. No production ISO has been certified or published. Passing probes, component builds, hosted checks, source-byte parity and harness/CI runs are engineering evidence only. They are not promoted into production acceptance.</p></section>
 <h2>Production requirement disposition</h2>
@@ -33,6 +33,18 @@ ol li{margin:.5em 0}ul li{margin:.35em 0}
 <p class="note">The statuses above are the final disposition. A passing probe, selftest, component build, or harness run does not change any row. Official command/ISA conformance is <code>not-run</code> (<code>0/1613</code> catalog forms); only 15 commands are native-backed.</p>
 
 <p class="note"><strong>Remaining implementation and release gates:</strong> the supplied 25 November 2026 status records real architecture context switching, timer-driven preemption, AP startup and SMP, resident kernel-owned PID 1, persistent VFS and storage, installer/recovery transactions, Windows-compatible runtime and full tested source parity as Outstanding; six-case production acceptance as Not passed; and a production-certified Chimera ISO as Not published. Repository status updates are published and the website itself is deployed, but native OS implementation and production ISO release remain blocked; Successful hosted CI and firmware probes are not substitutes for the missing runtime acceptance evidence. See the <a href="release-closure-dashboard.html#remaining-implementation-gates-20261125">Remaining implementation and release gates</a>. The <a href="/desktops/background-references.html">19-image three-edition background lab</a> is concept artwork only. This status does not change any authoritative status above.</p>
+
+<h2>Latest CI reconciliation — 25 November 2026</h2>
+<p>These results are engineering evidence only and do not change the production requirement table above:</p>
+<ul>
+<li><strong>ChimeraIIOS #320</strong> — head <code>483c9dcd15528e26a7360f2dd0d9c4e6879eb741</code>; 36/36 PR workflows succeeded, including full ISO build and the hosted QEMU boot matrix. The live-ISO production publication step was skipped; this is not production acceptance.</li>
+<li><strong>ChimeraIIOS #321</strong> — head <code>6353595685b411aa5879990f3e0fba26d5cdfee5</code>; targeted preemption, SMP, native-stack and installer/recovery gates passed. Its immutable six-case CI probe passed all six cases on one ISO, SHA-256 <code>ebed1a1ef52c8ef2930b6e8f139e07ce1fa2f294dc3a09b09fb9336aefce3254</code>. However, the separate QEMU boot matrix failed after the context-switch/preemption selftest, at AP startup. These tests do not provide independently authenticated production traces or prove all persistent-runtime postconditions.</li>
+<li><strong>OctavianOS #236</strong> — head <code>7347f4535a2730d3bf76987aee5ada2a7969c8b6</code>; native kernel build succeeded, but the userspace verifier failed all three target traces because the kernel-verified persistent PID1 ACTIVE marker was missing. The six BIOS/UEFI target probes completed, but are not accepted production handoffs.</li>
+<li><strong>OctavianOS #241</strong> — head <code>a370adfb93186bce4570ec5cd1a0607ce0ac792c</code>; source-inventory checks passed, but the native kernel run was cancelled and all six userspace cases failed. Snapshot parity is not an integrated production port.</li>
+<li><strong>LinuxKoronos #7</strong> — hosted builder and Debian live-ISO workflows passed; scope remains a Linux-hosted adapter, not a freestanding Koronos kernel.</li>
+<li><strong>Website</strong> — this status page is published from main. Desktop gallery PR <a href="https://github.com/amerhwitat/amerhwitat.github.io/pull/107">#107</a> remains open and unmergeable; its gallery changes are not included in this deployment.</li>
+</ul>
+<p>Run records: <a href="https://github.com/amerhwitat/ChimeraIIOS/actions/runs/45337677324">Chimera #321 six-case CI</a> · <a href="https://github.com/amerhwitat/ChimeraIIOS/actions/runs/45337677097">Chimera #321 QEMU boot matrix (failed)</a> · <a href="https://github.com/amerhwitat/OctavianOS/actions/runs/45427928919">Octavian #236 native kernel/userspace verifier</a> · <a href="https://github.com/amerhwitat/OctavianOS/actions/runs/45427928968">Octavian #236 six target probes</a>.</p>
 
 <h2>Pull request disposition</h2>
 <p>All four headline pull requests remain open and unmerged: ChimeraIIOS <a href="https://github.com/amerhwitat/ChimeraIIOS/pull/320">#320</a> and <a href="https://github.com/amerhwitat/ChimeraIIOS/pull/321">#321</a>; OctavianOS <a href="https://github.com/amerhwitat/OctavianOS/pull/241">#241</a>; LinuxKoronos <a href="https://github.com/amerhwitat/LinuxKoronos/pull/7">#7</a>. Every related follow-up — OctavianOS <a href="https://github.com/amerhwitat/OctavianOS/pull/42">#42</a>, <a href="https://github.com/amerhwitat/OctavianOS/pull/236">#236</a>, <a href="https://github.com/amerhwitat/OctavianOS/pull/238">#238</a>, <a href="https://github.com/amerhwitat/OctavianOS/pull/239">#239</a>, <a href="https://github.com/amerhwitat/OctavianOS/pull/240">#240</a> and <a href="https://github.com/amerhwitat/OctavianOS/pull/242">#242</a> — is also open and unmerged. No PR is merged and no production ISO is published.</p>
@@ -52,5 +64,5 @@ ol li{margin:.5em 0}ul li{margin:.35em 0}
 <li><a href="koronos-remediation-status.html">Koronos remediation status</a> and <a href="userspace-acceptance.html">production acceptance matrix</a> — outstanding runtime gaps.</li>
 </ul>
 <p>No synthetic readiness markers, placeholder providers, fabricated acceptance manifest, or production release are authorized.</p>
-<footer>Updated 24 November 2026. CI links are authoritative for run state; passing build and runtime checks must not be interpreted as production certification.</footer>
+<footer>Updated 25 November 2026. CI links are authoritative for run state; passing build and runtime checks must not be interpreted as production certification.</footer>
 </main></body></html>
