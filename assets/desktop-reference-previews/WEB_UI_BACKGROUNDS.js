@@ -1,18 +1,18 @@
 /* Generated from BACKGROUNDS.json; do not edit by hand.
- * Source SHA-256: 9d47f382012be1fc2b477372e02dbc93905c0da09d70689a0563086308b181f4
+ * Source SHA-256: 5e6e4976b414c754816e953e902b775f536e12039e16dc4c4406fd6eff979c9b
  * Concept artwork only. PRODUCTION RELEASE BLOCKED.
  */
 window.WEB_UI_BACKGROUNDS = Object.freeze(Object.assign({
   "schema": "web-ui-background-mapping/v1",
-  "title": "25 supplied concept backgrounds mapped to Web UI desktops",
+  "title": "30 supplied concept backgrounds mapped to Web UI desktops",
   "generated": "2026-11-25",
   "concept_only": true,
   "release_disposition": "PRODUCTION RELEASE BLOCKED",
   "boundary": "Concept artwork only. No installed wallpaper, native session, compositor, input stack, six-case acceptance or production release is claimed.",
   "source_manifest": "/assets/desktop-reference-previews/BACKGROUNDS.json",
-  "source_manifest_sha256": "9d47f382012be1fc2b477372e02dbc93905c0da09d70689a0563086308b181f4",
+  "source_manifest_sha256": "5e6e4976b414c754816e953e902b775f536e12039e16dc4c4406fd6eff979c9b",
   "grouping_rule": "primary_edition chooses the home Web UI desktops; shared records appear on every surface; LinuxKoronos includes all records because every record lists linuxkoronos in used_by.",
-  "asset_count": 25,
+  "asset_count": 30,
   "groups": [
     {
       "id": "aurora",
@@ -574,6 +574,116 @@ window.WEB_UI_BACKGROUNDS = Object.freeze(Object.assign({
       "asset": "/assets/webui-desktop-wallpapers/previews/webui-06.jpg",
       "original_filename": "MPGYuVs8n6OM3Z1nf4Jh50UWcq10hvV_lu9O7CNetE6sG_Cpf1oyKFUhSAvz1frbDGoqJPGoKjCqB3pEofb9B3vKfH0DGfXLRVOazcjFDgNAL0nnUvaq6sqwwrqQd8djXa1Rp7OgdQhPKkwIqOEVOTkQR9U59JsTmHZTmoL6qSTTpb4dfhkriVl3CFpTrYBD.jpg",
       "source_sha256": "74de519921e1c0fa32e3f63fd1afa2c57797214daa1949bd4d61c649548cf7b5",
+      "primary_edition": "shared",
+      "used_by": [
+        "chimera",
+        "octavian",
+        "linuxkoronos"
+      ],
+      "desktops": [
+        "aurora",
+        "marine",
+        "freewin11",
+        "freexp",
+        "octavian-aurora",
+        "octavian-marine",
+        "linuxkoronos"
+      ]
+    },
+    {
+      "id": "webui-07",
+      "label": "07 · Verdant lattice",
+      "asset": "/assets/webui-desktop-wallpapers/previews/webui-07.jpg",
+      "original_filename": "5lsrcOiqUArxkKUo92kzxE9fm5pfx3SH2V6xO1LCS_EAJEWLDIigOUF3Qey9V9rdFT4Kk7LBRH4hUpbLbbNRVJxhdfuj64i_OyH273nBtQfjeTmX_uv5V5JjIo9-un3ZGJDCpS4fEVO5T1Jh0oDiOrdvYf1t3w2EXHo7LNSVywpcmfoPqsmhnUfFumH74Lmm.jpg",
+      "source_sha256": "1c7558adb9bae47b4ebdfc6bd6a759a9fc6f8225fe85b18d829d27170f7bb466",
+      "primary_edition": "shared",
+      "used_by": [
+        "chimera",
+        "octavian",
+        "linuxkoronos"
+      ],
+      "desktops": [
+        "aurora",
+        "marine",
+        "freewin11",
+        "freexp",
+        "octavian-aurora",
+        "octavian-marine",
+        "linuxkoronos"
+      ]
+    },
+    {
+      "id": "webui-08",
+      "label": "08 · Amber circuit",
+      "asset": "/assets/webui-desktop-wallpapers/previews/webui-08.jpg",
+      "original_filename": "tyyE-47aksrgXxHzQ_YHKiJZqgpnwlgO0Nv_R6H2bjOrU5OLy8nWEkxmQ1tc4VxZnQIfxA7pK7cSFj_pZwBTxgcGosP8hUNBmJNxXk4eUCcYY3pFWHtles0cQYHqb1PQL469In46b5pmGtSgYOtCcUTF0EiKzn9YavyqmKG76D3naUfVPwuLbczDKSwZ30yA.jpg",
+      "source_sha256": "1145e1b30515fbb1c7272e12dc90fce37b1e761d19d7f6722fbac46dc2f05c24",
+      "primary_edition": "shared",
+      "used_by": [
+        "chimera",
+        "octavian",
+        "linuxkoronos"
+      ],
+      "desktops": [
+        "aurora",
+        "marine",
+        "freewin11",
+        "freexp",
+        "octavian-aurora",
+        "octavian-marine",
+        "linuxkoronos"
+      ]
+    },
+    {
+      "id": "webui-09",
+      "label": "09 · Crimson echo",
+      "asset": "/assets/webui-desktop-wallpapers/previews/webui-09.jpg",
+      "original_filename": "XShnXvRDnpRbbDtY26pvDiDyGYoJcOb_0dzgL91187urixazIGROd7ohKlllmOKxwVDqUi3Kw_0bAv0WEg9j_0W_g75om7vVlRXwBwyfr6GSkNUufe9LFAxUJnKNsw1Uhr-3TIUHW_BI3DIUpf47E6VEj2bfKasH_zBCp69TJtNuTby7Je53kICLT0SbAa4v.jpg",
+      "source_sha256": "554e95fe01cbde3b1335c69c47f47ef0e7031f9c57446dfabaf556b8068bb549",
+      "primary_edition": "shared",
+      "used_by": [
+        "chimera",
+        "octavian",
+        "linuxkoronos"
+      ],
+      "desktops": [
+        "aurora",
+        "marine",
+        "freewin11",
+        "freexp",
+        "octavian-aurora",
+        "octavian-marine",
+        "linuxkoronos"
+      ]
+    },
+    {
+      "id": "webui-10",
+      "label": "10 · Obsidian grid",
+      "asset": "/assets/webui-desktop-wallpapers/previews/webui-10.jpg",
+      "original_filename": "zzy5BpdEC_QiA3y5RakCcR1RbBhUpJGbwkoPD0mu16eiC8etvg4RuAd7SY6SWaXTNZTEnnRtHSl6OV-xOIjlKznFgxdxb8_hmui_-6jrI9rMmksIdeBvJLaX0ap4gG9OPMWeM6dV8CrJw2xkOlXyFLm0LYpXINnweFOYhsOO-QzXJlGa8sHR-vlOFDr_hQKj.jpg",
+      "source_sha256": "03199b3507ce2bce6f106cd8356123148a064211c1397fe62f9a38bc01dee01f",
+      "primary_edition": "shared",
+      "used_by": [
+        "chimera",
+        "octavian",
+        "linuxkoronos"
+      ],
+      "desktops": [
+        "aurora",
+        "marine",
+        "freewin11",
+        "freexp",
+        "octavian-aurora",
+        "octavian-marine",
+        "linuxkoronos"
+      ]
+    },
+    {
+      "id": "webui-11",
+      "label": "11 · Twilight bloom",
+      "asset": "/assets/webui-desktop-wallpapers/previews/webui-11.jpg",
+      "original_filename": "hKwzhvcz4NI3NgLdc10pQvVfAiFijDi6uqUFe9fTvGFU7waLWnKQzb2ULqRlqlsFNoDeR9ag6U-uEa-JgjbQ3X0rMjQvvAIdOztEfwu6SSrXCgzK_P-GZLIyQ3V6UEGxgrfJ10T0zPZfYbADsYQYksinUFD_2lBurpZRQU9JBSgmR1X-dGhahn3N8OptntUG.jpg",
+      "source_sha256": "11ac569e3b1cea232c9c6fd35f33f083693eaef83b5f9020f8433fb35c01532a",
       "primary_edition": "shared",
       "used_by": [
         "chimera",

@@ -1,10 +1,10 @@
 {
   "schema": "web-ui-desktop-wallpaper-manifest/v1",
-  "title": "Six supplied Web UI desktop wallpapers",
+  "title": "Eleven supplied Web UI desktop wallpapers",
   "generated": "2026-11-25",
   "concept_only": true,
   "purpose": "Selectable concept wallpapers for the interactive Web UI desktops and desktop gallery. Artwork only; no native session, installed wallpaper or production claim.",
-  "asset_count": 6,
+  "asset_count": 11,
   "images": [
     {
       "id": "webui-01",
@@ -142,6 +142,126 @@
         51.0,
         95.0,
         99.0
+      ],
+      "primary_edition": "shared",
+      "used_by": [
+        "chimera",
+        "octavian",
+        "linuxkoronos"
+      ]
+    },
+    {
+      "id": "webui-07",
+      "label": "07 · Verdant lattice",
+      "original_filename": "5lsrcOiqUArxkKUo92kzxE9fm5pfx3SH2V6xO1LCS_EAJEWLDIigOUF3Qey9V9rdFT4Kk7LBRH4hUpbLbbNRVJxhdfuj64i_OyH273nBtQfjeTmX_uv5V5JjIo9-un3ZGJDCpS4fEVO5T1Jh0oDiOrdvYf1t3w2EXHo7LNSVywpcmfoPqsmhnUfFumH74Lmm.jpg",
+      "asset": "/assets/webui-desktop-wallpapers/previews/webui-07.jpg",
+      "source_asset": "/assets/webui-desktop-wallpapers/sources/webui-07.jpg",
+      "source_sha256": "1c7558adb9bae47b4ebdfc6bd6a759a9fc6f8225fe85b18d829d27170f7bb466",
+      "source_bytes": 1272266,
+      "source_dimensions": [
+        3840,
+        2160
+      ],
+      "mean_rgb": [
+        97.0,
+        134.0,
+        104.0
+      ],
+      "primary_edition": "shared",
+      "used_by": [
+        "chimera",
+        "octavian",
+        "linuxkoronos"
+      ]
+    },
+    {
+      "id": "webui-08",
+      "label": "08 · Amber circuit",
+      "original_filename": "tyyE-47aksrgXxHzQ_YHKiJZqgpnwlgO0Nv_R6H2bjOrU5OLy8nWEkxmQ1tc4VxZnQIfxA7pK7cSFj_pZwBTxgcGosP8hUNBmJNxXk4eUCcYY3pFWHtles0cQYHqb1PQL469In46b5pmGtSgYOtCcUTF0EiKzn9YavyqmKG76D3naUfVPwuLbczDKSwZ30yA.jpg",
+      "asset": "/assets/webui-desktop-wallpapers/previews/webui-08.jpg",
+      "source_asset": "/assets/webui-desktop-wallpapers/sources/webui-08.jpg",
+      "source_sha256": "1145e1b30515fbb1c7272e12dc90fce37b1e761d19d7f6722fbac46dc2f05c24",
+      "source_bytes": 538423,
+      "source_dimensions": [
+        2000,
+        1333
+      ],
+      "mean_rgb": [
+        98.0,
+        72.0,
+        104.0
+      ],
+      "primary_edition": "shared",
+      "used_by": [
+        "chimera",
+        "octavian",
+        "linuxkoronos"
+      ]
+    },
+    {
+      "id": "webui-09",
+      "label": "09 · Crimson echo",
+      "original_filename": "XShnXvRDnpRbbDtY26pvDiDyGYoJcOb_0dzgL91187urixazIGROd7ohKlllmOKxwVDqUi3Kw_0bAv0WEg9j_0W_g75om7vVlRXwBwyfr6GSkNUufe9LFAxUJnKNsw1Uhr-3TIUHW_BI3DIUpf47E6VEj2bfKasH_zBCp69TJtNuTby7Je53kICLT0SbAa4v.jpg",
+      "asset": "/assets/webui-desktop-wallpapers/previews/webui-09.jpg",
+      "source_asset": "/assets/webui-desktop-wallpapers/sources/webui-09.jpg",
+      "source_sha256": "554e95fe01cbde3b1335c69c47f47ef0e7031f9c57446dfabaf556b8068bb549",
+      "source_bytes": 91126,
+      "source_dimensions": [
+        1380,
+        920
+      ],
+      "mean_rgb": [
+        9.0,
+        78.0,
+        74.0
+      ],
+      "primary_edition": "shared",
+      "used_by": [
+        "chimera",
+        "octavian",
+        "linuxkoronos"
+      ]
+    },
+    {
+      "id": "webui-10",
+      "label": "10 · Obsidian grid",
+      "original_filename": "zzy5BpdEC_QiA3y5RakCcR1RbBhUpJGbwkoPD0mu16eiC8etvg4RuAd7SY6SWaXTNZTEnnRtHSl6OV-xOIjlKznFgxdxb8_hmui_-6jrI9rMmksIdeBvJLaX0ap4gG9OPMWeM6dV8CrJw2xkOlXyFLm0LYpXINnweFOYhsOO-QzXJlGa8sHR-vlOFDr_hQKj.jpg",
+      "asset": "/assets/webui-desktop-wallpapers/previews/webui-10.jpg",
+      "source_asset": "/assets/webui-desktop-wallpapers/sources/webui-10.jpg",
+      "source_sha256": "03199b3507ce2bce6f106cd8356123148a064211c1397fe62f9a38bc01dee01f",
+      "source_bytes": 122899,
+      "source_dimensions": [
+        1200,
+        675
+      ],
+      "mean_rgb": [
+        26.0,
+        89.0,
+        116.0
+      ],
+      "primary_edition": "shared",
+      "used_by": [
+        "chimera",
+        "octavian",
+        "linuxkoronos"
+      ]
+    },
+    {
+      "id": "webui-11",
+      "label": "11 · Twilight bloom",
+      "original_filename": "hKwzhvcz4NI3NgLdc10pQvVfAiFijDi6uqUFe9fTvGFU7waLWnKQzb2ULqRlqlsFNoDeR9ag6U-uEa-JgjbQ3X0rMjQvvAIdOztEfwu6SSrXCgzK_P-GZLIyQ3V6UEGxgrfJ10T0zPZfYbADsYQYksinUFD_2lBurpZRQU9JBSgmR1X-dGhahn3N8OptntUG.jpg",
+      "asset": "/assets/webui-desktop-wallpapers/previews/webui-11.jpg",
+      "source_asset": "/assets/webui-desktop-wallpapers/sources/webui-11.jpg",
+      "source_sha256": "11ac569e3b1cea232c9c6fd35f33f083693eaef83b5f9020f8433fb35c01532a",
+      "source_bytes": 150910,
+      "source_dimensions": [
+        1024,
+        1024
+      ],
+      "mean_rgb": [
+        101.0,
+        80.0,
+        80.0
       ],
       "primary_edition": "shared",
       "used_by": [
