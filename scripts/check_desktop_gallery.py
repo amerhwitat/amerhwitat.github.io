@@ -63,10 +63,26 @@ if "id:'linuxkoronos'" not in showcase or "Hosted runtime adapter" not in showca
 disposition = (ROOT / "apps/chimera-ii-os/web/final-release-disposition.html").read_text(encoding="utf-8")
 if "Reference-led desktop concept artwork" not in html:
     raise SystemExit("desktop gallery is missing the reference-led concept artwork section")
-if "Engineering and build status" not in dashboard or "Not implemented" not in dashboard:
-    raise SystemExit("release dashboard is missing the supplied engineering/build status snapshot")
-if "PRODUCTION RELEASE BLOCKED" not in disposition or "Current engineering/build execution snapshot" not in disposition:
-    raise SystemExit("authoritative final disposition must remain blocked and linked to the snapshot")
+ledger_rows = (
+    "Latest four-repository status refresh", "Completed",
+    "Four existing repository comments", "Updated",
+    "ChimeraIIOS hosted CI", "36/36 successful",
+    "OctavianOS native build", "Build job successful; userspace verifier failed",
+    "LinuxKoronos hosted ISO", "Successful",
+    "Website Pages deployment", "Failed on main; fix PR validation passed",
+    "New kernel/runtime source implementation", "Not performed",
+    "Local architecture build and QEMU", "Not run",
+    "Six-case production acceptance", "Not passed",
+    "Full Octavian source parity", "Not verified",
+    "Production ISO release", "Not published",
+    "Production website deployment", "Not verified",
+)
+if "Final execution ledger" not in dashboard or any(row not in dashboard for row in ledger_rows):
+    raise SystemExit("release dashboard is missing the supplied final execution ledger")
+if "Important distinction" not in dashboard or "resolve the Octavian snapshot provenance" not in dashboard:
+    raise SystemExit("final execution ledger is missing the release distinction or next blocker")
+if "PRODUCTION RELEASE BLOCKED" not in disposition or "Final execution ledger" not in disposition:
+    raise SystemExit("authoritative final disposition must remain blocked and linked to the final ledger")
 for asset in (
     "aurora-glass-3840x2160.svg",
     "marine-blue-3840x2160.svg",
